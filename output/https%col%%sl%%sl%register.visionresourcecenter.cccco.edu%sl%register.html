@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+  <title>Vision Resources Center Registration</title> 
+ </head> 
+ <body> 
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,600i,700|Source+Serif+Pro:400,700&amp;display=swap" rel="stylesheet"> 
+  <link href="/dm/css/vrc-registration.css" rel="stylesheet"> 
+  <header> <a href="https://visionresourcecenter.cccco.edu/"><img src="/dm/assets/ccclogovfullvisionresourcecenter3cpadded_88beadb1-52ac-4a6b-99da-e0976ce14943.png" alt="California Community Colleges Vision Resources Center"></a> 
+   <nav> 
+    <ul> 
+     <li><a href="https://visionresourcecenter.cccco.edu/">Home</a></li> 
+    </ul> 
+   </nav> 
+  </header> 
+  <div id="main-content" class="main-content"> 
+   <h1>Registration</h1> 
+   <p class="intro">The Vision Resource Center is a portal for professional development and colleague connection in the California Community Colleges. Registration requires a California community college or approved partner organization email address. Individuals who do not have an approved email address can visit the <a href="https://foundationccc.atlassian.net/servicedesk/customer/portal/4">Vision Resource Center support portal</a> and create a ticket for an account. Please specify your work in the California Community Colleges and the reason for needing an account.</p> 
+   <div class="wrapper"> 
+    <form class="forms" action="/registersave" method="POST"> 
+     <div class="forms-required">
+      Please fill out the fields marked with <abbr class="required" title="">*</abbr>
+     </div> 
+     <div class="form-group"> <label for="first-name">First Name <abbr class="required" title="required">*</abbr></label> 
+      <div class="field-wrapper"> 
+       <input type="text" class="form-control" id="first-name" name="first_name" required> 
+      </div> 
+     </div> 
+     <div class="form-group"> <label for="last-name">Last Name <abbr class="required" title="required">*</abbr></label> 
+      <div class="field-wrapper"> 
+       <input type="text" class="form-control" id="last-name" name="last_name" required> 
+      </div> 
+     </div> 
+     <div class="select form-group"> <label for="job-classification">Job Classification <abbr class="required" title="required">*</abbr></label> 
+      <div class="field-wrapper"> 
+       <div class="select-wrapper"> <select class="form-control" id="job-classification" name="job_classification" required> <option value="" disabled selected hidden>Select</option> <!--
+                               <option value="" disabled selected hidden>Select</option>
+                               <option value="Adjunct Faculty">Adjunct Faculty</option>
+                               <option value="Faculty">Faculty</option>
+                               <option value="Management">Management</option>
+                               <option value="Staff">Staff</option>
+                               <option value="Trustee">Trustee</option>
+                            --> </select> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="select form-group" id="districtarea"> <label for="district_key">District Information <abbr class="required" title="required">*</abbr></label> 
+      <div class="field-wrapper"> 
+       <div class="select-wrapper"> <select class="form-control" id="district_key" disabled name="district_key" required> <option value="" disabled selected hidden>Select</option> </select> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="form-group"> <label for="email-address">Email Address <abbr class="required" title="required">*</abbr></label> 
+      <div class="field-wrapper"> 
+       <input type="email" class="form-control" id="email-address" name="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}$" required data-pattern-mismatch="Please enter a valid California community college or approved partner organization email address"> 
+      </div> 
+     </div> 
+     <div class="buttons"> <a href="https://visionresourcecenter.cccco.edu/" class="button">Cancel</a> <button class="button" type="submit" disabled>Submit</button> 
+     </div> 
+    </form> 
+   </div> 
+   <p class="support">If you are having trouble creating an account, please contact us at the <a href="https://foundationccc.atlassian.net/servicedesk/customer/portal/4">Vision Resource Center support portal</a></p> 
+   <script src="/dm/js/vrc-registration.js"></script> 
+   <script type="text/javascript">
+          var classifications_obj = [];
+          $(document).ready(function () {
+           //1:a Initialize classifications_obj object
+           
+           classifications_obj =[
+                           
+               { 
+                       "jobclassification_id" : "1",
+                       "jobclassification_name" : "Fulltime Faculty",
+              },
+                           
+               { 
+                       "jobclassification_id" : "2",
+                       "jobclassification_name" : "Adjunct Faculty",
+              },
+                           
+               { 
+                       "jobclassification_id" : "3",
+                       "jobclassification_name" : "Trustee",
+              },
+                           
+               { 
+                       "jobclassification_id" : "4",
+                       "jobclassification_name" : "Classified Staff",
+              },
+                           
+               { 
+                       "jobclassification_id" : "5",
+                       "jobclassification_name" : "Administrator",
+              },
+                           
+               { 
+                       "jobclassification_id" : "6",
+                       "jobclassification_name" : "CCC Partner",
+              },
+           
+           ];
+
+           //2:a Initialize district objects
+           
+           district_object =[
+               
+               { 
+                       "district_key" : "hancockcollege",
+                       "district_name" : "Allan Hancock Joint CCD",
+               },
+               
+               { 
+                       "district_key" : "avc",
+                       "district_name" : "Antelope Valley CCD",
+               },
+               
+               { 
+                       "district_key" : "barstow",
+                       "district_name" : "Barstow CCD",
+               },
+               
+               { 
+                       "district_key" : "butte",
+                       "district_name" : "Butte-Glenn CCD",
+               },
+               
+               { 
+                       "district_key" : "cabrillo",
+                       "district_name" : "Cabrillo CCD",
+               },
+               
+               { 
+                       "district_key" : "cerritos",
+                       "district_name" : "Cerritos CCD",
+               },
+               
+               { 
+                       "district_key" : "clpccd",
+                       "district_name" : "Chabot-Las Positas CCD",
+               },
+               
+               { 
+                       "district_key" : "chaffey",
+                       "district_name" : "Chaffey CCD",
+               },
+               
+               { 
+                       "district_key" : "citrus",
+                       "district_name" : "Citrus CCD",
+               },
+               
+               { 
+                       "district_key" : "cccd",
+                       "district_name" : "Coast CCD",
+               },
+               
+               { 
+                       "district_key" : "compton",
+                       "district_name" : "Compton CCD",
+               },
+               
+               { 
+                       "district_key" : "contracosta",
+                       "district_name" : "Contra Costa CCD",
+               },
+               
+               { 
+                       "district_key" : "cmccd",
+                       "district_name" : "Copper Mountain CCD",
+               },
+               
+               { 
+                       "district_key" : "cod",
+                       "district_name" : "Desert CCD",
+               },
+               
+               { 
+                       "district_key" : "elcamino",
+                       "district_name" : "El Camino CCD",
+               },
+               
+               { 
+                       "district_key" : "frc",
+                       "district_name" : "Feather River CCD",
+               },
+               
+               { 
+                       "district_key" : "fhda",
+                       "district_name" : "Foothill-De Anza CCD",
+               },
+               
+               { 
+                       "district_key" : "gavilan",
+                       "district_name" : "Gavilan CCD",
+               },
+               
+               { 
+                       "district_key" : "glendale",
+                       "district_name" : "Glendale CCD",
+               },
+               
+               { 
+                       "district_key" : "gcccd",
+                       "district_name" : "Grossmont-Cuyamaca CCD",
+               },
+               
+               { 
+                       "district_key" : "hartnell",
+                       "district_name" : "Hartnell Joint CCD",
+               },
+               
+               { 
+                       "district_key" : "ivc",
+                       "district_name" : "Imperial Valley CCD",
+               },
+               
+               { 
+                       "district_key" : "kccd",
+                       "district_name" : "Kern CCD",
+               },
+               
+               { 
+                       "district_key" : "ltcc",
+                       "district_name" : "Lake Tahoe CCD",
+               },
+               
+               { 
+                       "district_key" : "lassencollege",
+                       "district_name" : "Lassen CCD",
+               },
+               
+               { 
+                       "district_key" : "lbcc",
+                       "district_name" : "Long Beach CCD",
+               },
+               
+               { 
+                       "district_key" : "laccd",
+                       "district_name" : "Los Angeles CCD",
+               },
+               
+               { 
+                       "district_key" : "losrios",
+                       "district_name" : "Los Rios CCD",
+               },
+               
+               { 
+                       "district_key" : "marin",
+                       "district_name" : "Marin CCD",
+               },
+               
+               { 
+                       "district_key" : "mendocino",
+                       "district_name" : "Mendocino-Lake CCD",
+               },
+               
+               { 
+                       "district_key" : "mccd",
+                       "district_name" : "Merced CCD",
+               },
+               
+               { 
+                       "district_key" : "miracosta",
+                       "district_name" : "MiraCosta CCD",
+               },
+               
+               { 
+                       "district_key" : "mpc",
+                       "district_name" : "Monterey Peninsula CCD",
+               },
+               
+               { 
+                       "district_key" : "mtsac",
+                       "district_name" : "Mt. San Antonio CCD",
+               },
+               
+               { 
+                       "district_key" : "msjc",
+                       "district_name" : "Mt. San Jacinto CCD",
+               },
+               
+               { 
+                       "district_key" : "napavalley",
+                       "district_name" : "Napa Valley CCD",
+               },
+               
+               { 
+                       "district_key" : "nocccd",
+                       "district_name" : "North Orange County CCD",
+               },
+               
+               { 
+                       "district_key" : "ohlone",
+                       "district_name" : "Ohlone CCD",
+               },
+               
+               { 
+                       "district_key" : "paloverde",
+                       "district_name" : "Palo Verde CCD",
+               },
+               
+               { 
+                       "district_key" : "palomar",
+                       "district_name" : "Palomar CCD",
+               },
+               
+               { 
+                       "district_key" : "pasadena",
+                       "district_name" : "Pasadena Area CCD",
+               },
+               
+               { 
+                       "district_key" : "peralta",
+                       "district_name" : "Peralta CCD",
+               },
+               
+               { 
+                       "district_key" : "rsccd",
+                       "district_name" : "Rancho Santiago CCD",
+               },
+               
+               { 
+                       "district_key" : "redwoods",
+                       "district_name" : "Redwoods CCD",
+               },
+               
+               { 
+                       "district_key" : "riohondo",
+                       "district_name" : "Rio Hondo CCD",
+               },
+               
+               { 
+                       "district_key" : "rccd",
+                       "district_name" : "Riverside CCD",
+               },
+               
+               { 
+                       "district_key" : "sbccd",
+                       "district_name" : "San Bernardino CCD",
+               },
+               
+               { 
+                       "district_key" : "sdccd",
+                       "district_name" : "San Diego CCD",
+               },
+               
+               { 
+                       "district_key" : "ccsf",
+                       "district_name" : "San Francisco CCD",
+               },
+               
+               { 
+                       "district_key" : "deltacollege",
+                       "district_name" : "San Joaquin Delta CCD",
+               },
+               
+               { 
+                       "district_key" : "sjeccd",
+                       "district_name" : "San Jose-Evergreen CCD",
+               },
+               
+               { 
+                       "district_key" : "cuesta",
+                       "district_name" : "San Luis Obispo County CCD",
+               },
+               
+               { 
+                       "district_key" : "sanmateo",
+                       "district_name" : "San Mateo County CCD",
+               },
+               
+               { 
+                       "district_key" : "sbcc",
+                       "district_name" : "Santa Barbara CCD",
+               },
+               
+               { 
+                       "district_key" : "canyons",
+                       "district_name" : "Santa Clarita CCD",
+               },
+               
+               { 
+                       "district_key" : "smccd",
+                       "district_name" : "Santa Monica CCD",
+               },
+               
+               { 
+                       "district_key" : "sequoias",
+                       "district_name" : "Sequoias CCD",
+               },
+               
+               { 
+                       "district_key" : "shastacollege",
+                       "district_name" : "Shasta-Tehama-Trinity Joint CCD",
+               },
+               
+               { 
+                       "district_key" : "sierra",
+                       "district_name" : "Sierra Joint CCD",
+               },
+               
+               { 
+                       "district_key" : "siskiyous",
+                       "district_name" : "Siskiyou Joint CCD",
+               },
+               
+               { 
+                       "district_key" : "solano",
+                       "district_name" : "Solano CCD",
+               },
+               
+               { 
+                       "district_key" : "santarosa",
+                       "district_name" : "Sonoma County JCD",
+               },
+               
+               { 
+                       "district_key" : "socccd",
+                       "district_name" : "South Orange County CCD",
+               },
+               
+               { 
+                       "district_key" : "southwestern",
+                       "district_name" : "Southwestern CCD",
+               },
+               
+               { 
+                       "district_key" : "scccd",
+                       "district_name" : "State Center CCD",
+               },
+               
+               { 
+                       "district_key" : "vcccd",
+                       "district_name" : "Ventura County CCD",
+               },
+               
+               { 
+                       "district_key" : "vvc",
+                       "district_name" : "Victor Valley CCD",
+               },
+               
+               { 
+                       "district_key" : "whccd",
+                       "district_name" : "West Hills CCD",
+               },
+               
+               { 
+                       "district_key" : "taft",
+                       "district_name" : "West Kern CCD",
+               },
+               
+               { 
+                       "district_key" : "wvmccd",
+                       "district_name" : "West Valley-Mission CCD",
+               },
+               
+               { 
+                       "district_key" : "yosemite",
+                       "district_name" : "Yosemite CCD",
+               },
+               
+               { 
+                       "district_key" : "yuba",
+                       "district_name" : "Yuba CCD",
+               },
+               
+               { 
+                       "district_key" : "calbright",
+                       "district_name" : "Calbright College",
+               },
+               
+           ];
+
+          //1:b Poulate Job Classifications
+          updateJobClassSel($("#job-classification"), classifications_obj);
+
+          if (performance.getEntriesByType("navigation")[0].type === 'back_forward') {
+              console.log('Back ' + $("#job-classification option:selected").text()); 
+              console.log('Back ' + localStorage.sel);
+              //2:b populate districts (code is separted in a function)
+              updateTrusteeSel(localStorage.sel, $('#district_key'), $('#districtarea'), district_object);
+                  //1:c Then select none
+                  $("#job-classification select").val(localStorage.sel).change();
+                  if (localStorage.sel == "Trustee") {
+                      $('#districtarea').show();
+                  }
+                  //$("#job-classification").prop('selectedIndex', 0);
+                  //2:c Then select none
+                  //$("#district_key select").val().change();
+           }
+          else {
+              //1:c Then select none
+              $("#job-classification select").val("").change();
+              //2:c Then select none
+              $("#district_key select").val("").change();
+              updateTrusteeSel($("#job-classification option:selected").text(), $('#district_key'), $('#districtarea'), district_object);
+          }//End ELSE
+
+          //3:a Define functions that uses the variables defined in this, this can be taken outside also by globalizing the variables
+          $("#job-classification").change(function () {
+              console.log('Changed');
+              var el = $(this);
+              localStorage.sel = el.val();
+              updateTrusteeSel(el.val(), $('#district_key'), $('#districtarea'), district_object);
+          });
+
+
+          //Define other functions which can be outside the else
+
+            function updateJobClassSel(sel, class_obj) {
+                sel.append($.map(class_obj, function (o) {
+                  //var hasOption = sel.find("option[value='" + o.jobclassification_name + "']").val();
+                  //var hasOption = $('#mySelect option[value="' + desiredOption + '"]');
+                  var hasOption = $('#job-classification option[value="' + o.jobclassification_name + '"]');
+                    console.log('Option: ' + hasOption);
+                  if (hasOption.length == 0) {
+                      //console.log('No Option')
+                      return $('<option/>', {
+                          value: o.jobclassification_name,
+                          text: o.jobclassification_name
+                      });
+                  }
+                  //else {
+                  //    console.log(' Option exists')
+                  //}
+              }));
+          }//This function must be inside document.ready
+
+          //Function for select manipulation - This is working only inside ready() event!
+          function updateTrusteeSel(val, sel, area, dist_obj) {
+              if (val == "Trustee") {
+                  //console.log('trustee Selected');
+
+                  //Populate the other one
+                  sel.append($.map(dist_obj, function (o) {
+                      return $('<option/>', {
+                          value: o.district_key,
+                          text: o.district_name
+                      });
+                  }));
+                  //$('#district_key').prop('disabled', false);
+                  sel.prop('disabled', false);
+                  sel.prop('required', true);
+                  area.show();
+              }
+              else {
+                  //$("#district_key").empty();
+                  //$('#district_key').prop('disabled', 'disabled');
+                  sel.prop('required', false);
+                  area.hide();
+              }
+          }//This function must be inside document.ready
+          });//End Document.Ready
+      </script> 
+  </div>  
+ </body>
+</html>

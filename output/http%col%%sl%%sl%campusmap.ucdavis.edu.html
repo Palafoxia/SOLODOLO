@@ -1,0 +1,63 @@
+<!doctype html>
+<html> 
+ <head> 
+  <title>UC Davis: Campus Map</title> 
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css"> 
+  <link media="screen" rel="stylesheet" type="text/css" href="css/map.css"> 
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script> 
+  <script type="text/javascript" src="//maps.google.com/maps/api/js?key=AIzaSyAgpv814QkTZSFhAjOFYNoZBvvPOxMFw5g"></script> 
+  <script type="text/javascript" src="js/map.js"></script> 
+ </head> 
+ <body> 
+  <div id="top"> <a href="http://www.ucdmc.ucdavis.edu/welcome/maps_directions/" class="float_left">Sacramento Campus</a> <a href="https://admin-ucdavis.maps.arcgis.com/apps/webappviewer/index.html?id=1803f5d55a66400f8ec47181b8221616" class="float_left">Sustainability Map</a> <a href="http://ceed.ucdavis.edu/#!/" class="float_left">Energy Map</a> <a href="mailto:ucdaviscampusmap@ucdavis.edu" class="float_right">Feedback?</a> <a href="https://ucdavis.box.com/s/tnnuqegnv33g2al55it7vqt7f6ojzvgw" class="float_right">Print-Ready Maps</a> 
+  </div> 
+  <div id="left"> 
+   <div id="left_top"> <a href="http://www.ucdavis.edu/"><img src="images/wordmark.jpg"></a> <a href="/"><img class="logo" src="images/logo.jpg"></a> 
+    <div> 
+     <input id="search_text" type="text" placeholder="Department and Campus Destination Search"><a id="search_button" href="#"><img src="images/search.jpg"></a> 
+    </div> <select id="building_select"> <option value="" disabled selected>Building Index</option> </select> 
+   </div> 
+   <div id="left_bottom"> 
+    <ul id="locations"></ul> 
+    <p>Copyright © The Regents of the University of California, Davis campus. All rights reserved.</p> 
+   </div> 
+  </div> 
+  <div id="map"></div> 
+  <div id="popup"> 
+   <div id="popup_header"> <span id="popup_header_close" class="closer">Click to Close</span> 
+   </div> 
+   <div id="popup_logos"> <a href="#"><img src="images/wordmark.jpg"></a> <a href="#"><img class="logo" src="images/logo.jpg"></a> 
+   </div> 
+   <div id="popup_content"> 
+    <img id="popup_content_picture"> 
+    <div id="popup_content_title"></div> 
+    <hr> 
+    <div id="popup_content_body"></div> 
+    <div id="popup_content_footer"> 
+     <hr> <span class="boldgold">Campus Parking:</span> <a id="parking" href="#">Click here to view</a>
+     <br> <span class="boldgold">Directions:</span> <a id="directions_to" href="#" target="_blank">To this location</a> <a id="directions_from" href="#" target="_blank">From this location</a> 
+     <hr> <span class="boldgold">Share this Location</span> <span id="share_link"><img src="images/link.png"></span> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="share_popup"> <span id="share_popup_close" class="closer">�</span> 
+   <h4>Share this location</h4> 
+   <h5>Copy &amp; paste link to this location</h5> 
+   <input id="link" type="text"> 
+   <h5>Embed this location into your website</h5> 
+   <input id="embed" type="text"> 
+  </div> 
+  <script>
+		(function (i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date(); a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-21966957-1', 'auto');
+		ga('send', 'pageview');
+	</script>  
+ </body>
+</html>

@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"427707476"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-45257297-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <link rel="canonical" href="https://careerdevelopment.princeton.edu/guides">
+  <meta name="description" content="Find information on common topics including resumes and cover letters, networking, interviewing, pre-law, graduate and professional school and more.">
+  <meta property="og:site_name" content="Center for Career Development">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://careerdevelopment.princeton.edu/guides">
+  <meta property="og:title" content="Guides">
+  <meta property="og:description" content="Find information on common topics including resumes and cover letters, networking, interviewing, pre-law, graduate and professional school and more.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:widgets:csp" content="on">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/profiles/ps/themes/ps_tiger/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Guides | Center for Career Development</title>
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1041/files/css/css_z-AsaREVJ0bInchtCV4DVU2R0keYfuup54tXcGbq4YA.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1041/files/css/css_Q4OZthse4FZ4YGpeIRm9z4N-LDGpmXIJ7vdHmAJs9r0.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/xxx7asp.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/bok5fgz.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1041/files/css/css_gM78K4b2rsqMgmbYe5Riw-iemht2C9cr1yRKHujfUiE.css">
+ </head>
+ <body class="not-front section-guides page-node-799 content-type-ps-basic-page flavor1 fontset1 menu1 with-alt-pu-logo full-width-search-box layout-block-padding-medium">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="page page-container"> 
+    <header role="banner" class="header region region-header" id="header">
+     <h1 class="sr-only sr-site-name">Center for Career Development</h1>
+     <div class="skip-links"><a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to content</a><a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to search</a>
+     </div>
+     <div class="header-container container">
+      <div class="princeton-branding">
+       <div class="container"><a href="http://www.princeton.edu" class="alt-pu-logo" title="Princeton University"> <img src="/profiles/ps/themes/ps_base/images/pu-shield.svg" alt="Princeton University" class="pu-shield"> </a>
+       </div>
+      </div>
+      <div class="site-branding">
+       <div class="container">
+        <div class="row"><a href="/" title="Home" rel="home" class="site-logo"> <img src="/sites/g/files/toruqf1041/files/logo_animation_2.gif" alt="Home" typeof="foaf:Image"> </a>
+        </div>
+       </div>
+      </div>
+      <nav aria-label="site" class="main-menu">
+       <h2 class="sr-only">Main Menu</h2>
+       <div class="container navbar-expand-lg"><button class="toggle-mobile-menu unbutton" type="button" data-toggle="collapse" data-target="#menu-container" aria-controls="menu-container" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-mobile-menu-icon"> <span class="toggle-mobile-menu-title">Menu</span> <i class="fa fa-bars" aria-hidden="true"></i> </span> </button>
+        <div id="menu-container" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item expanded"><a href="/how-we-help" data-drupal-link-system-path="node/796">How We Help</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/how-we-help/learning-outcomes" data-drupal-link-system-path="node/805">Learning Outcomes</a></li>
+            <li class="submenu-item expanded"><a href="/people" data-drupal-link-system-path="node/911">Meet the Team</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/people" data-drupal-link-system-path="node/911">Staff</a></li>
+              <li class="submenu-item"><a href="/how-we-help/meet-team/pcas" data-drupal-link-system-path="node/853">PCAs</a></li>
+              <li class="submenu-item"><a href="/how-we-help/meet-team/student-workers" data-drupal-link-system-path="node/854">Student Workers</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/how-we-help/contact-us" data-drupal-link-system-path="node/852">Contact Us</a></li>
+            <li class="submenu-item"><a href="/how-we-help/vision-mission-diversity-statement" data-drupal-link-system-path="node/856">Vision, Mission &amp; Diversity Statement</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/advising-programs" data-drupal-link-system-path="node/797">Advising &amp; Programs</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/advising-programs/make-appointment" data-drupal-link-system-path="node/807">Make an Appointment</a></li>
+            <li class="submenu-item"><a href="/advising-programs/advising/drop-in-hours" data-drupal-link-system-path="node/843">Drop-in Advising</a></li>
+            <li class="submenu-item"><a href="/pca" data-drupal-link-system-path="node/827">Peer Career Advisers</a></li>
+            <li class="submenu-item"><a href="/advising-programs/workshops-events" data-drupal-link-system-path="node/808">Workshops &amp; Events</a></li>
+            <li class="submenu-item expanded"><a href="/advising-programs/summer-programs" data-drupal-link-system-path="node/809">Summer Programs</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/artsatwork" data-drupal-link-system-path="node/864">Arts at Work</a></li>
+              <li class="submenu-item"><a href="/piw" data-drupal-link-system-path="node/1816">Princeton in Washington</a></li>
+             </ul></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/exploring-careers" data-drupal-link-system-path="node/798">Exploring Options</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/exploring-options/career-assessments" data-drupal-link-system-path="node/860">Assessments</a></li>
+            <li class="submenu-item"><a href="/exploring-options/career-compass" data-drupal-link-system-path="node/874">Career Compass</a></li>
+            <li class="submenu-item expanded"><a href="/exploring-options/graduate-law-and-medical-school" data-drupal-link-system-path="node/903">Graduate, Law &amp; Medical School</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/exploring-options/graduate-law-and-medical-school/graduate-school" data-drupal-link-system-path="node/904">Graduate School</a></li>
+              <li class="submenu-item"><a href="/exploring-options/graduate-law-medical-school/law-school" data-drupal-link-system-path="node/905">Law School</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/exploring-options/career-chats" data-drupal-link-system-path="node/900">Career Chats</a></li>
+            <li class="submenu-item expanded"><a href="/exploring-options/princeternship" data-drupal-link-system-path="node/812">Princeternship</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/exploring-options/princeternship/princeternship-faqs" data-drupal-link-system-path="node/844">Princeternship FAQs</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/exploring-options/meet-employers" data-drupal-link-system-path="node/896">Meet Employers</a></li>
+            <li class="submenu-item"><a href="/exploring-options/site-visits-city-treks" data-drupal-link-system-path="node/857">Site Visits &amp; City Treks</a></li>
+            <li class="submenu-item expanded"><a href="/exploring-options/nextsteps" data-drupal-link-system-path="node/810">Next Steps &amp; Stats</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/exploring-options/next-steps/first-destination" data-drupal-link-system-path="node/877">First-Destination Data</a></li>
+             </ul></li>
+           </ul></li>
+          <li class="nav-item active"><a href="/guides" data-drupal-link-system-path="node/799" class="is-active">Guides</a></li>
+          <li class="nav-item expanded"><a href="/internships-jobs" data-drupal-link-system-path="node/800">Internships &amp; Jobs</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/summerfunding" data-drupal-link-system-path="node/890">Summer Funding</a></li>
+            <li class="submenu-item expanded"><a href="/internships-jobs/handshake" data-drupal-link-system-path="node/814">Handshake</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/internships-jobs/handshake/handshake-search-tips" data-drupal-link-system-path="node/863">Handshake Search Tips</a></li>
+             </ul></li>
+            <li class="submenu-item expanded"><a href="/internships-jobs/research-networking-tools" data-drupal-link-system-path="node/845">Career Research, Networking &amp; Posting Resources</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/internships-jobs/career-research-networking-posting-resources/careershift-search-tips" data-drupal-link-system-path="node/878">CareerShift Search Tips</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/internships-jobs/princeton-internships" data-drupal-link-system-path="node/815">Princeton Internships</a></li>
+            <li class="submenu-item"><a href="/internships-jobs/princeton-post-grad-fellowships" data-drupal-link-system-path="node/847">Princeton Post-grad Fellowships</a></li>
+            <li class="submenu-item"><a href="/postings" data-drupal-link-system-path="node/902">Postings of the Week</a></li>
+            <li class="submenu-item"><a href="/internships-jobs/recruiting-timelines" data-drupal-link-system-path="node/876">Recruiting Timelines</a></li>
+            <li class="submenu-item expanded"><a href="/internships-jobs/campus-recruiting" data-drupal-link-system-path="node/816">Campus Recruiting</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item expanded"><a href="/internships-jobs/campus-recruiting/preparing-tips" data-drupal-link-system-path="node/817">Preparing &amp; Tips</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+               <ul class="submenu collapse" role="list">
+                <li class="submenu-item"><a href="/internships-jobs/campus-recruiting/preparing-tips/top-five-tips-prepare-virtual-fall-recruiting" data-drupal-link-system-path="node/870">Top Five Tips to Prepare for Virtual Fall Recruiting</a></li>
+               </ul></li>
+              <li class="submenu-item"><a href="/internships-jobs/campus-recruiting/recruiting-calendar" data-drupal-link-system-path="node/818">Recruiting Calendar</a></li>
+              <li class="submenu-item"><a href="/communitystandards" data-drupal-link-system-path="node/846">Community Standards for Recruiting</a></li>
+              <li class="submenu-item"><a href="/internships-jobs/campus-recruiting/FAQs" data-drupal-link-system-path="node/819">FAQs</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/interviewroom" data-drupal-link-system-path="node/899">Reserve a Virtual Interview Room</a></li>
+            <li class="submenu-item"><a href="/internships-jobs/employer-diversity-rotational-programs" data-drupal-link-system-path="node/867">Employer Rotational Programs</a></li>
+           </ul></li>
+         </ul>
+         <div class="utility-menu">
+          <ul class="nav navbar-nav utility-nav">
+           <li class="nav-item"><a href="/graduate-students" data-drupal-link-system-path="node/824">Graduate Students</a></li>
+           <li class="nav-item"><a href="/alumni" data-drupal-link-system-path="node/801">Alumni</a></li>
+           <li class="nav-item"><a href="/employers" data-drupal-link-system-path="node/802">Employers</a></li>
+           <li class="nav-item"><a href="/facultystaff" data-drupal-link-system-path="node/803">Faculty/Staff</a></li>
+           <li class="nav-item"><a href="/families" data-drupal-link-system-path="node/804">Families</a></li>
+           <li class="nav-item"><a href="/caslogin" class="ps-login-logout-link" data-drupal-link-system-path="caslogin">Log in</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </nav>
+      <div class="search-bar" id="search-bar">
+       <div class="container navbar-expand-lg" role="search">
+        <h2 class="sr-only">Search</h2><button class="toggle-searchbar unbutton" type="button" data-toggle="collapse" data-target="#search-bar-container" aria-controls="search-bar-container" aria-expanded="false" aria-label="Toggle search"> <span class="toggle-search-icon"> <i class="fas fa-search" aria-hidden="true"></i> </span> </button>
+        <div id="search-bar-container" class="collapse navbar-collapse">
+         <div class="search-block-form contextual-region block block-search container-inline" id="block-searchform">
+          <form action="/search" method="get" id="search-block-form" accept-charset="UTF-8">
+           <div id="search-toggled" class="form-group js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label"><label for="edit-search-keys" class="visually-hidden">Search</label>
+            <input placeholder="Search" type="search" id="edit-search-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control">
+           </div>
+           <div data-drupal-selector="edit-search-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-search-actions">
+            <input type="submit" id="edit-search-submit" value="Submit" class="button js-form-submit form-submit btn btn-primary">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="breadcrumb region region-breadcrumb" id="breadcrumb">
+     <div class="container">
+      <nav role="navigation" aria-label="breadcrumb">
+       <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> Guides </li>
+       </ol>
+      </nav>
+     </div>
+    </div>
+    <div class="highlighted" id="highlighted">
+     <div class="container">
+      <div class="region region-highlighted">
+       <div data-drupal-messages-fallback class="hidden"></div>
+      </div>
+     </div>
+    </div>
+    <div id="main" class="main-container">
+     <div class="container">
+      <div class="row">
+       <div class="sidebar-first section order-first col-sm-4 col-md-3 col-lg-2"><a id="main-content" class="sr-only skip-link"></a>
+        <nav aria-label="On this page" class="jump-link-menu-vertical jump-link-menu">
+         <h2 class="jump-link-title"> On this page </h2>
+        </nav>
+       </div>
+       <main class="main main-content col-sm-12 col-lg-10 order-last">
+        <div class="region region-content">
+         <div id="block-ps-tiger-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+          <h1 class="page-title"> Guides </h1>
+         </div>
+         <div id="block-ps-tiger-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+          <article role="article" about="/guides" class="node node--type-ps-basic-page node--view-mode-full">
+           <div class="node__content">
+            <div class="constrained-bkg-constrained-content layout layout--threecol-16-68-16">
+             <div class="layout-inner-container">
+              <div class="layout__region layout__region--first layout__region--sixths layout__region--narrow">
+              </div>
+              <div class="layout__region layout__region--second layout__region--wide layout__region--67">
+              </div>
+              <div class="layout__region layout__region--third layout__region--sixths layout__region--narrow">
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--twocol-75-25">
+             <div class="layout-inner-container">
+              <div class="layout__region layout__region--first layout__region--wide layout__region--75">
+               <div data-block-plugin-id="ps_node_view" class="block block-ps-core block-ps-node-view">
+                <div class="field field--name-field-ps-lede field--type-text-long field--label-hidden field__item">
+                 <p>Find guidance on common topics including resumes and cover letters, networking, interviewing, pre-law, graduate and professional school and more.</p>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <h2><a name="explore" id="explore"></a>Exploration &amp; Planning</h2>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_10" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn" role="button" aria-controls="acc-panel" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> First-Year Guide 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel" role="region" aria-labelledby="acc-btn">
+                      <p><a href="/node/869">This guide</a>&nbsp;features tips, resources and events you should start to explore during your first year as a Princeton student.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--2" role="button" aria-controls="acc-panel--2" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Sophomore Guide 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--2" role="region" aria-labelledby="acc-btn--2">
+                      <p><a href="/node/872">This guide</a>&nbsp;features tips, resources and events you should start to explore during your sophomore year.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--3" role="button" aria-controls="acc-panel--3" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Junior &amp; Senior Guide 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--3" role="region" aria-labelledby="acc-btn--3">
+                      <p>As a junior or senior, your timeline, next steps and search strategies will vary based on your interests and timeline for securing opportunities. <a href="/node/894">This guide</a> covers how to start figuring out your next steps, explore options and address common career development topics.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--4" role="button" aria-controls="acc-panel--4" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Ph.D. Transferable Skills Self-Assessment 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--4" role="region" aria-labelledby="acc-btn--4">
+                      <p>As a Ph.D. student, you develop a diverse array of skills that build upon and expand beyond your research and teaching. <a data-entity-substitution="media_file_redirect" data-entity-type="media" data-entity-uuid="74893d7a-5d23-48ac-98f0-68417827eaa4" href="/document/690">This worksheet will help you assess your current strengths and weaknesses </a> so you can identify areas that you need to work on during your graduate journey.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--5" role="button" aria-controls="acc-panel--5" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Individual Development Plan (IDP) for Graduate Students 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--5" role="region" aria-labelledby="acc-btn--5">
+                      <p>Learn how to <a href="/document/726">create an IDP</a>, which&nbsp;is a dynamic, on-going career management tool to help you:</p>
+                      <ul>
+                       <li>Develop mutually-agreed upon academic and career objectives with your mentor(s) and/or adviser(s)</li>
+                       <li>Stay on track and make progress toward these ever-evolving goals</li>
+                      </ul>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <hr>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <h2><a name="resume" id="resume"></a>Resume&nbsp;&amp; Cover Letter</h2>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_13" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--6" role="button" aria-controls="acc-panel--6" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Resumes (undergraduate students) 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--6" role="region" aria-labelledby="acc-btn--6">
+                      <p>Employers often spend only 15-30 seconds scanning a resume, so it must work hard to quickly communicate your skills and value. Think of it as a marketing tool that shows that your product (you) meets the needs of your potential customer (the employer).</p>
+                      <p>A resume is a succinct outline of your education, experience, activities, accomplishments and skills as they pertain to your career goals.&nbsp;Effective resumes get noticed because they:</p>
+                      <ul>
+                       <li>Emphasize relevant accomplishments and potential contributions</li>
+                       <li>Focus on the skills and requirements of a specific field or position</li>
+                       <li>Are concise, well-organized and easy to read&nbsp;</li>
+                      </ul>
+                      <p>Need help getting starting? Check out our <a href="/document/694">resume guide</a> which includes great advice, worksheets and samples to help you get started or update your existing documents.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--7" role="button" aria-controls="acc-panel--7" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Resumes (graduate students) 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--7" role="region" aria-labelledby="acc-btn--7">
+                      <p>A resume is a succinct outline of your education, experience, activities, accomplishments and skills as they pertain to your career goals.&nbsp;</p>
+                      <p>Learn the <a href="/document/731">differences between a CV and a resume</a>, and how to <a href="/document/689">transform your CV to a resume</a>.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--8" role="button" aria-controls="acc-panel--8" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Cover Letters (undergraduate students) 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--8" role="region" aria-labelledby="acc-btn--8">
+                      <p>Most job or internship applications require a cover letter as well as a resume. A well-written cover letter introduces your resume and directs your reader’s attention to specific areas of your background.&nbsp;</p>
+                      <p>It’s important to personalize your cover letters, and there is more to it than mentioning the organization’s name a few times or quoting the job description. Doing this well means thinking about your target audience and demonstrating the value you can add to your future employer.</p>
+                      <p>Need help getting starting?&nbsp;Check out our&nbsp;<a href="/document/741">cover letter guide</a>&nbsp;for advice, worksheets and samples to help you get started or update your existing documents.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--9" role="button" aria-controls="acc-panel--9" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Cover Letters (graduate students) 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--9" role="region" aria-labelledby="acc-btn--9">
+                      <p>A well-written cover letter can set you apart from other candidates. <a href="/document/699">Learn how to develop a cover letter </a>that complements your resume and communicates your value to potential employers.&nbsp;</p>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="layout__region layout__region--second layout__region--quarters layout__region--narrow">
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--twocol-75-25">
+             <div class="layout-inner-container">
+              <div class="layout__region layout__region--first layout__region--wide layout__region--75">
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <hr>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <h2><a name="intern" id="intern"></a>Internship &amp; Job Search</h2>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_16" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--10" role="button" aria-controls="acc-panel--10" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Planning Your Summer 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--10" role="region" aria-labelledby="acc-btn--10">
+                      <p>If your summer plans are disrupted or unclear for any reason, <a href="/node/859">this guide</a> will help you to explore possible alternatives beyond traditional internships or study abroad programs and create your own summer experiences.&nbsp;</p>
+                      <p>If you're considering an opportunity that requires academic credit, refer to the <a href="https://odoc.princeton.edu/about/spotlights/university-offer-internship-milestone-credit-beginning-summer-2020">Internship Milestone Credit page</a> on the Office of the Dean of the College's website.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--11" role="button" aria-controls="acc-panel--11" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Federal Government Internship and Job Search 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--11" role="region" aria-labelledby="acc-btn--11">
+                      <p>The job and internship search for federal government roles is different than a search in the private and nonprofit sectors. <a href="/node/880">This guide</a> covers resources, preparation and the advice you need for applying to internships and jobs within the government.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--12" role="button" aria-controls="acc-panel--12" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> State and Local Government Internship and Job Search Guide 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--12" role="region" aria-labelledby="acc-btn--12">
+                      <p>The search for state and local government roles is different from a search in the private and nonprofit sectors. <a href="/node/883">This guide</a> includes information about hiring, compensation and benefits, and how to find internship and job opportunities within state and local government.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--13" role="button" aria-controls="acc-panel--13" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Planning Your Full-Time Job Search 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--13" role="region" aria-labelledby="acc-btn--13">
+                      <p>The job search process can be exciting and stressful. <a href="/node/895">This guide</a> will help you plan your search, reduce stress and frame your expectations.</p>
+                      <p>We encourage you to <a href="https://princeton.joinhandshake.com/appointments/new">make an appointment with a career adviser</a> to get support with this regardless of where you are in the process, particularly if you are feeling confused or overwhelmed.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--14" role="button" aria-controls="acc-panel--14" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Job Search Resources for International Students 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--14" role="region" aria-labelledby="acc-btn--14">
+                      <p><a href="/node/865">This guide features</a> information on work authorizations, how to research employers hiring international students and global job search sites.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--15" role="button" aria-controls="acc-panel--15" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Programs for Recent Graduates 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--15" role="region" aria-labelledby="acc-btn--15">
+                      <p>These are fixed-term — typically six months to three years — opportunities that begin soon after graduation. Common opportunities that fall under this category include fellowships, rotational programs and post-graduation internships. Many recent graduates pursue these as part of gap or glide years before law, medical or graduate school, while others use these opportunities to try something new.</p>
+                      <p><a href="/node/889">Learn more about these programs</a>, resources Princeton offers and if they may be a good option for you.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--16" role="button" aria-controls="acc-panel--16" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Funding Resources 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--16" role="region" aria-labelledby="acc-btn--16">
+                      <p>Funding is available from Princeton-affiliated sources for Princeton students who independently secure unpaid internships, propose special projects or plan to conduct independent research.</p>
+                      <h3>SAFE Funding Portal</h3>
+                      <p>The&nbsp;<a href="http://www.princeton.edu/studentfunding/safe-reference-guide/">Student Activities Funding Engine (SAFE)</a> connects students with university funding for a range of activities on- and off-campus, including internships, summer study abroad, senior thesis research projects or other independent projects.</p>
+                      <h3>Additional Princeton Resources</h3>
+                      <ul>
+                       <li><a href="https://acee.princeton.edu/education/student-funding-for-research/">Andlinger Center for Energy and the Environment (ACEE)</a>: For summer research projects related to the ACEE, particularly for field work and lab research</li>
+                       <li><a href="http://alumni.princeton.edu/communities/futurealumni/">Alumni Association Funding Guide for Princeton Undergraduates</a>: For public service initiatives and academic work</li>
+                       <li><a href="https://citp.princeton.edu/teaching/tomlinson-internships/">Center for Information Technology Policy</a>: &nbsp;For scholarship internships for both grads and undergrads</li>
+                       <li><a href="https://foundation.princeton78.com/">Class of 1978 Foundation Grant</a>:&nbsp;Financial for undergraduates who wish to benefit communities or constituencies in need by participating in direct, hands-on community service activities.</li>
+                       <li><a href="http://www.princeton1991.com/Foundation.cfm">Class of 1991 Fund</a>: For independent work and community service summer internships</li>
+                       <li><a href="http://humanities.princeton.edu/">Council of the Humanities</a>: For internships in writing, journalism and publishing</li>
+                       <li><a href="https://environment.princeton.edu/education/funding-opportunities/">High Meadows Environmental Institute Funding</a></li>
+                       <li><a href="http://www.princeton.edu/~iip/">International Internship Program</a>: For international internships in private or public sector</li>
+                       <li><a href="https://arts.princeton.edu/about/opportunities/student-funding-awards/">Lewis Center for the Arts Awards</a>: For summer projects in the creative and performing arts</li>
+                       <li><a href="http://pace.princeton.edu/">Pace Center for Civic Engagement</a>: For public service internships affiliated with a Pace Center program or project</li>
+                       <li><a href="https://gradschool.princeton.edu/costs-funding/sources-funding/external-funding">PIVOT</a>: An online tool from the Graduate School matching research interests to potential external funding sources for research support, fellowships, equipment, travel funds and other related research and educational endeavors from federal, state, and private sponsors</li>
+                       <li><a href="https://princeton.inforeadyscale.com/hub">Princeton Research Funding Gateway</a>:&nbsp;The Office of the Dean for Research hosts the Gateway, a database of funding opportunities, to help faculty, postdocs, graduate students and staff discover possible support for research</li>
+                       <li><a href="http://www.princeton.edu/~lapa/">Program in Law and Public Affairs</a>: For internships in public interest law</li>
+                       <li><a href="https://hellenic.princeton.edu/opportunities/opportunities-visiting-fellows">Program in Hellenic Studies Seeger Fellowship</a>: For study programs in Greece, archaeological work, independent research, creative projects in the arts and internships</li>
+                       <li><a href="http://www.princeton.edu/oip/streicker/">Streicker International Fellows Fund</a>: For undergraduate students interested in carrying out substantive research or educational projects while immersed in a foreign culture</li>
+                       <li><a href="https://chw.princeton.edu/internships-funding/undergraduate-research-funding/health-scholars-program">U.S. Health Policy Scholars Program</a>: For juniors pursuing global health-related internships and independent research</li>
+                      </ul>
+                      <h3>Fellowships for Independent Projects</h3>
+                      <p>The following is a sample of awards that require applicants to propose an independent project.</p>
+                      <p><a href="http://www.princeton.edu/oip/fellowships/major-awards/dale/">Martin A. Dale ’53 Fellowship</a>: Awarded for an independent project of extraordinary merit that will widen the recipient’s experience of the world and significantly enhance his or her personal growth and intellectual development.</p>
+                      <p><a href="https://www.princeton.edu/oip/fellowships/major-awards/reachout/">Princeton ReachOut ’56 Fellowship</a>: Open to Princeton seniors who commit to spend their first post-graduation year performing a public interest project. It emphasizes innovative and entrepreneurial projects.</p>
+                      <p><a href="http://www.princeton.edu/oip/fellowships/major-awards/sachs/">Daniel M. Sachs ’60 Graduating Scholarship</a>: The Scholarship’s core concern is to encourage the development of individuals whose life’s work is likely to benefit the public interest. The Sachs Scholarship at Worcester College, University of Oxford allows the Sachs Scholar to read for any appropriate degree from the University of Oxford. The Sachs Global Scholarship enables study at any foreign institution or the pursuit of an independent program of the Scholar’s own devising.</p>
+                      <h3>Funding for International Projects</h3>
+                      <p>The Office of International Programs maintains information on the range of <a href="http://www.princeton.edu/oip/fellowships/major-awards/">fellowships and awards.</a></p>
+                      <h3>Academic Departments</h3>
+                      <p>Some academic departments have funding available for students who do work related to their concentration or to that field of study. Please check with each department for current information.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--17" role="button" aria-controls="acc-panel--17" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Make the Most of Your Internship 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--17" role="region" aria-labelledby="acc-btn--17">
+                      <p>Internships provide a valuable experience to develop skills and clarity about your career interests. These resources will help you get the most out of your experience.&nbsp;</p>
+                      <ul>
+                       <li>Learn how to <a href="/document/746">excel in a virtual internship</a></li>
+                       <li><a href="/document/751">Set your goals</a> before the internship begins</li>
+                       <li><a href="/document/688">Evaluate progress</a> towards your goals mid-summer</li>
+                       <li><a href="/document/692">Evaluate progress</a> at the end of your summer</li>
+                      </ul>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <hr>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <h2><a name="network" id="network"></a>Networking</h2>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_19" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--18" role="button" aria-controls="acc-panel--18" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Five-Step Guide to Networking 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--18" role="region" aria-labelledby="acc-btn--18">
+                      <p>Your Princeton experience offers frequent opportunities&nbsp;to naturally engage in networking&nbsp;— sometimes without even realizing it — including:&nbsp;</p>
+                      <ul>
+                       <li>Professors’ office hours</li>
+                       <li>Event speakers and panelists</li>
+                       <li><a href="/exploring-options/career-fairs">Career fairs</a>, employer events and professional conferences</li>
+                       <li>Summer internships or volunteer opportunities with your manager and coworkers</li>
+                       <li>Connections made through on-campus jobs</li>
+                       <li>Student organizations and volunteer opportunities&nbsp;</li>
+                       <li>Reunions</li>
+                       <li>Princeton alumni clubs&nbsp;near your hometown, post-graduation location or the summer location</li>
+                       <li><a href="/exploring-options/site-visits-city-treks">City Treks</a> and <a href="/exploring-options/princeternship">Princeternships</a> through the Center for Career Development</li>
+                      </ul>
+                      <p><a href="/node/882">This guide</a> will help you through every step of networking from how to get started to maintaining your relationships.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--19" role="button" aria-controls="acc-panel--19" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Informational Interviews 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--19" role="region" aria-labelledby="acc-btn--19">
+                      <p><a href="/node/885">Learn about the benefits of information interviews </a>and discover resources that will help you plan and conduct them with alumni and other professionals.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--20" role="button" aria-controls="acc-panel--20" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Tools to Connect with Alumni 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--20" role="region" aria-labelledby="acc-btn--20">
+                      <p>Whether you are making decisions about academics, life at Princeton&nbsp;or potential careers, alumni are often eager to offer advice and referrals. <a href="/node/886">Learn about resources to help you identify and connect with alumni.</a>&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--21" role="button" aria-controls="acc-panel--21" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Elevator Pitch 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--21" role="region" aria-labelledby="acc-btn--21">
+                      <p>An elevator pitch is your short (30-60 second) professional introduction. A prepared elevator pitch will help you start a conversation with potential employers, faculty members, alumni and others. <a href="/node/887">Learn how to create your pitch in five steps</a>.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--22" role="button" aria-controls="acc-panel--22" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> LinkedIn Tips and Resources 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--22" role="region" aria-labelledby="acc-btn--22">
+                      <p>LinkedIn is a&nbsp;tool for networking and job and internship searches. From searching and connecting with alumni to learning a new skill, think of LinkedIn as your lifelong career management tool. <a href="/node/888">Learn about resources</a> that will help you create an effective student profile and start to connect with others</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--23" role="button" aria-controls="acc-panel--23" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Prepare for an In-Person Career Fair 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--23" role="region" aria-labelledby="acc-btn--23">
+                      <h3>Before the event</h3>
+                      <h4>Learn about the attendees</h4>
+                      <p>HireTiger Career Fairs&nbsp;present a great deal of opportunity in a short amount of time, and it's important to arrive with a plan. Making connections with alumni and employers before you start looking for internships and jobs can help you get your foot in the door. It is also a great way to explore the types of industries and professions that match your skills and interests.</p>
+                      <p>For fairs, you can view the list of employer organizations in the Fair listing in <a href="https://princeton.joinhandshake.com/career_fairs">Handshake</a>. In addition to a description of the organization, you can also find what types of positions they are hiring for and other details.</p>
+                      <h4>Come prepared</h4>
+                      <p>Make a list of questions for employers and alumni you plan to approach. Most questions will depend on your own motivations and research, but a few general questions that are helpful include:</p>
+                      <ul>
+                       <li>"Can you tell me more about the projects interns/new employees have worked on in the past?"</li>
+                       <li>"What do you love about your work?"</li>
+                       <li>If the person is an alum(na), ask how their Princeton experience was helpful in their career and about the work they do.</li>
+                      </ul>
+                      <h4>Develop your introduction</h4>
+                      <p>This is a perfect time to use your elevator pitch. State your name, your year in school, concentration or area of interest and a few of your industry-related skills.</p>
+                      <p>Need some pointers on your elevator pitch? <a href="/node/887">Put one together in five steps</a>.&nbsp;</p>
+                      <h3>During the event</h3>
+                      <h4>Be considerate</h4>
+                      <p>Don't stand out in anyone's memory for the wrong reasons. Make eye contact during conversations, don't interrupt and thank everyone for their time. If there are other students around, don't hesitate to invite them into the conversation. Also, be aware of the time. There may be a line of students behind you who are also trying to speak with the same person.</p>
+                      <h4>Close the conversation</h4>
+                      <p>Thank the person for their time and gather contact information so you can follow up.</p>
+                      <p>Ideally, mention something you learned from them to establish a connection.</p>
+                      <h3>After the event</h3>
+                      <h4>Follow up</h4>
+                      <p>There are many ways to follow up on the leads you will acquire at a career fair. If you receive a business card, send an email or call to establish contact. When you follow up, thank the contact for their time and reference something you learned during your conversation or the next steps you plan to make as a result of the interaction.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--24" role="button" aria-controls="acc-panel--24" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Prepare for a Virtual Career Fair 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--24" role="region" aria-labelledby="acc-btn--24">
+                      <p>The HireTigers Virtual Career Fair is the online version of the career fair typically hosted on campus. <a href="/node/873">Learn more about the differences and tips to make the most out of a virtual event</a>.&nbsp;</p>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <hr>
+                 <h2><a name="interview" id="interview"></a>Interviews</h2>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_21" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--25" role="button" aria-controls="acc-panel--25" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Interview Guide 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--25" role="region" aria-labelledby="acc-btn--25">
+                      <p>Whether this is your very first formal interview or you just want to brush up on your interviewing skills, <a href="/document/756">this guide</a> covers preparation tips and more nuanced advice for specific types of interviews.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--26" role="button" aria-controls="acc-panel--26" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Case Interview Preparation 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--26" role="region" aria-labelledby="acc-btn--26">
+                      <p>If you're interested in opportunities in the consulting field you will need to prepare for case interviews. <a href="/node/884">This guide</a> covers the basics of case interviews and provides resources to help you get ready.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--27" role="button" aria-controls="acc-panel--27" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Quant Interview Preparation 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--27" role="region" aria-labelledby="acc-btn--27">
+                      <p>A quantitative (quant) interview is designed to help the interviewer understand how you think, and may include specific industry references including financial terms, economic theories or established mathematical models.&nbsp;<a href="/node/891">This guide</a> covers the basics of quant interviews and provides resources to help you get ready.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--28" role="button" aria-controls="acc-panel--28" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Technical Interview Preparation 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--28" role="region" aria-labelledby="acc-btn--28">
+                      <p>A technical interview is designed to help an organization evaluate a candidate’s knowledge of coding algorithms, data structures and common software development terms (e.g., binary trees, strings, arrays, queues, graphs, linked lists).&nbsp;<a href="/node/893">This guide</a> provides an overview of tech interviews and&nbsp;provides resources to help you get ready.&nbsp;</p>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <hr>
+                 <h2><a name="grad" id="grad"></a>Graduate &amp; Law School</h2>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_23" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--29" role="button" aria-controls="acc-panel--29" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Applying to Graduate School 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--29" role="region" aria-labelledby="acc-btn--29">
+                      <p>Considering graduate or professional school? <a href="/document/761">This guide</a> will help you think through your motivations and prepare you for the application process.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--30" role="button" aria-controls="acc-panel--30" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Pre-Law Guide 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--30" role="region" aria-labelledby="acc-btn--30">
+                      <p><a href="/document/766">This guide</a> covers reflection, preparation tips and advice for the law school application process. It is not intended to serve as a substitute for working with a career adviser to get individualized advice and discuss the more nuanced decisions you will make throughout your pre-law journey. To do this, <a href="https://princeton.joinhandshake.com/appointments/new">make an appointment in Handshake</a>.</p>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="layout__region layout__region--second layout__region--quarters layout__region--narrow">
+              </div>
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </main>
+      </div>
+      <nav class="back-to-top sr-only sr-only-focusable" aria-label="Back to top">
+       <button>
+        <div class="full-name sr-only">
+         Back to 
+        </div>
+        <div class="short-name">
+         Top
+        </div></button>
+      </nav>
+     </div>
+    </div>
+    <footer role="contentinfo" class="footer region region-footer" id="footer">
+     <h2 class="sr-only">Footer</h2>
+     <div class="container">
+      <div class="constrained-bkg-constrained-content layout layout--threecol-33-34-33">
+       <div class="layout-inner-container">
+        <div class="layout__region layout__region--first layout__region--thirds layout__region--narrow">
+         <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+          <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+           <p>Center for Career Development<br> 36 University Place, Suite 200<br> Princeton, NJ 08544<br> General: <a href="mailto:careerdevelopment@princeton.edu">careerdevelopment@princeton.edu</a><br> Recruiting: <a href="mailto:recruit@princeton.edu">recruit@princeton.edu</a><br> (609) 258-3325</p>
+           <p><a href="https://www.princeton.edu/privacy-notice">Privacy Notice</a><br><a href="/node/842">Disclaimer</a></p>
+          </div>
+         </div>
+        </div>
+        <div class="layout__region layout__region--second layout__region--thirds layout__region--narrow">
+         <nav role="navigation" aria-labelledby="-menu" data-block-plugin-id="menu_block:footer" class="block block-menu navigation menu--footer">
+          <h2 class="visually-hidden" id="-menu">Footer menu</h2>
+          <ul class="nav">
+           <li class="nav-item"><a href="https://princeton.joinhandshake.com/appointments/new?utm_source=Our%20website&amp;utm_medium=web&amp;utm_campaign=website">Make an appointment</a></li>
+           <li class="nav-item"><a href="http://princeton.joinhandshake.com?utm_source=Website&amp;utm_medium=Our%20website&amp;utm_campaign=Ourwebsite">Handshake</a></li>
+          </ul>
+         </nav>
+        </div>
+        <div class="layout__region layout__region--third layout__region--thirds layout__region--narrow">
+         <div data-block-plugin-id="inline_block:ps_social_links" class="block-ps-social-links block block-layout-builder block-inline-blockps-social-links">
+          <ul class="ps-social-links--platforms platforms vertical">
+           <li><a href="http://www.facebook.com/princetoncareer" title="Facebook"> <span class="fab fa-facebook fa-2x" aria-hidden="true"></span> <span class="social-link-label">Facebook</span> </a></li>
+           <li><a href="http://twitter.com/princetoncareer" title="Twitter"> <span class="fab fa-twitter fa-2x" aria-hidden="true"></span> <span class="social-link-label">Twitter</span> </a></li>
+           <li><a href="http://www.youtube.com/profile?user=princetoncampuslife" title="YouTube"> <span class="fab fa-youtube fa-2x" aria-hidden="true"></span> <span class="social-link-label">YouTube</span> </a></li>
+           <li><a href="https://www.instagram.com/princetoncareer/" title="Instagram"> <span class="fab fa-instagram fa-2x" aria-hidden="true"></span> <span class="social-link-label">Instagram</span> </a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="subfooter">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-4">
+         <div class="subfooter-links">
+          <ul class="list-unstyled">
+           <li><a href="https://accessibility.princeton.edu/resources/accessibility-help" target="_blank">Accessibility</a></li>
+          </ul>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <p class="copyright-text"> © 2022 The Trustees of Princeton University </p>
+        </div>
+        <div class="col-md-4 text-sm-left text-md-right copyright"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"><img src="/profiles/ps/themes/ps_base/images/pu-logo-stacked.svg" alt="Princeton University"> </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div> 
+  </div><span id="ps-current-username" data-username=""></span>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/799","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ckeditorheight":{"offset":1,"line_height":1.5,"unit":"em","disable_autogrow":false},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"all_documents_new_window":false,"select2_simple":{"selector":".node-form select:not(.disable-select2,[name$=\u0027[actions][bundle]\u0027],.ui-timepicker-select,[name*=\u0027field_ps_timeline_feature_items\u0027]),.select2-form select,#drupal-off-canvas select[multiple]"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":true,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":[]}},"ps_accordion":{"#ps_accordionfield_ps_accordion_block_content_23":[],"#ps_accordionfield_ps_accordion_block_content_21":[],"#ps_accordionfield_ps_accordion_block_content_19":[],"#ps_accordionfield_ps_accordion_block_content_16":[],"#ps_accordionfield_ps_accordion_block_content_13":[],"#ps_accordionfield_ps_accordion_block_content_10":[]},"ajax":[],"user":{"uid":0,"permissionsHash":"21eaabc759fba88b5ad6235b54ded5aaa4cb601853cfdebe272fb6fb8fba4576"}}</script>
+  <script src="/sites/g/files/toruqf1041/files/js/js_6immIaRNsvbA4hnv0NZXwP5PoB8M3SPTHXLC3RpMjPY.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"427707476","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":967,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

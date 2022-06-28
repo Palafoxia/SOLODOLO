@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta name="application-name" content="NetID Login Service">
+  <meta name="author" content="University of Wisconsin - Madison">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This page is protected by University of Wisconsin-Madison Login">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <title>University of Wisconsin-Madison Login</title><!-- UW UI Toolkit CSS -->
+  <link href="/static/css/netid-login-v2015.001.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --><!--[if lt IE 9]>
+			<script src="/static/js/html5shiv-v3.7.0.js"></script>
+			<script src="/static/js/respond-v1.4.2.min.js"></script>
+		<![endif]-->
+ </head>
+ <body>
+  <div class="nav" role="navigation">
+   <nav class="navbar navbar-inverse" role="navigation"><!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header"><span class="navbar-brand"> <span class="hidden-xs">University of Wisconsin-Madison Login</span> <span class="visible-xs">UW-Madison Login</span> </span>
+    </div><!-- /.navbar-collapse -->
+   </nav>
+  </div>
+  <div class="container">
+   <script>
+<!--
+"use strict";
+function readLocalStorage(key) {
+    var success;
+    try {
+        var value = localStorage.getItem(key);
+        if (value != null) {
+            document.form1["shib_idp_ls_value." + key].value = value;
+        }
+        success = "true";
+    } catch (e) {
+        success = "false";
+        document.form1["shib_idp_ls_exception." + key].value = e;
+    }
+    document.form1["shib_idp_ls_success." + key].value = success;
+}
+
+function isLocalStorageSupported() {
+    try {
+        localStorage.setItem("shib_idp_ls_test", "shib_idp_ls_test");
+        localStorage.removeItem("shib_idp_ls_test");
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+// -->
+</script>
+   <div class="row">
+    <div class="col-md-12">
+     <p> Loading login session information... </p>
+     <noscript>
+      <p> Since your browser does not support JavaScript, you must press the Continue button once to proceed. </p>
+     </noscript>
+     <form name="form1" action="/idp/profile/SAML2/Redirect/SSO?execution=e1s1" method="post">
+      <input name="shib_idp_ls_exception.shib_idp_session_ss" type="hidden">
+      <input name="shib_idp_ls_success.shib_idp_session_ss" type="hidden" value="false">
+      <input name="shib_idp_ls_value.shib_idp_session_ss" type="hidden">
+      <input name="shib_idp_ls_exception.shib_idp_persistent_ss" type="hidden">
+      <input name="shib_idp_ls_success.shib_idp_persistent_ss" type="hidden" value="false">
+      <input name="shib_idp_ls_value.shib_idp_persistent_ss" type="hidden">
+      <input name="shib_idp_ls_supported" type="hidden">
+      <input name="_eventId_proceed" type="hidden">
+      <noscript>
+       <input type="submit" value="Continue">
+      </noscript>
+     </form>
+     <script>
+<!--
+function doLoad() {
+    var localStorageSupported = isLocalStorageSupported();
+    document.form1["shib_idp_ls_supported"].value = localStorageSupported;
+    if (localStorageSupported) {
+        readLocalStorage("shib_idp_session_ss");
+        readLocalStorage("shib_idp_persistent_ss");
+    }
+    document.form1.submit();
+}
+// -->
+</script> 
+    </div>
+   </div>
+   <script>
+<!--
+    window.onload = function(){
+        doLoad();
+    };
+// -->
+</script>
+  </div>
+  <footer>
+   <div class="text-center">
+    © Board of Regents of the University of Wisconsin System
+   </div>
+  </footer>
+  <script src="/static/js/netid-login-v2015.001.min.js"></script>
+ </body>
+</html>

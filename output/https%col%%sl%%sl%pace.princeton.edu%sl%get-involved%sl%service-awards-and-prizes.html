@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"427707476"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-76289358-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});
+ga('puwdsTracker.set', 'anonymizeIp', true);ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <link rel="canonical" href="https://pace.princeton.edu/get-involved/service-awards-and-prizes">
+  <meta name="thumbnail" content="https://pace.princeton.edu/sites/g/files/toruqf686/files/styles/freeform_750w/public/2021-08/IMG_1637.JPG?itok=A_1K3768">
+  <meta property="og:site_name" content="Pace Center for Civic Engagement">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pace.princeton.edu/get-involved/service-awards-and-prizes">
+  <meta property="og:title" content="Service Awards and Prizes">
+  <meta property="og:image" content="https://pace.princeton.edu/sites/g/files/toruqf686/files/styles/freeform_750w/public/2021-08/IMG_1637.JPG?itok=A_1K3768">
+  <meta property="og:image:alt" content="People posing with a framed award">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:widgets:csp" content="on">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/sites/g/files/toruqf686/themes/site/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Service Awards and Prizes | Pace Center for Civic Engagement</title>
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf686/files/css/css_laFpAQ0KN2Pk8l2gK8GYM5RceNkVXzrLKTlCPdQNtcs.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf686/files/css/css_1prhxtvxq6YtbaaqGTWaME8KYz_-Q8ljDzSry7LZZCQ.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/xxx7asp.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/bok5fgz.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf686/files/css/css_coo46XtfPHxCbLX6oESiX-vuoFEvhUGG62QeOAKHqUI.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf686/files/css/css_EqaP3TUyHqR-ud-VaHiJ7Qf6gZR7bykr10gPAFkfbuc.css">
+ </head>
+ <body class="not-front section-get-involved page-node-51 content-type-ps-basic-page flavor2 fontset1 menu1 with-alt-pu-logo full-width-search-box layout-block-padding-medium">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="page page-container"> 
+    <header role="banner" class="header region region-header" id="header">
+     <h1 class="sr-only sr-site-name">Pace Center for Civic Engagement</h1>
+     <div class="skip-links"><a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to content</a><a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to search</a>
+     </div>
+     <div class="header-container container">
+      <div class="princeton-branding">
+       <div class="container"><a href="http://www.princeton.edu" class="alt-pu-logo" title="Princeton University"> <img src="/profiles/ps/themes/ps_base/images/pu-shield.svg" alt="Princeton University" class="pu-shield"> </a>
+       </div>
+      </div>
+      <div class="site-branding">
+       <div class="container">
+        <div class="row"><a href="/" title="Home" rel="home" class="site-logo"> <img src="/sites/g/files/toruqf686/themes/site/logo.svg" alt="Home" typeof="foaf:Image"> </a>
+        </div>
+       </div>
+      </div>
+      <nav aria-label="site" class="main-menu">
+       <h2 class="sr-only">Main Menu</h2>
+       <div class="container navbar-expand-lg"><button class="toggle-mobile-menu unbutton" type="button" data-toggle="collapse" data-target="#menu-container" aria-controls="menu-container" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-mobile-menu-icon"> <span class="toggle-mobile-menu-title">Menu</span> <i class="fa fa-bars" aria-hidden="true"></i> </span> </button>
+        <div id="menu-container" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item expanded"><a href="/about" data-drupal-link-system-path="node/11">About</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/about/strategic-plan" data-drupal-link-system-path="node/16">Strategic Plan</a></li>
+            <li class="submenu-item"><a href="/about/history" data-drupal-link-system-path="node/116">History</a></li>
+           </ul></li>
+          <li class="nav-item expanded active"><a href="/get-involved" data-drupal-link-system-path="node/36">Get Involved</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item expanded"><a href="/get-involved/pace-center-programs" data-drupal-link-system-path="node/41">Pace Center Programs</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/breakout-princeton" data-drupal-link-system-path="node/171">Breakout Princeton</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/civic-leadership-council" data-drupal-link-system-path="node/931">Civic Leadership Council</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/community-action" data-drupal-link-system-path="node/951">Community Action</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/community-house" data-drupal-link-system-path="node/956">Community House</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/high-meadows-fellowship-program" data-drupal-link-system-path="node/961">High Meadows Fellowship Program</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/john-c-bogle-51-fellows-civic-service" data-drupal-link-system-path="node/966">John C. Bogle '51 Fellows in Civic Service</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/princeton-advocacy-activism-student-organizations" data-drupal-link-system-path="node/971">Princeton Advocacy &amp; Activism Student Organizations</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/princeton-internships-civic-service" data-drupal-link-system-path="node/976">Princeton Internships in Civic Service</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/princeton-rise" data-drupal-link-system-path="node/986">Princeton RISE</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/projects-peace" data-drupal-link-system-path="node/991">Projects for Peace</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/service-focus" data-drupal-link-system-path="node/996">Service Focus</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/student-volunteers-council" data-drupal-link-system-path="node/1001">Student Volunteers Council</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/trenton-arts-princeton" data-drupal-link-system-path="node/1006">Trenton Arts at Princeton</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/get-involved/voting-and-active-citizenship" data-drupal-link-system-path="node/46">Voting and Active Citizenship</a></li>
+            <li class="submenu-item active"><a href="/get-involved/service-awards-and-prizes" data-drupal-link-system-path="node/51" class="is-active">Service Awards and Prizes</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/connect" data-drupal-link-system-path="node/66">Connect</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/connect/staff" data-drupal-link-system-path="node/71">Staff</a></li>
+            <li class="submenu-item"><a href="/connect/student-boards" data-drupal-link-system-path="node/76">Student Boards</a></li>
+            <li class="submenu-item"><a href="/connect/community-partners-residence" data-drupal-link-system-path="node/81">Community Partners in Residence</a></li>
+            <li class="submenu-item expanded"><a href="/connect/partner-pace" data-drupal-link-system-path="node/86">Partner with Pace</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/connect/partner-pace/partnership-principles" data-drupal-link-system-path="node/96">Partnership Principles</a></li>
+              <li class="submenu-item"><a href="/connect/partner-pace/recruiting-student-volunteers" data-drupal-link-system-path="node/101">Recruiting Student Volunteers</a></li>
+              <li class="submenu-item"><a href="/connect/partner-pace/co-sponsorship" data-drupal-link-system-path="node/106">Co-Sponsorship</a></li>
+              <li class="submenu-item"><a href="/connect/partner-pace/community-partners" data-drupal-link-system-path="node/111">Community Partners</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/connect/meet-trenton" data-drupal-link-system-path="node/91">Meet Trenton</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/learn" data-drupal-link-system-path="node/121">Learn</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/learn/learning-outcomes" data-drupal-link-system-path="node/136">Learning Outcomes</a></li>
+            <li class="submenu-item"><a href="/connect/partner-pace/partnership-principles" data-drupal-link-system-path="node/96">Partnership Principles</a></li>
+            <li class="submenu-item"><a href="/learn/trainings-workshops" data-drupal-link-system-path="node/156">Trainings &amp; Workshops</a></li>
+            <li class="submenu-item"><a href="/learn/courses" data-drupal-link-system-path="node/151">Courses</a></li>
+            <li class="submenu-item"><a href="/learn/field-guide-service" data-drupal-link-system-path="node/131">Field Guide to Service</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/events" data-drupal-link-system-path="node/936">Events</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/events/monthly-calendar" data-drupal-link-system-path="node/1056">Monthly Calendar</a></li>
+            <li class="submenu-item expanded"><a href="/events/month-service" data-drupal-link-system-path="node/1061">Month of Service</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/events/month-service/about-just-food" data-drupal-link-system-path="node/1996">About Just Food</a></li>
+              <li class="submenu-item"><a href="/events/month-service/community-guide" data-drupal-link-system-path="node/1991">Community Guide</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/events/summer-service-orientation" data-drupal-link-system-path="node/1066">Summer Service Orientation</a></li>
+            <li class="submenu-item"><a href="/events/involvement-fest" data-drupal-link-system-path="node/1071">Involvement Fest</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/news-media" data-drupal-link-system-path="node/941">News &amp; Media</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/news-media/news" data-drupal-link-system-path="node/1081">News</a></li>
+            <li class="submenu-item"><a href="/news-media/media" data-drupal-link-system-path="node/1086">Media</a></li>
+           </ul></li>
+         </ul>
+         <div class="utility-menu">
+          <ul class="nav navbar-nav utility-nav">
+           <li class="nav-item"><a href="/caslogin" class="ps-login-logout-link" data-drupal-link-system-path="caslogin">Log in</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </nav>
+      <div class="search-bar" id="search-bar">
+       <div class="container navbar-expand-lg" role="search">
+        <h2 class="sr-only">Search</h2><button class="toggle-searchbar unbutton" type="button" data-toggle="collapse" data-target="#search-bar-container" aria-controls="search-bar-container" aria-expanded="false" aria-label="Toggle search"> <span class="toggle-search-icon"> <i class="fas fa-search" aria-hidden="true"></i> </span> </button>
+        <div id="search-bar-container" class="collapse navbar-collapse">
+         <div class="search-block-form contextual-region block block-search container-inline" id="block-searchform">
+          <form action="/search" method="get" id="search-block-form" accept-charset="UTF-8">
+           <div id="search-toggled" class="form-group js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label"><label for="edit-search-keys" class="visually-hidden">Search</label>
+            <input placeholder="Search" type="search" id="edit-search-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control">
+           </div>
+           <div data-drupal-selector="edit-search-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-search-actions">
+            <input type="submit" id="edit-search-submit" value="Submit" class="button js-form-submit form-submit btn btn-primary">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="breadcrumb region region-breadcrumb" id="breadcrumb">
+     <div class="container">
+      <nav role="navigation" aria-label="breadcrumb">
+       <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/get-involved">Get Involved</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> Service Awards and Prizes </li>
+       </ol>
+      </nav>
+     </div>
+    </div>
+    <div class="highlighted" id="highlighted">
+     <div class="container">
+      <div class="region region-highlighted">
+       <div data-drupal-messages-fallback class="hidden"></div>
+       <div id="block-pace-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+        <h1 class="page-title"> Service Awards and Prizes </h1>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="main" class="main-container">
+     <div class="container">
+      <div class="row">
+       <div class="sidebar-first section order-first col-sm-4 col-md-3 col-lg-2">
+        <nav class="main-sidebar-menu" aria-label="section">
+         <h2 class="sr-only">Section Menu</h2>
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item collapsed"><a href="/get-involved/pace-center-programs" data-drupal-link-system-path="node/41">Pace Center Programs</a></li>
+          <li class="nav-item"><a href="/get-involved/voting-and-active-citizenship" data-drupal-link-system-path="node/46">Voting and Active Citizenship</a></li>
+          <li class="nav-item active"><a href="/get-involved/service-awards-and-prizes" data-drupal-link-system-path="node/51" class="is-active">Service Awards and Prizes</a></li>
+         </ul>
+        </nav>
+       </div>
+       <main class="main main-content col-sm-12 col-lg-10 order-last"><a id="main-content" class="sr-only skip-link"></a>
+        <div class="region region-content">
+         <div id="block-pace-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+          <article role="article" about="/get-involved/service-awards-and-prizes" class="node node--type-ps-basic-page node--view-mode-full">
+           <div class="node__content">
+            <div class="constrained-bkg-constrained-content layout layout--twocol-75-25">
+             <div class="layout-inner-container">
+              <div class="layout__region layout__region--first layout__region--wide layout__region--75">
+               <div data-block-plugin-id="ps_node_view" class="block block-ps-core block-ps-node-view">
+                <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item">
+                 <figure class="media--type-image media--view-mode-ps-content-width-16x9 figure">
+                  <img srcset="/sites/g/files/toruqf686/files/styles/16x9_750w_422h/public/2021-08/IMG_1637.JPG?itok=SGM-9uVq 750w, /sites/g/files/toruqf686/files/styles/16x9_1440w_810h/public/2021-08/IMG_1637.JPG?itok=C9ZOI_eS 1440w, /sites/g/files/toruqf686/files/styles/16x9_2880w_1620h/public/2021-08/IMG_1637.JPG?itok=jCyCzLkE 2880w" sizes="(min-width: 1440px) 1440px, 100vw" src="/sites/g/files/toruqf686/files/styles/16x9_1440w_810h/public/2021-08/IMG_1637.JPG?itok=C9ZOI_eS" alt="People posing with a framed award" typeof="foaf:Image">
+                 </figure>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <blockquote>
+                  <p>“Princeton University has a longstanding commitment to service, reflected in Princeton’s informal motto — Princeton in the nation’s service and the service of humanity — and exemplified by the extraordinary contributions that Princetonians make to society.”&nbsp;</p>
+                  <p><strong>Christopher L. Eisgruber, President of Princeton University, Class of 1983</strong></p>
+                 </blockquote>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <h2 class="block-heading">Pace Center Service Awards &amp; Prizes</h2>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <h3 class="block-heading">A. James Fisher, Jr. Memorial Award</h3>
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p>Given in honor of A. James Fisher, Jr. '36, the A. James Fisher, Jr. Memorial Award is presented to a Princeton senior who best exemplifies the qualities for which Mr. Fisher is remembered. The Fisher Award recipient should clearly demonstrate an entrepreneurial spirit, zest for life, love of people, and loyalty to Princeton through their work in the realm of civic engagement. Awarded by the Pace Center for Civic Engagement.</p>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_181" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn" role="button" aria-controls="acc-panel" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> 2021-2022 Awardees 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel" role="region" aria-labelledby="acc-btn">
+                      <ul>
+                       <li><p><a href="/news/2021/responding-needs-world" target="_blank">Ritvik Agnihotri</a></p></li>
+                       <li><p><a href="/news/2021/responding-needs-world" target="_blank">Hannah Bein</a></p></li>
+                       <li><p><a href="/news/2021/responding-needs-world" target="_blank">Samuel Frank</a></p></li>
+                       <li><a href="/news/2021/responding-needs-world" target="_blank">Naomi Hess</a></li>
+                      </ul>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--2" role="button" aria-controls="acc-panel--2" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Past Recipients 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--2" role="region" aria-labelledby="acc-btn--2">
+                      <ul>
+                       <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="d3654437-4ba7-4f34-b7dd-907ff0e79c1f" href="/news/2021/four-seniors-receive-fisher-award">Tobi Ayeni '21,</a>&nbsp;<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="d3654437-4ba7-4f34-b7dd-907ff0e79c1f" href="/news/2021/four-seniors-receive-fisher-award">Kelton Chastulik '21, Krystal Cohen '21,</a>&nbsp;&amp;&nbsp;<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="d3654437-4ba7-4f34-b7dd-907ff0e79c1f" href="/news/2021/four-seniors-receive-fisher-award">Sabrina Sequeira '21</a>&nbsp;</li>
+                       <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="feee3849-e259-42b6-93f3-974cc40a5cfa" href="/news/2020/service-entrepreneurial-spirit-senior-emma-coley-honored-fisher-award">Emma Coley '20</a></li>
+                       <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="de2a4cfb-a950-437a-afb4-5602f2d30d6a" href="/news/2018/senior-lou-chen-receives-fisher-award">Lou Chen '19</a></li>
+                       <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="a242390d-0cbb-4eb6-8bcd-a74ee1f52681" href="/news/2017/natalie-tung-%E2%80%9918-receives-fisher-prize">Natalie Tung '18</a></li>
+                       <li>Tess Bissell '17 and Marlyn Bruno '17</li>
+                       <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="c1e87a4c-cd75-4b6d-869c-f0f1689d590a" href="/news/2016/seniors-honored-service">Frances Lu '16</a></li>
+                       <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="8cd975df-2c57-400d-b702-5e52823be93e" href="/news/2015/congrats-class-day-honorees">Ebony Slaughter-Johnson '15</a></li>
+                       <li>Ari Satok '14 and Brett Diehl '15</li>
+                      </ul>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <h3 class="block-heading">Community Engagement Awards</h3>
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p>The Community Engagement Awards are given to Princeton University faculty, administrators, and community partners who in the past year have demonstrated an extraordinary commitment to service and social justice that transcends the classroom. We especially recognize individuals who have inspired others on campus to join their efforts and who through their service to humanity have responded to needs in the world. Awarded by the Pace Center for Civic Engagement.&nbsp;</p>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_276" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--3" role="button" aria-controls="acc-panel--3" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> 2021-2022 Awardees 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--3" role="region" aria-labelledby="acc-btn--3">
+                      <ul>
+                       <li><a href="/news/2021/responding-needs-world" target="_blank">Jenny Green,&nbsp;Professor of Astrophysical Sciences</a></li>
+                       <li><p><a href="/news/2021/responding-needs-world" target="_blank">Joseph Pucciatti, teacher and director of the school orchestra at Trenton Central High School</a></p></li>
+                       <li><p><a href="/news/2021/responding-needs-world" target="_blank">Shirley Satterfield,&nbsp;lifelong educator and local Princeton city historian</a></p></li>
+                      </ul>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--4" role="button" aria-controls="acc-panel--4" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Past Recipients 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--4" role="region" aria-labelledby="acc-btn--4">
+                      <ul>
+                       <li>2020-21 Cancelled due to pandemic</li>
+                       <li>2019-20&nbsp;<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="19224e58-e710-42b2-b87b-1bfd8ee10887" href="/news/2020/community-leadership-el-centros-roberto-hernandez-recognized-community-engagement">Roberto Hernandez - Executive Director, El Centro</a>,&nbsp;<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="722310fa-330f-4893-ac96-93bb1f985ce2" href="/news/2020/building-bridges-music-ruth-ochs-honored-community-engagement-award">Ruth Ochs - Conductor of the Princeton University Sinfonia; Associate Conductor of the Princeton University Orchestra; and Director of small ensembles at Princeton</a>, &amp;&nbsp;<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="69adfb81-b12a-4ce2-a066-b5db6025fad4" href="/news/2020/bridging-theory-and-experience-anna-stilz-honored-community-engagement-award">Anna Stilz - Laurance S. Rockefeller Professor of Politics and the University Center for Human Values</a></li>
+                       <li>2018-19&nbsp;<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="24befb74-0b51-4c85-b871-09745126ced0" href="/news/2019/commitment-service">Alan Kaplan - Lecturer, Computer Science</a>&nbsp;&amp;&nbsp;<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="24befb74-0b51-4c85-b871-09745126ced0" href="/news/2019/commitment-service">Arcadio Díaz-Quiñones - Emory L. Ford Professor Emeritus, Spanish and Portuguese</a></li>
+                      </ul>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <h3 class="block-heading">The Priscilla Glickman '92 Memorial Prize</h3>
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p>The Priscilla Glickman '92 Memorial Prize is awarded to a Princeton senior who has demonstrated independence and imagination in the area of community service, seeks knowledge and purposeful adventure in unfamiliar cultures, and maintains strong academic work. The prize commends the qualities of curiosity in the world and commitment to the betterment of the world by recognizing outstanding past contributions to community service. The prize is awarded to encourage the student recipient to explore new challenges in the future. The prize winner is announced annually at Class Day by the Pace Center for Civic Engagement.</p>
+                 <p><a href="https://fs6.formsite.com/pace/form224/index.html">Nominate a senior</a> for the 2022 Priscilla Glickman '92 Memorial Prize by Tuesday, March 22. There are no limits to the number of nominations you can make.</p>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_286" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--5" role="button" aria-controls="acc-panel--5" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> 2021-2022 Awardees 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--5" role="region" aria-labelledby="acc-btn--5">
+                      <ul>
+                       <li><a href="/news/2022/two-seniors-honored-glickman-prize">Bethwel Kiplimo '22&nbsp;and Grace Simmons '22</a></li>
+                      </ul>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--6" role="button" aria-controls="acc-panel--6" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Past Prize Recipients 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--6" role="region" aria-labelledby="acc-btn--6">
+                      <ul>
+                       <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="389755d9-e1da-4afd-9d74-54f0cd6c3bcb" href="/news/2021/daniela-alvarez-21-honored-glickman-prize">Daniela Alvarez '21</a></li>
+                       <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="54eb6530-575c-4df2-903b-d2b965b69d32" href="/news/2020/karina-aguilar-guerrero-20-receives-glickman-prize">Karina Aguilar Guerrero '20</a></li>
+                       <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="0169d8f4-d465-4632-94f1-08c3f88eef9c" href="/news/2019/senior-samuel-vilchez-santiago-receives-glickman-prize">Samuel Vilchez Santiago '19</a></li>
+                       <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="7da2813d-9545-4faf-8e57-8f061e652661" href="/news/2018/anam-vadgama-%E2%80%9918-receives-glickman-prize">Anam Vadgama '18</a></li>
+                       <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="ad3f6a81-ef5a-43d7-9bea-60ba6829a00d" href="/news/2017/class-day-honor-marks-its-25th-year">Daniel Rounds '17</a></li>
+                       <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="c1e87a4c-cd75-4b6d-869c-f0f1689d590a" href="/news/2016/seniors-honored-service">Azza Cohen '16</a></li>
+                       <li><a href="https://www.princeton.edu/news/2015/06/01/students-recognized-accomplishments-and-service-class-day">Claire Nuchturn '15</a></li>
+                       <li><a href="https://www.princeton.edu/news/2014/06/02/students-recognized-achievements-and-service-class-day">Lucie Wright '14</a></li>
+                       <li><a href="https://www.princeton.edu/news/2013/06/03/students-recognized-accomplishments-and-service-class-day">Marlene Morgan '13</a></li>
+                       <li><a href="https://www.princeton.edu/news/2012/06/04/students-recognized-achievement-and-service-class-day">Alexandra Gecker '12 and Alexander Craig '12</a></li>
+                       <li><a href="https://www.princeton.edu/news/2011/05/30/students-recognized-achievement-and-leadership-class-day">Brian Locascio '11</a></li>
+                       <li><a href="https://www.princeton.edu/news/2010/05/31/students-recognized-service-and-leadership-class-day">Jenni Newbury '10</a></li>
+                       <li><a href="https://www.princeton.edu/news/2009/06/01/students-recognized-service-and-achievement-class-day">Dexter Doyle '09</a></li>
+                       <li><a href="https://www.princeton.edu/pr/gradpics/2008/classday/IMG_0791.jpg">Joshua Loehrer '08 and Jessica Gheiler '08</a></li>
+                       <li><a href="https://www.princeton.edu/news/2007/06/04/students-honored-achievement-and-service-class-day">Drew Frederick '07</a></li>
+                       <li><a href="https://www.princeton.edu/news/2006/06/05/students-honored-achievement-and-service-class-day">Laura Collins '06 and Sara Colon '06</a></li>
+                       <li><a href="https://www.princeton.edu/news/2005/05/30/students-honored-service-and-achievement-class-day">Meridel Bulle-Vu '05 and Brandon Nicholson '05</a></li>
+                       <li>Arthur Williams, IV '04</li>
+                       <li>Daniel Stover '03</li>
+                       <li>Michael Fletcher II '03</li>
+                       <li>Renu Boatright '02</li>
+                       <li>Abigail Love '01</li>
+                       <li>Tamara Johnson Leech '00 and Joseph Wardenski '00</li>
+                       <li>Jaffet Ghebretnsae '99 and Kate Gwon '99</li>
+                       <li>Stephanie McGill '98 and Pratik Shah '98</li>
+                       <li>Safiya Daniels '97, Staphanie Levey '97, and Misha Simmonds '97</li>
+                       <li>Crystal Moore '96 and Raymond Gonzalez '96</li>
+                       <li>Jeremy Roller '95</li>
+                       <li>Karen Jachson-Weaver '94</li>
+                       <li>Peter Reese '93</li>
+                       <li>Delphine Hirsh '92</li>
+                      </ul>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <h2 class="block-heading">Princeton Service Awards &amp; Prizes</h2>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <h3><a href="https://www.princeton.edu/news/2019/06/03/students-honored-leadership-and-service-class-day">Allen Macy Dulles ’51 Award</a></h3>
+                 <p>The Allen Macy Dulles ’51 Award recognizes a senior whose activities at Princeton best exemplify the University’s informal motto, “Princeton in the nation’s service and the service of humanity.” Awarded by the <a href="https://www.princeton.edu/news/2022/05/23/students-honored-leadership-and-service-2022-class-day">Office of the Dean of Undergraduate Students</a>.</p>
+                 <hr>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <h3><a href="https://www.princeton.edu/news/2019/06/03/students-honored-leadership-and-service-class-day">Art Lane '34 Award</a></h3>
+                 <p>The Arthur Lane ’34 Award honors selfless contribution to sport and society by an undergraduate athlete. Awarded by the <a href="https://www.princeton.edu/news/2022/05/23/students-honored-leadership-and-service-2022-class-day">Princeton Varsity Club</a>.</p>
+                 <hr>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <h3>Dean Hank Dobin Prizes in Community-Engaged Independent Work</h3>
+                 <p>The Dean Hank Dobin Prizes in Community-Engaged Independent Work are awarded to Princeton seniors whose outstanding thesis best engage a community audience, whether through extensive research, policy recommendations, or new information and analysis. The prize is named after former Dean Dobin, who was instrumental to the creation of the Program for Community-Engaged Scholarship during his time at Princeton. Awarded by the <a href="https://proces.princeton.edu/students/apply-thesis-prize">Program for Community-Engaged Scholarship</a>.&nbsp;</p>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <h3><a href="https://www.princeton.edu/news/2019/06/03/students-honored-leadership-and-service-class-day">Frederick Douglass Service Award</a></h3>
+                 <p>The Frederick Douglass Service Award, established in 1969 at the recommendation of Carl Fields, who was assistant dean of the college, is given to a senior who has exhibited “courage, leadership, intellectual achievement and a willingness to contribute unselfishly toward a deeper understanding of the experiences of racial minorities and who, in so doing, reflects the tradition of service embodied in education at Princeton.” Awarded by the <a href="https://www.princeton.edu/news/2022/05/23/students-honored-leadership-and-service-2022-class-day">Office of the Dean of Undergraduate Students</a>.</p>
+                </div>
+               </div>
+              </div>
+              <div class="layout__region layout__region--second layout__region--quarters layout__region--narrow">
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+              </div>
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </main>
+      </div>
+     </div>
+    </div>
+    <footer role="contentinfo" class="footer region region-footer" id="footer">
+     <h2 class="sr-only">Footer</h2>
+     <div class="container">
+      <div class="region region-footer">
+       <div class="constrained-bkg-constrained-content layout layout--threecol-25-25-50">
+        <div class="layout-inner-container">
+         <div class="layout__region layout__region--first layout__region--quarters layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_image" class="block-ps-image block block-layout-builder block-inline-blockps-image">
+           <figure class="figure media--type-image media--view-mode-ps-content-width-freeform"><a href="/"> <img srcset="/sites/g/files/toruqf686/files/styles/freeform_750w/public/2021-08/logo.png?itok=JuLbNnFZ 395w" sizes="(min-width: 1440px) 1440px, 100vw" src="/sites/g/files/toruqf686/files/styles/freeform_1440w/public/2021-08/logo.png?itok=RCf922c4" alt="footer logo" typeof="foaf:Image"> </a>
+           </figure>
+          </div>
+         </div>
+         <div class="layout__region layout__region--second layout__region--quarters layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+           <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+            <p>201 Frist Campus Center<br> Princeton, NJ 08544<br> 58 Prospect Avenue, Third Floor</p>
+            <p><a href="mailto:pace@princeton.edu">pace@princeton.edu</a></p>
+            <p>609.258.7260</p>
+           </div>
+          </div>
+         </div>
+         <div class="layout__region layout__region--third layout__region--half">
+          <div data-block-plugin-id="inline_block:ps_social_links" class="block-ps-social-links block block-layout-builder block-inline-blockps-social-links">
+           <h2 class="block-heading">Follow us</h2>
+           <ul class="ps-social-links--platforms platforms vertical">
+            <li><a href="https://www.facebook.com/pacecenter" title="Facebook"> <span class="fab fa-facebook fa-2x" aria-hidden="true"></span> <span class="social-link-label">Facebook</span> </a></li>
+            <li><a href="https://www.instagram.com/pace_princeton/" title="Instagram"> <span class="fab fa-instagram fa-2x" aria-hidden="true"></span> <span class="social-link-label">Instagram</span> </a></li>
+            <li><a href="https://twitter.com/pace_princeton" title="Twitter"> <span class="fab fa-twitter fa-2x" aria-hidden="true"></span> <span class="social-link-label">Twitter</span> </a></li>
+            <li><a href="https://www.youtube.com/user/activecitizens" title="YouTube"> <span class="fab fa-youtube fa-2x" aria-hidden="true"></span> <span class="social-link-label">YouTube</span> </a></li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="subfooter">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-4">
+         <div class="subfooter-links">
+          <ul class="list-unstyled">
+           <li><a href="https://accessibility.princeton.edu/resources/accessibility-help" target="_blank">Accessibility</a></li>
+          </ul>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <p class="copyright-text"> © 2022 The Trustees of Princeton University </p>
+        </div>
+        <div class="col-md-4 text-sm-left text-md-right copyright"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"><img src="/profiles/ps/themes/ps_base/images/pu-logo-stacked.svg" alt="Princeton University"> </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div> 
+  </div><span id="ps-current-username" data-username=""></span>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/51","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ckeditorheight":{"offset":1,"line_height":1.5,"unit":"em","disable_autogrow":false},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"all_documents_new_window":false,"select2_simple":{"selector":".node-form select:not(.disable-select2,[name$=\u0027[actions][bundle]\u0027],.ui-timepicker-select,[name*=\u0027field_ps_timeline_feature_items\u0027]),.select2-form select,#drupal-off-canvas select[multiple]"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":true,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":[]}},"ps_accordion":{"#ps_accordionfield_ps_accordion_block_content_286":[],"#ps_accordionfield_ps_accordion_block_content_276":[],"#ps_accordionfield_ps_accordion_block_content_181":[]},"ajax":[],"user":{"uid":0,"permissionsHash":"c83bf1aec34c4301f429434ea0bb694329d8d44b4885283ed6e98354bb853c48"}}</script>
+  <script src="/sites/g/files/toruqf686/files/js/js_JumT6gZsabzJoScbgf-aoEP72ZgwrsY6QetvHWy6D0A.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"427707476","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":897,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

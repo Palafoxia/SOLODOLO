@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Edit, hide, delete a Grade item</title>
+  <meta content="Learn how to edit, hide or delete a Grade item in your course in TITANium." name="description">
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="8Tfy6WSBj93Qzg3AgKKHRsOWWOts68G73ClbvX8f/cgyc28kMWIU55cP91BeKt1IgypkFow6wnXOukHG5CCi7A==">
+  <link rel="stylesheet" media="screen" href="//assets.screensteps.com/assets/themes/fonts/droid-sans-364ed37cb1e97162731b415aa927f66498ed63a95cbeba694ddee60dd372c14f.css">
+  <link rel="stylesheet" media="screen" href="//assets.screensteps.com/assets/themes/fonts/helvetica-8681273d10a12b4f5502c278efb511b207828996eb6fb7d99fa7abb4cea05b50.css">
+  <link rel="stylesheet" href="//assets.screensteps.com/assets/fontawesome-9b64f06a98b9479593e125f4c10f2698fa8bb635ef3cf3616282a9e41d175c16.css">
+  <link rel="stylesheet" href="//assets.screensteps.com/assets/themes/beta-81e062362d5992fe4be88d9a87c19324121ab8af770754d04248da99e5a2d8a9.css">
+  <style type="text/css" media="all">
+  /* headings */
+  h1,
+  h1.toc-heading,
+  h2.toc-heading {
+    color: #;
+  }
+
+  h2.toc-subheading,
+  h3.toc-subheading,
+  h4.toc-subheading,
+  h5.toc-subheading,
+  h6.toc-subheading {
+    color: #070807;
+  }
+
+  .screensteps-training-site [data-count-bubble]::after {
+    background-color: #070807;
+  }
+
+  .screensteps-article-content h2 {
+    color: #;
+  }
+
+  .screensteps-article-content h3,
+  .screensteps-article-content h4,
+  .screensteps-article-content h5,
+  .screensteps-article-content h6 {
+    color: #;
+  }
+
+  .screensteps-sidebar h3 {
+    color: #1a191a;
+  }
+
+  .sidebar-subheading {
+    color: #4a4848;
+  }
+
+  .comments-heading {
+    color: #;
+  }
+
+  /* base/_buttons */
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"],
+  button,
+  .screensteps-bg-action-color,
+  .screensteps-courses .screensteps-progress-bar::before,
+  .screensteps-courses .screensteps-courses-menu a:hover,
+  .screensteps-courses .screensteps-courses-menu .step-active a::before,
+  .screensteps-training-site .asset-item__progress-bar {
+    background-color: #1a191a;
+  }
+
+  input[type="button"]:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover,
+  button:hover,
+  button.screensteps-bg-action-color:hover,
+  a.screensteps-bg-action-color:hover {
+    background-color: #8a4500;
+  }
+
+  /* base/_forms */
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="text"]:focus,
+  input[type="url"]:focus,
+  input[type="color"]:focus,
+  input[type="date"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="week"]:focus,
+  select[multiple=multiple]:focus,
+  textarea:focus {
+    border-color: #1a191a;
+  }
+
+
+  .screensteps-training-site .screensteps-main-search .search-field:not(:placeholder-shown) {
+    box-shadow: 0 0 0 2px #ffffff;
+  }
+
+  /* base/_typography */
+  body {
+    background-color: #ffffff;
+    color: #;
+  }
+
+  a {
+    color: #1a191a;
+  }
+
+
+
+  /* _screensteps-container */
+  .screensteps-container a:visited {
+    color: #004071;
+  }
+ .screensteps-container a:active,
+ .screensteps-container a:focus,
+ .screensteps-container a:hover {
+    color: #8a4500;
+  }
+
+  /* _screensteps-manual-contents */
+  .screensteps-manual-contents h2 a {
+    color: #1a191a;
+  }
+  /* _screensteps-foldable-sections */
+  .screensteps-main-content .embedded-chapter-article > * {
+    color: #1a191a;
+  }
+
+  /* screensteps-header */
+  .screensteps-branding h1,
+  .screensteps-header .screensteps-branding a,
+  .screensteps-training-site .screensteps-profile-subnav-toggle {
+    color: #004071;
+  }
+
+  .screensteps-header .screensteps-branding a:hover {
+    color: #004071;
+  }
+
+  /* meta data text */
+  .chapter-count,
+  .screensteps-comment-count,
+  .screensteps-lesson-details,
+  .nested-chapter-lessons .here a:after,
+  .screensteps-single-comment time {
+    color: #;
+  }
+
+  /* course tiles */
+  .screensteps-training-site .screensteps-group .asset-list--course a {
+    background-color: #;
+    color: #;
+  }
+
+  .screensteps-training-site .asset-item__progress-bar {
+    background-color: #;
+  }
+
+  .screensteps-training-site .screensteps-group .asset-list--course a:hover {
+    background-color: #;
+  }
+</style>
+  <link rel="icon">
+  <script src="//assets.screensteps.com/assets/application-10a945f50e929cc1e58184ca87f005bd032ee7fe9b1c7368b855e66a5234fab0.js"></script>
+  <script src="//assets.screensteps.com/assets/theme-cae9a1f80906ea92fdc68e13e7545d814402a7aeafd20bbca6accffffa49bbea.js"></script><!--[if lt IE 9]>
+<script src="//assets.screensteps.com/assets/vendor/html5shiv.min-6169624d10bc8403d59c9ace86ab0189063017bfb2139ee074a199cbbdc176b2.js"></script>
+<![endif]-->
+  <style media="">/* ScreenSupport Adjustments */
+.asset-list .divider h4 {
+  color: #4d4d4d;
+}
+
+.screensteps-modal .screensteps-modal__close,.screensteps-modal .screensteps-modal__close:visited {
+    color: #0e4d6f;
+  background-color:#ffffff;
+}
+/* 10.5.2018 trying to fix color contrast for View in Admin Portal link */
+.screensteps-admin-navigation {
+   background-color: #0B579D;
+}
+.screensteps-admin-navigation a:hover {
+   color: #fff;
+}
+
+
+/* trying to fix the color contrast */
+.screensteps-modal {
+color: #0e4d6f;
+background-color:#ffffff;
+}
+
+
+
+/* adjust the wrapper text color */ 
+.screensteps-article .screensteps-textblock.screensteps-wrapper--alert {
+  color: #8d0c0c;
+}
+.screensteps-article .screensteps-textblock.screensteps-wrapper--introduction {
+  color: #0e4d6f;
+}
+
+.screensteps-article .screensteps-textblock.screensteps-wrapper--tip {
+  color: #32531e;
+}
+
+.screensteps-article .screensteps-textblock.screensteps-wrapper--info {
+ color: #0e4d6f;
+}
+
+.screensteps-article .screensteps-textblock.screensteps-wrapper--warning {
+  color: #6a4300;
+}
+
+/* adjust the body text */
+.screensteps-article { color: #4d4d4d; }
+
+body { color: #4d4d4d; }
+
+/* link text color */
+.screensteps-article a {
+ color: #0e4d6f;
+
+}
+
+.screensteps-article a:visited {
+ color: #0e4d6f;
+}
+
+/* background and border */
+.screensteps-article .screensteps-steps .image {
+ background-color: transparent;
+ border: none;
+}
+
+/* attached file color */
+.screensteps-article .screensteps-wrapper--attachment a
+{ color:#0e4d6f;  
+}
+
+/* adjust color of h3 */
+.screensteps-description h3, .screensteps-steps h3
+{color:#4d4d4d;
+}
+
+/* adjust color of h2 */
+.screensteps-description h2, .screensteps-steps h2
+{color:#4d4d4d;
+}
+
+/* to adjust the color of the text in the search bar*/
+.screensteps-main-search .input-prompt {
+  color: #0057a8;
+}
+
+/* to adjust the color of the number of articles in each chapter */
+.chapter-count {
+   color: #004071;
+}
+
+/* to allow videos from our server to play in screensteps*/
+.video-responsive{ overflow:hidden; padding-bottom:56.25%; position:relative; height:0; } .video-responsive video { left:0; top:0; height: auto; width: 100%; position:absolute; }
+
+</style>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71326781-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <noscript>
+    Javascript should be enabled on this page in order to run Google Analytics. 
+  </noscript>
+  <script>
+//<![CDATA[
+    !function(name,path,ctx){
+      var latest,prev=name!=='Keen'&&window.Keen?window.Keen:false;ctx[name]=ctx[name]||{ready:function(fn){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onerror=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;latest=w.Keen;if(prev){w.Keen=prev}else{try{delete w.Keen}catch(e){w.Keen=void 0}}ctx[name]=latest;ctx[name].ready(fn)};s.async=1;s.src=path;h.parentNode.insertBefore(s,h)}}
+    }('KeenAsync','https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.1.3.min.js',this);
+
+    KeenAsync.ready(function(){
+      // Configure a client instance
+      var client = new KeenAsync({
+        projectId: '591daac30935ce40a59fb7ab',
+        writeKey: 'C89A9A1A8DB4C585F119F8F81ABB9621940DBBADDA5C72C2B87B1BD3464890D23FD250B0FFA4A1056DCB210616545B7B6C9DDF2054167B5219A3DD81E8DF90A321BE0C1B35BA19F2E3E85730FB96C1F93F8C66D8CD449FE6EFE43D98453632D1'
+      });
+
+      // Record an event
+      client.recordEvent('pageviews', {
+        title: document.title,
+        ip_address: "${keen.ip}",
+        user_agent: "${keen.user_agent}",
+        user_id: null,
+        user_public_id: null,
+        account_id: "7061f6cd01",
+        account_billing_type: "admin_users",
+        site_id: 12929,
+        manual_id: 48508,
+        article_id: 462295,
+        article_type_id: 0,
+        course_id: null,
+        source_id: 1
+      });
+    });
+
+//]]>
+</script>
+ </head>
+ <body class="helvetica-body droid-sans-header site-article  no-focus-outline" data-base-path="/" data-content-template="2015" data-generating-pdf-text="Creating PDF...">
+  <header class="screensteps-header" role="banner"><a class="skip-navigation--link" href="#screensteps-main-content" id="skip-navigation"> Skip to main content </a>
+   <div class="screensteps-branding">
+    <div class="logo-wrapper"><span class="company-logo"> <a href="/" title="TITANium Resource Center"> <img alt="Cal State Fullerton" class="screensteps-site-logo" src="https://media.screensteps.com/logos/7688/OET_Logo-05.jpg"> </a> </span>
+     <h1 class="company-name">California State University Fullerton</h1>
+    </div>
+    <ul class="screensteps-external-nav" role="navigation">
+     <li><a href="https://canvashelp.fullerton.edu">Switch to Canvas Resource Center</a></li>
+    </ul>
+    <ul class="screensteps-profile-nav" role="navigation">
+    </ul>
+   </div>
+  </header>
+  <div class="screensteps-container-wrapper">
+   <main class="screensteps-container">
+    <div class="screensteps-site-title-wrapper">
+     <h1 class="screensteps-site-title toc-heading">TITANium Resource Center</h1>
+     <div class="screensteps-site-description">
+      <p>Welcome to the TITANium Resource Center where you may find self-help guides on a wide range of topics regarding teaching and learning using TITANium (Moodle). Begin by typing in a keyword and clicking on Search.</p>
+      <p>Canvas guides are available at the <a href="https://canvashelp.fullerton.edu">Canvas Resource Center.</a></p>
+     </div>
+    </div>
+    <div class="screensteps-main-search" role="search">
+     <form id="screensteps-search-form" action="/searches" accept-charset="UTF-8" method="get">
+      <div class="screensteps-search-form"><label for="text">Search term</label>
+       <input type="text" name="text" id="text" class="search-field" title="Enter a keyword or topic to search">
+       <input type="submit" name="commit" value="Search" class="search-submit" data-disable-with="Search">
+      </div>
+     </form>
+    </div>
+    <div class="screensteps-content-wrapper manual-lesson lesson left-sidebar">
+     <div class="screensteps-main-content" role="main">
+      <header class="screensteps-title">
+       <div id="screensteps-breadcrumb" aria-label="breadcrumb" aria-level="3">
+        <a href="/">TITANium Resource Center</a><span class="manual-group-breadcrumb"><a href="/#BEGINHere">BEGIN HERE</a></span><a href="/m/GettingStarted">Getting Started with TITANium</a> <span class="chapter-breadcrumb"><a href="/m/GettingStarted/c/147262">Configuring Grades</a></span>How do I edit, delete, or hide a grade item?
+       </div>
+      </header>
+      <div id="screensteps-main-content">
+       <div class="screensteps-article" data-screensteps-article>
+        <div class="screensteps-article-content " data-article-id="462295" data-workflow="false">
+         <h1 class="lesson">How do I edit, delete, or hide a grade item?</h1>
+         <div class="screensteps-steps" data-role="steps-container">
+          <div class="instructions screensteps-textblock screensteps-wrapper--introduction screensteps-wrapper">
+           <p>After you have created some <strong>Grade items</strong> for your gradebook, you may need to edit, delete, or hide those grade items. You will learn how to edit, delete, or hide a Grade item in your course in TITANium.</p>
+          </div>
+          <div class="instructions screensteps-textblock screensteps-wrapper--tip screensteps-wrapper">
+           <p>This guide has been updated for TITANium 2019-2020.</p>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="94c25d82-6c62-49fb-8f4a-0c8e6e469333" id="">
+           <h2 id="enter-your-course-in-titanium"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 1. Enter your course in TITANium." href="#enter-your-course-in-titanium">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 1. Enter your course in TITANium. </h2>
+           <div class="image clearfix">
+            <img alt="course main page" data-srcset="https://media.screensteps.com/image_assets/assets/002/466/095/original/97ddfa89-9b15-4165-b681-a89b1d96882e.png 586w" data-src="https://media.screensteps.com/image_assets/assets/002/466/095/original/97ddfa89-9b15-4165-b681-a89b1d96882e.png" class="lazyload lazypreload" style="max-width:586px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/095/original/97ddfa89-9b15-4165-b681-a89b1d96882e.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="b0dced73-5945-4c8b-be76-5977cd23d5de" id="">
+           <h2 id="click-on-the-gear-icon"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 2. Click on the Gear icon." href="#click-on-the-gear-icon">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 2. Click on the Gear icon. </h2>
+           <div class="image clearfix">
+            <img alt="Gear icon is selected." data-srcset="https://media.screensteps.com/image_assets/assets/002/466/093/original/e1cfd2e5-9f46-48ff-8486-e9287469c777.png 399w" data-src="https://media.screensteps.com/image_assets/assets/002/466/093/original/e1cfd2e5-9f46-48ff-8486-e9287469c777.png" class="lazyload lazypreload" style="max-width:399px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/093/original/e1cfd2e5-9f46-48ff-8486-e9287469c777.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="5995b587-1c80-4b05-a05c-6662fa7c3f7b" id="">
+           <h2 id="select-gradebook-setup"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 3. Select Gradebook setup." href="#select-gradebook-setup">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 3. Select Gradebook setup. </h2>
+           <div class="image clearfix">
+            <img alt=" Gradebook setup link is selected." data-srcset="https://media.screensteps.com/image_assets/assets/002/466/083/original/af18f59b-50ab-4ce3-b808-0f4bfb827e4f.png 278w" data-src="https://media.screensteps.com/image_assets/assets/002/466/083/original/af18f59b-50ab-4ce3-b808-0f4bfb827e4f.png" class="lazyload lazypreload" style="max-width:278px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/083/original/af18f59b-50ab-4ce3-b808-0f4bfb827e4f.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="a1582041-79c9-45bd-9834-72b504622e6c" id="">
+           <h2 id="the-gradebook-setup-page-will-display"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 4. The Gradebook setup page will display." href="#the-gradebook-setup-page-will-display">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 4. The Gradebook setup page will display. </h2>
+           <div class="image clearfix">
+            <img alt="Gradebook setup page - before change" data-srcset="https://media.screensteps.com/image_assets/assets/002/466/099/original/c80fce57-462d-407f-81f3-aa1be119e400.png 586w" data-src="https://media.screensteps.com/image_assets/assets/002/466/099/original/c80fce57-462d-407f-81f3-aa1be119e400.png" class="lazyload lazypreload" style="max-width:586px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/099/original/c80fce57-462d-407f-81f3-aa1be119e400.png">
+           </div>
+           <div class="instructions screensteps-textblock ">
+            <p><strong>What would you now like to learn to do?</strong></p>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="1c8e6376-c06d-48d0-b3ff-ba8ca89e6de7" id="i-want-to-edit-a-grade-item"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#i-want-to-edit-a-grade-item">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#i-want-to-edit-a-grade-item" class="embedded-chapter-article" id="screensteps-article-1c8e6376-c06d-48d0-b3ff-ba8ca89e6de7" data-lesson-id="1c8e6376-c06d-48d0-b3ff-ba8ca89e6de7"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> I want to edit a Grade item. </a>
+            <div class="nested-article" data-lesson-id="1c8e6376-c06d-48d0-b3ff-ba8ca89e6de7">
+             <div class="instructions screensteps-textblock screensteps-wrapper--introduction screensteps-wrapper">
+              <p>Follow these steps to mark a grade item for extra credit.</p>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="e4ef035f-74aa-4d79-b3c7-d1c57ff793ca" id="">
+              <h3 id="locate-the-item-you-want-to-change-to-extra-credit"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 1. Locate the item you want to change to extra credit." href="#locate-the-item-you-want-to-change-to-extra-credit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 1. Locate the item you want to change to extra credit. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+               <p>In this course, the course aggregation method is set to the default which is <strong>Natural </strong>- summing the grades.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Edit link is selected" data-srcset="https://media.screensteps.com/image_assets/assets/002/466/081/original/d6f8b3ba-4ad5-4e1d-a5d3-f17651981971.png 636w" data-src="https://media.screensteps.com/image_assets/assets/002/466/081/original/d6f8b3ba-4ad5-4e1d-a5d3-f17651981971.png" class="lazyload lazypreload" style="max-width:636px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/081/original/d6f8b3ba-4ad5-4e1d-a5d3-f17651981971.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="b7c97465-e6ae-4a73-b561-8d493aff6439" id="">
+              <h3 id="click-on-edit"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 2. Click on Edit." href="#click-on-edit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 2. Click on Edit. </h3>
+              <div class="image clearfix">
+               <img alt="Edit link is clicked" data-srcset="https://media.screensteps.com/image_assets/assets/002/466/103/original/518d8c5e-b09a-4a60-af2a-41e24b14a26a.png 636w" data-src="https://media.screensteps.com/image_assets/assets/002/466/103/original/518d8c5e-b09a-4a60-af2a-41e24b14a26a.png" class="lazyload lazypreload" style="max-width:636px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/103/original/518d8c5e-b09a-4a60-af2a-41e24b14a26a.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="f8113ec9-ed80-49ff-a528-f0a86717b238" id="">
+              <h3 id="select-edit-settings"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 3. Select Edit settings." href="#select-edit-settings">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 3. Select Edit settings. </h3>
+              <div class="image clearfix">
+               <img alt="Edit settings is selected" data-srcset="https://media.screensteps.com/image_assets/assets/002/466/111/original/4b77f475-a7e7-4372-b126-018c991f545c.png 219w" data-src="https://media.screensteps.com/image_assets/assets/002/466/111/original/4b77f475-a7e7-4372-b126-018c991f545c.png" class="lazyload lazypreload" style="max-width:219px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/111/original/4b77f475-a7e7-4372-b126-018c991f545c.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="1226e57a-bb06-450a-bbd5-e4a9eb4257f4" id="">
+              <h3 id="check-the-extra-credit-box"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 4. Check the Extra credit box." href="#check-the-extra-credit-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 4. Check the Extra credit box. </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>Scroll down the <strong>Edit grade item</strong> page to the <strong>Extra credit</strong> check box. Click on the check box.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Extra credit box" data-srcset="https://media.screensteps.com/image_assets/assets/002/466/101/original/53518289-5b35-4494-862d-99e5387e4e59.png 493w" data-src="https://media.screensteps.com/image_assets/assets/002/466/101/original/53518289-5b35-4494-862d-99e5387e4e59.png" class="lazyload lazypreload" style="max-width:493px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/101/original/53518289-5b35-4494-862d-99e5387e4e59.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="7552d87f-e6ee-4a49-a413-eebfb1b7cb29" id="">
+              <h3 id="click-on-save-changes"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 5. Click on Save changes." href="#click-on-save-changes">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 5. Click on Save changes. </h3>
+              <div class="image clearfix">
+               <img alt="Save changes button" data-srcset="https://media.screensteps.com/image_assets/assets/002/466/107/original/d904baf1-3258-4f92-a64a-d57ed84d8cc1.png 493w" data-src="https://media.screensteps.com/image_assets/assets/002/466/107/original/d904baf1-3258-4f92-a64a-d57ed84d8cc1.png" class="lazyload lazypreload" style="max-width:493px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/107/original/d904baf1-3258-4f92-a64a-d57ed84d8cc1.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="19e4a89a-35c7-40e7-b62f-f3be03e90d00" id="">
+              <h3 id="note-the-sign-with-the-dots-under-it"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 6. Note the + sign with the dots under it." href="#note-the-sign-with-the-dots-under-it">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 6. Note the + sign with the dots under it. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+               <p>The <strong>+ </strong>sign with the dots under it signifies that this grade item is set as <strong>Extra credit</strong>.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="extra credit symbol" data-srcset="https://media.screensteps.com/image_assets/assets/002/466/091/original/0ae7dfa3-85e0-4846-9a33-8870880a6d02.png 636w" data-src="https://media.screensteps.com/image_assets/assets/002/466/091/original/0ae7dfa3-85e0-4846-9a33-8870880a6d02.png" class="lazyload lazypreload" style="max-width:636px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/091/original/0ae7dfa3-85e0-4846-9a33-8870880a6d02.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="ccdf53cc-0a99-4db8-a658-7491e584200c" id="">
+              <h3 id="note-that-the-course-total-is-now-10-points-less"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 7. Note that the course total is now 10 points less." href="#note-that-the-course-total-is-now-10-points-less">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 7. Note that the course total is now 10 points less. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+               <p>The course total in the <strong>Natural</strong> aggregation method will automatically adjust the course total to account for the grade items marked as <strong>Extra credit</strong>. Since the item marked is worth 10 points, the course total is now 10 points less than it was.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="course total" data-srcset="https://media.screensteps.com/image_assets/assets/002/466/085/original/7de3537c-1519-43ab-8ef1-bbd7df63d305.png 636w" data-src="https://media.screensteps.com/image_assets/assets/002/466/085/original/7de3537c-1519-43ab-8ef1-bbd7df63d305.png" class="lazyload lazypreload" style="max-width:636px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/085/original/7de3537c-1519-43ab-8ef1-bbd7df63d305.png">
+              </div>
+              <div class="instructions screensteps-textblock ">
+               <p>You have now learned how to edit a grade item.</p>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="4fede61b-a081-4495-a07a-38d11212b70d" id="i-want-to-delete-a-grade-item"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#i-want-to-delete-a-grade-item">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#i-want-to-delete-a-grade-item" class="embedded-chapter-article" id="screensteps-article-4fede61b-a081-4495-a07a-38d11212b70d" data-lesson-id="4fede61b-a081-4495-a07a-38d11212b70d"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> I want to delete a Grade item. </a>
+            <div class="nested-article" data-lesson-id="4fede61b-a081-4495-a07a-38d11212b70d">
+             <div class="instructions screensteps-textblock screensteps-wrapper--introduction screensteps-wrapper">
+              <p>Follow these steps to delete a grade item. </p>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="e26d82b4-125d-4f9e-bafe-ef7c947f5bf4" id="">
+              <h3 id="locate-the-grade-item"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 1. Locate the grade item." href="#locate-the-grade-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 1. Locate the grade item. </h3>
+              <div class="image clearfix">
+               <img alt="'I made a mistake' grade item is shown" data-srcset="https://media.screensteps.com/image_assets/assets/002/466/087/original/bd07c124-cd35-452f-bbf5-0cdadfd0b0e7.png 650w" data-src="https://media.screensteps.com/image_assets/assets/002/466/087/original/bd07c124-cd35-452f-bbf5-0cdadfd0b0e7.png" class="lazyload lazypreload" style="max-width:650px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/087/original/bd07c124-cd35-452f-bbf5-0cdadfd0b0e7.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="c8ebf50d-2ccb-433e-9733-b450bfbe90d0" id="">
+              <h3 id="click-on-edit_1"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 2. Click on Edit." href="#click-on-edit_1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 2. Click on Edit. </h3>
+              <div class="image clearfix">
+               <img alt="Edit link is selected." data-srcset="https://media.screensteps.com/image_assets/assets/002/466/079/original/c8d74164-a2ce-43b5-b12d-607eacae4542.png 650w" data-src="https://media.screensteps.com/image_assets/assets/002/466/079/original/c8d74164-a2ce-43b5-b12d-607eacae4542.png" class="lazyload lazypreload" style="max-width:650px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/079/original/c8d74164-a2ce-43b5-b12d-607eacae4542.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="da296bba-31a9-4ea3-bc1a-578bbbe480c6" id="">
+              <h3 id="select-delete"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 3. Select Delete." href="#select-delete">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 3. Select Delete. </h3>
+              <div class="image clearfix">
+               <img alt="Delete link is selected." data-srcset="https://media.screensteps.com/image_assets/assets/002/466/089/original/2451ed8b-281c-4c33-8714-d08c531f10bf.png 233w" data-src="https://media.screensteps.com/image_assets/assets/002/466/089/original/2451ed8b-281c-4c33-8714-d08c531f10bf.png" class="lazyload lazypreload" style="max-width:233px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/089/original/2451ed8b-281c-4c33-8714-d08c531f10bf.png">
+              </div>
+             </div>
+             <div class="child-wrapper">
+              <div class="step screensteps-section step-depth-2 foldable-step child-step" data-step-uuid="443726b6-94d6-4202-b9a8-41a070ab2033" id="wait-it-doesn-t-say-quot-delete-quot"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#wait-it-doesn-t-say-quot-delete-quot">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a><a href="#wait-it-doesn-t-say-quot-delete-quot" class="embedded-chapter-article" id="screensteps-article-443726b6-94d6-4202-b9a8-41a070ab2033" data-lesson-id="443726b6-94d6-4202-b9a8-41a070ab2033"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+                 <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+                </svg> Wait! It doesn't say "Delete". </a>
+               <div class="nested-article" data-lesson-id="443726b6-94d6-4202-b9a8-41a070ab2033">
+                <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+                 <p>If you are trying to delete an <strong>Activity</strong>, you cannot delete it from within the Gradebook. You must either set the grade value in the activity to "None" which will remove it from the gradebook, or you must delete it from the course main page which will delete it from the gradebook.</p>
+                </div>
+                <div class="instructions screensteps-textblock screensteps-wrapper--tip screensteps-wrapper">
+                 <p>In this sample course, the quiz does not allow you to delete it from the gradebook because it is an activity.</p>
+                </div>
+                <div class="image clearfix">
+                 <img alt="Edit settings is the only option" data-srcset="https://media.screensteps.com/image_assets/assets/002/466/105/original/4cc45e42-69e3-4e79-abdc-c8320ce958b7.png 650w" data-src="https://media.screensteps.com/image_assets/assets/002/466/105/original/4cc45e42-69e3-4e79-abdc-c8320ce958b7.png" class="lazyload lazypreload" style="max-width:650px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/105/original/4cc45e42-69e3-4e79-abdc-c8320ce958b7.png">
+                </div>
+                <div class="step step-depth-3 child-step" data-step-uuid="86b1e8f5-58e8-4c68-818c-883fb7e1f98f" id="">
+                 <h4 id="return-to-your-course-main-page"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 1. Return to your course main page." href="#return-to-your-course-main-page">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                    <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                   </svg> </a> 1. Return to your course main page. </h4>
+                 <div class="image clearfix">
+                  <img alt="No Delete option" data-srcset="https://media.screensteps.com/image_assets/assets/002/467/001/original/7721c1bf-991a-4c7e-9130-dd0ccfa5a6a4.png 586w" data-src="https://media.screensteps.com/image_assets/assets/002/467/001/original/7721c1bf-991a-4c7e-9130-dd0ccfa5a6a4.png" class="lazyload lazypreload" style="max-width:586px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/467/001/original/7721c1bf-991a-4c7e-9130-dd0ccfa5a6a4.png">
+                 </div>
+                </div>
+                <div class="step step-depth-3 child-step" data-step-uuid="a149b78c-abc3-4a78-b2aa-6037a69f394e" id="">
+                 <h4 id="click-on-the-gear-icon_1"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 2. Click on the Gear icon." href="#click-on-the-gear-icon_1">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                    <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                   </svg> </a> 2. Click on the Gear icon. </h4>
+                 <div class="image clearfix">
+                  <img alt="Gear icon is selected" data-srcset="https://media.screensteps.com/image_assets/assets/002/466/991/original/918dbba4-a161-4123-a5d0-74f5a0c5939e.png 412w" data-src="https://media.screensteps.com/image_assets/assets/002/466/991/original/918dbba4-a161-4123-a5d0-74f5a0c5939e.png" class="lazyload lazypreload" style="max-width:412px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/991/original/918dbba4-a161-4123-a5d0-74f5a0c5939e.png">
+                 </div>
+                </div>
+                <div class="step step-depth-3 child-step" data-step-uuid="4a662ff7-4e8b-4181-939b-8b776a548bd8" id="">
+                 <h4 id="select-turn-editing-on"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 3. Select Turn editing on." href="#select-turn-editing-on">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                    <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                   </svg> </a> 3. Select Turn editing on. </h4>
+                 <div class="image clearfix">
+                  <img alt="Turn editing on" data-srcset="https://media.screensteps.com/image_assets/assets/002/466/989/original/eb2bc4b3-fdce-49ac-a301-0a242ca90611.png 267w" data-src="https://media.screensteps.com/image_assets/assets/002/466/989/original/eb2bc4b3-fdce-49ac-a301-0a242ca90611.png" class="lazyload lazypreload" style="max-width:267px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/989/original/eb2bc4b3-fdce-49ac-a301-0a242ca90611.png">
+                 </div>
+                </div>
+                <div class="step step-depth-3 child-step" data-step-uuid="b6c0ad4f-5288-48ff-b699-99983f7677b0" id="">
+                 <h4 id="scroll-down-to-the-activity"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 4. Scroll down to the activity." href="#scroll-down-to-the-activity">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                    <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                   </svg> </a> 4. Scroll down to the activity. </h4>
+                 <div class="image clearfix">
+                  <img alt="Quiz activity is shown" data-srcset="https://media.screensteps.com/image_assets/assets/002/467/007/original/b8d26915-c35b-4ab4-abc2-7ba1ab65c549.png 650w" data-src="https://media.screensteps.com/image_assets/assets/002/467/007/original/b8d26915-c35b-4ab4-abc2-7ba1ab65c549.png" class="lazyload lazypreload" style="max-width:650px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/467/007/original/b8d26915-c35b-4ab4-abc2-7ba1ab65c549.png">
+                 </div>
+                </div>
+                <div class="step step-depth-3 child-step" data-step-uuid="8bc99abd-50d7-4169-b80e-61942bdc0d31" id="">
+                 <h4 id="click-on-edit_4"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 5. Click on Edit." href="#click-on-edit_4">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                    <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                   </svg> </a> 5. Click on Edit. </h4>
+                 <div class="image clearfix">
+                  <img alt="Edit link is selected" data-srcset="https://media.screensteps.com/image_assets/assets/002/467/011/original/40a03270-121e-4cd0-b05b-cc5c7e4c9a08.png 650w" data-src="https://media.screensteps.com/image_assets/assets/002/467/011/original/40a03270-121e-4cd0-b05b-cc5c7e4c9a08.png" class="lazyload lazypreload" style="max-width:650px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/467/011/original/40a03270-121e-4cd0-b05b-cc5c7e4c9a08.png">
+                 </div>
+                </div>
+                <div class="step step-depth-3 child-step" data-step-uuid="8071d8c6-75d6-4460-bbf3-6a2d912c8d5c" id="">
+                 <h4 id="select-delete_1"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 6. Select Delete." href="#select-delete_1">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                    <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                   </svg> </a> 6. Select Delete. </h4>
+                 <div class="image clearfix">
+                  <img alt="Delete is selected" data-srcset="https://media.screensteps.com/image_assets/assets/002/466/997/original/7a40df7a-7f99-49c8-a05b-d63b610e075e.png 280w" data-src="https://media.screensteps.com/image_assets/assets/002/466/997/original/7a40df7a-7f99-49c8-a05b-d63b610e075e.png" class="lazyload lazypreload" style="max-width:280px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/997/original/7a40df7a-7f99-49c8-a05b-d63b610e075e.png">
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="b8308502-c943-4bfb-b5d1-14a352aeb257" id="">
+              <h3 id="click-on-yes"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 4. Click on Yes." href="#click-on-yes">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 4. Click on Yes. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--alert screensteps-wrapper">
+               <p>There is no "Undo" for this kind of action. </p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Yes button is selected." data-srcset="https://media.screensteps.com/image_assets/assets/002/466/097/original/769e8cd8-4968-4c99-b7a5-f5664d3831d2.png 530w" data-src="https://media.screensteps.com/image_assets/assets/002/466/097/original/769e8cd8-4968-4c99-b7a5-f5664d3831d2.png" class="lazyload lazypreload" style="max-width:530px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/097/original/769e8cd8-4968-4c99-b7a5-f5664d3831d2.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="8251c5fe-cc1c-4383-b43c-d1bacadd92f1" id="">
+              <h3 id="that-grade-item-is-now-gone"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 5. That grade item is now gone." href="#that-grade-item-is-now-gone">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 5. That grade item is now gone. </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>The activity has now been deleted.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Gradebook setup page - after change." data-srcset="https://media.screensteps.com/image_assets/assets/002/466/109/original/cf26f32e-7d9c-48ac-a974-6bbf02ea2bbd.png 586w" data-src="https://media.screensteps.com/image_assets/assets/002/466/109/original/cf26f32e-7d9c-48ac-a974-6bbf02ea2bbd.png" class="lazyload lazypreload" style="max-width:586px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/109/original/cf26f32e-7d9c-48ac-a974-6bbf02ea2bbd.png">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="e44cd718-145d-415b-8594-ad5fd7417570" id="i-want-to-hide-a-grade-item"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#i-want-to-hide-a-grade-item">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#i-want-to-hide-a-grade-item" class="embedded-chapter-article" id="screensteps-article-e44cd718-145d-415b-8594-ad5fd7417570" data-lesson-id="e44cd718-145d-415b-8594-ad5fd7417570"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> I want to hide a Grade item. </a>
+            <div class="nested-article" data-lesson-id="e44cd718-145d-415b-8594-ad5fd7417570">
+             <div class="instructions screensteps-textblock screensteps-wrapper--introduction screensteps-wrapper">
+              <p>Follow these steps to hide a grade item that is currently visible to students.</p>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="7665821a-1911-482a-b632-211c4d3963c2" id="">
+              <h3 id="click-on-edit_2"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 1. Click on Edit." href="#click-on-edit_2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 1. Click on Edit. </h3>
+              <div class="image clearfix">
+               <img alt="Edit link is selected." data-srcset="https://media.screensteps.com/image_assets/assets/002/466/999/original/0bde10eb-579f-424b-8216-2d5923dde310.png 650w" data-src="https://media.screensteps.com/image_assets/assets/002/466/999/original/0bde10eb-579f-424b-8216-2d5923dde310.png" class="lazyload lazypreload" style="max-width:650px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/999/original/0bde10eb-579f-424b-8216-2d5923dde310.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="7e44504e-f5c2-4e38-9f64-f8e08fd1ca5d" id="">
+              <h3 id="select-hide"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 2. Select Hide." href="#select-hide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 2. Select Hide. </h3>
+              <div class="image clearfix">
+               <img alt="Hide link is selected." data-srcset="https://media.screensteps.com/image_assets/assets/002/466/995/original/ca40e453-672f-4e91-8f55-fd7fd34b7915.png 233w" data-src="https://media.screensteps.com/image_assets/assets/002/466/995/original/ca40e453-672f-4e91-8f55-fd7fd34b7915.png" class="lazyload lazypreload" style="max-width:233px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/995/original/ca40e453-672f-4e91-8f55-fd7fd34b7915.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="e5d33dc0-29da-484a-9d86-d971647ec326" id="">
+              <h3 id="that-grade-item-is-now-hidden"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 3. That grade item is now hidden." href="#that-grade-item-is-now-hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 3. That grade item is now hidden. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+               <p>The light grey text indicates that the grade item is hidden from students.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Bio and Photo is hidden." data-srcset="https://media.screensteps.com/image_assets/assets/002/467/015/original/601bf15f-df3c-41ee-9188-f123539a1cef.png 650w" data-src="https://media.screensteps.com/image_assets/assets/002/467/015/original/601bf15f-df3c-41ee-9188-f123539a1cef.png" class="lazyload lazypreload" style="max-width:650px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/467/015/original/601bf15f-df3c-41ee-9188-f123539a1cef.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="3b191d94-f880-4636-a04c-2353a20bbbf3" id="">
+              <h3 id="that-grade-item-is-now-hidden-from-students-in-the-user-report"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 4. That grade item is now hidden from students in the User report." href="#that-grade-item-is-now-hidden-from-students-in-the-user-report">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 4. That grade item is now hidden from students in the User report. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+               <p>The <strong>User report</strong> is the view of the gradebook that the students have. Note that the desired grade item is not visible.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="User report" data-srcset="https://media.screensteps.com/image_assets/assets/002/466/993/original/cbf4666c-710c-4d6e-979f-58f12a930ddd.png 586w" data-src="https://media.screensteps.com/image_assets/assets/002/466/993/original/cbf4666c-710c-4d6e-979f-58f12a930ddd.png" class="lazyload lazypreload" style="max-width:586px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/466/993/original/cbf4666c-710c-4d6e-979f-58f12a930ddd.png">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="37ad31a7-7750-419d-9ad6-75bfc204fe25" id="i-want-to-show-a-hidden-grade-item"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#i-want-to-show-a-hidden-grade-item">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#i-want-to-show-a-hidden-grade-item" class="embedded-chapter-article" id="screensteps-article-37ad31a7-7750-419d-9ad6-75bfc204fe25" data-lesson-id="37ad31a7-7750-419d-9ad6-75bfc204fe25"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> I want to show a hidden Grade item. </a>
+            <div class="nested-article" data-lesson-id="37ad31a7-7750-419d-9ad6-75bfc204fe25">
+             <div class="instructions screensteps-textblock screensteps-wrapper--introduction screensteps-wrapper">
+              <p>Follow these steps to set a hidden grade item to be visible to your students.</p>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="0d12c263-c8d0-4c4b-82c6-d030e260c597" id="">
+              <h3 id="click-on-edit_3"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 1. Click on Edit." href="#click-on-edit_3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 1. Click on Edit. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+               <p>In this sample, the Bio and Photo grade item is currently hidden in the gradebook. Students cannot see it and by default, it does not count toward the course total (in student view).</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Edit link is selected." data-srcset="https://media.screensteps.com/image_assets/assets/002/467/005/original/f4b82e84-549e-429b-9fcf-9924824cdc66.png 650w" data-src="https://media.screensteps.com/image_assets/assets/002/467/005/original/f4b82e84-549e-429b-9fcf-9924824cdc66.png" class="lazyload lazypreload" style="max-width:650px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/467/005/original/f4b82e84-549e-429b-9fcf-9924824cdc66.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="f75f48f6-7148-4c06-a640-96ffa7ddc60b" id="">
+              <h3 id="select-show"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 2. Select Show." href="#select-show">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 2. Select Show. </h3>
+              <div class="image clearfix">
+               <img alt="Show link is selected." data-srcset="https://media.screensteps.com/image_assets/assets/002/467/013/original/b21137e7-20ec-4f20-8ac3-86f12562cc1d.png 219w" data-src="https://media.screensteps.com/image_assets/assets/002/467/013/original/b21137e7-20ec-4f20-8ac3-86f12562cc1d.png" class="lazyload lazypreload" style="max-width:219px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/467/013/original/b21137e7-20ec-4f20-8ac3-86f12562cc1d.png">
+              </div>
+             </div>
+             <div class="child-wrapper">
+              <div class="step screensteps-section step-depth-2 foldable-step child-step" data-step-uuid="c8eb8c20-7947-41e7-a84a-dbe8ef780e02" id="wait-i-cannot-select-show"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#wait-i-cannot-select-show">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a><a href="#wait-i-cannot-select-show" class="embedded-chapter-article" id="screensteps-article-c8eb8c20-7947-41e7-a84a-dbe8ef780e02" data-lesson-id="c8eb8c20-7947-41e7-a84a-dbe8ef780e02"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+                 <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+                </svg> Wait! I cannot select Show. </a>
+               <div class="nested-article" data-lesson-id="c8eb8c20-7947-41e7-a84a-dbe8ef780e02">
+                <div class="instructions screensteps-textblock ">
+                 <p>If the only choice is <strong>Edit settings</strong>, then you are trying to edit an activity, not a plain grade item. To Show or Hide an activity, go to the course main page.</p>
+                </div>
+                <div class="image clearfix">
+                 <img alt="Edit settings is the only choice" data-srcset="https://media.screensteps.com/image_assets/assets/002/467/003/original/2e76c0a4-a52d-4665-b829-43d261a64edc.png 221w" data-src="https://media.screensteps.com/image_assets/assets/002/467/003/original/2e76c0a4-a52d-4665-b829-43d261a64edc.png" class="lazyload lazypreload" style="max-width:221px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/467/003/original/2e76c0a4-a52d-4665-b829-43d261a64edc.png">
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="03a12219-a060-463c-8a90-823839aa15a6" id="">
+              <h3 id="the-grade-item-is-now-visible-to-students"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 3. The Grade item is now visible to students." href="#the-grade-item-is-now-visible-to-students">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 3. The Grade item is now visible to students. </h3>
+              <div class="image clearfix">
+               <img alt="Ask a question forum is visible to students." data-srcset="https://media.screensteps.com/image_assets/assets/002/467/009/original/733f0a8b-6f46-4aeb-b76a-73c29daf647b.png 650w" data-src="https://media.screensteps.com/image_assets/assets/002/467/009/original/733f0a8b-6f46-4aeb-b76a-73c29daf647b.png" class="lazyload lazypreload" style="max-width:650px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/002/467/009/original/733f0a8b-6f46-4aeb-b76a-73c29daf647b.png">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="1865f9df-d070-4327-ae67-1fa18727f52b" id="">
+           <h2 id="article-summary"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for Article Summary" href="#article-summary">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> Article Summary </h2>
+           <div class="instructions screensteps-textblock ">
+            <p>You have now learned how to edit, delete, hide, or show a Grade item in the gradebook in your course in TITANium.</p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="screensteps-next-prev-navigation" data-role="next-previous-nav">
+         <ul>
+          <li class="previous"><strong>Prev:</strong><a href="/m/GettingStarted/l/722863-how-do-i-add-a-grade-item-to-the-gradebook">How do I add a Grade item to the gradebook?</a></li>
+          <li class="next"><strong>Next:</strong><a href="/m/GettingStarted/l/461633-how-do-i-add-a-category-to-the-gradebook">How do I add a Category to the gradebook?</a></li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div aria-label="sidebar" class="screensteps-sidebar" role="complementary">
+      <div class="screensteps-sidebar-widget" id="lesson-sidebar-info">
+       <h3>Last Updated</h3>
+       <p>Aug 22, 2019</p>
+       <ul class="icon-links">
+       </ul>
+      </div>
+      <div class="screensteps-sidebar-widget" id="other-assets">
+       <h3>Self-Help Guides</h3>
+       <ul class="asset-list with-divider">
+        <li class="divider"><h4 class="sidebar-subheading">BEGIN HERE</h4></li>
+        <li class="manual"><a href="/m/GettingStarted">Getting Started with TITANium</a></li>
+        <li class="manual"><a href="/m/96200">What's new in TITANium 2020-2021?</a></li>
+        <li class="manual"><a href="/m/StudentSelf-HelpGuide">Student Self-Help Guide</a></li>
+        <li class="divider"><h4 class="sidebar-subheading">ADDITIONAL GUIDES</h4></li>
+        <li class="manual"><a href="/m/FAQ">Frequently Asked Questions</a></li>
+        <li class="manual"><a href="/m/Gradebook">Grades - Gradebook Settings in Depth</a></li>
+        <li class="manual"><a href="/m/Respondus">Respondus</a></li>
+        <li class="manual"><a href="/m/ScantronandParScore">Scantron and ParScore</a></li>
+        <li class="divider"><h4 class="sidebar-subheading">Add-Ons for TITANium</h4></li>
+        <li class="manual"><a href="/m/100683">Dropbox in TITANium</a></li>
+        <li class="manual"><a href="/m/100682">Flipgrid in TITANium</a></li>
+        <li class="manual"><a href="/m/100671">Google Docs and Drive in TITANium</a></li>
+        <li class="manual"><a href="/m/100672">H5P in TITANium</a></li>
+        <li class="manual"><a href="/m/iClicker">iClicker in Titanium</a></li>
+        <li class="manual"><a href="/m/100669">ShareStream in TITANium</a></li>
+        <li class="manual"><a href="/m/Turnitin_in_TITANium">Turnitin in TITANium</a></li>
+        <li class="manual"><a href="/m/100673">VoiceThread in TITANium</a></li>
+        <li class="manual"><a href="/m/100674">YouTube in TITANium</a></li>
+        <li class="manual"><a href="/m/100675">Zoom in TITANium</a></li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <script>
+//<![CDATA[
+  jQuery(document).ready(function(jQuery) {
+    var lesson_id = 462295;
+    var current_article_sidebar_text = '(Current Article)';
+    var section_id = 147262;
+    var expansion = 'one';
+    switch(expansion) {
+      case 'none':
+        jQuery('ul.nested-chapter-lessons').hide();
+        break;
+      case 'all':
+        jQuery('ul.nested-chapter-lessons').show();
+        jQuery('li.chapter-list-item a.toggle-lessons').addClass('open');
+        break;
+      case 'one':
+        jQuery('ul.nested-chapter-lessons').hide();
+        jQuery('li.chapter-list-item[data-section-id="' + section_id + '"] ul.nested-chapter-lessons').show();
+        jQuery('li.chapter-list-item[data-section-id="' + section_id + '"] a.toggle-lessons').addClass('open');
+        break;
+    }
+    jQuery('li.chapter-list-item[data-section-id="' + section_id + '"]').addClass('here');
+    jQuery('li[data-lesson-id="' + lesson_id + '"]').addClass('here');
+    jQuery('li[data-lesson-id="' + lesson_id + '"] a').attr('data-current-article-text', current_article_sidebar_text);
+  });
+
+//]]>
+</script>
+    <noscript>
+     Enable javascript to expand/contract chapters
+    </noscript>
+   </main>
+  </div>
+  <div aria-labelledby="modal-label" class="screensteps-modal" id="screensteps-modal" role="dialog"><span id="modal-label"> Inline referenced article </span>
+   <div class="screensteps-modal__box"><a class="screensteps-modal__close" href="#"> × </a><span class="screensteps-loading-wrapper"> <span class="screensteps-loading"></span> </span>
+    <div class="screensteps-modal__content screensteps-article-content"></div>
+   </div>
+  </div>
+ </body>
+</html>

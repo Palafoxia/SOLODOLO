@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="description" content="COLUMBIA HOUSING"> 
+  <title>Login Method</title> 
+  <link href="/Content/Theme/20190319_232202_fav-icon.png/3?" rel="shortcut icon"> 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.7.2/d3.min.js"></script> 
+  <link href="/Content/jquery-ui/jquery-ui.min.css?v=10.8.16.9426" rel="Stylesheet" type="text/css"> 
+  <link href="/Content/jquery-ui/jquery-ui.theme.min.css?v=10.8.16.9426" rel="Stylesheet" type="text/css"> 
+  <link href="/Content/jquery/plugins/spectrum.css?v=10.8.16.9426" rel="Stylesheet" type="text/css"> 
+  <link href="/Content/colorbox/colorbox.css?v=10.8.16.9426" rel="Stylesheet" type="text/css"> 
+  <link href="/Content/font-awesome/font-awesome.min.css?v=10.8.16.9426" rel="Stylesheet" type="text/css"> 
+  <link href="/Scripts/Common/SimpleMDE/css/SR.simplemde.min.css?v=10.8.16.9426" rel="Stylesheet" type="text/css"> 
+  <link href="/Content/jquery/fullcalendar/fullcalendar.min.css?v=10.8.16.9426" rel="Stylesheet" type="text/css"> 
+  <link href="/Content/jquery/time.css?v=10.8.16.9426" rel="Stylesheet" type="text/css"> 
+  <link href="/Scripts/Common/photo-sphere-viewer/photo-sphere-viewer.min.css?v=10.8.16.9426" rel="Stylesheet" type="text/css"> 
+  <link href="/Content/css/StarRez.Desktop.min.css?v=10.8.16.9426" rel="Stylesheet" type="text/css"> 
+  <script src="/Content/jquery/jquery-3.5.1.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/modernizr.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Content/jquery-ui/jquery-ui.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Content/jquery/plugins/copycss/jquery.copycss.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Content/jsPlumb/js/jquery.jsPlumb-2.0.5.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Content/colorbox/jquery.colorbox.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/ckeditor/ckeditor.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/jquery.tablesorter.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/jquery.metadata.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/jquery.scrollTo.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/CodeMirror/codemirror.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/SimpleMDE/js/SR.simplemde.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/photo-sphere-viewer/doT.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/photo-sphere-viewer/uevent.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/photo-sphere-viewer/D.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/photo-sphere-viewer/three.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/photo-sphere-viewer/DeviceOrientationControls.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/photo-sphere-viewer/Projector.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/photo-sphere-viewer/CanvasRenderer.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/photo-sphere-viewer/photo-sphere-viewer.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/moment.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/fullcalendar.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/html2canvas.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/colorPicker/jquery.colorpicker.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/d3.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/d3pie.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/jquery.ui.timepicker.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/spectrum.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/Common/jquery.readmore.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/Scripts/portal.min.js?v=10.8.16.9426" type="text/javascript"></script> 
+  <script src="/File/GetAllJs?v=10.8.16.9426" type="text/javascript"></script> 
+  <link href="/PortalX/GetThemeCss?previewPortalThemeID=3&amp;previewTheme=False&amp;v=10.8.16.9426" rel="Stylesheet" type="text/css"> 
+  <script type="text/javascript">
+		$(function () {
+			portal.Initialise({"BaseUrl":"/","IsDebug":false,"LongDateFormat":"ddd, MMM D, YYYY","ShortDateFormat":"M/D/YYYY","Use24HourTime":false,"TimeFormat":"h:mm A","TimeFormatWithSeconds":"h:mm:ss A","MaxFileSizeMB":30,"MaxFileSizeBytes":31457280,"AutoLoadStarCareHelpResults":true,"CustomHeader":null,"HasCustomerTracking":false});
+		});
+	</script> 
+  <script type="text/javascript">
+			$(function () {
+				portal.editor.admin.ExitAdminMode(false);
+			});
+			</script> 
+  <script type="text/javascript">
+		portal.editor.IsInLiveEditMode = false;
+	</script> 
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"> 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script> 
+  <script>
+		window.addEventListener("load", function(){
+		window.cookieconsent.initialise({
+			"theme": "classic",
+			"type": "opt-in",
+			"position": "bottom",
+			"content": {
+				"message": "This website uses cookies as well as similar tools and technologies to understand visitors&#39; experiences. By continuing to use this website, you consent to Columbia University&#39;s usage of cookies and similar technologies, in accordance with the ",
+				"dismiss": "Reject Cookies",
+				"allow": "Allow Cookies",
+				"link": "Columbia University Website Cookie Notice",
+				"href": "https://portalx.housing.columbia.edu/CookieConsentPage/GetCookieConsentPageForCurrentSite?returnUrl=%2FF69ADCE1%2F7%2F100%2FLogin-Login_Method%3FUrlToken%3D6AF364E1"
+			},
+			"elements": {
+				//Override these elements to use button tags
+				"dismiss": "<button class=\"cc-btn cc-dismiss cookie-button\">{{dismiss}}</button>",
+				"allow": "<button class=\"cc-btn cc-allow cookie-button\">{{allow}}</button>",
+				//Override these so that we can force the link to open in the same window
+				"messagelink": '<span id="cookieconsent:desc" class="cc-message">{{message}} <a class="cc-link" href="{{href}}">{{link}}</a></span>'
+			},
+			"revokable": true,
+			//Override these so we can configure the text and make it accessible
+			"revokeBtn": "<section class=\"cookie-revoke-region\" aria-label=\"Change Cookie Policy\"><button class=\"cc-revoke {{classes}}\">Change Cookie Policy</button></section>",
+			"onStatusChange": function () {
+				if (this.getStatus().toLowerCase() === "dismiss") {
+					this.setStatus("deny");
+				}
+				if (!this.hasConsented()) {
+					//Clear all the cookies!!!! (client side version)
+					//This will make sure that we're deleting cookies from the correct domain
+					//This even handles cookie top level domain like .starrez.com etc
+					var cookies = document.cookie.split("; ");
+					for (var c = 0; c < cookies.length; c++) {
+						var d = window.location.hostname.split(".");
+						while (d.length > 0) {
+							var cookieBase = encodeURIComponent(cookies[c].split(";")[0].split("=")[0]) + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; domain=' + d.join('.') + ' ;path=';
+							var p = location.pathname.split('/');
+							document.cookie = cookieBase + '/';
+							while (p.length > 0) {
+								document.cookie = cookieBase + p.join('/');
+								p.pop();
+							};
+							d.shift();
+						}
+					}
+
+					//Clear all existing cookies on decline (server side version)
+					var call = new starrez.service.cookieconsentpage.DeclineCookie();
+
+					call.Get().done(function(result){
+						location.reload();
+					});
+				}
+				else {
+					location.reload();
+				}
+			}
+		})});
+		</script> 
+ </head> 
+ <body id="original-button-checkbox-label-design" data-application="portal" class=""> 
+  <div class="portalx content"> <a class="skip-to-content-link " href="#main-content" tabindex="1">Skip to content</a> <!-- theme layout - from here --> 
+   <header class="ui-page-header"> 
+    <div class="container" role="presentation"> <a class="nav-item" href="/" aria-label="Back To Home Page"> 
+      <div role="presentation" class="logo"></div> </a> 
+     <h1>COLUMBIA HOUSING</h1> 
+    </div> 
+   </header> 
+   <nav> 
+    <div class="container"> 
+     <div class="ui-navigation-bar-container navigation-bar-container" id="17deef8843bf4cc4964cce160713dc90"> 
+      <nav class="nav-bar ui-navbar" data-clearcartconfirmationmessage="This will clear your cart, are you sure?" data-clearcartconfirmationtitle="Clear Cart" data-currentprocessid="7"> 
+       <div class="nav-left"> 
+        <div class="hamburger ui-hamburger nav-item" tabindex="0" role="button" title="More Processes" aria-label="More Processes"> <i class="fa fa-bars"></i> <span class="ham-badge ui-ham-badge" data-count=""></span> 
+        </div> 
+        <div class="navbar-dropdown ui-navbar-dropdown" tabindex="0"> <span class="divider"></span> <a class="ui-more-nav-process nav-item ui-nav-item dropdown" data-processid="7" data-show-clear-cart-message="True" href="/Page/GetFirstPageWithReturnUrl?processID=7&amp;returnUrl=%2FF69ADCE1%2F7%2F100%2FLogin-Login_Method%3FUrlToken%3D6AF364E1&amp;isPageForContact=False&amp;clearProcessContext=True&amp;hash=6D11717B">Login</a>
+        </div> 
+       </div> 
+       <div class="nav-middle"> <a class="ui-nav-process nav-item" data-processid="7" data-show-clear-cart-message="True" href="/Page/GetFirstPageWithReturnUrl?processID=7&amp;returnUrl=%2FF69ADCE1%2F7%2F100%2FLogin-Login_Method%3FUrlToken%3D6AF364E1&amp;isPageForContact=False&amp;clearProcessContext=True&amp;hash=6D11717B">Login</a> 
+       </div> 
+       <div class="nav-right"> 
+        <div class="nav-right-item ui-shopping-cart"> 
+        </div> <a class="nav-right-item login ui-login nav-item" href="/Login?returnUrl=%2FF69ADCE1%2F7%2F100%2FLogin-Login_Method%3FUrlToken%3D6AF364E1"></a> 
+       </div> 
+      </nav> 
+      <script type="text/javascript">$(function () {  if (portal.navigation.InitialiseCleverNavBar) { portal.navigation.InitialiseCleverNavBar($('#17deef8843bf4cc4964cce160713dc90')); } else { alert('portal.navigation.InitialiseCleverNavBar: not found'); } });</script>
+     </div> 
+    </div> 
+   </nav> 
+   <nav> 
+    <div class="container"> 
+    </div> 
+   </nav> 
+   <section class="mm-page"> 
+    <div class="container"> 
+     <article class="page-content ui-page-article ui-ignore-scroll-datetime-picker"> 
+      <div class="" data-portalpageid="100" data-portalrulestatus="Open" data-processid="7" id="page-container"> 
+       <div class="menuhidden"> 
+        <div class="page-container" role="main" id="main-content"> 
+         <section aria-label="Login Method"> 
+          <div class="page sr-clearfix"> 
+           <div class="ui-page-success hidden alert-success alert" role="alert"> 
+            <ul class="ui-notification-content"> 
+            </ul> 
+           </div>
+           <div class="ui-page-information hidden alert-info alert" role="alert"> 
+            <ul class="ui-notification-content"> 
+            </ul> 
+           </div>
+           <div class="ui-page-warning hidden alert-warning alert" role="alert"> 
+            <ul class="ui-notification-content"> 
+            </ul> 
+           </div>
+           <div class="ui-page-error hidden alert-danger alert" role="alert"> 
+            <ul class="ui-notification-content"> 
+            </ul> 
+           </div>
+           <div class="ui-page-message hidden alert-message alert" role="alert"> 
+            <ul class="ui-notification-content"> 
+            </ul> 
+           </div>
+           <div class="ui-page-nonefound hidden alert-nonefound alert" role="alert"> 
+            <ul class="ui-notification-content"> 
+            </ul> 
+           </div> 
+           <div class="widget-section-above widget-section ui-widget-section" data-portalpageid="100" data-portalrulestatus="Open" data-processid="7" data-sectionnumber="0" id="4e9da18140de4a229b73ac6d83f2e83a"> 
+            <div class="widget-container ui-widget-container" data-portalpagewidgetid="202" data-reloadonmoved="False" data-sortorder="2" id="0d38cef93fb24f52b0ddd0615a21b6b4">
+             <div> 
+              <div class="alert alert-warning" data-portalpagewidgetid="202"> <strong class="ui-notification-heading"> </strong> <span class="ui-notification-content multiline markdown"><h5>Login with PID</h5> <p>Select "Login with PID" in the dropdown below and click Continue.</p> <h5>Login with UNI</h5> <p>Select "Login with UNI" in the dropdown below and click Continue.</p> </span> 
+              </div>
+             </div>
+            </div>
+           </div> 
+           <section class="ui-page-body page-body sr-clearfix"> 
+            <form action="/F69ADCE1/7/100/Login-Login_Method?UrlToken=6AF364E1" class="ui-page-content-form" method="post" role="form"> 
+             <div class="fieldset-block ui-fieldset-block"> 
+              <ul> 
+               <li> <label title="Authentication">Authentication:</label> 
+                <div class="edit-control ui-select-list ui-dropdown-container dropdown-container ui-controls-container medium" data-datatype="String" data-fieldname="CheckOrderList" id="3108b1a7628e4a5e8ef2dc85369a105f">
+                 <div class="ui-dropdown-controls-container controls-container">
+                  <div class="dropdown-container-icon"></div>
+                  <div class="ui-dropdown-container-caption dropdown-container-caption">
+                   Please select an authentication method
+                  </div><select class="ui-input" id="3108b1a7628e4a5e8ef2dc85369a105f_list" name="CheckOrderList" onchange="starrez.library.controls.FlagChanged($('#3108b1a7628e4a5e8ef2dc85369a105f')); ;starrez.library.controls.dropdown.SelectItem(this);"><option value="">Please select an authentication method</option><option value="4">Login with PID</option><option value="0">Login with UNI</option></select>
+                 </div>
+                </div> </li> 
+              </ul> 
+             </div>
+            </form> 
+           </section> 
+          </div> 
+          <div class="page-actions ui-page-actions"> <button aria-label="Continue" class="ui-submit-page-content sr_button_primary sr_button" title="Continue" type="button"><i class="fa NoShow sr_button_primary_icon"></i><span class="ui_button_caption sr_button_primary_caption">Continue</span></button> 
+          </div> 
+         </section> 
+        </div> 
+       </div> 
+       <script type="text/javascript">$(function () {  if (portal.page.PageInitialise) { portal.page.PageInitialise($('#page-container')); } else { alert('portal.page.PageInitialise: not found'); } });</script>
+      </div> 
+     </article> 
+    </div> 
+   </section> 
+   <footer class="ui-page-footer"> 
+    <div class="container"> 
+     <div class="col2"> 
+      <div role="presentation" class="logo"></div> 
+      <div class="tag-line"></div> 
+     </div> 
+     <div class="col2"> 
+      <p><strong>Contact Us</strong><br><a href="mailto:housing@columbia.edu">housing@columbia.edu</a> | <a href="https://housing.columbia.edu" target="_blank" rel="noopener noreferrer">Columbia Housing</a><br> Hartley Hospitality Desk | Hartley Lobby - (212) 854-2779<br> Columbia Housing Office | 118 Hartley Hall - (212) 854-2946<br><a href="https://www.facebook.com/ColumbiaUniversityHousing" target="_blank" rel="noopener noreferrer"><img src="https://facebookbrand.com/wp-content/uploads/2016/05/flogo_rgb_hex-brc-site-250.png?w=40&amp;h=40" alt="Facebook"></a></p>
+     </div> 
+    </div> 
+   </footer> 
+   <section class="copyright" aria-label="copyright"> 
+    <div class="container"> 
+     <div class="col1">
+       Powered by <a href="http://www.starrez.com" target="_blank" rel="noopener noreferrer">StarRez</a> - © 2022 StarRez Inc. 
+     </div> 
+    </div> 
+   </section> <!-- to here --> 
+  </div> 
+  <div class="srw" id="srw_container"> 
+  </div> 
+  <div class="portalx" id="portalx_container"> 
+   <div class="visible-on-mobile" id="visible_on_mobile_div"></div> 
+   <div class="modal fade" id="messageDialog" tabindex="-1" aria-labelledby="dialogTitle" aria-describedby="dialogBody" aria-modal="true" role="alertdialog"> 
+    <div class="modal-dialog ui-modal-dialog modal-sm"> 
+     <div class="modal-content ui-modal-content"> 
+      <div class="modal-header ui-modal-header"> 
+       <div class="modal-title" id="dialogTitle"></div> 
+      </div> 
+      <div class="modal-body ui-modal-body" id="dialogBody"> <span class="ui-message"></span> 
+      </div> 
+      <div class="modal-footer ui-modal-footer"> 
+       <div> 
+        <div class="ui-standard"> <button aria-label="Close" class="ui-btn-closepopup sr_button_secondary sr_button" data-dismiss="modal" type="button"><i class="fa NoShow sr_button_secondary_icon"></i><span class="ui_button_caption sr_button_secondary_caption">Close</span></button> 
+        </div> 
+        <div class="ui-confirmation"> <button aria-label="Yes" class="ui-btn-submitpopup sr_button_primary sr_button" data-dismiss="modal" type="button"><i class="fa NoShow sr_button_primary_icon"></i><span class="ui_button_caption sr_button_primary_caption">Yes</span></button> <button aria-label="No" class="ui-btn-closepopup sr_button_secondary sr_button" data-dismiss="modal" type="button"><i class="fa NoShow sr_button_secondary_icon"></i><span class="ui_button_caption sr_button_secondary_caption">No</span></button> 
+        </div> 
+        <div class="ui-delete"> 
+         <div class="ui-btn-submitpopup  delete ui-image-button-container image-button-container" data-dismiss="modal" role="button" tabindex="0" title="">
+          <div class="image-button">
+           <div class=" noshow image-button-image ui-image-button-image"></div>
+           <div class="image-button-text ui-image-button-text">
+            Delete
+           </div>
+          </div>
+         </div> <button aria-label="Cancel" class="ui-btn-closepopup sr_button_secondary sr_button" data-dismiss="modal" type="button"><i class="fa NoShow sr_button_secondary_icon"></i><span class="ui_button_caption sr_button_secondary_caption">Cancel</span></button> 
+        </div> 
+       </div> 
+       <div class="clear"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="global-loading" id="global-loading">
+    <div class="ui-clear-background clear-background"></div>
+    <div class="ui-global-loading-animation global-loading-animation">
+     <div></div>
+     <div></div>
+     <div></div>
+     <div></div>
+    </div><progress class="ui-global-loading-progress hidden global-loading-progress" max="100"></progress>
+   </div> 
+  </div> 
+  <input name="__RequestVerificationToken" type="hidden" value="BrW6wEuaCyHO19sSF5i6ZEv5pbaYD4277WXiT2Np-dJv3jn5vdGA68lMqxoyw5w6C9ZcIzHy8zxZllahWw4emoBuQF31qsNkzJvdX2JDmGI1">  
+ </body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <title>UCR Library | Giving</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="format-detection" content="telephone=no"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> 
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source Sans Pro:200,400,400i,700,700i%7CLora:400,400i,700,700i%7CPoppins:600" type="text/css" media="all"> 
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> 
+  <link rel="stylesheet" type="text/css" href="css/flip.css"> 
+  <link rel="stylesheet" type="text/css" href="css/styles.css?v=2"> 
+  <link rel="stylesheet" type="text/css" href="css/dropdown.css"> 
+  <base href="https://library.ucr.edu/giving/"> 
+ </head> 
+ <body ng-app="app"> 
+  <div id="wrapper" ng-controller="MainController"> 
+   <header id="header" class="header"> 
+    <div class="header-nav"> 
+     <div class="row"> 
+      <div class="col-md-3 col-sm-6" style="cursor:pointer;"> <a href="https://library.ucr.edu" class="logo"> <img src="images/logo.svg" alt="site logo" style="width: 300px;"> </a> 
+      </div> 
+      <div class="col-md-9 col-sm-6"> 
+       <div class="text-right"> 
+        <div id="featured-funds-dropdown" class="wrapper-dropdown"> <a href="#" id="featured-funds-link" title="Explore all library funds" class="explore-link"> Giving priorities </a> 
+         <ul class="dropdown"> 
+          <li><a target="_blank" href="https://myadv.ucr.edu/LIB/200358">UCR Libraries Book Fund</a></li> 
+          <li><a target="_blank" href="https://myadv.ucr.edu/LIB/200851">Creat’R Lab Fund</a></li> 
+          <li><a target="_blank" href="https://myadv.ucr.edu/LIB/200882">Student Library Success Fund</a></li> 
+         </ul> 
+        </div> <a href="https://myadv.ucr.edu/LIB/library" title="Explore all library funds" class="explore-link"> Explore all library funds </a> <a href="https://myadv.ucr.edu/LIB/200362" title="Give now" class="give-button" target="_blank"> Give now </a> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </header> <ui-view></ui-view> 
+   <footer id="footer" class="footer"> 
+    <div class="copyright"> 
+     <div class="container"> 
+      <div class="row"> 
+       <div class="col"> <a href="https://library.ucr.edu"> <img src="images/logo-white.svg"> </a> 
+       </div> 
+       <div class="col"> 
+        <h5>Contact Us</h5> 
+        <ul> 
+         <li> Jernine McBride </li> 
+         <li> Associate Director of Development </li> 
+         <li> Office: 951.827.2841 </li> 
+         <li> Cell: 951.534.8346 </li> 
+         <li> <a href="mailto:jernine.mcbride@ucr.edu">jernine.mcbride@ucr.edu</a> </li> 
+        </ul> 
+       </div> 
+       <div class="col"> 
+        <h5>Invest In</h5> 
+        <ul> 
+         <li class="mb-1"> <a href="#" ng-click="go('/student-success')">Student Success</a> </li> 
+         <li class="mb-1"> <a href="#" ng-click="go('/research-excellence')">Research Excellence</a> </li> 
+         <li class="mb-1"> <a href="#" ng-click="go('/creativity-entrepreneurship')">Creativity &amp; Entrepreneurship</a> </li> 
+         <li class="mb-1"> <a href="#" ng-click="go('/inspiring-spaces')">Inspiring Spaces</a> </li> 
+         <li class="mb-1"> <a href="#" ng-click="go('/imagination')">Imagination</a> </li> 
+         <li class="mb-1"> <a href="#" ng-click="go('/cultural-heritage')">Cultural Heritage</a> </li> 
+        </ul> 
+       </div> 
+       <div class="col"> 
+        <h5>Campaign</h5> 
+        <ul> 
+         <li> <a href="https://campaign.ucr.edu/#why-give" target="_blank">Why Give</a> </li> 
+         <li> <a href="https://campaign.ucr.edu/#impact" target="_blank">Impact</a> </li> 
+         <li> <a href="https://campaign.ucr.edu/#ways-to-give" target="_blank">Ways to Give</a> </li> 
+        </ul> 
+       </div> 
+       <div class="col"> 
+        <h5>Follow</h5> 
+        <ul> 
+         <li> <i class="fa fa-twitter-square" aria-hidden="true"></i> <a href="https://twitter.com/ucrlibrary" target="_blank">Twitter</a> </li> 
+         <li> <i class="fa fa-facebook-square" aria-hidden="true"></i> <a href="https://www.facebook.com/ucrlibrary" target="_blank">Facebook</a> </li> 
+         <li> <i class="fa fa-youtube-square" aria-hidden="true"></i> <a href="https://www.youtube.com/user/ucrlibraries/featured" target="_blank">YouTube</a> </li> 
+         <li> <i class="fa fa-instagram" aria-hidden="true"></i> <a href="https://www.instagram.com/ucrlibrary/" target="_blank">Instagram</a> </li> 
+        </ul> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </footer> 
+  </div> 
+  <script src="bower_components/jquery/dist/jquery.min.js"></script> 
+  <script src="bower_components/angular/angular.min.js"></script> 
+  <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script> 
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script> 
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script> 
+  <script src="js/dropdown.js"></script> 
+  <script src="js/app.js?v=2"></script> 
+  <script type="text/javascript">
+		// Initialize the dropdown behavior
+		$(function () {
+			var dd = new DropDown($('#featured-funds-link'));
+
+			$(document).click(function () {
+				$('.wrapper-dropdown').removeClass('active');
+			});
+		});
+	</script>  
+ </body>
+</html>

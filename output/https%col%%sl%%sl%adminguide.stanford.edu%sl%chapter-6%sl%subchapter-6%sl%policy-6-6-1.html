@@ -1,0 +1,609 @@
+<!doctype html><!--[if lt IE 7]> <html class="ie6 ie" lang="en" dir="ltr"> <![endif]--><!--[if IE 7]>    <html class="ie7 ie" lang="en" dir="ltr"> <![endif]--><!--[if IE 8]>    <html class="ie8 ie" lang="en" dir="ltr"> <![endif]--><!--[if IE 9]>    <html class="ie9 ie" lang="en" dir="ltr"> <![endif]--><!--[if !IE]> -->
+<html lang="en" dir="ltr"> <!-- <![endif]-->
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="shortcut icon" href="https://adminguide.stanford.edu/sites/adminguide/themes/stanford_wilbur/favicon.ico" type="image/vnd.microsoft.icon">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-167x167.png" rel="apple-touch-icon" sizes="167x167">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon.png" rel="apple-touch-icon">
+  <meta name="description" content="This Guide Memo describes the procedures to be followed when a computer security incident is discovered to have occurred involving an Academic or Administrative Computing System operated by Stanford University, its faculty, students, employees, consultants, vendors or others operating such systems on behalf of Stanford. It also describes the procedures to be followed when Prohibited or Restricted Information residing on any computing or information storage device is, or may have been, inappropriately accessed, whether or not such device is owned by Stanford.">
+  <meta name="generator" content="Drupal 7 (http://drupal.org)">
+  <link rel="canonical" href="https://adminguide.stanford.edu/chapter-6/subchapter-6/policy-6-6-1">
+  <link rel="shortlink" href="https://adminguide.stanford.edu/node/3865"><!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>6.6.1 Information Security Incident Response | Administrative Guide</title>
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_QnDqumlAmBiA-LkPKOOEj-wMlRQlYuHQdMmPGFs03GQ.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_n77Z-RmCw4Tz9GW54Nbcfow8RGjtfTLlRTwGth5MWaE.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_y_dL8x_4Lo3ATqAJ8TKXp2FokyqjNfCBM-br9QkKd5I.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_uf7upw_VdP9otng9XJ5w7Jm5k3qFRbNSaZmIxqulyjc.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_nGZ0EUi6HATidAf3pITrpLdyTGtTsmfVAzXLpUp2gr4.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_hFgE0FKnmBbpxcVInjwJkJvz5FteXfkSBt_TK5Fhw5c.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_CgsGc17bROq-YEu06g2l32A8bPsq9xyxInph7wSXwTM.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_VUYr5hwTON1lJZXnL2gj7OiHIIYb1nh7JvnMd3Okb18.css" media="all">
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_LzIKY2LtrqT61QtBB9c64_FZsJL6gqRfqtFq7xBebDY.js"></script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_g98Ekqvuj1mMaUqTkLdcrMmJymw4aFC5YyzBQBviahY.js"></script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_38VWQ3jjQx0wRFj7gkntZr077GgJoGn5nv3v05IeLLo.js"></script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_0qGD1CqGsDpO1yJ1qzckatKYx8lDESM0HyyA0gOUh_k.js"></script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_JBII3plGAkBIQcH8MpZqJ7Uj5btcZVHAZUjy1Gt2TyY.js"></script>
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-15197849-4", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_CGTTou4hc06TMV_FfvYg2xwA7oOiGjxsRPCILWubQHY.js"></script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_lwzJeXOXdNPAbw7ThjcrhrPFAUgW_lR49bJ8nQYUbcY.js"></script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js_injector/js_injector_1.js?rdjuly"></script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js_injector/js_injector_3.js?rdjuly"></script>
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"stanford_wilbur","theme_token":"CZCxMcqAp2AibgVTg4o6ck9nZAr326SNNSQn-1r9380","css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"modules\/book\/book.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/adminguide\/modules\/stanford\/stanford_search_api\/css\/stanford_search_api.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/adminguide\/modules\/contrib\/context_accordion\/context_accordion.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/adminguide\/modules\/contrib\/custom_pagers\/custom_pagers.css":1,"sites\/adminguide\/modules\/contrib\/print\/print_ui\/css\/print_ui.theme.css":1,"sites\/adminguide\/modules\/contrib\/field_collection\/field_collection.theme.css":1,"sites\/adminguide\/themes\/open_framework\/packages\/bootstrap-2.3.1\/css\/bootstrap.min.css":1,"sites\/adminguide\/themes\/open_framework\/packages\/bootstrap-2.3.1\/css\/bootstrap-responsive.min.css":1,"sites\/adminguide\/themes\/open_framework\/packages\/font-awesome-3.2.1\/css\/font-awesome.min.css":1,"sites\/adminguide\/themes\/open_framework\/css\/open_framework.css":1,"sites\/adminguide\/themes\/stanford_framework\/css\/stanford-framework.css":1,"sites\/adminguide\/themes\/stanford_framework\/css\/stanford_default\/stanford-default.css":1,"sites\/adminguide\/themes\/stanford_framework\/css\/ie.css":1,"sites\/adminguide\/themes\/stanford_wilbur\/css\/stanford_wilbur.css":1,"sites\/adminguide\/themes\/open_framework\/css\/open_framework_print.css":1,"public:\/\/css_injector\/css_injector_1.css":1,"public:\/\/css_injector\/css_injector_3.css":1,"public:\/\/css_injector\/css_injector_5.css":1,"public:\/\/css_injector\/css_injector_7.css":1,"public:\/\/css_injector\/css_injector_9.css":1,"public:\/\/css_injector\/css_injector_11.css":1,"public:\/\/css_injector\/css_injector_25.css":1,"public:\/\/css_injector\/css_injector_27.css":1,"public:\/\/css_injector\/css_injector_32.css":1,"public:\/\/css_injector\/css_injector_34.css":1,"public:\/\/css_injector\/css_injector_36.css":1,"public:\/\/css_injector\/css_injector_38.css":1,"public:\/\/css_injector\/css_injector_41.css":1},"js":{"sites\/adminguide\/files\/js_injector\/js_injector_5.js":1,"misc\/jquery.js":1,"sites\/adminguide\/themes\/open_framework\/js\/jquery-migrate-1.2.1.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/ui\/jquery.ui.widget.min.js":1,"misc\/ui\/jquery.ui.accordion.min.js":1,"sites\/adminguide\/modules\/contrib\/context_accordion\/context_accordion.js":1,"sites\/adminguide\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/adminguide\/modules\/stanford\/stanford_search_api\/js\/stanford_search_api.js":1,"sites\/adminguide\/modules\/contrib\/field_group\/field_group.js":1,"sites\/adminguide\/themes\/open_framework\/packages\/bootstrap-2.3.1\/js\/bootstrap.min.js":1,"sites\/adminguide\/themes\/open_framework\/js\/open_framework.js":1,"sites\/adminguide\/themes\/open_framework\/js\/jquery.placeholder.min.js":1,"sites\/adminguide\/themes\/open_framework\/js\/override.js":1,"sites\/adminguide\/themes\/stanford_framework\/js\/stanford-framework.js":1,"sites\/adminguide\/themes\/stanford_wilbur\/js\/stanford_wilbur.js":1,"sites\/adminguide\/files\/js_injector\/js_injector_1.js":1,"sites\/adminguide\/files\/js_injector\/js_injector_3.js":1}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/content":true},"field_group":{"div":"default"}});
+//--><!]]>
+</script><!--[if IE 7]>
+  <link rel="stylesheet" href="/sites/adminguide/themes/open_framework/packages/font-awesome-3.2.1/css/font-awesome-ie7.min.css" />  <![endif]--><!-- IE Fix for HTML5 Tags --><!--[if lt IE 9]>
+    <script src="/sites/adminguide/themes/open_framework/js/html5shiv.js"></script>
+  <![endif]-->
+ </head>
+ <body class="html not-front not-logged-in two-sidebars page-node page-node- page-node-3865 node-type-policy-document     show-breadcrumb    style-default  header-bkg-image header-bkg-text-light">
+  <div id="wrap">
+   <a href="#main" class="element-invisible element-focusable">Skip to content</a><a href="#main-nav" class="element-invisible element-focusable">Skip to navigation</a><!-- /#skipnav --><!-- /#admin-shortcuts -->
+   <div id="global-header">
+    <div class="container">
+     <div class="row-fluid">
+      <div id="top-logo" class="span4">
+       <a href="http://www.stanford.edu"><img src="/sites/adminguide/themes/stanford_framework/images/header-stanford-logo@2x.png" alt="Stanford University"></a>
+      </div>
+     </div>
+    </div>
+   </div><!-- /#global-header -->
+   <div id="header" class="clearfix header" role="banner">
+    <div class="container">
+     <div class="row">
+      <div class="span9">
+       <div id="logo" class=" "> <a href="/" title="Home" rel="home"> <img src="https://adminguide.stanford.edu/sites/adminguide/themes/stanford_wilbur/logo.png" alt="Stanford" role="presentation"> </a>
+       </div><!-- /#logo -->
+       <div id="name-and-slogan" class="with-logo">
+        <div id="site-name" class="site-name">
+         <a href="/" title="Home" rel="home">Administrative Guide</a>
+        </div>
+       </div><!-- /#name-and-slogan --><!-- /#header-content -->
+      </div>
+     </div>
+    </div>
+   </div><!-- /#header -->
+   <div id="main-menu" class="clearfix site-main-menu">
+    <div class="container">
+     <div class="navbar">
+      <div class="navbar-inner">
+       <div id="nav-search" class="nav-search"> 
+        <div class="region region-search-box clearfix">
+         <div id="block-stanford-search-api-search-api-search-block" class="clearfix block block-stanford-search-api"> 
+          <div class="content"> 
+           <form action="/search/content" method="post" id="stanford-search-api-search-block-form" accept-charset="UTF-8">
+            <div>
+             <div class="form-item form-type-textfield form-item-keywords">
+              <input placeholder="Search this site..." class="input-medium search-query form-text" type="text" id="edit-keywords" name="keywords" value="" size="60" maxlength="128">
+             </div>
+             <input class="btn-search form-submit" alt="Search" type="image" id="edit-search" name="search" value="Search" src="https://adminguide.stanford.edu/sites/adminguide/themes/open_framework/images/searchbutton.png">
+             <input type="hidden" name="form_build_id" value="form-cg4IA4qNRZdTNuFRlgYVlsYqC6-jPm6ZSVrHamOU_nM">
+             <input type="hidden" name="form_id" value="stanford_search_api_search_block_form">
+            </div>
+           </form> 
+          </div>
+         </div>
+        </div><!-- /.region -->
+       </div><button aria-label="Navigation menu" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse"> <span class="hide">Navigation menu</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+       <div class="nav-collapse collapse">
+        <nav id="main-nav" role="navigation">
+         <ul class="menu nav">
+          <li class="first leaf"><a href="/stanford">Home</a></li>
+          <li class="leaf"><a href="/whats-new">What's New</a></li>
+          <li class="leaf"><a href="/chapters">Chapters</a></li>
+          <li class="leaf"><a href="/category" title="">Browse by Category</a></li>
+          <li class="last leaf"><a href="/about-guide">About the Guide</a></li>
+         </ul> <!-- /#primary-menu -->
+        </nav>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div><!-- /#main-menu -->
+   <div id="main" class="clearfix main" role="main">
+    <div id="breadcrumb">
+     <div class="container">
+      <h2 class="element-invisible">You are here</h2>
+      <div class="breadcrumb">
+       <a href="/">Home</a> » <a href="/chapter-6">Chapter 6</a> » <a href="/chapter-6/subchapter-6">Subchapter 6</a> » Policy 6.6.1
+      </div>
+     </div>
+    </div>
+    <div class="container">
+     <div id="main-content" class="row main-content">
+      <div id="sidebar-first" class="sidebar site-sidebar-first span3">
+       <div class="row-fluid">
+        <div class="region region-sidebar-first clearfix">
+         <div id="block-menu-menu-admin-guide" class="clearfix block block-menu span3 sidebar-content"> 
+          <h2>Chapters</h2>
+          <div class="content"> 
+           <ul class="menu nav">
+            <li class="first collapsed"><a href="/chapter-1">1. Guiding Policies and Principles</a></li>
+            <li class="collapsed"><a href="/chapter-2">2. Human Resources</a></li>
+            <li class="collapsed"><a href="/chapter-3">3. Financial Administration</a></li>
+            <li class="collapsed"><a href="/chapter-4">4. Giving to Stanford</a></li>
+            <li class="collapsed"><a href="/chapter-5">5. Purchasing and Payments</a></li>
+            <li class="expanded active-trail"><a href="/chapter-6" class="active-trail">6. Computing</a>
+             <ul class="menu nav">
+              <li class="first leaf"><a href="/chapter-6/subchapter-1">6.1 Privacy and Access to Electronic Information</a></li>
+              <li class="leaf"><a href="/chapter-6/subchapter-2">6.2 Computer and Network Usage</a></li>
+              <li class="leaf"><a href="/chapter-6/subchapter-3">6.3 Information Security</a></li>
+              <li class="leaf"><a href="/chapter-6/subchapter-4" title="">6.4 Identification and Authentication</a></li>
+              <li class="leaf"><a href="/chapter-6/subchapter-5">6.5 Chat Rooms and Other Forums</a></li>
+              <li class="leaf active-trail"><a href="/chapter-6/subchapter-6" class="active active-trail">6.6 Information Security Incidents</a></li>
+              <li class="leaf"><a href="/chapter-6/subchapter-7">6.7 Administrative Computing</a></li>
+              <li class="last leaf"><a href="/chapter-6/subchapter-8">6.8 Digital Accessibility</a></li>
+             </ul></li>
+            <li class="collapsed"><a href="/chapter-7">7. Health and Safety</a></li>
+            <li class="collapsed"><a href="/chapter-8">8. Services</a></li>
+            <li class="collapsed"><a href="/chapter-9">9. Organization Charts</a></li>
+            <li class="collapsed"><a href="/chapter-10">10. Student Employment and Assistantships</a></li>
+            <li class="last collapsed"><a href="/chapter-12">12. Global Activities</a></li>
+           </ul> 
+          </div>
+         </div>
+        </div><!-- /.region -->
+       </div>
+      </div><!-- /#sidebar-first -->
+      <div id="content" class="mc-content span6">
+       <div id="content-wrapper" class="content-wrapper">
+        <div id="content-head" class="row-fluid content-head">
+         <div id="highlighted" class="clearfix">
+          <div class="region region-highlighted clearfix">
+           <div id="block-custom-pagers-1" class="clearfix block block-custom-pagers"> 
+            <div class="content"> 
+             <ul class="custom-pager custom-pager-block">
+              <li class="previous"><a href="/chapter-6/subchapter-5/policy-6-5-1">‹ previous</a></li>
+              <li class="key">112 of 185</li>
+              <li class="next"><a href="/chapter-6/subchapter-7/policy-6-7-1">next ›</a></li>
+             </ul>
+            </div>
+           </div>
+          </div><!-- /.region -->
+         </div>
+         <h1 class="title" id="page-title"> 6.6.1 Information Security Incident Response </h1>
+        </div>
+        <div id="content-body" class="row-fluid content-body"> 
+         <div class="region region-content clearfix">
+          <div id="block-views-chapter-image-block" class="clearfix block block-views"> 
+           <div class="content"> 
+            <div class="view view-chapter-image view-id-chapter_image view-display-id-block view-dom-id-670f13a239b751fe1c9102625b8f2d01">
+             <div class="view-content">
+              <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+               <div class="views-field views-field-field-chapter-image"> 
+                <div class="field-content">
+                 <img typeof="foaf:Image" src="https://adminguide.stanford.edu/sites/adminguide/files/styles/chapter-square/public/6-Computing_120901-074.png?itok=jJTJN0QI" width="170" height="170" alt="Two hands on a keyboard">
+                </div> 
+               </div> 
+              </div>
+             </div>
+            </div> 
+           </div>
+          </div>
+          <div id="block-system-main" class="clearfix block block-system"> 
+           <div class="content"> 
+            <div id="node-3865" class="node node-policy-document clearfix" about="/chapter-6/subchapter-6/policy-6-6-1" typeof="sioc:Item foaf:Document"><a name="anchor-3865"></a><span property="dc:title" content="6.6.1 Information Security Incident Response" class="rdf-meta element-hidden"></span> 
+             <div class="content">
+              <div class="field-last-updated-on-prefix">
+               Last updated on:
+              </div>
+              <div class="field field-name-field-policy-current-version field-type-datetime field-label-hidden">
+               <div class="field-items">
+                <div class="field-item even">
+                 <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2013-03-15T00:00:00-07:00">03/15/2013</span>
+                </div>
+               </div>
+              </div> 
+              <div class="field field-name-field-policy-former-number field-type-text field-label-inline clearfix">
+               <div class="field-label">
+                Formerly Known As Policy Number:&nbsp;
+               </div>
+               <div class="field-items">
+                <div class="field-item even">
+                 67
+                </div>
+               </div>
+              </div>
+              <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+               <div class="field-items">
+                <div class="field-item even" property="content:encoded">
+                 <p>This Guide Memo describes the procedures to be followed when a computer security incident is discovered to have occurred involving an Academic or Administrative Computing System operated by Stanford University, its faculty, students, employees, consultants, vendors or others operating such systems on behalf of Stanford. It also describes the procedures to be followed when Prohibited or Restricted Information residing on any computing or information storage device is, or may have been, inappropriately accessed, whether or not such device is owned by Stanford. This policy outlines the procedures for decision making regarding emergency actions taken for the protection of Stanford's information resources from accidental or intentional unauthorized access, disclosure or damage.</p>
+                </div>
+               </div>
+              </div>
+              <div class="field field-name-field-policy-authority field-type-text-long field-label-above">
+               <div class="field-label">
+                Authority:&nbsp;
+               </div>
+               <div class="field-items">
+                <div class="field-item even">
+                 <p>Approved by the Vice President for Business Affairs and Chief Financial Officer.</p>
+                </div>
+               </div>
+              </div> 
+              <div class="field field-name-field-policy-applicability field-type-text-long field-label-above">
+               <div class="field-label">
+                Applicability:&nbsp;
+               </div>
+               <div class="field-items">
+                <div class="field-item even">
+                 <p>This policy is applicable to all University students, faculty, staff, and to all others granted use or custodianship of Stanford University information resources ("University Community").</p>
+                </div>
+               </div>
+              </div> 
+              <div id="toc">
+               <h2>Jump To:</h2>
+               <ul>
+                <li><a href="#anchor-24217">1. Purpose</a></li>
+                <li><a href="#anchor-24219">2. Definitions</a></li>
+                <li><a href="#anchor-24221">3. Notification</a></li>
+                <li><a href="#anchor-24413">4. Investigation</a></li>
+                <li><a href="#anchor-24415">5. Information Security Incident Response Team</a></li>
+                <li><a href="#anchor-24417">6. Report Preparation</a></li>
+                <li><a href="#anchor-24419">7. Additional Information</a></li>
+               </ul>
+              </div><a name="anchor-24217"></a>
+              <div class="policy-subsection-container policy-subection-container-24217">
+               <h2 class="policy-subsection-title" id="purpose"><span class="prefix-container">1. </span>Purpose</h2>
+               <div class="policy-subsection-body">
+                <p>The purpose of information security incident response is to:</p> 
+                <p><strong>a.</strong> mitigate the effects caused by such an incident,<br> <strong>b. </strong>protect the information resources of the University from future unauthorized access, use or damage, and<br> <strong>c.</strong> ensure that Stanford fulfills all of its obligations under University policy, and federal and state laws and regulations with respect to such incident.</p> 
+                <p>Stanford recognizes the need to follow established procedures to address situations that could indicate the security of the University's information assets may have been compromised. Such procedures include ensuring the appropriate level of University management becomes involved in the determination of actions implemented in response to an information technology security incident.</p> 
+                <p>A standard University-wide approach to information security is important in order to protect the security of Stanford's intellectual capital and to ensure that Information Security Incidents are handled properly, effectively and in a manner that minimizes the adverse impact to the University. Every user of any of Stanford's information resources has responsibility toward the protection of the University's information assets; certain offices and individuals have very specific responsibilities.</p> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div><a name="anchor-24219"></a>
+              <div class="policy-subsection-container policy-subection-container-24219">
+               <h2 class="policy-subsection-title" id="definitions"><span class="prefix-container">2. </span>Definitions</h2>
+               <div class="policy-subsection-body">
+                <p><strong>a. Academic Computing System</strong><br> Any application, or information system, that directly or indirectly deals with or supports the University's primary mission of teaching, learning and research.</p> 
+                <p><strong>b. Administrative Computing System</strong><br> Any application, or information system, that directly or indirectly deals with or supports financial, administrative, or other information that is an integral part of running the business of the University (as defined in&nbsp;<a href="/chapter-6/subchapter-7/policy-6-7-1">Guide Memo 6.7.1</a>:&nbsp;Administrative Computing Systems).</p> 
+                <p><strong>c. Electronic Information Security Incident</strong><br> An Electronic Information Security Incident is defined as any real or suspected adverse event in relation to the security of computer systems, computer networks, electronic Prohibited information or electronic Restricted Information. Examples of incidents include:</p> 
+                <ul> 
+                 <li>Attempts (either failed or successful) to gain unauthorized access to a system or its data.</li> 
+                 <li>Theft or other loss of a laptop, desktop, PDA, or other device that contains Prohibited or Restricted Information, whether or not such device is owned by Stanford.</li> 
+                 <li>Unwanted disruption or denial of service.</li> 
+                 <li>The unauthorized use of a system for the processing or storage of data.</li> 
+                 <li>Changes to system hardware, firmware, or software characteristics without the owner's knowledge, instruction, or consent.</li> 
+                </ul> 
+                <p><strong>d. Information Security Incident</strong><br> An Electronic Information Security Incident or a Non-electronic Information Security Incident.</p> 
+                <p><strong>e. Non-electronic Information Security Incident</strong><br> Real or suspected theft, loss or other inappropriate access of physical content, such as printed documents and files.</p> 
+                <p><strong>f. Prohibited Information</strong><br> Information defined as <a href="http://www.stanford.edu/group/security/securecomputing/dataclass_chart.html">Prohibited</a>.</p> 
+                <p><strong>g. Restricted Information</strong><br> Information defined as <a href="http://www.stanford.edu/group/security/securecomputing/dataclass_chart.html">Restricted</a>.</p> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div><a name="anchor-24221"></a>
+              <div class="policy-subsection-container policy-subection-container-24221">
+               <h2 class="policy-subsection-title" id="notification"><span class="prefix-container">3. </span>Notification</h2>
+               <div class="policy-subsection-body">
+                <p>A member of the University Community who becomes aware of an Information Security Incident should immediately:</p> 
+                <p><strong>a. </strong>Disconnect the compromised system and equipment from Stanford's network.</p> 
+                <p><strong>b. </strong>Avoid making any updates or other modifications to software, data, or equipment involved or suspected of involvement with an Information Security Incident until after the Information Security Office has completed its investigation and authorizes such activity.</p> 
+                <p><strong>c. </strong>Contact the University's Information Security Office via <a href="http://helpsu.stanford.edu">HelpSU</a> or by calling (650) 723-2911.</p> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div><a name="anchor-24413"></a>
+              <div class="policy-subsection-container policy-subection-container-24413">
+               <h2 class="policy-subsection-title" id="investigation"><span class="prefix-container">4. </span>Investigation</h2>
+               <div class="policy-subsection-body">
+                <p>When an Information Security Incident is reported, the University’s Chief Information Security Officer (CISO) will do the following:</p> 
+                <p><strong>a.&nbsp; </strong>The CISO will investigate the Information Security Incident. In order to minimize the impact of the Information Security Incident on the University and in order to complete a proper investigation, the CISO has the authority to restrict information system access or operations to protect against unauthorized information disclosures. In order to complete the investigation, the CISO may convene a preliminary fact-finding working group comprised of relevant business and technical personnel.</p> 
+                <p><strong>b.</strong> If the CISO concludes that applicable federal or state laws or regulations may have been violated, the CISO will notify the Office of the General Counsel, which will, in turn, notify law enforcement agencies if appropriate.</p> 
+                <p><strong>c.</strong> If the CISO concludes that there is a possibility of unauthorized access to Restricted or Prohibited Information, or other sensitive information, the CISO will notify the University Privacy Officer, who will convene an Information Security Incident Response Team.</p> 
+                <p><strong>d.</strong> If appropriate, the CISO will notify offices of the Deans, Vice Provosts and Vice Presidents with responsibility for areas affected by the Information Security Incident.</p> 
+                <p><strong>e.</strong> If the CISO determines that an employee may not have carried out their assigned tasks as instructed or in accordance with University rules and policies, the CISO will notify the employee’s manager and the Vice President for Business Affairs and CFO. If the University opens an investigation into the situation, the CISO will cooperate with the employee’s manager and/or Stanford’s Human Resources Group in its investigation of the incident to determine appropriate corrective or disciplinary action, if any. The office conducting the investigation and making the recommendation will complete and submit to the appropriate parties all supporting documentation related to the investigation and recommended action.</p> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div><a name="anchor-24415"></a>
+              <div class="policy-subsection-container policy-subection-container-24415">
+               <h2 class="policy-subsection-title" id="information-security-incident-response-team"><span class="prefix-container">5. </span>Information Security Incident Response Team</h2>
+               <div class="policy-subsection-body">
+                <p>Based on information provided by the CISO and in consultation with the Office of the General Counsel, the University’s Privacy Officer will convene an Information Security Incident Response Team (ISIRT) to develop an appropriate Information Security Incident Response Plan (Plan). Depending on the circumstances of each situation, the Privacy Officer shall include in the ISIRT representatives of some or all of the following offices:</p> 
+                <ul> 
+                 <li>Information Security Office</li> 
+                 <li>Office of the General Counsel</li> 
+                 <li>Internal Audit and Institutional Compliance Department</li> 
+                 <li>Office of the Vice President for Public Affairs</li> 
+                 <li>Administrative Systems</li> 
+                 <li>IT Services</li> 
+                 <li>Departments or schools directly affected by the Information Security Incident (including both the appropriate business and technical personnel)</li> 
+                 <li>Other constituencies, as appropriate.</li> 
+                </ul> 
+                <p>The ISIRT, led by the University Privacy Officer, will develop and execute communication and other action plans to ensure:</p> 
+                <p><strong>a. </strong>Appropriate action is taken in a timely manner, including reporting, notification and other communication of the Information Security Incident, as required by law or otherwise deemed appropriate.</p> 
+                <p><strong>b. </strong>Appropriate progress reports are made on the Information Security Incident and execution of the Plan, including to:</p> 
+                <ul> 
+                 <li>Office of the President and Provost</li> 
+                 <li>Board of Trustees</li> 
+                 <li>Alumni Association</li> 
+                 <li>Office of Student Affairs</li> 
+                 <li>Office of Development</li> 
+                 <li>Other impacted constituencies, as warranted by the situation</li> 
+                </ul> 
+                <p>In carrying out this responsibility, the ISIRT will ensure that important operational decisions are elevated to the appropriate levels to protect the fundamental interests of the University and others impacted by the incident.</p> 
+                <p>The University Privacy Officer will also be responsible for documenting the deliberations and decisions of the ISIRT as well as all actions taken pursuant to ISIRT deliberations.</p> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div><a name="anchor-24417"></a>
+              <div class="policy-subsection-container policy-subection-container-24417">
+               <h2 class="policy-subsection-title" id="report-preparation"><span class="prefix-container">6. </span>Report Preparation</h2>
+               <div class="policy-subsection-body">
+                <p>The Information Security Office, jointly with the Internal Audit Department, will be responsible for writing a final report on the incident and the ensuing investigation (Report), which summarizes findings regarding the Information Security Incident and, if appropriate, makes recommendations for improvement of related information security practices and controls. The Report will be distributed to the Vice President for Business Affairs and CFO, and other appropriate University office(s), if any.</p> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div><a name="anchor-24419"></a>
+              <div class="policy-subsection-container policy-subection-container-24419">
+               <h2 class="policy-subsection-title" id="additional-information"><span class="prefix-container">7. </span>Additional Information</h2>
+               <div class="policy-subsection-body">
+                <p>Specific guidelines, procedures, standards, and best practices for secure computing can be found at: <a href="http://securecomputing.stanford.edu">http://securecomputing.stanford.edu</a>.<br> <br> Additional information can be found at:</p> 
+                <ul> 
+                 <li data-canvas-width="419.87377251321334" data-font-name="g_font_p0_1" dir="ltr" style="font-size: 13.28px; font-family: sans-serif; left: 162.107px; top: 740.573px; transform: scale(1.04707, 1); transform-origin: 0% 0% 0px;"> <p><a href="/6-1-1">Guide Memo 6.1.1</a>:&nbsp;Administrative Computing Systems</p> </li> 
+                 <li data-canvas-width="419.87377251321334" data-font-name="g_font_p0_1" dir="ltr" style="font-size: 13.28px; font-family: sans-serif; left: 162.107px; top: 740.573px; transform: scale(1.04707, 1); transform-origin: 0% 0% 0px;"> <p><a href="/6-2-1">Guide Memo 6.2.1</a>, Computer and Network Usage Policy</p> </li> 
+                 <li data-canvas-width="419.87377251321334" data-font-name="g_font_p0_1" dir="ltr" style="font-size: 13.28px; font-family: sans-serif; left: 162.107px; top: 740.573px; transform: scale(1.04707, 1); transform-origin: 0% 0% 0px;"> <p><a href="/6-3-1">Guide Memo 6.3.1</a>, Information Security</p> </li> 
+                 <li data-canvas-width="419.87377251321334" data-font-name="g_font_p0_1" dir="ltr" style="font-size: 13.28px; font-family: sans-serif; left: 162.107px; top: 740.573px; transform: scale(1.04707, 1); transform-origin: 0% 0% 0px;"> <p><a href="http://security.stanford.edu">Information Security Office</a></p> </li> 
+                </ul> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div> 
+             </div>
+            </div>
+           </div>
+          </div>
+         </div><!-- /.region -->
+        </div>
+       </div><!-- /#content-wrap -->
+      </div><!-- /#content -->
+      <div id="sidebar-second" class="sidebar site-sidebar-second span3">
+       <div class="row-fluid">
+        <div class="region region-sidebar-second clearfix">
+         <div id="block-print-ui-print-links" class="clearfix block block-print-ui well"> 
+          <h2>Share</h2>
+          <div class="content"> <span class="print_html"><a href="https://adminguide.stanford.edu/print/chapter-6/subchapter-6/policy-6-6-1" title="Display a printer-friendly version of this page." class="print-page" rel="nofollow">Print</a></span> 
+          </div>
+         </div>
+         <div id="block-views-policy-authority-block" class="clearfix block block-views well"> 
+          <h2>Authority</h2>
+          <div class="content"> 
+           <div class="view view-policy-authority view-id-policy_authority view-display-id-block view-dom-id-9ab0698a1d0ad9bc8141676419742ca3">
+            <div class="view-content">
+             <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+              <div class="views-field views-field-field-policy-authority"> 
+               <div class="field-content">
+                <p>Approved by the Vice President for Business Affairs and Chief Financial Officer.</p>
+               </div> 
+              </div> 
+             </div>
+            </div>
+           </div> 
+          </div>
+         </div>
+         <div id="block-views-related-policies-block" class="clearfix block block-views well"> 
+          <h2>Related Policies</h2>
+          <div class="content"> 
+           <div class="view view-related-policies view-id-related_policies view-display-id-block view-dom-id-9f5846760bffaccd882a3c46a5995e4e">
+            <div class="view-content">
+             <div class="views-row views-row-1 views-row-odd views-row-first">
+              <div class="views-field views-field-field-policy-related"> 
+               <div class="field-content">
+                <a href="/chapter-6/subchapter-1/policy-6-1-1">6.1.1 Privacy and Access to Electronic Information</a>
+               </div> 
+              </div> 
+             </div>
+             <div class="views-row views-row-2 views-row-even">
+              <div class="views-field views-field-field-policy-related"> 
+               <div class="field-content">
+                <a href="/chapter-6/subchapter-2/policy-6-2-1">6.2.1 Computer and Network Usage Policy</a>
+               </div> 
+              </div> 
+             </div>
+             <div class="views-row views-row-3 views-row-odd">
+              <div class="views-field views-field-field-policy-related"> 
+               <div class="field-content">
+                <a href="/chapter-6/subchapter-3/policy-6-3-1">6.3.1 Information Security</a>
+               </div> 
+              </div> 
+             </div>
+             <div class="views-row views-row-4 views-row-even views-row-last">
+              <div class="views-field views-field-field-policy-related"> 
+               <div class="field-content">
+                <a href="/chapter-6/subchapter-7/policy-6-7-1">6.7.1 Administrative Computing Systems</a>
+               </div> 
+              </div> 
+             </div>
+            </div>
+           </div> 
+          </div>
+         </div>
+         <div id="block-views-tax-related-terms-block" class="clearfix block block-views well"> 
+          <h2>Related Terms</h2>
+          <div class="content"> 
+           <div class="view view-tax-related-terms view-id-tax_related_terms view-display-id-block view-dom-id-c418aefeb5fe7e4035b7e2aae02a9d05">
+            <div class="view-content">
+             <div class="views-row views-row-1 views-row-odd views-row-first">
+              <div class="views-field views-field-name"> <span class="field-content"><a href="/category/computing">Computing</a></span> 
+              </div> 
+             </div>
+             <div class="views-row views-row-2 views-row-even">
+              <div class="views-field views-field-name"> <span class="field-content"><a href="/category/data">Data</a></span> 
+              </div> 
+             </div>
+             <div class="views-row views-row-3 views-row-odd">
+              <div class="views-field views-field-name"> <span class="field-content"><a href="/category/information-security">Information Security</a></span> 
+              </div> 
+             </div>
+             <div class="views-row views-row-4 views-row-even">
+              <div class="views-field views-field-name"> <span class="field-content"><a href="/category/prohibited">Prohibited</a></span> 
+              </div> 
+             </div>
+             <div class="views-row views-row-5 views-row-odd">
+              <div class="views-field views-field-name"> <span class="field-content"><a href="/category/restriction">Restriction</a></span> 
+              </div> 
+             </div>
+             <div class="views-row views-row-6 views-row-even">
+              <div class="views-field views-field-name"> <span class="field-content"><a href="/category/security">Security</a></span> 
+              </div> 
+             </div>
+             <div class="views-row views-row-7 views-row-odd views-row-last">
+              <div class="views-field views-field-name"> <span class="field-content"><a href="/category/theft">Theft</a></span> 
+              </div> 
+             </div>
+            </div>
+           </div> 
+          </div>
+         </div>
+         <div id="block-bean-change-guidelines" class="clearfix block block-bean well"> 
+          <h2>Change Guidelines</h2>
+          <div class="content"> 
+           <div class="entity entity-bean bean-stanford-postcard clearfix" about="/block/change-guidelines" typeof="">
+            <div class="content">
+             <div id="bean-stanford-postcard-full-group-s-postcard" class="postcard group-s-postcard field-group-div">
+              <div id="bean-stanford-postcard-full-group-s-postcard-image" class="postcard group-s-postcard-image field-group-div">
+               <div class="field-collection-container clearfix">
+                <div class="field field-name-field-s-image-info field-type-field-collection field-label-hidden">
+                 <div class="field-items">
+                  <div class="field-item even">
+                   <div class="field-collection-view clearfix view-mode-stanford-4-col-header field-collection-view-final">
+                    <div class="entity entity-field-collection-item field-collection-item-field-s-image-info clearfix" about="/field-collection/field-s-image-info/17" typeof="">
+                     <div class="content">
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div id="bean-stanford-postcard-full-group-s-postcard-content" class="postcard-content group-s-postcard-content field-group-div">
+               <div class="field field-name-field-s-postcard-link field-type-link-field field-label-hidden">
+                <div class="field-items">
+                 <div class="field-item even">
+                  <a href="https://adminguide.stanford.edu/change-request-guidelines" class="more-link">Click here for guidelines on requesting a memo change</a>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div> 
+            </div>
+           </div>
+          </div>
+         </div>
+        </div><!-- /.region -->
+       </div>
+      </div><!-- /#sidebar-second -->
+     </div>
+    </div>
+   </div><!-- /#main, /#main-wrapper -->
+   <div id="push"></div><!-- /#push -->
+  </div><!-- /#wrap -->
+  <div id="footer" class="clearfix footer site-footer">
+   <div class="container">
+    <div id="footer-content" class="row-fluid footer-content"> 
+     <div class="region region-footer clearfix">
+      <div id="block-menu-menu-about" class="clearfix block block-menu span3 sidebar-content"> 
+       <h2>About</h2>
+       <div class="content"> 
+        <ul class="menu nav">
+         <li class="first leaf"><a href="/about-guide">About the Guide</a></li>
+         <li class="leaf"><a href="/whats-new">What's New</a></li>
+         <li class="leaf"><a href="/change-request-guidelines">Change Request Guidelines</a></li>
+         <li class="leaf"><a href="/frequently-asked-questions">Frequently Asked Questions</a></li>
+         <li class="leaf"><a href="/photography-credits">Photography Credits</a></li>
+         <li class="last leaf"><a href="/contact">Contact</a></li>
+        </ul> 
+       </div>
+      </div>
+      <div id="block-menu-block-1" class="clearfix block block-menu-block span3"> 
+       <h2>Chapters</h2>
+       <div class="content"> 
+        <div class="menu-block-wrapper menu-block-1 menu-name-menu-admin-guide parent-mlid-0 menu-level-1">
+         <ul class="menu nav">
+          <li class="first leaf has-children menu-mlid-4315"><a href="/chapter-1">1. Guiding Policies and Principles</a></li>
+          <li class="leaf has-children menu-mlid-4319"><a href="/chapter-2">2. Human Resources</a></li>
+          <li class="leaf has-children menu-mlid-4317"><a href="/chapter-3">3. Financial Administration</a></li>
+          <li class="leaf has-children menu-mlid-4313"><a href="/chapter-4">4. Giving to Stanford</a></li>
+          <li class="leaf has-children menu-mlid-4331"><a href="/chapter-5">5. Purchasing and Payments</a></li>
+          <li class="leaf has-children active-trail menu-mlid-4323"><a href="/chapter-6" class="active-trail">6. Computing</a></li>
+          <li class="leaf has-children menu-mlid-4327"><a href="/chapter-7">7. Health and Safety</a></li>
+          <li class="leaf has-children menu-mlid-4321"><a href="/chapter-8">8. Services</a></li>
+          <li class="leaf has-children menu-mlid-4325"><a href="/chapter-9">9. Organization Charts</a></li>
+          <li class="leaf has-children menu-mlid-4329"><a href="/chapter-10">10. Student Employment and Assistantships</a></li>
+          <li class="last leaf has-children menu-mlid-9143"><a href="/chapter-12">12. Global Activities</a></li>
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div id="block-menu-menu-navigate" class="clearfix block block-menu span3"> 
+       <h2>Actions</h2>
+       <div class="content"> 
+        <ul class="menu nav">
+         <li class="first leaf"><a href="/category" title="">Browse by Category</a></li>
+         <li class="leaf"><a href="/print-guide">Print the Guide</a></li>
+         <li class="last leaf"><a href="mailto:guide-editor@lists.stanford.edu" title="">Send Website Feedback</a></li>
+        </ul> 
+       </div>
+      </div>
+      <div id="block-menu-menu-research-policies" class="clearfix block block-menu span3"> 
+       <h2>Related Resources</h2>
+       <div class="content"> 
+        <ul class="menu nav">
+         <li class="first leaf"><a href="http://cardinalatwork.stanford.edu" title="Cardinal at Work website for employees and retirees">Cardinal at Work website</a></li>
+         <li class="leaf"><a href="http://facultyhandbook.stanford.edu/" title="">Faculty Handbook</a></li>
+         <li class="leaf"><a href="https://web.stanford.edu/group/fms/fingate/" title="">Financial Gateway</a></li>
+         <li class="leaf"><a href="http://gap.stanford.edu/" title="">Graduate Academic Policies and Procedures Handbook</a></li>
+         <li class="leaf"><a href="http://hr.stanford.edu" title="Human Resources at Stanford website">HR at Stanford</a></li>
+         <li class="leaf"><a href="http://postdocs.stanford.edu/handbook/" title="">Postdoctoral Scholar Handbook</a></li>
+         <li class="leaf"><a href="http://doresearch.stanford.edu/policies/" title="">Research Policy Handbook</a></li>
+         <li class="leaf"><a href="https://advising.stanford.edu/current-students/academic-policy" title="">Undergraduate Academic Policies</a></li>
+         <li class="leaf"><a href="https://police.stanford.edu/security-report.html" title="safety, security and fire report">Stanford Safety, Security and Fire Report</a></li>
+         <li class="last leaf"><a href="https://news.stanford.edu/today/" title="Stanford Today website">Stanford Today</a></li>
+        </ul> 
+       </div>
+      </div>
+     </div><!-- /.region -->
+    </div>
+   </div>
+  </div><!-- /#footer -->
+  <div id="global-footer" role="contentinfo">
+   <div class="container">
+    <div class="row">
+     <div id="bottom-logo" class="span2">
+      <a href="http://www.stanford.edu"><img src="/sites/adminguide/themes/stanford_framework/images/footer-stanford-logo@2x.png" alt="Stanford University"></a>
+     </div>
+     <div id="bottom-menu" class="span10">
+      <ul class="top-links clearfix">
+       <li><a href="https://www.stanford.edu">Stanford Home</a></li>
+       <li><a href="https://visit.stanford.edu/plan/">Maps &amp; Directions</a></li>
+       <li><a href="https://www.stanford.edu/search/">Search Stanford</a></li>
+       <li><a href="https://emergency.stanford.edu/">Emergency Info</a></li>
+      </ul>
+      <ul class="bottom-links clearfix">
+       <li><a href="https://www.stanford.edu/site/terms/" title="Terms of use for sites">Terms of Use</a></li>
+       <li><a href="https://www.stanford.edu/site/privacy" title="Privacy and cookie policy">Privacy</a></li>
+       <li><a href="https://uit.stanford.edu/security/copyright-infringement" title="Report alleged copyright infringement">Copyright</a></li>
+       <li><a href="https://adminguide.stanford.edu/chapter-1/subchapter-5/policy-1-5-4" title="Report alleged copyright infringement">Trademarks</a></li>
+       <li><a href="http://exploredegrees.stanford.edu/nonacademicregulations/nondiscrimination/" title="Report alleged copyright infringement">Non-Discrimination</a></li>
+       <li><a href="https://www.stanford.edu/site/accessibility/" title="Report alleged copyright infringement">Accessibility</a></li>
+      </ul>
+      <p class="vcard">© <span class="fn org">Stanford University</span>, <span class="adr"><span class="locality">Stanford</span>, <span class="region">California</span> <span class="postal-code">94305</span></span>.</p>
+     </div>
+    </div>
+   </div>
+  </div><!-- /#global-footer -->
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_AhjIbhX-HrFnR65XPtttRuwoGpWnSYB7wHDo36vIhfg.js"></script>
+ </body>
+</html>

@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script>'use strict'; (function() {var abjs = {"tests":[{"name":"t_1","conditions":["return window.location.pathname == '\/test-oc-use-only\/test-blog-post-a';"],"experiences":[{"name":"e_1","fraction":"0.05","script":""},{"name":"e_2","fraction":"0.15","script":"window.location.replace('\/test-oc-use-only\/test-blog-post-b'); document.write('<style>html { display:none !important; }<\/style>');"},{"name":"e_3","fraction":"0.8","script":"window.location.replace('\/test-oc-use-only\/test-blog-post-c'); document.write('<style>html { display:none !important; }<\/style>');"}]}],"cookiePrefix":"abjs_","cookieDomain":"","cookieLifetime":30,"cookieSecure":""};
+/**
+ * @file
+ * Adds common javascript functionality.
+ *
+ * Note that this file does not stand alone, and is included as an inline
+ * script along with the dynamic tests, experiences, and conditions.
+ */
+
+// Cookie functions for getting and setting abjs cookies.
+var abCookies = {
+  getCookie: function (sKey) {
+    'use strict';
+    if (!sKey) {
+      return null;
+    }
+    var abKey = abjs.cookiePrefix + sKey;
+    return decodeURIComponent(document.cookie.replace(new RegExp('(?:(?:^|.*;)\\s*' + encodeURIComponent(abKey).replace(/[\-\.\+\*]/g, '\\$&') + '\\s*\\=\\s*([^;]*).*$)|^.*$'), '$1')) || null;
+  },
+  setCookie: function (sKey, sValue) {
+    'use strict';
+    var abKey = abjs.cookiePrefix + sKey;
+    document.cookie = encodeURIComponent(abKey) + '=' + encodeURIComponent(sValue) + '; max-age=' + abjs.cookieLifetime * 24 * 60 * 60 + abjs.cookieDomain + '; path=/' + abjs.cookieSecure;
+    return true;
+  }
+};
+
+var i;
+var j;
+var fracArray;
+
+// Convert condition and experience function strings into real functions,
+// and convert experience fraction strings into numbers.
+for (i = 0; i < abjs.tests.length; i++) {
+  for (j = 0; j < abjs.tests[i].conditions.length; j++) {
+    abjs.tests[i].conditions[j] = new Function(abjs.tests[i].conditions[j] + '\r\n');
+  }
+  for (j = 0; j < abjs.tests[i].experiences.length; j++) {
+    abjs.tests[i].experiences[j].script = new Function(abjs.tests[i].experiences[j].script + '\r\n');
+    if (abjs.tests[i].experiences[j].fraction.match('/')) {
+      fracArray = abjs.tests[i].experiences[j].fraction.split('/');
+      abjs.tests[i].experiences[j].fraction = fracArray[0] / fracArray[1];
+    }
+    abjs.tests[i].experiences[j].fraction = isNaN(1 * abjs.tests[i].experiences[j].fraction) ? 0 : 1 * abjs.tests[i].experiences[j].fraction;
+  }
+}
+
+// First, for each test, check if all conditions evaluate to true. If any
+// condition evaluates to false, remove that test from the abjs.tests array.
+for (i = 0; i < abjs.tests.length; i++) {
+  for (j = 0; j < abjs.tests[i].conditions.length; j++) {
+    if (!abjs.tests[i].conditions[j]()) {
+      abjs.tests.splice(i, 1);
+      i--;
+      break;
+    }
+  }
+}
+
+// For each test that passses all conditions, determine the experience for this
+// user.
+for (i = 0; i < abjs.tests.length; i++) {
+  // First, check if a cookie exists for this test by checking the cookie's name.
+  // If so, the value of the cookie is the index of the experience that this
+  // user should have.
+  if (abCookies.getCookie(abjs.tests[i].name)) {
+    for (j = 0; j < abjs.tests[i].experiences.length; j++) {
+      if (abCookies.getCookie(abjs.tests[i].name) === abjs.tests[i].experiences[j].name) {
+        abjs.tests[i].activeExperience = j;
+        break;
+      }
+    }
+  }
+  // If a cookie does not yet exist for this test, generate a random number to
+  // determine what experience this user should have by comparing the random
+  // number to the fractions assigned for each experience. Set a cookie for
+  // this test and experience.
+  else {
+    var randomNum = Math.random();
+    var fractionSum = 0;
+    for (j = 0; j < abjs.tests[i].experiences.length; j++) {
+      if (randomNum >= fractionSum && randomNum < fractionSum + abjs.tests[i].experiences[j].fraction) {
+        abCookies.setCookie(abjs.tests[i].name, abjs.tests[i].experiences[j].name);
+        abjs.tests[i].activeExperience = j;
+        break;
+      }
+      fractionSum += abjs.tests[i].experiences[j].fraction;
+    }
+  }
+}
+
+// Run all experience scripts for this user.
+for (i = 0; i < abjs.tests.length; i++) {
+  if (typeof abjs.tests[i].activeExperience !== 'undefined') {
+    abjs.tests[i].experiences[abjs.tests[i].activeExperience].script();
+  }
+}
+})();</script>
+  <script>window.dataLayer = window.dataLayer || []; window.dataLayer.push({"content_type":"flexible landing page","site_section":"about","offices":"communications"});</script>
+  <style>/* @see https://github.com/aFarkas/lazysizes#broken-image-symbol */.js img.lazyload:not([src]) { visibility: hidden; }/* @see https://github.com/aFarkas/lazysizes#automatically-setting-the-sizes-attribute */.js img.lazyloaded[data-sizes=auto] { display: block; width: 100%; }</style>
+  <meta name="description" content="The MIT Sloan School of Management is one of the world's leading business schools.">
+  <meta itemprop="name" content="Why MIT Sloan? | MIT Sloan">
+  <meta itemprop="description" content="The MIT Sloan School of Management is one of the world's leading business schools.">
+  <meta itemprop="image" content="https://mitsloan.mit.edu/sites/default/files/styles/og_image/public/2018-08/20151023_E62_Campus_October_2015_PHAN_08.jpg?h=b2774bcf&amp;itok=CTOylz39">
+  <meta property="og:site_name" content="MIT Sloan">
+  <meta property="og:url" content="https://mitsloan.mit.edu/about/why-mit-sloan">
+  <meta property="og:title" content="Why MIT Sloan? | MIT Sloan">
+  <meta property="og:description" content="The MIT Sloan School of Management is one of the world's leading business schools.">
+  <meta property="og:image" content="https://mitsloan.mit.edu/sites/default/files/styles/og_image/public/2018-08/20151023_E62_Campus_October_2015_PHAN_08.jpg?h=b2774bcf&amp;itok=CTOylz39">
+  <meta name="google-site-verification" content="oUyu8HosmUo7DzbQ59Kk5-jsvPjeI1ab_LfqomGgqMg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="MITSloan">
+  <meta name="twitter:description" content="The MIT Sloan School of Management is one of the world's leading business schools.">
+  <meta name="twitter:title" content="Why MIT Sloan? | MIT Sloan">
+  <meta name="twitter:url" content="https://mitsloan.mit.edu/about/why-mit-sloan">
+  <meta name="twitter:image" content="https://mitsloan.mit.edu/sites/default/files/styles/og_image/public/2018-08/20151023_E62_Campus_October_2015_PHAN_08.jpg?h=b2774bcf&amp;itok=CTOylz39">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="manifest" href="/system/manifest?_format=json">
+  <link rel="canonical" href="https://mitsloan.mit.edu/about/why-mit-sloan">
+  <link rel="shortlink" href="https://mitsloan.mit.edu/node/1078">
+  <script src="/sites/default/files/google_tag/gtm/google_tag.script.js?rdj3bi" defer></script>
+  <title>Why MIT Sloan? | MIT Sloan</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-ebd61a40bb57b78c022",applicationID:"460434767"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#a31f34">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_zblF96Z826-A0EDTwJmturEp4kDIh5UaEwAtPEjiHOU.css">
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_lt6Rd7ZfYvj72Guhf6Q5-BqH_wsqddvBQ1t_Br7MiTg.css">
+  <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/d1a7a6a7-f8a0-45f8-aea8-21101826bd46.css">
+ </head>
+ <body class="user--anonymous"><a href="#main-content" class="visually-hidden focusable" id="skip-to-main-link">Skip to main content</a>
+  <noscript aria-hidden="true">
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVBC5PK&amp;gtm_auth=dGL91TXEXGyu-bHPBxnleg&amp;gtm_preview=env-2&amp;gtm_cookies_win=x" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <header id="site-header" class="site-header nav init ">
+    <div class="site-header--content" data-nosnippet><a class="nav--logo no-print" href="/" title="Mit Sloan">MIT Sloan logo</a>
+     <nav class="nav--main no-print" aria-label="main"><span class="nav--main--inner"> 
+       <ul id="nav-menu" class="nav--links" aria-labelledby="nav-menu-btn">
+        <li class="nav--academics nav--academics-mobile"><button class="academics-overlay--open-btn js-academics-overlay-btn" data-opened="false" aria-label="academics" aria-expanded="false">academics</button></li>
+        <li><a href="/ideas-made-to-matter">Ideas Made to Matter</a></li>
+        <li><a href="/diversity/standing-together">Diversity</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/alumni">Alumni</a></li>
+        <li><a href="/faculty/faculty-directory">Faculty</a></li>
+        <li><a href="/about/why-mit-sloan">About</a></li>
+        <li><a href="https://exec.mit.edu/s/">Executive Education</a></li>
+        <li class="nav--academics nav--academics-desktop"><button class="academics-overlay--open-btn js-academics-overlay-btn" data-opened="false" aria-label="academics" aria-expanded="false">academics</button></li>
+        <li class="nav--contact nav--contact-mobile"><a href="/about/staff-directory">contact</a></li>
+       </ul> <span class="nav--mobile-footer"> 
+        <ul class="nav--share">
+         <li><a class="nav--facebook" href="https://www.facebook.com/MITSloan" target="_blank">facebook</a></li>
+         <li><a class="nav--instagram" href="https://www.instagram.com/mitsloan/" target="_blank">instagram</a></li>
+         <li><a class="nav--linkedin" href="https://www.linkedin.com/company/mit-sloan-school-of-management" target="_blank">linkedin</a></li>
+         <li><a class="nav--twitter" href="https://twitter.com/mitsloan" target="_blank">twitter</a></li>
+         <li><a class="nav--youtube" href="https://www.youtube.com/user/MITSloan" target="_blank">youtube</a></li>
+        </ul> <a href="http://mit.edu" class="nav--mit-logo" title="Massachusetts Institute of Technology" target="_blank"></a> 
+        <div class="nav--contact nav--contact-desktop"><a href="/about/staff-directory">contact</a>
+        </div> </span> </span>
+     </nav>
+     <div class="nav--actions no-print"><button class="js-nav-search-view-btn nav--search-toggle" aria-label="search" aria-expanded="false"><span>Search</span></button><button id="nav-menu-btn" class="js-nav-view-btn nav--view-toggle" aria-label="show main navigation" aria-haspopup="true" aria-coltrols="nav-menu">Show Navigation</button>
+      <div id="smart-area" class="nav--smart-area" data-site-section="fallback" data-animation-triggered="false" data-fallback-enabled="true">
+       <p class="nav--smart-area-fallback"><span>Smart. Open. Grounded. Inventive.</span><a class="nav--smart-area-link" href="/ideas-made-to-matter">Get the latest ideas from MIT Sloan here.</a></p>
+      </div>
+     </div>
+     <div class="nav--search no-print" aria-hidden="true">
+      <form id="nav-search-form" class="nav--search-form">
+       <input tabindex="-1" class="nav--search-field" aria-label="placeholder" type="text" placeholder="Search">
+       <input tabindex="-1" type="submit" class="js-nav-search-submit nav--search-submit" value="Submit"><span class="nav--search-submit-graphic" aria-hidden="true"></span>
+      </form><button tabindex="-1" class="js-nav-search-view-btn nav--search-close">close search</button>
+     </div>
+    </div>
+    <section class="academics-overlay js-academics-overlay init">
+     <div class="academics-overlay--content" data-nosnippet>
+      <header class="academics-overlay--header"><span class="academics-overlay--close-btn-wrapper"> <button tabindex="-1" class="academics-overlay--close-btn js-academics-overlay-btn">Back to Menu</button> </span>
+       <h2 class="academics-overlay--title">Which program is right for you?</h2><span class="academics-overlay--bg"> <img src="/sites/default/files/styles/article_header/public/2021-06/academics-overlay-default.png?h=1cb3d5c4&amp;itok=PMhznmZB" alt="MIT Sloan Campus life"> </span>
+      </header>
+      <div class="academics-overlay--body">
+       <div class="academics-overlay--programs">
+        <div class="academics-overlay--programs-col">
+         <div class="academics-overlay--program"><a href="/mba">MBA</a>
+          <p>Through intellectual rigor and experiential learning, this full-time, two-year MBA program develops leaders who make a difference in the world.</p>
+         </div>
+         <div class="academics-overlay--program"><a href="/mfin">Master of Finance</a>
+          <p>A rigorous, hands-on program that prepares adaptive problem solvers for premier finance careers.</p>
+         </div>
+         <div class="academics-overlay--program"><a href="/master-of-business-analytics">Master of Business Analytics</a>
+          <p>A 12-month program focused on applying the tools of modern data science, optimization and machine learning to solve real-world business problems.</p>
+         </div>
+         <div class="academics-overlay--program"><a href="https://lgo.mit.edu/" target="_blank">Leaders for Global Operations</a>
+          <p>Earn your MBA and SM in engineering with this transformative two-year program. </p>
+         </div>
+         <div class="academics-overlay--program"><a href="/msms/master-science-management-studies">Master of Science in Management Studies</a>
+          <p>Combine an international MBA with a deep dive into management science. A special opportunity for partner and affiliate schools only.</p>
+         </div>
+        </div>
+        <div class="academics-overlay--programs-col">
+         <div class="academics-overlay--program"><a href="/phd">PhD</a>
+          <p>A doctoral program that produces outstanding scholars who are leading in their fields of research.</p>
+         </div>
+         <div class="academics-overlay--program"><a href="/undergrad">Undergraduate </a>
+          <p>Bring a business perspective to your technical and quantitative expertise with a bachelor’s degree in management, business analytics, or finance.</p>
+         </div>
+         <div class="academics-overlay--program"><a href="http://sdm.mit.edu/" target="_blank">System Design &amp; Management</a>
+          <p>A joint program for mid-career professionals that integrates engineering and systems thinking. Earn your master’s degree in engineering and management.</p>
+         </div>
+         <div class="academics-overlay--program"><a href="https://idm.mit.edu/" target="_blank">Integrated Design &amp; Management</a>
+          <p>An interdisciplinary program that combines engineering, management, and design, leading to a master’s degree in engineering and management.</p>
+         </div>
+        </div>
+       </div>
+       <div class="academics-overlay--executive-programs">
+        <h3><strong>Executive</strong> Programs</h3>
+        <div class="academics-overlay--program"><a href="/mit-sloan-fellows-mba">MIT Sloan Fellows MBA</a>
+         <p>A full-time MBA program for mid-career leaders eager to dedicate one year of discovery for a lifetime of impact.</p>
+        </div>
+        <div class="academics-overlay--program"><a href="/emba/introduce-yourself">MIT Executive MBA</a>
+         <p>This 20-month MBA program equips experienced executives to enhance their impact on their organizations and the world.</p>
+        </div>
+        <div class="academics-overlay--program"><a href="https://executive.mit.edu/" target="_blank">Executive Education</a>
+         <p>Non-degree programs for senior executives and high-potential managers.</p>
+        </div>
+        <div class="academics-overlay--program"><a href="/visiting-fellows">Visiting Fellows </a>
+         <p>A non-degree, customizable program for mid-career professionals.</p>
+        </div>
+       </div>
+      </div>
+      <footer class="academics-overlay--footer"><a class="academics-overlay--footer-link" href="/events?f%5B0%5D=events_audience%3A1802">View Upcoming Program Events</a>
+      </footer>
+     </div>
+    </section>
+   </header>
+   <main class="" role="main" id="main-content">
+    <div class="admin">
+     <div class="admin--messages">
+      <div data-drupal-messages-fallback class="hidden"></div>
+     </div>
+     <div class="admin--tasks"></div>
+    </div> 
+    <article class="flexible_landing" itemscope itemtype="http://schema.org/Article" role="article" about="/about/why-mit-sloan">
+     <meta hidden itemprop="headline" content="The MIT Sloan School of Management is one of the world's leading business schools."><span hidden aria-hidden="true" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"> 
+      <meta hidden itemprop="name" content="MIT Sloan School of Management"> <span hidden itemprop="logo" itemscope itemtype="https://schema.org/ImageObject"> 
+       <meta itemprop="url" content="/themes/custom/mitsloan/img/MITSloanLogo.png"> 
+       <meta itemprop="width" content="152"> 
+       <meta itemprop="height" content="87"> </span> </span>
+     <header style="background-image: url('/sites/default/files/styles/article_header/public/2019-09/20190624_2019_MIT_Sloan_Aerial_June_2019_ABOVE_SUMMIT_04.jpg?h=b49706e1&amp;itok=xj93mXGX')" data-custom-image="true" class="flexmenu--header">
+      <div class="flexmenu--decorations" aria-hidden="true"></div>
+      <div class="flexmenu--header-elements with-header-image">
+       <h1 class="flexmenu--title" itemprop="name">About MIT Sloan</h1>
+      </div>
+      <div class="flexmenu--nav" id="flexmenu--nav" data-enabled="false" data-force-dropdown="false"><button class="flexmenu--nav_button" aria-label="Open navigation" aria-controls="flexmenu--nav_wrap" aria-expanded="false" type="button">Why MIT Sloan?</button>
+       <nav class="flexmenu--nav_wrap" id="flexmenu--nav_wrap" data-enabled="false" aria-label="secondary"><!-- field-pages.html.twig --><a href="/about/why-mit-sloan" data-enabled="true" aria-current="page" class="flexmenu--nav_link" hreflang="en">Why MIT Sloan?</a><a href="/about/global-reach" data-enabled="false" class="flexmenu--nav_link" hreflang="en">Global Reach</a><a href="/about/campus-life" data-enabled="false" class="flexmenu--nav_link" hreflang="en">Campus Life</a><a href="/about/facts-and-figures" data-enabled="false" class="flexmenu--nav_link" hreflang="en">Facts and Figures</a><a href="/about/leadership" data-enabled="false" class="flexmenu--nav_link" hreflang="en">Leadership</a><a href="/about/staff-directory" data-enabled="false" class="flexmenu--nav_link" hreflang="en">Staff Directory</a>
+       </nav>
+      </div>
+     </header>
+     <div class="page-flexible-detail__main-wrapper" data-overlay-mode="false" data-dome-hidden="false">
+      <div class="page-flexible-detail__content-wrapper">
+       <figure class="full_inline_image js-full-bleed-component" data-video="true" data-video-id="rNsNR0AzEf8" aria-label="MIT Sloan. Ideas Made to Matter.  (Opens video in modal dialog.)">
+        <div class="full_inline_image--video_icon" aria-hidden="true"></div><a style="display: block;" class="full_inline_image--image" tabindex="0"> 
+         <picture data-lazy><!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source media="all and (max-width: 1919px) and (min-width: 1440px)" type="image/jpeg" data-srcset="/sites/default/files/styles/2_1_xl_1280x640/public/2019-09/20190624_2019_MIT_Sloan_Aerial_June_2019_ABOVE_SUMMIT_04.jpg?h=b49706e1&amp;itok=pf1cfq68 1x, /sites/default/files/styles/2_1_xl_1280x640/public/2019-09/20190624_2019_MIT_Sloan_Aerial_June_2019_ABOVE_SUMMIT_04.jpg?h=b49706e1&amp;itok=pf1cfq68 1280w, /sites/default/files/styles/2_1_xxl_2560_x_1280/public/2019-09/20190624_2019_MIT_Sloan_Aerial_June_2019_ABOVE_SUMMIT_04.jpg?h=b49706e1&amp;itok=XHjcAU3l 2560w" data-sizes="100vw">
+          <source media="all and (max-width: 1439px) and (min-width: 1210px)" type="image/jpeg" data-srcset="/sites/default/files/styles/2_1_large_1050x525/public/2019-09/20190624_2019_MIT_Sloan_Aerial_June_2019_ABOVE_SUMMIT_04.jpg?h=b49706e1&amp;itok=4e46lU2M 1050w, /sites/default/files/styles/2_1_xl_1280x640/public/2019-09/20190624_2019_MIT_Sloan_Aerial_June_2019_ABOVE_SUMMIT_04.jpg?h=b49706e1&amp;itok=pf1cfq68 1280w, /sites/default/files/styles/2_1_xxl_2560_x_1280/public/2019-09/20190624_2019_MIT_Sloan_Aerial_June_2019_ABOVE_SUMMIT_04.jpg?h=b49706e1&amp;itok=XHjcAU3l 2560w" data-sizes="100vw">
+          <source media="all and (max-width: 1209px) and (min-width: 768px)" type="image/jpeg" data-srcset="/sites/default/files/styles/2_1_medium_668x334/public/2019-09/20190624_2019_MIT_Sloan_Aerial_June_2019_ABOVE_SUMMIT_04.jpg?h=b49706e1&amp;itok=e-8aXx-_ 668w, /sites/default/files/styles/2_1_large_1050x525/public/2019-09/20190624_2019_MIT_Sloan_Aerial_June_2019_ABOVE_SUMMIT_04.jpg?h=b49706e1&amp;itok=4e46lU2M 1050w, /sites/default/files/styles/2_1_xl_1280x640/public/2019-09/20190624_2019_MIT_Sloan_Aerial_June_2019_ABOVE_SUMMIT_04.jpg?h=b49706e1&amp;itok=pf1cfq68 1280w" data-sizes="100vw">
+          <source media="all and (max-width: 767px)" type="image/jpeg" data-srcset="/sites/default/files/styles/2_1_small_320x160/public/2019-09/20190624_2019_MIT_Sloan_Aerial_June_2019_ABOVE_SUMMIT_04.jpg?h=b49706e1&amp;itok=xSOABnY3 320w, /sites/default/files/styles/2_1_medium_668x334/public/2019-09/20190624_2019_MIT_Sloan_Aerial_June_2019_ABOVE_SUMMIT_04.jpg?h=b49706e1&amp;itok=e-8aXx-_ 668w, /sites/default/files/styles/2_1_large_1050x525/public/2019-09/20190624_2019_MIT_Sloan_Aerial_June_2019_ABOVE_SUMMIT_04.jpg?h=b49706e1&amp;itok=4e46lU2M 1050w" data-sizes="100vw"><!--[if IE 9]></video><![endif]-->
+          <img alt="" class="lazyload" data-src="/sites/default/files/styles/2_1_large_1050x525/public/2019-09/20190624_2019_MIT_Sloan_Aerial_June_2019_ABOVE_SUMMIT_04.jpg?h=b49706e1&amp;itok=4e46lU2M" typeof="foaf:Image">
+         </picture> </a>
+        <figcaption class="full_inline_image--caption">
+         <h3 class="full_inline_image--title">MIT Sloan. Ideas Made to Matter. </h3>
+         <p class="full_inline_image--text">The mission of the MIT Sloan School of Management is to develop principled, innovative leaders who improve the world and to generate ideas that advance management practice. </p>
+        </figcaption>
+       </figure>
+       <div class="article--body">
+        <h2>Why MIT Sloan?</h2>
+        <p>MIT Sloan is a different kind of management school. We’re not iterating on a better widget or cashing in on the latest business fad. We’re not talking about management in the abstract.</p>
+        <p>As part of the world’s leading research institution, we’re bringing together today’s brightest minds to tackle global challenges. For real.</p>
+        <p>At the intersection of business and technology, we’re exploring the future of work. We’re launching companies that kick start local economies in the developing world. We’re retooling systems to make health care work better and to engage people around the world in addressing climate change.</p>
+        <p>For <strong>students</strong>, this means different kinds of opportunities. Hands-on learning. Global experience. And a relentless focus on impact.</p>
+        <p>For <strong>faculty</strong>, this means different fields of research. New work in emerging areas that don’t fit into existing departments. And colleagues across MIT.</p>
+        <p>For<strong> alumni</strong>, this means a vibrant global network of like-minded innovators, ready to help you advance your career and turn your vision into reality.</p>
+        <p>For <strong>organizational leaders</strong> the world over, this means a wellspring of ideas and talent. Brilliant minds. Practical problem-solvers. Meaningful research. And tools you can apply to your own work.</p>
+        <p>MIT Sloan. <strong>Ideas made to matter.</strong></p>
+       </div>
+       <section class="two-column-list js-full-bleed-component">
+        <h2 class="two-column-list__main-title jump-header" id="mit-sloan-academic-programs">MIT Sloan Academic Programs <a href="#mit-sloan-academic-programs" class="jump-link" aria-label="Jump to MIT Sloan Academic Programs"> <img src="themes/custom/mitsloan/img/anchorlink-icon.png" alt=""> </a></h2>
+        <ul class="two-column-list__list-container">
+         <li class="two-column-list__list-item"><h3 class="two-column-list__list-headline jump-header" id="tcl-684">MBA <a href="#tcl-684" class="jump-link" aria-label="Jump to MIT Sloan Academic Programs MBA"> <img src="themes/custom/mitsloan/img/anchorlink-icon.png" alt=""> </a> </h3>
+          <div class="two-column-list__list-text">
+           <p>Through intellectual discovery and hands-on learning, this full-time, two-year program develops leaders who make a difference in the world.</p>
+           <p><a class="linkit mit--cta" aria-labelledby="tcl-684 tcllk-684" id="tcllk-684" href="http://mitsloan.mit.edu/mba/" target="_self">Learn more</a></p>
+          </div></li>
+         <li class="two-column-list__list-item"><h3 class="two-column-list__list-headline jump-header" id="tcl-1523">MBA Early <a href="#tcl-1523" class="jump-link" aria-label="Jump to MIT Sloan Academic Programs MBA Early"> <img src="themes/custom/mitsloan/img/anchorlink-icon.png" alt=""> </a> </h3>
+          <div class="two-column-list__list-text">
+           <p>Apply now, work for two to five years, and begin your MBA program at MIT Sloan.</p>
+           <p><a class="linkit mit--cta" aria-labelledby="tcl-1523 tcllk-1523" id="tcllk-1523" href="https://mitsloan.mit.edu/programs/mba-early/overview" target="_blank">Learn more</a></p>
+          </div></li>
+         <li class="two-column-list__list-item"><h3 class="two-column-list__list-headline jump-header" id="tcl-1950">Master of Finance <a href="#tcl-1950" class="jump-link" aria-label="Jump to MIT Sloan Academic Programs Master of Finance"> <img src="themes/custom/mitsloan/img/anchorlink-icon.png" alt=""> </a> </h3>
+          <div class="two-column-list__list-text">
+           <p>A rigorous, hands-on program that prepares adaptive problem solvers for premier finance careers.</p>
+           <p><a class="linkit mit--cta" aria-labelledby="tcl-1950 tcllk-1950" id="tcllk-1950" href="http://mitsloan.mit.edu/mfin/" target="_self">Learn more</a></p>
+          </div></li>
+         <li class="two-column-list__list-item"><h3 class="two-column-list__list-headline jump-header" id="tcl-2076">Master of Business Analytics <a href="#tcl-2076" class="jump-link" aria-label="Jump to MIT Sloan Academic Programs Master of Business Analytics"> <img src="themes/custom/mitsloan/img/anchorlink-icon.png" alt=""> </a> </h3>
+          <div class="two-column-list__list-text">
+           <p>A 12-month program focused on applying the tools of modern data science, optimization,&nbsp;and machine learning to solve real-world business problems.</p>
+           <p><a class="linkit mit--cta" aria-labelledby="tcl-2076 tcllk-2076" id="tcllk-2076" href="http://mitsloan.mit.edu/master-of-business-analytics/" target="_self">Learn more</a></p>
+          </div></li>
+         <li class="two-column-list__list-item"><h3 class="two-column-list__list-headline jump-header" id="tcl-2773">Leaders for Global Operations <a href="#tcl-2773" class="jump-link" aria-label="Jump to MIT Sloan Academic Programs Leaders for Global Operations"> <img src="themes/custom/mitsloan/img/anchorlink-icon.png" alt=""> </a> </h3>
+          <div class="two-column-list__list-text">
+           <p>Earn your MBA and SM&nbsp;in engineering with this transformative two-year program.</p>
+           <p><a class="linkit mit--cta" aria-labelledby="tcl-2773 tcllk-2773" id="tcllk-2773" href="https://lgo.mit.edu/" target="_self">Learn more</a></p>
+          </div></li>
+         <li class="two-column-list__list-item"><h3 class="two-column-list__list-headline jump-header" id="tcl-3120">MIT Sloan Fellows MBA <a href="#tcl-3120" class="jump-link" aria-label="Jump to MIT Sloan Academic Programs MIT Sloan Fellows MBA "> <img src="themes/custom/mitsloan/img/anchorlink-icon.png" alt=""> </a> </h3>
+          <div class="two-column-list__list-text">
+           <p>A full-time MBA program for mid-career leaders eager to dedicate one year of discovery for a lifetime of impact.</p>
+           <p><a class="linkit mit--cta" aria-labelledby="tcl-3120 tcllk-3120" id="tcllk-3120" href="http://mitsloan.mit.edu/fellows/" target="_self">Learn more</a></p>
+          </div></li>
+         <li class="two-column-list__list-item"><h3 class="two-column-list__list-headline jump-header" id="tcl-3281">MIT Executive MBA <a href="#tcl-3281" class="jump-link" aria-label="Jump to MIT Sloan Academic Programs MIT Executive MBA"> <img src="themes/custom/mitsloan/img/anchorlink-icon.png" alt=""> </a> </h3>
+          <div class="two-column-list__list-text">
+           <p>This 20-month MBA program equips experienced executives to enhance their impact on their organizations and the world.</p>
+           <p><a class="linkit mit--cta" aria-labelledby="tcl-3281 tcllk-3281" id="tcllk-3281" href="https://emba.mit.edu/" target="_self">Learn more</a></p>
+          </div></li>
+        </ul>
+       </section>
+      </div>
+     </div>
+    </article>
+   </main>
+   <footer class="footer">
+    <div class="footer--top" data-nosnippet>
+     <section class="footer--mission">
+      <h3 class="footer--mission_title footer--section_title">The Mission</h3>
+      <p class="footer--mission_text">The mission of the MIT Sloan School of Management is to develop principled, innovative leaders who improve the world and to generate ideas that advance management practice.</p>
+     </section>
+     <section class="footer--find">
+      <h3 class="footer--find_title footer--section_title">Find Us</h3><span class="footer--location"> <a class="footer--location_link" title="Map of MIT Campus - Opens in new window" target="_blank" href="https://www.google.com/maps/place/MIT+Sloan+School+of+Management/@42.3610109,-71.085189,17z/data=!3m1!4b1!4m5!3m4!1s0x89e370a66efa6057:0x9bcd706c8ad3aa7a!8m2!3d42.361007!4d-71.082995"> <strong>MIT Sloan School of Management</strong> <span>100 Main Street</span> <span>Cambridge, MA 02142</span> </a> </span><a class="footer--phone" title="Call 617-253-1000" href="tel:617-253-1000">617-253-1000</a>
+     </section>
+     <section class="footer--links no-print">
+      <h3 class="footer--links_title footer--section_title">Links</h3>
+      <nav class="footer--nav" aria-label="footer">
+       <ul class="footer--nav-list">
+        <li><a class="footer--link" href="/returntocampus/coming-to-campus-spring-2022">Return to campus</a></li>
+        <li><a class="footer--link" href="/press">Press</a></li>
+        <li><a class="footer--link" href="/work-mit-sloan">Careers</a></li>
+        <li><a class="footer--link" href="https://accessibility.mit.edu/">Accessibility</a></li>
+        <li><a class="footer--link" href="/licensing">Licensing</a></li>
+        <li><a class="footer--link" href="/privacy">Privacy</a></li>
+       </ul>
+      </nav>
+     </section>
+    </div>
+    <div class="footer--bottom">
+     <nav class="footer--social no-print" aria-label="social media" itemscope itemtype="http://schema.org/Organization">
+      <link aria-hidden="true" hidden itemprop="url" href="/"><a class="footer--social_link" aria-label="facebook" data-site="facebook" title="Find us on Facebook" itemprop="sameAs" target="_blank" href="https://www.facebook.com/MITSloan"></a><a class="footer--social_link" aria-label="twitter" data-site="twitter" title="Find us on Twitter" itemprop="sameAs" target="_blank" href="https://twitter.com/mitsloan"></a><a class="footer--social_link" aria-label="youtube" data-site="youtube" title="Find us on YouTube" itemprop="sameAs" target="_blank" href="https://www.youtube.com/user/MITSloan"></a><a class="footer--social_link" aria-label="instagram" data-site="instagram" title="Find us on Instagram" itemprop="sameAs" target="_blank" href="https://www.instagram.com/mitsloan/"></a><a class="footer--social_link" aria-label="linkedin" data-site="linkedin" title="Find us on LinkedIn" target="_blank" href="https://www.linkedin.com/company/mit-sloan-school-of-management"></a>
+     </nav><small class="footer--copyright">©2022 MIT Sloan School of Management</small>
+    </div>
+   </footer>
+  </div>
+  <div id="sidenotes"></div>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/1078","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"dataLayer":{"defaultLang":"en","languages":{"en":{"id":"en","name":"English","direction":"ltr","weight":0}}},"lazy":{"lazysizes":{"lazyClass":"lazyload","loadedClass":"lazyloaded","loadingClass":"lazyloading","preloadClass":"lazypreload","errorClass":"lazyerror","autosizesClass":"lazyautosizes","srcAttr":"data-src","srcsetAttr":"data-srcset","sizesAttr":"data-sizes","minSize":40,"customMedia":[],"init":true,"expFactor":1.5,"hFac":0.8,"loadMode":2,"loadHidden":true,"ricTimeout":0,"throttleDelay":125,"plugins":[]},"placeholderSrc":"","preferNative":false,"minified":true,"libraryPath":"\/libraries\/lazysizes"},"user":{"uid":0,"permissionsHash":"dea033123ddd9033c21d3e7204bd61c9e1cfc2341c9d473673354eeb96a09c93"}}</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="/sites/default/files/js/js_Yo5-pUGFdmDGG839BHCatbdRBNNaNZzurBPSFrJmBrU.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="/sites/default/files/js/js_axzgyUUR9LKRN8QMp_dVNSEbYcXXSwsg_xwOvxBjHKk.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-ebd61a40bb57b78c022","applicationID":"460434767","transactionName":"Z1RWbUJSC0VYWhBQV14edVpEWgpYFn0WTEhRXWhXX1cAanpWCk1KX11YXEJvK1ldXDJQXUdyW1dEQQpaVVwWFAZGWFFO","queueTime":0,"applicationTime":1216,"atts":"SxNVGwpIGEs=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

@@ -1,0 +1,2604 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script>'use strict'; (function() {var abjs = {"tests":[{"name":"t_1","conditions":["return window.location.pathname == '\/test-oc-use-only\/test-blog-post-a';"],"experiences":[{"name":"e_1","fraction":"0.05","script":""},{"name":"e_2","fraction":"0.15","script":"window.location.replace('\/test-oc-use-only\/test-blog-post-b'); document.write('<style>html { display:none !important; }<\/style>');"},{"name":"e_3","fraction":"0.8","script":"window.location.replace('\/test-oc-use-only\/test-blog-post-c'); document.write('<style>html { display:none !important; }<\/style>');"}]}],"cookiePrefix":"abjs_","cookieDomain":"","cookieLifetime":30,"cookieSecure":""};
+/**
+ * @file
+ * Adds common javascript functionality.
+ *
+ * Note that this file does not stand alone, and is included as an inline
+ * script along with the dynamic tests, experiences, and conditions.
+ */
+
+// Cookie functions for getting and setting abjs cookies.
+var abCookies = {
+  getCookie: function (sKey) {
+    'use strict';
+    if (!sKey) {
+      return null;
+    }
+    var abKey = abjs.cookiePrefix + sKey;
+    return decodeURIComponent(document.cookie.replace(new RegExp('(?:(?:^|.*;)\\s*' + encodeURIComponent(abKey).replace(/[\-\.\+\*]/g, '\\$&') + '\\s*\\=\\s*([^;]*).*$)|^.*$'), '$1')) || null;
+  },
+  setCookie: function (sKey, sValue) {
+    'use strict';
+    var abKey = abjs.cookiePrefix + sKey;
+    document.cookie = encodeURIComponent(abKey) + '=' + encodeURIComponent(sValue) + '; max-age=' + abjs.cookieLifetime * 24 * 60 * 60 + abjs.cookieDomain + '; path=/' + abjs.cookieSecure;
+    return true;
+  }
+};
+
+var i;
+var j;
+var fracArray;
+
+// Convert condition and experience function strings into real functions,
+// and convert experience fraction strings into numbers.
+for (i = 0; i < abjs.tests.length; i++) {
+  for (j = 0; j < abjs.tests[i].conditions.length; j++) {
+    abjs.tests[i].conditions[j] = new Function(abjs.tests[i].conditions[j] + '\r\n');
+  }
+  for (j = 0; j < abjs.tests[i].experiences.length; j++) {
+    abjs.tests[i].experiences[j].script = new Function(abjs.tests[i].experiences[j].script + '\r\n');
+    if (abjs.tests[i].experiences[j].fraction.match('/')) {
+      fracArray = abjs.tests[i].experiences[j].fraction.split('/');
+      abjs.tests[i].experiences[j].fraction = fracArray[0] / fracArray[1];
+    }
+    abjs.tests[i].experiences[j].fraction = isNaN(1 * abjs.tests[i].experiences[j].fraction) ? 0 : 1 * abjs.tests[i].experiences[j].fraction;
+  }
+}
+
+// First, for each test, check if all conditions evaluate to true. If any
+// condition evaluates to false, remove that test from the abjs.tests array.
+for (i = 0; i < abjs.tests.length; i++) {
+  for (j = 0; j < abjs.tests[i].conditions.length; j++) {
+    if (!abjs.tests[i].conditions[j]()) {
+      abjs.tests.splice(i, 1);
+      i--;
+      break;
+    }
+  }
+}
+
+// For each test that passses all conditions, determine the experience for this
+// user.
+for (i = 0; i < abjs.tests.length; i++) {
+  // First, check if a cookie exists for this test by checking the cookie's name.
+  // If so, the value of the cookie is the index of the experience that this
+  // user should have.
+  if (abCookies.getCookie(abjs.tests[i].name)) {
+    for (j = 0; j < abjs.tests[i].experiences.length; j++) {
+      if (abCookies.getCookie(abjs.tests[i].name) === abjs.tests[i].experiences[j].name) {
+        abjs.tests[i].activeExperience = j;
+        break;
+      }
+    }
+  }
+  // If a cookie does not yet exist for this test, generate a random number to
+  // determine what experience this user should have by comparing the random
+  // number to the fractions assigned for each experience. Set a cookie for
+  // this test and experience.
+  else {
+    var randomNum = Math.random();
+    var fractionSum = 0;
+    for (j = 0; j < abjs.tests[i].experiences.length; j++) {
+      if (randomNum >= fractionSum && randomNum < fractionSum + abjs.tests[i].experiences[j].fraction) {
+        abCookies.setCookie(abjs.tests[i].name, abjs.tests[i].experiences[j].name);
+        abjs.tests[i].activeExperience = j;
+        break;
+      }
+      fractionSum += abjs.tests[i].experiences[j].fraction;
+    }
+  }
+}
+
+// Run all experience scripts for this user.
+for (i = 0; i < abjs.tests.length; i++) {
+  if (typeof abjs.tests[i].activeExperience !== 'undefined') {
+    abjs.tests[i].experiences[abjs.tests[i].activeExperience].script();
+  }
+}
+})();</script>
+  <script>window.dataLayer = window.dataLayer || []; window.dataLayer.push({"content_type":"flexible detail","site_section":"better world","offices":"alumni"});</script>
+  <style>/* @see https://github.com/aFarkas/lazysizes#broken-image-symbol */.js img.lazyload:not([src]) { visibility: hidden; }/* @see https://github.com/aFarkas/lazysizes#automatically-setting-the-sizes-attribute */.js img.lazyloaded[data-sizes=auto] { display: block; width: 100%; }</style>
+  <meta name="description" content="With your generosity, we will invent the future by fostering new ideas, demonstrating their importance, and putting them into practice. Thank you for making a better world your business.">
+  <meta itemprop="name" content="A Better World is Our Business | MIT Sloan">
+  <meta itemprop="description" content="With your generosity, we will invent the future by fostering new ideas, demonstrating their importance, and putting them into practice. Thank you for making a better world your business.">
+  <meta itemprop="image" content="https://mitsloan.mit.edu/themes/custom/mitsloan/img/social/google.png">
+  <meta property="og:site_name" content="MIT Sloan">
+  <meta property="og:url" content="https://mitsloan.mit.edu/better-world">
+  <meta property="og:title" content="A Better World is Our Business | MIT Sloan">
+  <meta property="og:description" content="With your generosity, we will invent the future by fostering new ideas, demonstrating their importance, and putting them into practice. Thank you for making a better world your business.">
+  <meta property="og:image" content="https://mitsloan.mit.edu/themes/custom/mitsloan/img/social/fb.png">
+  <meta name="google-site-verification" content="oUyu8HosmUo7DzbQ59Kk5-jsvPjeI1ab_LfqomGgqMg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="MITSloan">
+  <meta name="twitter:description" content="With your generosity, we will invent the future by fostering new ideas, demonstrating their importance, and putting them into practice. Thank you for making a better world your business.">
+  <meta name="twitter:title" content="A Better World is Our Business | MIT Sloan">
+  <meta name="twitter:url" content="https://mitsloan.mit.edu/better-world">
+  <meta name="twitter:image" content="https://mitsloan.mit.edu/themes/custom/mitsloan/img/social/twitter.png">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="manifest" href="/system/manifest?_format=json">
+  <link rel="canonical" href="https://mitsloan.mit.edu/better-world">
+  <link rel="shortlink" href="https://mitsloan.mit.edu/node/30711">
+  <script src="/sites/default/files/google_tag/gtm/google_tag.script.js?rdj3bi" defer></script>
+  <title>A Better World is Our Business | MIT Sloan</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-ebd61a40bb57b78c022",applicationID:"460434767"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#a31f34">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_jYHUQbjJzXN3S1iX4o2g9qlGDcSLG-wKm8rPlQdDfSY.css">
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_lt6Rd7ZfYvj72Guhf6Q5-BqH_wsqddvBQ1t_Br7MiTg.css">
+  <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/d1a7a6a7-f8a0-45f8-aea8-21101826bd46.css">
+ </head>
+ <body class="user--anonymous"><a href="#main-content" class="visually-hidden focusable" id="skip-to-main-link">Skip to main content</a>
+  <noscript aria-hidden="true">
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVBC5PK&amp;gtm_auth=dGL91TXEXGyu-bHPBxnleg&amp;gtm_preview=env-2&amp;gtm_cookies_win=x" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <header id="site-header" class="site-header nav init ">
+    <div class="site-header--content" data-nosnippet><a class="nav--logo no-print" href="/" title="Mit Sloan">MIT Sloan logo</a>
+     <nav class="nav--main no-print" aria-label="main"><span class="nav--main--inner"> 
+       <ul id="nav-menu" class="nav--links" aria-labelledby="nav-menu-btn">
+        <li class="nav--academics nav--academics-mobile"><button class="academics-overlay--open-btn js-academics-overlay-btn" data-opened="false" aria-label="academics" aria-expanded="false">academics</button></li>
+        <li><a href="/ideas-made-to-matter">Ideas Made to Matter</a></li>
+        <li><a href="/diversity/standing-together">Diversity</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/alumni">Alumni</a></li>
+        <li><a href="/faculty/faculty-directory">Faculty</a></li>
+        <li><a href="/about/why-mit-sloan">About</a></li>
+        <li><a href="https://exec.mit.edu/s/">Executive Education</a></li>
+        <li class="nav--academics nav--academics-desktop"><button class="academics-overlay--open-btn js-academics-overlay-btn" data-opened="false" aria-label="academics" aria-expanded="false">academics</button></li>
+        <li class="nav--contact nav--contact-mobile"><a href="/about/staff-directory">contact</a></li>
+       </ul> <span class="nav--mobile-footer"> 
+        <ul class="nav--share">
+         <li><a class="nav--facebook" href="https://www.facebook.com/MITSloan" target="_blank">facebook</a></li>
+         <li><a class="nav--instagram" href="https://www.instagram.com/mitsloan/" target="_blank">instagram</a></li>
+         <li><a class="nav--linkedin" href="https://www.linkedin.com/company/mit-sloan-school-of-management" target="_blank">linkedin</a></li>
+         <li><a class="nav--twitter" href="https://twitter.com/mitsloan" target="_blank">twitter</a></li>
+         <li><a class="nav--youtube" href="https://www.youtube.com/user/MITSloan" target="_blank">youtube</a></li>
+        </ul> <a href="http://mit.edu" class="nav--mit-logo" title="Massachusetts Institute of Technology" target="_blank"></a> 
+        <div class="nav--contact nav--contact-desktop"><a href="/about/staff-directory">contact</a>
+        </div> </span> </span>
+     </nav>
+     <div class="nav--actions no-print"><button class="js-nav-search-view-btn nav--search-toggle" aria-label="search" aria-expanded="false"><span>Search</span></button><button id="nav-menu-btn" class="js-nav-view-btn nav--view-toggle" aria-label="show main navigation" aria-haspopup="true" aria-coltrols="nav-menu">Show Navigation</button>
+      <div id="smart-area" class="nav--smart-area" data-site-section="fallback" data-animation-triggered="false" data-fallback-enabled="true">
+       <p class="nav--smart-area-fallback"><span>Smart. Open. Grounded. Inventive.</span><a class="nav--smart-area-link" href="/ideas-made-to-matter">Get the latest ideas from MIT Sloan here.</a></p>
+      </div>
+     </div>
+     <div class="nav--search no-print" aria-hidden="true">
+      <form id="nav-search-form" class="nav--search-form">
+       <input tabindex="-1" class="nav--search-field" aria-label="placeholder" type="text" placeholder="Search">
+       <input tabindex="-1" type="submit" class="js-nav-search-submit nav--search-submit" value="Submit"><span class="nav--search-submit-graphic" aria-hidden="true"></span>
+      </form><button tabindex="-1" class="js-nav-search-view-btn nav--search-close">close search</button>
+     </div>
+    </div>
+    <section class="academics-overlay js-academics-overlay init">
+     <div class="academics-overlay--content" data-nosnippet>
+      <header class="academics-overlay--header"><span class="academics-overlay--close-btn-wrapper"> <button tabindex="-1" class="academics-overlay--close-btn js-academics-overlay-btn">Back to Menu</button> </span>
+       <h2 class="academics-overlay--title">Which program is right for you?</h2><span class="academics-overlay--bg"> <img src="/sites/default/files/styles/article_header/public/2021-06/academics-overlay-default.png?h=1cb3d5c4&amp;itok=PMhznmZB" alt="MIT Sloan Campus life"> </span>
+      </header>
+      <div class="academics-overlay--body">
+       <div class="academics-overlay--programs">
+        <div class="academics-overlay--programs-col">
+         <div class="academics-overlay--program"><a href="/mba">MBA</a>
+          <p>Through intellectual rigor and experiential learning, this full-time, two-year MBA program develops leaders who make a difference in the world.</p>
+         </div>
+         <div class="academics-overlay--program"><a href="/mfin">Master of Finance</a>
+          <p>A rigorous, hands-on program that prepares adaptive problem solvers for premier finance careers.</p>
+         </div>
+         <div class="academics-overlay--program"><a href="/master-of-business-analytics">Master of Business Analytics</a>
+          <p>A 12-month program focused on applying the tools of modern data science, optimization and machine learning to solve real-world business problems.</p>
+         </div>
+         <div class="academics-overlay--program"><a href="https://lgo.mit.edu/" target="_blank">Leaders for Global Operations</a>
+          <p>Earn your MBA and SM in engineering with this transformative two-year program. </p>
+         </div>
+         <div class="academics-overlay--program"><a href="/msms/master-science-management-studies">Master of Science in Management Studies</a>
+          <p>Combine an international MBA with a deep dive into management science. A special opportunity for partner and affiliate schools only.</p>
+         </div>
+        </div>
+        <div class="academics-overlay--programs-col">
+         <div class="academics-overlay--program"><a href="/phd">PhD</a>
+          <p>A doctoral program that produces outstanding scholars who are leading in their fields of research.</p>
+         </div>
+         <div class="academics-overlay--program"><a href="/undergrad">Undergraduate </a>
+          <p>Bring a business perspective to your technical and quantitative expertise with a bachelor’s degree in management, business analytics, or finance.</p>
+         </div>
+         <div class="academics-overlay--program"><a href="http://sdm.mit.edu/" target="_blank">System Design &amp; Management</a>
+          <p>A joint program for mid-career professionals that integrates engineering and systems thinking. Earn your master’s degree in engineering and management.</p>
+         </div>
+         <div class="academics-overlay--program"><a href="https://idm.mit.edu/" target="_blank">Integrated Design &amp; Management</a>
+          <p>An interdisciplinary program that combines engineering, management, and design, leading to a master’s degree in engineering and management.</p>
+         </div>
+        </div>
+       </div>
+       <div class="academics-overlay--executive-programs">
+        <h3><strong>Executive</strong> Programs</h3>
+        <div class="academics-overlay--program"><a href="/mit-sloan-fellows-mba">MIT Sloan Fellows MBA</a>
+         <p>A full-time MBA program for mid-career leaders eager to dedicate one year of discovery for a lifetime of impact.</p>
+        </div>
+        <div class="academics-overlay--program"><a href="/emba/introduce-yourself">MIT Executive MBA</a>
+         <p>This 20-month MBA program equips experienced executives to enhance their impact on their organizations and the world.</p>
+        </div>
+        <div class="academics-overlay--program"><a href="https://executive.mit.edu/" target="_blank">Executive Education</a>
+         <p>Non-degree programs for senior executives and high-potential managers.</p>
+        </div>
+        <div class="academics-overlay--program"><a href="/visiting-fellows">Visiting Fellows </a>
+         <p>A non-degree, customizable program for mid-career professionals.</p>
+        </div>
+       </div>
+      </div>
+      <footer class="academics-overlay--footer"><a class="academics-overlay--footer-link" href="/events?f%5B0%5D=events_audience%3A1802">View Upcoming Program Events</a>
+      </footer>
+     </div>
+    </section>
+   </header>
+   <main class="" role="main" id="main-content">
+    <div class="admin">
+     <div class="admin--messages">
+      <div data-drupal-messages-fallback class="hidden"></div>
+     </div>
+     <div class="admin--tasks"></div>
+    </div> 
+    <div id="block-betterworldmapblock">
+     <style>
+    .hidden {
+        display: none;
+    }
+
+    .map_container {
+        display: flex;
+        justify-content: center;
+    }
+
+    #map_profile {
+        position: absolute;
+        width: 300px;
+        overflow: auto;
+        z-index: 900;
+        left: 50%;
+        margin-left: -150px;
+        top: 70vh;
+        background-color: white;
+        border-radius: 10px;
+        padding: 1rem;
+    }
+
+    #map_profile_description {
+        max-height: 300px;
+        overflow: auto;
+    }
+
+    #map_profile_description2 {
+        max-height: 300px;
+        overflow: auto;
+        font-style: italic;
+        margin-top: 1rem;
+    }
+
+    #overlay {
+        background-color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        opacity: .6;
+        z-index: 100;
+    }
+
+    .centered_map_container {
+        padding: 1.25rem;
+    }
+
+    .centered_map_container h3 {
+        margin-bottom: 1rem;
+    }
+
+    .centered_map_container h4 {
+        font-family: 'Futura LT W01 Heavy';
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    #exit {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        /* float: right; */
+    }
+
+    .map_profile_pic {
+        display: block;
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .top_logo {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+
+    .watch_button_container {
+        min-height: 106px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .watch_event {
+        background-color: #000000;
+        color: white;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+    }
+
+    .play_icon {
+        color: white;
+        width: 16px;
+        height: 16px;
+        margin-right: .5rem;
+    }
+
+    .contributors_title {
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .right_col {
+        display: none;
+        margin-left: 1.5rem;
+    }
+
+    .student_profile_quote {
+        border-left: 3px solid #922335;
+        margin-top: 1rem;
+        padding-left: 1rem;
+        /* font-weight: bold; */
+    }
+
+
+    .contrib_card {
+        margin-top: 1rem;
+        width: 300px;
+        border: 2px solid black;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .card_img {
+        width: 80px;
+        display: block;
+    }
+
+    .card_text {
+        margin-left: 1.5rem;
+    }
+
+    .card_title {
+        display: block;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .card_subtitle {
+        display: block;
+        margin-top: .2rem;
+        line-height: 20px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .card_contents {
+        display: block;
+        margin-top: .2rem;
+        font-size: 14px;
+    }
+
+    .speaker_quotes {
+        display: flex;
+    }
+
+    .carousel_arrow {
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+    }
+
+    .mobile_bottom {
+        margin-top: .5rem;
+    }
+
+    .carousel_img {
+        width: 80px;
+        margin-right: 1rem;
+        display: block;
+    }
+
+    .carousel_title {
+        display: block;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .carousel_subtitle {
+        display: block;
+        font-size: 15px;
+    }
+
+    .watch_now_mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;;
+        justify-content: center;
+        margin-top: .5rem;
+        border: 1px solid;
+        font-size: 26px;
+        font-weight: 700;
+        background-color: #922335;
+        color: white;
+        text-decoration: none;
+        padding: 1rem 0;
+    }
+
+
+    .map_carousel_section .arrow {
+        height: 33px;
+    }
+
+    .watch_now_mobile .play {
+        display: block;
+        width: 35px;
+        margin-right: .8rem;
+    }
+
+
+
+    .watch_now_mobile .watch_right_arrow {
+        margin-left: .8rem;
+    }
+
+    .map_profile_action {
+        display: block;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+        padding: .5rem 0;
+    }
+
+    #map_profile h2 {
+        font-size: 26px;
+        font-family: 'Futura LT W01 Heavy';
+        color: #9d2235;
+        font-weight: 700;
+        margin-top: 1rem;
+        /* margin-bottom: 0; */
+    }
+
+    #map_profile p {
+        font-family: 'Futura LT W01 Medium';            
+        margin-bottom: 0;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 100;
+    }
+
+    #map_profile h3 {
+        font-family: 'Futura LT W01 Medium';            
+        font-size: 18px;
+        margin-bottom: 1rem;
+        line-height: 24px;
+    }
+
+    .carousel_slides {
+        display: flex;
+        overflow-x: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        width: 254px;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    #card_switcher .switcher_title {
+        display: block;
+        font-family: 'Futura LT W01 Heavy';
+        margin-bottom: 10px;
+    }
+
+    #card_switcher img {
+        width: 1.5rem;
+    }
+
+    .switcher_arrows { 
+        display: flex;
+        align-items: center;
+    }
+
+    .switcher_arrows span {
+        margin: 0 .5rem;
+        font-weight: bold;
+    }
+
+    #canvas {
+        display: block;
+        /* border: 1px solid; */
+    }
+
+    .inner_carousel {
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .map_profiles_carousel {
+        display: flex;
+        flex-grow: 1;
+        /* border: 1px solid; */
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .map_profiles_carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .map_profiles_carousel > .profile {
+        max-width: 280px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+
+    .map_profiles_carousel > .profile + .profile {
+        margin-left: 32px;
+    }
+
+    .pillar_filter {
+        display: flex;
+        align-items: center;
+        /* padding: .75rem 1.25rem; */
+        padding: .5rem;
+        border: 1px solid #AAAAAA;
+        border-radius: 8px;
+        margin-top: .5rem;
+        margin-right: .5rem;
+    }
+
+    .pillar_filter span {
+        display: block;
+        font-family: 'Futura LT W01 Medium';
+        /* font-size: 17px; */
+        font-size: 13px;
+        margin-left: .5rem;
+        max-width: 17ch;
+    }
+
+    .pillar_filters_container {
+        display: flex;
+        margin-bottom: 2rem;
+        flex-direction: column;
+    }
+
+    .pillar_filters_container > .no_filter {
+        text-transform: uppercase;
+    }
+
+    #checkbox_inquiry.selected_filter {
+        border-color: #f6b221;
+    }
+
+    #checkbox_planet_health.selected_filter {
+        border-color: #006b67;
+    }
+    
+    #checkbox_human_health.selected_filter {
+        border-color: #ec0044;
+    }
+
+    #checkbox_innovation.selected_filter {
+        border-color: #288dc0;
+    }
+
+    #checkbox_teaching.selected_filter {
+        border-color: #a31f34;
+    }
+
+    @media screen and (min-width: 500px) {
+        .map_profiles_carousel > .profile {
+            max-width: 300px;
+            flex-basis: 45%;
+        }     
+    }
+
+    @media screen and (min-width: 1080px) {
+
+
+
+        .mobile_bottom { 
+            display: none;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .centered_map_container, .map_carousel_section {
+            margin: 0 50px;
+            padding: 0;
+        }
+
+        #map_profile {
+            width: 600px;
+            top: 48vh;
+            /* top: 30vh; */
+            margin-left: -300px;
+        }
+
+        .centered_map_container canvas {
+            margin-left: 3.625rem;
+        }
+
+        .centered_map_container h4 {
+            font-size: 32px;
+            padding: 0 3.625rem;
+            max-width: 43.125rem;
+            /* margin: 2rem auto; */
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .centered_map_container p {
+            padding: 0 3.625rem;
+        }
+
+        .profiles--wrapper {
+            margin: 0 1rem;
+        }
+
+        .pillar_filters_container {
+            display: flex;
+            margin-bottom: 3rem;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            padding-left: 3.625rem;
+        }
+
+        .inner_carousel {
+            padding-left: 3.625rem;
+        }
+    }
+
+    @media screen and (min-width: 1210px) {
+        .pillar_filters_container {
+            padding-left: 0;
+        }
+
+        .inner_carousel {
+            width: 900px;
+            padding-left: 0;
+            margin-left: calc((100% - 43.125rem) /2);
+        }
+
+        .centered_map_container h4 {
+            padding: 0;
+            margin: 2rem auto;
+        }
+
+        .centered_map_container p {
+            padding: 0;
+            max-width: 43.125rem;
+            margin: auto;
+        }
+
+        .pillar_filters_container {
+            flex-wrap: nowrap;
+            width: 900px;
+            margin-left: calc((100% - 43.125rem) /2);
+        }
+
+        .centered_map_container, .map_carousel_section {
+            margin: 0 80px;
+            padding: 0;
+        }
+
+        .centered_map_container canvas {
+            margin-left: calc((100% - 43.125rem) /2);
+        }
+
+        .profiles--wrapper {
+            margin: 0 1rem;
+        }
+
+        .pillar_filter span {
+            font-size: 17px;
+        }
+
+        .pillar_filter {
+            padding: .75rem 1.5rem;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        .map_profiles_carousel > .profile {
+            max-width: 400px;
+        }
+
+        .map_profiles_carousel {
+            max-width: 1130px;
+        }
+        
+        .centered_map_container, .map_carousel_section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .profiles--wrapper {
+            margin: 0 1rem;
+        }
+
+        .pillar_filter span {
+            font-size: 17px;
+        }
+
+        .pillar_filter {
+            padding: .75rem 1.5rem;
+        }
+    }
+
+</style>
+     <div id="overlay" class="hidden">
+     </div>
+     <div id="map_profile" class="hidden">
+      <img src="https://mitsloan.mit.edu/sites/default/files/2022-04/exit.png" alt="exit" id="exit">
+      <div id="card_switcher">
+       <h3>Multiple members at this location: </h3>
+       <div class="switcher_arrows">
+        <img src="https://mitsloan.mit.edu/sites/default/files/2022-04/arrow_left.png" alt="previous card" id="card_left"><span class="switcher_position">1/2</span>
+        <img src="https://mitsloan.mit.edu/sites/default/files/2022-04/arrow_right.png" alt="previous card" id="card_right"> 
+       </div>
+      </div>
+      <img src="https://mitsloan.mit.edu/sites/default/files/2022-04/50_EED.jpg" alt="MIT Sloan" class="map_profile_pic">
+      <h2>John Doe</h2>
+      <h3 class="card_subtitle">Title, Profession</h3>
+      <div id="map_profile_description">
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div id="map_profile_description2">
+       <p></p>
+      </div>
+     </div>
+     <div class="centered_map_container">
+      <p> In 2016, the MIT Campaign for a Better World set out with a bold goal: raise $5 billion to take on some of humanity’s most urgent global challenges. Over 80 percent of MIT alumni responded to the call, raising $6.24 billion toward making a better world. We asked for your help and nearly 15,000 MIT Sloan alumni, donors, and friends responded by making contributions totaling $373 million. With your generosity, we will invent the future by fostering new ideas, demonstrating their importance, and putting them into practice. Thank you for making a better world your business. </p>
+      <h4>Global Impact</h4>
+      <canvas id="canvas" width="800px" height="600px"></canvas>
+      <h4>Filters</h4>
+      <div class="pillar_filters_container">
+       <div id="checkbox_planet_health" class="pillar_filter">
+        <img src="https://mitsloan.mit.edu/sites/default/files/2022-04/Pin_Green.png" alt="green pin"><span>Health of Planet</span>
+       </div>
+       <div id="checkbox_human_health" class="pillar_filter">
+        <img src="https://mitsloan.mit.edu/sites/default/files/2022-04/Pin_Red.png" alt="red pin"><span>Human Health</span>
+       </div>
+       <div id="checkbox_innovation" class="pillar_filter">
+        <img src="https://mitsloan.mit.edu/sites/default/files/2022-04/Pin_Blue.png" alt="blue pin"><span>Innovation and Entrepreneurship</span>
+       </div>
+       <div id="checkbox_inquiry" class="pillar_filter">
+        <img src="https://mitsloan.mit.edu/sites/default/files/2022-04/Pin_Yellow.png" alt="yellow pin"><span>Inquiry and Discovery</span>
+       </div>
+       <div id="checkbox_teaching" class="pillar_filter">
+        <img src="https://mitsloan.mit.edu/sites/default/files/2022-04/Pin_Burgundy.png" alt="burgundy pin"><span>Teaching, Learning, and Living</span>
+       </div>
+      </div>
+      <h4>Donor Highlights</h4>
+     </div>
+     <section class="profiles js-full-bleed-component map_carousel_section">
+      <div class="inner_carousel">
+       <img src="https://mitsloan.mit.edu/sites/default/files/2022-04/arrow_left.png" alt="left arrow" onclick="carouselLeft()">
+       <div class="profiles--wrapper">
+        <div class="map_profiles_carousel">
+         <div class="profile"><span class="profile--bg" aria-hidden="true"></span><span class="profile--image"> <a class="profile--image_link" title="" href=""> <img alt="Hala Fadel" src="https://mitsloan.mit.edu/sites/default/files/2022-04/quote_fadel_hala.jpeg"> </a> </span><span class="profile--details"> <h3 id="profile--name-456264815" class="profile--name"> <a class="profile--name_link" href="">Hala Fadel, MBA ’01</a> </h3> <p class="profile--descript student_profile_quote"> When I look at what education did for me and the doors it opened, I think it’s important to offer others the same access. </p> </span>
+         </div>
+         <div class="profile"><span class="profile--bg" aria-hidden="true"></span><span class="profile--image"> <a class="profile--image_link" title="" href=""> <img alt="Dr. Tamara Rajaram" src="https://mitsloan.mit.edu/sites/default/files/2022-04/quote_rajaram_tamara.jpeg"> </a> </span><span class="profile--details"> <h3 id="profile--name-104553581" class="profile--name"> <a class="profile--name_link" href="">Dr. Tamara Rajaram, MBA ’01</a> </h3> <p class="profile--descript student_profile_quote"> The school is doing so much. MIT is able to be a leader, and it’s going to be institutions like MIT that aren’t just trying to change with the times—they’re leading the future. </p> </span>
+         </div>
+         <div class="profile"><span class="profile--bg" aria-hidden="true"></span><span class="profile--image"> <a class="profile--image_link" title="" href=""> <img alt="Rami Elkhatib" src="https://mitsloan.mit.edu/sites/default/files/2022-04/quote_elkhatib_rami.jpeg"> </a> </span><span class="profile--details"> <h3 id="profile--name-264032459" class="profile--name"> <a class="profile--name_link" href="">Rami Elkhatib, MBA ’99</a> </h3> <p class="profile--descript student_profile_quote"> Few institutions can ever have the type of impact that MIT Sloan has in building global business leaders. It’s been a privilege to support this amazing institution and its mission. </p> </span>
+         </div>
+         <div class="profile"><span class="profile--bg" aria-hidden="true"></span><span class="profile--image"> <a class="profile--image_link" title="" href=""> <img alt="Yu-Ting Kuo, SM  ’94 " src="https://mitsloan.mit.edu/sites/default/files/2022-04/quote_Kuo_Yu-Ting.jpeg"> </a> </span><span class="profile--details"> <h3 id="profile--name-264032459" class="profile--name"> <a class="profile--name_link" href="">Yu-Ting Kuo, SM ’94</a> </h3> <p class="profile--descript student_profile_quote"> MIT and MIT Sloan played a foundational role for my career. I give back to the MIT and MIT Sloan community to help others achieve their full potential. My philanthropic journey so far has been fulfilling and made me a happier person. </p> </span>
+         </div>
+         <div class="profile"><span class="profile--bg" aria-hidden="true"></span><span class="profile--image"> <a class="profile--image_link" title="" href=""> <img alt="Ron Williams" src="https://mitsloan.mit.edu/sites/default/files/2022-04/quote_Ron_Williams.jpeg"> </a> </span><span class="profile--details"> <h3 id="profile--name-264032459" class="profile--name"> <a class="profile--name_link" href="">Ron Williams, SF ’84</a> </h3> <p class="profile--descript student_profile_quote"> I am pleased to support the MIT Sloan School of Management because it gives me an opportunity to support the creation of the next generation of values-based business leaders who will bring the technology and business acumen necessary to lead the businesses of the future. </p> </span>
+         </div>
+         <div class="profile"><span class="profile--bg" aria-hidden="true"></span><span class="profile--image"> <a class="profile--image_link" title="" href=""> <img alt="Khun Chartsiri Sophonpanich" src="https://mitsloan.mit.edu/sites/default/files/2022-04/quote_K_Chartsiri.png"> </a> </span><span class="profile--details"> <h3 id="profile--name-264032459" class="profile--name"> <a class="profile--name_link" href="">Khun Chartsiri Sophonpanich, SM ’83, SM ’84</a> </h3> <p class="profile--descript student_profile_quote"> To deliver sustainable economic growth across Thailand and ASEAN, we need knowledge and know-how. MIT is a great source of both. Furthermore, its commitment to research and action with a local impact supports Bangkok Bank’s goal of advancing the region's development. </p> </span>
+         </div>
+         <div class="profile"><span class="profile--bg" aria-hidden="true"></span><span class="profile--image"> <a class="profile--image_link" title="" href=""> <img alt="Frank Samuels" src="https://mitsloan.mit.edu/sites/default/files/2022-04/quote_samuels_frank.jpeg"> </a> </span><span class="profile--details"> <h3 id="profile--name-264032459" class="profile--name"> <a class="profile--name_link" href="">Frank Samuels, MBA ’98</a> </h3> <p class="profile--descript student_profile_quote"> Supporting MIT is an honor and privilege for me and my family. The Institute has done so much for us, opened up so many doors, and taught me new ways to sense and respond to our world. Giving to MIT helps to ensure that the Institute can continue its impactful work across the globe, whilst cultivating more givers and perpetuating the idea machine that it has become. </p> </span>
+         </div>
+        </div>
+       </div>
+       <img src="https://mitsloan.mit.edu/sites/default/files/2022-04/arrow_right.png" alt="left arrow" onclick="carouselRight()">
+      </div>
+     </section><!-- <script src="https://storage.googleapis.com/map_assets/map_entries.js"></script> --><!-- <script src="map_entries.js"></script> -->
+     <script>
+const mapEntries = [
+{
+    "title": "A Safer Food Supply Chain",
+    "subtitle": "Food Supply Chain Analytics and Sensing Initiative",
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/03_A%20Safer%20Food%20Supply%20Chain.jpg",
+    "alt": "A safer food supply chain",
+    "description": "MIT Sloan launched the Food Supply Chain Analytics and Sensing Initiative (FSAS) in 2020 to develop and deploy predictive analytical tools and technologies to improve the design and management of safe and reliable food supply chains. “This is a global challenge with relevance to every country on the planet,” says FSAS faculty director Retsef Levi, the J. Spencer Standish  (1945) Professor of Operations Management. “We hope that our multidisciplinary work can help inform policies and industry practices and build better global food systems.” Joined by students and faculty from the schools of science and engineering, FSAS is working in three areas: management of food safety; design and optimization of agricultural supply chains and markets; and issues of food access and food waste.",
+    "categories": ["human_health", "planet_health", "inquiry"],
+    "locations": [
+        {
+            "location": "Los Angeles, CA",
+            "lat": 34.0536909,
+            "long": -118.242766,
+            "url": "https://maps.google.com?q=34.0536909,-118.242766"
+        },
+        {
+            "location": "Karnataka, India",
+            "lat": 15.3173,
+            "long": 75.7139,
+            "url": "https://maps.google.com?q=15.3173,75.7139"
+        },
+        {
+            "location": "West Sumatra, Indonesia",
+            "lat": -0.5827529,
+            "long": 100.6133379,
+            "url": "https://maps.google.com?q=-0.5827529,100.6133379"
+        },
+        {
+            "location": "Beijing, China",
+            "lat": 39.906217,
+            "long": 116.3912757,
+            "url": "https://maps.google.com?q=39.906217,116.3912757"
+        }
+    ]
+},
+{
+    "title": "Nonpartisan Analysis for Financial Policy Makers",
+    "subtitle": "Golub Center for Finance and Policy",
+    "categories": ["teaching", "inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/04_Nonpartisan%20Analysis%20for%20Financial%20Policy%20Maker.jpg",
+    "description": "Recognizing a need for creative initiatives to address the unique challenges relating to financial policy and regulation, MIT Sloan established the Golub Center for Finance and Policy (GCFP). Director Deborah Lucas, the Sloan Distinguished Professor of Finance, calls the center “the go-to source for nonpartisan analyses of financial policies.” GCFP’s cross-disciplinary research focuses on three areas: government financial institutions, financial regulatory policies, and public risk management, seeking to provide greater transparency and elevate the quality of public policy debate through research, education, and outreach. The Center also provides educational outreach through course offerings and by hosting speakers and conferences.",
+    "locations": [
+        {
+            "location": "Cambridge, MA",
+            "lat": 43.05,
+            "long": -71.5,
+            "url": "https://maps.google.com?q=42.3736,-71.1097"
+        }
+    ]
+},
+{
+    "title": "Innovating to Transform Today’s Health System",
+    "subtitle": "Health Systems Initiative",
+    "categories": ["human_health", "inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/05_Innovating%20to%20Transform%20Today%CE%93%C3%87%C3%96s%20Health%20System%20.jpg",
+    "description": "The MIT Sloan Health Systems Initiative (HSI) brings industry leaders together with world-class researchers and students on projects to both improve health and lower health care costs. For example, HSI co-director Joseph Doyle, Erwin H. Schell Professor of Management and Applied Economics, investigates sources of value and waste to inform policies aimed at improving the quality and cost-effectiveness of the US health care system. Meanwhile, Assistant Professor of Operations Management Jónas Jónasson focuses on understanding and improving the operational effectiveness and efficiency of decentralized health care delivery systems.",
+    "locations": [
+        {
+            "location": "Worcester, MA",
+            "lat": 42.2626,
+            "long": -71.8,
+            "url": "https://maps.google.com?q=42.2625621,-71.8018877"
+        },
+        {
+            "location": "Malawi, East Africa",
+            "lat": -13.2687204,
+            "long": 33.9301963,
+            "url": "https://maps.google.com?q=-13.2687204,33.9301963"
+        },
+        {
+            "location": "Durham, NC",
+            "lat": 35.9825698,
+            "long": -78.90918652627246,
+            "url": "https://maps.google.com?q=35.9825698,-78.90918652627246"
+        },
+        {
+            "location": "Oakland, CA",
+            "lat": 37.8044557,
+            "long": -122.2713563,
+            "url": "https://maps.google.com?q=37.8044557,-122.2713563"
+        }
+    ]
+},
+{
+    "title": "Maximizing the Impact of Clinical Trials",
+    "subtitle": "Andrew W. Lo",
+    "categories": ["human_health", "inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/06_Maximizing%20the%20Impact%20of%20Clinical%20Trials%20.jpg",
+    "description": "The road between an exciting medical discovery and the approval of its corresponding life-saving therapy can be long and risky. Andrew Lo wants to improve that process with Project ALPHA (Analytics for Life-sciences Professionals and Healthcare Advocates), which provides more timely and accurate estimates of the risks of clinical trials and related metrics. “More accurate risk metrics will eventually lead to fewer big failures, faster approval times, cost savings to the entire health care system, and more investment capital for developing breakthrough therapies,” he says, “all of which means more, and better, therapies to patients sooner.”",
+    "description2": "Andrew W. Lo is the Charles E. and Susan T. Harris Professor, a Professor of Finance, and the Director of the Laboratory for Financial Engineering. His current research spans five areas: evolutionary models of investor behavior and adaptive markets, systemic risk and financial regulation, quantitative models of financial markets, financial applications of machine-learning techniques and secure multi-party computation, and healthcare finance.",
+    "locations": [
+        {
+            "location": "Cambridge, MA",
+            "lat": 43.05,
+            "long": -71.5,
+            "url": "https://maps.google.com?q=42.3736,-71.1097"
+        }
+    ]
+},   
+{
+    "title": "On the Move in Africa",
+    "subtitle": "Adetayo Bamiduro, MBA ’15, and Chinedu Azodoh, MFin ’15",
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/07_On%20The%20Move%20in%20Africa%20Adetayo%20Bamiduro_Chinedu-Azodoh.jpg",
+    "categories": ["planet_health", "innovation"],
+    "description": "Adetayo Bamiduro, MBA ’15, and Chinedu Azodoh, MFin ’15, benefited from MIT’s entrepreneurial ecosystem while founding Metro Africa Xpress (MAX), a technology-enabled vehicle subscription platform for low-to-zero emission vehicles in Africa. As they continue to scale their business, the cofounders advocate for small business growth and a more welcoming economy for innovation and entrepreneurship in Africa. “Our work involves delivering an integrated, affordable, and collateral-free vehicle subscription package that includes low to zero emission vehicles, health care, insurance and OEM services,” says Bamiduro. “MIT Sloan helped me realize I could contribute significantly to the world through leadership.”",
+    "description2": "Adetayo Bamiduro, MBA ’15, and Chinedu Azodoh, MFin ’15, are the co-founders of Metro Africa Xpress, a motorbike ride-hailing and delivery service popularly known as MAX.ng.",
+    "locations": [
+        {
+            "location": "Lagos, Nigeria",
+            "lat": 6.4550575,
+            "long": 3.3941795,
+            "url": "https://maps.google.com?q=6.4550575,3.3941795"
+        }
+    ]
+},
+{
+    "title": "Protecting Rural India’s Frontline Health Care Workers",
+    "subtitle": "Shivang Tayal, MBA ’22",
+    "subtitle2": "Ivy Head Family Fellow",
+    "alt": "Shivang Tayal, Protecting Rural India's Fontline Health Care Workers",
+    "categories": ["human_health", "teaching"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/08_Protecting_Rural_India.jpeg",
+    "description": "Fellowship recipient Shivang Tayal, MBA ’22, helped launch a grassroots campaign to assist frontline health care workers in rural India during the COVID-19 pandemic. The campaign distributed kits containing sanitizers, gloves, masks, and face shields to as many as 13,000 health care workers across 900 towns and villages. Most of the frontline workers protected were rural women, the auxiliary nurses and midwives who typically oversee public health and child welfare in Indian villages. The MBA student credits MIT for encouraging him to focus his campaign where it would have a meaningful impact.",
+    "description2": "Shivang Tayal, MBA ’22, is a recipient of the Ivy Head Family Fellowship. He is from Hisar, India, 100 miles west of New Delhi.",
+    "locations": [
+        {
+            "location": "Hisar, India",
+            "lat": 29.080640950000003,
+            "long": 75.788754109493,
+            "url": "https://maps.google.com?q=29.080640950000003,75.788754109493"
+        }
+    ]
+},
+{
+    "title": "Innovating Food Waste",
+    "subtitle": "Brittny Chong, MBA ’22",
+    "subtitle2": "Beatrice Ballini (1986) Fellow",
+    "categories": ["innovation", "planet_health"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/09_Innovating%20Food%20Waste%20Brittny_Chong.jpg",
+    "alt": "Brittny Chong, innovating food waste",
+    "description": "“I’ve always been focused on innovation, even when working for others in the public and private sectors,” says second-year MBA student Brittny Chong. While pursuing her degree at MIT Sloan, Chong founded WiRa Lab, which aims to apply machine-learning analytics and interactive design to managing food waste. The startup has designed a “smart bin” to identify commonly discarded food products, providing clients with data to inform food supply and demand forecasting. Another goal is the conversion of food waste into biofuel, which Chong views as a potential economic driver for communities disproportionately impacted by climate change.",
+    "description2": "Britt Chong, MBA ’22, is a serial entrepreneur and a recipient of the Beatrice Ballini (1986) Fellowship. She was born in Jamaica and grew up in New York City.",
+    "locations": [
+        {
+            "location": "Kingston, Jamaica",
+            "lat": 18.02,
+            "long": -76.8,
+        },
+        {
+            "location": "NYC",
+            "lat": 40.7128,
+            "long": -74
+        }
+    ]
+},
+{
+    "title": "Managing in the Eye of the Storm",
+    "subtitle": "Melanie Ivarsson, EMBA ’19",
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/10_Managing%20in%20the%20Eye%20of%20the%20Storm%20.jpg",
+    "categories": ["human_health"],
+    "description": "Melanie Ivarsson, EMBA ’19, believes the Executive MBA program at MIT Sloan was ideal preparation for the role she began in January 2020 as senior vice president and chief development officer of Moderna. Leading a team working under enormous pressure to develop a COVID-19 vaccine, Ivarsson was inspired by their adaptability to difficult circumstances. “It’s all down to teamwork,” she points out. “Nobody has ever developed a drug on their own.” Looking ahead to potential vaccines and therapies for diseases other than COVID-19, Ivarsson told the MIT Sloan community in 2021, “Moderna is pushing forth with what mRNA can do for the world.”",
+    "description2": "Melanie Ivarsson, EMBA ’19, is a Senior Vice President and the Chief Development Officer at Moderna.",
+    "locations": [
+        {
+            "location": "Cambridge, MA",
+            "lat": 43.05,
+            "long": -71.5,
+            "url": "https://maps.google.com?q=42.3736,-71.1097"
+        }
+    ]
+},
+{
+    "title": "Tech for the Greater Good",
+    "subtitle": "Nagela Nakuna, MBA ’22",
+    "subtitle2": "Beatrice Ballini (1986) Fellow",
+    "categories": ["inquiry", "teaching"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/11_Tech%20for%20the%20Greater%20Good_Nagela%20Nakuna.jpg",
+    "description": "A trained engineer, Nagela Nakuna, MBA ’22, has always believed that technological development is a powerful force in social policy. “Technology expands access and opportunity and helps us scale different policies efficiently,” she says. At the MIT Sloan School of Management, Nakuna has applied an engineer’s analytical rigor to social impact research. Passionate about politics, mis- and disinformation, and voting rights, she envisions a career focused on improving national policies through working at the intersection of tech and politics. One question is constantly on her mind: “How do you use tech to scale social good?”",
+    "description2": "Nagela Nakuna, MBA ’22, is an engineer by training and is currently pursuing an MBA/MPP from MIT Sloan School of Management and the Harvard Kennedy School of Government. She is from Hockessin, Delaware.",
+    "locations": [
+        {
+            "location": "Hockessin, Delaware",
+            "lat": 39.7876112,
+            "long": -75.6966001,
+            "url": "https://maps.google.com?q=39.7876112,-75.6966001"
+        }
+    ]
+},
+{
+    "title": "Reinventing Workflow to Meet Pandemic Challenges",
+    "subtitle": "Sheila Dodge, EMBA ’12, and Nelson Repenning, PhD ’96",
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/12_%20Reinventing%20Workflow%20to%20Meet%20Pandemic%20Challenges.jpg",
+    "categories": ["teaching", "innovation", "human_health", "inquiry"],
+    "description": "When the pandemic struck, Sheila Dodge, EMBA ’12, the general manager of Broad Genomics and an institute scientist at the Broad Institute of MIT and Harvard, helped convert a Broad clinical processing lab into a large-scale COVID-19 testing facility in a matter of days. Dodge had worked with MIT Sloan’s Nelson Repenning, PhD ’96, researching dynamic work design, a method of managing workflow in which knowledge workers find issues and make improvement in real time. She applied the principles of dynamic work design to her lab, scaling it to process more than 150,000 COVID-19 tests daily by late mid-2020.",
+    "description2": "Sheila Dodge, EMBA ’12, is the General Manager of Broad Genomics and a Lecturer at MIT Sloan.<br><br>Nelson Repenning, PhD ’96, is the Associate Dean of Leadership and Special Projects, School of Management Distinguished Professor of System Dynamics and Organization Studies, and Faculty Director of the MIT Leadership Center. His early work focused on understanding the inability of organizations to leverage well-established tools and practices, and he has worked extensively with organizations trying to develop new capabilities in both manufacturing and new product development.",
+    "locations": [
+        {
+            "location": "Cambridge, MA",
+            "lat": 43.05,
+            "long": -71.5,
+            "url": "https://maps.google.com?q=42.3736,-71.1097"
+        }
+    ]
+},
+{
+    "title": "Sustainability Through a Business Lens",
+    "subtitle": "Roberto Rigobon, PhD ’97",
+    "categories": ["inquiry", "planet_health"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/13_Sustainability%20Through%20a%20Business%20Lens.jpg",
+    "description": "Environmental, social, and governance (ESG) data are intended to help investors put money toward more ethical companies, but research from different ratings agencies diverges broadly. In response, Roberto Rigobon, PhD ’97, founded the Aggregate Confusion Project, which explores the divergence of ESG ratings and applies a business lens to the field of sustainability. Using these ratings to guide the behaviors of just a small number of the nation’s biggest polluters would make a huge difference to addressing time-sensitive climate crises, he says: “The only way to solve these problems is to create an army of able individuals who are willing to tackle important questions.”",
+    "description2": "Roberto Rigobon, PhD ’97, is the Society of Sloan Fellows Professor of Management, a Professor of Applied Economics, and the Co-Faculty Director of the MIT Sloan Sustainability Initiative. He is a Venezuelan economist whose areas of research are international economics, monetary economics, and development economics.",
+    "locations": [
+        {
+            "location": "Cambridge, MA",
+            "lat": 43.05,
+            "long": -71.5,
+            "url": "https://maps.google.com?q=42.3736,-71.1097"
+        }
+    ]
+},
+{
+    "title": "Scrutinizing Cryptocurrency",
+    "subtitle": "Antoinette Schoar",
+    "categories": ["inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/14_Scrutinizing%20Cryptocurrency.jpg",
+    "description": "Investors are interested in cryptocurrencies, but confused about their risks and benefits. Professor Antoinette Schoar worked with a team of researchers to analyze Bitcoin transactions from 2015 to 2021, building a novel database and unique algorithms to extract information about market participants. Bitcoin ownership was found to be concentrated among a small set of very wealthy addresses, presenting risk to market stability and unequal benefits. “Somebody who can easily spend a few hundred million dollars’ worth of Bitcoin and sell it or buy it can have a massive price impact in the market,” said Schoar, who is now researching other crypto platforms.",
+    "description2": "Antoinette Schoar is the Stewart C. Myers-Horn Family Professor of Finance at the MIT Sloan School of Management. An expert in corporate finance, entrepreneurship, and organizational economics, her research focuses on venture capital, entrepreneurial finance, corporate diversification, governance, and capital budgeting decisions in firms.",
+    "locations": [
+        {
+            "location": "Cambridge, MA",
+            "lat": 43.05,
+            "long": -71.5,
+            "url": "https://maps.google.com?q=42.3736,-71.1097"
+        }
+    ]
+},   
+{
+    "title": "Misinformation Research in Latin America",
+    "subtitle": "David G. Rand",
+    "categories": ["inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/15_Misinformation%20Research%20in%20Latin%20America.jpg",
+    "description": "The MIT Sloan Latin America Office (MSLAO), launched in 2013, provides seed funds for important research every year. The MSLAO received a record number of applications in 2020; research focuses on (but is not limited to) projects in Brazil, Chile, Colombia, Ecuador, and Peru. One of the funded projects was led by Professor David G. Rand, who looked at online misinformation in three Latin American countries. Researchers used the data to understand why people believe falsehoods and to suggest interventions for reducing the spread of misinformation.",
+    "description2": "David G. Rand is the Erwin H. Schell Professor and a Professor of Management Science and Brain and Cognitive Sciences at MIT. He is also the director of the Applied Cooperation Team and an affiliate of the MIT Institute for Data, Systems, and Society, and the MIT Initiative on the Digital Economy. His research combines behavioral experiments run online and in the field with mathematical and computational models to understand people’s attitudes, beliefs, and choices.",
+    "locations": [
+        {
+            "location": "Argentina",
+            "lat": -34.6,
+            "long": -58.3,
+            "url": "https://maps.google.com?q=42.3736,-71.1097"
+        },
+        {
+            "location": "Brazil",
+            "lat": -15.7975,
+            "long": -47.8919,
+        },
+        {
+            "location": "Mexico",
+            "lat": 19.4326,
+            "long": -99.1332,
+        }
+    ]
+},
+{
+    "title": "Using the Scientific Method on Business",
+    "subtitle": "Pierre Azoulay, PhD ’01 ",
+    "categories": ["inquiry", "innovation"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/16_Using%20the%20Scientific%20Method%20on%20Business.jpg",
+    "description": "International Programs Professor of Management Pierre Azoulay, PhD ’01, understands that business assumptions are often wrong—and worse, harmful. In 2020 research, he and coauthors demonstrated that immigrants are more entrepreneurial than native-born citizens and create more jobs than they “take away” in the American economy. The researchers found that increased age was a signifier of greater (not less) success in entrepreneurship. In future work, Azoulay hopes to study whether venture capitalists operate more like an “old boys’ network” than a meritocracy based on talent and ideas, with a focus on biomedical innovation.",
+    "description2": "Pierre Azoulay, PhD ’01, is the International Programs Professor of Management and a Professor of Technological Innovation, Entrepreneurship, and Strategic Management at MIT Sloan School of Management. His current research focuses on empirical studies of the supply of biomedical innovators, particularly at the interface of academia and the biopharmaceutical industry. He also is interested in how established firms organize their innovation efforts, with a particular emphasis on the relevance of the “ARPA model” for private-sector enterprises.",
+    "locations": [
+        {
+            "location": "Cambridge, MA",
+            "lat": 43.05,
+            "long": -71.5,
+            "url": "https://maps.google.com?q=42.3736,-71.1097"
+        }
+    ]
+},
+{
+    "title": "A Bra for Heart Disease",
+    "subtitle": "",
+    "categories": ["teaching", "innovation"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/17_Bloomer_Tech.jpg",
+    "description": "As an MIT student, Alicia Chong Rodriguez, SM ’18, realized that data around women’s heart health is lacking. Heart disease in women was on the rise, and yet females are underrepresented in data, clinical trials, and even animal models. Launched in 2017 with the help of MIT Sandbox, MIT Legatum, and MIT delta v, Bloomer Tech—co-founded with Aceil Halaby, SM ’17, and Monica Abarca—created a platform that includes a wearable bra with washable, flexible circuits for continuous physiological monitoring, a mobile app, and a cloud engine. The platform can be used by medical professionals and even researchers—building rich datasets to close these data gaps, enabling inclusive digital health tools, and accelerating progress to improve the outcomes for women with heart disease.",
+    "locations": [
+        {
+            "location": "Cambridge, MA",
+            "lat": 43.05,
+            "long": -71.5,
+            "url": "https://maps.google.com?q=42.3736,-71.1097"
+        }
+    ]
+},
+{
+    "title": "Burnout? There’s a Way Forward",
+    "subtitle": "Erin L. Kelly",
+    "categories": ["inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/18_Burnout_There%CE%93%C3%87%C3%96s%20a%20Way%20Forward.jpg",
+    "description": "Many people experience burnout at work—and Sloan Distinguished Professor of Work and Organization Studies Erin L. Kelly wants to address it. As she found in her research, even “good jobs” can exhaust workers. Kelly, her co-author Phyllis Moen, and a larger research team implemented a “dual-agenda work redesign” in a Fortune 500 company—that is, change in work practices and norms that sought to benefit both employees and the company. The researchers found that, when workers were given more control about when and where they worked and managers were supportive of the personal lives of their staff, employees were better able to manage challenging workloads. Work redesign is challenging, but can tackle burnout, turnover, and dissatisfaction.",
+    "description2": "Erin L. Kelly is the Sloan Distinguished Professor of Work and Organization Studies at MIT Sloan School of Management and Co-Director of the MIT Institute for Work and Employment Research. Her research investigates the implications of workplace policies and management practices for firms, workers, and families with a joint focus on equity, well-being, and organizational performance.",
+    "locations": [
+        {
+            "location": "Cambridge, MA",
+            "lat": 43.05,
+            "long": -71.5,
+            "url": "https://maps.google.com?q=42.3736,-71.1097"
+        }
+    ]
+},
+{
+    "title": "Economist Receives Inaugural Miriam Pozen Prize",
+    "subtitle": "Golub Center for Finance and Policy",
+    "categories": ["inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/19_Economist%20Receives%20Inaugural%20Miriam%20Pozen%20Prize.jpg",
+    "description": "Stanley Fischer, PhD ’69, is a renowned economist, former vice chair of the U.S. Federal Reserve, and co-author of the popular textbooks, “Macroeconomics” and “Economics.” In 2020, he became the first recipient of the MIT Golub Center for Finance and Policy’s Miriam Pozen Prize. Named in honor of MIT Sloan senior lecturer Robert C. Pozen’s late mother, the prize supports improvements in financial policy by recognizing advancements in research and practice. In addition to the $200,000 prize, a fellowship named in Dr. Fischer’s honor has been awarded to an MIT Sloan MBA student.",
+    "locations": [
+        {
+            "location": "Cambridge, MA",
+            "lat": 43.05,
+            "long": -71.5,
+            "url": "https://maps.google.com?q=42.3736,-71.1097"
+        }
+    ]
+},
+{
+    "title": "Making the Next Generation of Manufacturing",
+    "subtitle": "Janelle Heslop, LGO ’19",
+    "categories": ["teaching"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/20_Making%20the%20Next%20Generation%20of%20Manufacturing.jpg",
+    "description": "How do you make operations more sustainable? Janelle Heslop, LGO ’19, asked that core question during her time as a graduate student at MIT, and is on the way to finding answers. She went from a career in environmental consulting—working with companies like General Electric and organizations like New York City’s Department of Environmental Protection—to earning a dual master’s degree in Civil and Environmental Engineering and an MBA at MIT Sloan. As part of the LGO program and her thesis, she advised biotech firm Amgen on how to utilize better, less wasteful manufacturing technologies. Now, she’s continuing her work at Amgen and helping to bring about “the next generation of manufacturing.”",
+    "description2": "Janelle Heslop, LGO ’19, is a Senior Manager of Strategic Planning and Operations at Amgen.",
+    "locations": [
+        {
+            "location": "Bronx, NY",
+            "lat": 40.849,
+            "long": -73.864,
+            "url": "https://maps.google.com?q=42.3736,-71.1097"
+        },
+        {
+            "location": "Thousand Oaks, CA",
+            "lat": 34.1706,
+            "long": -118.8376,
+            "url": "https://maps.google.com?q=42.3736,-71.1097"
+        }
+    ]
+},
+{
+    "title": "Reduced Inefficiencies",
+    "subtitle": "Emma Gibson, PhD ’22, and Jónas Oddur Jónasson",
+    "categories": ["human_health", "inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/21_Reduced%20Inefficiencies.jpg",
+    "description": "A group of motorcycle drivers traverses Malawi nearly every day to transport medical samples from far-flung clinics to laboratories. Jónasson and Gibson partnered with the drivers’ organization, Riders for Health, to create a new route system based on real-time demand instead of fixed schedules. The MIT Sloan researchers used a phone-based platform to provide information about sample volume and combined it with an algorithm that produces daily schedules for drivers. Without introducing new hardware, software, or electricity, their solution has reduced transportation delays by 25% and has enabled patients to receive timely information about their health.",
+    "description2": "Emma Gibson is a PhD Candidate in Operations Management at MIT Sloan.<br><br>Jónas Oddur Jónasson is an Assistant Professor of Operations Management. His primary research focus is on understanding and improving the operational effectiveness and efficiency of decentralized healthcare delivery systems.",
+    "locations": [
+        {
+            "location": "Malawi",
+            "lat": -13.2543,
+            "long": 34.3015,
+        }
+    ]
+},
+{
+    "title": "Supporting Mexico’s Entrepreneurs",
+    "subtitle": "Fernanda de Velasco, MBA ’17",
+    "categories": ["innovation"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/22_Supporting%20Mexico%CE%93%C3%87%C3%96s%20Entrepreneurs.jpg",
+    "description": "Latin American entrepreneurs have a wealth of ideas and technologies but lack access to capital. De Velasco and her cofounders created Play Business in 2014 to democratize investing, foster innovation in Mexico, and establish an online community of entrepreneurs and funders. Their equity crowdfunding model lets anyone invest in a startup, franchise, or real estate portfolio for as little as 5,000 pesos. Since its inception, Play Business has facilitated more than $20 million in investments and has advised Mexican lawmakers on fintech legislation.",
+    "description2": "Fernanda de Velasco, MBA ’17, is the Chief Structuring Director of Play Business.",
+    "locations": [
+        {
+            "location": "Mexico City",
+            "lat": 19.4326,
+            "long": -99.1332,
+        }
+    ]
+},   
+{
+    "title": "First-Mile Improvements",
+    "subtitle": "Joann de Zegher",
+    "categories": ["innovation", "inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/23_First-Mile%20Improvements_Joann_de_Zegher.jpg",
+    "description": "Smallholder farmers who provide food and other commodities to the world often operate without digital records or even paper documents. These farmers live in some of the world’s most vulnerable communities and ecosystems, and their opaque operations create challenges for those who want to invest in humane and sustainable business practices. To make the first mile in the global supply chain more transparent for buyers, more profitable for farmers, and more sustainable for the planet, de Zegher devised a novel approach. She introduced palm oil farmers in Indonesia to a mobile-based platform where they could digitally record informal transactions and verify that they engaged in green practices. In turn, farmers were connected to buyers who paid on time and at higher prices.",
+    "description2": "Joann de Zegher is the Maurice F. Strong Career Development Professor and an Assistant Professor of Operations Management. Her research examines the design of technologies and algorithms that address supply chain challenges in developing and emerging markets, by combining methods from large-scale field work, optimization, computer science, econometrics, and action research.",
+    "locations": [
+        {
+            "location": "Riau, Indonesia",
+            "lat": 0.2933,
+            "long": 101.7068,
+        }
+    ]
+},
+{
+    "title": "Driving Customer Growth",
+    "subtitle": "Saeed Aldhaheri, MFin ’22, Roberto De Silva, MBA ’21, Carla Kinugawa, SFMBA ’21, and Keitumetse Molamu, MSMS ’21",
+    "categories": ["innovation", "teaching"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/24_Driving%20Customer%20Growth.jpg",
+    "description": "As vehicles become “smarter” and connected to the internet, they provide valuable insights into driver habits, traffic flow, fleet management, and more. Otonomo is an Israeli startup that wants to create a marketplace to store and sell this data. To grow the company, executives looked to MIT Sloan’s Israel Lab to help refine its sales processes and pipeline management. The student team conducted more than 15 interviews with company stakeholders to understand Otonomo’s customer acquisition journey and develop marketing personas. Some of their recommendations to improve conversion rates have already been adopted by Otonomo.",
+    "description2": "Since 2015, Israel Lab has provided students with the opportunity to gain hands-on experience, in line with MIT’s “mens et manus” motto, while providing actionable insights into high-tech Israeli startups.",
+    "locations": [
+        {
+            "location": "Herzliya Pituah, Israel",
+            "lat": 32.1742,
+            "long": 34.8029,
+        }
+    ]
+},
+{
+    "title": "MIT Sloan Latin America Office",
+    "subtitle": "",
+    "categories": ["teaching"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/25_MIT%20Sloan%20Latin%20America%20Office.jpg",
+    "description": "MIT Sloan established its first physical presence outside of the U.S. in 2013 with the opening of an office in Santiago, Chile. Since its inception, the MIT Sloan Latin America Office (MSLAO) has launched new Action Learning programs and shared MIT Sloan’s history of impact with academics, collaborators, and businesses throughout the region. It has supported initiatives focused on energy and sustainability, innovation and entrepreneurship, and productivity and growth. MSLAO also has strengthened MIT Sloan’s local alumni clubs and helped recruit Latin American students to study at MIT.<br><br>In 2019, with the support of MIT alumni and prominent business leaders in South America, such as the Luksic and Solari families and Gustavo Pierini, the MSLAO created a new endowment, which allows the office to fund more long-term research and projects throughout Latin America, centered on its core strategic areas of energy, water, and sustainability; innovation and entrepreneurship; and growth and productivity.",
+    "locations": [
+        {
+            "location": "Santiago, Chile",
+            "lat": -33.4489,
+            "long": -70.6693,
+        }
+    ]
+},
+{
+    "title": "Leadership Development in Haiti",
+    "subtitle": "Deborah Ancona",
+    "categories": ["teaching"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/26_Leadership%20Development%20in%20Haiti_Ancona.jpg",
+    "description": "Deborah Ancona has dedicated her career to understanding how successful teams operate, drive innovation, and foster creativity. In 2014, she visited Haiti to share her insights with more than 50 government leaders, including then-Prime Minister Laurent Lamothe. The workshop grew out of relationships made through the MIT-Haiti Initiative, a joint effort funded by the National Science Foundation to promote technology-enhanced active learning in STEM education. The initiative uses educational technology and open education resources in Kreyòl, one of Haiti’s two official languages.",
+    "description2": "Deborah Ancona is the Seley Distinguished Professor of Management, a Professor of Organization Studies, and the Founder of the MIT Leadership Center. Her pioneering research into how successful teams operate has highlighted the critical importance of managing outside, as well as inside, the team’s boundary. Ancona’s work also focuses on the concept of distributed leadership and on the development of research-based tools, practices, and teaching/coaching models that enable organizations to foster creative leadership at every level.",
+    "locations": [
+        {
+            "location": "Petion-Ville, Haiti",
+            "lat": 18.5138,
+            "long": -72.2882,
+        }
+    ]
+},
+{
+    "title": "Increasing Profits for Farmers",
+    "subtitle": "Usman Javaid, SF ’15, and Aukrit Unahalekhaka, SDM ’16",
+    "categories": ["innovation"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/27_Increasing%20Profits%20for%20Farmers.jpg",
+    "description": "Many small-scale farmers feed more than two billion people around the world yet live on less than $2 a day. To create a more equitable food supply chain, Unahalekhaka and Javaid founded Ricult, an agritech startup that helps farmers in Pakistan, Thailand, and Vietnam generate higher profits. The company combines satellite imagery and weather forecasting with advanced algorithms to enhance decision-making. For instance, Ricult offers recommendations on the best time to sow seeds and which sections of farmland need more water, pesticides, or fertilizers. Ricult’s first 300 customers saw an average increase of 50% in crop yields and a 30% to 40% increase in farmers’ profits.",
+    "locations": [
+        {
+            "location": "Lahore, Pakistan",
+            "lat": 31.5204,
+            "long": 74.3587,
+        },
+        {
+            "location": "Hanoi, Vietnam",
+            "lat": 21.0278,
+            "long": 105.8342,
+        },
+        {
+            "location": "Bangkok, Thailand",
+            "lat": 13.7563,
+            "long": 100.5018,
+        }
+    ]
+},
+{
+    "title": "Taming Tuberculosis",
+    "subtitle": "David Rand and Erez Yoeli",
+    "categories": ["human_health", "inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/30_Taming%20Tuberculosis.jpg",
+    "description": "Tuberculosis is one of the world’s most deadly infectious diseases. TB patients frequently fail to finish their six-month treatment, despite the fact that it increases the likelihood of a relapse and transmission of the disease to others. To raise completion rates, Rand and Yoeli piloted a program in Kenya that pairs the basic technology of talk-and-text mobile phones with behavioral science. In partnership with digital health company Keheala, the program sent TB patients daily SMS reminders to take their medicine. If patients did not verify that they were following the TB regimen, the research team followed up with more texts and a phone call. Participants also received motivational messages and texts that provided basic information about TB and addressed the community benefits of continuing treatment. At the end of the pilot program, only 4% of tuberculosis patients using the platform had unsuccessful treatment outcomes.",
+    "description2": "David G. Rand is the Erwin H. Schell Professor and a Professor of Management Science and Brain and Cognitive Sciences at MIT. He is also the director of the Applied Cooperation Team and an affiliate of the MIT Institute for Data, Systems, and Society, and the MIT Initiative on the Digital Economy. His research combines behavioral experiments conducted online and in the field with mathematical and computational models to understand people’s attitudes, beliefs, and choices.<br><br>Erez Yoeli is a research scientist at MIT’s Sloan School of Management, where he directs the Applied Cooperation Team. His research focuses on altruism: understanding how it works and how to promote it. He collaborates with governments, nonprofits, and companies to apply these insights to address real-world challenges like increasing energy conservation, improving antibiotic adherence, reducing smoking in public places, and promoting philanthropy",
+    "locations": [
+        {
+            "location": "Nairobi, Kenya",
+            "lat": -1.2921,
+            "long": 36.8219,
+        }
+    ]
+},
+{
+    "title": "MIT Sloan Partnership with Australian University ",
+    "subtitle": "",
+    "categories": ["teaching", "innovation", "inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/31_MIT%20Sloan%20Partnership%20with%20Australian%20Uni_QUT.jpg",
+    "description": "In 2019, MIT Sloan entered into an agreement with Queensland University of Technology (QUT) Business School to create an academic exchange and two-week MITS Sloan immersion experience for Australian MBA and EMBA students. The five year agreement also enables two QUT faculty members to visit MIT Sloan as International Faculty Fellows and participate in research, teaching, and curriculum development. The MIT Sloan-QUT Business School agreement is, in part, a result of existing cooperation between the two business schools through the Regional Entrepreneurship Acceleration Program (REAP), an MIT Sloan program that provides opportunities for communities around the world to engage with MIT in an evidence-based, practical approach to strengthening innovation-driven entrepreneurial ecosystems.",
+    "locations": [
+        {
+            "location": "Queensland, Australia",
+            "lat": -22.5752,
+            "long": 144.0848,
+        }
+    ]
+},
+{
+    "title": "Championing African Entrepreneurs",
+    "subtitle": "",
+    "categories": ["teaching", "innovation"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/32_Championing%20African%20Entrepreneurs.jpg",
+    "description": "In 2021, the Legatum Center for Development and Entrepreneurship at MIT launched a new fellowship program for accomplished African entrepreneurs. To be considered for the program, participants must demonstrate a commitment to transforming systems and lives in their home country and bolstering Africa’s innovation ecosystem. The inaugural cohort included 13 participants, known as Legatum Foundry Fellows, who hailed from eight countries and represented nine different markets, including healthcare, fintech, and education. Legatum Foundry Fellows spend six months learning from MIT faculty and then visit Cambridge for a three-week MIT immersion experience.",
+    "description2": "The Legatum Center for Development and Entrepreneurship was founded in 2007 with the belief that entrepreneurs and their market-driven solutions are critical to advancing economic and social progress in the developing world. The Legatum Center is generously supported by the Legatum Group, the Mastercard Foundation, HRH Princess Moudi Bint Khalid, and the Jacobs Foundation.",
+    "locations": [
+        {
+            "location": "Addis Ababa, Ethiopia",
+            "lat": 8.9806,
+            "long": 38.7578,
+        },
+        {
+            "location": "Accra, Ghana",
+            "lat": 5.6037,
+            "long": -0.1870,
+        },
+        {
+            "location": "Nairobi, Kenya",
+            "lat": -1.2921,
+            "long": 36.8219,
+        },
+        {
+            "location": "Kigali, Rwanda",
+            "lat": -1.9441,
+            "long": 30.0619,
+        },
+        {
+            "location": "Dakar, Senegal",
+            "lat": 14.7167,
+            "long": -17.4677,
+        },
+        {
+            "location": "Lusaka, Zambia",
+            "lat": -15.3875,
+            "long": 28.3228,
+        },
+        {
+            "location": "Kampala, Uganda",
+            "lat": 0.3476,
+            "long": 32.5825,
+        },
+        {
+            "location": "Abuja, Nigeria",
+            "lat": 9.0765,
+            "long": 7.3986,
+        }
+    ]
+},
+{
+    "title": "MIT Sloan Partnership with Italian University",
+    "subtitle": "",
+    "categories": ["teaching", "innovation", "inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/40_MIT%20Sloan%20Partnership%20with%20Italian%20Uni_parthenope.jpg",
+    "description": "In 2021, MIT Sloan agreed to a five-year partnership with Parthenope University of Naples to support the Italian school’s new 12-month master’s program in entrepreneurship and innovation management. The program includes a three-week MIT Sloan immersion experience that encourages Parthenope students to participate in classes, company visits, and cultural activities. The agreement also enables MIT Sloan faculty to travel to Naples and deliver lectures while Parthenope faculty can visit Cambridge and focus on research, teaching, and curriculum development under the mentorship of MIT Sloan faculty.",
+    "locations": [
+        {
+            "location": "Naples, Italy",
+            "lat": 40.8518,
+            "long": 14.2681,
+        }
+    ]
+},
+{
+    "title": "LGO Welcomes New Industry Partner",
+    "subtitle": "",
+    "categories": ["teaching", "health"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/42_LGO%20Welcomes%20New%20Industry%20Partner.jpg",
+    "description": "Leaders for Global Operations (LGO), a joint program of MIT Sloan and MIT School of Engineering, welcomed NextEra Energy Inc. as an industry partner in 2021. With this affiliation, students will have the opportunity to apply the LGO toolkit to the complexity of the climate-energy challenge at scale. Together, NextEra Energy and MIT will reimagine energy delivery through research collaborations, internships, and employment opportunities. LGO currently has 23 private sector partnerships, including 19 Fortune 500 and Global Fortune 500 companies.",
+    "locations": [
+        {
+            "location": "Juno Beach, FL",
+            "lat": 26.8798,
+            "long": -80.0534,
+        }
+    ]
+},
+{
+    "title": "MIT Sloan Partnership with Portuguese Universities",
+    "subtitle": "",
+    "categories": ["teaching"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/43_MIT%20Sloan%20Partnership%20with%20Portuguese%20Uni.jpg",
+    "description": "The Lisbon MBA International program unites two of Portugal’s top business schools—Católica-Lisbon School of Business and Economics, and Nova School of Business and Economics—with MIT Sloan for a one-year, one-of-a-kind MBA program. Participants in the International MBA and EMBA programs can access resources from all three schools, meet with MIT Sloan faculty in Lisbon, and enjoy an on-campus experience at MIT Sloan. Once in Cambridge, students take classes, visit Boston companies, and immerse themselves in the school’s entrepreneurial ecosystem. Participants receive a joint MBA degree from Católica-Lisbon and Nova and a certificate from MIT Sloan, and access to the extensive alumni community and networking events around the world as affiliates.",
+    "locations": [
+        {
+            "location": "Lisbon, Portugal",
+            "lat": 38.7223,
+            "long": -9.1393,
+        }
+    ]
+},
+{
+    "title": "Partnership with EPOCH Foundation",
+    "subtitle": "",
+    "categories": ["inquiry", "teaching"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/44_Partnership%20with%20EPOCH%20Foundation.jpg",
+    "description": "Since 1990, MIT Sloan has worked closely with the EPOCH Foundation, a consortium that promotes Taiwanese economic growth through industry and academic collaborations. During their 31-year relationship, MIT Sloan faculty have conducted research on Taiwan’s industrial development and Chinese-based economies, offered executive education programs for EPOCH members and affiliates, and invited executives to the Cambridge campus. Today, the MIT Sloan and EPOCH relationship includes nearly $30 million in collaborative research as well as educational initiatives with MIT's Media Lab, Industrial Liaison Program, and Computer Science and Artificial Intelligence Lab.",
+    "locations": [
+        {
+            "location": "Taipei, Taiwan",
+            "lat": 25.0330,
+            "long": 121.5654,
+        }
+    ]
+},
+{
+    "title": "Partnership with Chinese Universities",
+    "subtitle": "",
+    "categories": ["teaching", "inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/45_Partnership%20with%20Chinese%20Uni.jpg",
+    "description": "In collaboration with three Chinese universities—Fudan in Shanghai, Lingnan in Guangzhou, and Tsinghua in Beijing—the International MBA programs offer English-speaking Chinese students MIT Sloan’s unique approach to action learning and management education. MBA candidates from each institution meet and learn from MIT Sloan faculty in China and then visit the campus in Cambridge. In turn, MIT Sloan faculty, students, and staff gain an in-depth knowledge of the Chinese economy. These partnerships have been active for several years, including a 20-year relationship with Lingnan. Each graduate receives an MBA from their home institution and a certificate from MIT Sloan and are considered affiliates of the school which gives them access to the global alumni network and events around the world.",
+    "locations": [
+        {
+            "location": "Beijing, China",
+            "lat": 39.906217,
+            "long": 116.3912757,
+            "url": "https://maps.google.com?q=39.906217,116.3912757"
+        }
+    ]
+},
+{
+    "title": "Master of Central Banking",
+    "subtitle": "",
+    "categories": ["teaching"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/46_Master%20of%20Central%20Banking_ASB.jpg",
+    "description": "In collaboration with Asia School of Business, MIT Sloan launched a 12-month Master of Central Banking program in 2021. Given the dramatic transformations in technology and financial systems, the program gives central bankers the latest analytical tools and insights from MIT Sloan. After completing the 12-month residency at ASB’s campus in Kuala Lumpur, students spend the next six weeks at MIT Sloan to further their education and build professional networks.",
+    "locations": [
+        {
+            "location": "Kuala Lumpur, Malaysia",
+            "lat": 3.1390,
+            "long": 101.6869
+        }
+    ]
+},
+{
+    "title": "New Generation of Green Leaders",
+    "subtitle": "Otto Scharmer and Peter Senge, SM '72, PhD '78",
+    "categories": ["inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-05/47_New_Generation.jpeg",
+    "description": "A decade-long MIT Sloan Executive Education program has enabled Indonesian leaders to adapt and respond to sustainability issues. Building on its success, the Innovative Dynamic Education and Action for Sustainability (IDEAS) program has expanded to China and the Asia Pacific region. The one-year, practice-based journey led by Scharmer and Senge explores principles in systems thinking, problem-solving, and innovation. Leaders act on what they learned by building prototypes and engaging in field studies and retreats. The 2022 program is a Sustainable Development Goals (SDGs) Leadership Lab focused on transforming systems for better business and a better world.",
+    "description2": "Otto Scharmer is a Senior Lecturer and the chair of the IDEAS program at MIT Sloan.<br><br>Peter Senge, SM '72, PhD '78, is a Senior Lecturer at MIT Sloan.",
+    "locations": [
+        {
+            "location": "Beijing, China",
+            "lat": 39.906217,
+            "long": 116.3912757,
+            "url": "https://maps.google.com?q=39.906217,116.3912757"
+        },
+        {
+            "location": "Jakarta, Indonesia",
+            "lat": -6.2088,
+            "long": 106.8456
+        }
+    ]
+},
+{
+    "title": "Data Analytics in Latin America",
+    "subtitle": "",
+    "categories": ["teaching"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/49_Data%20Analytics%20in%20Latin%20America.jpg",
+    "description": "In May 2019, MIT Sloan established its first partnership with a Latin American university to offer a seven-month data analytics certificate program. Faculty from both MIT Sloan and Universidad de Chile offer courses that help managers and professionals apply data-driven decision-making into a variety of industries, including healthcare, banking, and public policy. Based in Santiago, Chile, students also take classes at MIT Sloan for two weeks. Upon completion of the program, participants receive a certificate from both Universidad de Chile and MIT Sloan.",
+    "locations": [
+        {
+            "location": "Santiago, Chile",
+            "lat": -33.4489,
+            "long": -70.6693,
+        }
+    ]
+},
+{
+    "title": "New Endowment Program Makes an Impact",
+    "subtitle": "",
+    "categories": ["teaching", "inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-04/50_EED.jpg",
+    "description": "The MIT Sloan Endowment for Enduring Diversity (EED), created in 2020, is a commitment from the school to support increased diversity, equity, and inclusion (DEI) at MIT Sloan. The EED aims to expand and deepen diversity in the classroom and outside it, during students’ time at the school and beyond. To date, alumni and friends have established 16 fellowships for students from underrepresented backgrounds and allocated $11 million in matching funds towards DEI through the EED. Thanks in part to these efforts, the incoming class of MIT Sloan MBA students was one of the most diverse ever.",
+    "locations": [
+        {
+            "location": "Cambridge, MA",
+            "lat": 43.05,
+            "long": -71.5,
+            "url": "https://maps.google.com?q=42.3736,-71.1097"
+        }
+    ]
+},
+{
+    "title": "Bridging the COVID-19 Data Gap",
+    "subtitle": "Dimitris Bertsimas",
+    "categories": ["human_health", "inquiry"],
+    "image": "https://mitsloan.mit.edu/sites/default/files/2022-05/51_Bertsimas.jpeg",
+    "description": "The COVID Analytics Project provides daily updates on COVID-19 cases and treatments, and uses those insights to make predictions and policy evaluations. Led by MIT Sloan’s Dimitris Bertsimas and executed by 25 MIT doctoral students, the group provides information to businesses, hospitals, healthcare systems, and even government leaders to help them make pandemic-related decisions. Their work accelerated Johnson & Johnson’s initial vaccine trials by eight weeks and helped FEMA with initial vaccine rollout in the U.S.",
+    "description2": "Dimitris Bertsimas is the Associate Dean for Business Analytics, the Boeing Leaders for Global Operations Professor of Management, and a Professor of Operations Research at MIT Sloan. His research interests include optimization, stochastic systems, machine learning, and their application. In recent years, he has worked in robust optimization, statistics, healthcare, transportation, and finance.",
+    "locations": [
+        {
+            "location": "Cambridge, MA",
+            "lat": 43.05,
+            "long": -71.5,
+            "url": "https://maps.google.com?q=42.3736,-71.1097"
+        },
+        {
+            "location": "Brazil",
+            "lat": -15.7975,
+            "long": -47.8919,
+        },
+        {
+            "location": "Hatford, CT",
+            "lat": 41.7658,
+            "long": -72.6734,
+        },
+        {
+            "location": "Lima, Peru",
+            "lat": -12.0464,
+            "long": -77.0428,
+        },
+        {
+            "location": "New Delhi",
+            "lat": 28.6139,
+            "long": 77.2090,
+        }
+    ]
+}
+];
+
+    // TODO: mouse drag outside of canvas
+    // TODO: better handle mins and maxes
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const imageWidth = 800, imageHeight = 400;
+    const profile = document.getElementById("map_profile");
+    const overlay = document.getElementById("overlay");
+    const cardLeft = document.getElementById("card_left");
+    const cardRight = document.getElementById("card_right");
+
+    const exit = document.getElementById("exit");
+    const circleFill = '#922335';
+    const labelColor = "white";
+    let zoom = 1.5, dx = 0, dy = 0, startX = 0, startY = 0, currentDx = 0, currentDy = 0;
+    let dragging = false, zooming = false;
+    let pinchDistance = 0, pinchDelta = 3;
+    const maxZoom = 20.0, zoomStep = .6;
+    const clusterDistanceThreshold = 40;
+    let currentCluster = [];
+    let currentClusterIndex = 1;
+
+    let filtersActive = {
+        inquiry: false,
+        planet_health: false,
+        human_health: false,
+        innovation: false,
+        teaching: false
+    };
+
+
+
+    function resetZoom() {
+        zoom = 1.5;
+        dx = 0;
+        dy = 0;
+        clear();
+        recluster();
+        renderCanvas();
+    }
+
+
+    let animationMoveStep = 4;
+    let eps = .05;
+
+    let zoomAnimationHRatio, zoomAnimationVRatio;
+    let animationStepX, animationStepY, animationMoveSteps;
+
+    function startAnimation() {
+        let expDx = dx - (maxZoom - zoom) * imageWidth * zoomAnimationHRatio;
+        let expDy = dy - (maxZoom - zoom) * imageHeight * zoomAnimationVRatio;
+        let endX = zoomAnimationHRatio * maxZoom * imageWidth + expDx;
+        let endY = zoomAnimationVRatio * maxZoom * imageHeight + expDy;
+
+        animationMoveSteps = 0;
+        let tryZoom = zoom;
+        while (tryZoom + getZoomStep(tryZoom) + eps <= maxZoom) {
+            animationMoveSteps++;
+            tryZoom += getZoomStep(tryZoom);
+        }
+
+        animationStepX = (canvas.width / 2 - endX) / (animationMoveSteps);
+        animationStepY = (canvas.height / 2 - endY) / (animationMoveSteps); 
+        window.requestAnimationFrame(animateZoomIn);
+    }
+
+    function animateZoomIn() {
+        let mapMoved = false;
+        // console.log("animateZoomin ", animationMoveSteps, mapMoved, zoom, maxZoom);
+
+        if (animationMoveSteps >= 0) {
+            dx += animationStepX;
+            dy += animationStepY;
+            animationMoveSteps--;
+            sanitizeDeltas();
+            mapMoved = true;
+            recluster();
+
+            if (zoom + getZoomStep(zoom) + eps <= maxZoom) {
+            zoomIn(zoomAnimationHRatio, zoomAnimationVRatio, false);
+            window.requestAnimationFrame(animateZoomIn);
+        } else {
+            if (mapMoved) {
+                clear();
+                recluster();
+                renderCanvas();
+                window.requestAnimationFrame(animateZoomIn);
+            }
+        }
+        }
+
+
+
+        if (animationMoveSteps < 0) {
+            clear();
+            recluster();
+            renderCanvas();
+        }
+    }
+
+   function getActualDx() {
+        let actualDx = dx + currentDx;
+        if (actualDx > 0) {
+            actualDx = 0;
+        }
+        let minPossibleDx = canvas.width - imageWidth * zoom;
+        if (actualDx < minPossibleDx) {
+            actualDx = minPossibleDx;
+        }
+        return actualDx;            
+    }
+
+
+    function getActualDy() {
+        let actualDy = dy + currentDy;
+
+        let minPossibleDy = Math.min(canvas.height - imageHeight * zoom, 0);
+        let maxPossibleDy = Math.max(canvas.height - imageHeight * zoom, 0);
+        if (actualDy > maxPossibleDy) {
+            actualDy = maxPossibleDy;
+        }
+        if (actualDy < minPossibleDy) {
+            actualDy = minPossibleDy;
+        }
+        return actualDy;
+    }
+
+
+const Circle = function(lat, lon, entries) {
+        this.lat = lat;
+        this.lon = lon;
+        this.entries = entries;
+        this.radius = 7;
+
+        this.getRenderXForLoc = function(location) {
+            return (location.long + 180) / 360 * imageWidth * zoom + getActualDx()
+        }
+
+        this.getRenderYForLoc = function(location) {
+            return (-location.lat + 90) / 180 * imageHeight * zoom + getActualDy();
+        }
+
+        this.getRenderX = function() {
+            return (this.lon / this.entries.length + 180) / 360 * imageWidth * zoom + getActualDx()
+        }
+
+        this.getRenderY = function() {
+            return (-this.lat / this.entries.length + 90) / 180 * imageHeight * zoom + getActualDy();
+        }
+
+        this.distanceTo = function(other) {
+            return Math.sqrt(Math.pow(this.getRenderX() - other.getRenderX(), 2) + Math.pow(this.getRenderY() - other.getRenderY(), 2));
+        }
+
+        this.onClick = function() {
+            if (this.entries.length > 1 && zoom + eps + getZoomStep(zoom) < maxZoom) {
+                zoomAnimationHRatio = (this.lon  / this.entries.length + 180) / 360;
+                zoomAnimationVRatio = (-this.lat / this.entries.length + 90) / 180;
+                startAnimation();
+            } else {
+                currentCluster = this.entries;
+                currentClusterIndex = 1;
+                updateDialog();
+                overlay.classList.remove("hidden");
+                profile.classList.remove("hidden");
+            }
+        }
+
+        this.getPin = function() {
+            let cat = this.entries[0].categories[0];
+            if (activeFilter) {
+                cat = activeFilter;
+            }
+            if (cat === "inquiry") {
+                return yellowPin;
+            }
+            if (cat === "planet_health") {
+                return greenPin;
+            }
+            if (cat === "human_health") {
+                return redPin;
+            }
+            if (cat === "innovation") {
+                return bluePin;
+            }
+            if (cat === "teaching") {
+                return burgundyPin;
+            }
+            return bluePin;
+        }
+
+        this.render = function(ctx) {
+            const pin = this.getPin();
+            const scaledHeight = Math.round(pin.height * pinScaleRatio);
+            const scaledWidth = Math.round(pin.width * pinScaleRatio);
+            // this.entries[0].locations.forEach(location => 
+            //     ctx.drawImage(pin, this.getRenderXForLoc(location) - Math.round(scaledWidth / 2), this.getRenderYForLoc(location) - scaledHeight, Math.round(pin.width * pinScaleRatio), Math.round(pin.height * pinScaleRatio))
+            // );
+            ctx.drawImage(pin, this.getRenderX() - Math.round(scaledWidth / 2), this.getRenderY() - scaledHeight, Math.round(bluePin.width * pinScaleRatio), Math.round(bluePin.height * pinScaleRatio));
+
+            let lsize = this.entries.length;
+
+            if (lsize > 1) {
+                ctx.font = "bold 11px Arial";
+                ctx.fillStyle = "black";
+                let labelDx = -7;
+                if (lsize < 10) {
+                    labelDx = -3;
+                }
+                // ctx.fillText(this.entries.length, this.getRenderX() + labelDx, this.getRenderY() + 4);
+                ctx.fillText(lsize, this.getRenderX() + labelDx, this.getRenderY() - 14);
+            }
+
+
+            // ctx.beginPath();
+            // ctx.arc(this.getRenderX(), this.getRenderY() - Math.round(scaledHeight * .595), this.radius, 0, 2 * Math.PI);
+            // ctx.fillStyle = 'white';
+            // ctx.fill();
+            // ctx.beginPath();
+            // ctx.arc(this.getRenderX(), this.getRenderY(), this.radius, 0, 2 * Math.PI);
+            // ctx.strokeStyle = "white";
+            // ctx.stroke();
+            // if (this.entries.length > 1) {
+            //     ctx.font = "bold 11px Arial";
+            //     ctx.fillStyle = labelColor;
+            //     let labelDx = -6;
+            //     if (this.entries.length < 10) {
+            //         labelDx = -3;
+            //     }
+            //     ctx.fillText(this.entries.length, this.getRenderX() + labelDx, this.getRenderY() + 4);
+            // }
+        }
+
+
+        this.isInside = function(x, y) {
+            const pin = this.getPin();
+            const scaledHeight = Math.round(pin.height * pinScaleRatio);
+            const scaledWidth = Math.round(pin.width * pinScaleRatio);
+
+            const topLeftX = this.getRenderX() - scaledWidth / 2;
+            const topLeftY = this.getRenderY() - scaledHeight;
+            return x >= topLeftX && x <= topLeftX + scaledWidth && y >= topLeftY && y <= topLeftY + scaledWidth;                    
+        }
+
+    };
+
+    function updateDialog() {
+        if (currentCluster.length <= 1) {
+            document.getElementById("card_switcher").classList.add("hidden");
+        } else {
+            document.getElementById("card_switcher").classList.remove("hidden");
+        }
+        const currentItem = currentCluster[currentClusterIndex - 1];
+        let imageSrc = "https://mitsloan.mit.edu/sites/default/files/2022-04/50_EED.jpg"; 
+        let imageAlt = currentItem.title;
+        if (currentItem.hasOwnProperty("image")) {
+            imageSrc = currentItem.image;
+            if (currentItem.alt) {
+                imageAlt = currentItem.alt;
+            }
+        } 
+        document.querySelector(".map_profile_pic").src = imageSrc;
+        document.querySelector(".map_profile_pic").alt = imageAlt;
+
+        document.querySelector(".switcher_position").innerHTML = `${currentClusterIndex} / ` + currentCluster.length;
+        document.querySelector("#map_profile h2").innerHTML = currentCluster[currentClusterIndex - 1].title;
+        let subtitle = currentCluster[currentClusterIndex - 1].subtitle;
+        if (currentCluster[currentClusterIndex - 1].subtitle2) {
+            subtitle += "<br>" + currentCluster[currentClusterIndex - 1].subtitle2;
+        }
+        document.querySelector("#map_profile .card_subtitle").innerHTML = subtitle;
+        document.querySelector("#map_profile_description p").innerHTML = currentCluster[currentClusterIndex - 1].description;
+        let description2 = "";
+        if (currentItem.hasOwnProperty("description2")) {
+            description2 = currentItem.description2;
+        }
+        document.querySelector("#map_profile_description2 p").innerHTML = description2;
+        
+        
+    }
+
+    // Add initial landmarks
+    let circles = [];
+    for (const i in mapEntries) {
+        let entry = mapEntries[i];
+
+        for (const l in entry.locations) {
+            circles.push(
+                new Circle(entry.locations[l].lat, entry.locations[l].long, [entry])
+            );
+        }
+    }
+    let filteredCircles = [...circles];
+    // let circles = [
+    //     new Circle(41.9028, 12.5, 1, "Rome, Italy"),
+    //     new Circle(-6.21, 106.84, 1, "Jakarta, Indonesia"),
+    //     new Circle(-6.9175, 107.6191, 1, "Bandung, Indonesia"),
+    //     new Circle(40.7128, -74, 1, "New York, NY"),
+    //     new Circle(42.36, -71.06, 1, "Boston, MA"),
+    //     new Circle(39.952, -75.165, 1, "Philadelphia, PA"),
+    //     new Circle(40.44, -80, 1, "Pittsburg, PA"),
+    //     new Circle(36.17, -115.14, 1, "Las Vegas, NV")
+    // ];
+    let clusters = [];
+
+
+    function recluster() {
+        clusters = [];
+        for (let i = 0; i < filteredCircles.length; i++) {
+            let found = false;
+            for (let j = 0; j < clusters.length && !found; j++) {
+                if (filteredCircles[i].distanceTo(clusters[j]) < clusterDistanceThreshold) {
+                    clusters[j].lat += filteredCircles[i].lat;
+                    clusters[j].lon += filteredCircles[i].lon;
+                    clusters[j].entries.push(filteredCircles[i].entries[0]);
+                    found = true;
+                }
+            }
+            if (!found) {
+                    clusters.push(new Circle(filteredCircles[i].lat, filteredCircles[i].lon, [filteredCircles[i].entries[0]]));
+                }
+        }
+    }
+    recluster();
+
+    function printDistances() {
+        let l = circles.length;
+        for (let i = 0; i < l; i++) {
+            for (let j = i + 1; j < l; j++) {
+                console.log("dist ", circles[i].name, circles[j].name, circles[i].distanceTo(circles[j]));
+            }
+        }
+    }
+
+    // printDistances();
+
+    const Rectangle = function(deltaX, deltaY, image) {
+        this.deltaX = deltaX;
+        this.deltaY = deltaY;
+        this.size = 40;
+        this.image = image;
+
+        this.render = function(ctx) {
+            ctx.beginPath();
+            const xx = canvas.width - this.deltaX;
+            ctx.rect(xx, this.deltaY, this.size, this.size);
+            ctx.fillStyle = '#e3e3e3';
+            ctx.fill();
+            ctx.drawImage(this.image, xx + 8, this.deltaY + 8);
+        };
+
+        this.isInside = function(x, y) {
+            const startX = canvas.width - this.deltaX;
+            return x >= startX && x <= startX + this.size && y >= this.deltaY && y <= this.deltaY + this.size; 
+        };
+    };
+
+    canvas.style.cursor = "grab";
+
+
+    canvas.addEventListener("mouseout", function(e) {            
+        e.preventDefault();
+        zoomButtonHold = false;
+        if (dragging) {
+            canvas.style.cursor = "grab";
+
+            let rect = canvas.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            let y = e.clientY - rect.top;
+
+            if (x < 0) x = 0;
+            if (y < 0) y = 0;
+            if (x > canvas.width) x = canvas.width;
+            if (y > canvas.height) y = canvas.height;
+            if (dragging) {
+                dx += x - startX;
+                dy += y - startY;
+                currentDx = 0;
+                currentDy = 0;
+            }
+            dragging = false;
+
+            clear();
+            renderCanvas();
+            dragging = false;
+        }
+    });
+
+    exit.addEventListener("click", function(e) {
+        overlay.classList.add("hidden");
+        profile.classList.add("hidden");
+    });
+    cardLeft.addEventListener("click", function(e) {
+        if (currentClusterIndex > 1) {
+            currentClusterIndex -= 1;
+            updateDialog();
+        }
+    });
+    cardRight.addEventListener("click", function(e) {
+        if (currentClusterIndex < currentCluster.length) {
+            currentClusterIndex += 1;
+            updateDialog();
+        }
+    });
+
+    function updateFilters() {
+        for (const prop in filtersActive) {
+            let el = document.getElementById(`checkbox_${prop}`);
+            if (filtersActive[prop]) {
+                el.classList.add("selected_filter");
+            } else {
+                el.classList.remove("selected_filter");
+            }
+        }
+        filteredCircles = circles.filter(circle => {
+            const anyActive = Object.keys(filtersActive).some(key => filtersActive[key]);
+            return Object.keys(filtersActive).some(key => !anyActive || (circle.entries[0].categories.includes(key) && filtersActive[key]));
+        });
+        recluster();
+        clear();
+        renderCanvas();
+    }
+
+    let activeFilter = null;
+
+    // Add event listeneres to filters
+    document.querySelectorAll('.pillar_filter').forEach(item => {
+        item.addEventListener('click', event => {
+            const filterClicked = event.target.closest(".pillar_filter");
+            const filterId = filterClicked.id;
+            if (filterId) {
+                const filterKey = filterId.replace("checkbox_", "");
+                if (filtersActive[filterKey]) {
+                    filtersActive[filterKey] = false;
+                    activeFilter = null;
+                } else {
+                    for (const prop in filtersActive) {
+                        filtersActive[prop] = false;
+                    }
+                    filtersActive[filterKey] = true;
+                    activeFilter = filterKey;
+                }
+                updateFilters();
+            } else {
+                for (const prop in filtersActive) {
+                    filtersActive[prop] = false;
+                }
+                updateFilters();
+            }
+        });
+    });
+
+
+    function getCirclesToRender() {
+        // if (zoom + zoomStep + eps > maxZoom) {
+        //     return circles;
+        // } else {
+        //     return clusters;
+        // }
+        // return filteredCircles;
+        // return circles;
+        return clusters;
+    }
+
+    let zoomButtonHold = false, zoomDirection, lastZoomRefresh;
+    const zoomRefreshRate = 20;
+
+    function zoomButtonRefresh() {
+        if (zoomButtonHold) {
+            if (performance.now() - lastZoomRefresh > zoomRefreshRate) {
+                if (zoomDirection < 0) {
+                    naturalZoomOut();
+                } else {
+                    naturalZoomIn();
+                }
+                lastZoomRefresh = performance.now();
+            }
+            window.requestAnimationFrame(zoomButtonRefresh);
+        }
+    }
+
+    function canvasMouseDown(clientX, clientY) {
+        let rect = canvas.getBoundingClientRect();
+        let x = clientX - rect.left;
+        let y = clientY - rect.top;      
+
+        if (zoomOutButton.isInside(x, y)) {
+            zoomButtonHold = true;
+            zoomDirection = -1;
+            lastZoomRefresh = 0;
+            window.requestAnimationFrame(zoomButtonRefresh);
+        } else if (zoomInButton.isInside(x, y)) {
+            zoomButtonHold = true;
+            zoomDirection = 1;
+            lastZoomRefresh = 0;
+            window.requestAnimationFrame(zoomButtonRefresh);
+        } else {
+            let circleHit = false;
+            let circRender = getCirclesToRender();
+            for (let i = 0, len = circRender.length; i < len && !circleHit; i++) {
+                if (circRender[i].isInside(x, y)) {
+                    circleHit = true;
+                    circRender[i].onClick();
+                    // overlay.classList.remove("hidden");
+                    // profile.classList.remove("hidden");
+                }
+            }
+            if (!circleHit) {
+                canvas.style.cursor = "grabbing";
+                startX = x;
+                startY = y;
+                dragging = true;
+            }
+        }
+    } 
+
+    function touchesDistance(e) {
+        let rect = canvas.getBoundingClientRect();
+        const x1 = e.touches[0].clientX - rect.left;
+        const y1 = e.touches[0].clientY - rect.top;
+        const x2 = e.touches[1].clientX - rect.left;
+        const y2 = e.touches[1].clientY - rect.top;
+        return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+    }
+
+    canvas.addEventListener("mousedown", function(e) {
+        e.preventDefault();
+        canvasMouseDown(e.clientX, e.clientY);
+    });
+    canvas.addEventListener("touchstart", function(e) {
+        e.preventDefault();
+        if (e.touches.length === 2) {
+            zooming = true;
+            pinchDistance = touchesDistance(e); 
+            dragging = false;
+        }
+        if (e.touches.length === 1) {
+            canvasMouseDown(e.touches[0].clientX, e.touches[0].clientY);                
+        }
+    });
+
+    let lastDragMilis = 0;
+
+    function canvasMouseMove(clientX, clientY) {
+        let rect = canvas.getBoundingClientRect();
+        let x = clientX - rect.left;
+        let y = clientY - rect.top;            
+        if (dragging) {
+            if (performance.now() - lastDragMilis > 30) {
+                // console.log("dragging ", performance.now());
+                currentDx = x - startX;
+                currentDy = y - startY;
+                clear();
+                renderCanvas();
+                lastDragMilis = performance.now();
+            }
+        } else {
+            let circleHit = false;
+            let circRender = getCirclesToRender();
+
+            for (let i = 0, len = circRender.length; i < len && !circleHit; i++) {
+                if (circRender[i].isInside(x, y)) {
+                    circleHit = true;
+                    canvas.style.cursor = "default";
+                }
+            }
+            if (!circleHit) {
+                canvas.style.cursor = "grab";
+            }
+        }
+    }
+
+    canvas.addEventListener("mousemove", function(e) {
+        e.preventDefault();
+        canvasMouseMove(e.clientX, e.clientY);
+    });
+
+
+    function getPinchHorizontalRatio(e) {
+        let rect = canvas.getBoundingClientRect();
+        const x1 = e.touches[0].clientX - rect.left;
+        const x2 = e.touches[1].clientX - rect.left;
+        return ((x1 + x2) / 2 - dx) / (imageWidth * zoom);
+    }
+
+    function getPinchVerticalRatio(e) {
+        let rect = canvas.getBoundingClientRect();
+        const y1 = e.touches[0].clientY - rect.top;
+        const y2 = e.touches[1].clientY - rect.top;
+        return ((y1 + y2) / 2 - dy)/ (imageHeight * zoom);
+    }
+
+    canvas.addEventListener("touchmove", function(e) {
+        e.preventDefault();
+        if (e.touches.length === 2) {
+            let dist = touchesDistance(e);
+            if (dist >= pinchDistance + pinchDelta) {
+                zoomIn(getPinchHorizontalRatio(e), getPinchVerticalRatio(e), true);
+                pinchDistance = dist;
+            }
+            if (dist <= pinchDistance - pinchDelta) {
+                zoomOut(getPinchHorizontalRatio(e), getPinchVerticalRatio(e), true);
+                pinchDistance = dist;
+            }
+        }
+        if (e.touches.length === 1 && dragging) {
+            canvasMouseMove(e.touches[0].clientX, e.touches[0].clientY);
+        }
+    });
+
+    canvas.addEventListener("wheel", function(event) {
+        event.preventDefault();
+        let rect = canvas.getBoundingClientRect();
+        let x = event.clientX - rect.left;
+        let y = event.clientY - rect.top;
+        let hRatio = (x - dx) / (imageWidth * zoom);
+        let vRatio = (y - dy) / (imageHeight * zoom);
+        if (event.wheelDeltaY > 0) {
+            zoomIn(hRatio, vRatio, true);
+        }
+        if (event.wheelDeltaY < 0) {
+            zoomOut(hRatio, vRatio, true);
+        }
+    });
+
+    function sanitizeDx() {
+        let ret = false;
+        if (dx > 0) {
+            dx = 0;
+            ret = true;
+        }
+        const minPossibleDx = canvas.width - imageWidth * zoom;
+        if (dx < minPossibleDx) {
+            dx = minPossibleDx;
+            ret = true;
+        }
+        return ret;
+    }
+
+    function sanitizeDy() {
+        let ret = false;
+        if (dy > 0) {
+            dy = 0;
+            ret = true;
+        }
+        const minPossibleDy = canvas.height - imageHeight * zoom;
+        if (dy < minPossibleDy) {
+            dy = minPossibleDy;
+            ret = true;
+        }
+        return ret;
+    }
+
+    function sanitizeDeltas() {
+        return sanitizeDx() || sanitizeDy();
+    }
+
+    function canvasMouseUp(clientX, clientY) {
+        if (dragging) {
+            canvas.style.cursor = "grab";
+
+            let rect = canvas.getBoundingClientRect();
+            let x = clientX - rect.left;
+            let y = clientY - rect.top;
+            dx += x - startX;
+            dy += y - startY;
+            currentDx = 0;
+            currentDy = 0;
+            sanitizeDeltas();
+            clear();
+            renderCanvas();
+            dragging = false;
+        }
+    }
+
+    canvas.addEventListener("mouseup", function(e) {
+        e.preventDefault();
+        zoomButtonHold = false;
+        canvasMouseUp(e.clientX, e.clientY);
+    });
+    canvas.addEventListener("touchend", function(e) {
+        e.preventDefault();
+        zoomButtonHold = false;
+        if (e.touches.length === 2) {
+            zooming = false;
+        }
+        if (e.touches.length === 0 && dragging) {
+            dx += currentDx;
+            dy += currentDy;
+            currentDx = 0;
+            currentDy = 0;
+            dragging = false;
+            sanitizeDeltas();
+            clear();
+            renderCanvas();
+        }
+    });
+
+    let imagesLeft = 8;
+
+    function imageLoaded() {
+        imagesLeft--;
+        if (imagesLeft === 0) {
+            renderCanvas();
+        }
+    }
+
+    const mapImage = new Image(); // Using optional size for image
+    mapImage.onload = imageLoaded; // Draw when image has loaded
+
+    const pinScaleRatio = .85;
+
+    const bluePin = new Image();
+    bluePin.src = "https://mitsloan.mit.edu/sites/default/files/2022-04/Pin_Blue.png";
+    bluePin.onload = imageLoaded;
+
+    const burgundyPin = new Image();
+    burgundyPin.src = "https://mitsloan.mit.edu/sites/default/files/2022-04/Pin_Burgundy.png";
+    burgundyPin.onload = imageLoaded;
+
+    const greenPin = new Image();
+    greenPin.src = "https://mitsloan.mit.edu/sites/default/files/2022-04/Pin_Green.png";
+    greenPin.onload = imageLoaded;
+
+    const redPin = new Image();
+    redPin.src = "https://mitsloan.mit.edu/sites/default/files/2022-04/Pin_Red.png";
+    redPin.onload = imageLoaded;
+
+    const yellowPin = new Image();
+    yellowPin.src = "https://mitsloan.mit.edu/sites/default/files/2022-04/Pin_Yellow.png";
+    yellowPin.onload = imageLoaded;
+
+
+
+    let zoomInImage = new Image();
+    let zoomInButton = new Rectangle(50, 10, zoomInImage);
+    zoomInImage.src = "https://mitsloan.mit.edu/sites/default/files/2022-04/zoom_in.png";
+    zoomInImage.onload = imageLoaded;
+
+    let zoomOutImage = new Image();
+    let zoomOutButton = new Rectangle(50, 60, zoomOutImage);
+    zoomOutImage.src = "https://mitsloan.mit.edu/sites/default/files/2022-04/zoom_out.png";
+    zoomOutImage.onload = imageLoaded;
+
+
+
+    mapImage.src = 'https://gistcdn.githack.com/mitsloan-drupal/8d92fe9f320eb607450b2dc4239cb7ca/raw/022041caa91d37e5d6b202d13267ea635c95d96a/oer_better_world_map.svg';
+    // image.src = 'https://storage.googleapis.com/map_assets/good_map_2.svg';
+    // mapImage.src = 'https://storage.googleapis.com/map_assets/good_map.svg';
+
+    function clear() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function getZoomStep(zz) {
+        if (zz <= 5) {
+            return .6;
+        } else {
+            return 1.8;
+        }
+    }
+
+
+    function zoomIn(horizontalRatio, verticalRatio, shouldRecluster) {
+        if (zoom + getZoomStep(zoom) + eps <= maxZoom) {
+            clear();
+            let horizontalGrow = imageWidth * getZoomStep(zoom);
+            let verticalGrow = imageHeight * getZoomStep(zoom);
+            dx -= horizontalGrow * horizontalRatio;
+            dy -= verticalGrow * verticalRatio;
+            zoom += getZoomStep(zoom);
+            sanitizeDeltas();
+            if (shouldRecluster) {
+                recluster();
+            }
+            renderCanvas();
+        }
+    }
+
+    function zoomOut(horizontalRatio, verticalRatio, shouldRecluster) {
+        let newZoom = zoom - getZoomStep(zoom);
+        if (imageWidth * newZoom + eps >= canvas.width) {
+            dx += horizontalRatio * imageWidth * getZoomStep(zoom);
+            dy += verticalRatio * imageHeight * getZoomStep(zoom);
+            zoom = newZoom;
+            sanitizeDeltas();
+            clear();
+            if (shouldRecluster) {
+                recluster();
+            }
+            renderCanvas();
+        }
+    }
+
+    function naturalZoomIn() {
+        // printDistances();
+        let extraWidth = imageWidth * zoom - canvas.width;
+        let extraHeight = imageHeight * zoom - canvas.height;
+        let horRatio = .5, vertRatio = .5;
+        if (extraWidth > 1) {
+            horRatio = (canvas.width / 2 - dx) / (imageWidth * zoom);
+        }
+        if (extraHeight > 1) {
+            vertRatio = (canvas.height / 2 - dy) / (imageHeight * zoom);
+        }        
+        zoomIn(horRatio, vertRatio, true);
+    }
+
+    function naturalZoomOut() {
+        let extraWidth = imageWidth * zoom - canvas.width;
+        let extraHeight = imageHeight * zoom - canvas.height;
+        let horRatio = .5, vertRatio = .5;
+        if (extraWidth > 1) {
+            horRatio = (canvas.width / 2 - dx) / (imageWidth * zoom);
+        }
+        if (extraHeight > 1) {
+            vertRatio = (canvas.height / 2 - dy) / (imageHeight * zoom);
+        }        
+        zoomOut(horRatio, vertRatio, true);
+    }
+
+    function renderCanvas() {
+        ctx.drawImage(mapImage, getActualDx(), getActualDy(), imageWidth * zoom, imageHeight * zoom);
+        let circRender = getCirclesToRender();
+        for (let i = 1, len = circRender.length; i <= len; i++) {
+            circRender[len - i].render(ctx);
+        }                
+        zoomInButton.render(ctx);
+        zoomOutButton.render(ctx);
+    }
+
+    function resizeCanvas() {
+        const height = document.documentElement.clientHeight;
+        const width = document.documentElement.clientWidth;
+
+        if (width < 768) {
+            let contentW;
+            if (width > 1280 + 160) {
+                contentW = 1280;
+            } else if (width > 1094 + 100) {
+                contentW = width - 160; 
+            } else if (width > 712 + 40) {
+                contentW = (width - 100) / .875;
+            } else {
+                contentW = (width - 40) / .875;
+            }
+
+            canvas.width = contentW * .875;
+            canvasH = Math.round(canvas.width * 4/8);
+            // console.log("contentW ", contentW, width, canvas.width);
+
+            if (width < 400) {
+                if (height >= width) {
+                    canvasH = Math.round(height * .5);
+                }
+            }
+            canvasH = Math.min(Math.round(height * .8), canvasH);
+            canvas.height = canvasH;
+        } else if (width < 1210) {
+            canvas.width = width - 200;
+            canvas.height = Math.round(canvas.width * .6);
+        } else if (width < 1700) {
+            canvas.width = 900;
+            canvas.height = 450;
+        } else {
+            canvas.width = 1100;
+            canvas.height = 550;
+        }
+    }
+
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        
+        let mapSpan = document.querySelector(".centered_map_container p");
+        let mapContainer = document.querySelector(".centered_map_container");
+        let eyeBrow = document.querySelector(".page-flexible-detail__eyebrow")
+        let mainTitle = document.querySelector(".page-flexible-detail__main-title");
+
+        mapContainer.insertBefore(mainTitle, mapSpan);
+        mapContainer.insertBefore(eyeBrow, mainTitle);
+
+        resizeCanvas();
+        if (canvas.width > 400) {
+            zoom = canvas.width / imageWidth;
+            if (imageHeight * zoom < canvas.height) {
+                dy = Math.round((canvas.height - imageHeight * zoom) / 2);
+            }
+        } else {
+            zoom = .8;
+        }
+        clear();
+        renderCanvas();
+    });
+
+    window.addEventListener("resize", function(event) {
+        resizeCanvas();
+        clear();
+        renderCanvas();
+    });
+
+    function carouselRight() {
+        const cardWidth = document.querySelector(".map_profiles_carousel > .profile").clientWidth + 32;
+        const offset = document.querySelector(".map_profiles_carousel").scrollLeft % cardWidth;
+        let scrollWidth = cardWidth;
+        if (offset !== 0) {
+            scrollWidth = cardWidth - offset;
+        }
+        document.querySelector(".map_profiles_carousel").scrollLeft += cardWidth;
+
+    }
+
+    function carouselLeft() {
+        const cardWidth = document.querySelector(".map_profiles_carousel > .profile").clientWidth + 32;
+        const offset = document.querySelector(".map_profiles_carousel").scrollLeft % cardWidth;
+        let scrollWith = cardWidth;
+        if (offset !== 0 && offset > 50) {
+            scrollWith = offset;
+        }
+        document.querySelector(".map_profiles_carousel").scrollLeft -= scrollWith;
+    }
+</script>
+    </div>
+    <article class="page-flexible-detail" itemscope itemtype="http://schema.org/Article" role="article" about="/better-world">
+     <meta hidden itemprop="headline" content=" With your generosity, we will invent the future by fostering new ideas, demonstrating their importance, and putting them into practice. Thank you for making a better world your business."><span hidden aria-hidden="true" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"> 
+      <meta hidden itemprop="name" content="MIT Sloan School of Management"> <span hidden itemprop="logo" itemscope itemtype="https://schema.org/ImageObject"> 
+       <meta itemprop="url" content="/themes/custom/mitsloan/img/MITSloanLogo.png"> 
+       <meta itemprop="width" content="152"> 
+       <meta itemprop="height" content="87"> </span> </span>
+     <div class="page-flexible-detail__main-wrapper
+
+                " data-dome-hidden="false">
+      <p class="page-flexible-detail__eyebrow">Better World</p>
+      <h1 class="page-flexible-detail__main-title"><span>A Better World is Our Business</span></h1>
+      <div class="page-flexible-detail__content-wrapper"> 
+       <section class="circles js-full-bleed-component">
+        <header class="circles--header">
+         <div class="circles--left" data-layer="text">
+          <div class="circles--wrap">
+           <h2 class="circles--headline jump-header" id="a-better-world-in-the-making">A Better World in the Making <a href="#a-better-world-in-the-making" class="jump-link" aria-label="Jump to A Better World in the Making"> <img src="themes/custom/mitsloan/img/anchorlink-icon.png" alt=""> </a></h2>
+           <p class="circles--subline">Read about the profound impact you made at MIT Sloan through your generosity during the MIT Campaign for a Better World.</p>
+           <div class="circles--cta"><a class="circles--cta_link" href="/alumni/a-better-world-making">Learn More</a>
+           </div>
+          </div>
+         </div>
+         <div class="circles--left" data-layer="overlay"></div>
+         <div class="circles--left" data-layer="image" aria-label="View of the globe from space" style="background-image: url(/sites/default/files/styles/circles_with_text_image/public/2022-05/99_CN%236_Hero_2880x960_2.png?itok=0uzndmdz);"></div> 
+         <div class="circles--left" data-layer="background"></div>
+         <div class="circles--right" aria-hidden="true" style="background-image: url(/sites/default/files/styles/circles_with_text_image/public/2022-05/99_CN%236_Hero_2880x960_2.png?itok=0uzndmdz);"></div>
+        </header>
+        <div class="circles--container">
+         <article class="circles--article"><span class="circles--tag">Alumni</span>
+          <h3 class="circles--title"><a class="circles--title_link" href="/alumni/simulations-to-predict-climate-change"> Simulations to Predict Climate Change </a></h3>
+          <p class="circles--text">Created with Climate Interactive, a nonprofit think tank, En-ROADS provides interactive climate policy simulation models.</p>
+          <div class="circles--nav"><a class="circles--link" href="/alumni/simulations-to-predict-climate-change">Read More</a>
+          </div>
+         </article>
+         <article class="circles--article"><span class="circles--tag">Alumni</span>
+          <h3 class="circles--title"><a class="circles--title_link" href="/alumni/new-endowment-deepens-commitment-to-diversity"> New Endowment Deepens Commitment to Diversity </a></h3>
+          <p class="circles--text">The MIT Sloan Endowment for Enduring Diversity and Inclusion (EED), established in 2020, reflects a strengthened commitment to DEI at MIT Sloan.</p>
+          <div class="circles--nav"><a class="circles--link" href="/alumni/new-endowment-deepens-commitment-to-diversity">Read More</a>
+          </div>
+         </article>
+         <article class="circles--article"><span class="circles--tag">Alumni</span>
+          <h3 class="circles--title"><a class="circles--title_link" href="/alumni/can-food-become-renewable-biofuel"> Can Food Become Renewable Biofuel? </a></h3>
+          <p class="circles--text">Brittny Chong, MBA ’22, finds the impacts of food waste deeply troubling—and it’s spurring her into action.</p>
+          <div class="circles--nav"><a class="circles--link" href="/alumni/can-food-become-renewable-biofuel">Read More</a>
+          </div>
+         </article>
+        </div>
+       </section>
+       <div class="pull_quote js-full-bleed-component">
+        <div class="pull_quote--container">
+         <svg class="pull_quote--quotes" aria-hidden="true" focusable="false" width="91px" height="70px" viewbox="0 0 91 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs> 
+           <lineargradient id="pull_quote--svg_gradient_50649" x1="29.4658779%" y1="13.902831%" x2="84.3203814%" y2="75.0760102%">
+            <stop stop-color="#EC0044" offset="0%"></stop>
+            <stop stop-color="#F9917C" offset="100%"></stop>
+           </lineargradient> 
+          </defs><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> 
+           <g transform="translate(-262.000000, -371.000000)" fill="url(#pull_quote--svg_gradient_50649)">
+            <g transform="translate(81.000000, 200.000000)">
+             <g transform="translate(0.000000, 171.000000)">
+              <path d="M221.197577,7.9054774 C216.942406,10.2175654 213.502108,12.2085002 210.876577,13.8783415 C208.251047,15.5481828 205.580288,17.7531966 202.864222,20.4934491 C200.329227,23.0624357 198.382743,25.7598313 197.02471,28.5857166 C195.666677,31.4116019 194.716068,35.0509451 194.172854,39.5038553 L200.69138,39.5038553 C206.304584,39.5038553 210.718125,40.8097373 213.932136,43.4215404 C217.146148,46.0333435 218.753129,49.8653577 218.753129,54.9176982 C218.753129,58.5142795 217.327216,61.87532 214.475347,65.0009204 C211.623477,68.1265208 207.707874,69.6892976 202.72842,69.6892976 C194.942364,69.6892976 189.374512,67.2702048 186.024697,62.4319466 C182.674882,57.5936884 181,51.2355418 181,43.357316 C181,37.7911783 182.267478,32.7175057 184.802473,28.1361462 C187.337468,23.5547866 190.41563,19.4658775 194.037052,15.8692962 C197.749009,12.187082 201.687245,9.06152846 205.85188,6.4925418 C210.016515,3.92355514 213.50208,1.82558084 216.308682,0.198555957 L221.197577,7.9054774 Z M271.444547,7.9054774 C267.189377,10.2175654 263.749078,12.2085002 261.123548,13.8783415 C258.498017,15.5481828 255.827259,17.7531966 253.111193,20.4934491 C250.485662,23.1480686 248.516544,25.8668721 247.203779,28.6499409 C245.891014,31.4330098 244.963038,35.0509451 244.419825,39.5038553 L250.938351,39.5038553 C256.551554,39.5038553 260.965095,40.8097373 264.179107,43.4215404 C267.393118,46.0333435 269.0001,49.8653577 269.0001,54.9176982 C269.0001,58.5142795 267.574187,61.87532 264.722317,65.0009204 C261.870448,68.1265208 257.954845,69.6892976 252.97539,69.6892976 C245.189334,69.6892976 239.621482,67.2702048 236.271668,62.4319466 C232.921853,57.5936884 231.246971,51.2355418 231.246971,43.357316 C231.246971,37.7911783 232.514449,32.7175057 235.049444,28.1361462 C237.584439,23.5547866 240.662601,19.4658775 244.284022,15.8692962 C247.995979,12.187082 251.934216,9.06152846 256.098851,6.4925418 C260.263485,3.92355514 263.749051,1.82558084 266.555653,0.198555957 L271.444547,7.9054774 Z"></path>
+             </g>
+            </g>
+           </g> 
+          </g>
+         </svg>
+         <img class="pull_quote--photo" focusable="false" src="/sites/default/files/styles/pull_quote_image/public/2020-08/David%20C.%20Schmittlein%20custom%20profile%20headshot.png?h=f5652cad&amp;itok=2fKXrCi9" alt="David C. Schmittlein Custom Profile Headshot" aria-hidden="true"><span class="pull_quote--info"> <strong class="pull_quote--name">David Schmittlein</strong> | John C Head III Dean </span>
+         <blockquote class="pull_quote--text">
+          Thanks to this extraordinary community, to each of you for coming together during this capital campaign offering your voices and your ideas—your minds and hands and hearts—the MIT Sloan School of Management is striding boldly into the future.
+         </blockquote>
+        </div>
+       </div>
+       <figure class="full_inline_image js-full-bleed-component" data-video="true" data-video-id="TzqlQ2uRaZE" aria-label="Thank you for making a better world your business. (Opens video in modal dialog.)">
+        <div class="full_inline_image--video_icon" aria-hidden="true"></div><a style="display: block;" class="full_inline_image--image" tabindex="0"> 
+         <picture data-lazy><!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source media="all and (max-width: 1919px) and (min-width: 1440px)" type="image/png" data-srcset="/sites/default/files/styles/2_1_xl_1280x640/public/2022-05/anthem-video-thumbnail.png?h=ab38d1ea&amp;itok=uaLGq_o4 1x, /sites/default/files/styles/2_1_xl_1280x640/public/2022-05/anthem-video-thumbnail.png?h=ab38d1ea&amp;itok=uaLGq_o4 1280w, /sites/default/files/styles/2_1_xxl_2560_x_1280/public/2022-05/anthem-video-thumbnail.png?h=ab38d1ea&amp;itok=6YQAEczD 2560w" data-sizes="100vw">
+          <source media="all and (max-width: 1439px) and (min-width: 1210px)" type="image/png" data-srcset="/sites/default/files/styles/2_1_large_1050x525/public/2022-05/anthem-video-thumbnail.png?h=ab38d1ea&amp;itok=r11XEeM3 1050w, /sites/default/files/styles/2_1_xl_1280x640/public/2022-05/anthem-video-thumbnail.png?h=ab38d1ea&amp;itok=uaLGq_o4 1280w, /sites/default/files/styles/2_1_xxl_2560_x_1280/public/2022-05/anthem-video-thumbnail.png?h=ab38d1ea&amp;itok=6YQAEczD 2560w" data-sizes="100vw">
+          <source media="all and (max-width: 1209px) and (min-width: 768px)" type="image/png" data-srcset="/sites/default/files/styles/2_1_medium_668x334/public/2022-05/anthem-video-thumbnail.png?h=ab38d1ea&amp;itok=w0O78H4v 668w, /sites/default/files/styles/2_1_large_1050x525/public/2022-05/anthem-video-thumbnail.png?h=ab38d1ea&amp;itok=r11XEeM3 1050w, /sites/default/files/styles/2_1_xl_1280x640/public/2022-05/anthem-video-thumbnail.png?h=ab38d1ea&amp;itok=uaLGq_o4 1280w" data-sizes="100vw">
+          <source media="all and (max-width: 767px)" type="image/png" data-srcset="/sites/default/files/styles/2_1_small_320x160/public/2022-05/anthem-video-thumbnail.png?h=ab38d1ea&amp;itok=75G97Dyq 320w, /sites/default/files/styles/2_1_medium_668x334/public/2022-05/anthem-video-thumbnail.png?h=ab38d1ea&amp;itok=w0O78H4v 668w, /sites/default/files/styles/2_1_large_1050x525/public/2022-05/anthem-video-thumbnail.png?h=ab38d1ea&amp;itok=r11XEeM3 1050w" data-sizes="100vw"><!--[if IE 9]></video><![endif]-->
+          <img alt="" class="lazyload" data-src="/sites/default/files/styles/2_1_large_1050x525/public/2022-05/anthem-video-thumbnail.png?h=ab38d1ea&amp;itok=r11XEeM3" typeof="foaf:Image">
+         </picture> </a>
+        <figcaption class="full_inline_image--caption">
+         <h3 class="full_inline_image--title">Thank you for making a better world your business.</h3>
+        </figcaption>
+       </figure>
+      </div>
+     </div>
+    </article>
+   </main>
+   <footer class="footer">
+    <div class="footer--top" data-nosnippet>
+     <section class="footer--mission">
+      <h3 class="footer--mission_title footer--section_title">The Mission</h3>
+      <p class="footer--mission_text">The mission of the MIT Sloan School of Management is to develop principled, innovative leaders who improve the world and to generate ideas that advance management practice.</p>
+     </section>
+     <section class="footer--find">
+      <h3 class="footer--find_title footer--section_title">Find Us</h3><span class="footer--location"> <a class="footer--location_link" title="Map of MIT Campus - Opens in new window" target="_blank" href="https://www.google.com/maps/place/MIT+Sloan+School+of+Management/@42.3610109,-71.085189,17z/data=!3m1!4b1!4m5!3m4!1s0x89e370a66efa6057:0x9bcd706c8ad3aa7a!8m2!3d42.361007!4d-71.082995"> <strong>MIT Sloan School of Management</strong> <span>100 Main Street</span> <span>Cambridge, MA 02142</span> </a> </span><a class="footer--phone" title="Call 617-253-1000" href="tel:617-253-1000">617-253-1000</a>
+     </section>
+     <section class="footer--links no-print">
+      <h3 class="footer--links_title footer--section_title">Links</h3>
+      <nav class="footer--nav" aria-label="footer">
+       <ul class="footer--nav-list">
+        <li><a class="footer--link" href="/returntocampus/coming-to-campus-spring-2022">Return to campus</a></li>
+        <li><a class="footer--link" href="/press">Press</a></li>
+        <li><a class="footer--link" href="/work-mit-sloan">Careers</a></li>
+        <li><a class="footer--link" href="https://accessibility.mit.edu/">Accessibility</a></li>
+        <li><a class="footer--link" href="/licensing">Licensing</a></li>
+        <li><a class="footer--link" href="/privacy">Privacy</a></li>
+       </ul>
+      </nav>
+     </section>
+    </div>
+    <div class="footer--bottom">
+     <nav class="footer--social no-print" aria-label="social media" itemscope itemtype="http://schema.org/Organization">
+      <link aria-hidden="true" hidden itemprop="url" href="/"><a class="footer--social_link" aria-label="facebook" data-site="facebook" title="Find us on Facebook" itemprop="sameAs" target="_blank" href="https://www.facebook.com/MITSloan"></a><a class="footer--social_link" aria-label="twitter" data-site="twitter" title="Find us on Twitter" itemprop="sameAs" target="_blank" href="https://twitter.com/mitsloan"></a><a class="footer--social_link" aria-label="youtube" data-site="youtube" title="Find us on YouTube" itemprop="sameAs" target="_blank" href="https://www.youtube.com/user/MITSloan"></a><a class="footer--social_link" aria-label="instagram" data-site="instagram" title="Find us on Instagram" itemprop="sameAs" target="_blank" href="https://www.instagram.com/mitsloan/"></a><a class="footer--social_link" aria-label="linkedin" data-site="linkedin" title="Find us on LinkedIn" target="_blank" href="https://www.linkedin.com/company/mit-sloan-school-of-management"></a>
+     </nav><small class="footer--copyright">©2022 MIT Sloan School of Management</small>
+    </div>
+   </footer>
+  </div>
+  <div id="sidenotes"></div>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/30711","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"utm_campaign":"PANTHEON_STRIPPED","utm_medium":"PANTHEON_STRIPPED"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"dataLayer":{"defaultLang":"en","languages":{"en":{"id":"en","name":"English","direction":"ltr","weight":0}}},"lazy":{"lazysizes":{"lazyClass":"lazyload","loadedClass":"lazyloaded","loadingClass":"lazyloading","preloadClass":"lazypreload","errorClass":"lazyerror","autosizesClass":"lazyautosizes","srcAttr":"data-src","srcsetAttr":"data-srcset","sizesAttr":"data-sizes","minSize":40,"customMedia":[],"init":true,"expFactor":1.5,"hFac":0.8,"loadMode":2,"loadHidden":true,"ricTimeout":0,"throttleDelay":125,"plugins":[]},"placeholderSrc":"","preferNative":false,"minified":true,"libraryPath":"\/libraries\/lazysizes"},"user":{"uid":0,"permissionsHash":"dea033123ddd9033c21d3e7204bd61c9e1cfc2341c9d473673354eeb96a09c93"}}</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="/sites/default/files/js/js_Yo5-pUGFdmDGG839BHCatbdRBNNaNZzurBPSFrJmBrU.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="/sites/default/files/js/js_axzgyUUR9LKRN8QMp_dVNSEbYcXXSwsg_xwOvxBjHKk.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-ebd61a40bb57b78c022","applicationID":"460434767","transactionName":"Z1RWbUJSC0VYWhBQV14edVpEWgpYFn0WTEhRXWhXX1cAanpWCk1KX11YXEJvK1ldXDJQXUdyW1dEQQpaVVwWFAZGWFFO","queueTime":0,"applicationTime":898,"atts":"SxNVGwpIGEs=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

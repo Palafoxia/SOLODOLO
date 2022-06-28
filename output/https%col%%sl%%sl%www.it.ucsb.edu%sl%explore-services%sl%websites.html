@@ -1,0 +1,1443 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-eb2854c60b7221c3b14",applicationID:"232904424"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141660994-1"></script>
+  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-141660994-1", {"groups":"default","anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+  <link rel="canonical" href="https://www.it.ucsb.edu/explore-services/websites">
+  <meta property="og:site_name" content="UC Santa Barbara Information Technology">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@UCSBIT">
+  <meta name="twitter:title" content="Websites">
+  <meta name="twitter:creator" content="@UCSBIT">
+  <meta name="twitter:url" content="https://www.it.ucsb.edu/explore-services/websites">
+  <meta name="twitter:image:height" content="570">
+  <meta name="twitter:image:width" content="380">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/themes/ucsbweb/favicon.ico" type="image/vnd.microsoft.icon">
+  <script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_config.icon_color = "#005099";</script>
+  <style>.a2a_svg {
+   border-radius: 0 !important;
+   margin-bottom: 15px;
+}
+</style>
+  <title>Websites | UC Santa Barbara Information Technology</title>
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_eimESDZScWhnPLTVda-gKxR8ei89stkBWzOMJ3MJtrM.css">
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_NK6FtCackXsZN1FIbNhpFzEheKeOwWYKqHWs4GFTWAg.css">
+  <link rel="stylesheet" media="all" href="https://webfonts.brand.ucsb.edu/webfont.min.css">
+ </head>
+ <body class="path-node path-node-74 page-node-type-page navbar-is-fixed-top has-glyphicons single-blog utility-bar-color-003660 logo-size-1">
+  <div id="body">
+   <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <header class="navbar navbar-default navbar-fixed-top" id="navbar" role="banner"><a href="#main-content" class="visually-hidden focusable skip-link"> Skip to main content </a>
+     <div id="eyebrow">
+      <div class="inner">
+       <div class="items">
+        <div class="item"><a href="https://www.ucsb.edu/" class="edu-link">University of California, Santa Barbara</a>
+        </div>
+        <div class="item">
+         <div class="inner">
+          <div class="quick-links">
+           <a href="#">Quick Links</a>
+           <svg width="100%" height="100%" viewbox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M12,12.5857864 L8.70710678,9.29289322 C8.31658249,8.90236893 7.68341751,8.90236893 7.29289322,9.29289322 C6.90236893,9.68341751 6.90236893,10.3165825 7.29289322,10.7071068 L11.2928932,14.7071068 C11.6834175,15.0976311 12.3165825,15.0976311 12.7071068,14.7071068 L16.7071068,10.7071068 C17.0976311,10.3165825 17.0976311,9.68341751 16.7071068,9.29289322 C16.3165825,8.90236893 15.6834175,8.90236893 15.2928932,9.29289322 L12,12.5857864 Z" />
+           </svg>
+          </div>
+          <div class="search"><span class="toggle-button"> 
+            <svg class="mag" width="100%" height="100%" viewbox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M15.2397415,16.6539551 C14.1023202,17.4996184 12.6929286,18 11.1666667,18 C7.39272088,18 4.33333333,14.9406125 4.33333333,11.1666667 C4.33333333,7.39272088 7.39272088,4.33333333 11.1666667,4.33333333 C14.9406125,4.33333333 18,7.39272088 18,11.1666667 C18,12.6929286 17.4996184,14.1023202 16.6539551,15.2397415 L20.2071068,18.7928932 C20.5976311,19.1834175 20.5976311,19.8165825 20.2071068,20.2071068 C19.8165825,20.5976311 19.1834175,20.5976311 18.7928932,20.2071068 L15.2397415,16.6539551 Z M11.1666667,16 C13.836043,16 16,13.836043 16,11.1666667 C16,8.49729038 13.836043,6.33333333 11.1666667,6.33333333 C8.49729038,6.33333333 6.33333333,8.49729038 6.33333333,11.1666667 C6.33333333,13.836043 8.49729038,16 11.1666667,16 Z" />
+            </svg> 
+            <svg class="arrow" width="100%" height="100%" viewbox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M12,12.5857864 L8.70710678,9.29289322 C8.31658249,8.90236893 7.68341751,8.90236893 7.29289322,9.29289322 C6.90236893,9.68341751 6.90236893,10.3165825 7.29289322,10.7071068 L11.2928932,14.7071068 C11.6834175,15.0976311 12.3165825,15.0976311 12.7071068,14.7071068 L16.7071068,10.7071068 C17.0976311,10.3165825 17.0976311,9.68341751 16.7071068,9.29289322 C16.3165825,8.90236893 15.6834175,8.90236893 15.2928932,9.29289322 L12,12.5857864 Z" />
+            </svg> </span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="container-fluid">
+      <div class="navbar-header">
+       <div class="region region-navigation"><a class="logo navbar-btn pull-left logo-size-1" href="/" title="Home" rel="home"> <!--?xml version="1.0" encoding="utf-8"?--> <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --> 
+         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 472.59 80.51" style="enable-background:new 0 0 472.59 80.51;" xml:space="preserve">
+          <style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;fill:#003660;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:#15385F;}
+	.st4{fill:#231F20;}
+	.st5{fill:#003764;}
+	.st6{fill:#003660;}
+</style><g id="Layer_2" class="st0"> 
+           <rect x="-1991.35" y="-35.8" class="st1" width="2817.28" height="273.03" /> 
+          </g><g id="Template"> 
+           <g>
+            <g>
+             <path class="st2" d="M0,72.49v-2.86h3.78V45.31H0v-2.86h11.22v2.86H7.44v24.32h3.78v2.86H0z" />
+             <path class="st2" d="M13.61,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15V58.58c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67
+				h3.15v2.73H13.61z" />
+             <path class="st2" d="M39.56,72.49v-2.73h3.07v-16.3h-3.15v-2.94h3.15v-3.57c0-4.45,2.18-7.06,6.55-7.06
+				c1.13,0,1.72,0.13,2.61,0.42v2.94c-0.63-0.25-1.51-0.46-2.48-0.46c-2.27,0-3.19,1.55-3.19,3.82v3.91h5.38v2.94h-5.38v16.3h3.95
+				v2.73H39.56z" />
+             <path class="st2" d="M53.26,61.69v-0.34c0-6.6,4.58-11.22,10.8-11.22s10.8,4.58,10.8,11.17v0.34c0,6.64-4.58,11.22-10.84,11.22
+				S53.26,68.12,53.26,61.69z M71.24,61.69V61.4c0-5.08-2.81-8.36-7.18-8.36c-4.41,0-7.18,3.28-7.18,8.32v0.34
+				c0,5,2.73,8.28,7.18,8.28C68.46,69.96,71.24,66.65,71.24,61.69z" />
+             <path class="st2" d="M77.36,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v4.2c1.05-2.31,3.28-4.54,7.9-4.58v3.44
+				c-4.79-0.04-7.9,1.47-7.9,6.85v9.33h3.36v2.73H77.36z" />
+             <path class="st2" d="M94.33,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v3.61c0.88-2.1,3.28-3.99,6.43-3.99
+				c2.81,0,5.29,1.18,6.43,4.45c1.47-3.07,4.54-4.45,7.27-4.45c3.95,0,7.27,2.35,7.27,8.74v10.88h3.07v2.73h-9.7v-2.73h3.15V58.62
+				c0-3.87-1.51-5.46-4.54-5.46c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73h-9.79v-2.73h3.15V58.62c0-3.87-1.51-5.46-4.54-5.46
+				c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73H94.33z" />
+             <path class="st2" d="M140.62,72.86c-3.99,0-7.14-1.97-7.14-6.47c0-5.12,5.29-6.81,10.84-6.81h3.07v-1.6
+				c0-3.7-1.47-4.96-4.62-4.96c-2.94,0-4.54,1.09-4.87,3.95h-3.49c0.42-5.17,4.37-6.85,8.53-6.85c4.12,0,7.94,1.51,7.94,7.86v11.76
+				h2.94v2.73h-6.43v-3.02C145.91,71.73,143.77,72.86,140.62,72.86z M147.38,64.8v-2.73h-2.94c-4.33,0-7.48,1.13-7.48,4.33
+				c0,1.97,1.01,3.7,3.99,3.7C144.57,70.09,147.38,68.2,147.38,64.8z" />
+             <path class="st2" d="M157.75,66.98V53.46h-3.15v-2.94h3.15v-5h3.49v5h5.67v2.94h-5.67v13.19c0,2.1,0.96,3.19,3.15,3.19
+				c0.88,0,1.85-0.17,2.86-0.5v2.94c-0.96,0.29-1.89,0.5-3.15,0.5C159.68,72.78,157.75,70.43,157.75,66.98z" />
+             <path class="st2" d="M169.72,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v19.24h3.15v2.73H169.72z M171.95,43.58
+				c0-1.34,1.09-2.35,2.39-2.35s2.39,1.01,2.39,2.35c0,1.34-1.09,2.39-2.39,2.39S171.95,44.93,171.95,43.58z" />
+             <path class="st2" d="M181.52,61.69v-0.34c0-6.6,4.58-11.22,10.8-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C186.02,72.86,181.52,68.12,181.52,61.69z M199.5,61.69V61.4c0-5.08-2.82-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C196.73,69.96,199.5,66.65,199.5,61.69z" />
+             <path class="st2" d="M205.63,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.64,2.35,7.64,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15V58.58c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67
+				h3.15v2.73H205.63z" />
+             <path class="st2" d="M247.67,72.49v-2.86h4.12v-24.2h-7.6v4.58h-3.32v-7.56h25.5v7.56h-3.32v-4.58h-7.6v24.2h4.12v2.86H247.67z" />
+             <path class="st2" d="M266.78,61.73V61.4c0-6.64,4.24-11.26,10.29-11.26c5.08,0,9.87,3.07,9.87,10.92v1.13H270.4
+				c0.17,5,2.56,7.77,7.06,7.77c3.4,0,5.38-1.26,5.84-3.82h3.49c-0.76,4.41-4.41,6.72-9.37,6.72
+				C271.19,72.86,266.78,68.49,266.78,61.73z M283.38,59.38c-0.34-4.54-2.69-6.34-6.3-6.34c-3.57,0-5.97,2.44-6.55,6.34H283.38z" />
+             <path class="st2" d="M306.77,50.52h3.07v7.44h-2.98c-0.76-2.94-2.77-4.92-6.51-4.92c-3.99,0-7.06,3.19-7.06,8.36v0.34
+				c0,5.38,2.94,8.23,7.18,8.23c3.11,0,5.92-1.81,6.3-5.38H310c-0.46,4.75-4.28,8.28-9.58,8.28c-6.13,0-10.75-4.33-10.75-11.13V61.4
+				c0-6.72,4.79-11.26,10.67-11.26c3.7,0,5.54,1.47,6.43,3.23V50.52z" />
+             <path class="st2" d="M312.73,72.49v-2.73h3.07V42.87h-3.15v-2.86h6.64v14.2c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.64,2.35,7.64,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15V58.58c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67
+				h3.15v2.73H312.73z" />
+             <path class="st2" d="M338.73,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15V58.58c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67
+				h3.15v2.73H338.73z" />
+             <path class="st2" d="M364.77,61.69v-0.34c0-6.6,4.58-11.22,10.79-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C369.26,72.86,364.77,68.12,364.77,61.69z M382.75,61.69V61.4c0-5.08-2.81-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C379.98,69.96,382.75,66.65,382.75,61.69z" />
+             <path class="st2" d="M388.67,72.49v-2.73h3.07V42.87h-3.15v-2.86h6.68v29.74h3.07v2.73H388.67z" />
+             <path class="st2" d="M400.22,61.69v-0.34c0-6.6,4.58-11.22,10.8-11.22s10.8,4.58,10.8,11.17v0.34c0,6.64-4.58,11.22-10.84,11.22
+				S400.22,68.12,400.22,61.69z M418.2,61.69V61.4c0-5.08-2.81-8.36-7.18-8.36c-4.41,0-7.18,3.28-7.18,8.32v0.34
+				c0,5,2.73,8.28,7.18,8.28C415.42,69.96,418.2,66.65,418.2,61.69z" />
+             <path class="st2" d="M425.04,73.74h3.57c0.5,2.52,2.6,3.82,6.34,3.82c4.33,0,7.06-2.06,7.06-6.76v-3.19
+				c-1.26,2.14-4.24,4.16-7.43,4.16c-5.76,0-10-4.37-10-10.42v-0.29c0-5.96,4.2-10.92,10.25-10.92c3.65,0,5.92,1.76,7.18,3.91v-3.53
+				h6.47v2.86h-2.98v17.64c-0.04,6.39-4.37,9.49-10.5,9.49C428.48,80.51,425.63,77.44,425.04,73.74z M442.14,61.1v-0.29
+				c0-4.92-2.69-7.77-6.97-7.77c-4.37,0-6.97,3.23-6.97,7.86v0.34c0,4.79,3.07,7.65,6.76,7.65
+				C439.03,68.87,442.14,66.02,442.14,61.1z" />
+             <path class="st2" d="M469.9,53.37l-11.05,26.76h-5.59V77.4h3.36l3.02-7.18l-7.35-16.84h-2.77v-2.86h9.66v2.86h-3.19l5.5,12.9
+				l5-12.9h-3.32v-2.86h9.41v2.86H469.9z" />
+            </g>
+            <g>
+             <path class="st2" d="M238.44,0.51h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L238.44,0.51z M240.13,6.32l-2.43,6.2
+				h4.88L240.13,6.32z" />
+             <path class="st2" d="M213.08,0.51h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73c0.7,0.37,1.26,0.88,1.69,1.54
+				c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.31,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06c0.66,0.09,1.25,0.28,1.79,0.55
+				c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81c0,1.05-0.23,1.93-0.68,2.64
+				c-0.45,0.7-1.03,1.27-1.75,1.71c-0.71,0.43-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28h-8.18V0.51z M217.48,8.49h3.19
+				c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68c0.16-0.28,0.24-0.62,0.24-1.02
+				c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99
+				V8.49z M217.48,16.75h3.95c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39c0.28-0.19,0.51-0.43,0.69-0.73
+				c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66c-0.36-0.15-0.74-0.25-1.16-0.31
+				c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V16.75z" />
+             <path class="st2" d="M252.86,0.51h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+				h-4.4V0.51z M257.26,8.77h2.59c0.39,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.23-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V8.77z" />
+             <path class="st2" d="M179.01,0.51h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L179.01,0.51z M180.7,6.32l-2.43,6.2
+				h4.88L180.7,6.32z" />
+             <path class="st2" d="M279.11,0.51h3.64l8.69,19.97h-4.96l-1.72-4.23H277l-1.66,4.23h-4.85L279.11,0.51z M280.8,6.32l-2.43,6.2
+				h4.88L280.8,6.32z" />
+             <path class="st2" d="M153.66,0.5h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73c0.7,0.37,1.26,0.88,1.69,1.54
+				c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.31,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06c0.66,0.09,1.25,0.28,1.79,0.55
+				c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81c0,1.05-0.23,1.93-0.68,2.64
+				c-0.45,0.7-1.03,1.27-1.75,1.71c-0.71,0.43-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28h-8.18V0.5z M158.06,8.49h3.19
+				c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68c0.16-0.28,0.24-0.62,0.24-1.02
+				c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99
+				V8.49z M158.06,16.75H162c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39c0.28-0.19,0.51-0.43,0.69-0.73
+				c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66c-0.36-0.15-0.74-0.25-1.16-0.31
+				c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V16.75z" />
+             <path class="st2" d="M193.43,0.5h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27L200,12.49h-2.17v7.98
+				h-4.4V0.5z M197.83,8.77h2.59c0.39,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.23-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V8.77z" />
+             <path class="st2" d="M73.66,0.51h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L73.66,0.51z M75.35,6.32l-2.43,6.2
+				h4.88L75.35,6.32z" />
+             <path class="st2" d="M132.93,0.51h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L132.93,0.51z M134.63,6.32l-2.43,6.2
+				h4.88L134.63,6.32z" />
+             <path class="st2" d="M88.42,0.5h5.98l8.49,13.88h0.06V0.5h4.4v19.97h-5.75L92.87,6.26h-0.06v14.21h-4.4V0.5z" />
+             <path class="st2" d="M115.92,4.4h-5.51V0.5h15.79V4.4h-5.88v16.08h-4.4V4.4z" />
+             <path class="st2" d="M9.78,20.79c-4.64,0-7.27-2.71-7.27-7.64L2.51,2.43H0.25V0.51h7.27v1.92H4.97L4.97,12.87
+				c0,4.24,1.5,5.88,4.86,5.88c3.22,0,5.15-1.3,5.15-6.25l0.01-10.07h-2.55V0.51h7.27v1.92h-2.26l-0.01,10.41
+				C17.44,17.76,14.98,20.79,9.78,20.79z" />
+             <path class="st2" d="M37.22,13.83c-0.51,3.28-2.8,4.95-6.11,4.95c-4.36,0-6.96-3.11-6.96-8.26V10.3c0-5.09,2.8-8.34,6.98-8.34
+				c3.08,0,5.18,1.3,6,4.67h2.06l0-6.11H37l0,2.21C35.95,0.85,33.74,0,31.2,0c-5.57,0-9.59,4.33-9.59,10.32v0.23
+				c0,6.22,3.59,10.24,9.45,10.24c4.45,0,7.63-2.22,8.41-6.72L37.22,13.83z" />
+             <path class="st2" d="M63.84,14.33c0,3.8-3.22,6.46-7.82,6.46c-3.69,0-6.33-1.24-7.87-3.69l3.02-2.58
+				c0.49,0.7,2.17,2.72,5.22,2.72c1.91,0,3.09-0.83,3.09-2.16c0-1.69-1.1-2.06-3.88-2.84c-3.29-0.92-6.63-2.34-6.63-5.99
+				c0-3.67,3.1-6.24,7.54-6.24c1.78,0,5.03,0.42,6.81,3.19l-2.8,2.44c-1.06-1.4-2.54-2.08-4.5-2.08c-1.97,0-2.69,1.37-2.69,2.29
+				c0,1.46,1.94,2.09,4.29,2.72C60.63,9.34,63.84,10.5,63.84,14.33z" />
+            </g>
+           </g> 
+           <g>
+            <g>
+             <path d="M0-206.54v-2.86h3.78v-24.32H0v-2.86h11.22v2.86H7.44v24.32h3.78v2.86H0z" />
+             <path d="M13.61-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07c4.41,0,7.65,2.35,7.65,8.7v10.92
+				h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67h3.15v2.73H13.61z" />
+             <path d="M39.56-206.54v-2.73h3.07v-16.3h-3.15v-2.94h3.15v-3.57c0-4.45,2.18-7.06,6.55-7.06c1.13,0,1.72,0.13,2.61,0.42v2.94
+				c-0.63-0.25-1.51-0.46-2.48-0.46c-2.27,0-3.19,1.55-3.19,3.82v3.91h5.38v2.94h-5.38v16.3h3.95v2.73H39.56z" />
+             <path d="M53.26-217.34v-0.34c0-6.6,4.58-11.22,10.8-11.22s10.8,4.58,10.8,11.17v0.34c0,6.64-4.58,11.22-10.84,11.22
+				S53.26-210.91,53.26-217.34z M71.24-217.34v-0.29c0-5.08-2.81-8.36-7.18-8.36c-4.41,0-7.18,3.28-7.18,8.32v0.34
+				c0,5,2.73,8.28,7.18,8.28C68.46-209.06,71.24-212.38,71.24-217.34z" />
+             <path d="M77.36-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v4.2c1.05-2.31,3.28-4.54,7.9-4.58v3.44c-4.79-0.04-7.9,1.47-7.9,6.85
+				v9.33h3.36v2.73H77.36z" />
+             <path d="M94.33-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.61c0.88-2.1,3.28-3.99,6.43-3.99c2.81,0,5.29,1.18,6.43,4.45
+				c1.47-3.07,4.54-4.45,7.27-4.45c3.95,0,7.27,2.35,7.27,8.74v10.88h3.07v2.73h-9.7v-2.73h3.15v-11.13c0-3.87-1.51-5.46-4.54-5.46
+				c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73h-9.79v-2.73h3.15v-11.13c0-3.87-1.51-5.46-4.54-5.46c-2.86,0-5.67,1.93-5.67,5.88
+				v10.71h3.15v2.73H94.33z" />
+             <path d="M140.62-206.16c-3.99,0-7.14-1.97-7.14-6.47c0-5.12,5.29-6.81,10.84-6.81h3.07v-1.6c0-3.7-1.47-4.96-4.62-4.96
+				c-2.94,0-4.54,1.09-4.87,3.95h-3.49c0.42-5.17,4.37-6.85,8.53-6.85c4.12,0,7.94,1.51,7.94,7.86v11.76h2.94v2.73h-6.43v-3.02
+				C145.91-207.3,143.77-206.16,140.62-206.16z M147.38-214.23v-2.73h-2.94c-4.33,0-7.48,1.13-7.48,4.33c0,1.97,1.01,3.7,3.99,3.7
+				C144.57-208.94,147.38-210.83,147.38-214.23z" />
+             <path d="M157.75-212.05v-13.53h-3.15v-2.94h3.15v-5h3.49v5h5.67v2.94h-5.67v13.19c0,2.1,0.96,3.19,3.15,3.19
+				c0.88,0,1.85-0.17,2.86-0.5v2.94c-0.96,0.29-1.89,0.5-3.15,0.5C159.68-206.25,157.75-208.6,157.75-212.05z" />
+             <path d="M169.72-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v19.24h3.15v2.73H169.72z M171.95-235.44c0-1.34,1.09-2.35,2.39-2.35
+				s2.39,1.01,2.39,2.35c0,1.34-1.09,2.39-2.39,2.39S171.95-234.1,171.95-235.44z" />
+             <path d="M181.52-217.34v-0.34c0-6.6,4.58-11.22,10.8-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34c0,6.64-4.58,11.22-10.84,11.22
+				C186.02-206.16,181.52-210.91,181.52-217.34z M199.5-217.34v-0.29c0-5.08-2.82-8.36-7.18-8.36c-4.41,0-7.18,3.28-7.18,8.32v0.34
+				c0,5,2.73,8.28,7.18,8.28C196.73-209.06,199.5-212.38,199.5-217.34z" />
+             <path d="M205.63-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07c4.41,0,7.64,2.35,7.64,8.7v10.92
+				h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67h3.15v2.73H205.63z" />
+             <path d="M247.67-206.54v-2.86h4.12v-24.2h-7.6v4.58h-3.32v-7.56h25.5v7.56h-3.32v-4.58h-7.6v24.2h4.12v2.86H247.67z" />
+             <path d="M266.78-217.3v-0.34c0-6.64,4.24-11.26,10.29-11.26c5.08,0,9.87,3.07,9.87,10.92v1.13H270.4c0.17,5,2.56,7.77,7.06,7.77
+				c3.4,0,5.38-1.26,5.84-3.82h3.49c-0.76,4.41-4.41,6.72-9.37,6.72C271.19-206.16,266.78-210.53,266.78-217.3z M283.38-219.65
+				c-0.34-4.54-2.69-6.34-6.3-6.34c-3.57,0-5.97,2.44-6.55,6.34H283.38z" />
+             <path d="M306.77-228.51h3.07v7.44h-2.98c-0.76-2.94-2.77-4.92-6.51-4.92c-3.99,0-7.06,3.19-7.06,8.36v0.34
+				c0,5.38,2.94,8.23,7.18,8.23c3.11,0,5.92-1.81,6.3-5.38H310c-0.46,4.75-4.28,8.28-9.58,8.28c-6.13,0-10.75-4.33-10.75-11.13
+				v-0.34c0-6.72,4.79-11.26,10.67-11.26c3.7,0,5.54,1.47,6.43,3.23V-228.51z" />
+             <path d="M312.73-206.54v-2.73h3.07v-26.88h-3.15v-2.86h6.64v14.2c1.01-2.06,3.4-4.07,6.89-4.07c4.41,0,7.64,2.35,7.64,8.7v10.92
+				h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67h3.15v2.73H312.73z" />
+             <path d="M338.73-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07c4.41,0,7.65,2.35,7.65,8.7v10.92
+				h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67h3.15v2.73H338.73z" />
+             <path d="M364.77-217.34v-0.34c0-6.6,4.58-11.22,10.79-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34c0,6.64-4.58,11.22-10.84,11.22
+				C369.26-206.16,364.77-210.91,364.77-217.34z M382.75-217.34v-0.29c0-5.08-2.81-8.36-7.18-8.36c-4.41,0-7.18,3.28-7.18,8.32v0.34
+				c0,5,2.73,8.28,7.18,8.28C379.98-209.06,382.75-212.38,382.75-217.34z" />
+             <path d="M388.67-206.54v-2.73h3.07v-26.88h-3.15v-2.86h6.68v29.74h3.07v2.73H388.67z" />
+             <path d="M400.22-217.34v-0.34c0-6.6,4.58-11.22,10.8-11.22s10.8,4.58,10.8,11.17v0.34c0,6.64-4.58,11.22-10.84,11.22
+				S400.22-210.91,400.22-217.34z M418.2-217.34v-0.29c0-5.08-2.81-8.36-7.18-8.36c-4.41,0-7.18,3.28-7.18,8.32v0.34
+				c0,5,2.73,8.28,7.18,8.28C415.42-209.06,418.2-212.38,418.2-217.34z" />
+             <path d="M425.04-205.28h3.57c0.5,2.52,2.6,3.82,6.34,3.82c4.33,0,7.06-2.06,7.06-6.76v-3.19c-1.26,2.14-4.24,4.16-7.43,4.16
+				c-5.76,0-10-4.37-10-10.42v-0.29c0-5.96,4.2-10.92,10.25-10.92c3.65,0,5.92,1.76,7.18,3.91v-3.53h6.47v2.86h-2.98v17.64
+				c-0.04,6.39-4.37,9.49-10.5,9.49C428.48-198.52,425.63-201.59,425.04-205.28z M442.14-217.93v-0.29c0-4.92-2.69-7.77-6.97-7.77
+				c-4.37,0-6.97,3.23-6.97,7.86v0.34c0,4.79,3.07,7.65,6.76,7.65C439.03-210.15,442.14-213.01,442.14-217.93z" />
+             <path d="M469.9-225.66l-11.05,26.76h-5.59v-2.73h3.36l3.02-7.18l-7.35-16.84h-2.77v-2.86h9.66v2.86h-3.19l5.5,12.9l5-12.9h-3.32
+				v-2.86h9.41v2.86H469.9z" />
+            </g>
+            <g>
+             <path d="M238.44-278.52h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L238.44-278.52z M240.13-272.71l-2.43,6.2h4.88
+				L240.13-272.71z" />
+             <path d="M213.08-278.52h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73c0.7,0.37,1.26,0.88,1.69,1.54
+				c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.31,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06c0.66,0.09,1.25,0.28,1.79,0.55
+				c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81c0,1.05-0.23,1.93-0.68,2.64
+				c-0.45,0.7-1.03,1.27-1.75,1.71c-0.71,0.43-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28h-8.18V-278.52z M217.48-270.54
+				h3.19c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68c0.16-0.28,0.24-0.62,0.24-1.02
+				c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99
+				V-270.54z M217.48-262.28h3.95c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39s0.51-0.43,0.69-0.73
+				c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66c-0.36-0.15-0.74-0.25-1.16-0.31
+				c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V-262.28z" />
+             <path d="M252.86-278.52h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+				h-4.4V-278.52z M257.26-270.26h2.59c0.39,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.23-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V-270.26z" />
+             <path d="M179.01-278.52h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L179.01-278.52z M180.7-272.71l-2.43,6.2h4.88
+				L180.7-272.71z" />
+             <path d="M279.11-278.52h3.64l8.69,19.97h-4.96l-1.72-4.23H277l-1.66,4.23h-4.85L279.11-278.52z M280.8-272.71l-2.43,6.2h4.88
+				L280.8-272.71z" />
+             <path d="M153.66-278.52h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73c0.7,0.37,1.26,0.88,1.69,1.54
+				c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.31,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06c0.66,0.09,1.25,0.28,1.79,0.55
+				c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81c0,1.05-0.23,1.93-0.68,2.64
+				c-0.45,0.7-1.03,1.27-1.75,1.71c-0.71,0.43-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28h-8.18V-278.52z M158.06-270.54
+				h3.19c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68c0.16-0.28,0.24-0.62,0.24-1.02
+				c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99
+				V-270.54z M158.06-262.28H162c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39s0.51-0.43,0.69-0.73
+				c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66c-0.36-0.15-0.74-0.25-1.16-0.31
+				c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V-262.28z" />
+             <path d="M193.43-278.52h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+				h-4.4V-278.52z M197.83-270.26h2.59c0.39,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.23-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V-270.26z" />
+             <path d="M73.66-278.52h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L73.66-278.52z M75.35-272.71l-2.43,6.2h4.88
+				L75.35-272.71z" />
+             <path d="M132.93-278.52h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L132.93-278.52z M134.63-272.71l-2.43,6.2h4.88
+				L134.63-272.71z" />
+             <path d="M88.42-278.52h5.98l8.49,13.88h0.06v-13.88h4.4v19.97h-5.75l-8.71-14.21h-0.06v14.21h-4.4V-278.52z" />
+             <path d="M115.92-274.63h-5.51v-3.89h15.79v3.89h-5.88v16.08h-4.4V-274.63z" />
+             <path d="M9.78-258.24c-4.64,0-7.27-2.71-7.27-7.64l0.01-10.72H0.25v-1.92h7.27v1.92H4.97l-0.01,10.44c0,4.24,1.5,5.88,4.86,5.88
+				c3.22,0,5.15-1.3,5.15-6.25l0.01-10.07h-2.55v-1.92h7.27v1.92h-2.26l-0.01,10.41C17.44-261.27,14.98-258.24,9.78-258.24z" />
+             <path d="M37.22-265.2c-0.51,3.28-2.8,4.95-6.11,4.95c-4.36,0-6.96-3.11-6.96-8.26v-0.23c0-5.09,2.8-8.34,6.98-8.34
+				c3.08,0,5.18,1.3,6,4.67h2.06l0-6.11H37l0,2.21c-1.05-1.87-3.25-2.71-5.8-2.71c-5.57,0-9.59,4.33-9.59,10.32v0.23
+				c0,6.22,3.59,10.24,9.45,10.24c4.45,0,7.63-2.22,8.41-6.72L37.22-265.2z" />
+             <path d="M63.84-264.7c0,3.8-3.22,6.46-7.82,6.46c-3.69,0-6.33-1.24-7.87-3.69l3.02-2.58c0.49,0.7,2.17,2.72,5.22,2.72
+				c1.91,0,3.09-0.83,3.09-2.16c0-1.69-1.1-2.06-3.88-2.84c-3.29-0.92-6.63-2.34-6.63-5.99c0-3.67,3.1-6.24,7.54-6.24
+				c1.78,0,5.03,0.42,6.81,3.19l-2.8,2.44c-1.06-1.4-2.54-2.08-4.5-2.08c-1.97,0-2.69,1.37-2.69,2.29c0,1.46,1.94,2.09,4.29,2.72
+				C60.63-269.69,63.84-268.52,63.84-264.7z" />
+            </g>
+           </g> 
+           <path class="st3" d="M0-461.57v-2.86h3.78v-24.32H0v-2.86h11.22v2.86H7.44v24.32h3.78v2.86H0z M13.61-461.57v-2.73h3.07v-16.38
+		h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17
+		c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67h3.15v2.73H13.61z M39.56-461.57v-2.73h3.07v-16.3h-3.15v-2.94h3.15
+		v-3.57c0-4.45,2.18-7.06,6.55-7.06c1.13,0,1.72,0.13,2.61,0.42v2.94c-0.63-0.25-1.51-0.46-2.48-0.46c-2.27,0-3.19,1.55-3.19,3.82
+		v3.91h5.38v2.94h-5.38v16.3h3.95v2.73H39.56z M53.26-472.36v-0.34c0-6.6,4.58-11.22,10.8-11.22s10.8,4.58,10.8,11.17v0.34
+		c0,6.64-4.58,11.21-10.84,11.21S53.26-465.94,53.26-472.36z M71.24-472.36v-0.29c0-5.08-2.81-8.36-7.18-8.36
+		c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C68.46-464.09,71.24-467.41,71.24-472.36z M77.36-461.57v-2.73h3.07
+		v-16.38h-3.15v-2.86h6.64v4.2c1.05-2.31,3.28-4.54,7.9-4.58v3.44c-4.79-0.04-7.9,1.47-7.9,6.85v9.33h3.36v2.73H77.36z
+		 M94.33-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.61c0.88-2.1,3.28-3.99,6.43-3.99c2.81,0,5.29,1.18,6.43,4.45
+		c1.47-3.07,4.54-4.45,7.27-4.45c3.95,0,7.27,2.35,7.27,8.74v10.88h3.07v2.73h-9.7v-2.73h3.15v-11.13c0-3.86-1.51-5.46-4.54-5.46
+		c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73h-9.79v-2.73h3.15v-11.13c0-3.86-1.51-5.46-4.54-5.46c-2.86,0-5.67,1.93-5.67,5.88
+		v10.71h3.15v2.73H94.33z M140.62-461.19c-3.99,0-7.14-1.97-7.14-6.47c0-5.12,5.29-6.8,10.84-6.8h3.07v-1.6
+		c0-3.7-1.47-4.96-4.62-4.96c-2.94,0-4.54,1.09-4.87,3.95h-3.49c0.42-5.17,4.37-6.85,8.53-6.85c4.12,0,7.94,1.51,7.94,7.86v11.76
+		h2.94v2.73h-6.43v-3.03C145.91-462.32,143.77-461.19,140.62-461.19z M147.38-469.26v-2.73h-2.94c-4.33,0-7.48,1.13-7.48,4.33
+		c0,1.97,1.01,3.7,3.99,3.7C144.57-463.96,147.38-465.85,147.38-469.26z M157.75-467.07v-13.53h-3.15v-2.94h3.15v-5h3.49v5h5.67
+		v2.94h-5.67v13.19c0,2.1,0.96,3.19,3.15,3.19c0.88,0,1.85-0.17,2.86-0.5v2.94c-0.96,0.29-1.89,0.5-3.15,0.5
+		C159.68-461.27,157.75-463.63,157.75-467.07z M169.72-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v19.24h3.15v2.73H169.72z
+		 M171.95-490.47c0-1.34,1.09-2.35,2.39-2.35s2.39,1.01,2.39,2.35c0,1.34-1.09,2.39-2.39,2.39S171.95-489.12,171.95-490.47z
+		 M181.52-472.36v-0.34c0-6.6,4.58-11.22,10.8-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34c0,6.64-4.58,11.21-10.84,11.21
+		C186.02-461.19,181.52-465.94,181.52-472.36z M199.5-472.36v-0.29c0-5.08-2.82-8.36-7.18-8.36c-4.41,0-7.18,3.28-7.18,8.32v0.34
+		c0,5,2.73,8.28,7.18,8.28C196.73-464.09,199.5-467.41,199.5-472.36z M205.63-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7
+		c1.01-2.06,3.4-4.07,6.89-4.07c4.41,0,7.64,2.35,7.64,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42
+		c-3.11,0-5.96,2.06-5.96,5.92v10.67h3.15v2.73H205.63z M247.67-461.57v-2.86h4.12v-24.2h-7.6v4.58h-3.32v-7.56h25.5v7.56h-3.32
+		v-4.58h-7.6v24.2h4.12v2.86H247.67z M266.78-472.32v-0.34c0-6.64,4.24-11.26,10.29-11.26c5.08,0,9.87,3.07,9.87,10.92v1.13H270.4
+		c0.17,5,2.56,7.77,7.06,7.77c3.4,0,5.38-1.26,5.84-3.82h3.49c-0.76,4.41-4.41,6.72-9.37,6.72
+		C271.19-461.19,266.78-465.56,266.78-472.32z M283.38-474.68c-0.34-4.54-2.69-6.34-6.3-6.34c-3.57,0-5.97,2.44-6.55,6.34H283.38z
+		 M306.77-483.54h3.07v7.44h-2.98c-0.76-2.94-2.77-4.91-6.51-4.91c-3.99,0-7.06,3.19-7.06,8.36v0.34c0,5.38,2.94,8.23,7.18,8.23
+		c3.11,0,5.92-1.81,6.3-5.38H310c-0.46,4.75-4.28,8.28-9.58,8.28c-6.13,0-10.75-4.33-10.75-11.13v-0.34
+		c0-6.72,4.79-11.26,10.67-11.26c3.7,0,5.54,1.47,6.43,3.23V-483.54z M312.73-461.57v-2.73h3.07v-26.89h-3.15v-2.86h6.64v14.2
+		c1.01-2.06,3.4-4.07,6.89-4.07c4.41,0,7.64,2.35,7.64,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42
+		c-3.11,0-5.96,2.06-5.96,5.92v10.67h3.15v2.73H312.73z M338.73-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7
+		c1.01-2.06,3.4-4.07,6.89-4.07c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42
+		c-3.11,0-5.96,2.06-5.96,5.92v10.67h3.15v2.73H338.73z M364.77-472.36v-0.34c0-6.6,4.58-11.22,10.79-11.22
+		c6.22,0,10.8,4.58,10.8,11.17v0.34c0,6.64-4.58,11.21-10.84,11.21C369.26-461.19,364.77-465.94,364.77-472.36z M382.75-472.36
+		v-0.29c0-5.08-2.81-8.36-7.18-8.36c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28
+		C379.98-464.09,382.75-467.41,382.75-472.36z M388.67-461.57v-2.73h3.07v-26.89h-3.15v-2.86h6.68v29.74h3.07v2.73H388.67z
+		 M400.22-472.36v-0.34c0-6.6,4.58-11.22,10.8-11.22s10.8,4.58,10.8,11.17v0.34c0,6.64-4.58,11.21-10.84,11.21
+		S400.22-465.94,400.22-472.36z M418.2-472.36v-0.29c0-5.08-2.81-8.36-7.18-8.36c-4.41,0-7.18,3.28-7.18,8.32v0.34
+		c0,5,2.73,8.28,7.18,8.28C415.42-464.09,418.2-467.41,418.2-472.36z M425.04-460.31h3.57c0.5,2.52,2.6,3.82,6.34,3.82
+		c4.33,0,7.06-2.06,7.06-6.76v-3.19c-1.26,2.14-4.24,4.16-7.43,4.16c-5.76,0-10-4.37-10-10.42v-0.29c0-5.97,4.2-10.92,10.25-10.92
+		c3.65,0,5.92,1.76,7.18,3.91v-3.53h6.47v2.86h-2.98v17.64c-0.04,6.38-4.37,9.49-10.5,9.49
+		C428.48-453.54,425.63-456.61,425.04-460.31z M442.14-472.95v-0.29c0-4.92-2.69-7.77-6.97-7.77c-4.37,0-6.97,3.23-6.97,7.86v0.34
+		c0,4.79,3.07,7.64,6.76,7.64C439.03-465.18,442.14-468.04,442.14-472.95z M469.9-480.68l-11.05,26.76h-5.59v-2.73h3.36l3.02-7.18
+		l-7.35-16.84h-2.77v-2.86h9.66v2.86h-3.19l5.5,12.9l5-12.9h-3.32v-2.86h9.41v2.86H469.9z M238.44-533.55h3.64l8.69,19.97h-4.96
+		l-1.72-4.23h-7.76l-1.66,4.23h-4.85L238.44-533.55z M240.13-527.74l-2.43,6.2h4.88L240.13-527.74z M213.08-533.55h7.45
+		c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73c0.7,0.37,1.26,0.88,1.69,1.54c0.43,0.66,0.65,1.53,0.65,2.62
+		c0,1.13-0.31,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06c0.66,0.09,1.25,0.28,1.79,0.55c0.54,0.27,1,0.62,1.38,1.04
+		c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81c0,1.05-0.23,1.93-0.68,2.64c-0.45,0.7-1.03,1.27-1.75,1.71
+		c-0.71,0.43-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28h-8.18V-533.55z M217.48-525.56h3.19c0.34,0,0.67-0.04,1-0.11
+		c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68c0.16-0.28,0.24-0.62,0.24-1.02c0-0.41-0.09-0.76-0.27-1.03
+		c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99V-525.56z M217.48-517.3h3.95
+		c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39s0.51-0.43,0.69-0.73c0.18-0.3,0.27-0.67,0.27-1.1
+		c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66c-0.36-0.15-0.74-0.25-1.16-0.31c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33
+		V-517.3z M252.86-533.55h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+		c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+		h-4.4V-533.55z M257.26-525.28h2.59c0.39,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+		c0.23-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+		c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V-525.28z M179.01-533.55h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85
+		L179.01-533.55z M180.7-527.74l-2.43,6.2h4.88L180.7-527.74z M279.11-533.55h3.64l8.69,19.97h-4.96l-1.72-4.23H277l-1.66,4.23
+		h-4.85L279.11-533.55z M280.8-527.74l-2.43,6.2h4.88L280.8-527.74z M153.66-533.55h7.45c0.86,0,1.73,0.06,2.61,0.18
+		c0.87,0.12,1.66,0.37,2.35,0.73c0.7,0.37,1.26,0.88,1.69,1.54c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.31,2.06-0.94,2.81
+		c-0.63,0.74-1.46,1.27-2.5,1.59v0.06c0.66,0.09,1.25,0.28,1.79,0.55c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48
+		c0.21,0.56,0.31,1.17,0.31,1.81c0,1.05-0.23,1.93-0.68,2.64c-0.45,0.7-1.03,1.27-1.75,1.71c-0.71,0.43-1.52,0.74-2.41,0.93
+		c-0.89,0.19-1.78,0.28-2.67,0.28h-8.18V-533.55z M158.06-525.57h3.19c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37
+		c0.26-0.17,0.47-0.39,0.63-0.68c0.16-0.28,0.24-0.62,0.24-1.02c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63
+		c-0.28-0.15-0.6-0.26-0.96-0.32c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99V-525.57z M158.06-517.3H162c0.34,0,0.68-0.04,1.03-0.11
+		c0.35-0.07,0.66-0.21,0.94-0.39s0.51-0.43,0.69-0.73c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14
+		c-0.24-0.29-0.53-0.51-0.89-0.66c-0.36-0.15-0.74-0.25-1.16-0.31c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V-517.3z M193.43-533.55h7.73
+		c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86c0.4,0.78,0.61,1.75,0.61,2.92
+		c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98h-4.4V-533.55z M197.83-525.29
+		h2.59c0.39,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66c0.23-0.3,0.35-0.72,0.35-1.27
+		c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88
+		V-525.29z M73.66-533.55h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L73.66-533.55z M75.35-527.74l-2.43,6.2h4.88
+		L75.35-527.74z M132.93-533.55h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L132.93-533.55z M134.63-527.74l-2.43,6.2
+		h4.88L134.63-527.74z M88.42-533.55h5.98l8.49,13.88h0.06v-13.88h4.4v19.97h-5.75l-8.71-14.21h-0.06v14.21h-4.4V-533.55z
+		 M115.92-529.66h-5.51v-3.89h15.79v3.89h-5.88v16.08h-4.4V-529.66z M9.78-513.27c-4.64,0-7.27-2.71-7.27-7.64l0.01-10.72H0.25
+		v-1.92h7.27v1.92H4.97l-0.01,10.44c0,4.24,1.5,5.88,4.86,5.88c3.22,0,5.15-1.3,5.15-6.25l0.01-10.07h-2.55v-1.92h7.27v1.92h-2.26
+		l-0.01,10.41C17.44-516.29,14.98-513.27,9.78-513.27z M37.22-520.22c-0.51,3.28-2.8,4.95-6.11,4.95c-4.36,0-6.96-3.11-6.96-8.26
+		v-0.23c0-5.09,2.8-8.34,6.98-8.34c3.08,0,5.18,1.3,6,4.67h2.06l0-6.11H37l0,2.21c-1.05-1.87-3.25-2.71-5.8-2.71
+		c-5.57,0-9.59,4.33-9.59,10.32v0.23c0,6.22,3.59,10.24,9.45,10.24c4.45,0,7.63-2.22,8.41-6.72L37.22-520.22z M57.62-525.5
+		c-2.35-0.63-4.29-1.26-4.29-2.72c0-0.92,0.72-2.29,2.69-2.29c1.97,0,3.44,0.68,4.5,2.08l2.8-2.44c-1.78-2.77-5.03-3.19-6.81-3.19
+		c-4.44,0-7.54,2.57-7.54,6.24c0,3.65,3.34,5.07,6.63,5.99c2.78,0.78,3.88,1.16,3.88,2.84c0,1.33-1.18,2.16-3.09,2.16
+		c-3.05,0-4.73-2.02-5.22-2.72l-3.02,2.58c1.53,2.45,4.18,3.69,7.87,3.69c4.6,0,7.82-2.65,7.82-6.46
+		C63.84-523.55,60.63-524.71,57.62-525.5z" /> 
+           <g>
+            <g>
+             <path class="st2" d="M-960.1,72.49v-2.86h3.78V45.31h-3.78v-2.86h11.22v2.86h-3.78v24.32h3.78v2.86H-960.1z" />
+             <path class="st2" d="M-946.49,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15V58.58c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67
+				h3.15v2.73H-946.49z" />
+             <path class="st2" d="M-920.53,72.49v-2.73h3.07v-16.3h-3.15v-2.94h3.15v-3.57c0-4.45,2.18-7.06,6.55-7.06
+				c1.13,0,1.72,0.13,2.61,0.42v2.94c-0.63-0.25-1.51-0.46-2.48-0.46c-2.27,0-3.19,1.55-3.19,3.82v3.91h5.38v2.94h-5.38v16.3h3.95
+				v2.73H-920.53z" />
+             <path class="st2" d="M-906.84,61.69v-0.34c0-6.6,4.58-11.22,10.8-11.22s10.8,4.58,10.8,11.17v0.34c0,6.64-4.58,11.22-10.84,11.22
+				S-906.84,68.12-906.84,61.69z M-888.86,61.69V61.4c0-5.08-2.81-8.36-7.18-8.36c-4.41,0-7.18,3.28-7.18,8.32v0.34
+				c0,5,2.73,8.28,7.18,8.28C-891.64,69.97-888.86,66.65-888.86,61.69z" />
+             <path class="st2" d="M-882.73,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v4.2c1.05-2.31,3.28-4.54,7.9-4.58v3.44
+				c-4.79-0.04-7.9,1.47-7.9,6.85v9.33h3.36v2.73H-882.73z" />
+             <path class="st2" d="M-865.77,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v3.61c0.88-2.1,3.28-3.99,6.43-3.99
+				c2.81,0,5.29,1.18,6.43,4.45c1.47-3.07,4.54-4.45,7.27-4.45c3.95,0,7.27,2.35,7.27,8.74v10.88h3.07v2.73h-9.7v-2.73h3.15V58.62
+				c0-3.87-1.51-5.46-4.54-5.46c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73h-9.79v-2.73h3.15V58.62c0-3.87-1.51-5.46-4.54-5.46
+				c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73H-865.77z" />
+             <path class="st2" d="M-819.48,72.86c-3.99,0-7.14-1.97-7.14-6.47c0-5.12,5.29-6.81,10.84-6.81h3.07v-1.6
+				c0-3.7-1.47-4.96-4.62-4.96c-2.94,0-4.54,1.09-4.87,3.95h-3.49c0.42-5.17,4.37-6.85,8.53-6.85c4.12,0,7.94,1.51,7.94,7.86v11.76
+				h2.94v2.73h-6.43v-3.02C-814.19,71.73-816.33,72.86-819.48,72.86z M-812.72,64.8v-2.73h-2.94c-4.33,0-7.48,1.13-7.48,4.33
+				c0,1.97,1.01,3.7,3.99,3.7C-815.53,70.09-812.72,68.2-812.72,64.8z" />
+             <path class="st2" d="M-802.35,66.98V53.46h-3.15v-2.94h3.15v-5h3.49v5h5.67v2.94h-5.67v13.19c0,2.1,0.96,3.19,3.15,3.19
+				c0.88,0,1.85-0.17,2.86-0.5v2.94c-0.96,0.29-1.89,0.5-3.15,0.5C-800.41,72.78-802.35,70.43-802.35,66.98z" />
+             <path class="st2" d="M-790.38,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v19.24h3.15v2.73H-790.38z M-788.15,43.58
+				c0-1.34,1.09-2.35,2.39-2.35s2.39,1.01,2.39,2.35c0,1.34-1.09,2.39-2.39,2.39S-788.15,44.93-788.15,43.58z" />
+             <path class="st2" d="M-778.58,61.69v-0.34c0-6.6,4.58-11.22,10.8-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-774.08,72.86-778.58,68.12-778.58,61.69z M-760.6,61.69V61.4c0-5.08-2.82-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-763.37,69.97-760.6,66.65-760.6,61.69z" />
+             <path class="st2" d="M-754.47,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.64,2.35,7.64,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15V58.58c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67
+				h3.15v2.73H-754.47z" />
+             <path class="st2" d="M-712.42,72.49v-2.86h4.12v-24.2h-7.6v4.58h-3.32v-7.56h25.5v7.56h-3.32v-4.58h-7.6v24.2h4.12v2.86H-712.42z
+				" />
+             <path class="st2" d="M-693.32,61.73V61.4c0-6.64,4.24-11.26,10.29-11.26c5.08,0,9.87,3.07,9.87,10.92v1.13h-16.55
+				c0.17,5,2.56,7.77,7.06,7.77c3.4,0,5.38-1.26,5.84-3.82h3.49c-0.76,4.41-4.41,6.72-9.37,6.72
+				C-688.91,72.86-693.32,68.5-693.32,61.73z M-676.72,59.38c-0.34-4.54-2.69-6.34-6.3-6.34c-3.57,0-5.97,2.44-6.55,6.34H-676.72z" />
+             <path class="st2" d="M-653.33,50.52h3.07v7.44h-2.98c-0.76-2.94-2.77-4.92-6.51-4.92c-3.99,0-7.06,3.19-7.06,8.36v0.34
+				c0,5.38,2.94,8.23,7.18,8.23c3.11,0,5.92-1.81,6.3-5.38h3.23c-0.46,4.75-4.28,8.28-9.58,8.28c-6.13,0-10.75-4.33-10.75-11.13
+				V61.4c0-6.72,4.79-11.26,10.67-11.26c3.7,0,5.54,1.47,6.43,3.23V50.52z" />
+             <path class="st2" d="M-647.37,72.49v-2.73h3.07V42.87h-3.15v-2.86h6.64v14.2c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.64,2.35,7.64,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15V58.58c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67
+				h3.15v2.73H-647.37z" />
+             <path class="st2" d="M-621.37,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15V58.58c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67
+				h3.15v2.73H-621.37z" />
+             <path class="st2" d="M-595.33,61.69v-0.34c0-6.6,4.58-11.22,10.79-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-590.83,72.86-595.33,68.12-595.33,61.69z M-577.35,61.69V61.4c0-5.08-2.81-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-580.12,69.97-577.35,66.65-577.35,61.69z" />
+             <path class="st2" d="M-571.43,72.49v-2.73h3.07V42.87h-3.15v-2.86h6.68v29.74h3.07v2.73H-571.43z" />
+             <path class="st2" d="M-559.88,61.69v-0.34c0-6.6,4.58-11.22,10.8-11.22s10.8,4.58,10.8,11.17v0.34c0,6.64-4.58,11.22-10.84,11.22
+				S-559.88,68.12-559.88,61.69z M-541.9,61.69V61.4c0-5.08-2.81-8.36-7.18-8.36c-4.41,0-7.18,3.28-7.18,8.32v0.34
+				c0,5,2.73,8.28,7.18,8.28C-544.67,69.97-541.9,66.65-541.9,61.69z" />
+             <path class="st2" d="M-535.06,73.75h3.57c0.5,2.52,2.6,3.82,6.34,3.82c4.33,0,7.06-2.06,7.06-6.76v-3.19
+				c-1.26,2.14-4.24,4.16-7.43,4.16c-5.76,0-10-4.37-10-10.42v-0.29c0-5.96,4.2-10.92,10.25-10.92c3.65,0,5.92,1.76,7.18,3.91v-3.53
+				h6.47v2.86h-2.98v17.64c-0.04,6.39-4.37,9.49-10.5,9.49C-531.61,80.51-534.47,77.44-535.06,73.75z M-517.96,61.1v-0.29
+				c0-4.92-2.69-7.77-6.97-7.77c-4.37,0-6.97,3.23-6.97,7.86v0.34c0,4.79,3.07,7.65,6.76,7.65
+				C-521.07,68.87-517.96,66.02-517.96,61.1z" />
+             <path class="st2" d="M-490.2,53.37l-11.05,26.76h-5.59V77.4h3.36l3.02-7.18l-7.35-16.84h-2.77v-2.86h9.66v2.86h-3.19l5.5,12.9
+				l5-12.9h-3.32v-2.86h9.41v2.86H-490.2z" />
+            </g>
+            <g>
+             <path class="st2" d="M-721.66,0.51h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-721.66,0.51z M-719.96,6.32
+				l-2.43,6.2h4.88L-719.96,6.32z" />
+             <path class="st2" d="M-747.01,0.51h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73c0.7,0.37,1.26,0.88,1.69,1.54
+				c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.32,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06c0.66,0.09,1.25,0.28,1.79,0.55
+				c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81c0,1.05-0.23,1.93-0.68,2.64
+				c-0.45,0.7-1.03,1.27-1.75,1.71c-0.71,0.43-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28h-8.18V0.51z M-742.61,8.49h3.19
+				c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68c0.16-0.28,0.24-0.62,0.24-1.02
+				c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99
+				V8.49z M-742.61,16.75h3.95c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39c0.28-0.19,0.51-0.43,0.69-0.73
+				c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66c-0.36-0.15-0.74-0.25-1.16-0.31
+				c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V16.75z" />
+             <path class="st2" d="M-707.24,0.51h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+				h-4.4V0.51z M-702.84,8.77h2.59c0.39,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.23-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V8.77z" />
+             <path class="st2" d="M-781.08,0.51h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-781.08,0.51z M-779.39,6.32
+				l-2.43,6.2h4.88L-779.39,6.32z" />
+             <path class="st2" d="M-680.99,0.51h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-680.99,0.51z M-679.29,6.32
+				l-2.43,6.2h4.88L-679.29,6.32z" />
+             <path class="st2" d="M-806.44,0.5h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73c0.7,0.37,1.26,0.88,1.69,1.54
+				c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.32,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06c0.66,0.09,1.25,0.28,1.79,0.55
+				c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81c0,1.05-0.23,1.93-0.68,2.64
+				c-0.45,0.7-1.03,1.27-1.75,1.71c-0.71,0.43-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28h-8.18V0.5z M-802.04,8.49h3.19
+				c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68c0.16-0.28,0.24-0.62,0.24-1.02
+				c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99
+				V8.49z M-802.04,16.75h3.95c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39c0.28-0.19,0.51-0.43,0.69-0.73
+				c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66c-0.36-0.15-0.74-0.25-1.16-0.31
+				c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V16.75z" />
+             <path class="st2" d="M-766.67,0.5h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+				h-4.4V0.5z M-762.27,8.77h2.59c0.39,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.24-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V8.77z" />
+             <path class="st2" d="M-886.44,0.51h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-886.44,0.51z M-884.75,6.32
+				l-2.43,6.2h4.88L-884.75,6.32z" />
+             <path class="st2" d="M-827.16,0.51h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-827.16,0.51z M-825.47,6.32
+				l-2.43,6.2h4.88L-825.47,6.32z" />
+             <path class="st2" d="M-871.68,0.5h5.98l8.49,13.88h0.06V0.5h4.4v19.97h-5.75l-8.71-14.21h-0.06v14.21h-4.4V0.5z" />
+             <path class="st2" d="M-844.17,4.4h-5.51V0.5h15.79V4.4h-5.88v16.08h-4.4V4.4z" />
+             <path class="st2" d="M-950.32,20.79c-4.64,0-7.27-2.71-7.27-7.64l0.01-10.72h-2.26V0.51h7.27v1.92h-2.55l-0.01,10.44
+				c0,4.24,1.5,5.88,4.86,5.88c3.22,0,5.15-1.3,5.15-6.25l0.01-10.07h-2.55V0.51h7.27v1.92h-2.26l-0.01,10.41
+				C-942.66,17.76-945.12,20.79-950.32,20.79z" />
+             <path class="st2" d="M-922.87,13.83c-0.51,3.28-2.8,4.95-6.11,4.95c-4.35,0-6.96-3.11-6.96-8.26V10.3c0-5.09,2.8-8.34,6.98-8.34
+				c3.08,0,5.18,1.3,6,4.67h2.06l0-6.11h-2.21l0,2.21c-1.05-1.87-3.25-2.71-5.8-2.71c-5.57,0-9.59,4.33-9.59,10.32v0.23
+				c0,6.22,3.59,10.24,9.45,10.24c4.45,0,7.63-2.22,8.41-6.72L-922.87,13.83z" />
+             <path class="st2" d="M-896.25,14.33c0,3.8-3.22,6.46-7.82,6.46c-3.69,0-6.33-1.24-7.87-3.69l3.02-2.58
+				c0.49,0.7,2.17,2.72,5.22,2.72c1.91,0,3.09-0.83,3.09-2.16c0-1.69-1.1-2.06-3.88-2.84c-3.29-0.92-6.63-2.34-6.63-5.99
+				c0-3.67,3.1-6.24,7.54-6.24c1.78,0,5.03,0.42,6.81,3.19l-2.8,2.44c-1.06-1.4-2.54-2.08-4.5-2.08c-1.97,0-2.69,1.37-2.69,2.29
+				c0,1.46,1.94,2.09,4.29,2.72C-899.46,9.34-896.25,10.5-896.25,14.33z" />
+            </g>
+           </g> 
+           <g>
+            <g>
+             <path class="st4" d="M-960.1-206.54v-2.86h3.78v-24.32h-3.78v-2.86h11.21v2.86h-3.78v24.32h3.78v2.86H-960.1z" />
+             <path class="st4" d="M-946.49-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-946.49z" />
+             <path class="st4" d="M-920.54-206.54v-2.73h3.07v-16.3h-3.15v-2.94h3.15v-3.57c0-4.45,2.19-7.06,6.55-7.06
+				c1.13,0,1.72,0.13,2.6,0.42v2.94c-0.63-0.25-1.51-0.46-2.48-0.46c-2.27,0-3.19,1.55-3.19,3.82v3.91h5.38v2.94h-5.38v16.3h3.95
+				v2.73H-920.54z" />
+             <path class="st4" d="M-906.84-217.34v-0.34c0-6.6,4.58-11.22,10.79-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-902.35-206.16-906.84-210.91-906.84-217.34z M-888.86-217.34v-0.29c0-5.08-2.81-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-891.64-209.06-888.86-212.38-888.86-217.34z" />
+             <path class="st4" d="M-882.74-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v4.2c1.05-2.31,3.28-4.54,7.9-4.58v3.44
+				c-4.79-0.04-7.9,1.47-7.9,6.85v9.33h3.36v2.73H-882.74z" />
+             <path class="st4" d="M-865.77-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.61c0.88-2.1,3.28-3.99,6.43-3.99
+				c2.81,0,5.29,1.18,6.43,4.45c1.47-3.07,4.54-4.45,7.27-4.45c3.95,0,7.27,2.35,7.27,8.74v10.88h3.07v2.73h-9.71v-2.73h3.15v-11.13
+				c0-3.87-1.51-5.46-4.54-5.46c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73h-9.79v-2.73h3.15v-11.13c0-3.87-1.51-5.46-4.54-5.46
+				c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73H-865.77z" />
+             <path class="st4" d="M-819.48-206.16c-3.99,0-7.14-1.97-7.14-6.47c0-5.12,5.29-6.81,10.84-6.81h3.07v-1.6
+				c0-3.7-1.47-4.96-4.62-4.96c-2.94,0-4.54,1.09-4.87,3.95h-3.49c0.42-5.17,4.37-6.85,8.53-6.85c4.12,0,7.94,1.51,7.94,7.86v11.76
+				h2.94v2.73h-6.43v-3.02C-814.19-207.3-816.33-206.16-819.48-206.16z M-812.72-214.23v-2.73h-2.94c-4.33,0-7.48,1.13-7.48,4.33
+				c0,1.97,1.01,3.7,3.99,3.7C-815.53-208.94-812.72-210.83-812.72-214.23z" />
+             <path class="st4" d="M-802.35-212.05v-13.53h-3.15v-2.94h3.15v-5h3.49v5h5.67v2.94h-5.67v13.19c0,2.1,0.97,3.19,3.15,3.19
+				c0.88,0,1.85-0.17,2.86-0.5v2.94c-0.97,0.29-1.89,0.5-3.15,0.5C-800.42-206.25-802.35-208.6-802.35-212.05z" />
+             <path class="st4" d="M-790.38-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v19.24h3.15v2.73H-790.38z M-788.15-235.44
+				c0-1.34,1.09-2.35,2.39-2.35c1.3,0,2.39,1.01,2.39,2.35c0,1.34-1.09,2.39-2.39,2.39C-787.06-233.05-788.15-234.1-788.15-235.44z" />
+             <path class="st4" d="M-778.58-217.34v-0.34c0-6.6,4.58-11.22,10.8-11.22s10.79,4.58,10.79,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-774.08-206.16-778.58-210.91-778.58-217.34z M-760.6-217.34v-0.29c0-5.08-2.82-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-763.37-209.06-760.6-212.38-760.6-217.34z" />
+             <path class="st4" d="M-754.47-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-754.47z" />
+             <path class="st4" d="M-712.43-206.54v-2.86h4.12v-24.2h-7.6v4.58h-3.32v-7.56h25.5v7.56h-3.32v-4.58h-7.6v24.2h4.12v2.86H-712.43
+				z" />
+             <path class="st4" d="M-693.32-217.3v-0.34c0-6.64,4.24-11.26,10.29-11.26c5.08,0,9.87,3.07,9.87,10.92v1.13h-16.55
+				c0.17,5,2.56,7.77,7.06,7.77c3.4,0,5.38-1.26,5.84-3.82h3.49c-0.76,4.41-4.41,6.72-9.37,6.72
+				C-688.91-206.16-693.32-210.53-693.32-217.3z M-676.72-219.65c-0.34-4.54-2.69-6.34-6.3-6.34c-3.57,0-5.97,2.44-6.55,6.34
+				H-676.72z" />
+             <path class="st4" d="M-653.33-228.51h3.07v7.44h-2.98c-0.76-2.94-2.77-4.92-6.51-4.92c-3.99,0-7.06,3.19-7.06,8.36v0.34
+				c0,5.38,2.94,8.23,7.18,8.23c3.11,0,5.92-1.81,6.3-5.38h3.23c-0.46,4.75-4.28,8.28-9.58,8.28c-6.13,0-10.75-4.33-10.75-11.13
+				v-0.34c0-6.72,4.79-11.26,10.67-11.26c3.7,0,5.54,1.47,6.43,3.23V-228.51z" />
+             <path class="st4" d="M-647.37-206.54v-2.73h3.07v-26.88h-3.15v-2.86h6.64v14.2c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-647.37z" />
+             <path class="st4" d="M-621.37-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.64,2.35,7.64,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-621.37z" />
+             <path class="st4" d="M-595.33-217.34v-0.34c0-6.6,4.58-11.22,10.8-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-590.84-206.16-595.33-210.91-595.33-217.34z M-577.35-217.34v-0.29c0-5.08-2.82-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-580.12-209.06-577.35-212.38-577.35-217.34z" />
+             <path class="st4" d="M-571.43-206.54v-2.73h3.07v-26.88h-3.15v-2.86h6.68v29.74h3.07v2.73H-571.43z" />
+             <path class="st4" d="M-559.88-217.34v-0.34c0-6.6,4.58-11.22,10.79-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-555.39-206.16-559.88-210.91-559.88-217.34z M-541.9-217.34v-0.29c0-5.08-2.81-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-544.68-209.06-541.9-212.38-541.9-217.34z" />
+             <path class="st4" d="M-535.06-205.28h3.57c0.5,2.52,2.6,3.82,6.34,3.82c4.33,0,7.06-2.06,7.06-6.76v-3.19
+				c-1.26,2.14-4.24,4.16-7.44,4.16c-5.76,0-10-4.37-10-10.42v-0.29c0-5.96,4.2-10.92,10.25-10.92c3.65,0,5.92,1.76,7.18,3.91v-3.53
+				h6.47v2.86h-2.98v17.64c-0.04,6.39-4.37,9.49-10.5,9.49C-531.62-198.52-534.47-201.59-535.06-205.28z M-517.96-217.93v-0.29
+				c0-4.92-2.69-7.77-6.97-7.77c-4.37,0-6.97,3.23-6.97,7.86v0.34c0,4.79,3.07,7.65,6.76,7.65
+				C-521.07-210.15-517.96-213.01-517.96-217.93z" />
+             <path class="st4" d="M-490.2-225.66l-11.05,26.76h-5.59v-2.73h3.36l3.02-7.18l-7.35-16.84h-2.77v-2.86h9.66v2.86h-3.19l5.5,12.9
+				l5-12.9h-3.32v-2.86h9.41v2.86H-490.2z" />
+            </g>
+            <g>
+             <path class="st4" d="M-721.66-278.52h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-721.66-278.52z M-719.96-272.71
+				l-2.43,6.2h4.88L-719.96-272.71z" />
+             <path class="st4" d="M-747.01-278.52h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73
+				c0.7,0.37,1.26,0.88,1.69,1.54c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.32,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06
+				c0.66,0.09,1.25,0.28,1.79,0.55c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81
+				c0,1.05-0.23,1.93-0.68,2.64c-0.45,0.7-1.03,1.27-1.75,1.71c-0.71,0.43-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28
+				h-8.18V-278.52z M-742.61-270.54h3.19c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68
+				c0.16-0.28,0.24-0.62,0.24-1.02c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32
+				c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99V-270.54z M-742.61-262.28h3.95c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39
+				s0.51-0.43,0.69-0.73c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66
+				c-0.36-0.15-0.74-0.25-1.16-0.31c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V-262.28z" />
+             <path class="st4" d="M-707.24-278.52h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+				h-4.4V-278.52z M-702.84-270.26h2.59c0.39,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.23-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V-270.26z" />
+             <path class="st4" d="M-781.08-278.52h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-781.08-278.52z M-779.39-272.71
+				l-2.43,6.2h4.88L-779.39-272.71z" />
+             <path class="st4" d="M-680.99-278.52h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-680.99-278.52z M-679.29-272.71
+				l-2.43,6.2h4.88L-679.29-272.71z" />
+             <path class="st4" d="M-806.44-278.52h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73
+				c0.7,0.37,1.26,0.88,1.69,1.54c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.32,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06
+				c0.66,0.09,1.25,0.28,1.79,0.55c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81
+				c0,1.05-0.23,1.93-0.68,2.64c-0.45,0.7-1.03,1.27-1.75,1.71s-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28h-8.18V-278.52z
+				 M-802.04-270.54h3.19c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68
+				c0.16-0.28,0.24-0.62,0.24-1.02c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32
+				c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99V-270.54z M-802.04-262.28h3.95c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39
+				s0.51-0.43,0.69-0.73c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66
+				c-0.36-0.15-0.74-0.25-1.16-0.31c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V-262.28z" />
+             <path class="st4" d="M-766.67-278.52h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+				h-4.4V-278.52z M-762.27-270.26h2.59c0.39,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.24-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V-270.26z" />
+             <path class="st4" d="M-886.44-278.52h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-886.44-278.52z M-884.75-272.71
+				l-2.43,6.2h4.88L-884.75-272.71z" />
+             <path class="st4" d="M-827.16-278.52h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-827.16-278.52z M-825.47-272.71
+				l-2.43,6.2h4.88L-825.47-272.71z" />
+             <path class="st4" d="M-871.68-278.52h5.98l8.49,13.88h0.06v-13.88h4.4v19.97h-5.75l-8.71-14.21h-0.06v14.21h-4.4V-278.52z" />
+             <path class="st4" d="M-844.17-274.63h-5.51v-3.89h15.79v3.89h-5.88v16.08h-4.4V-274.63z" />
+             <path class="st4" d="M-950.32-258.24c-4.64,0-7.27-2.71-7.27-7.64l0.01-10.72h-2.26v-1.92h7.27v1.92h-2.55l-0.01,10.44
+				c0,4.24,1.5,5.88,4.86,5.88c3.22,0,5.15-1.3,5.15-6.25l0.01-10.07h-2.55v-1.92h7.27v1.92h-2.26l-0.01,10.41
+				C-942.66-261.27-945.12-258.24-950.32-258.24z" />
+             <path class="st4" d="M-922.87-265.2c-0.51,3.28-2.8,4.95-6.11,4.95c-4.35,0-6.96-3.11-6.96-8.26v-0.23c0-5.09,2.8-8.34,6.98-8.34
+				c3.08,0,5.18,1.3,6,4.67h2.06l0-6.11h-2.21l0,2.21c-1.05-1.87-3.25-2.71-5.8-2.71c-5.57,0-9.59,4.33-9.59,10.32v0.23
+				c0,6.22,3.59,10.24,9.45,10.24c4.45,0,7.63-2.22,8.41-6.72L-922.87-265.2z" />
+             <path class="st4" d="M-896.25-264.7c0,3.8-3.22,6.46-7.82,6.46c-3.69,0-6.33-1.24-7.87-3.69l3.02-2.58
+				c0.49,0.7,2.17,2.72,5.22,2.72c1.91,0,3.09-0.83,3.09-2.16c0-1.69-1.1-2.06-3.88-2.84c-3.29-0.92-6.63-2.34-6.63-5.99
+				c0-3.67,3.1-6.24,7.54-6.24c1.78,0,5.03,0.42,6.81,3.19l-2.8,2.44c-1.06-1.4-2.54-2.08-4.5-2.08c-1.97,0-2.69,1.37-2.69,2.29
+				c0,1.46,1.94,2.09,4.29,2.72C-899.46-269.69-896.25-268.52-896.25-264.7z" />
+            </g>
+           </g> 
+           <g>
+            <g>
+             <path class="st5" d="M-960.1-461.57v-2.86h3.78v-24.32h-3.78v-2.86h11.21v2.86h-3.78v24.32h3.78v2.86H-960.1z" />
+             <path class="st5" d="M-946.49-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.69v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-946.49z" />
+             <path class="st5" d="M-920.54-461.57v-2.73h3.07v-16.3h-3.15v-2.94h3.15v-3.57c0-4.45,2.19-7.06,6.55-7.06
+				c1.13,0,1.72,0.13,2.6,0.42v2.94c-0.63-0.25-1.51-0.46-2.48-0.46c-2.27,0-3.19,1.55-3.19,3.82v3.91h5.38v2.94h-5.38v16.3h3.95
+				v2.73H-920.54z" />
+             <path class="st5" d="M-906.84-472.36v-0.34c0-6.6,4.58-11.22,10.79-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-902.35-461.19-906.84-465.94-906.84-472.36z M-888.86-472.36v-0.29c0-5.08-2.81-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-891.64-464.09-888.86-467.41-888.86-472.36z" />
+             <path class="st5" d="M-882.74-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v4.2c1.05-2.31,3.28-4.54,7.9-4.58v3.44
+				c-4.79-0.04-7.9,1.47-7.9,6.85v9.32h3.36v2.73H-882.74z" />
+             <path class="st5" d="M-865.77-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.61c0.88-2.1,3.28-3.99,6.43-3.99
+				c2.81,0,5.29,1.18,6.43,4.45c1.47-3.07,4.54-4.45,7.27-4.45c3.95,0,7.27,2.35,7.27,8.74v10.88h3.07v2.73h-9.71v-2.73h3.15v-11.13
+				c0-3.87-1.51-5.46-4.54-5.46c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73h-9.79v-2.73h3.15v-11.13c0-3.87-1.51-5.46-4.54-5.46
+				c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73H-865.77z" />
+             <path class="st5" d="M-819.48-461.19c-3.99,0-7.14-1.97-7.14-6.47c0-5.12,5.29-6.81,10.84-6.81h3.07v-1.6
+				c0-3.7-1.47-4.96-4.62-4.96c-2.94,0-4.54,1.09-4.87,3.95h-3.49c0.42-5.17,4.37-6.85,8.53-6.85c4.12,0,7.94,1.51,7.94,7.85v11.76
+				h2.94v2.73h-6.43v-3.02C-814.19-462.32-816.33-461.19-819.48-461.19z M-812.72-469.26v-2.73h-2.94c-4.33,0-7.48,1.13-7.48,4.33
+				c0,1.97,1.01,3.7,3.99,3.7C-815.53-463.96-812.72-465.85-812.72-469.26z" />
+             <path class="st5" d="M-802.35-467.07v-13.53h-3.15v-2.94h3.15v-5h3.49v5h5.67v2.94h-5.67v13.19c0,2.1,0.97,3.19,3.15,3.19
+				c0.88,0,1.85-0.17,2.86-0.5v2.94c-0.97,0.29-1.89,0.5-3.15,0.5C-800.42-461.27-802.35-463.63-802.35-467.07z" />
+             <path class="st5" d="M-790.38-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v19.24h3.15v2.73H-790.38z M-788.15-490.47
+				c0-1.34,1.09-2.35,2.39-2.35c1.3,0,2.39,1.01,2.39,2.35c0,1.34-1.09,2.39-2.39,2.39C-787.06-488.07-788.15-489.12-788.15-490.47z
+				" />
+             <path class="st5" d="M-778.58-472.36v-0.34c0-6.6,4.58-11.22,10.8-11.22s10.79,4.58,10.79,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-774.08-461.19-778.58-465.94-778.58-472.36z M-760.6-472.36v-0.29c0-5.08-2.82-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-763.37-464.09-760.6-467.41-760.6-472.36z" />
+             <path class="st5" d="M-754.47-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.69v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-754.47z" />
+             <path class="st5" d="M-712.43-461.57v-2.86h4.12v-24.2h-7.6v4.58h-3.32v-7.56h25.5v7.56h-3.32v-4.58h-7.6v24.2h4.12v2.86H-712.43
+				z" />
+             <path class="st5" d="M-693.32-472.32v-0.34c0-6.64,4.24-11.26,10.29-11.26c5.08,0,9.87,3.07,9.87,10.92v1.13h-16.55
+				c0.17,5,2.56,7.77,7.06,7.77c3.4,0,5.38-1.26,5.84-3.82h3.49c-0.76,4.41-4.41,6.72-9.37,6.72
+				C-688.91-461.19-693.32-465.56-693.32-472.32z M-676.72-474.67c-0.34-4.54-2.69-6.34-6.3-6.34c-3.57,0-5.97,2.44-6.55,6.34
+				H-676.72z" />
+             <path class="st5" d="M-653.33-483.54h3.07v7.44h-2.98c-0.76-2.94-2.77-4.92-6.51-4.92c-3.99,0-7.06,3.19-7.06,8.36v0.34
+				c0,5.38,2.94,8.23,7.18,8.23c3.11,0,5.92-1.81,6.3-5.38h3.23c-0.46,4.75-4.28,8.28-9.58,8.28c-6.13,0-10.75-4.33-10.75-11.13
+				v-0.34c0-6.72,4.79-11.26,10.67-11.26c3.7,0,5.54,1.47,6.43,3.23V-483.54z" />
+             <path class="st5" d="M-647.37-461.57v-2.73h3.07v-26.88h-3.15v-2.86h6.64v14.2c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.69v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-647.37z" />
+             <path class="st5" d="M-621.37-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.64,2.35,7.64,8.69v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-621.37z" />
+             <path class="st5" d="M-595.33-472.36v-0.34c0-6.6,4.58-11.22,10.8-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-590.84-461.19-595.33-465.94-595.33-472.36z M-577.35-472.36v-0.29c0-5.08-2.82-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-580.12-464.09-577.35-467.41-577.35-472.36z" />
+             <path class="st5" d="M-571.43-461.57v-2.73h3.07v-26.88h-3.15v-2.86h6.68v29.74h3.07v2.73H-571.43z" />
+             <path class="st5" d="M-559.88-472.36v-0.34c0-6.6,4.58-11.22,10.79-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-555.39-461.19-559.88-465.94-559.88-472.36z M-541.9-472.36v-0.29c0-5.08-2.81-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-544.68-464.09-541.9-467.41-541.9-472.36z" />
+             <path class="st5" d="M-535.06-460.31h3.57c0.5,2.52,2.6,3.82,6.34,3.82c4.33,0,7.06-2.06,7.06-6.76v-3.19
+				c-1.26,2.14-4.24,4.16-7.44,4.16c-5.76,0-10-4.37-10-10.42v-0.29c0-5.96,4.2-10.92,10.25-10.92c3.65,0,5.92,1.76,7.18,3.91v-3.53
+				h6.47v2.86h-2.98v17.64c-0.04,6.39-4.37,9.49-10.5,9.49C-531.62-453.54-534.47-456.61-535.06-460.31z M-517.96-472.95v-0.29
+				c0-4.91-2.69-7.77-6.97-7.77c-4.37,0-6.97,3.23-6.97,7.85v0.34c0,4.79,3.07,7.65,6.76,7.65
+				C-521.07-465.18-517.96-468.04-517.96-472.95z" />
+             <path class="st5" d="M-490.2-480.68l-11.05,26.76h-5.59v-2.73h3.36l3.02-7.18l-7.35-16.85h-2.77v-2.86h9.66v2.86h-3.19l5.5,12.9
+				l5-12.9h-3.32v-2.86h9.41v2.86H-490.2z" />
+            </g>
+            <g>
+             <path class="st5" d="M-721.66-533.55h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-721.66-533.55z M-719.96-527.74
+				l-2.43,6.2h4.88L-719.96-527.74z" />
+             <path class="st5" d="M-747.01-533.55h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73
+				c0.7,0.37,1.26,0.88,1.69,1.54c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.32,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06
+				c0.66,0.09,1.25,0.28,1.79,0.55c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81
+				c0,1.05-0.23,1.93-0.68,2.64c-0.45,0.7-1.03,1.27-1.75,1.71c-0.71,0.43-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28
+				h-8.18V-533.55z M-742.61-525.56h3.19c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68
+				c0.16-0.28,0.24-0.62,0.24-1.02c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32
+				c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99V-525.56z M-742.61-517.3h3.95c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39
+				s0.51-0.43,0.69-0.73c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66
+				c-0.36-0.15-0.74-0.25-1.16-0.31c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V-517.3z" />
+             <path class="st5" d="M-707.24-533.55h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+				h-4.4V-533.55z M-702.84-525.28h2.59c0.39,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.23-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V-525.28z" />
+             <path class="st5" d="M-781.08-533.55h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-781.08-533.55z M-779.39-527.74
+				l-2.43,6.2h4.88L-779.39-527.74z" />
+             <path class="st5" d="M-680.99-533.55h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-680.99-533.55z M-679.29-527.74
+				l-2.43,6.2h4.88L-679.29-527.74z" />
+             <path class="st5" d="M-806.44-533.55h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73
+				c0.7,0.37,1.26,0.88,1.69,1.54c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.32,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06
+				c0.66,0.09,1.25,0.28,1.79,0.55c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81
+				c0,1.05-0.23,1.93-0.68,2.64c-0.45,0.7-1.03,1.27-1.75,1.71s-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28h-8.18V-533.55z
+				 M-802.04-525.57h3.19c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68
+				c0.16-0.28,0.24-0.62,0.24-1.02c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32
+				c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99V-525.57z M-802.04-517.3h3.95c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39
+				s0.51-0.43,0.69-0.73c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66
+				c-0.36-0.15-0.74-0.25-1.16-0.31c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V-517.3z" />
+             <path class="st5" d="M-766.67-533.55h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+				h-4.4V-533.55z M-762.27-525.29h2.59c0.39,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.24-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V-525.29z" />
+             <path class="st5" d="M-886.44-533.55h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-886.44-533.55z M-884.75-527.74
+				l-2.43,6.2h4.88L-884.75-527.74z" />
+             <path class="st5" d="M-827.16-533.55h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-827.16-533.55z M-825.47-527.74
+				l-2.43,6.2h4.88L-825.47-527.74z" />
+             <path class="st5" d="M-871.68-533.55h5.98l8.49,13.88h0.06v-13.88h4.4v19.97h-5.75l-8.71-14.21h-0.06v14.21h-4.4V-533.55z" />
+             <path class="st5" d="M-844.17-529.66h-5.51v-3.89h15.79v3.89h-5.88v16.08h-4.4V-529.66z" />
+             <path class="st5" d="M-950.32-513.27c-4.64,0-7.27-2.71-7.27-7.64l0.01-10.72h-2.26v-1.92h7.27v1.92h-2.55l-0.01,10.44
+				c0,4.24,1.5,5.88,4.86,5.88c3.22,0,5.15-1.3,5.15-6.25l0.01-10.07h-2.55v-1.92h7.27v1.92h-2.26l-0.01,10.41
+				C-942.66-516.29-945.12-513.27-950.32-513.27z" />
+             <path class="st5" d="M-922.87-520.22c-0.51,3.28-2.8,4.95-6.11,4.95c-4.35,0-6.96-3.11-6.96-8.26v-0.23
+				c0-5.09,2.8-8.34,6.98-8.34c3.08,0,5.18,1.3,6,4.67h2.06l0-6.11h-2.21l0,2.21c-1.05-1.87-3.25-2.71-5.8-2.71
+				c-5.57,0-9.59,4.33-9.59,10.32v0.23c0,6.22,3.59,10.24,9.45,10.24c4.45,0,7.63-2.22,8.41-6.72L-922.87-520.22z" />
+             <path class="st5" d="M-896.25-519.72c0,3.8-3.22,6.46-7.82,6.46c-3.69,0-6.33-1.24-7.87-3.69l3.02-2.58
+				c0.49,0.7,2.17,2.72,5.22,2.72c1.91,0,3.09-0.83,3.09-2.16c0-1.69-1.1-2.06-3.88-2.84c-3.29-0.92-6.63-2.34-6.63-5.99
+				c0-3.67,3.1-6.24,7.54-6.24c1.78,0,5.03,0.42,6.81,3.19l-2.8,2.44c-1.06-1.4-2.54-2.08-4.5-2.08c-1.97,0-2.69,1.37-2.69,2.29
+				c0,1.46,1.94,2.09,4.29,2.72C-899.46-524.71-896.25-523.55-896.25-519.72z" />
+            </g>
+           </g> 
+           <g>
+            <g>
+             <path class="st2" d="M-1881.19,72.49v-2.86h3.78V45.31h-3.78v-2.86h11.22v2.86h-3.78v24.32h3.78v2.86H-1881.19z" />
+             <path class="st2" d="M-1867.59,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15V58.58c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67
+				h3.15v2.73H-1867.59z" />
+             <path class="st2" d="M-1841.63,72.49v-2.73h3.07v-16.3h-3.15v-2.94h3.15v-3.57c0-4.45,2.18-7.06,6.55-7.06
+				c1.13,0,1.72,0.13,2.6,0.42v2.94c-0.63-0.25-1.51-0.46-2.48-0.46c-2.27,0-3.19,1.55-3.19,3.82v3.91h5.38v2.94h-5.38v16.3h3.95
+				v2.73H-1841.63z" />
+             <path class="st2" d="M-1827.94,61.69v-0.34c0-6.6,4.58-11.22,10.8-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-1823.44,72.86-1827.94,68.12-1827.94,61.69z M-1809.96,61.69V61.4c0-5.08-2.81-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-1812.73,69.97-1809.96,66.65-1809.96,61.69z" />
+             <path class="st2" d="M-1803.83,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v4.2c1.05-2.31,3.28-4.54,7.9-4.58v3.44
+				c-4.79-0.04-7.9,1.47-7.9,6.85v9.33h3.36v2.73H-1803.83z" />
+             <path class="st2" d="M-1786.86,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v3.61c0.88-2.1,3.28-3.99,6.43-3.99
+				c2.81,0,5.29,1.18,6.43,4.45c1.47-3.07,4.54-4.45,7.27-4.45c3.95,0,7.27,2.35,7.27,8.74v10.88h3.07v2.73h-9.7v-2.73h3.15V58.62
+				c0-3.87-1.51-5.46-4.54-5.46c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73h-9.79v-2.73h3.15V58.62c0-3.87-1.51-5.46-4.54-5.46
+				c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73H-1786.86z" />
+             <path class="st2" d="M-1740.58,72.86c-3.99,0-7.14-1.97-7.14-6.47c0-5.12,5.29-6.81,10.84-6.81h3.07v-1.6
+				c0-3.7-1.47-4.96-4.62-4.96c-2.94,0-4.54,1.09-4.87,3.95h-3.49c0.42-5.17,4.37-6.85,8.53-6.85c4.12,0,7.94,1.51,7.94,7.86v11.76
+				h2.94v2.73h-6.43v-3.02C-1735.29,71.73-1737.43,72.86-1740.58,72.86z M-1733.81,64.8v-2.73h-2.94c-4.33,0-7.48,1.13-7.48,4.33
+				c0,1.97,1.01,3.7,3.99,3.7C-1736.63,70.09-1733.81,68.2-1733.81,64.8z" />
+             <path class="st2" d="M-1723.44,66.98V53.46h-3.15v-2.94h3.15v-5h3.49v5h5.67v2.94h-5.67v13.19c0,2.1,0.97,3.19,3.15,3.19
+				c0.88,0,1.85-0.17,2.86-0.5v2.94c-0.97,0.29-1.89,0.5-3.15,0.5C-1721.51,72.78-1723.44,70.43-1723.44,66.98z" />
+             <path class="st2" d="M-1711.47,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v19.24h3.15v2.73H-1711.47z M-1709.25,43.58
+				c0-1.34,1.09-2.35,2.39-2.35c1.3,0,2.39,1.01,2.39,2.35c0,1.34-1.09,2.39-2.39,2.39C-1708.15,45.98-1709.25,44.93-1709.25,43.58z
+				" />
+             <path class="st2" d="M-1699.67,61.69v-0.34c0-6.6,4.58-11.22,10.8-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-1695.18,72.86-1699.67,68.12-1699.67,61.69z M-1681.69,61.69V61.4c0-5.08-2.81-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-1684.46,69.97-1681.69,66.65-1681.69,61.69z" />
+             <path class="st2" d="M-1675.56,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15V58.58c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67
+				h3.15v2.73H-1675.56z" />
+             <path class="st2" d="M-1633.52,72.49v-2.86h4.12v-24.2h-7.6v4.58h-3.32v-7.56h25.5v7.56h-3.32v-4.58h-7.6v24.2h4.12v2.86
+				H-1633.52z" />
+             <path class="st2" d="M-1614.41,61.73V61.4c0-6.64,4.24-11.26,10.29-11.26c5.08,0,9.87,3.07,9.87,10.92v1.13h-16.55
+				c0.17,5,2.56,7.77,7.06,7.77c3.4,0,5.38-1.26,5.84-3.82h3.49c-0.76,4.41-4.41,6.72-9.37,6.72
+				C-1610,72.86-1614.41,68.5-1614.41,61.73z M-1597.82,59.38c-0.34-4.54-2.69-6.34-6.3-6.34c-3.57,0-5.96,2.44-6.55,6.34H-1597.82z
+				" />
+             <path class="st2" d="M-1574.42,50.52h3.07v7.44h-2.98c-0.76-2.94-2.77-4.92-6.51-4.92c-3.99,0-7.06,3.19-7.06,8.36v0.34
+				c0,5.38,2.94,8.23,7.18,8.23c3.11,0,5.92-1.81,6.3-5.38h3.23c-0.46,4.75-4.29,8.28-9.58,8.28c-6.13,0-10.75-4.33-10.75-11.13
+				V61.4c0-6.72,4.79-11.26,10.67-11.26c3.7,0,5.54,1.47,6.43,3.23V50.52z" />
+             <path class="st2" d="M-1568.46,72.49v-2.73h3.07V42.87h-3.15v-2.86h6.64v14.2c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15V58.58c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67
+				h3.15v2.73H-1568.46z" />
+             <path class="st2" d="M-1542.47,72.49v-2.73h3.07V53.37h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15V58.58c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92v10.67
+				h3.15v2.73H-1542.47z" />
+             <path class="st2" d="M-1516.43,61.69v-0.34c0-6.6,4.58-11.22,10.8-11.22s10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22S-1516.43,68.12-1516.43,61.69z M-1498.45,61.69V61.4c0-5.08-2.82-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-1501.22,69.97-1498.45,66.65-1498.45,61.69z" />
+             <path class="st2" d="M-1492.53,72.49v-2.73h3.07V42.87h-3.15v-2.86h6.68v29.74h3.07v2.73H-1492.53z" />
+             <path class="st2" d="M-1480.98,61.69v-0.34c0-6.6,4.58-11.22,10.8-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-1476.48,72.86-1480.98,68.12-1480.98,61.69z M-1463,61.69V61.4c0-5.08-2.81-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-1465.77,69.97-1463,66.65-1463,61.69z" />
+             <path class="st2" d="M-1456.16,73.75h3.57c0.5,2.52,2.6,3.82,6.34,3.82c4.33,0,7.06-2.06,7.06-6.76v-3.19
+				c-1.26,2.14-4.24,4.16-7.43,4.16c-5.76,0-10-4.37-10-10.42v-0.29c0-5.96,4.2-10.92,10.25-10.92c3.65,0,5.92,1.76,7.18,3.91v-3.53
+				h6.47v2.86h-2.98v17.64c-0.04,6.39-4.37,9.49-10.5,9.49C-1452.71,80.51-1455.57,77.44-1456.16,73.75z M-1439.06,61.1v-0.29
+				c0-4.92-2.69-7.77-6.97-7.77c-4.37,0-6.97,3.23-6.97,7.86v0.34c0,4.79,3.07,7.65,6.76,7.65
+				C-1442.17,68.87-1439.06,66.02-1439.06,61.1z" />
+             <path class="st2" d="M-1411.3,53.37l-11.05,26.76h-5.59V77.4h3.36l3.02-7.18l-7.35-16.84h-2.77v-2.86h9.66v2.86h-3.19l5.5,12.9
+				l5-12.9h-3.32v-2.86h9.41v2.86H-1411.3z" />
+            </g>
+            <g>
+             <path class="st2" d="M-1642.75,0.51h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-1642.75,0.51z M-1641.06,6.32
+				l-2.43,6.2h4.88L-1641.06,6.32z" />
+             <path class="st2" d="M-1668.1,0.51h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73c0.7,0.37,1.26,0.88,1.69,1.54
+				c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.31,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06c0.66,0.09,1.25,0.28,1.79,0.55
+				c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81c0,1.05-0.23,1.93-0.68,2.64
+				c-0.45,0.7-1.03,1.27-1.75,1.71s-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28h-8.18V0.51z M-1663.7,8.49h3.19
+				c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68c0.16-0.28,0.24-0.62,0.24-1.02
+				c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99
+				V8.49z M-1663.7,16.75h3.95c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39c0.28-0.19,0.51-0.43,0.69-0.73
+				c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66c-0.36-0.15-0.74-0.25-1.16-0.31
+				c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V16.75z" />
+             <path class="st2" d="M-1628.33,0.51h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+				h-4.4V0.51z M-1623.93,8.77h2.59c0.39,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.23-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V8.77z" />
+             <path class="st2" d="M-1702.18,0.51h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-1702.18,0.51z M-1700.48,6.32
+				l-2.43,6.2h4.88L-1700.48,6.32z" />
+             <path class="st2" d="M-1602.08,0.51h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-1602.08,0.51z M-1600.39,6.32
+				l-2.43,6.2h4.88L-1600.39,6.32z" />
+             <path class="st2" d="M-1727.53,0.5h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73c0.7,0.37,1.26,0.88,1.69,1.54
+				c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.31,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06c0.66,0.09,1.26,0.28,1.79,0.55
+				c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81c0,1.05-0.23,1.93-0.68,2.64
+				c-0.45,0.7-1.03,1.27-1.75,1.71c-0.71,0.43-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28h-8.18V0.5z M-1723.13,8.49h3.19
+				c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68c0.16-0.28,0.24-0.62,0.24-1.02
+				c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99
+				V8.49z M-1723.13,16.75h3.95c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39c0.28-0.19,0.51-0.43,0.69-0.73
+				c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66c-0.36-0.15-0.74-0.25-1.16-0.31
+				c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V16.75z" />
+             <path class="st2" d="M-1687.76,0.5h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+				h-4.4V0.5z M-1683.36,8.77h2.59c0.4,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.23-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V8.77z" />
+             <path class="st2" d="M-1807.53,0.51h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-1807.53,0.51z M-1805.84,6.32
+				l-2.43,6.2h4.88L-1805.84,6.32z" />
+             <path class="st2" d="M-1748.25,0.51h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-1748.25,0.51z M-1746.56,6.32
+				l-2.43,6.2h4.88L-1746.56,6.32z" />
+             <path class="st2" d="M-1792.77,0.5h5.98l8.49,13.88h0.06V0.5h4.4v19.97h-5.75l-8.71-14.21h-0.06v14.21h-4.4V0.5z" />
+             <path class="st2" d="M-1765.26,4.4h-5.51V0.5h15.79V4.4h-5.88v16.08h-4.4V4.4z" />
+             <path class="st2" d="M-1871.41,20.79c-4.64,0-7.27-2.71-7.27-7.64l0.01-10.72h-2.26V0.51h7.27v1.92h-2.55l-0.01,10.44
+				c0,4.24,1.5,5.88,4.86,5.88c3.22,0,5.15-1.3,5.15-6.25l0.01-10.07h-2.55V0.51h7.27v1.92h-2.26l-0.01,10.41
+				C-1863.75,17.76-1866.21,20.79-1871.41,20.79z" />
+             <path class="st2" d="M-1843.97,13.83c-0.51,3.28-2.8,4.95-6.11,4.95c-4.36,0-6.96-3.11-6.96-8.26V10.3c0-5.09,2.8-8.34,6.98-8.34
+				c3.08,0,5.18,1.3,6,4.67h2.06l0-6.11h-2.21l0,2.21c-1.05-1.87-3.25-2.71-5.8-2.71c-5.57,0-9.59,4.33-9.59,10.32v0.23
+				c0,6.22,3.59,10.24,9.45,10.24c4.45,0,7.63-2.22,8.41-6.72L-1843.97,13.83z" />
+             <path class="st2" d="M-1817.34,14.33c0,3.8-3.22,6.46-7.82,6.46c-3.69,0-6.33-1.24-7.87-3.69l3.02-2.58
+				c0.49,0.7,2.17,2.72,5.22,2.72c1.91,0,3.09-0.83,3.09-2.16c0-1.69-1.1-2.06-3.88-2.84c-3.29-0.92-6.63-2.34-6.63-5.99
+				c0-3.67,3.1-6.24,7.54-6.24c1.78,0,5.03,0.42,6.81,3.19l-2.8,2.44c-1.06-1.4-2.54-2.08-4.5-2.08c-1.97,0-2.69,1.37-2.69,2.29
+				c0,1.46,1.94,2.09,4.29,2.72C-1820.56,9.34-1817.34,10.5-1817.34,14.33z" />
+            </g>
+           </g> 
+           <g>
+            <g>
+             <path class="st4" d="M-1881.19-206.54v-2.86h3.78v-24.32h-3.78v-2.86h11.22v2.86h-3.78v24.32h3.78v2.86H-1881.19z" />
+             <path class="st4" d="M-1867.59-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-1867.59z" />
+             <path class="st4" d="M-1841.63-206.54v-2.73h3.07v-16.3h-3.15v-2.94h3.15v-3.57c0-4.45,2.18-7.06,6.55-7.06
+				c1.13,0,1.72,0.13,2.6,0.42v2.94c-0.63-0.25-1.51-0.46-2.48-0.46c-2.27,0-3.19,1.55-3.19,3.82v3.91h5.38v2.94h-5.38v16.3h3.95
+				v2.73H-1841.63z" />
+             <path class="st4" d="M-1827.94-217.34v-0.34c0-6.6,4.58-11.22,10.8-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-1823.44-206.16-1827.94-210.91-1827.94-217.34z M-1809.96-217.34v-0.29
+				c0-5.08-2.81-8.36-7.18-8.36c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28
+				C-1812.73-209.06-1809.96-212.38-1809.96-217.34z" />
+             <path class="st4" d="M-1803.83-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v4.2c1.05-2.31,3.28-4.54,7.9-4.58v3.45
+				c-4.79-0.04-7.9,1.47-7.9,6.85v9.32h3.36v2.73H-1803.83z" />
+             <path class="st4" d="M-1786.86-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.61c0.88-2.1,3.28-3.99,6.43-3.99
+				c2.81,0,5.29,1.18,6.43,4.45c1.47-3.07,4.54-4.45,7.27-4.45c3.95,0,7.27,2.35,7.27,8.74v10.88h3.07v2.73h-9.7v-2.73h3.15v-11.13
+				c0-3.87-1.51-5.46-4.54-5.46c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73h-9.79v-2.73h3.15v-11.13c0-3.87-1.51-5.46-4.54-5.46
+				c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73H-1786.86z" />
+             <path class="st4" d="M-1740.58-206.16c-3.99,0-7.14-1.97-7.14-6.47c0-5.12,5.29-6.81,10.84-6.81h3.07v-1.6
+				c0-3.7-1.47-4.96-4.62-4.96c-2.94,0-4.54,1.09-4.87,3.95h-3.49c0.42-5.17,4.37-6.85,8.53-6.85c4.12,0,7.94,1.51,7.94,7.86v11.76
+				h2.94v2.73h-6.43v-3.02C-1735.29-207.3-1737.43-206.16-1740.58-206.16z M-1733.81-214.23v-2.73h-2.94
+				c-4.33,0-7.48,1.13-7.48,4.33c0,1.97,1.01,3.7,3.99,3.7C-1736.63-208.94-1733.81-210.83-1733.81-214.23z" />
+             <path class="st4" d="M-1723.44-212.04v-13.53h-3.15v-2.94h3.15v-5h3.49v5h5.67v2.94h-5.67v13.19c0,2.1,0.97,3.19,3.15,3.19
+				c0.88,0,1.85-0.17,2.86-0.5v2.94c-0.97,0.29-1.89,0.5-3.15,0.5C-1721.51-206.25-1723.44-208.6-1723.44-212.04z" />
+             <path class="st4" d="M-1711.47-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v19.24h3.15v2.73H-1711.47z M-1709.25-235.44
+				c0-1.34,1.09-2.35,2.39-2.35c1.3,0,2.39,1.01,2.39,2.35s-1.09,2.39-2.39,2.39C-1708.15-233.05-1709.25-234.1-1709.25-235.44z" />
+             <path class="st4" d="M-1699.67-217.34v-0.34c0-6.6,4.58-11.22,10.8-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-1695.18-206.16-1699.67-210.91-1699.67-217.34z M-1681.69-217.34v-0.29
+				c0-5.08-2.81-8.36-7.18-8.36c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28
+				C-1684.46-209.06-1681.69-212.38-1681.69-217.34z" />
+             <path class="st4" d="M-1675.56-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-1675.56z" />
+             <path class="st4" d="M-1633.52-206.54v-2.86h4.12v-24.2h-7.6v4.58h-3.32v-7.56h25.5v7.56h-3.32v-4.58h-7.6v24.2h4.12v2.86
+				H-1633.52z" />
+             <path class="st4" d="M-1614.41-217.3v-0.34c0-6.64,4.24-11.26,10.29-11.26c5.08,0,9.87,3.07,9.87,10.92v1.13h-16.55
+				c0.17,5,2.56,7.77,7.06,7.77c3.4,0,5.38-1.26,5.84-3.82h3.49c-0.76,4.41-4.41,6.72-9.37,6.72
+				C-1610-206.16-1614.41-210.53-1614.41-217.3z M-1597.82-219.65c-0.34-4.54-2.69-6.34-6.3-6.34c-3.57,0-5.96,2.44-6.55,6.34
+				H-1597.82z" />
+             <path class="st4" d="M-1574.42-228.51h3.07v7.44h-2.98c-0.76-2.94-2.77-4.92-6.51-4.92c-3.99,0-7.06,3.19-7.06,8.36v0.34
+				c0,5.38,2.94,8.23,7.18,8.23c3.11,0,5.92-1.81,6.3-5.38h3.23c-0.46,4.75-4.29,8.28-9.58,8.28c-6.13,0-10.75-4.33-10.75-11.13
+				v-0.34c0-6.72,4.79-11.26,10.67-11.26c3.7,0,5.54,1.47,6.43,3.23V-228.51z" />
+             <path class="st4" d="M-1568.46-206.54v-2.73h3.07v-26.88h-3.15v-2.86h6.64v14.2c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-1568.46z" />
+             <path class="st4" d="M-1542.47-206.54v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-1542.47z" />
+             <path class="st4" d="M-1516.43-217.34v-0.34c0-6.6,4.58-11.22,10.8-11.22s10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22S-1516.43-210.91-1516.43-217.34z M-1498.45-217.34v-0.29c0-5.08-2.82-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-1501.22-209.06-1498.45-212.38-1498.45-217.34z" />
+             <path class="st4" d="M-1492.53-206.54v-2.73h3.07v-26.88h-3.15v-2.86h6.68v29.74h3.07v2.73H-1492.53z" />
+             <path class="st4" d="M-1480.98-217.34v-0.34c0-6.6,4.58-11.22,10.8-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.22-10.84,11.22C-1476.48-206.16-1480.98-210.91-1480.98-217.34z M-1463-217.34v-0.29c0-5.08-2.81-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-1465.77-209.06-1463-212.38-1463-217.34z" />
+             <path class="st4" d="M-1456.16-205.28h3.57c0.5,2.52,2.6,3.82,6.34,3.82c4.33,0,7.06-2.06,7.06-6.76v-3.19
+				c-1.26,2.14-4.24,4.16-7.43,4.16c-5.76,0-10-4.37-10-10.42v-0.29c0-5.96,4.2-10.92,10.25-10.92c3.65,0,5.92,1.76,7.18,3.91v-3.53
+				h6.47v2.86h-2.98v17.64c-0.04,6.39-4.37,9.49-10.5,9.49C-1452.71-198.52-1455.57-201.59-1456.16-205.28z M-1439.06-217.93v-0.29
+				c0-4.91-2.69-7.77-6.97-7.77c-4.37,0-6.97,3.23-6.97,7.86v0.34c0,4.79,3.07,7.65,6.76,7.65
+				C-1442.17-210.15-1439.06-213.01-1439.06-217.93z" />
+             <path class="st4" d="M-1411.3-225.66l-11.05,26.76h-5.59v-2.73h3.36l3.02-7.18l-7.35-16.85h-2.77v-2.86h9.66v2.86h-3.19l5.5,12.9
+				l5-12.9h-3.32v-2.86h9.41v2.86H-1411.3z" />
+            </g>
+            <g>
+             <path class="st4" d="M-1642.75-278.52h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-1642.75-278.52z
+				 M-1641.06-272.71l-2.43,6.2h4.88L-1641.06-272.71z" />
+             <path class="st4" d="M-1668.1-278.52h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73
+				c0.7,0.37,1.26,0.88,1.69,1.54c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.31,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06
+				c0.66,0.09,1.25,0.28,1.79,0.55c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81
+				c0,1.05-0.23,1.93-0.68,2.64c-0.45,0.7-1.03,1.27-1.75,1.71c-0.71,0.43-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28
+				h-8.18V-278.52z M-1663.7-270.54h3.19c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68
+				c0.16-0.28,0.24-0.62,0.24-1.02c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32
+				c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99V-270.54z M-1663.7-262.28h3.95c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39
+				s0.51-0.43,0.69-0.73c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66
+				c-0.36-0.15-0.74-0.25-1.16-0.31c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V-262.28z" />
+             <path class="st4" d="M-1628.33-278.52h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+				h-4.4V-278.52z M-1623.93-270.26h2.59c0.39,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.23-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V-270.26z" />
+             <path class="st4" d="M-1702.18-278.52h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-1702.18-278.52z
+				 M-1700.48-272.71l-2.43,6.2h4.88L-1700.48-272.71z" />
+             <path class="st4" d="M-1602.08-278.52h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-1602.08-278.52z
+				 M-1600.39-272.71l-2.43,6.2h4.88L-1600.39-272.71z" />
+             <path class="st4" d="M-1727.53-278.52h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73
+				c0.7,0.37,1.26,0.88,1.69,1.54c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.31,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06
+				c0.66,0.09,1.26,0.28,1.79,0.55c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81
+				c0,1.05-0.23,1.93-0.68,2.64c-0.45,0.7-1.03,1.27-1.75,1.71s-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28h-8.18V-278.52z
+				 M-1723.13-270.54h3.19c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68
+				c0.16-0.28,0.24-0.62,0.24-1.02c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32
+				c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99V-270.54z M-1723.13-262.28h3.95c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39
+				s0.51-0.43,0.69-0.73c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66
+				c-0.36-0.15-0.74-0.25-1.16-0.31c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V-262.28z" />
+             <path class="st4" d="M-1687.76-278.52h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+				h-4.4V-278.52z M-1683.36-270.26h2.59c0.4,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.23-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V-270.26z" />
+             <path class="st4" d="M-1807.53-278.52h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-1807.53-278.52z
+				 M-1805.84-272.71l-2.43,6.2h4.88L-1805.84-272.71z" />
+             <path class="st4" d="M-1748.25-278.52h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-1748.25-278.52z
+				 M-1746.56-272.71l-2.43,6.2h4.88L-1746.56-272.71z" />
+             <path class="st4" d="M-1792.77-278.52h5.98l8.49,13.88h0.06v-13.88h4.4v19.97h-5.75l-8.71-14.21h-0.06v14.21h-4.4V-278.52z" />
+             <path class="st4" d="M-1765.26-274.63h-5.51v-3.89h15.79v3.89h-5.88v16.08h-4.4V-274.63z" />
+             <path class="st4" d="M-1871.41-258.24c-4.64,0-7.27-2.71-7.27-7.64l0.01-10.72h-2.26v-1.92h7.27v1.92h-2.55l-0.01,10.44
+				c0,4.24,1.5,5.88,4.86,5.88c3.22,0,5.15-1.3,5.15-6.25l0.01-10.07h-2.55v-1.92h7.27v1.92h-2.26l-0.01,10.41
+				C-1863.75-261.27-1866.21-258.24-1871.41-258.24z" />
+             <path class="st4" d="M-1843.97-265.2c-0.51,3.28-2.8,4.95-6.11,4.95c-4.36,0-6.96-3.11-6.96-8.26v-0.23
+				c0-5.09,2.8-8.34,6.98-8.34c3.08,0,5.18,1.3,6,4.67h2.06l0-6.11h-2.21l0,2.21c-1.05-1.87-3.25-2.71-5.8-2.71
+				c-5.57,0-9.59,4.33-9.59,10.32v0.23c0,6.22,3.59,10.24,9.45,10.24c4.45,0,7.63-2.22,8.41-6.72L-1843.97-265.2z" />
+             <path class="st4" d="M-1817.34-264.7c0,3.8-3.22,6.46-7.82,6.46c-3.69,0-6.33-1.24-7.87-3.69l3.02-2.58
+				c0.49,0.7,2.17,2.72,5.22,2.72c1.91,0,3.09-0.83,3.09-2.16c0-1.69-1.1-2.06-3.88-2.84c-3.29-0.92-6.63-2.34-6.63-5.99
+				c0-3.67,3.1-6.24,7.54-6.24c1.78,0,5.03,0.42,6.81,3.19l-2.8,2.44c-1.06-1.4-2.54-2.08-4.5-2.08c-1.97,0-2.69,1.37-2.69,2.29
+				c0,1.46,1.94,2.09,4.29,2.72C-1820.56-269.69-1817.34-268.52-1817.34-264.7z" />
+            </g>
+           </g> 
+           <g>
+            <g>
+             <path class="st6" d="M-1881.19-461.57v-2.86h3.78v-24.32h-3.78v-2.86h11.22v2.86h-3.78v24.32h3.78v2.86H-1881.19z" />
+             <path class="st6" d="M-1867.59-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-1867.59z" />
+             <path class="st6" d="M-1841.63-461.57v-2.73h3.07v-16.3h-3.15v-2.94h3.15v-3.57c0-4.45,2.18-7.06,6.55-7.06
+				c1.13,0,1.72,0.13,2.6,0.42v2.94c-0.63-0.25-1.51-0.46-2.48-0.46c-2.27,0-3.19,1.55-3.19,3.82v3.91h5.38v2.94h-5.38v16.3h3.95
+				v2.73H-1841.63z" />
+             <path class="st6" d="M-1827.94-472.36v-0.34c0-6.6,4.58-11.22,10.8-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.21-10.84,11.21C-1823.44-461.19-1827.94-465.93-1827.94-472.36z M-1809.96-472.36v-0.29
+				c0-5.08-2.81-8.36-7.18-8.36c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28
+				C-1812.73-464.09-1809.96-467.41-1809.96-472.36z" />
+             <path class="st6" d="M-1803.83-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v4.2c1.05-2.31,3.28-4.54,7.9-4.58v3.44
+				c-4.79-0.04-7.9,1.47-7.9,6.85v9.33h3.36v2.73H-1803.83z" />
+             <path class="st6" d="M-1786.86-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.61c0.88-2.1,3.28-3.99,6.43-3.99
+				c2.81,0,5.29,1.18,6.43,4.45c1.47-3.07,4.54-4.45,7.27-4.45c3.95,0,7.27,2.35,7.27,8.74v10.88h3.07v2.73h-9.7v-2.73h3.15v-11.13
+				c0-3.86-1.51-5.46-4.54-5.46c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73h-9.79v-2.73h3.15v-11.13c0-3.86-1.51-5.46-4.54-5.46
+				c-2.86,0-5.67,1.93-5.67,5.88v10.71h3.15v2.73H-1786.86z" />
+             <path class="st6" d="M-1740.58-461.19c-3.99,0-7.14-1.97-7.14-6.47c0-5.12,5.29-6.8,10.84-6.8h3.07v-1.6
+				c0-3.7-1.47-4.96-4.62-4.96c-2.94,0-4.54,1.09-4.87,3.95h-3.49c0.42-5.17,4.37-6.85,8.53-6.85c4.12,0,7.94,1.51,7.94,7.86v11.76
+				h2.94v2.73h-6.43v-3.03C-1735.29-462.32-1737.43-461.19-1740.58-461.19z M-1733.81-469.25v-2.73h-2.94
+				c-4.33,0-7.48,1.13-7.48,4.33c0,1.97,1.01,3.7,3.99,3.7C-1736.63-463.96-1733.81-465.85-1733.81-469.25z" />
+             <path class="st6" d="M-1723.44-467.07v-13.53h-3.15v-2.94h3.15v-5h3.49v5h5.67v2.94h-5.67v13.19c0,2.1,0.97,3.19,3.15,3.19
+				c0.88,0,1.85-0.17,2.86-0.5v2.94c-0.97,0.29-1.89,0.5-3.15,0.5C-1721.51-461.27-1723.44-463.62-1723.44-467.07z" />
+             <path class="st6" d="M-1711.47-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v19.24h3.15v2.73H-1711.47z M-1709.25-490.47
+				c0-1.34,1.09-2.35,2.39-2.35c1.3,0,2.39,1.01,2.39,2.35c0,1.34-1.09,2.39-2.39,2.39
+				C-1708.15-488.07-1709.25-489.12-1709.25-490.47z" />
+             <path class="st6" d="M-1699.67-472.36v-0.34c0-6.6,4.58-11.22,10.8-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.21-10.84,11.21C-1695.18-461.19-1699.67-465.93-1699.67-472.36z M-1681.69-472.36v-0.29
+				c0-5.08-2.81-8.36-7.18-8.36c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28
+				C-1684.46-464.09-1681.69-467.41-1681.69-472.36z" />
+             <path class="st6" d="M-1675.56-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-1675.56z" />
+             <path class="st6" d="M-1633.52-461.57v-2.86h4.12v-24.2h-7.6v4.58h-3.32v-7.56h25.5v7.56h-3.32v-4.58h-7.6v24.2h4.12v2.86
+				H-1633.52z" />
+             <path class="st6" d="M-1614.41-472.32v-0.34c0-6.64,4.24-11.26,10.29-11.26c5.08,0,9.87,3.07,9.87,10.92v1.13h-16.55
+				c0.17,5,2.56,7.77,7.06,7.77c3.4,0,5.38-1.26,5.84-3.82h3.49c-0.76,4.41-4.41,6.72-9.37,6.72
+				C-1610-461.19-1614.41-465.56-1614.41-472.32z M-1597.82-474.67c-0.34-4.54-2.69-6.34-6.3-6.34c-3.57,0-5.96,2.44-6.55,6.34
+				H-1597.82z" />
+             <path class="st6" d="M-1574.42-483.54h3.07v7.44h-2.98c-0.76-2.94-2.77-4.91-6.51-4.91c-3.99,0-7.06,3.19-7.06,8.36v0.34
+				c0,5.38,2.94,8.23,7.18,8.23c3.11,0,5.92-1.81,6.3-5.38h3.23c-0.46,4.75-4.29,8.28-9.58,8.28c-6.13,0-10.75-4.33-10.75-11.13
+				v-0.34c0-6.72,4.79-11.26,10.67-11.26c3.7,0,5.54,1.47,6.43,3.23V-483.54z" />
+             <path class="st6" d="M-1568.46-461.57v-2.73h3.07v-26.89h-3.15v-2.86h6.64v14.2c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-1568.46z" />
+             <path class="st6" d="M-1542.47-461.57v-2.73h3.07v-16.38h-3.15v-2.86h6.64v3.7c1.01-2.06,3.4-4.07,6.89-4.07
+				c4.41,0,7.65,2.35,7.65,8.7v10.92h3.07v2.73h-9.7v-2.73h3.15v-11.17c0-3.7-1.68-5.42-5.08-5.42c-3.11,0-5.96,2.06-5.96,5.92
+				v10.67h3.15v2.73H-1542.47z" />
+             <path class="st6" d="M-1516.43-472.36v-0.34c0-6.6,4.58-11.22,10.8-11.22s10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.21-10.84,11.21S-1516.43-465.93-1516.43-472.36z M-1498.45-472.36v-0.29c0-5.08-2.82-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-1501.22-464.09-1498.45-467.41-1498.45-472.36z" />
+             <path class="st6" d="M-1492.53-461.57v-2.73h3.07v-26.89h-3.15v-2.86h6.68v29.74h3.07v2.73H-1492.53z" />
+             <path class="st6" d="M-1480.98-472.36v-0.34c0-6.6,4.58-11.22,10.8-11.22c6.22,0,10.8,4.58,10.8,11.17v0.34
+				c0,6.64-4.58,11.21-10.84,11.21C-1476.48-461.19-1480.98-465.93-1480.98-472.36z M-1463-472.36v-0.29c0-5.08-2.81-8.36-7.18-8.36
+				c-4.41,0-7.18,3.28-7.18,8.32v0.34c0,5,2.73,8.28,7.18,8.28C-1465.77-464.09-1463-467.41-1463-472.36z" />
+             <path class="st6" d="M-1456.16-460.31h3.57c0.5,2.52,2.6,3.82,6.34,3.82c4.33,0,7.06-2.06,7.06-6.76v-3.19
+				c-1.26,2.14-4.24,4.16-7.43,4.16c-5.76,0-10-4.37-10-10.42v-0.29c0-5.97,4.2-10.92,10.25-10.92c3.65,0,5.92,1.76,7.18,3.91v-3.53
+				h6.47v2.86h-2.98v17.64c-0.04,6.38-4.37,9.49-10.5,9.49C-1452.71-453.54-1455.57-456.61-1456.16-460.31z M-1439.06-472.95v-0.29
+				c0-4.92-2.69-7.77-6.97-7.77c-4.37,0-6.97,3.23-6.97,7.86v0.34c0,4.79,3.07,7.64,6.76,7.64
+				C-1442.17-465.18-1439.06-468.03-1439.06-472.95z" />
+             <path class="st6" d="M-1411.3-480.68l-11.05,26.76h-5.59v-2.73h3.36l3.02-7.18l-7.35-16.84h-2.77v-2.86h9.66v2.86h-3.19l5.5,12.9
+				l5-12.9h-3.32v-2.86h9.41v2.86H-1411.3z" />
+            </g>
+            <g>
+             <path class="st6" d="M-1642.75-533.55h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-1642.75-533.55z
+				 M-1641.06-527.74l-2.43,6.2h4.88L-1641.06-527.74z" />
+             <path class="st6" d="M-1668.1-533.55h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73
+				c0.7,0.37,1.26,0.88,1.69,1.54c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.31,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06
+				c0.66,0.09,1.25,0.28,1.79,0.55c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81
+				c0,1.05-0.23,1.93-0.68,2.64c-0.45,0.7-1.03,1.27-1.75,1.71s-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28h-8.18V-533.55z
+				 M-1663.7-525.56h3.19c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68
+				c0.16-0.28,0.24-0.62,0.24-1.02c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32
+				c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99V-525.56z M-1663.7-517.3h3.95c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39
+				s0.51-0.43,0.69-0.73c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66
+				c-0.36-0.15-0.74-0.25-1.16-0.31c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V-517.3z" />
+             <path class="st6" d="M-1628.33-533.55h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+				h-4.4V-533.55z M-1623.93-525.28h2.59c0.39,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.23-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V-525.28z" />
+             <path class="st6" d="M-1702.18-533.55h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-1702.18-533.55z
+				 M-1700.48-527.74l-2.43,6.2h4.88L-1700.48-527.74z" />
+             <path class="st6" d="M-1602.08-533.55h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-1602.08-533.55z
+				 M-1600.39-527.74l-2.43,6.2h4.88L-1600.39-527.74z" />
+             <path class="st6" d="M-1727.53-533.55h7.45c0.86,0,1.73,0.06,2.61,0.18c0.87,0.12,1.66,0.37,2.35,0.73
+				c0.7,0.37,1.26,0.88,1.69,1.54c0.43,0.66,0.65,1.53,0.65,2.62c0,1.13-0.31,2.06-0.94,2.81c-0.63,0.74-1.46,1.27-2.5,1.59v0.06
+				c0.66,0.09,1.26,0.28,1.79,0.55c0.54,0.27,1,0.62,1.38,1.04c0.39,0.42,0.68,0.92,0.89,1.48c0.21,0.56,0.31,1.17,0.31,1.81
+				c0,1.05-0.23,1.93-0.68,2.64c-0.45,0.7-1.03,1.27-1.75,1.71s-1.52,0.74-2.41,0.93c-0.89,0.19-1.78,0.28-2.67,0.28h-8.18V-533.55z
+				 M-1723.13-525.57h3.19c0.34,0,0.67-0.04,1-0.11c0.33-0.07,0.62-0.2,0.89-0.37c0.26-0.17,0.47-0.39,0.63-0.68
+				c0.16-0.28,0.24-0.62,0.24-1.02c0-0.41-0.09-0.76-0.27-1.03c-0.18-0.27-0.41-0.48-0.69-0.63c-0.28-0.15-0.6-0.26-0.96-0.32
+				c-0.36-0.07-0.71-0.1-1.04-0.1h-2.99V-525.57z M-1723.13-517.3h3.95c0.34,0,0.68-0.04,1.03-0.11c0.35-0.07,0.66-0.21,0.94-0.39
+				s0.51-0.43,0.69-0.73c0.18-0.3,0.27-0.67,0.27-1.1c0-0.47-0.12-0.85-0.35-1.14c-0.24-0.29-0.53-0.51-0.89-0.66
+				c-0.36-0.15-0.74-0.25-1.16-0.31c-0.41-0.06-0.8-0.08-1.16-0.08h-3.33V-517.3z" />
+             <path class="st6" d="M-1687.76-533.55h7.73c1.02,0,1.98,0.1,2.89,0.3c0.91,0.2,1.71,0.53,2.4,0.99c0.69,0.46,1.23,1.08,1.64,1.86
+				c0.4,0.78,0.61,1.75,0.61,2.92c0,1.41-0.37,2.61-1.1,3.6c-0.73,0.99-1.8,1.61-3.22,1.88l5.08,8.43h-5.27l-4.17-7.98h-2.17v7.98
+				h-4.4V-533.55z M-1683.36-525.29h2.59c0.4,0,0.81-0.01,1.26-0.04c0.44-0.03,0.84-0.11,1.2-0.25c0.36-0.14,0.65-0.36,0.89-0.66
+				c0.23-0.3,0.35-0.72,0.35-1.27c0-0.51-0.1-0.91-0.31-1.21c-0.21-0.3-0.47-0.53-0.79-0.69c-0.32-0.16-0.69-0.27-1.1-0.32
+				c-0.41-0.06-0.82-0.08-1.21-0.08h-2.88V-525.29z" />
+             <path class="st6" d="M-1807.53-533.55h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-1807.53-533.55z
+				 M-1805.84-527.74l-2.43,6.2h4.88L-1805.84-527.74z" />
+             <path class="st6" d="M-1748.25-533.55h3.64l8.69,19.97h-4.96l-1.72-4.23h-7.76l-1.66,4.23h-4.85L-1748.25-533.55z
+				 M-1746.56-527.74l-2.43,6.2h4.88L-1746.56-527.74z" />
+             <path class="st6" d="M-1792.77-533.55h5.98l8.49,13.88h0.06v-13.88h4.4v19.97h-5.75l-8.71-14.21h-0.06v14.21h-4.4V-533.55z" />
+             <path class="st6" d="M-1765.26-529.66h-5.51v-3.89h15.79v3.89h-5.88v16.08h-4.4V-529.66z" />
+             <path class="st6" d="M-1871.41-513.27c-4.64,0-7.27-2.71-7.27-7.64l0.01-10.72h-2.26v-1.92h7.27v1.92h-2.55l-0.01,10.44
+				c0,4.24,1.5,5.88,4.86,5.88c3.22,0,5.15-1.3,5.15-6.25l0.01-10.07h-2.55v-1.92h7.27v1.92h-2.26l-0.01,10.41
+				C-1863.75-516.29-1866.21-513.27-1871.41-513.27z" />
+             <path class="st6" d="M-1843.97-520.22c-0.51,3.28-2.8,4.95-6.11,4.95c-4.36,0-6.96-3.11-6.96-8.26v-0.23
+				c0-5.09,2.8-8.34,6.98-8.34c3.08,0,5.18,1.3,6,4.67h2.06l0-6.11h-2.21l0,2.21c-1.05-1.87-3.25-2.71-5.8-2.71
+				c-5.57,0-9.59,4.33-9.59,10.32v0.23c0,6.22,3.59,10.24,9.45,10.24c4.45,0,7.63-2.22,8.41-6.72L-1843.97-520.22z" />
+             <path class="st6" d="M-1817.34-519.72c0,3.8-3.22,6.46-7.82,6.46c-3.69,0-6.33-1.24-7.87-3.69l3.02-2.58
+				c0.49,0.7,2.17,2.72,5.22,2.72c1.91,0,3.09-0.83,3.09-2.16c0-1.69-1.1-2.06-3.88-2.84c-3.29-0.92-6.63-2.34-6.63-5.99
+				c0-3.67,3.1-6.24,7.54-6.24c1.78,0,5.03,0.42,6.81,3.19l-2.8,2.44c-1.06-1.4-2.54-2.08-4.5-2.08c-1.97,0-2.69,1.37-2.69,2.29
+				c0,1.46,1.94,2.09,4.29,2.72C-1820.56-524.71-1817.34-523.55-1817.34-519.72z" />
+            </g>
+           </g> 
+           <g>
+            <path class="st6" d="M-1899.92-792.17c-1.22,0.61-3.65,1.22-6.76,1.22c-7.22,0-12.65-4.56-12.65-12.96
+			c0-8.02,5.43-13.45,13.37-13.45c3.19,0,5.21,0.68,6.08,1.14l-0.8,2.7c-1.25-0.61-3.04-1.06-5.17-1.06c-6,0-9.99,3.84-9.99,10.56
+			c0,6.27,3.61,10.3,9.84,10.3c2.01,0,4.07-0.42,5.4-1.06L-1899.92-792.17z" />
+            <path class="st6" d="M-1874.2-802.58c-0.19-3.57-0.42-7.87-0.38-11.06h-0.11c-0.87,3-1.94,6.19-3.23,9.73l-4.52,12.42h-2.51
+			l-4.14-12.2c-1.22-3.61-2.24-6.91-2.96-9.95h-0.08c-0.08,3.19-0.27,7.49-0.49,11.32l-0.68,10.98h-3.15l1.79-25.61h4.22l4.37,12.39
+			c1.06,3.15,1.94,5.96,2.58,8.62h0.11c0.65-2.58,1.56-5.39,2.7-8.62l4.56-12.39h4.22l1.6,25.61h-3.23L-1874.2-802.58z" />
+            <path class="st6" d="M-1859.53-791.33v-10.87l-8.09-14.74h3.76l3.61,7.07c0.99,1.94,1.75,3.5,2.55,5.28h0.08
+			c0.72-1.67,1.6-3.34,2.58-5.28l3.69-7.07h3.76l-8.59,14.7v10.9H-1859.53z" />
+            <path class="st6" d="M-1844.94-816.94h3.31v12.35h0.11c0.68-0.99,1.37-1.9,2.01-2.74l7.83-9.61h4.1l-9.27,10.87l9.99,14.74h-3.91
+			l-8.44-12.58l-2.43,2.81v9.76h-3.31V-816.94z" />
+           </g> 
+           <g>
+            <path class="st6" d="M-1002.9-816.64c1.6-0.27,3.69-0.49,6.34-0.49c3.27,0,5.66,0.76,7.18,2.13c1.41,1.22,2.24,3.08,2.24,5.36
+			c0,2.32-0.68,4.14-1.98,5.47c-1.75,1.86-4.6,2.81-7.83,2.81c-0.99,0-1.9-0.04-2.66-0.23v10.26h-3.3V-816.64z M-999.6-804.29
+			c0.72,0.19,1.63,0.27,2.74,0.27c3.99,0,6.42-1.94,6.42-5.47c0-3.38-2.39-5.02-6.04-5.02c-1.44,0-2.54,0.11-3.12,0.27V-804.29z" />
+            <path class="st6" d="M-961.56-802.58c-0.19-3.57-0.42-7.87-0.38-11.06h-0.11c-0.87,3-1.94,6.19-3.23,9.73l-4.52,12.42h-2.51
+			l-4.14-12.2c-1.22-3.61-2.24-6.91-2.96-9.95h-0.08c-0.08,3.19-0.27,7.49-0.49,11.32l-0.68,10.98h-3.15l1.79-25.61h4.22l4.37,12.39
+			c1.06,3.15,1.94,5.96,2.58,8.62h0.12c0.64-2.58,1.56-5.39,2.7-8.62l4.56-12.39h4.22l1.6,25.61h-3.23L-961.56-802.58z" />
+            <path class="st6" d="M-953.05-795.36c1.48,0.91,3.65,1.67,5.93,1.67c3.38,0,5.36-1.79,5.36-4.37c0-2.39-1.37-3.76-4.82-5.09
+			c-4.18-1.48-6.76-3.65-6.76-7.26c0-3.99,3.31-6.95,8.28-6.95c2.62,0,4.52,0.61,5.66,1.25l-0.91,2.7
+			c-0.84-0.46-2.55-1.22-4.86-1.22c-3.5,0-4.83,2.09-4.83,3.84c0,2.39,1.56,3.57,5.09,4.94c4.33,1.67,6.54,3.76,6.54,7.52
+			c0,3.95-2.93,7.37-8.97,7.37c-2.47,0-5.17-0.72-6.54-1.63L-953.05-795.36z" />
+           </g> 
+           <g>
+            <path class="st6" d="M-39.19-816.6c1.67-0.34,4.07-0.53,6.34-0.53c3.53,0,5.81,0.65,7.41,2.09c1.29,1.14,2.01,2.89,2.01,4.86
+			c0,3.38-2.13,5.62-4.83,6.54v0.11c1.98,0.68,3.15,2.51,3.76,5.17c0.84,3.57,1.44,6.04,1.98,7.03h-3.42
+			c-0.42-0.72-0.99-2.93-1.71-6.12c-0.76-3.53-2.13-4.86-5.13-4.98h-3.12v11.09h-3.3V-816.6z M-35.88-804.93h3.38
+			c3.53,0,5.78-1.94,5.78-4.86c0-3.31-2.39-4.75-5.89-4.79c-1.6,0-2.74,0.15-3.27,0.3V-804.93z" />
+            <path class="st6" d="M0.86-792.47c-1.48,0.53-4.41,1.41-7.87,1.41c-3.88,0-7.07-0.99-9.57-3.38c-2.2-2.13-3.57-5.55-3.57-9.54
+			c0.04-7.64,5.28-13.22,13.87-13.22c2.96,0,5.28,0.65,6.38,1.18l-0.8,2.7c-1.37-0.61-3.08-1.1-5.66-1.1
+			c-6.23,0-10.3,3.88-10.3,10.3c0,6.5,3.91,10.33,9.88,10.33c2.17,0,3.65-0.3,4.41-0.68v-7.64h-5.21v-2.66h8.44V-792.47z" />
+            <path class="st6" d="M5.92-816.6c1.44-0.3,3.72-0.53,6.04-0.53c3.31,0,5.43,0.57,7.03,1.86c1.33,0.99,2.13,2.51,2.13,4.52
+			c0,2.47-1.63,4.63-4.33,5.62v0.08c2.43,0.61,5.28,2.62,5.28,6.42c0,2.2-0.87,3.88-2.17,5.13c-1.79,1.63-4.67,2.39-8.85,2.39
+			c-2.28,0-4.03-0.15-5.13-0.3V-816.6z M9.22-806.11h3c3.5,0,5.55-1.82,5.55-4.29c0-3-2.28-4.18-5.62-4.18
+			c-1.52,0-2.39,0.11-2.93,0.23V-806.11z M9.22-793.84c0.65,0.11,1.6,0.15,2.77,0.15c3.42,0,6.57-1.25,6.57-4.98
+			c0-3.5-3-4.94-6.61-4.94H9.22V-793.84z" />
+           </g> 
+          </g>
+         </svg> </a>
+       </div><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      </div>
+      <div id="navbar-collapse" class="navbar-collapse collapse">
+       <div class="region region-navigation-collapsible">
+        <div class="search-block-form block block-search block-search-form-block" data-drupal-selector="search-block-form" id="block-ucsbweb-search" role="search">
+         <h2 class="visually-hidden">Search</h2>
+         <form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+          <div class="form-item js-form-item form-type-search js-form-type-search form-item-keys js-form-item-keys form-no-label form-group"><label for="edit-keys" class="control-label sr-only">Search</label>
+           <div class="input-group">
+            <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" class="form-search form-control" placeholder="Search" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128"><span class="input-group-btn"><button type="submit" value="Search" class="button js-form-submit form-submit btn-primary btn icon-only" name=""><span class="sr-only">Search</span><span class="icon glyphicon glyphicon-search" aria-hidden="true"></span></button></span>
+           </div>
+           <div id="edit-keys--description" class="description help-block">
+             Enter the terms you wish to search for. 
+           </div>
+          </div>
+          <div class="form-actions form-group js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions"></div>
+         </form>
+        </div>
+        <nav aria-labelledby="block-mainnavigation-menu" id="block-mainnavigation">
+         <h2 class="visually-hidden" id="block-mainnavigation-menu">Main navigation</h2>
+         <ul class="menu nav navbar-nav">
+          <li class="expanded dropdown active"><a href="/index.php/explore-services" class="dropdown-toggle" data-toggle="dropdown">Explore Services <span class="caret"></span></a>
+           <div class="menu dropdown-menu">
+            <ul>
+             <li><a href="/index.php/explore-services" data-drupal-link-system-path="node/9">Overview</a></li>
+             <li><a href="/index.php/explore-services/administration-business" title="Administration and Business" data-drupal-link-system-path="node/73">Administration &amp; Business</a></li>
+             <li><a href="/index.php/explore-services/cable-tv-phones-two-way-radio" data-drupal-link-system-path="node/72">Cable TV, Phones, &amp; Two-Way Radio</a></li>
+             <li><a href="/index.php/explore-services/ucsb-campus-cloud" data-drupal-link-system-path="node/322">Campus Cloud</a></li>
+             <li><a href="/index.php/explore-services/email-messaging-and-collaboration" data-drupal-link-system-path="node/195">Email, Messaging, and Collaboration</a></li>
+             <li><a href="/index.php/explore-services/best-practices-flexible-work-arrangements" data-drupal-link-system-path="node/332">Flexible Work Arrangements</a></li>
+             <li><a href="/index.php/support-training/get-help" title="Help and Support" data-drupal-link-system-path="node/92">Help &amp; Support</a></li>
+             <li><a href="/index.php/explore-services/instructional-technology" title="Instructional Technology" data-drupal-link-system-path="node/79">Instructional Technology</a></li>
+             <li><a href="/index.php/mfa" data-drupal-link-system-path="node/254">MFA</a></li>
+             <li><a href="/index.php/explore-services/network-infrastructure-services" title="Network Infrastructure Services" data-drupal-link-system-path="node/71">Network Infrastructure Services</a></li>
+             <li><a href="/index.php/explore-services/research-computing" title="Research Computing" data-drupal-link-system-path="node/80">Research Computing</a></li>
+             <li><a href="/index.php/explore-services/security" title="Security" data-drupal-link-system-path="node/76">Security</a></li>
+             <li><a href="/index.php/explore-services/servers-and-large-data-storage" title="Servers and Large Data Storage" data-drupal-link-system-path="node/75">Servers and Large Data Storage</a></li>
+             <li><a href="/index.php/explore-services/special-purpose-tools" title="Special Purpose Tools" data-drupal-link-system-path="node/81">Special Purpose Tools</a></li>
+             <li><a href="/index.php/explore-services/student-services" title="Student Services" data-drupal-link-system-path="node/77">Student Services</a></li>
+             <li><a href="/index.php/explore-services/technical-training" title="Technical Training" data-drupal-link-system-path="node/78">Technical Training</a></li>
+             <li class="active"><a href="/index.php/explore-services/websites" title="Websites Services" data-drupal-link-system-path="node/74" class="is-active">Websites</a></li>
+             <li><a href="/index.php/explore-services/wifi" data-drupal-link-system-path="node/70">WiFi</a></li>
+            </ul>
+           </div></li>
+          <li class="expanded dropdown"><a href="/index.php/it-ucsb" class="dropdown-toggle" data-toggle="dropdown">IT at UCSB <span class="caret"></span></a>
+           <div class="menu dropdown-menu">
+            <ul>
+             <li><a href="/index.php/it-ucsb" data-drupal-link-system-path="node/4">Overview</a></li>
+             <li><a href="/index.php/it-ucsb/it-governance" title="IT Governance" data-drupal-link-system-path="node/84">IT Governance</a></li>
+             <li><a href="/index.php/it-ucsb/campus-it-organizations-departments" title="Campus IT Organizations &amp; Departments" data-drupal-link-system-path="node/87">Campus IT Organizations &amp; Departments</a></li>
+             <li><a href="https://cio.ucsb.edu/" target="_blank">Office of the Chief Information Officer</a></li>
+             <li><a href="https://cio.ucsb.edu/program.management" target="_blank" title="Program &amp; Project Management">Program &amp; Project Management</a></li>
+             <li><a href="/index.php/strategy" data-drupal-link-system-path="node/307">UCSB IT Strategy</a></li>
+             <li><a href="https://jobs.ucsb.edu/">Job Opportunities</a></li>
+             <li><a href="/index.php/it-ucsb/giving" data-drupal-link-system-path="node/22">Giving</a></li>
+             <li><a href="/index.php/lean-six-sigma" data-drupal-link-system-path="node/415">Lean Six Sigma</a></li>
+            </ul>
+           </div></li>
+          <li class="expanded dropdown"><a href="/index.php/it-security-uc-santa-barbara" class="dropdown-toggle" data-toggle="dropdown">Security <span class="caret"></span></a>
+           <div class="menu dropdown-menu">
+            <ul>
+             <li><a href="/index.php/it-security-uc-santa-barbara" title="Security at UC Santa Barbara" data-drupal-link-system-path="node/88">Overview</a></li>
+             <li><a href="/index.php/security/report-security-incident" data-drupal-link-system-path="node/12">Report a Security Incident</a></li>
+             <li><a href="/index.php/security/it-security-students" title="IT Security For Students" data-drupal-link-system-path="node/98">IT Security For Students</a></li>
+             <li><a href="/index.php/security/it-security-faculty-staff" data-drupal-link-system-path="node/118">IT Security For Faculty And Staff</a></li>
+             <li><a href="https://www.it.ucsb.edu/security/it-security-it-professionals-0">IT Security For IT Professionals</a></li>
+             <li><a href="/index.php/security/general-security-resources" data-drupal-link-system-path="node/384">General Security Resources</a></li>
+            </ul>
+           </div></li>
+          <li class="expanded dropdown"><a href="/index.php/support-training" class="dropdown-toggle" data-toggle="dropdown">Support &amp; Training <span class="caret"></span></a>
+           <div class="menu dropdown-menu">
+            <ul>
+             <li><a href="/index.php/support-training" data-drupal-link-system-path="node/3">Overview</a></li>
+             <li><a href="/index.php/support-training/get-help" title="Get Help" data-drupal-link-system-path="node/92">Get Help</a></li>
+            </ul>
+           </div></li>
+          <li><a href="https://status.ucsb.edu/" target="_blank" title="Service Status and Health">Service Status &amp; Health</a></li>
+          <li><a href="/index.php/news" title="News and Announcements" data-drupal-link-system-path="node/68">News &amp; Events</a></li>
+          <li><a href="/index.php/contact-us" data-drupal-link-system-path="node/236">Contact Us</a></li>
+         </ul>
+        </nav>
+       </div>
+       <div class="region region-navigation-quicklinks">
+        <nav aria-labelledby="block-quicklinks-menu" id="block-quicklinks">
+         <h2 class="visually-hidden" id="block-quicklinks-menu">Quick links</h2>
+         <ul class="menu nav">
+          <li><a href="/it-ucsb/contact-us" target="_blank">Contact IT Support</a></li>
+          <li><a href="https://timekeeping.ucsb.edu/" target="_blank">Electronic Timekeeping</a></li>
+          <li><a href="/mfa" data-drupal-link-system-path="node/254">MFA</a></li>
+          <li><a href="https://www.it.ucsb.edu/pulse-secure-campus-vpn">VPN</a></li>
+          <li><a href="http://ucsb.zoom.us/signin">Zoom Video Conferencing</a></li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main>
+     <div class="main-container container-fluid js-quickedit-main-content">
+      <div class="row">
+       <div class="content-header">
+        <div class="region region-header">
+         <ol class="breadcrumb">
+          <li><a href="/index.php/">UC Santa Barbara Information Technology</a></li>
+          <li><a href="/index.php/explore-services">Explore Services</a></li>
+          <li> Websites </li>
+         </ol>
+         <div data-drupal-messages-fallback class="hidden"></div>
+         <h1 class="page-header"><span property="schema:name">Websites</span></h1>
+        </div>
+       </div>
+       <div class="col-sm-12 main-content-wrapper">
+        <div class="main-content"><a id="main-content"></a>
+         <div class="region region-content">
+          <article data-history-node-id="74" about="/explore-services/websites" typeof="schema:WebPage" class="page full top-padding-none clearfix"><span property="schema:name" content="Websites" class="hidden"></span>
+           <div class="content">
+            <div class="field field--name-field-blades field--type-entity-reference-revisions field--label-hidden field--items">
+             <div class="paragraph paragraph--type--blade paragraph--view-mode--default col-sm-12">
+              <div class="inner">
+               <div class="columns">
+                <div class="paragraph paragraph--type--column paragraph--view-mode--default col-sm-12 col-md-12">
+                 <div class="inner">
+                  <div class="field field--name-field-body field--type-text-long field--label-hidden field--item">
+                   <h2><a href="/connect-sites-ucsb-hosted-websites"><strong>Connect Sites - UCSB Hosted Websites</strong></a></h2>
+                   <p>Connect Sites, a website hosting and content management services service, provides easy, self-editable content, simple web forms to create on the fly, and myriad advanced features available via plug-in "modules."</p>
+                   <h2><a href="/connect-web-analytics">Connect Web Analytics</a></h2>
+                   <p>Connect uses the Google Web Analytics&nbsp;tool for web usage discovery, collecting information to improve functionality&nbsp;and web content, and to monitor performance. Data is used to help answer specific questions about the usage and performance of the web site or individual web pages.</p>
+                   <h2><a href="/google-sites"><strong>Google Sites</strong></a></h2>
+                   <p>UC Santa Barbara continues to support Google Sites. However, at this time we advise against usage of this product due to lack of technical support and minimal customization of these sites. In the future, we plan to address these shortcomings through local resources and coordination with Google.</p>
+                   <h2><a href="/siteimprove"><strong>SiteImprove</strong></a></h2>
+                   <p>The SiteImprove contract with UCOP provides a system-wide tool for testing web accessibility. All UC campuses can use the SiteImprove tool to test and monitor compliance with web accessibility standards.&nbsp;</p>
+                   <h2><a href="/websites/subdomain-guidelines-and-requests">Subdomain Guidelines &amp; Requests</a></h2>
+                   <p>UC Santa Barbara top-level subdomain names are the electronic addresses used to find specific website destinations and other electronic campus services directly under the ucsb.edu domain. Internal subdomains are represented as xxx.ucsb.edu — for example, engineering.ucsb.edu, socialsciences.ucsb.edu, music.ucsb.edu, etc.</p>
+                   <p>&nbsp;</p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </main>
+    <footer>
+     <div class="footer container-fluid">
+      <div class="region region-footer">
+       <div class="contextual-region block block-block-content clearfix">
+        <div class="block-inner">
+         <div class="field field--name-field-blades field--type-entity-reference-revisions field--label-hidden field--items">
+          <div class="paragraph paragraph--type--column paragraph--view-mode--default col-sm-12 col-md-6">
+           <div class="inner">
+            <div class="field field--name-field-body field--type-text-long field--label-hidden field--item">
+             <div class="ucsb-wordmark">
+              <svg version="1.1" id="Template" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 294 22.5" style="enable-background:new 0 0 294 22.5;" xml:space="preserve">
+               <path d="M239.5,1.4h3.6l8.7,20h-5l-1.7-4.2h-7.8l-1.7,4.2h-4.9L239.5,1.4z M241.2,7.2l-2.4,6.2h4.9L241.2,7.2z
+                       M214.2,1.4h7.4c0.9,0,1.7,0.1,2.6,0.2c0.9,0.1,1.7,0.4,2.4,0.7c0.7,0.4,1.3,0.9,1.7,1.5c0.4,0.7,0.6,1.5,0.6,2.6
+                      c0,1.1-0.3,2.1-0.9,2.8c-0.6,0.7-1.5,1.3-2.5,1.6v0.1c0.7,0.1,1.3,0.3,1.8,0.5c0.5,0.3,1,0.6,1.4,1c0.4,0.4,0.7,0.9,0.9,1.5
+                      c0.2,0.6,0.3,1.2,0.3,1.8c0,1.1-0.2,1.9-0.7,2.6c-0.5,0.7-1,1.3-1.7,1.7c-0.7,0.4-1.5,0.7-2.4,0.9c-0.9,0.2-1.8,0.3-2.7,0.3h-8.2
+                      V1.4z M218.6,9.4h3.2c0.3,0,0.7,0,1-0.1c0.3-0.1,0.6-0.2,0.9-0.4c0.3-0.2,0.5-0.4,0.6-0.7c0.2-0.3,0.2-0.6,0.2-1
+                      c0-0.4-0.1-0.8-0.3-1c-0.2-0.3-0.4-0.5-0.7-0.6c-0.3-0.2-0.6-0.3-1-0.3c-0.4-0.1-0.7-0.1-1-0.1h-3V9.4z M218.6,17.6h3.9
+                      c0.3,0,0.7,0,1-0.1c0.3-0.1,0.7-0.2,0.9-0.4c0.3-0.2,0.5-0.4,0.7-0.7c0.2-0.3,0.3-0.7,0.3-1.1c0-0.5-0.1-0.9-0.4-1.1
+                      c-0.2-0.3-0.5-0.5-0.9-0.7c-0.4-0.2-0.7-0.3-1.2-0.3c-0.4-0.1-0.8-0.1-1.2-0.1h-3.3V17.6z M253.9,1.4h7.7c1,0,2,0.1,2.9,0.3
+                      c0.9,0.2,1.7,0.5,2.4,1c0.7,0.5,1.2,1.1,1.6,1.9c0.4,0.8,0.6,1.8,0.6,2.9c0,1.4-0.4,2.6-1.1,3.6c-0.7,1-1.8,1.6-3.2,1.9l5.1,8.4
+                      h-5.3l-4.2-8h-2.2v8h-4.4V1.4z M258.3,9.7h2.6c0.4,0,0.8,0,1.3,0c0.4,0,0.8-0.1,1.2-0.3c0.4-0.1,0.7-0.4,0.9-0.7
+                      c0.2-0.3,0.4-0.7,0.4-1.3c0-0.5-0.1-0.9-0.3-1.2c-0.2-0.3-0.5-0.5-0.8-0.7c-0.3-0.2-0.7-0.3-1.1-0.3c-0.4-0.1-0.8-0.1-1.2-0.1h-2.9
+                      V9.7z M180.1,1.4h3.6l8.7,20h-5l-1.7-4.2H178l-1.7,4.2h-4.9L180.1,1.4z M181.8,7.2l-2.4,6.2h4.9L181.8,7.2z M280.2,1.4h3.6l8.7,20
+                      h-5l-1.7-4.2h-7.8l-1.7,4.2h-4.9L280.2,1.4z M281.9,7.2l-2.4,6.2h4.9L281.9,7.2z M154.7,1.4h7.4c0.9,0,1.7,0.1,2.6,0.2
+                      c0.9,0.1,1.7,0.4,2.4,0.7c0.7,0.4,1.3,0.9,1.7,1.5c0.4,0.7,0.6,1.5,0.6,2.6c0,1.1-0.3,2.1-0.9,2.8c-0.6,0.7-1.5,1.3-2.5,1.6v0.1
+                      c0.7,0.1,1.3,0.3,1.8,0.5c0.5,0.3,1,0.6,1.4,1c0.4,0.4,0.7,0.9,0.9,1.5c0.2,0.6,0.3,1.2,0.3,1.8c0,1.1-0.2,1.9-0.7,2.6
+                      c-0.5,0.7-1,1.3-1.7,1.7c-0.7,0.4-1.5,0.7-2.4,0.9c-0.9,0.2-1.8,0.3-2.7,0.3h-8.2V1.4z M159.1,9.4h3.2c0.3,0,0.7,0,1-0.1
+                      c0.3-0.1,0.6-0.2,0.9-0.4c0.3-0.2,0.5-0.4,0.6-0.7c0.2-0.3,0.2-0.6,0.2-1c0-0.4-0.1-0.8-0.3-1c-0.2-0.3-0.4-0.5-0.7-0.6
+                      c-0.3-0.2-0.6-0.3-1-0.3c-0.4-0.1-0.7-0.1-1-0.1h-3V9.4z M159.1,17.6h3.9c0.3,0,0.7,0,1-0.1c0.3-0.1,0.7-0.2,0.9-0.4
+                      c0.3-0.2,0.5-0.4,0.7-0.7c0.2-0.3,0.3-0.7,0.3-1.1c0-0.5-0.1-0.9-0.4-1.1c-0.2-0.3-0.5-0.5-0.9-0.7c-0.4-0.2-0.7-0.3-1.2-0.3
+                      c-0.4-0.1-0.8-0.1-1.2-0.1h-3.3V17.6z M194.5,1.4h7.7c1,0,2,0.1,2.9,0.3c0.9,0.2,1.7,0.5,2.4,1c0.7,0.5,1.2,1.1,1.6,1.9
+                      c0.4,0.8,0.6,1.8,0.6,2.9c0,1.4-0.4,2.6-1.1,3.6c-0.7,1-1.8,1.6-3.2,1.9l5.1,8.4h-5.3l-4.2-8h-2.2v8h-4.4V1.4z M198.9,9.7h2.6
+                      c0.4,0,0.8,0,1.3,0c0.4,0,0.8-0.1,1.2-0.3c0.4-0.1,0.7-0.4,0.9-0.7c0.2-0.3,0.4-0.7,0.4-1.3c0-0.5-0.1-0.9-0.3-1.2
+                      c-0.2-0.3-0.5-0.5-0.8-0.7c-0.3-0.2-0.7-0.3-1.1-0.3c-0.4-0.1-0.8-0.1-1.2-0.1h-2.9V9.7z M74.7,1.4h3.6l8.7,20h-5l-1.7-4.2h-7.8
+                      L71,21.4h-4.9L74.7,1.4z M76.4,7.2L74,13.4h4.9L76.4,7.2z M134,1.4h3.6l8.7,20h-5l-1.7-4.2h-7.8l-1.7,4.2h-4.9L134,1.4z M135.7,7.2
+                      l-2.4,6.2h4.9L135.7,7.2z M89.5,1.4h6l8.5,13.9h0.1V1.4h4.4v20h-5.8L94,7.1h-0.1v14.2h-4.4V1.4z M117,5.3h-5.5V1.4h15.8v3.9h-5.9
+                      v16.1H117V5.3z M10.9,21.7c-4.6,0-7.3-2.7-7.3-7.6l0-10.7H1.3V1.4h7.3v1.9H6.1l0,10.4c0,4.2,1.5,5.9,4.9,5.9c3.2,0,5.1-1.3,5.1-6.2
+                      l0-10.1h-2.5V1.4h7.3v1.9h-2.3l0,10.4C18.5,18.7,16.1,21.7,10.9,21.7z M38.3,14.7c-0.5,3.3-2.8,4.9-6.1,4.9c-4.4,0-7-3.1-7-8.3v-0.2
+                      c0-5.1,2.8-8.3,7-8.3c3.1,0,5.2,1.3,6,4.7h2.1l0-6.1h-2.2l0,2.2c-1-1.9-3.3-2.7-5.8-2.7c-5.6,0-9.6,4.3-9.6,10.3v0.2
+                      c0,6.2,3.6,10.2,9.4,10.2c4.4,0,7.6-2.2,8.4-6.7L38.3,14.7z M58.7,9.4c-2.3-0.6-4.3-1.3-4.3-2.7c0-0.9,0.7-2.3,2.7-2.3
+                      c2,0,3.4,0.7,4.5,2.1l2.8-2.4c-1.8-2.8-5-3.2-6.8-3.2c-4.4,0-7.5,2.6-7.5,6.2c0,3.7,3.3,5.1,6.6,6c2.8,0.8,3.9,1.2,3.9,2.8
+                      c0,1.3-1.2,2.2-3.1,2.2c-3.1,0-4.7-2-5.2-2.7l-3,2.6c1.5,2.4,4.2,3.7,7.9,3.7c4.6,0,7.8-2.7,7.8-6.5C64.9,11.4,61.7,10.2,58.7,9.4z" />
+              </svg>
+             </div>
+             <div class="contact-info">
+              <div class="site-name">
+               <strong>UC Santa Barbara Information Technology</strong>
+              </div>
+              <div class="contact-line">
+               Santa Barbara, California 93106
+              </div>
+              <div class="contact-line">
+               (805) 893-5000
+              </div>
+             </div>
+             <p class="label">Connect</p>
+             <ul class="columns columns-3">
+              <li>
+               <svg height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M14.597317,22.75 L6.21586566,22.75 C5.68227649,22.75 5.25,22.3174553 5.25,21.7840739 L5.25,6.21585816 C5.25,5.68234104 5.68234439,5.25 6.21586566,5.25 L21.7842022,5.25 C22.3175877,5.25 22.75,5.68234104 22.75,6.21585816 L22.75,21.7840739 C22.75,22.3175232 22.3175198,22.75 21.7842022,22.75 L17.3247467,22.75 L17.3247467,15.9730356 L19.5994608,15.9730356 L19.940067,13.3319323 L17.3247467,13.3319323 L17.3247467,11.6457547 C17.3247467,10.8810943 17.5370823,10.3600035 18.6335952,10.3600035 L20.0321448,10.3593924 L20.0321448,7.99716843 C19.7902709,7.96498221 18.9600773,7.89307249 17.9942117,7.89307249 C15.9778041,7.89307249 14.597317,9.12388978 14.597317,11.3841907 L14.597317,13.3319323 L12.3167632,13.3319323 L12.3167632,15.9730356 L14.597317,15.9730356 L14.597317,22.75 L14.597317,22.75 Z" />
+               </svg><a href="https://www.facebook.com/ucsbsist/">UCSB IT</a></li>
+              <li>
+               <svg height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M22.4,22.4 L18.5322613,22.4 L18.5322613,16.7402062 C18.5322613,15.2587629 17.9272519,14.2474227 16.5968485,14.2474227 C15.5792392,14.2474227 15.013329,14.9298969 14.7499236,15.5876289 C14.6511465,15.8237113 14.6665804,16.1525773 14.6665804,16.4814433 L14.6665804,22.4 L10.8348542,22.4 C10.8348542,22.4 10.8842427,12.3742268 10.8348542,11.4628866 L14.6665804,11.4628866 L14.6665804,13.1793814 C14.8929445,12.428866 16.1173683,11.357732 18.0713017,11.357732 C20.4954551,11.357732 22.4,12.9309278 22.4,16.3185567 L22.4,22.4 L22.4,22.4 Z M6.95991298,10.0948454 L6.93521872,10.0948454 C5.70050564,10.0948454 4.9,9.25876289 4.9,8.19896907 C4.9,7.1185567 5.72417098,6.3 6.98357832,6.3 C8.24195673,6.3 9.01571025,7.11649485 9.04040452,8.19587629 C9.04040452,9.2556701 8.24195673,10.0948454 6.95991298,10.0948454 L6.95991298,10.0948454 L6.95991298,10.0948454 Z M5.34140992,11.4628866 L8.7523048,11.4628866 L8.7523048,22.4 L5.34140992,22.4 L5.34140992,11.4628866 L5.34140992,11.4628866 Z" />
+               </svg><a href="https://www.linkedin.com/company/19077980/">UCSB IT</a></li>
+              <li>
+               <svg height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M23.2608696,8.77573131 C22.5899002,9.07692308 21.8674828,9.28060672 21.1096948,9.3716143 C21.8835603,8.9035753 22.4773575,8.16143012 22.7571067,7.27735645 C22.0325455,7.71072589 21.2318841,8.02600217 20.3765589,8.19501625 C19.6948713,7.45937161 18.7205724,7 17.6423054,7 C15.5747338,7 13.8973105,8.69555796 13.8973105,10.7865655 C13.8973105,11.0834236 13.9294655,11.3716143 13.9937757,11.6489707 C10.8800922,11.4907909 8.12011453,9.98483207 6.27119747,7.69122427 C5.94857484,8.2524377 5.76421905,8.9035753 5.76421905,9.59696641 C5.76421905,10.9100758 6.42554185,12.0693391 7.430924,12.7486457 C6.81783382,12.7302275 6.23904239,12.5579632 5.73313581,12.276273 L5.73313581,12.3228602 C5.73313581,14.1581798 7.02469816,15.6890574 8.73963573,16.035753 C8.42558779,16.1245937 8.09439047,16.1690141 7.75247479,16.1690141 C7.5113117,16.1690141 7.27550778,16.1462622 7.04720672,16.1018418 C7.52417373,17.6056338 8.90684214,18.7009751 10.5467512,18.7302275 C9.26483536,19.7464789 7.6485067,20.3521127 5.89391121,20.3521127 C5.59165346,20.3521127 5.29261122,20.3347779 5,20.3001083 C6.65813026,21.3726977 8.62816479,22 10.7428972,22 C17.6348025,22 21.402306,16.2307692 21.402306,11.2264355 C21.402306,11.0617551 21.3990905,10.8970748 21.3926595,10.7356446 C22.1247234,10.2015168 22.7603222,9.53521127 23.2608696,8.77573131" />
+               </svg><a href="https://twitter.com/UCSBIT">UCSB IT</a></li>
+              <li>
+               <svg height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M14.597317,22.75 L6.21586566,22.75 C5.68227649,22.75 5.25,22.3174553 5.25,21.7840739 L5.25,6.21585816 C5.25,5.68234104 5.68234439,5.25 6.21586566,5.25 L21.7842022,5.25 C22.3175877,5.25 22.75,5.68234104 22.75,6.21585816 L22.75,21.7840739 C22.75,22.3175232 22.3175198,22.75 21.7842022,22.75 L17.3247467,22.75 L17.3247467,15.9730356 L19.5994608,15.9730356 L19.940067,13.3319323 L17.3247467,13.3319323 L17.3247467,11.6457547 C17.3247467,10.8810943 17.5370823,10.3600035 18.6335952,10.3600035 L20.0321448,10.3593924 L20.0321448,7.99716843 C19.7902709,7.96498221 18.9600773,7.89307249 17.9942117,7.89307249 C15.9778041,7.89307249 14.597317,9.12388978 14.597317,11.3841907 L14.597317,13.3319323 L12.3167632,13.3319323 L12.3167632,15.9730356 L14.597317,15.9730356 L14.597317,22.75 L14.597317,22.75 Z" />
+               </svg><a href="https://www.facebook.com/UCSB.Infosec/">UCSB IT Security</a></li>
+              <li>
+               <svg height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M23.2608696,8.77573131 C22.5899002,9.07692308 21.8674828,9.28060672 21.1096948,9.3716143 C21.8835603,8.9035753 22.4773575,8.16143012 22.7571067,7.27735645 C22.0325455,7.71072589 21.2318841,8.02600217 20.3765589,8.19501625 C19.6948713,7.45937161 18.7205724,7 17.6423054,7 C15.5747338,7 13.8973105,8.69555796 13.8973105,10.7865655 C13.8973105,11.0834236 13.9294655,11.3716143 13.9937757,11.6489707 C10.8800922,11.4907909 8.12011453,9.98483207 6.27119747,7.69122427 C5.94857484,8.2524377 5.76421905,8.9035753 5.76421905,9.59696641 C5.76421905,10.9100758 6.42554185,12.0693391 7.430924,12.7486457 C6.81783382,12.7302275 6.23904239,12.5579632 5.73313581,12.276273 L5.73313581,12.3228602 C5.73313581,14.1581798 7.02469816,15.6890574 8.73963573,16.035753 C8.42558779,16.1245937 8.09439047,16.1690141 7.75247479,16.1690141 C7.5113117,16.1690141 7.27550778,16.1462622 7.04720672,16.1018418 C7.52417373,17.6056338 8.90684214,18.7009751 10.5467512,18.7302275 C9.26483536,19.7464789 7.6485067,20.3521127 5.89391121,20.3521127 C5.59165346,20.3521127 5.29261122,20.3347779 5,20.3001083 C6.65813026,21.3726977 8.62816479,22 10.7428972,22 C17.6348025,22 21.402306,16.2307692 21.402306,11.2264355 C21.402306,11.0617551 21.3990905,10.8970748 21.3926595,10.7356446 C22.1247234,10.2015168 22.7603222,9.53521127 23.2608696,8.77573131" />
+               </svg><a href="https://twitter.com/UCSBInfoSec">UCSB IT Security</a></li>
+              <li>
+               <svg height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M14.0000174,5.25 C16.3763573,5.25 16.6743333,5.26007262 17.6076138,5.3026555 C18.5389493,5.34513418 19.175018,5.49306279 19.7315825,5.70938103 C20.3069723,5.93295851 20.7949388,6.23215012 21.2814117,6.7185883 C21.7678499,7.20506122 22.0670415,7.69302766 22.2906537,8.26841752 C22.5069372,8.82498199 22.6548658,9.46105071 22.6973445,10.3923862 C22.7399274,11.3256667 22.75,11.6236427 22.75,14.0000174 C22.75,16.3763573 22.7399274,16.6743333 22.6973445,17.6076138 C22.6548658,18.5389493 22.5069372,19.175018 22.2906537,19.7315825 C22.0670415,20.3069723 21.7678499,20.7949388 21.2814117,21.2814117 C20.7949388,21.7678499 20.3069723,22.0670415 19.7315825,22.2906537 C19.175018,22.5069372 18.5389493,22.6548658 17.6076138,22.6973445 C16.6743333,22.7399274 16.3763573,22.75 14.0000174,22.75 C11.6236427,22.75 11.3256667,22.7399274 10.3923862,22.6973445 C9.46105071,22.6548658 8.82498199,22.5069372 8.26841752,22.2906537 C7.69302766,22.0670415 7.20506122,21.7678499 6.7185883,21.2814117 C6.23215012,20.7949388 5.93295851,20.3069723 5.70938103,19.7315825 C5.49306279,19.175018 5.34513418,18.5389493 5.3026555,17.6076138 C5.26007262,16.6743333 5.25,16.3763573 5.25,14.0000174 C5.25,11.6236427 5.26007262,11.3256667 5.3026555,10.3923862 C5.34513418,9.46105071 5.49306279,8.82498199 5.70938103,8.26841752 C5.93295851,7.69302766 6.23215012,7.20506122 6.7185883,6.7185883 C7.20506122,6.23215012 7.69302766,5.93295851 8.26841752,5.70938103 C8.82498199,5.49306279 9.46105071,5.34513418 10.3923862,5.3026555 C11.3256667,5.26007262 11.6236427,5.25 14.0000174,5.25 Z M14.0000174,6.82657376 C11.6636553,6.82657376 11.3869013,6.83550019 10.4642491,6.8775968 C9.61113278,6.91649796 9.14782689,7.05904293 8.83950046,7.1788724 C8.431073,7.33760303 8.13959215,7.52721146 7.83341917,7.83341917 C7.52721146,8.13959215 7.33760303,8.431073 7.1788724,8.83950046 C7.05904293,9.14782689 6.91649796,9.61113278 6.8775968,10.4642491 C6.83550019,11.3869013 6.82657376,11.6636553 6.82657376,14.0000174 C6.82657376,16.3363447 6.83550019,16.6130987 6.8775968,17.5357509 C6.91649796,18.3888672 7.05904293,18.8521731 7.1788724,19.1604995 C7.33760303,19.568927 7.52724619,19.8604078 7.83341917,20.1665808 C8.13959215,20.4727885 8.431073,20.662397 8.83950046,20.8211276 C9.14782689,20.9409571 9.61113278,21.083502 10.4642491,21.1224032 C11.3867971,21.1644998 11.6634816,21.1734262 14.0000174,21.1734262 C16.3365184,21.1734262 16.6132376,21.1644998 17.5357509,21.1224032 C18.3888672,21.083502 18.8521731,20.9409571 19.1604995,20.8211276 C19.568927,20.662397 19.8604078,20.4727885 20.1665808,20.1665808 C20.4727885,19.8604078 20.662397,19.568927 20.8211276,19.1604995 C20.9409571,18.8521731 21.083502,18.3888672 21.1224032,17.5357509 C21.1644998,16.6130987 21.1734262,16.3363447 21.1734262,14.0000174 C21.1734262,11.6636553 21.1644998,11.3869013 21.1224032,10.4642491 C21.083502,9.61113278 20.9409571,9.14782689 20.8211276,8.83950046 C20.662397,8.431073 20.4727885,8.13959215 20.1665808,7.83341917 C19.8604078,7.52721146 19.568927,7.33760303 19.1604995,7.1788724 C18.8521731,7.05904293 18.3888672,6.91649796 17.5357509,6.8775968 C16.6130987,6.83550019 16.3363447,6.82657376 14.0000174,6.82657376 Z M14.0000174,9.50675957 C16.4815641,9.50675957 18.4932404,11.5184359 18.4932404,14.0000174 C18.4932404,16.4815641 16.4815641,18.4932404 14.0000174,18.4932404 C11.5184359,18.4932404 9.50675957,16.4815641 9.50675957,14.0000174 C9.50675957,11.5184359 11.5184359,9.50675957 14.0000174,9.50675957 Z M14.0000174,16.9166667 C15.610838,16.9166667 16.9166667,15.610838 16.9166667,14.0000174 C16.9166667,12.389162 15.610838,11.0833333 14.0000174,11.0833333 C12.389162,11.0833333 11.0833333,12.389162 11.0833333,14.0000174 C11.0833333,15.610838 12.389162,16.9166667 14.0000174,16.9166667 Z M19.7207805,9.32923829 C19.7207805,9.90914346 19.2506669,10.3792223 18.6707617,10.3792223 C18.0908913,10.3792223 17.6207777,9.90914346 17.6207777,9.32923829 C17.6207777,8.74933312 18.0908913,8.27921954 18.6707617,8.27921954 C19.2506669,8.27921954 19.7207805,8.74933312 19.7207805,9.32923829 Z" />
+               </svg><a href="https://www.instagram.com/ucsbinfosec/">UCSB IT Security</a></li>
+              <li>
+               <svg height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M11.728,16.5817301 L11.7273913,10.9890701 L16.9901739,13.7950415 L11.728,16.5817301 Z M23.2834783,10.0199493 C23.2834783,10.0199493 23.0929565,8.64837606 22.5092174,8.04438619 C21.7684348,7.2512996 20.9381739,7.24756742 20.5577391,7.2015373 C17.832,7 13.7433913,7 13.7433913,7 L13.7348696,7 C13.7348696,7 9.64626087,7 6.92052174,7.2015373 C6.53947826,7.24756742 5.70982609,7.2512996 4.96843478,8.04438619 C4.38469565,8.64837606 4.19478261,10.0199493 4.19478261,10.0199493 C4.19478261,10.0199493 4,11.6310037 4,13.241436 L4,14.7517217 C4,16.362776 4.19478261,17.9732083 4.19478261,17.9732083 C4.19478261,17.9732083 4.38469565,19.3447816 4.96843478,19.9487715 C5.70982609,20.7418581 6.68313043,20.7169769 7.11652174,20.7997068 C8.67478261,20.9527258 13.7391304,21 13.7391304,21 C13.7391304,21 17.832,20.9937797 20.5577391,20.7922424 C20.9381739,20.7455903 21.7684348,20.7418581 22.5092174,19.9487715 C23.0929565,19.3447816 23.2834783,17.9732083 23.2834783,17.9732083 C23.2834783,17.9732083 23.4782609,16.362776 23.4782609,14.7517217 L23.4782609,13.241436 C23.4782609,11.6310037 23.2834783,10.0199493 23.2834783,10.0199493 L23.2834783,10.0199493 Z" />
+               </svg><a href="https://www.youtube.com/channel/UCII_0dhdEhQOM-6x_7u1lIg?view_as=subscriber">UCSB IT Security</a></li>
+              <li>
+               <svg height="28px" version="1.1" viewbox="0 0 28 28" width="28px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path d="M22.4,22.4 L18.5322613,22.4 L18.5322613,16.7402062 C18.5322613,15.2587629 17.9272519,14.2474227 16.5968485,14.2474227 C15.5792392,14.2474227 15.013329,14.9298969 14.7499236,15.5876289 C14.6511465,15.8237113 14.6665804,16.1525773 14.6665804,16.4814433 L14.6665804,22.4 L10.8348542,22.4 C10.8348542,22.4 10.8842427,12.3742268 10.8348542,11.4628866 L14.6665804,11.4628866 L14.6665804,13.1793814 C14.8929445,12.428866 16.1173683,11.357732 18.0713017,11.357732 C20.4954551,11.357732 22.4,12.9309278 22.4,16.3185567 L22.4,22.4 L22.4,22.4 Z M6.95991298,10.0948454 L6.93521872,10.0948454 C5.70050564,10.0948454 4.9,9.25876289 4.9,8.19896907 C4.9,7.1185567 5.72417098,6.3 6.98357832,6.3 C8.24195673,6.3 9.01571025,7.11649485 9.04040452,8.19587629 C9.04040452,9.2556701 8.24195673,10.0948454 6.95991298,10.0948454 L6.95991298,10.0948454 L6.95991298,10.0948454 Z M5.34140992,11.4628866 L8.7523048,11.4628866 L8.7523048,22.4 L5.34140992,22.4 L5.34140992,11.4628866 L5.34140992,11.4628866 Z" />
+               </svg><a href="https://www.linkedin.com/company/ucsbinfosec/">UCSB IT Security</a></li>
+             </ul>
+            </div>
+           </div>
+          </div>
+          <div class="paragraph paragraph--type--column paragraph--view-mode--default col-sm-6 col-md-3 second-column">
+           <div class="inner">
+            <div class="field field--name-field-body field--type-text-long field--label-hidden field--item">
+             <p class="label">Helpful Links</p>
+             <p><a href="/security/report-security-incident">Report a Security Incident</a>
+              <svg class="offsite" width="16px" height="16px" viewbox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <path d="M12.7807612,2.3 L10.45,2.3 C10.0910149,2.3 9.8,2.00898509 9.8,1.65 C9.8,1.29101491 10.0910149,1 10.45,1 L14.35,1 C14.7089851,1 15,1.29101491 15,1.65 L15,5.55 C15,5.90898509 14.7089851,6.2 14.35,6.2 C13.9910149,6.2 13.7,5.90898509 13.7,5.55 L13.7,3.21923882 L7.65961941,9.25961941 C7.40577862,9.5134602 6.99422138,9.5134602 6.74038059,9.25961941 C6.4865398,9.00577862 6.4865398,8.59422138 6.74038059,8.34038059 L12.7807612,2.3 Z M11.75,8.15 C11.75,7.79101491 12.0410149,7.5 12.4,7.5 C12.7589851,7.5 13.05,7.79101491 13.05,8.15 L13.05,12.05 C13.05,13.1269553 12.1769553,14 11.1,14 L3.95,14 C2.87304474,14 2,13.1269553 2,12.05 L2,4.9 C2,3.82304474 2.87304474,2.95 3.95,2.95 L7.85,2.95 C8.20898509,2.95 8.5,3.24101491 8.5,3.6 C8.5,3.95898509 8.20898509,4.25 7.85,4.25 L3.95,4.25 C3.59101491,4.25 3.3,4.54101491 3.3,4.9 L3.3,12.05 C3.3,12.4089851 3.59101491,12.7 3.95,12.7 L11.1,12.7 C11.4589851,12.7 11.75,12.4089851 11.75,12.05 L11.75,8.15 Z" fill="#005aa3" />
+              </svg></p>
+             <p><a href="/it-services-catalog">Submit an IT Support Ticket</a>
+              <svg class="offsite" width="16px" height="16px" viewbox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <path d="M12.7807612,2.3 L10.45,2.3 C10.0910149,2.3 9.8,2.00898509 9.8,1.65 C9.8,1.29101491 10.0910149,1 10.45,1 L14.35,1 C14.7089851,1 15,1.29101491 15,1.65 L15,5.55 C15,5.90898509 14.7089851,6.2 14.35,6.2 C13.9910149,6.2 13.7,5.90898509 13.7,5.55 L13.7,3.21923882 L7.65961941,9.25961941 C7.40577862,9.5134602 6.99422138,9.5134602 6.74038059,9.25961941 C6.4865398,9.00577862 6.4865398,8.59422138 6.74038059,8.34038059 L12.7807612,2.3 Z M11.75,8.15 C11.75,7.79101491 12.0410149,7.5 12.4,7.5 C12.7589851,7.5 13.05,7.79101491 13.05,8.15 L13.05,12.05 C13.05,13.1269553 12.1769553,14 11.1,14 L3.95,14 C2.87304474,14 2,13.1269553 2,12.05 L2,4.9 C2,3.82304474 2.87304474,2.95 3.95,2.95 L7.85,2.95 C8.20898509,2.95 8.5,3.24101491 8.5,3.6 C8.5,3.95898509 8.20898509,4.25 7.85,4.25 L3.95,4.25 C3.59101491,4.25 3.3,4.54101491 3.3,4.9 L3.3,12.05 C3.3,12.4089851 3.59101491,12.7 3.95,12.7 L11.1,12.7 C11.4589851,12.7 11.75,12.4089851 11.75,12.05 L11.75,8.15 Z" fill="#005aa3" />
+              </svg></p>
+             <p><a href="/connect-g-suite-education">Connect Email &amp; Calendar</a>
+              <svg class="offsite" width="16px" height="16px" viewbox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <path d="M12.7807612,2.3 L10.45,2.3 C10.0910149,2.3 9.8,2.00898509 9.8,1.65 C9.8,1.29101491 10.0910149,1 10.45,1 L14.35,1 C14.7089851,1 15,1.29101491 15,1.65 L15,5.55 C15,5.90898509 14.7089851,6.2 14.35,6.2 C13.9910149,6.2 13.7,5.90898509 13.7,5.55 L13.7,3.21923882 L7.65961941,9.25961941 C7.40577862,9.5134602 6.99422138,9.5134602 6.74038059,9.25961941 C6.4865398,9.00577862 6.4865398,8.59422138 6.74038059,8.34038059 L12.7807612,2.3 Z M11.75,8.15 C11.75,7.79101491 12.0410149,7.5 12.4,7.5 C12.7589851,7.5 13.05,7.79101491 13.05,8.15 L13.05,12.05 C13.05,13.1269553 12.1769553,14 11.1,14 L3.95,14 C2.87304474,14 2,13.1269553 2,12.05 L2,4.9 C2,3.82304474 2.87304474,2.95 3.95,2.95 L7.85,2.95 C8.20898509,2.95 8.5,3.24101491 8.5,3.6 C8.5,3.95898509 8.20898509,4.25 7.85,4.25 L3.95,4.25 C3.59101491,4.25 3.3,4.54101491 3.3,4.9 L3.3,12.05 C3.3,12.4089851 3.59101491,12.7 3.95,12.7 L11.1,12.7 C11.4589851,12.7 11.75,12.4089851 11.75,12.05 L11.75,8.15 Z" fill="#005aa3" />
+              </svg></p>
+             <p><a href="/explore-services">All IT Services</a>
+              <svg class="offsite" width="16px" height="16px" viewbox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <path d="M12.7807612,2.3 L10.45,2.3 C10.0910149,2.3 9.8,2.00898509 9.8,1.65 C9.8,1.29101491 10.0910149,1 10.45,1 L14.35,1 C14.7089851,1 15,1.29101491 15,1.65 L15,5.55 C15,5.90898509 14.7089851,6.2 14.35,6.2 C13.9910149,6.2 13.7,5.90898509 13.7,5.55 L13.7,3.21923882 L7.65961941,9.25961941 C7.40577862,9.5134602 6.99422138,9.5134602 6.74038059,9.25961941 C6.4865398,9.00577862 6.4865398,8.59422138 6.74038059,8.34038059 L12.7807612,2.3 Z M11.75,8.15 C11.75,7.79101491 12.0410149,7.5 12.4,7.5 C12.7589851,7.5 13.05,7.79101491 13.05,8.15 L13.05,12.05 C13.05,13.1269553 12.1769553,14 11.1,14 L3.95,14 C2.87304474,14 2,13.1269553 2,12.05 L2,4.9 C2,3.82304474 2.87304474,2.95 3.95,2.95 L7.85,2.95 C8.20898509,2.95 8.5,3.24101491 8.5,3.6 C8.5,3.95898509 8.20898509,4.25 7.85,4.25 L3.95,4.25 C3.59101491,4.25 3.3,4.54101491 3.3,4.9 L3.3,12.05 C3.3,12.4089851 3.59101491,12.7 3.95,12.7 L11.1,12.7 C11.4589851,12.7 11.75,12.4089851 11.75,12.05 L11.75,8.15 Z" fill="#005aa3" />
+              </svg></p>
+             <p><a href="https://www.ucsb.edu/policies-and-disclosures">Policies &amp; Disclosures</a>
+              <svg class="offsite" width="16px" height="16px" viewbox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <path d="M12.7807612,2.3 L10.45,2.3 C10.0910149,2.3 9.8,2.00898509 9.8,1.65 C9.8,1.29101491 10.0910149,1 10.45,1 L14.35,1 C14.7089851,1 15,1.29101491 15,1.65 L15,5.55 C15,5.90898509 14.7089851,6.2 14.35,6.2 C13.9910149,6.2 13.7,5.90898509 13.7,5.55 L13.7,3.21923882 L7.65961941,9.25961941 C7.40577862,9.5134602 6.99422138,9.5134602 6.74038059,9.25961941 C6.4865398,9.00577862 6.4865398,8.59422138 6.74038059,8.34038059 L12.7807612,2.3 Z M11.75,8.15 C11.75,7.79101491 12.0410149,7.5 12.4,7.5 C12.7589851,7.5 13.05,7.79101491 13.05,8.15 L13.05,12.05 C13.05,13.1269553 12.1769553,14 11.1,14 L3.95,14 C2.87304474,14 2,13.1269553 2,12.05 L2,4.9 C2,3.82304474 2.87304474,2.95 3.95,2.95 L7.85,2.95 C8.20898509,2.95 8.5,3.24101491 8.5,3.6 C8.5,3.95898509 8.20898509,4.25 7.85,4.25 L3.95,4.25 C3.59101491,4.25 3.3,4.54101491 3.3,4.9 L3.3,12.05 C3.3,12.4089851 3.59101491,12.7 3.95,12.7 L11.1,12.7 C11.4589851,12.7 11.75,12.4089851 11.75,12.05 L11.75,8.15 Z" fill="#005aa3" />
+              </svg></p>
+            </div>
+           </div>
+          </div>
+          <div class="paragraph paragraph--type--column paragraph--view-mode--default col-sm-6 col-md-3 second-column">
+           <div class="inner">
+            <div class="field field--name-field-body field--type-text-long field--label-hidden field--item">
+             <p class="label">Information For</p>
+             <p><a href="/taxonomy/term/2">Student</a>
+              <svg class="offsite" width="16px" height="16px" viewbox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <path d="M12.7807612,2.3 L10.45,2.3 C10.0910149,2.3 9.8,2.00898509 9.8,1.65 C9.8,1.29101491 10.0910149,1 10.45,1 L14.35,1 C14.7089851,1 15,1.29101491 15,1.65 L15,5.55 C15,5.90898509 14.7089851,6.2 14.35,6.2 C13.9910149,6.2 13.7,5.90898509 13.7,5.55 L13.7,3.21923882 L7.65961941,9.25961941 C7.40577862,9.5134602 6.99422138,9.5134602 6.74038059,9.25961941 C6.4865398,9.00577862 6.4865398,8.59422138 6.74038059,8.34038059 L12.7807612,2.3 Z M11.75,8.15 C11.75,7.79101491 12.0410149,7.5 12.4,7.5 C12.7589851,7.5 13.05,7.79101491 13.05,8.15 L13.05,12.05 C13.05,13.1269553 12.1769553,14 11.1,14 L3.95,14 C2.87304474,14 2,13.1269553 2,12.05 L2,4.9 C2,3.82304474 2.87304474,2.95 3.95,2.95 L7.85,2.95 C8.20898509,2.95 8.5,3.24101491 8.5,3.6 C8.5,3.95898509 8.20898509,4.25 7.85,4.25 L3.95,4.25 C3.59101491,4.25 3.3,4.54101491 3.3,4.9 L3.3,12.05 C3.3,12.4089851 3.59101491,12.7 3.95,12.7 L11.1,12.7 C11.4589851,12.7 11.75,12.4089851 11.75,12.05 L11.75,8.15 Z" fill="#005aa3" />
+              </svg></p>
+             <p><a href="/taxonomy/term/9">Student Worker</a>
+              <svg class="offsite" width="16px" height="16px" viewbox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <path d="M12.7807612,2.3 L10.45,2.3 C10.0910149,2.3 9.8,2.00898509 9.8,1.65 C9.8,1.29101491 10.0910149,1 10.45,1 L14.35,1 C14.7089851,1 15,1.29101491 15,1.65 L15,5.55 C15,5.90898509 14.7089851,6.2 14.35,6.2 C13.9910149,6.2 13.7,5.90898509 13.7,5.55 L13.7,3.21923882 L7.65961941,9.25961941 C7.40577862,9.5134602 6.99422138,9.5134602 6.74038059,9.25961941 C6.4865398,9.00577862 6.4865398,8.59422138 6.74038059,8.34038059 L12.7807612,2.3 Z M11.75,8.15 C11.75,7.79101491 12.0410149,7.5 12.4,7.5 C12.7589851,7.5 13.05,7.79101491 13.05,8.15 L13.05,12.05 C13.05,13.1269553 12.1769553,14 11.1,14 L3.95,14 C2.87304474,14 2,13.1269553 2,12.05 L2,4.9 C2,3.82304474 2.87304474,2.95 3.95,2.95 L7.85,2.95 C8.20898509,2.95 8.5,3.24101491 8.5,3.6 C8.5,3.95898509 8.20898509,4.25 7.85,4.25 L3.95,4.25 C3.59101491,4.25 3.3,4.54101491 3.3,4.9 L3.3,12.05 C3.3,12.4089851 3.59101491,12.7 3.95,12.7 L11.1,12.7 C11.4589851,12.7 11.75,12.4089851 11.75,12.05 L11.75,8.15 Z" fill="#005aa3" />
+              </svg></p>
+             <p><a href="/taxonomy/term/3">Faculty Member</a>
+              <svg class="offsite" width="16px" height="16px" viewbox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <path d="M12.7807612,2.3 L10.45,2.3 C10.0910149,2.3 9.8,2.00898509 9.8,1.65 C9.8,1.29101491 10.0910149,1 10.45,1 L14.35,1 C14.7089851,1 15,1.29101491 15,1.65 L15,5.55 C15,5.90898509 14.7089851,6.2 14.35,6.2 C13.9910149,6.2 13.7,5.90898509 13.7,5.55 L13.7,3.21923882 L7.65961941,9.25961941 C7.40577862,9.5134602 6.99422138,9.5134602 6.74038059,9.25961941 C6.4865398,9.00577862 6.4865398,8.59422138 6.74038059,8.34038059 L12.7807612,2.3 Z M11.75,8.15 C11.75,7.79101491 12.0410149,7.5 12.4,7.5 C12.7589851,7.5 13.05,7.79101491 13.05,8.15 L13.05,12.05 C13.05,13.1269553 12.1769553,14 11.1,14 L3.95,14 C2.87304474,14 2,13.1269553 2,12.05 L2,4.9 C2,3.82304474 2.87304474,2.95 3.95,2.95 L7.85,2.95 C8.20898509,2.95 8.5,3.24101491 8.5,3.6 C8.5,3.95898509 8.20898509,4.25 7.85,4.25 L3.95,4.25 C3.59101491,4.25 3.3,4.54101491 3.3,4.9 L3.3,12.05 C3.3,12.4089851 3.59101491,12.7 3.95,12.7 L11.1,12.7 C11.4589851,12.7 11.75,12.4089851 11.75,12.05 L11.75,8.15 Z" fill="#005aa3" />
+              </svg></p>
+             <p><a href="/taxonomy/term/4">Staff Member</a>
+              <svg class="offsite" width="16px" height="16px" viewbox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <path d="M12.7807612,2.3 L10.45,2.3 C10.0910149,2.3 9.8,2.00898509 9.8,1.65 C9.8,1.29101491 10.0910149,1 10.45,1 L14.35,1 C14.7089851,1 15,1.29101491 15,1.65 L15,5.55 C15,5.90898509 14.7089851,6.2 14.35,6.2 C13.9910149,6.2 13.7,5.90898509 13.7,5.55 L13.7,3.21923882 L7.65961941,9.25961941 C7.40577862,9.5134602 6.99422138,9.5134602 6.74038059,9.25961941 C6.4865398,9.00577862 6.4865398,8.59422138 6.74038059,8.34038059 L12.7807612,2.3 Z M11.75,8.15 C11.75,7.79101491 12.0410149,7.5 12.4,7.5 C12.7589851,7.5 13.05,7.79101491 13.05,8.15 L13.05,12.05 C13.05,13.1269553 12.1769553,14 11.1,14 L3.95,14 C2.87304474,14 2,13.1269553 2,12.05 L2,4.9 C2,3.82304474 2.87304474,2.95 3.95,2.95 L7.85,2.95 C8.20898509,2.95 8.5,3.24101491 8.5,3.6 C8.5,3.95898509 8.20898509,4.25 7.85,4.25 L3.95,4.25 C3.59101491,4.25 3.3,4.54101491 3.3,4.9 L3.3,12.05 C3.3,12.4089851 3.59101491,12.7 3.95,12.7 L11.1,12.7 C11.4589851,12.7 11.75,12.4089851 11.75,12.05 L11.75,8.15 Z" fill="#005aa3" />
+              </svg></p>
+             <p><a href="/taxonomy/term/5">Researcher</a>
+              <svg class="offsite" width="16px" height="16px" viewbox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <path d="M12.7807612,2.3 L10.45,2.3 C10.0910149,2.3 9.8,2.00898509 9.8,1.65 C9.8,1.29101491 10.0910149,1 10.45,1 L14.35,1 C14.7089851,1 15,1.29101491 15,1.65 L15,5.55 C15,5.90898509 14.7089851,6.2 14.35,6.2 C13.9910149,6.2 13.7,5.90898509 13.7,5.55 L13.7,3.21923882 L7.65961941,9.25961941 C7.40577862,9.5134602 6.99422138,9.5134602 6.74038059,9.25961941 C6.4865398,9.00577862 6.4865398,8.59422138 6.74038059,8.34038059 L12.7807612,2.3 Z M11.75,8.15 C11.75,7.79101491 12.0410149,7.5 12.4,7.5 C12.7589851,7.5 13.05,7.79101491 13.05,8.15 L13.05,12.05 C13.05,13.1269553 12.1769553,14 11.1,14 L3.95,14 C2.87304474,14 2,13.1269553 2,12.05 L2,4.9 C2,3.82304474 2.87304474,2.95 3.95,2.95 L7.85,2.95 C8.20898509,2.95 8.5,3.24101491 8.5,3.6 C8.5,3.95898509 8.20898509,4.25 7.85,4.25 L3.95,4.25 C3.59101491,4.25 3.3,4.54101491 3.3,4.9 L3.3,12.05 C3.3,12.4089851 3.59101491,12.7 3.95,12.7 L11.1,12.7 C11.4589851,12.7 11.75,12.4089851 11.75,12.05 L11.75,8.15 Z" fill="#005aa3" />
+              </svg></p>
+             <p><a href="/taxonomy/term/6">Alumnus</a>
+              <svg class="offsite" width="16px" height="16px" viewbox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <path d="M12.7807612,2.3 L10.45,2.3 C10.0910149,2.3 9.8,2.00898509 9.8,1.65 C9.8,1.29101491 10.0910149,1 10.45,1 L14.35,1 C14.7089851,1 15,1.29101491 15,1.65 L15,5.55 C15,5.90898509 14.7089851,6.2 14.35,6.2 C13.9910149,6.2 13.7,5.90898509 13.7,5.55 L13.7,3.21923882 L7.65961941,9.25961941 C7.40577862,9.5134602 6.99422138,9.5134602 6.74038059,9.25961941 C6.4865398,9.00577862 6.4865398,8.59422138 6.74038059,8.34038059 L12.7807612,2.3 Z M11.75,8.15 C11.75,7.79101491 12.0410149,7.5 12.4,7.5 C12.7589851,7.5 13.05,7.79101491 13.05,8.15 L13.05,12.05 C13.05,13.1269553 12.1769553,14 11.1,14 L3.95,14 C2.87304474,14 2,13.1269553 2,12.05 L2,4.9 C2,3.82304474 2.87304474,2.95 3.95,2.95 L7.85,2.95 C8.20898509,2.95 8.5,3.24101491 8.5,3.6 C8.5,3.95898509 8.20898509,4.25 7.85,4.25 L3.95,4.25 C3.59101491,4.25 3.3,4.54101491 3.3,4.9 L3.3,12.05 C3.3,12.4089851 3.59101491,12.7 3.95,12.7 L11.1,12.7 C11.4589851,12.7 11.75,12.4089851 11.75,12.05 L11.75,8.15 Z" fill="#005aa3" />
+              </svg></p>
+             <p><a href="/taxonomy/term/7">Vendor</a>
+              <svg class="offsite" width="16px" height="16px" viewbox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <path d="M12.7807612,2.3 L10.45,2.3 C10.0910149,2.3 9.8,2.00898509 9.8,1.65 C9.8,1.29101491 10.0910149,1 10.45,1 L14.35,1 C14.7089851,1 15,1.29101491 15,1.65 L15,5.55 C15,5.90898509 14.7089851,6.2 14.35,6.2 C13.9910149,6.2 13.7,5.90898509 13.7,5.55 L13.7,3.21923882 L7.65961941,9.25961941 C7.40577862,9.5134602 6.99422138,9.5134602 6.74038059,9.25961941 C6.4865398,9.00577862 6.4865398,8.59422138 6.74038059,8.34038059 L12.7807612,2.3 Z M11.75,8.15 C11.75,7.79101491 12.0410149,7.5 12.4,7.5 C12.7589851,7.5 13.05,7.79101491 13.05,8.15 L13.05,12.05 C13.05,13.1269553 12.1769553,14 11.1,14 L3.95,14 C2.87304474,14 2,13.1269553 2,12.05 L2,4.9 C2,3.82304474 2.87304474,2.95 3.95,2.95 L7.85,2.95 C8.20898509,2.95 8.5,3.24101491 8.5,3.6 C8.5,3.95898509 8.20898509,4.25 7.85,4.25 L3.95,4.25 C3.59101491,4.25 3.3,4.54101491 3.3,4.9 L3.3,12.05 C3.3,12.4089851 3.59101491,12.7 3.95,12.7 L11.1,12.7 C11.4589851,12.7 11.75,12.4089851 11.75,12.05 L11.75,8.15 Z" fill="#005aa3" />
+              </svg></p>
+             <p><a href="/taxonomy/term/8">Visitor</a>
+              <svg class="offsite" width="16px" height="16px" viewbox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <path d="M12.7807612,2.3 L10.45,2.3 C10.0910149,2.3 9.8,2.00898509 9.8,1.65 C9.8,1.29101491 10.0910149,1 10.45,1 L14.35,1 C14.7089851,1 15,1.29101491 15,1.65 L15,5.55 C15,5.90898509 14.7089851,6.2 14.35,6.2 C13.9910149,6.2 13.7,5.90898509 13.7,5.55 L13.7,3.21923882 L7.65961941,9.25961941 C7.40577862,9.5134602 6.99422138,9.5134602 6.74038059,9.25961941 C6.4865398,9.00577862 6.4865398,8.59422138 6.74038059,8.34038059 L12.7807612,2.3 Z M11.75,8.15 C11.75,7.79101491 12.0410149,7.5 12.4,7.5 C12.7589851,7.5 13.05,7.79101491 13.05,8.15 L13.05,12.05 C13.05,13.1269553 12.1769553,14 11.1,14 L3.95,14 C2.87304474,14 2,13.1269553 2,12.05 L2,4.9 C2,3.82304474 2.87304474,2.95 3.95,2.95 L7.85,2.95 C8.20898509,2.95 8.5,3.24101491 8.5,3.6 C8.5,3.95898509 8.20898509,4.25 7.85,4.25 L3.95,4.25 C3.59101491,4.25 3.3,4.54101491 3.3,4.9 L3.3,12.05 C3.3,12.4089851 3.59101491,12.7 3.95,12.7 L11.1,12.7 C11.4589851,12.7 11.75,12.4089851 11.75,12.05 L11.75,8.15 Z" fill="#005aa3" />
+              </svg></p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="footer-bottom">
+      <div class="region region-footer">
+       <div class="col-xs- 12 col-sm-8 copyright"><span class="copyright">Copyright © 2022 The Regents of the University of California. All Rights Reserved.</span> <a href="https://www.ucsb.edu/terms-of-use" class="terms">Terms of Use</a> <a href="/accessibility" class="terms">Accessibility</a>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/74","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"UA-141660994-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"bootstrap":{"forms_has_error_value_toggle":1,"modal_animation":1,"modal_backdrop":"true","modal_focus_input":1,"modal_keyboard":1,"modal_select_text":1,"modal_show":1,"modal_size":"","popover_enabled":1,"popover_animation":1,"popover_auto_close":1,"popover_container":"body","popover_content":"","popover_delay":"0","popover_html":0,"popover_placement":"right","popover_selector":"","popover_title":"","popover_trigger":"click"},"ajaxTrustedUrl":{"\/search\/node":true},"user":{"uid":0,"permissionsHash":"49c64a521e4b7dcfbd62eefa6d55171bdfffa00f0f9390e59828e49f10be7b7e"}}</script>
+  <script src="/sites/default/files/js/js_xDfshaIVJAkEpNPHktf-m3jdq_3eAwJhqoIR0Pm4uuQ.js"></script>
+  <script src="https://static.addtoany.com/menu/page.js" async></script>
+  <script src="/sites/default/files/js/js_V9c-lpS6X6jZ69jDPmxjFRVaUg0K46ns5oywS_AOTqc.js"></script>
+  <div id="outdated"></div>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-eb2854c60b7221c3b14","applicationID":"232904424","transactionName":"ZFxQMBdWXRBUUBILDF0WcwcRXlwNGncUFxNSVW4KClNWP3ZcCBYRXFVeARdrfQxRVjALBkR6XQoRRVwPWVYUT11FUFcT","queueTime":0,"applicationTime":472,"atts":"SBtTRl9MTh4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

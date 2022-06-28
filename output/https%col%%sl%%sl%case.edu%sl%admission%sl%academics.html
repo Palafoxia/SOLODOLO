@@ -1,0 +1,1697 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head><!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M6NQD8');</script><!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"ff6859dcb2",applicationID:"56254627"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="geo.placename" content="Case Western Reserve University">
+  <meta name="geo.position" content="41.5034086,-81.6088122">
+  <meta name="geo.region" content="US-OH">
+  <meta name="icbm" content="41.5034086,-81.6088122">
+  <link rel="canonical" href="https://case.edu/admission/academics">
+  <link rel="shortlink" href="https://case.edu/admission/node/416">
+  <meta name="rights" content="Copyright © 2022 Case Western Reserve University. All rights reserved.">
+  <meta name="description" content="Explore the undergraduate majors and minors offered at Case Western Reserve, one of the nation’s top research universities.">
+  <meta itemprop="name" content="Academics|Undergraduate Admission">
+  <meta property="og:site_name" content="Undergraduate Admission">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://case.edu/admission/academics">
+  <meta property="og:title" content="Academics | Undergraduate Admission | Case Western Reserve University">
+  <meta property="og:updated_time" content="2022-03-21T11:02:52-04:00">
+  <meta property="place:location:latitude" content="41.5034086">
+  <meta property="place:location:longitude" content="-81.6088122">
+  <meta property="og:street_address" content="10900 Euclid Ave">
+  <meta property="og:locality" content="Cleveland">
+  <meta property="og:region" content="Ohio">
+  <meta property="og:postal_code" content="44106">
+  <meta property="og:country_name" content="United States">
+  <meta property="og:email" content="admission@case.edu">
+  <meta property="og:phone_number" content="216.368.4450">
+  <meta property="article:published_time" content="2017-07-12T19:59:21-04:00">
+  <meta property="article:modified_time" content="2022-03-21T11:02:52-04:00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@cwruadmission">
+  <meta name="twitter:title" content="Academics|Undergraduate Admission">
+  <meta name="twitter:site:id" content="16721814">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/admission/themes/custom/crew_admission/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Majors &amp; Minors | Undergraduate Admission</title>
+  <link rel="stylesheet" media="all" href="/admission/sites/case.edu.admission/files/css/css_-0sTsLlYqK65SHIS6cpzhEpz00guIOND7ohTeEanb4E.css">
+  <link rel="stylesheet" media="all" href="/admission/sites/case.edu.admission/files/css/css_TwLV7sFEDXMUd7exPt7spSgUkbcfDyGT3xRKNy9Bmes.css">
+  <link rel="stylesheet" media="all" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700,900">
+ </head>
+ <body class="path-node page-node-type-uga-academics-landing"><!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6NQD8" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript><!-- End Google Tag Manager (noscript) --><a href="#main-content" class="visually-hidden focusable skip-link"> Skip to main content </a>
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="layout-container">
+    <div id="cwruravealert"></div>
+    <script type="text/javascript">
+    function raveCallback(data) {
+      if (data !== undefined) {
+        if (window['console']) { console.log(data); }
+        var div = document.getElementById('cwruravealert');
+        div.style.backgroundColor = data.bgcolor;
+        div.style.color = data.fgcolor;
+        div.style.width = '100%';
+        div.style.padding = '5px 1% 5px 1%';
+        var alert_div = document.createElement('div');
+        alert_div.style.margin = 'auto';
+        alert_div.style.maxWidth = '1000px';
+        alert_div.style.width = '100%';
+        alert_div.style.textAlign = 'center';
+        var field;
+        for (field of ['header', 'status', 'event', 'headline', 'description', 'instruction', 'note', 'web', 'contact']) {
+          if (data[field]) {
+            var field_div = document.createElement('div');
+            field_div.innerHTML = data[field];
+            alert_div.appendChild(field_div);
+          }
+        }
+        div.appendChild(alert_div);
+      }
+    }
+  </script>
+    <header role="banner" class="hero" style="">
+     <div class="region region-primary-menu">
+      <div data-drupal-messages-fallback class="hidden"></div>
+      <div class="container navbarMain">
+       <div class="navbar__preheader row"><a href="//case.edu/" class="navbar__logo-link"> <img class="navbar__logo" src="/admission/themes/custom/crew_admission/images/cwru-logo.svg" alt="CWRU Logo"> </a>
+       </div>
+       <div class="navbar__main row"><a href="#" id="menu-button-dropdown" class="menu-toggle hidden-md hidden-lg"> <span class="menu-toggle-bar"></span> </a><a class="menu-header" href="https://case.edu/admission/"><h2 class="navbar__site-title">Undergraduate Admission</h2></a>
+        <nav role="navigation" aria-labelledby="block-mainnavigation-menu" id="block-mainnavigation" class="block block-menu navigation menu--main navbar__nav">
+         <h2 class="visually-hidden" id="block-mainnavigation-menu">Main navigation</h2><a href="/admission/apply" class="navbar__link" data-drupal-link-system-path="node/6">apply</a><a href="/admission/academics" class="navbar__link is-active item-below" data-drupal-link-system-path="node/416">academics</a>
+         <ul class="sub-menu-mobile"><a href="/admission/academics/areas-study" class="navbar__link" data-drupal-link-system-path="node/4026">Areas of Study</a><a href="/admission/academics/your-team" class="navbar__link" data-drupal-link-system-path="node/4176">Your Team</a><a href="/admission/academics/hands-learning" class="navbar__link" data-drupal-link-system-path="node/421">Hands-On Learning</a><a href="/admission/academics/pre-professional-programs" class="navbar__link" data-drupal-link-system-path="node/441">Pre-Professional Programs</a><a href="/admission/academics/combined-graduate-study" class="navbar__link" data-drupal-link-system-path="node/436">Combined Graduate Study</a><a href="/admission/academics/study-abroad" class="navbar__link" data-drupal-link-system-path="node/411">Study Abroad</a><a href="/admission/academics/alumni-stories" class="navbar__link" data-drupal-link-system-path="node/4111">Alumni Stories</a><a href="/admission/academics/outcomes" class="navbar__link" data-drupal-link-system-path="node/4106">Outcomes</a><a href="https://go.case.edu/register/requestinformation" class="navbar__link">Request Info</a>
+         </ul><a href="/admission/campus-life" class="navbar__link" data-drupal-link-system-path="node/21">campus life</a><a href="/admission/visits-events" class="navbar__link" data-drupal-link-system-path="node/4031">visits &amp; events</a><a href="/admission/tuition-aid" class="navbar__link" data-drupal-link-system-path="node/61">tuition &amp; aid</a><a href="/admission/contact" class="navbar__link" data-drupal-link-system-path="node/16">contact</a>
+         <form action="//www.case.edu/search-results/" class="navbar__search-form" id="cwru-search" name="searchForm" role="search" aria-label="desktop search"><span class="search-icon hidden-md hidden-lg"></span>
+          <input placeholder="Search CWRU" title="searchbox" type="search" class="navbar__search" name="q" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+          <input type="hidden" name="cx" value="004305171799132815236:ciq4c8b3yv4">
+          <input type="hidden" name="ie" value="UTF-8">
+          <input class="hidden" role="button" name="sa" type="submit" title="search" alt="search">
+         </form>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="region region-header">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-12">
+         <div id="block-crew-admission-page-title" class="block block-core block-page-title-block">
+          <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Academics</span></h1>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main role="main"><a id="main-content" tabindex="-1"></a>
+     <div class="layout-content">
+      <div class="region region-content">
+       <div class="section-links">
+        <div class="container">
+         <div class="row">
+          <div class="col-md-12">
+           <h2 class="header--main">In This Section</h2>
+           <ul class="section-links__list list-unstyled"><a href="/admission/academics/areas-study" class="navbar__link" data-drupal-link-system-path="node/4026">Areas of Study</a><a href="/admission/academics/your-team" class="navbar__link" data-drupal-link-system-path="node/4176">Your Team</a><a href="/admission/academics/hands-learning" class="navbar__link" data-drupal-link-system-path="node/421">Hands-On Learning</a><a href="/admission/academics/pre-professional-programs" class="navbar__link" data-drupal-link-system-path="node/441">Pre-Professional Programs</a><a href="/admission/academics/combined-graduate-study" class="navbar__link" data-drupal-link-system-path="node/436">Combined Graduate Study</a><a href="/admission/academics/study-abroad" class="navbar__link" data-drupal-link-system-path="node/411">Study Abroad</a><a href="/admission/academics/alumni-stories" class="navbar__link" data-drupal-link-system-path="node/4111">Alumni Stories</a><a href="/admission/academics/outcomes" class="navbar__link" data-drupal-link-system-path="node/4106">Outcomes</a><a href="https://go.case.edu/register/requestinformation" class="navbar__link">Request Info</a>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="block-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+        <div class="container">
+         <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+          <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+          <ol>
+           <li><a href="/admission/">Home</a></li>
+           <li> Academics </li>
+          </ol>
+         </nav>
+        </div>
+       </div>
+       <div id="block-crew-admission-content" class="block block-system block-system-main-block">
+        <article role="article" about="/admission/academics" class="node node--type-uga-academics-landing node--view-mode-full">
+         <div class="node__content">
+          <div class="field field--name-field-academics-hero-landing-ref field--type-entity-reference-revisions field--label-hidden field__item"> 
+           <div class="paragraph paragraph--type--uga-landing-hero paragraph--view-mode--default">
+            <div class="field field--name-field-field-uga-landing-hero-ref field--type-image field--label-hidden field__item"> <picture> 
+              <source srcset="/admission/sites/case.edu.admission/files/styles/hero_xs/public/2017-09/academic-landing.jpg?h=52eb7be4&amp;itok=JiXkUX1D 1x" media="all and (max-width: 767px)" type="image/jpeg"> 
+              <source srcset="/admission/sites/case.edu.admission/files/styles/hero_sm/public/2017-09/academic-landing.jpg?h=52eb7be4&amp;itok=K-bLbH40 1x" media="all and (max-width: 991px)" type="image/jpeg"> 
+              <source srcset="/admission/sites/case.edu.admission/files/styles/hero_md/public/2017-09/academic-landing.jpg?h=52eb7be4&amp;itok=AS-zsETu 1x" media="all and (max-width: 1199px)" type="image/jpeg"> 
+              <img src="/admission/sites/case.edu.admission/files/styles/uga_landing_page_hero/public/2017-09/academic-landing.jpg?h=52eb7be4&amp;itok=LEXjZwBD" alt="CWRU student studying in the library" typeof="foaf:Image"> 
+             </picture>
+            </div>
+           </div>
+          </div>
+          <div class="field field--name-field-academics-intro-ref field--type-entity-reference-revisions field--label-hidden field__item">
+           <div class="container">
+            <div class="row">
+             <div class="col-md-12">
+              <div class="intro-text align--Left">
+               <div class="field field--name-field-uga-intro-title field--type-string field--label-hidden field__item">
+                Explore your interests.
+               </div>
+               <div class="clearfix text-formatted field field--name-field-uga-intro-content field--type-text-long field--label-hidden field__item">
+                <p>With nearly 100 majors, minors and concentrations across a range of disciplines, you can specialize in practically anything, from accounting to world literature and everything in between.</p>
+                <p>Browse the list below or filter by area of interest, degree type or school to learn more about the academic options available to you at CWRU. Want to know more about studying at Case Western Reserve? <a href="/admission/academics/areas-study">See our areas of study.</a></p>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="field field--name-field-academics-buttons-ref field--type-entity-reference-revisions field--label-hidden field__item"> 
+           <div class="paragraph paragraph--type--horizontal-buttons paragraph--view-mode--default">
+            <div class="field field--name-field-buttons field--type-link field--label-hidden field__items">
+             <div class="field__item">
+              <a href="https://go.case.edu/register/requestinformation">Request Information</a>
+             </div>
+             <div class="field__item">
+              <a href="/admission/apply">Apply Now</a>
+             </div>
+             <div class="field__item">
+              <a href="https://case.edu/admission/visits-events">Schedule a Visit</a>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="field field--name-field-uga-academics-view-ref field--type-viewfield field--label-hidden">
+           <div class="field__item field__item-label-hidden">
+            <div class="views-element-container">
+             <div class="container academics-container view view-uga-programs-view view-id-uga_programs_view view-display-id-page_1 js-view-dom-id-b2bd47be8d7c055daf0edb3b6d7f606c6535d1ef80dd8f0ccfbcf8a0dd18d0b6">
+              <div class="view-header">
+                Major &amp; Minors 
+              </div>
+              <div class="view-filters">
+               <form class="views-exposed-form bef-exposed-form" data-bef-auto-submit-full-form="" data-bef-auto-submit="" data-bef-auto-submit-delay="500" data-drupal-selector="views-exposed-form-uga-programs-view-page-1" action="/admission/academics" method="get" id="views-exposed-form-uga-programs-view-page-1" accept-charset="UTF-8">
+                <div class="form--inline clearfix">
+                 <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-title form-item-title">
+                  <input data-drupal-selector="edit-title" type="text" id="edit-title" name="title" value="" size="30" maxlength="128" class="form-text">
+                 </div>
+                 <fieldset data-drupal-selector="edit-tid-2" id="edit-tid-2--wrapper" class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper"><legend> <span class="fieldset-legend">Interest</span> </legend>
+                  <div class="fieldset-wrapper">
+                   <div id="edit-tid-2" class="form-checkboxes">
+                    <div class="form-checkboxes bef-checkboxes">
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-2-76 form-item-tid-2-76">
+                      <input data-drupal-selector="edit-tid-2-76" type="checkbox" id="edit-tid-2-76" name="tid_2[76]" value="76" class="form-checkbox"><label for="edit-tid-2-76" class="option">Arts</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-2-16 form-item-tid-2-16">
+                      <input data-drupal-selector="edit-tid-2-16" type="checkbox" id="edit-tid-2-16" name="tid_2[16]" value="16" class="form-checkbox"><label for="edit-tid-2-16" class="option">Business</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-2-91 form-item-tid-2-91">
+                      <input data-drupal-selector="edit-tid-2-91" type="checkbox" id="edit-tid-2-91" name="tid_2[91]" value="91" class="form-checkbox"><label for="edit-tid-2-91" class="option">Communications and Media</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-2-86 form-item-tid-2-86">
+                      <input data-drupal-selector="edit-tid-2-86" type="checkbox" id="edit-tid-2-86" name="tid_2[86]" value="86" class="form-checkbox"><label for="edit-tid-2-86" class="option">Education</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-2-36 form-item-tid-2-36">
+                      <input data-drupal-selector="edit-tid-2-36" type="checkbox" id="edit-tid-2-36" name="tid_2[36]" value="36" class="form-checkbox"><label for="edit-tid-2-36" class="option">Engineering</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-2-46 form-item-tid-2-46">
+                      <input data-drupal-selector="edit-tid-2-46" type="checkbox" id="edit-tid-2-46" name="tid_2[46]" value="46" class="form-checkbox"><label for="edit-tid-2-46" class="option">Health Care</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-2-61 form-item-tid-2-61">
+                      <input data-drupal-selector="edit-tid-2-61" type="checkbox" id="edit-tid-2-61" name="tid_2[61]" value="61" class="form-checkbox"><label for="edit-tid-2-61" class="option">Humanities</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-2-66 form-item-tid-2-66">
+                      <input data-drupal-selector="edit-tid-2-66" type="checkbox" id="edit-tid-2-66" name="tid_2[66]" value="66" class="form-checkbox"><label for="edit-tid-2-66" class="option">Language and Culture</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-2-1 form-item-tid-2-1">
+                      <input data-drupal-selector="edit-tid-2-1" type="checkbox" id="edit-tid-2-1" name="tid_2[1]" value="1" class="form-checkbox"><label for="edit-tid-2-1" class="option">Math and Quantitative Analysis</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-2-6 form-item-tid-2-6">
+                      <input data-drupal-selector="edit-tid-2-6" type="checkbox" id="edit-tid-2-6" name="tid_2[6]" value="6" class="form-checkbox"><label for="edit-tid-2-6" class="option">Natural Sciences</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-2-96 form-item-tid-2-96">
+                      <input data-drupal-selector="edit-tid-2-96" type="checkbox" id="edit-tid-2-96" name="tid_2[96]" value="96" class="form-checkbox"><label for="edit-tid-2-96" class="option">Politics and Advocacy</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-2-251 form-item-tid-2-251">
+                      <input data-drupal-selector="edit-tid-2-251" type="checkbox" id="edit-tid-2-251" name="tid_2[251]" value="251" class="form-checkbox"><label for="edit-tid-2-251" class="option">Social Sciences</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-2-41 form-item-tid-2-41">
+                      <input data-drupal-selector="edit-tid-2-41" type="checkbox" id="edit-tid-2-41" name="tid_2[41]" value="41" class="form-checkbox"><label for="edit-tid-2-41" class="option">Technology</label>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </fieldset>
+                 <fieldset data-drupal-selector="edit-field-short-degree-type-target-id" id="edit-field-short-degree-type-target-id--wrapper" class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper"><legend> <span class="fieldset-legend">Degree Type</span> </legend>
+                  <div class="fieldset-wrapper">
+                   <div id="edit-field-short-degree-type-target-id" class="form-checkboxes">
+                    <div class="form-checkboxes bef-checkboxes">
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-field-short-degree-type-target-id-646 form-item-field-short-degree-type-target-id-646">
+                      <input data-drupal-selector="edit-field-short-degree-type-target-id-646" type="checkbox" id="edit-field-short-degree-type-target-id-646" name="field_short_degree_type_target_id[646]" value="646" class="form-checkbox"><label for="edit-field-short-degree-type-target-id-646" class="option">Major</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-field-short-degree-type-target-id-651 form-item-field-short-degree-type-target-id-651">
+                      <input data-drupal-selector="edit-field-short-degree-type-target-id-651" type="checkbox" id="edit-field-short-degree-type-target-id-651" name="field_short_degree_type_target_id[651]" value="651" class="form-checkbox"><label for="edit-field-short-degree-type-target-id-651" class="option">Minor</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-field-short-degree-type-target-id-656 form-item-field-short-degree-type-target-id-656">
+                      <input data-drupal-selector="edit-field-short-degree-type-target-id-656" type="checkbox" id="edit-field-short-degree-type-target-id-656" name="field_short_degree_type_target_id[656]" value="656" class="form-checkbox"><label for="edit-field-short-degree-type-target-id-656" class="option">Pre-Professional Program</label>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </fieldset>
+                 <fieldset data-drupal-selector="edit-tid-1" id="edit-tid-1--wrapper" class="fieldgroup form-composite js-form-item form-item js-form-wrapper form-wrapper"><legend> <span class="fieldset-legend">Schools</span> </legend>
+                  <div class="fieldset-wrapper">
+                   <div id="edit-tid-1" class="form-checkboxes">
+                    <div class="form-checkboxes bef-checkboxes">
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-1-266 form-item-tid-1-266">
+                      <input data-drupal-selector="edit-tid-1-266" type="checkbox" id="edit-tid-1-266" name="tid_1[266]" value="266" class="form-checkbox"><label for="edit-tid-1-266" class="option">Case School of Engineering</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-1-271 form-item-tid-1-271">
+                      <input data-drupal-selector="edit-tid-1-271" type="checkbox" id="edit-tid-1-271" name="tid_1[271]" value="271" class="form-checkbox"><label for="edit-tid-1-271" class="option">College of Arts and Sciences</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-1-496 form-item-tid-1-496">
+                      <input data-drupal-selector="edit-tid-1-496" type="checkbox" id="edit-tid-1-496" name="tid_1[496]" value="496" class="form-checkbox"><label for="edit-tid-1-496" class="option">Frances Payne Bolton School of Nursing</label>
+                     </div>
+                     <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-tid-1-261 form-item-tid-1-261">
+                      <input data-drupal-selector="edit-tid-1-261" type="checkbox" id="edit-tid-1-261" name="tid_1[261]" value="261" class="form-checkbox"><label for="edit-tid-1-261" class="option">Weatherhead School of Management</label>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </fieldset>
+                 <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                  <input data-bef-auto-submit-click="" class="js-hide button js-form-submit form-submit" data-drupal-selector="edit-submit-uga-programs-view" type="submit" id="edit-submit-uga-programs-view" value="Apply">
+                 </div>
+                </div>
+               </form>
+              </div>
+              <div class="view-content">
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://weatherhead.case.edu/degrees/undergraduate/academics/accounting/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Accounting</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Enhance your critical-thinking, quantitative-analysis and decision-making skills as you prepare for a career as a CPA—or any number of opportunities.</p>
+                    <p></p><mark class="academics__block-degree"> BS | MAcc | PhD | Minor | BS/MAcc </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://engineering.case.edu/emae/undergraduate-program"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Aerospace Engineering</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Launch your career in aircraft and spacecraft development by gaining a solid background in mathematics, science and engineering.</p>
+                    <p></p><mark class="academics__block-degree"> BS | BS/MS | MS | PhD </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://religion.case.edu/undergraduate-programs/minor-in-african-and-african-american-studies/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">African and African American Studies</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Seek to understand the historical and contemporary African and African diasporic experience by studying a range of disciplines, including religion, politics, literature, and social and behavioral science.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://anthropology.case.edu/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Anthropology</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Understand the connections between human behavior, institutions and biology as you prepare for a wide range of careers—from health to public service.</p>
+                    <p></p><mark class="academics__block-degree"> BA | MA | PhD | MA/PhD | Minor | IGS Program </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://case.edu/datascience/for-students/degree-programs/undergraduate-applied-data-science-minor/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Applied Data Science</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Open to all undergraduates, this minor gives you essential tools and applications in areas such as data management, distributed computing, informatics and statistical analytics.</p>
+                    <p></p><mark class="academics__block-degree"> Minor | Certificate </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://mathstats.case.edu/undergraduate-programs/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Applied Mathematics</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Through the power of mathematics, you can create models that allow you to analyze and help solve real-world problems across a wide range of fields.</p>
+                    <p></p><mark class="academics__block-degree"> BS | MS | PhD | BS/MS </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://arthistory.case.edu/undergraduate/art-education/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Art Education</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>With some of the top museums in the United States at your doorstep and nearby urban and suburban schools for teaching, Case Western Reserve is an ideal place to become an art instructor.</p>
+                    <p></p><mark class="academics__block-degree"> BS | MA </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://arthistory.case.edu/undergraduate/art-history/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Art History</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Take classes in one of the United States' major art museums. Surround yourself with collections from different cultures as you develop or hone your expertise.</p>
+                    <p></p><mark class="academics__block-degree"> BA | MA | MA | PhD | Minor | IGS Program | JD/MA </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://arthistory.case.edu/undergraduate/art-studio/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Art Studio</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Develop and nurture your creativity, critical eye and talent through hands-on work under the instruction of experienced artists and teachers.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://engineering.case.edu/eecs/node/334"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Artificial Intelligence</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>The future is smart—be part of it by learning AI programming and theory, and choose your specialization to study AI’s role in engineering or cognition.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://asianstudies.case.edu/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Asian Studies</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Study the global and regional impact of Asian cultures as you explore the intricacies of their social, cultural and political perspectives.</p>
+                    <p></p><mark class="academics__block-degree"> BA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://astronomy.case.edu/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Astronomy</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>The engaged faculty who lead our astronomy programs are committed to getting all students active in research on topics ranging from galaxy formations to telescope design.</p>
+                    <p></p><mark class="academics__block-degree"> BA | BS | PhD | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://case.edu/med/biochemistry/home.html"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Biochemistry</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Discover how biology and chemistry intersect as you become a highly trained scientist who can have a major impact on solving public health issues.</p>
+                    <p></p><mark class="academics__block-degree"> BA | BS | MS | MD/MS | PhD | Certificate </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://case.edu/medicine/bioethics/education/undergraduate-programs/undergraduate-minor-in-bioethics-and-medical-humanities"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Bioethics and Medical Humanities</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Study and debate important, cutting-edge ethical issues, such as how to conduct biomedical research and the delivery of health care. You'll learn how to navigate an increasingly complex biomedical environment by studying literature, history and philosophy.</p>
+                    <p></p><mark class="academics__block-degree"> MA | MD/MA | MA/MSN | MA/MPH | MA/MSW | MA/PhD | JD/MA | PhD | Minor | IGS Program </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://biology.case.edu/undergraduate/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Biology</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Through partnerships across campus, Cleveland and beyond, you’ll study and conduct hands-on research on anything from animal behavior to plant biotechnology.</p>
+                    <p></p><mark class="academics__block-degree"> BA | BS | MS | PhD | Minor | IGS Program | Honors Program </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://engineering.case.edu/ebme/academics/undergraduate"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Biomedical Engineering</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Gain knowledge or advance your career in biomedical engineering. Combine medicine and engineering to bring innovative technologies, devices, and therapies to market that save and enhance lives worldwide.</p>
+                    <p></p><mark class="academics__block-degree"> MS | MS | MD/MS | MD/PhD | PhD | BS | BS/MS | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://weatherhead.case.edu/degrees/undergraduate/academics/businessinformationtech/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Business Information Technology</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Gain competence in programming for business applications, as well as a deeper understanding of select business processes and related information systems.</p>
+                    <p></p><mark class="academics__block-degree"> Concentration </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://chemistry.case.edu/undergrad/chembio-ba/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Chemical Biology</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>How can chemistry solve biological questions? In our program, you'll study small molecules to understand the fundamental aspects of living systems.</p>
+                    <p></p><mark class="academics__block-degree"> BA | IGS Program </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://engineering.case.edu/eche/undergraduate_program"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Chemical Engineering</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Discover different ways to transform raw materials into useful products and energy through processes that affect engineering—from the atomic level to mega-scale manufacturing.</p>
+                    <p></p><mark class="academics__block-degree"> BSE | BS/MS | MS | PhD </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://chemistry.case.edu/undergrad/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Chemistry</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Get ready to solve today's problems as a chemist—or in one of many related careers. Here, we cover everything from biochem to interstellar chemistry.</p>
+                    <p></p><mark class="academics__block-degree"> BA | BS | MS | PhD | Minor | MS Entrepreneurship Track </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://case.edu/schubertcenter/education/childhood-studies-minor"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Childhood Studies</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Study life stages from infancy through adolescence with focuses on child policy, parenting, gender, and the place of children in society and culture.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://mll.case.edu/undergraduate/chinese/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Chinese</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Immerse yourself in Chinese language, literature and culture as you develop skills that can be applied to government, business and academic fields.</p>
+                    <p></p><mark class="academics__block-degree"> BA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://engineering.case.edu/eciv/Undergraduate_Program"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Civil Engineering</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Build your future through classes on the planning, design and construction of everything from transportation systems to land-reclamation projects.</p>
+                    <p></p><mark class="academics__block-degree"> Minor | BS | MS | PhD | BS/MS </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://classics.case.edu/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Classics</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Using approaches ranging&nbsp;from anthropological to philosophical, you'll gain knowledge in the languages and literature of ancient Greece and Rome.</p>
+                    <p></p><mark class="academics__block-degree"> BA | MA | Minor | Graduate Certificate </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://cognitivescience.case.edu/graduate/master-of-arts/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Cognitive Linguistics</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Study the relation between language and the mind through integrated linguistic and cognitive research.</p>
+                    <p></p><mark class="academics__block-degree"> MA | IGS Program </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://cognitivescience.case.edu/undergraduate/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Cognitive Science</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>As you study the brain and mind, you'll not only learn the core disciplines of cognitive science, but also the impact of arts and humanities on individuals.</p>
+                    <p></p><mark class="academics__block-degree"> BA | MA | Minor | Honors Program | IGS Program </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://psychsciences.case.edu/undergraduate/communication-sciences/health-communication-minor/?_ga=1.138477427.1571892545.1394051738"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Communication for Health Professionals</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Complement your health studies with theoretical and practical communication courses that you can apply across the spectrum of health professions.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://psychsciences.case.edu/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Communication Sciences</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>See how you can help individuals with hearing, speech, language and learning difficulties by studying disorders, psychology, linguistics and more.</p>
+                    <p></p><mark class="academics__block-degree"> BA | MA | PhD | IGS Program </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://engineering.case.edu/eecs/academics/undergraduate-program/computer_engineering"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Computer Engineering</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>You can create the next big thing in tech with the right know-how and hands-on experience to analyze, evaluate, design and implement your idea.</p>
+                    <p></p><mark class="academics__block-degree"> BSE | MS | PhD | Minor | BS/MS </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://engineering.case.edu/eecs/academics/undergraduate-program/computer_engineering"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Computer Gaming</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Love playing games? Now you can make a career out of it. Get hands-on instruction and learn about every aspect of creating games for global audiences.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://engineering.case.edu/eecs/academics/undergraduate-program/computer_science"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Computer Science</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Develop new techniques and technologies that will change the world. Here, you can study anything from software engineering to artificial intelligence.</p>
+                    <p></p><mark class="academics__block-degree"> BA | BS | MS | MS | PhD | Minor | BS/MS </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://english.case.edu/undergraduate/minor-in-creative-writing/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Creative Writing</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Find yourself as a writer through a rigorous, creative curriculum that will prepare you for a career as a poet, novelist, journalist, editor and more.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://dance.case.edu/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Dance</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Whether dance is a hobby or your future career, we provide the highest caliber of education and training across styles ranging from ballet to modern.</p>
+                    <p></p><mark class="academics__block-degree"> BA | MA | MFA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://datascience.case.edu/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Data Science and Analytics</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Big data is the future; discover how you can analyze realms of information to make informed decisions that can change your field—and beyond.</p>
+                    <p></p><mark class="academics__block-degree"> BS | Minor | Certificate </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://weatherhead.case.edu/departments/economics/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Economics</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Through our personalized program, you'll learn how public policy and market forces interact to affect your future profession and the world.</p>
+                    <p></p><mark class="academics__block-degree"> BA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://engineering.case.edu/eecs/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Electrical Engineering</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Study signal processing, computation and more in a curriculum that encourages you to combine your talent for design with your problem-solving ability.</p>
+                    <p></p><mark class="academics__block-degree"> BS | MS | PhD | Minor | BS/MS </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://engineering.case.edu/eecs/node/334"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Electronics</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Turn your math and physics skills into solutions for technical problems with this hands-on curriculum that gives you an extra area of specialization.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://engineering.case.edu/future-students/undergraduate-programs"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Engineering</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Reach your full potential as an engineer at a research university that provides a unique, challenging education in the classroom and beyond.</p>
+                    <p></p><mark class="academics__block-degree"> MEng. | MS | BS </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://physics.case.edu/undergraduate-programs/undergrad-degree-programs/bsdegree-engrphys/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Engineering Physics</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Have a strong interest in physics and engineering? Here, you can study both. Our curriculum prepares you for a career in the industry of your choice.</p>
+                    <p></p><mark class="academics__block-degree"> BSE </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://english.case.edu/undergraduate/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">English</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>From classic literature to graphic novels, specialize your studies to spur your intellectual curiosity, analytical dexterity and creative thinking skills.</p>
+                    <p></p><mark class="academics__block-degree"> BA | MA | PhD | Minor | IGS Program </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://weatherhead.case.edu/degrees/undergraduate/academics/entrepreneurship/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Entrepreneurship</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>From launching a startup to running your own business, our curriculum will provide you with the knowledge and skills you need to thrive as an entrepreneurial leader.</p>
+                    <p></p><mark class="academics__block-degree"> Minor | Business Management BS with Entrepreneurship concentration </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://geology.case.edu/undergraduate.html"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Environmental Geology</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Our program combines geological, basic and applied sciences to provide you with a deep understanding of environmental problems and employable skills.</p>
+                    <p></p><mark class="academics__block-degree"> BS </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://case.edu/medicine/nutrition/education-programs/undergraduate-programs-nutrition/minor-programs-nutrition"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Environmental Nutrition</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Develop a foundational knowledge of the interplay between nutritional and food sciences, environmental issues, and food systems sustainability and health.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://artsci.case.edu/environmentalstudies/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Environmental Studies</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>This multidisciplinary program rounds out your education and skills, diving into the moral, cultural and political dimensions of environmental issues.</p>
+                    <p></p><mark class="academics__block-degree"> BS | MS | PhD | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://philosophy.case.edu/undergraduate/minor-in-ethics/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Ethics</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Through the study of ethical theory and moral issues, you'll gain a heightened awareness of today's world and grow your critical-thinking skills.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://artsci.case.edu/ethnicstudies/academic-program/minor/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Ethnic Studies</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Challenge yourself to think critically and better understand the interactions of race, class, gender, and sexuality across a range of social groups.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://case.edu/artsci/evolutionarybiology/TheProgram.html"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Evolutionary Biology</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Discover the history of life on Earth, understand evolutionary processes and prepare for a career in a range of fields, from agriculture to medicine.</p>
+                    <p></p><mark class="academics__block-degree"> BS | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://artsci.case.edu/film/minor/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Film</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Study the history of film and its impact on popular culture as you discover how to turn a passion for movies and&nbsp;screenwriting&nbsp;into a career.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://weatherhead.case.edu/degrees/undergraduate/academics/finance/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Finance</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>As a finance student, you'll not only learn about key management principles but also financial markets, valuation, modeling and other quantitative skills.</p>
+                    <p></p><mark class="academics__block-degree"> BS | Master of Finance | MS | Minor | Certificate | Certificate </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://mll.case.edu/undergraduate/french/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">French</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Master French language skills while studying literature, film and the arts, and grow your appreciation for the diversity of Francophone cultures.</p>
+                    <p></p><mark class="academics__block-degree"> BA | MA | Minor | IGS Program </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://mll.case.edu/french-and-francophone-studies/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">French and Francophone Studies</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Designed to develop cross-cultural awareness and understanding, this program gives you flexibility to study all aspects of French/Francophone culture.</p>
+                    <p></p><mark class="academics__block-degree"> BA </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://eeps.case.edu/undergraduate-programs/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Geological Sciences</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Obtain a solid background in earth sciences and hone the research and critical-thinking skills you need to ask—and answer—questions about the world.</p>
+                    <p></p><mark class="academics__block-degree"> BA | BS | MS | PhD | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://mll.case.edu/undergraduate/german/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">German</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Become a master of German language, literature and culture as you develop skills that can be applied to a variety of fields in today's global economy.</p>
+                    <p></p><mark class="academics__block-degree"> BA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://sociology.case.edu/gerontological-studies/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Gerontological Studies</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Integrating research and theory, this multidisciplinary program allows you to study the social and professional effects of our aging population.</p>
+                    <p></p><mark class="academics__block-degree"> BA | Minor | Graduate Certificate </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://history.case.edu/undergraduate/majors-and-minors/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">History</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Learn to grapple with today's issues by developing a deeper understanding of the past. A degree in history can prepare you for a multitude of careers.</p>
+                    <p></p><mark class="academics__block-degree"> BA | MA | PhD | Minor | IGS Program </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://artsci.case.edu/hpst/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">History and Philosophy of Science</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Explore the nature and historical development of science and related disciplines (technology, medicine and mathematics) through a humanistic lens.</p>
+                    <p></p><mark class="academics__block-degree"> BA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://weatherhead.case.edu/degrees/undergraduate/academics/international-business/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">International Business</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Strengthen your global competencies and your understanding of foreign culture and business.</p>
+                    <p></p><mark class="academics__block-degree"> LLM | Concentration </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://artsci.case.edu/international-studies/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">International Studies</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Develop expertise in a region of the world—including its languages and issues—and gain a better understanding of global dynamics and complexities.</p>
+                    <p></p><mark class="academics__block-degree"> BA </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://mll.case.edu/undergraduate/italian/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Italian</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Study Italian language at all levels while immersing yourself in the literature and culture—potentially through a&nbsp;study abroad experience.</p>
+                    <p></p><mark class="academics__block-degree"> BA </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://mll.case.edu/undergraduate/japanese/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Japanese Studies</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Grow your understanding of Japanese language and culture as you study everything from literature to religion, history to art.</p>
+                    <p></p><mark class="academics__block-degree"> BA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://artsci.case.edu/judaic-studies/academic/minor/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Judaic Studies</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Discover Judaic history, religion and culture through a program that conveys the complex experiences comprising Jewish ethnic and religious identity.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://weatherhead.case.edu/degrees/undergraduate/academics/leadership/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Leadership</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Deepen your understanding of leadership and organizational behavior to help manage change at the individual, team, organizational and societal levels.</p>
+                    <p></p><mark class="academics__block-degree"> Minor | Concentration </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://weatherhead.case.edu/degrees/undergraduate/academics/marketing/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Marketing</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Build a solid business background and develop skills in marketing strategy, brand management and more to prepare for a career in marketing and sales.</p>
+                    <p></p><mark class="academics__block-degree"> BS | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://weatherhead.case.edu/degrees/masters/ms-management/healthcare/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Master of Healthcare Management</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Want to advance your career in healthcare management? Our master's program will help you attain fundamental business skills to balance financial responsibilities, competitive pressures and human resource needs for an organization.</p>
+                    <p></p><mark class="academics__block-degree"> Master of Healthcare Management </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://engineering.case.edu/emse/academic-programs/undergraduate"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Materials Science and Engineering</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Study how the physics and chemistry of matter play into industrial and engineering processes—plus gain hands-on experience in state-of-the-art facilities.</p>
+                    <p></p><mark class="academics__block-degree"> Minor | BSE | BS/MS | MS | PhD </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://mathstats.case.edu/undergraduate-programs/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Mathematics</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Math plays a key role in the physical, biological, economic and social sciences. Prepare for a career across fields by honing your skills in math and statistics.</p>
+                    <p></p><mark class="academics__block-degree"> BA | BS | MS | BS/MS | PhD | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://physics.case.edu/undergraduate-programs/undergrad-degree-programs/bsdegree-mathphys/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Mathematics and Physics</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Experience a synergistic, coherent and parallel education in mathematics and physics in a program that combines the cores of both disciplines.</p>
+                    <p></p><mark class="academics__block-degree"> BS </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://bulletin.case.edu/schoolofengineering/mechaeroeng/#undergraduatetext"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Mechanical Design and Manufacturing</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Interested in manufacturing practices, processes and design? Explore production-related areas of engineering fields.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://engineering.case.edu/emae/undergraduate-program"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Mechanical Engineering</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Master the fundamentals of chemistry, physics and mathematics while learning methods of modern experimental engineering analysis and data acquisition.</p>
+                    <p></p><mark class="academics__block-degree"> MS | MS | PhD | BS | BS/MS </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://music.case.edu/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Music</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Hone your musical skills and knowledge through an experience that gives you a wide range of opportunities for musical study and participation. This program requires audition.</p>
+                    <p></p><mark class="academics__block-degree"> BA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://music.case.edu/ugrad-academic-programs/b-s-in-music-education-program-information/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Music Education</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Want to use your musical skills to teach others? Pursue a fully accredited curriculum that develops your abilities for musical instruction.</p>
+                    <p></p><mark class="academics__block-degree"> BS | MA | PhD </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://artsci.case.edu/naturalsciences/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Natural Sciences</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Build your understanding of the natural world through an interdisciplinary education that develops a broad background in the sciences.</p>
+                    <p></p><mark class="academics__block-degree"> BA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://biology.case.edu/bachelor-of-science-in-neuroscience/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Neurosciences</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Attain higher education in modern neuroscience through our comprehensive curriculum and highly interactive academic environment.</p>
+                    <p></p><mark class="academics__block-degree"> BS | PhD </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://case.edu/nursing/programs/bsn"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Nursing</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Discover a rich academic experience that combines nursing theory with hands-on learning and leadership development in real-world health care settings.</p>
+                    <p></p><mark class="academics__block-degree"> MSN | MSN/PhD | MN | DNP | PhD | Dual Doctorate PhD/DNP | BSN | Post-Master's Certificate | Certificate | MSN </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://case.edu/medicine/nutrition/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Nutrition</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>From dietetics to public health, our nutrition curriculum encompasses a variety of topics—including metabolism and metabolomics—to prepare you for the career path you choose.</p>
+                    <p></p><mark class="academics__block-degree"> Minor | BS | BA | MS | PhD | Dual Degree | Dual Degree | Certificate | IGS Program | BS/MS </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://case.edu/medicine/nutrition/education-programs/undergraduate-programs-nutrition"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Nutritional Biochemistry and Metabolism</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Our program allows you to study nutrients and metabolic functions to prepare for a future in nutrition, metabolic research or another health field.</p>
+                    <p></p><mark class="academics__block-degree"> BS | BA </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://origins.case.edu/major/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Origins Sciences</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Work across disciplines to question and discover the origin and evolution of simple and complex systems—from the big bang to the human mind.</p>
+                    <p></p><mark class="academics__block-degree"> BS </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://philosophy.case.edu/undergraduate/bachelor-of-arts-in-philosophy/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Philosophy</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Build your analytical, critical thinking and communication skills in a program that shows how philosophy relates to math, science, the arts and more.</p>
+                    <p></p><mark class="academics__block-degree"> BA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://physics.case.edu/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Physics</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Through theoretical and experimental work, you’ll study areas spanning the design and development of new materials to the workings of the universe.</p>
+                    <p></p><mark class="academics__block-degree"> BS | MS | PhD | BS/MS | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://politicalscience.case.edu/dept-programs/major-program/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Political Science</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Explore political behavior, government institutions, international relations, finance, policy-making, protest and revolution and more in our programs.</p>
+                    <p></p><mark class="academics__block-degree"> BA | MA | PhD | Minor | JD/MA | IGS Program </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://engineering.case.edu/macromolecular-science-engineering/academics/polymer-science-and-engineering/bachelor-science"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Polymer Science and Engineering</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Study the development of polymeric materials and the application of structure-property relationships as you prepare for a career or further education.</p>
+                    <p></p><mark class="academics__block-degree"> BSE | BS/MS | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://arthistory.case.edu/undergraduate/art-studio/bachelor-of-arts-in-pre-architecture/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Pre-Architecture</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Explore the forms, history and functions of architecture while gaining studio skills and practical knowledge from learning outside of the classroom.</p>
+                    <p></p><mark class="academics__block-degree"> BA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://psychsciences.case.edu/undergraduate/major-in-psychology/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Psychology</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Our program provides a well-rounded background in all aspects of the human experience—from brain functions to neuron actions, from child development to care for the aged.</p>
+                    <p></p><mark class="academics__block-degree"> BA | Minor | MA | PhD | PhD </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://bulletin.case.edu/schoolofmedicine/epidemiologyandbiostatistics/#minorinpublichealthtext"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Public Health</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Help support healthy people and thriving communities while gaining an understanding of the history, policy and science of health. You'll benefit from departmental and institutional collaborations like the Center for Global Health and Diseases.</p>
+                    <p></p><mark class="academics__block-degree"> MPH | Dual Degree | Dual Degree | Dual Degree | IGS Program | Minor | MPH </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://artsci.case.edu/public-policy/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Public Policy</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>In our program, you’ll analyze the equity, efficiency and practicality of proposed policies—and generate alternatives that could impact politics.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://religion.case.edu/undergraduate-programs/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Religious Studies</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Explore and interpret beliefs, ideas, texts, practices and institutions from a range of scholarly perspectives to understand religion’s role in life.</p>
+                    <p></p><mark class="academics__block-degree"> BA | MA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://mll.case.edu/undergraduate/russian/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Russian</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>This program offers Russian language courses—from beginning to advanced—as well as literature in translation to help you master your skills.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://case.edu/socialjustice/education/academic-programs"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Social Justice</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Prepare to address inequities by studying everything from the history of social justice work to appropriate individual and collective remedies.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://bulletin.case.edu/mandelschoolofappliedsocialsciences/undergradminor/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Social Work</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Our groundbreaking curriculum&nbsp;paired with personalized instruction&nbsp;will elevate your understanding of social work practice, theory and research.</p>
+                    <p></p><mark class="academics__block-degree"> MSW | MSW | MSW | Dual Degree | MSW | Minor | Graduate Certificate </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://sociology.case.edu/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Sociology</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Study human interaction, the variation in human social organizations and the impact of both on the existence of the individual.</p>
+                    <p></p><mark class="academics__block-degree"> BA | MA | PhD | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://mll.case.edu/undergraduate/spanish/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Spanish</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Immerse yourself in Spanish language, literature and culture as you develop skills that can be applied to all government, business and academic fields.</p>
+                    <p></p><mark class="academics__block-degree"> BA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://athletics.case.edu/physicalEducation/SportsMedicine"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Sports Medicine</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Interested in preventing and treating sports injuries? Through our clinical and field experiences, you'll work closely with top-tier health care pros.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://case.edu/medicine/nutrition/education-programs/undergraduate-programs-in-nutrition/minor-programs-in-nutrition/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Sports Nutrition</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Study everything from exercise physiology to energy dysregulation in order to earn a specialty in sports nutrition.</p>
+                    <p></p><mark class="academics__block-degree"> Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://mathstats.case.edu/undergraduate-programs/bachelor-of-science-in-statistics/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Statistics</h2>
+                    <p class="academics__block-summary"></p>
+                    <p><span><span><span><span><span><span>Start a career or advance your education in this rapidly changing field as technology continues to provide us with opportunities to understand uncertainty and probability.</span></span></span></span></span></span></p>
+                    <p></p><mark class="academics__block-degree"> BS | BA | MS | PhD | Minor | BS/MS </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="https://weatherhead.case.edu/degrees/undergraduate/academics/supply-chain-management/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Supply Chain Management</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>In our program—the first in the U.S.—you’ll study production, transportation, distribution and other logistics companies use to meet customer demands.</p>
+                    <p></p><mark class="academics__block-degree"> MSM | Concentration </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://engineering.case.edu/eecs/systems_and_controls"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Systems and Control Engineering</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Examine the basic concepts, cross-disciplinary techniques, analytical tools and engineering methods needed to analyze and design complex systems.</p>
+                    <p></p><mark class="academics__block-degree"> BS | MS | MS | PhD | Minor | BS/MS </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://biology.case.edu/undergraduate/bachelor-of-science-systems-biology/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Systems Biology</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Master advanced quantitative and computational skills in a fast-emerging area of research that combines math, computer science and biological science.</p>
+                    <p></p><mark class="academics__block-degree"> BS | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://artsci.case.edu/teacher-education/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Teacher Education</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>We train students who are experts in their fields to become accomplished teachers dedicated to instilling this knowledge in the next generation. This program is available as second major for a BA or as a companion to a BS.</p>
+                    <p></p><mark class="academics__block-degree"> </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://theater.case.edu/academic-programs/bachelor-of-arts-in-theater/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Theater</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Our programs are dedicated to student success, allowing you to work closely with highly trained professionals on everything from acting to technical theater.</p>
+                    <p></p><mark class="academics__block-degree"> BA | MFA | MA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://artsci.case.edu/women/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">Women's and Gender Studies</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Examine major issues of today in an interdisciplinary program that prepares you to think critically and creatively by using gender in your analysis.</p>
+                    <p></p><mark class="academics__block-degree"> BA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+               <div class="academics-block views-row">
+                <div>
+                 <div>
+                  <a href="http://artsci.case.edu/world-literature/"> 
+                   <div class="academics__block">
+                    <h2 class="header--main--dark">World Literature</h2>
+                    <p class="academics__block-summary"></p>
+                    <p>Study the literature of a wide variety of countries and regions through our multidisciplinary programs that emphasize&nbsp;contributions of past and present.</p>
+                    <p></p><mark class="academics__block-degree"> BA | MA | Minor </mark>
+                   </div></a>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </article>
+       </div>
+      </div>
+     </div>
+    </main>
+    <footer role="contentinfo">
+     <div class="region region-footer">
+      <div class="views-element-container block block-views block-views-blockfooter-block-footer" id="block-views-block-footer-block-footer">
+       <div>
+        <div class="footer view view-footer view-id-footer view-display-id-block_footer js-view-dom-id-fff11ef0f81369d1909a01576c9459e47ca58227c2865da8c2a59470e3e196b4">
+         <div class="view-content">
+          <div class="views-row">
+           <div class="container">
+            <div class="row">
+             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 footer__block--university">
+              <img src="/admission/themes/custom/crew_admission/images/cwru-logo-formal.svg" alt="cwru logo with tagline" class="footer__logo">
+              <p>© 2022 <a href="//www.case.edu/">Case Western Reserve University</a></p>
+              <address>10900 Euclid Ave. Cleveland, Ohio 44106</address>
+              <p> 216.368.2000<br><a href="//www.case.edu/legal.html">Legal Notice</a> | <a href="//case.edu/privacy-statement/">Privacy Policy</a></p>
+             </div>
+             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 footer__block--department">
+              <img src="/admission/themes/custom/crew_admission/images/pin-icon.svg" alt="map marker" class="footer__map-icon hidden-sm hidden-xs">
+              <div class="footer__department-info">
+               <h3 class="footer__header">Undergraduate Admission</h3>
+               <p> 10900 Euclid Ave. <br> Cleveland, Ohio 44106-7055 </p>
+               <p><strong>Phone:</strong> <a href="tel:216.368.4450">216.368.4450</a></p>
+               <p><strong>Email:</strong> <a href="mailto:admission@case.edu">admission@case.edu</a></p>
+               <p><a href="mailto:admission@case.edu">Site Feedback</a></p>
+              </div>
+             </div>
+             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 footer__block--social">
+              <h3 class="footer__header">Social Media</h3>
+              <div class="footer__social-icons"><a href="https://www.facebook.com/cwruadmission" target="_blank" title="Undergraduate Admission Facebook" class="fa fa-facebook footer__social-icon"></a><a href="https://twitter.com/cwruadmission" target="_blank" title="Undergraduate Admission Twitter" class="fa fa-twitter footer__social-icon"></a><a href="https://www.instagram.com/cwruadmission/" target="_blank" title="Undergraduate Admission Instagram" class="fa fa-instagram footer__social-icon"></a><a href="https://www.youtube.com/user/case" target="_blank" title="Undergraduate Admission YouTube" class="fa fa-youtube footer__social-icon"></a><a href="https://mp.weixin.qq.com/s/VqFQwTxw_jDrgZEEVTUyGw" target="_blank" title="Undergraduate Admission WeChat" class="fa fa-weixin footer__social-icon"></a>
+              </div>
+             </div>
+             <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 footer__block--links">
+              <h3 class="footer__header">CWRU Links</h3>
+              <ul role="menu" class="page-breadcrumb breadcrumb">
+               <li role="menuitem"><a href="http://case.edu/admissions/">Apply</a><i class="li-pipe" aria-hidden="true">|</i></li>
+               <li role="menuitem"><a href="https://case.edu/give/">Give</a><i class="li-pipe" aria-hidden="true">|</i></li>
+               <li role="menuitem"><a href="http://case.edu/visit/">Visit</a><i class="li-pipe" aria-hidden="true">|</i></li>
+               <li role="menuitem"><a href="https://webapps.case.edu/directory/">Directory</a></li>
+              </ul>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/admission\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/416","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"anchor_link\/drupal.anchor_link,better_exposed_filters\/auto_submit,better_exposed_filters\/general,better_exposed_filters\/select_all_none,classy\/base,classy\/messages,classy\/node,core\/normalize,core\/picturefill,crew_admission\/global-styling,paragraphs\/drupal.paragraphs.unpublished,system\/base,views\/views.ajax,views\/views.module","theme":"crew_admission","theme_token":null},"ajaxTrustedUrl":{"\/admission\/academics":true},"views":{"ajax_path":"\/admission\/views\/ajax","ajaxViews":{"views_dom_id:b2bd47be8d7c055daf0edb3b6d7f606c6535d1ef80dd8f0ccfbcf8a0dd18d0b6":{"view_name":"uga_programs_view","view_display_id":"page_1","view_args":"","view_path":"\/node\/416","view_base_path":"academics","view_dom_id":"b2bd47be8d7c055daf0edb3b6d7f606c6535d1ef80dd8f0ccfbcf8a0dd18d0b6","pager_element":0}}},"user":{"uid":0,"permissionsHash":"0adeb4f1849941d2282eda8aea1a6cd33d2d927287438458cefb08d2ae067a48"}}</script>
+  <script src="/admission/core/assets/vendor/jquery/jquery.min.js?v=3.6.0"></script>
+  <script src="/admission/core/misc/polyfills/element.matches.js?v=9.3.15"></script>
+  <script src="/admission/core/misc/polyfills/object.assign.js?v=9.3.15"></script>
+  <script src="/admission/core/assets/vendor/css-escape/css.escape.js?v=1.5.1"></script>
+  <script src="/admission/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
+  <script src="/admission/core/assets/vendor/jquery-once/jquery.once.min.js?v=2.2.3"></script>
+  <script src="/admission/core/misc/drupalSettingsLoader.js?v=9.3.15"></script>
+  <script src="/admission/core/misc/drupal.js?v=9.3.15"></script>
+  <script src="/admission/core/misc/drupal.init.js?v=9.3.15"></script>
+  <script src="/admission/core/assets/vendor/picturefill/picturefill.min.js?v=3.0.3"></script>
+  <script src="/admission/core/assets/vendor/tabbable/index.umd.min.js?v=5.2.1"></script>
+  <script src="/admission/themes/custom/crew_admission/includes/bootstrap/bootstrap.min.js?v=1.9"></script>
+  <script src="/admission/themes/custom/crew_admission/js/functions.js?v=1.9"></script>
+  <script src="/admission/themes/custom/crew_admission/js/rellax.min.js?v=1.9"></script>
+  <script src="//webapps.case.edu/t4/rave/jsonp.pl?callback=raveCallback"></script>
+  <script src="https://www.youvisit.com/tour/Embed/js3" defer async></script>
+  <script src="/admission/core/misc/jquery.once.bc.js?v=9.3.15"></script>
+  <script src="/admission/core/assets/vendor/jquery-form/jquery.form.min.js?v=4.3.0"></script>
+  <script src="/admission/core/misc/progress.js?v=9.3.15"></script>
+  <script src="/admission/core/modules/responsive_image/js/responsive_image.ajax.js?v=9.3.15"></script>
+  <script src="/admission/core/misc/ajax.js?v=9.3.15"></script>
+  <script src="/admission/core/themes/stable/js/ajax.js?v=9.3.15"></script>
+  <script src="/admission/core/modules/views/js/base.js?v=9.3.15"></script>
+  <script src="/admission/core/modules/views/js/ajax_view.js?v=9.3.15"></script>
+  <script src="/admission/modules/contrib/better_exposed_filters/js/better_exposed_filters.js?v=4.x"></script>
+  <script src="/admission/core/misc/debounce.js?v=9.3.15"></script>
+  <script src="/admission/modules/contrib/better_exposed_filters/js/auto_submit.js?v=4.x"></script>
+  <script src="/admission/modules/contrib/better_exposed_filters/js/bef_select_all_none.js?v=4.x"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ff6859dcb2","applicationID":"56254627","transactionName":"bwEGZhNQWhJWUUYKDVZLJVEVWFsPGHZAFhJZCDhcDlVRPXRdXBcQVwgIVxNteg5TV2QKB08nC1wVQ1sNW1dATlxODQFF","queueTime":0,"applicationTime":4159,"atts":"Q0YFEFtKSRw=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

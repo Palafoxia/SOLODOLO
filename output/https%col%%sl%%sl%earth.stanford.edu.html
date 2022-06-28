@@ -1,0 +1,1273 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="no-js">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"cd34c8df90",applicationID:"51798863"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <style>/* @see https://github.com/aFarkas/lazysizes#broken-image-symbol */.js img.b-lazy:not([src]) { visibility: hidden; }/* @see https://github.com/aFarkas/lazysizes#automatically-setting-the-sizes-attribute */.js img.b-loaded[data-sizes=auto] { display: block; width: 100%; }</style>
+  <link rel="canonical" href="https://earth.stanford.edu/">
+  <link rel="shortlink" href="https://earth.stanford.edu/">
+  <meta property="og:site_name" content="Stanford Earth">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/themes/custom/matson/favicon.ico" type="image/vnd.microsoft.icon">
+  <script src="/sites/default/files/google_tag/gtm_main_site/google_tag.script.js?rdhquc" defer></script>
+  <title>Stanford Earth</title>
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_mSIL5MdqBlN8HsntTZN3bFsYLZaoAcnoyVwKjQkdsic.css">
+  <link rel="stylesheet" media="all" href="//use.fontawesome.com/releases/v5.7.1/css/all.css">
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_ySzdzlNsTXcaGe8zXhE2UAPvGiZjwHz_P7YtceQgWOw.css">
+  <link rel="stylesheet" media="print" href="/sites/default/files/css/css_nCi3uQB4VLfMAIpbxzxP1N6XBGM-xeFBEaJbkGm80Vk.css">
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_C-cQnAClmmru2AzA8j4EMAyGvUEBqyBhotR9nQWy9SQ.css">
+  <script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.11.7"></script>
+  <script src="/core/misc/modernizr-additional-tests.js?v=3.11.7"></script>
+ </head>
+ <body class="front role--anonymous">
+  <div id="skip">
+   <a href="#block-matson-content" class="visually-hidden focusable skip-link"> Skip to content </a>
+  </div>
+  <div class="brand-bar red">
+   <a href="https://www.stanford.edu/"><img src="/themes/custom/matson/img/optimized/header-stanford-logo@2x.png" alt="Stanford University"></a>
+   <div id="block-intranetlink" class="block-content _777a694-baa3-4e97-bb57-8a99430c07f8 block-block-content block-intranetlink">
+    <div class="block-content basic body text-with-summary label-hidden">
+     <p><a href="https://earth.stanford.edu/inside">Intranet</a></p>
+    </div>
+   </div>
+  </div><!-- /#global-header -->
+  <noscript aria-hidden="true">
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV59MRT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <!-- ______________________ HEADER _______________________ -->
+   <div>
+    <div id="highlighted">
+     <div id="block-newschoolinfo" class="block-content _83a70f8-3d63-4bac-9a3b-357c7dc39587 block-block-content block-newschoolinfo">
+      <div class="block-content basic body text-with-summary label-hidden">
+       <style type="text/css"><!--/*--><![CDATA[/* ><!--*/
+
+<!--/*--><![CDATA[/* ><!--*/
+.banner-newschool {
+  background-color: #007C92;
+  padding: 1em;
+}
+.banner-newschool a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+.banner-newschool a, .banner-newschool {
+  color: #fff;
+}
+
+/*--><!]]]]><![CDATA[>*/
+
+/*--><!]]>*/
+</style>
+       <div class="banner-newschool text-align-center">
+        Becoming part of the <a href="https://sustainability.stanford.edu/">Stanford Doerr School of Sustainability</a> in Fall 2022
+       </div>
+      </div>
+     </div>
+     <div id="block-alertblock" class="block-content _5781af0-90f3-41f8-b594-3d579f305cbd block-block-content block-alertblock">
+      <div class="block-content basic body text-with-summary label-hidden">
+       <div id="earth-alert">
+        <p><i aria-hidden="true" class="fa fa-exclamation-circle">&nbsp;</i><a href="https://earth.stanford.edu/covid-19">COVID-19 Info for Stanford Earth</a></p>
+        <div id="earth-close">
+         x
+        </div>
+       </div>
+      </div>
+     </div>
+     <div data-drupal-messages-fallback class="hidden"></div>
+    </div>
+    <div class="admin-tabs"></div>
+    <header id="header">
+     <div id="block-matson-branding" class="system-branding-block block--lockup block-grid-collapse block-system block-matson-branding">
+      <div class="block--lockup__site-logo-wrapper">
+       <a href="/" title="Stanford Earth | School of Earth, Energy &amp; Environmental Sciences" rel="home" class="block--lockup__site-logo"><img src="/themes/custom/matson/img/optimized/stanford-earth-logo%402x.png" alt="Stanford Earth | School of Earth, Energy &amp; Environmental Sciences"></a>
+      </div>
+      <div class="block--lockup__site-name-and-slogan">
+        Stanford Earth 
+      </div>
+      <div class="block--lockup__site-slogan">
+       School of Earth, Energy &amp; Environmental Sciences
+      </div>
+     </div>
+     <div class="navbar js-nav-expandable">
+      <div class="navbar__container">
+       <div class="navbar__inner">
+        <button class="navbar__button js-nav-mobile-closable"><span class="navbar__text visually-hidden">menu</span>
+         <svg class="i-svg i-svg--menu" role="img" aria-labelledby="svg_menu">
+          <title id="svg_menu">Menu list icon</title><use xlink:href="#i-menu" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+         </svg>
+         <svg class="i-svg i-svg--close" role="img" aria-labelledby="svg_close">
+          <title id="svg_close">Menu list collapse toggle</title><use xlink:href="#i-close" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+         </svg></button>
+        <div class="navbar__group js-nav-group-viewable js-nav-item-expandable">
+         <nav role="navigation" aria-labelledby="block-matson-main-menu-menu" id="block-matson-main-menu" class="navigation__main-menu system-menu-block main block block-menu navigation menu--main">
+          <a name="main-menu" id="main-menu"></a>
+          <h2 class="visually-hidden" id="block-matson-main-menu-menu">Main navigation</h2>
+          <ul class="basic-main-menu menu">
+           <li class="menu-item"><a href="/" target="" data-drupal-link-system-path="<front>" class="is-active">Home</a></li>
+           <li class="menu-item menu-item--expanded"><a href="/about/departments-programs" data-drupal-link-system-path="node/186">About</a>
+            <ul class="menu">
+             <li class="menu-item"><a href="/about/departments-programs" data-drupal-link-system-path="node/186">Departments &amp; Programs</a></li>
+             <li class="menu-item"><a href="/farm" data-drupal-link-system-path="node/11331">Educational Farm</a></li>
+             <li class="menu-item"><a href="/about/directory" data-drupal-link-system-path="node/7421">Directory</a></li>
+             <li class="menu-item"><a href="/about/our-community" data-drupal-link-system-path="node/2066">Our Community</a></li>
+             <li class="menu-item"><a href="/our-values" data-drupal-link-system-path="node/265351">Our Values and Practices</a></li>
+             <li class="menu-item"><a href="/dei" data-drupal-link-system-path="node/120596">Diversity, Equity, and Inclusion</a></li>
+             <li class="menu-item"><a href="/about/commencement" data-drupal-link-system-path="node/3516">Commencement</a></li>
+             <li class="menu-item"><a href="/about/visit-us" data-drupal-link-system-path="node/7781">Visit Us</a></li>
+             <li class="menu-item"><a href="/about/contact-us" data-drupal-link-system-path="node/2246">Contact us</a></li>
+             <li class="menu-item"><a href="/about/history" data-drupal-link-system-path="node/585206">History</a></li>
+            </ul></li>
+           <li class="menu-item menu-item--expanded"><a href="/academics/undergraduates" data-drupal-link-system-path="node/166">Academics</a>
+            <ul class="menu">
+             <li class="menu-item"><a href="/academics/undergraduates" data-drupal-link-system-path="node/166">Undergraduates</a></li>
+             <li class="menu-item"><a href="/academics/graduate-programs" data-drupal-link-system-path="node/171">Graduate Students</a></li>
+             <li class="menu-item"><a href="/academics/professional-development" data-drupal-link-system-path="node/7871">Professional Development</a></li>
+             <li class="menu-item"><a href="/academics/careers" data-drupal-link-system-path="node/181">Careers</a></li>
+             <li class="menu-item"><a href="/academics/data-science" data-drupal-link-system-path="node/196">Data Science</a></li>
+             <li class="menu-item"><a href="/academics/field-learning" data-drupal-link-system-path="node/351">Field Learning</a></li>
+             <li class="menu-item"><a href="/academics/k12-outreach" data-drupal-link-system-path="node/2426">K-12 Outreach</a></li>
+             <li class="menu-item"><a href="/academics/professional-education" data-drupal-link-system-path="node/17111">Working Professionals</a></li>
+            </ul></li>
+           <li class="menu-item menu-item--expanded"><a href="/faculty-research/faculty-directory">Faculty &amp; Research</a>
+            <ul class="menu">
+             <li class="menu-item"><a href="/faculty-research/directory" data-drupal-link-system-path="node/5661">Faculty Directory</a></li>
+             <li class="menu-item"><a href="/research-groups" data-drupal-link-system-path="node/4411">Research Groups</a></li>
+             <li class="menu-item"><a href="/industrial-affiliate-programs" data-drupal-link-system-path="node/4436">Industrial Affiliate Programs</a></li>
+             <li class="menu-item"><a href="/faculty-research/shared-analytical-facilities-and-research-resources" data-drupal-link-system-path="node/4236">Shared Analytical Facilities and Research Resources</a></li>
+             <li class="menu-item"><a href="/faculty-research/stanford-earth-undergraduate-research" data-drupal-link-system-path="node/6216">Undergraduate Research</a></li>
+            </ul></li>
+           <li class="menu-item menu-item--expanded"><a href="/earth-matters" data-drupal-link-system-path="earth-matters">News &amp; Events</a>
+            <ul class="menu">
+             <li class="menu-item"><a href="/earth-matters" data-drupal-link-system-path="earth-matters">Stanford Earth Matters magazine</a></li>
+             <li class="menu-item"><a href="/news-events/school-highlights" data-drupal-link-system-path="node/2091">School Highlights</a></li>
+             <li class="menu-item"><a href="/news-events/media-mentions" data-drupal-link-system-path="node/2086">Media Mentions</a></li>
+             <li class="menu-item"><a href="/events/all" data-drupal-link-system-path="node/4426">Events</a></li>
+             <li class="menu-item"><a href="/news/spotlights" data-drupal-link-system-path="node/4041">People Spotlights</a></li>
+            </ul></li>
+          </ul>
+         </nav>
+         <div class="navbar__search">
+          <div class="views-exposed-form views-exposed-filter-block acquia-search-page block-views" data-drupal-selector="views-exposed-form-acquia-search-page">
+           <h2 class="block__title">Search</h2>
+           <form action="/search" method="get" id="views-exposed-form-acquia-search-page" accept-charset="UTF-8">
+            <div class="js-form-item form-item js-form-type-textfield form-item-search js-form-item-search">
+             <label for="edit-search">Search</label>
+             <input data-drupal-selector="edit-search" type="text" id="edit-search" name="search" value="" size="30" maxlength="128" class="form-text">
+            </div>
+            <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+             <input data-drupal-selector="edit-submit-acquia-search" type="submit" id="edit-submit-acquia-search" value="Search" class="button js-form-submit form-submit">
+            </div>
+           </form>
+          </div>
+         </div><!-- <div class="navbar__search"><form class="search-toggle"><input type="search" placeholder="Search"></form></div> -->
+        </div>
+       </div>
+      </div>
+     </div>
+    </header><!-- ______________________ MAIN _______________________ -->
+    <div class="main-container">
+     <div id="block-matson-content" class="system-main-block block-system block-matson-content">
+      <div id="simple">
+       <div id="hero-banner" class="hero-banner has-tint has-video">
+        <div class="video">
+         <div class="b-lazy paragraph stanford-video field-p-video-url video-embed-field label-hidden field--responsive-video">
+          <div class="video-embed-field-provider-youtube video-embed-field-responsive-video">
+           <iframe class="b-lazy" width="854" height="480" frameborder="0" allowfullscreen data-src="https://www.youtube.com/embed/pL4nDhkpC_Q?autoplay=1&amp;start=0&amp;rel=0&amp;showinfo=0&amp;enablejsapi=1&amp;loop=1&amp;playlist=pL4nDhkpC_Q&amp;mute=1"></iframe>
+          </div>
+         </div>
+        </div>
+        <div class="hero-banner__inner">
+         <div class="hero-banner__container">
+          <div class="hero-banner__header is-right">
+           <div class="hero-banner__hgroup">
+            <h2 class="hero-banner__title h1">Understanding Earth</h2>
+            <p>We create knowledge to understand Earth and sustain its inhabitants.</p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="filmstrip" class="component-centered-container filmstrip fixed-width is-short not-tight is-single">
+        <h6 class="filmstrip__title">Challenges We Tackle</h6>
+        <div class="filmstrip__cards">
+         <div id="film-card" class="film-card has-arrow">
+          <a href="https://earth.stanford.edu/research/discovering-our-planet" class="film-card__link" aria-label="Discovering our planet" title="/research/discovering-our-planet">
+           <div class="film-card__thumbnail">
+            <article>
+             <div class="media image field-media-image label-hidden">
+              <picture>
+               <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/media/image/north-america-seen-from-space-picture-id514562153_1.jpg?itok=iFpvUUEb 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/media/image/north-america-seen-from-space-picture-id514562153_1.jpg?h=90a76ea9&amp;itok=H3zCxGUc 2x" media="(min-width: 0em)" type="image/jpeg">
+               <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/media/image/north-america-seen-from-space-picture-id514562153_1.jpg?h=90a76ea9&amp;itok=H3zCxGUc" alt="Earth from space" typeof="foaf:Image" loading="lazy">
+              </picture>
+             </div>
+            </article>
+            <div class="film-card__caption">
+             <h6 class="film-card__title">Discovering our planet</h6>
+            </div>
+            <div class="film-card__arrow">
+             <svg class="i-svg i-svg--arrow-right" role="img">
+              <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+             </svg>
+            </div>
+           </div></a>
+         </div>
+         <div id="film-card--2" class="film-card has-arrow">
+          <a href="https://earth.stanford.edu/research/securing-energy-future" class="film-card__link" aria-label="Securing the energy future" title="/research/securing-energy-future">
+           <div class="film-card__thumbnail">
+            <article>
+             <div class="media image field-media-image label-hidden">
+              <picture>
+               <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/paragraph/hero-banner/CROP2.NYLights.shutterstock_54173350.jpg?itok=XNXOxvdJ 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/paragraph/hero-banner/CROP2.NYLights.shutterstock_54173350.jpg?h=cdd58907&amp;itok=_0kvcYly 2x" media="(min-width: 0em)" type="image/jpeg">
+               <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/paragraph/hero-banner/CROP2.NYLights.shutterstock_54173350.jpg?h=cdd58907&amp;itok=_0kvcYly" alt="New York city lights" typeof="foaf:Image" loading="lazy">
+              </picture>
+             </div>
+            </article>
+            <div class="film-card__caption">
+             <h6 class="film-card__title">Securing the energy future</h6>
+            </div>
+            <div class="film-card__arrow">
+             <svg class="i-svg i-svg--arrow-right" role="img">
+              <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+             </svg>
+            </div>
+           </div></a>
+         </div>
+         <div id="film-card--3" class="film-card has-arrow">
+          <a href="https://earth.stanford.edu/research/climate-solutions" class="film-card__link" aria-label="Climate Solutions" title="/research/climate-solutions">
+           <div class="film-card__thumbnail">
+            <article>
+             <div class="media image field-media-image label-hidden">
+              <picture>
+               <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/media/image/2019-12/Los%20Torres%20in%20Chile%20by%20Nora%20Miller%20Hennessy.jpg?itok=H-xzEuN8 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/media/image/2019-12/Los%20Torres%20in%20Chile%20by%20Nora%20Miller%20Hennessy.jpg?h=c6980913&amp;itok=G65x0bJu 2x" media="(min-width: 0em)" type="image/jpeg">
+               <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/media/image/2019-12/Los%20Torres%20in%20Chile%20by%20Nora%20Miller%20Hennessy.jpg?h=c6980913&amp;itok=G65x0bJu" alt="Torres del Paine in Chile by Nora Hennessy" typeof="foaf:Image" loading="lazy">
+              </picture>
+             </div>
+            </article>
+            <div class="film-card__caption">
+             <h6 class="film-card__title">Climate Solutions</h6>
+            </div>
+            <div class="film-card__arrow">
+             <svg class="i-svg i-svg--arrow-right" role="img">
+              <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+             </svg>
+            </div>
+           </div></a>
+         </div>
+         <div id="film-card--4" class="film-card has-arrow">
+          <a href="https://earth.stanford.edu/research/food-and-water-security" class="film-card__link" aria-label="Food and Water Security" title="/research/food-and-water-security">
+           <div class="film-card__thumbnail">
+            <article>
+             <div class="media image field-media-image label-hidden">
+              <picture>
+               <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/media/image/food.water_.ss_126723629.jpg?itok=6IBWM8-u 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/media/image/food.water_.ss_126723629.jpg?h=a61266fd&amp;itok=eY-K7IXP 2x" media="(min-width: 0em)" type="image/jpeg">
+               <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/media/image/food.water_.ss_126723629.jpg?h=a61266fd&amp;itok=eY-K7IXP" alt="Woman picking rice" typeof="foaf:Image" loading="lazy">
+              </picture>
+             </div>
+            </article>
+            <div class="film-card__caption">
+             <h6 class="film-card__title">Food and Water Security</h6>
+            </div>
+            <div class="film-card__arrow">
+             <svg class="i-svg i-svg--arrow-right" role="img">
+              <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+             </svg>
+            </div>
+           </div></a>
+         </div>
+         <div id="film-card--5" class="film-card has-arrow">
+          <a href="https://earth.stanford.edu/research/reducing-disaster-risks" class="film-card__link" aria-label="Reducing Disaster Risks" title="/research/reducing-disaster-risks">
+           <div class="film-card__thumbnail">
+            <article>
+             <div class="media image field-media-image label-hidden">
+              <picture>
+               <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/paragraph/hero-banner/crop.pinatubo%20by%20alberto%20garcia%20-%201.jpg?itok=pK9Z5eYd 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/paragraph/hero-banner/crop.pinatubo%20by%20alberto%20garcia%20-%201.jpg?h=c31e954f&amp;itok=XzKLnnF3 2x" media="(min-width: 0em)" type="image/jpeg">
+               <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/paragraph/hero-banner/crop.pinatubo%20by%20alberto%20garcia%20-%201.jpg?h=c31e954f&amp;itok=XzKLnnF3" alt="Mount Pinatubo explosion" typeof="foaf:Image" loading="lazy">
+              </picture>
+             </div>
+            </article>
+            <div class="film-card__caption">
+             <h6 class="film-card__title">Reducing Disaster Risks</h6>
+            </div>
+            <div class="film-card__arrow">
+             <svg class="i-svg i-svg--arrow-right" role="img">
+              <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+             </svg>
+            </div>
+           </div></a>
+         </div>
+         <div id="film-card--6" class="film-card has-arrow">
+          <a href="https://earth.stanford.edu/planetary-science" class="film-card__link" aria-label="Exploring other worlds" title="https://earth.stanford.edu/planetary-science">
+           <div class="film-card__thumbnail">
+            <article>
+             <div class="media image field-media-image label-hidden">
+              <picture>
+               <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/media/image/2019-11/planet_rpia17999-16_jpl_nasa.jpg?itok=7RnAXT8w 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/media/image/2019-11/planet_rpia17999-16_jpl_nasa.jpg?h=8abcec71&amp;itok=Jm1nqbdj 2x" media="(min-width: 0em)" type="image/jpeg">
+               <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/media/image/2019-11/planet_rpia17999-16_jpl_nasa.jpg?h=8abcec71&amp;itok=Jm1nqbdj" alt="Illustration of planet" typeof="foaf:Image" loading="lazy">
+              </picture>
+             </div>
+            </article>
+            <div class="film-card__caption">
+             <h6 class="film-card__title">Exploring other worlds</h6>
+            </div>
+            <div class="film-card__arrow">
+             <svg class="i-svg i-svg--arrow-right" role="img">
+              <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+             </svg>
+            </div>
+           </div></a>
+         </div>
+        </div>
+       </div>
+       <div id="section-callout-blocks" class="section-callout-blocks component-centered-container">
+        <header id="section-header" class="section-header is-centered has-dash-under">
+         <h2 class="drop-cap-title has-dash-under no-emphasis"><span class="drop-cap-title__name">What Makes Stanford Earth Different</span><span class="drop-cap-title__drop-cap" aria-hidden="true">W</span></h2>
+        </header>
+        <div id="callout-blocks" class="callout-blocks">
+         <div id="callout-block" class="callout-block">
+          <div class="callout-block__title">
+           <span class="callout-block__intro"><p>We do</p></span>
+           <h3 class="callout-block__name"><a href="/academics/field-learning" title="Go to the Field Learning page" aria-label="We do Field Learning On 7 Continents"> Field Learning </a></h3><span class="callout-block__subhead">On 7 Continents</span>
+          </div><a href="/academics/field-learning" title="Go to the Field Learning page" class="callout-block__action" aria-label="Navigate to Field Learning">
+           <svg class="i-svg i-svg--arrow-right" role="img">
+            <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+           </svg></a>
+          <div class="callout-block__icon"></div>
+         </div>
+         <div id="callout-block--2" class="callout-block">
+          <div class="callout-block__title">
+           <span class="callout-block__intro"><p>We Teach</p></span>
+           <h3 class="callout-block__name"><a href="https://earth.stanford.edu/sustainability" title="Go to the Sustainability page" aria-label="We Teach Sustainability for the future"> Sustainability </a></h3><span class="callout-block__subhead">for the future</span>
+          </div><a href="https://earth.stanford.edu/sustainability" title="Go to the Sustainability page" class="callout-block__action" aria-label="Navigate to Sustainability">
+           <svg class="i-svg i-svg--arrow-right" role="img">
+            <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+           </svg></a>
+          <div class="callout-block__icon"></div>
+         </div>
+         <div id="callout-block--3" class="callout-block">
+          <div class="callout-block__title">
+           <span class="callout-block__intro"><p>We use</p></span>
+           <h3 class="callout-block__name"><a href="/academics/data-science" title="Go to the Data Science page" aria-label="We use Data Science To Understand Earth"> Data Science </a></h3><span class="callout-block__subhead">To Understand Earth</span>
+          </div><a href="/academics/data-science" title="Go to the Data Science page" class="callout-block__action" aria-label="Navigate to Data Science">
+           <svg class="i-svg i-svg--arrow-right" role="img">
+            <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+           </svg></a>
+          <div class="callout-block__icon"></div>
+         </div>
+        </div>
+       </div>
+       <style>
+  #paraID66922814.visible {background-image:url('/sites/default/files/styles/2320_wide_scaled_/public/media/image/2019-11/hills-green-by_qingbao_meng-via_unsplash_web.jpg?itok=ZvfHgdlf')};
+</style>
+       <div id="paraID66922814" class="section-expandable-banner js-section-expandable-banner lazy-background">
+        <div class="expandable-banner__header">
+         <header id="section-header--2" class="section-header left-aligned has-dash-left">
+          <h2 class="drop-cap-title has-dash-left has-dash-emphasis"><span class="drop-cap-title__name">Degree Programs</span><span class="drop-cap-title__drop-cap" aria-hidden="true">D</span></h2>
+          <p>We offer BS, MS, MA, and PhD programs</p>
+         </header>
+        </div>
+        <div class="expandable-banner__container">
+         <div class="expandable-cards">
+          <div id="expandable-card" class="expandable-card js-expandable-card is-narrow">
+           <header class="expandable-card__header">
+            <h4 class="expandable-card__title drop-cap-title"><span class="drop-cap-title__name">
+              <div class="paragraph stanford-expandable-card field-p-expand-card-title string label-hidden">
+               Undergraduate Programs
+              </div></span><span class="drop-cap-title__drop-cap drop-cap--is-centered" aria-hidden="true">U</span></h4>
+           </header><a id="open-expandable-card" href="?card=expandable-card#expandable-card" class="expandable-card__toggle js-expandable-card__toggle expandable-card__open" title="Open" aria-label="Expand 
+            Undergraduate Programs
+       Menu"><span>
+             <svg class="i-svg i-svg--plus" role="img">
+              <title>Expand card</title><use xlink:href="#i-plus" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+             </svg></span></a>
+           <nav class="icon-items" aria-expanded="false" role="navigation">
+            <a href="/gs/undergraduate" class="icon-item" title=""><span class="icon-item__image"></span><h5 class="icon-item__name">Geological Sciences <span class="icon-item__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                follow link<use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg></span></h5></a><a href="/ere/undergraduate-program" class="icon-item" title=""><span class="icon-item__image"></span><h5 class="icon-item__name">Energy Resources Engineering <span class="icon-item__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                follow link<use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg></span></h5></a><a href="/geophysics/undergraduate-program" class="icon-item" title=""><span class="icon-item__image"></span><h5 class="icon-item__name">Geophysics <span class="icon-item__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                follow link<use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg></span></h5></a><a href="/esys/undergraduate-program" class="icon-item" title=""><span class="icon-item__image"></span><h5 class="icon-item__name">Earth Systems Program <span class="icon-item__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                follow link<use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg></span></h5></a>
+           </nav><a id="close-expandable-card" href="?#expandable-card" class="expandable-card__toggle js-expandable-card__toggle expandable-card__close" title="Close" aria-label="Collapse 
+            Undergraduate Programs
+       Menu"><span>
+             <svg class="i-svg i-svg--minus" role="img">
+              <title>Collapse card</title><use xlink:href="#i-minus" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+             </svg></span></a>
+          </div>
+          <div id="expandable-card--2" class="expandable-card js-expandable-card is-narrow">
+           <header class="expandable-card__header">
+            <h4 class="expandable-card__title drop-cap-title"><span class="drop-cap-title__name">
+              <div class="paragraph stanford-expandable-card field-p-expand-card-title string label-hidden">
+               Graduate Programs
+              </div></span><span class="drop-cap-title__drop-cap drop-cap--is-centered" aria-hidden="true">G</span></h4>
+           </header><a id="open-expandable-card--2" href="?card=expandable-card--2#expandable-card--2" class="expandable-card__toggle js-expandable-card__toggle expandable-card__open" title="Open" aria-label="Expand 
+            Graduate Programs
+       Menu"><span>
+             <svg class="i-svg i-svg--plus" role="img">
+              <title>Expand card</title><use xlink:href="#i-plus" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+             </svg></span></a>
+           <nav class="icon-items" aria-expanded="false" role="navigation">
+            <a href="/gs/graduate" class="icon-item" title=""><span class="icon-item__image"></span><h5 class="icon-item__name">Geological Sciences <span class="icon-item__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                follow link<use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg></span></h5></a><a href="/ere/graduate-program" class="icon-item" title=""><span class="icon-item__image"></span><h5 class="icon-item__name">Energy Resources Engineering <span class="icon-item__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                follow link<use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg></span></h5></a><a href="/geophysics/graduate-program" class="icon-item" title=""><span class="icon-item__image"></span><h5 class="icon-item__name">Geophysics <span class="icon-item__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                follow link<use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg></span></h5></a><a href="/esys" class="icon-item" title=""><span class="icon-item__image"></span><h5 class="icon-item__name">Earth Systems Program <span class="icon-item__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                follow link<use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg></span></h5></a><a href="/ess/degrees" class="icon-item" title=""><span class="icon-item__image"></span><h5 class="icon-item__name">Earth System Science <span class="icon-item__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                follow link<use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg></span></h5></a><a href="/eiper/academics" class="icon-item" title=""><span class="icon-item__image"></span><h5 class="icon-item__name">Emmett Interdisciplinary Program in Environment and Resources <span class="icon-item__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                follow link<use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg></span></h5></a><a href="/sust/degrees" class="icon-item" title=""><span class="icon-item__image"></span><h5 class="icon-item__name">Change Leadership for Sustainability <span class="icon-item__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                follow link<use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg></span></h5></a>
+           </nav><a id="close-expandable-card--2" href="?#expandable-card--2" class="expandable-card__toggle js-expandable-card__toggle expandable-card__close" title="Close" aria-label="Collapse 
+            Graduate Programs
+       Menu"><span>
+             <svg class="i-svg i-svg--minus" role="img">
+              <title>Collapse card</title><use xlink:href="#i-minus" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+             </svg></span></a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="section-callout-filmstrip" class="section-callout-filmstrip no-columns header-to-top has-arrow">
+        <div class="filmstrip__header">
+         <header id="section-header--3" class="section-header left-aligned has-dash-under">
+          <h2 class="drop-cap-title has-dash-under no-emphasis"><span class="drop-cap-title__name">Where Our Programs Can Lead You</span><span class="drop-cap-title__drop-cap" aria-hidden="true">W</span></h2>
+          <p>Our students leave Stanford for careers in the corporate, government, and nonprofit sectors. They work as scientists, engineers, data experts, conservationists, policy makers, attorneys, and physicians, among other professions.</p>
+         </header>
+        </div>
+        <div class="filmstrip__container">
+         <div id="filmstrip--2" class="component-centered-container filmstrip is-flexible is-short not-tight is-single">
+          <div class="filmstrip__cards">
+           <div id="film-card--7" class="film-card has-arrow">
+            <a href="https://earth.stanford.edu/news/landscape-architect-designs-people-and-environment" class="film-card__link" aria-label="" title="https://earth.stanford.edu/news/landscape-architect-designs-people-and-environment">
+             <div class="film-card__thumbnail">
+              <article>
+               <div class="media image field-media-image label-hidden">
+                <picture>
+                 <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/media/image/KateHayes_0-prog-high.jpg?itok=mkjnWGBX 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/media/image/KateHayes_0-prog-high.jpg?h=19ef7fc1&amp;itok=D5-4EpIj 2x" media="(min-width: 0em)" type="image/jpeg">
+                 <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/media/image/KateHayes_0-prog-high.jpg?h=19ef7fc1&amp;itok=D5-4EpIj" alt="Kate Hayes" typeof="foaf:Image" loading="lazy">
+                </picture>
+               </div>
+              </article>
+              <div class="film-card__caption">
+               <p class="film-card__subtitle">Landscape architect<br> Earth Systems ’08</p>
+              </div>
+              <div class="film-card__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg>
+              </div>
+             </div></a>
+           </div>
+           <div id="film-card--8" class="film-card has-arrow">
+            <a href="https://earth.stanford.edu/news/stanford-earth-graduate-may-be-mars-bound" class="film-card__link" aria-label="" title="/news/stanford-earth-graduate-may-be-mars-bound">
+             <div class="film-card__thumbnail">
+              <article>
+               <div class="media image field-media-image label-hidden">
+                <picture>
+                 <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/media/image/watkins-nasa_0-prog-medium.jpg?itok=EgEFrXms 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/media/image/watkins-nasa_0-prog-medium.jpg?h=22d0f578&amp;itok=naeJn5vh 2x" media="(min-width: 0em)" type="image/jpeg">
+                 <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/media/image/watkins-nasa_0-prog-medium.jpg?h=22d0f578&amp;itok=naeJn5vh" alt="Jessica Watkins" typeof="foaf:Image" loading="lazy">
+                </picture>
+               </div>
+              </article>
+              <div class="film-card__caption">
+               <p class="film-card__subtitle">Astronaut<br> Geological and Environmental Sciences '10</p>
+              </div>
+              <div class="film-card__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg>
+              </div>
+             </div></a>
+           </div>
+           <div id="film-card--9" class="film-card has-arrow">
+            <a href="https://earth.stanford.edu/news/making-difference-capitol-hill" class="film-card__link" aria-label="" title="/news/making-difference-capitol-hill">
+             <div class="film-card__thumbnail">
+              <article>
+               <div class="media image field-media-image label-hidden">
+                <picture>
+                 <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/media/image/IMG_3244_cropped_edited.jpg?itok=ZAlYtgGj 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/media/image/IMG_3244_cropped_edited.jpg?h=93b0f75c&amp;itok=vEtmSGSu 2x" media="(min-width: 0em)" type="image/jpeg">
+                 <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/media/image/IMG_3244_cropped_edited.jpg?h=93b0f75c&amp;itok=vEtmSGSu" alt="Kai Anderson" typeof="foaf:Image" loading="lazy">
+                </picture>
+               </div>
+              </article>
+              <div class="film-card__caption">
+               <p class="film-card__subtitle">Washington lobbyist<br> Geological and Environmental Sciences BS '93 PhD '98</p>
+              </div>
+              <div class="film-card__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg>
+              </div>
+             </div></a>
+           </div>
+           <div id="film-card--10" class="film-card has-arrow">
+            <a href="https://earth.stanford.edu/news/pursuing-career-energy" class="film-card__link" aria-label="" title="/news/pursuing-career-energy">
+             <div class="film-card__thumbnail">
+              <article>
+               <div class="media image field-media-image label-hidden">
+                <picture>
+                 <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/media/image/carrers1_1-prog-medium.jpg?itok=lKJ8_PZx 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/media/image/carrers1_1-prog-medium.jpg?h=2f5b8ba1&amp;itok=KC9WWtep 2x" media="(min-width: 0em)" type="image/jpeg">
+                 <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/media/image/carrers1_1-prog-medium.jpg?h=2f5b8ba1&amp;itok=KC9WWtep" alt="Student wearing a hardhat" typeof="foaf:Image" loading="lazy">
+                </picture>
+               </div>
+              </article>
+              <div class="film-card__caption">
+               <p class="film-card__subtitle">Energy Engineer<br> Energy Resources Engineering<br> MS '16</p>
+              </div>
+              <div class="film-card__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg>
+              </div>
+             </div></a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="layout--basic">
+        <div class="paragraph stanford-wysiwyg field-p-wysiwyg text-with-summary label-hidden">
+         <p class="link--more"><a href="https://earth.stanford.edu/academics/careers" title="Careers">Visit our Careers page</a></p>
+        </div>
+       </div>
+       <div id="section-callout-filmstrip--2" class="section-callout-filmstrip no-columns header-to-top has-arrow">
+        <div class="filmstrip__header">
+         <header id="section-header--4" class="section-header left-aligned has-dash-under">
+          <h2 class="drop-cap-title has-dash-under no-emphasis"><span class="drop-cap-title__name">Our academic departments</span><span class="drop-cap-title__drop-cap" aria-hidden="true">O</span></h2>
+         </header>
+        </div>
+        <div class="filmstrip__container">
+         <div id="filmstrip--3" class="component-centered-container filmstrip is-flexible is-short not-tight is-single">
+          <div class="filmstrip__cards">
+           <div id="film-card--11" class="film-card has-arrow">
+            <a href="https://earth.stanford.edu/ess" class="film-card__link" aria-label="" title="/ess">
+             <div class="film-card__thumbnail">
+              <article>
+               <div class="media image field-media-image label-hidden">
+                <picture>
+                 <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/media/image/2019-10/vega_island_img_1877.jpg?itok=dYEaUWEP 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/media/image/2019-10/vega_island_img_1877.jpg?h=910727e9&amp;itok=HW5z8uXr 2x" media="(min-width: 0em)" type="image/jpeg">
+                 <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/media/image/2019-10/vega_island_img_1877.jpg?h=910727e9&amp;itok=HW5z8uXr" alt="ESS site photo" typeof="foaf:Image" loading="lazy">
+                </picture>
+               </div>
+              </article>
+              <div class="film-card__caption">
+               <p class="film-card__subtitle">Earth System Science</p>
+              </div>
+              <div class="film-card__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg>
+              </div>
+             </div></a>
+           </div>
+           <div id="film-card--12" class="film-card has-arrow">
+            <a href="https://earth.stanford.edu/gs" class="film-card__link" aria-label="" title="/gs">
+             <div class="film-card__thumbnail">
+              <article>
+               <div class="media image field-media-image label-hidden">
+                <picture>
+                 <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/media/image/2019-09/miller.deathvalley.sunmountains_5724_0.jpg?itok=vJKp1Owu 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/media/image/2019-09/miller.deathvalley.sunmountains_5724_0.jpg?h=ff90bf8d&amp;itok=paha2sG0 2x" media="(min-width: 0em)" type="image/jpeg">
+                 <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/media/image/2019-09/miller.deathvalley.sunmountains_5724_0.jpg?h=ff90bf8d&amp;itok=paha2sG0" alt="Death Valley" typeof="foaf:Image" loading="lazy">
+                </picture>
+               </div>
+              </article>
+              <div class="film-card__caption">
+               <p class="film-card__subtitle">Geological Sciences</p>
+              </div>
+              <div class="film-card__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg>
+              </div>
+             </div></a>
+           </div>
+           <div id="film-card--13" class="film-card has-arrow">
+            <a href="https://earth.stanford.edu/geophysics" class="film-card__link" aria-label="" title="/geophysics">
+             <div class="film-card__thumbnail">
+              <article>
+               <div class="media image field-media-image label-hidden">
+                <picture>
+                 <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/paragraph/hero-banner/Grand%20Prismatic%20Spring%2C%20Yellowstone%20National%20Park%2C%20USA_0.JPG?itok=IHvjhV_F 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/paragraph/hero-banner/Grand%20Prismatic%20Spring%2C%20Yellowstone%20National%20Park%2C%20USA_0.JPG?h=6f8e8448&amp;itok=q3A8u5bc 2x" media="(min-width: 0em)" type="image/jpeg">
+                 <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/paragraph/hero-banner/Grand%20Prismatic%20Spring%2C%20Yellowstone%20National%20Park%2C%20USA_0.JPG?h=6f8e8448&amp;itok=q3A8u5bc" alt="Grand Prismatic Spring, Yellowstone National Park" typeof="foaf:Image" loading="lazy">
+                </picture>
+               </div>
+              </article>
+              <div class="film-card__caption">
+               <p class="film-card__subtitle">Geophysics</p>
+              </div>
+              <div class="film-card__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg>
+              </div>
+             </div></a>
+           </div>
+           <div id="film-card--14" class="film-card has-arrow">
+            <a href="https://earth.stanford.edu/ere" class="film-card__link" aria-label="" title="/ere">
+             <div class="film-card__thumbnail">
+              <article>
+               <div class="media image field-media-image label-hidden">
+                <picture>
+                 <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/paragraph/slide/powerbannercrop2.unsplash%20-%201.jpg?itok=xfoS0tiv 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/paragraph/slide/powerbannercrop2.unsplash%20-%201.jpg?itok=5Dn_GLKv 2x" media="(min-width: 0em)" type="image/jpeg">
+                 <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/paragraph/slide/powerbannercrop2.unsplash%20-%201.jpg?itok=5Dn_GLKv" alt="windmills" typeof="foaf:Image" loading="lazy">
+                </picture>
+               </div>
+              </article>
+              <div class="film-card__caption">
+               <p class="film-card__subtitle">Energy Resources Engineering</p>
+              </div>
+              <div class="film-card__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg>
+              </div>
+             </div></a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="section-callout-filmstrip--3" class="section-callout-filmstrip no-columns header-to-top has-arrow">
+        <div class="filmstrip__header">
+         <header id="section-header--5" class="section-header left-aligned has-dash-under">
+          <h2 class="drop-cap-title has-dash-under no-emphasis"><span class="drop-cap-title__name">Our interdisciplinary academic programs</span><span class="drop-cap-title__drop-cap" aria-hidden="true">O</span></h2>
+         </header>
+        </div>
+        <div class="filmstrip__container">
+         <div id="filmstrip--4" class="component-centered-container filmstrip is-flexible is-short not-tight is-single">
+          <div class="filmstrip__cards">
+           <div id="film-card--15" class="film-card has-arrow">
+            <a href="https://earth.stanford.edu/esys" class="film-card__link" aria-label="" title="/esys">
+             <div class="film-card__thumbnail">
+              <article>
+               <div class="media image field-media-image label-hidden">
+                <picture>
+                 <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/paragraph/simple-block/Hannah%20Shabb%2C%20%26%23039%3B20%2C%20is%20pictured%20sitting%20surrounded%20by%20the%20mountain%20ranges%20in%20Mount%20Baker%20National%20Forest%2C%20Washington_small.jpg?itok=UnLKF6vr 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/paragraph/simple-block/Hannah%20Shabb%2C%20%26%23039%3B20%2C%20is%20pictured%20sitting%20surrounded%20by%20the%20mountain%20ranges%20in%20Mount%20Baker%20National%20Forest%2C%20Washington_small.jpg?itok=wY3_syvO 2x" media="(min-width: 0em)" type="image/jpeg">
+                 <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/paragraph/simple-block/Hannah%20Shabb%2C%20%26%23039%3B20%2C%20is%20pictured%20sitting%20surrounded%20by%20the%20mountain%20ranges%20in%20Mount%20Baker%20National%20Forest%2C%20Washington_small.jpg?itok=wY3_syvO" alt="Student sitting on rock overlooking " typeof="foaf:Image" loading="lazy">
+                </picture>
+               </div>
+              </article>
+              <div class="film-card__caption">
+               <p class="film-card__subtitle">Earth Systems Program</p>
+              </div>
+              <div class="film-card__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg>
+              </div>
+             </div></a>
+           </div>
+           <div id="film-card--16" class="film-card has-arrow">
+            <a href="https://earth.stanford.edu/sust" class="film-card__link" aria-label="" title="/sust">
+             <div class="film-card__thumbnail">
+              <article>
+               <div class="media image field-media-image label-hidden">
+                <picture>
+                 <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/paragraph/hero-banner/earth-sciences-outdoors-plain-7284.jpg?itok=VvjN1qwY 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/paragraph/hero-banner/earth-sciences-outdoors-plain-7284.jpg?h=51a72048&amp;itok=OD47RJkM 2x" media="(min-width: 0em)" type="image/jpeg">
+                 <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/paragraph/hero-banner/earth-sciences-outdoors-plain-7284.jpg?h=51a72048&amp;itok=OD47RJkM" alt="Julia Novy-Hildesley teaching by Toni Bird" typeof="foaf:Image" loading="lazy">
+                </picture>
+               </div>
+              </article>
+              <div class="film-card__caption">
+               <p class="film-card__subtitle">Change Leadership for Sustainability</p>
+              </div>
+              <div class="film-card__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg>
+              </div>
+             </div></a>
+           </div>
+           <div id="film-card--17" class="film-card has-arrow">
+            <a href="https://earth.stanford.edu/eiper" class="film-card__link" aria-label="" title="/eiper">
+             <div class="film-card__thumbnail">
+              <article>
+               <div class="media image field-media-image label-hidden">
+                <picture>
+                 <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/media/image/2020-09/Field-Winner_1_2019_sardine_school_Indonesia_snorkel_ShannonSwitzerSwanson%20%281%29.JPG?itok=UE8Mksrk 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/media/image/2020-09/Field-Winner_1_2019_sardine_school_Indonesia_snorkel_ShannonSwitzerSwanson%20%281%29.JPG?itok=owtaLn37 2x" media="(min-width: 0em)" type="image/jpeg">
+                 <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/media/image/2020-09/Field-Winner_1_2019_sardine_school_Indonesia_snorkel_ShannonSwitzerSwanson%20%281%29.JPG?itok=owtaLn37" alt="Underwater Fish" typeof="foaf:Image" loading="lazy">
+                </picture>
+               </div>
+              </article>
+              <div class="film-card__caption">
+               <p class="film-card__subtitle">Emmett Interdisciplinary Program in Environment and Resources</p>
+              </div>
+              <div class="film-card__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg>
+              </div>
+             </div></a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="section-feature-blocks" class="section-feature-blocks left-aligned component-centered-container">
+        <div class="feature-blocks__header">
+         <header id="section-header--6" class="section-header left-aligned has-dash-under">
+          <h2 class="drop-cap-title has-dash-under no-emphasis"><span class="drop-cap-title__name">Our Impact in the World</span><span class="drop-cap-title__drop-cap" aria-hidden="true">O</span></h2>
+          <p>We make an impact through faculty research that uncovers how our planet works, by teaching the next generation to understand and manage Earth’s resources, and by communicating our science to policy makers, influencers and the public.</p>
+         </header>
+        </div>
+        <div class="feature-blocks__container">
+         <div class="feature-blocks">
+          <div id="simple--2" class="simple-blocks">
+           <div id="simple--3" class="simple-block has-arrow">
+            <figure class="simple-block__image">
+             <a href="/earth-matters" title="/earth-matters" class="simple-block__link" aria-hidden="true" tabindex="-1">
+              <div class="simple-block__thumbnail">
+               <article>
+                <div class="media image field-media-image label-hidden">
+                 <picture>
+                  <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/paragraph/postcard/TonyKovscek.TaeWookKim.jpg?itok=azhwPsxp 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/paragraph/postcard/TonyKovscek.TaeWookKim.jpg?itok=RrAWqg49 2x" media="(min-width: 0em)" type="image/jpeg">
+                  <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/paragraph/postcard/TonyKovscek.TaeWookKim.jpg?itok=RrAWqg49" alt="Tony Kovscek and Tae Wook Kim" typeof="foaf:Image" loading="lazy">
+                 </picture>
+                </div>
+               </article>
+              </div></a>
+            </figure>
+            <div class="simple-block__content">
+             <h3 class="simple-block__title"><a href="/earth-matters" title="/earth-matters" class="simple-block__link">Research News</a></h3>
+             <div class="simple-block__description">
+              <p>Discoveries and insight about Earth, its resources, and its environment.</p><a href="/earth-matters" title="/earth-matters" aria-label="Navigate to Research News"><span class="simple-block__arrow">
+                <svg class="i-svg i-svg--arrow-right" role="img">
+                 <title>Navigate to Research News</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                </svg></span></a>
+             </div><a href="/earth-matters" title="/earth-matters" class="simple-block__more"> Explore Research news </a>
+            </div>
+           </div>
+           <div id="simple--4" class="simple-block has-arrow">
+            <figure class="simple-block__image">
+             <a href="/news-events/school-highlights" title="/news-events/school-highlights" class="simple-block__link" aria-hidden="true" tabindex="-1">
+              <div class="simple-block__thumbnail">
+               <article>
+                <div class="media image field-media-image label-hidden">
+                 <picture>
+                  <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/media/commencement.2019.hg_cx3i9292.jpg?itok=QBnKUu4b 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/media/commencement.2019.hg_cx3i9292.jpg?h=1116cd87&amp;itok=34hy1-8z 2x" media="(min-width: 0em)" type="image/jpeg">
+                  <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/media/commencement.2019.hg_cx3i9292.jpg?h=1116cd87&amp;itok=34hy1-8z" alt="Bagpiper Marty Cawthon leads the procession." typeof="foaf:Image" loading="lazy">
+                 </picture>
+                </div>
+               </article>
+              </div></a>
+            </figure>
+            <div class="simple-block__content">
+             <h3 class="simple-block__title"><a href="/news-events/school-highlights" title="/news-events/school-highlights" class="simple-block__link">School Highlights</a></h3>
+             <div class="simple-block__description">
+              <p>News about the School of Earth, Energy &amp; Environmental Sciences.</p><a href="/news-events/school-highlights" title="/news-events/school-highlights" aria-label="Navigate to School Highlights"><span class="simple-block__arrow">
+                <svg class="i-svg i-svg--arrow-right" role="img">
+                 <title>Navigate to School Highlights</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                </svg></span></a>
+             </div><a href="/news-events/school-highlights" title="/news-events/school-highlights" class="simple-block__more"> Explore School Highlights </a>
+            </div>
+           </div>
+           <div id="simple--5" class="simple-block has-arrow">
+            <figure class="simple-block__image">
+             <a href="/news-events/media-mentions" title="/news-events/media-mentions" class="simple-block__link" aria-hidden="true" tabindex="-1">
+              <div class="simple-block__thumbnail">
+               <article>
+                <div class="media image field-media-image label-hidden">
+                 <picture>
+                  <source srcset="/sites/default/files/styles/340x225_scaled_cropped_/public/media/image/IMG_0563-prog-medium.jpg?itok=LIUQL-f2 1x, /sites/default/files/styles/680x450_scaled_cropped_/public/media/image/IMG_0563-prog-medium.jpg?h=8a14a818&amp;itok=5K1-STGt 2x" media="(min-width: 0em)" type="image/jpeg">
+                  <img src="/sites/default/files/styles/680x450_scaled_cropped_/public/media/image/IMG_0563-prog-medium.jpg?h=8a14a818&amp;itok=5K1-STGt" alt="Noah Diffenbaugh in media interview" typeof="foaf:Image" loading="lazy">
+                 </picture>
+                </div>
+               </article>
+              </div></a>
+            </figure>
+            <div class="simple-block__content">
+             <h3 class="simple-block__title"><a href="/news-events/media-mentions" title="/news-events/media-mentions" class="simple-block__link">Media Mentions</a></h3>
+             <div class="simple-block__description">
+              <p>Stanford Earth faculty and young scientists in the media.</p><a href="/news-events/media-mentions" title="/news-events/media-mentions" aria-label="Navigate to Media Mentions"><span class="simple-block__arrow">
+                <svg class="i-svg i-svg--arrow-right" role="img">
+                 <title>Navigate to Media Mentions</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                </svg></span></a>
+             </div><a href="/news-events/media-mentions" title="/news-events/media-mentions" class="simple-block__more"> See More Media Mentions </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <style>
+  #paraID1382857579.visible {background-image:url('/sites/default/files/styles/responsive_large/public/media/image/2022-02/vegetables_crops_chantal-garnier-910GanwBoew-unsplash.jpg?itok=Pz3nSmii')};
+</style>
+       <div id="paraID1382857579" class="section-highlight-banner is-tall is-single lazy-background">
+        <div class="highlight-banner__header">
+         <header id="section-header--7" class="section-header left-aligned has-dash-left">
+          <h2 class="drop-cap-title has-dash-left has-dash-emphasis"><span class="drop-cap-title__name">Know Your Planet: Take a Course</span><span class="drop-cap-title__drop-cap" aria-hidden="true">K</span></h2>
+         </header>
+        </div>
+        <div class="highlight-banner__container">
+         <div id="highlight-cards" class="highlight-cards is-narrow">
+          <div id="highlight-card" class="highlight-card">
+           <a href="https://explorecourses.stanford.edu/search?view=catalog&amp;filter-coursestatus-Active=on&amp;page=0&amp;catalog=&amp;academicYear=&amp;q=geolsci20&amp;collapse=" title="more info" class="highlight-card__action"><span class="highlight-card__intro">Spring quarter Geolsci 20</span><h4 class="highlight-card__title">The (geo)science behind environmental (in)justice concepts</h4><p></p><p>Our planet is more or less habitable for humans, depending on their socio-economic status, race, and ethnicity. Learn the scientific fundamentals behind the main topics surrounding environmental justice.</p><p></p>
+            <div class="highlight-card__arrow">
+             <svg class="i-svg i-svg--arrow-right" role="img">
+              <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+             </svg>
+            </div></a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="layout--basic">
+        <div class="paragraph stanford-viewfield field-p-viewfield-section-header entity-reference-revisions label-hidden">
+         <header id="section-header--8"></header>
+        </div>
+        <div class="field field--name-field-p-viewfield field--type-viewfield field--label-hidden">
+         <div class="field__items">
+          <div class="field__item field__item-label-hidden">
+           <div class="views-element-container">
+            <div class="view earth-events block-2 js-view-dom-id-db392689fec4cd68a72a1736585727eea8bdba26e377abd187425e1116488405">
+             <div class="views-rows clearfix">
+              <div>
+               <div id="section-calendar-blocks" class="section-calendar-blocks">
+                <div class="calendar-blocks__header">
+                 <header id="section-header--9" class="section-header left-aligned has-dash-left">
+                  <h2 class="drop-cap-title has-dash-left no-emphasis"><span class="drop-cap-title__name">Upcoming Events</span><span class="drop-cap-title__drop-cap" aria-hidden="true">U</span></h2>
+                 </header>
+                </div>
+                <div class="calendar-blocks__container">
+                 <div class="calendar-blocks">
+                  <div id="calendar-block" class="calendar-block">
+                   <a href="https://earth.stanford.edu/events/rise-asian-americans-and-pacific-islanders-exhibit-230" class="calendar-block__action" aria-label="00Z&quot;>Jun</time>
+ <time datetime=&quot;2022-06-15T00:00:00Z&quot;>15</time>
+" title="/events/rise-asian-americans-and-pacific-islanders-exhibit-230">
+                    <div class="calendar-block__date">
+                     <span class="calendar-block__day"><time datetime="2022-06-15T00:00:00Z">15</time></span><span class="calendar-block__month"><time datetime="2022-06-15T07:00:00Z">Jun</time></span>
+                    </div>
+                    <div class="calendar-block__header">
+                     <h3 class="calendar-block__title"><p>Rise Up for Asian Americans and Pacific Islanders exhibit</p></h3>
+                    </div>
+                    <div class="calendar-block__arrow">
+                     <svg class="i-svg i-svg--arrow-right" role="img">
+                      <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                     </svg>
+                    </div></a>
+                  </div>
+                  <div id="calendar-block--2" class="calendar-block">
+                   <a href="https://earth.stanford.edu/events/say-their-names-no-more-names-276" class="calendar-block__action" aria-label="00Z&quot;>Jun</time>
+ <time datetime=&quot;2022-06-15T00:00:00Z&quot;>15</time>
+" title="/events/say-their-names-no-more-names-276">
+                    <div class="calendar-block__date">
+                     <span class="calendar-block__day"><time datetime="2022-06-15T00:00:00Z">15</time></span><span class="calendar-block__month"><time datetime="2022-06-15T07:00:00Z">Jun</time></span>
+                    </div>
+                    <div class="calendar-block__header">
+                     <h3 class="calendar-block__title"><p>Say Their Names - No More Names</p></h3>
+                    </div>
+                    <div class="calendar-block__arrow">
+                     <svg class="i-svg i-svg--arrow-right" role="img">
+                      <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                     </svg>
+                    </div></a>
+                  </div>
+                  <div id="calendar-block--3" class="calendar-block">
+                   <a href="https://earth.stanford.edu/events/stanford-earth-dei-coffee-convo-pride-month" class="calendar-block__action" aria-label="00Z&quot;>Jun</time>
+ <time datetime=&quot;2022-06-15T10:00:00Z&quot;>15</time>
+" title="/events/stanford-earth-dei-coffee-convo-pride-month">
+                    <div class="calendar-block__date">
+                     <span class="calendar-block__day"><time datetime="2022-06-15T10:00:00Z">15</time></span><span class="calendar-block__month"><time datetime="2022-06-15T17:00:00Z">Jun</time></span>
+                    </div>
+                    <div class="calendar-block__header">
+                     <h3 class="calendar-block__title"><p>Stanford Earth DEI Coffee Convo: Pride Month</p></h3>
+                    </div>
+                    <div class="calendar-block__arrow">
+                     <svg class="i-svg i-svg--arrow-right" role="img">
+                      <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                     </svg>
+                    </div></a>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="more-link">
+         <a href="/events/all">See All Earth Events</a>
+        </div>
+       </div>
+       <style>
+  #paraID367004646.visible {background-image:url('/sites/default/files/styles/responsive_large/public/media/earthmatters-prog-medium.jpg?itok=iw3iQBvv')};
+</style>
+       <div id="paraID367004646" class="link-banner lazy-background">
+        <header class="link-banner__header">
+         <h3>Stanford Earth Matters</h3>
+         <p>Find our research and insights, organized into 9 categories, at our <a href="https://earth.stanford.edu/earth-matters">Stanford Earth Matters</a> research news magazine.</p>
+        </header>
+        <div class="link-items">
+         <a href="/earth-matters/climate-change" class="link-item" title=""><span class="link-item__title"> Climate <span class="link-item__subtitle"> Change </span></span></a><a href="/earth-matters/dynamic-earth" class="link-item" title=""><span class="link-item__title"> Dynamic <span class="link-item__subtitle"> Earth </span></span></a><a href="/earth-matters/energy" class="link-item" title=""><span class="link-item__title"> Energy <span class="link-item__subtitle"></span></span></a><a href="/earth-matters/food-and-agriculture" class="link-item" title=""><span class="link-item__title"> Food <span class="link-item__subtitle"> Agriculture </span></span></a><a href="/earth-matters/human-dimensions-and-sustainability" class="link-item" title=""><span class="link-item__title"> Human Dimensions <span class="link-item__subtitle"> &amp; Sustainability </span></span></a><a href="/earth-matters/natural-hazards" class="link-item" title=""><span class="link-item__title"> Natural <span class="link-item__subtitle"> Hazards </span></span></a><a href="/earth-matters/fresh-water-resources" class="link-item" title=""><span class="link-item__title"> Freshwater <span class="link-item__subtitle"> Resources </span></span></a><a href="/earth-matters/evolution-of-earth-and-life" class="link-item" title=""><span class="link-item__title"> Evolution <span class="link-item__subtitle"> Of Earth &amp; Life </span></span></a><a href="/earth-matters/oceans" class="link-item" title=""><span class="link-item__title"> Oceans <span class="link-item__subtitle"></span></span></a>
+        </div>
+       </div>
+       <div class="layout--basic">
+        <div class="paragraph stanford-wysiwyg field-p-wysiwyg text-with-summary label-hidden">
+         <p>&nbsp;</p>
+         <p class="link--more"><a href="https://earth.stanford.edu/earth-matters">View Stanford&nbsp;Earth Matters magazine</a></p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div id="block-mosaicblock1" class="mosaic-block-default block-stanford-earth-mosaic-blocks block-mosaicblock1">
+      <div class="section-photo-mosaic section-photo-mosaic--quotes">
+       <div class="photo-mosaic__header">
+        <header id="section-header--10" class="section-header left-aligned has-dash-under">
+         <h2 class="drop-cap-title has-dash-under no-emphasis"><span class="drop-cap-title__name">Our Community</span><span class="drop-cap-title__drop-cap" aria-hidden="true">O</span></h2>
+         <p>We are scientists! Undergraduates, graduate students, professors, educational staff, and alumni working professionals. We build community in our field trips, classes, and cocurriculars. We care about the Earth and making its resources available to people across the globe now and in the future.</p>
+        </header>
+       </div>
+       <div class="photo-mosaic__container">
+        <div class="photo-mosaic">
+         <div id="photo-tiles" class="photo-tiles is-right photo-mosaic--thumbs-down-quote">
+          <div class="photo-tile tile-item tile-sizer">
+           <a href="https://earth.stanford.edu/news/spotlights" class="photo-tile__action" title="/news/spotlights">
+            <div class="photo-tile__thumbnail">
+             <img src="/modules/stanford/stanford_earth_helper/modules/stanford_earth_mosaic_blocks/img/studentmain.jpg" alt="A collection of happy students" typeof="foaf:Image" loading="lazy">
+             <div class="photo-tile__header">
+              <div class="photo-tile__title">
+               <h3>Students</h3>
+              </div>
+              <p class="photo-tile__description">Together, we pursue science and build lifelong bonds.</p><span class="photo-tile__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg></span>
+             </div>
+            </div></a>
+          </div>
+          <div class="photo-thumbs">
+           <div id="photo-thumb" class="photo-thumb tile-item">
+            <img src="/modules/stanford/stanford_earth_helper/modules/stanford_earth_mosaic_blocks/img/student1.jpg" alt="A smiling woman wearing a lab coat." typeof="foaf:Image" loading="lazy">
+           </div>
+           <div id="photo-thumb--2" class="photo-thumb tile-item">
+            <img src="/modules/stanford/stanford_earth_helper/modules/stanford_earth_mosaic_blocks/img/student2.jpg" alt="A smiling blonde woman." typeof="foaf:Image" loading="lazy">
+           </div>
+           <div id="photo-thumb--3" class="photo-thumb tile-item">
+            <img src="/modules/stanford/stanford_earth_helper/modules/stanford_earth_mosaic_blocks/img/student3.jpg" alt="A couple of students out in examining plant leaves." typeof="foaf:Image" loading="lazy">
+           </div>
+           <div id="photo-thumb--4" class="photo-thumb tile-item">
+            <img src="/modules/stanford/stanford_earth_helper/modules/stanford_earth_mosaic_blocks/img/student4.jpg" alt="A dark haired woman with a camera in a bamboo forest." typeof="foaf:Image" loading="lazy">
+           </div>
+           <div class="photo-tiles__quote">
+            <svg class="i-svg i-svg--quote" role="img">
+             <title>Large quotation icon for visual emphasis</title><use xlink:href="#i-quote" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+            </svg>
+            <blockquote>
+             <p>We face enormous hurdles as a society in dealing with a changing climate, over extraction of resources, and biodiversity loss. Still, I remain optimistic about our ability to identify and design solutions.</p><cite><strong>Elsa M. Ordway</strong>PhD '18</cite>
+            </blockquote>
+           </div>
+          </div>
+         </div>
+         <div id="photo-tiles--2" class="photo-tiles photo-mosaic--thumbs-up">
+          <div class="photo-tile tile-item tile-sizer">
+           <a href="https://earth.stanford.edu/faculty-research/directory" class="photo-tile__action" title="/faculty-research/directory">
+            <div class="photo-tile__thumbnail">
+             <img src="/modules/stanford/stanford_earth_helper/modules/stanford_earth_mosaic_blocks/img/facmain.jpg" alt="A group of clapping graduating students wearing gowns and caps." typeof="foaf:Image" loading="lazy">
+             <div class="photo-tile__header">
+              <div class="photo-tile__title">
+               <h3>Faculty</h3>
+              </div>
+              <p class="photo-tile__description">We discover and teach.</p><span class="photo-tile__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg></span>
+             </div>
+            </div></a>
+          </div>
+          <div class="photo-thumbs">
+           <div id="photo-thumb--5" class="photo-thumb tile-item">
+            <img src="/modules/stanford/stanford_earth_helper/modules/stanford_earth_mosaic_blocks/img/fac1.jpg" alt="A side profile headshot of a dark haired man." typeof="foaf:Image" loading="lazy">
+           </div>
+           <div id="photo-thumb--6" class="photo-thumb tile-item">
+            <img src="/modules/stanford/stanford_earth_helper/modules/stanford_earth_mosaic_blocks/img/fac2.jpg" alt="A smiling man with glasses." typeof="foaf:Image" loading="lazy">
+           </div>
+           <div id="photo-thumb--7" class="photo-thumb tile-item">
+            <img src="/modules/stanford/stanford_earth_helper/modules/stanford_earth_mosaic_blocks/img/fac3.jpg" alt="A smiling blonde woman at a chalkboard." typeof="foaf:Image" loading="lazy">
+           </div>
+           <div id="photo-thumb--8" class="photo-thumb tile-item">
+            <img src="/modules/stanford/stanford_earth_helper/modules/stanford_earth_mosaic_blocks/img/fac4.jpg" alt="A smiling lady." typeof="foaf:Image" loading="lazy">
+           </div>
+           <div class="photo-tiles__quote">
+            <svg class="i-svg i-svg--quote" role="img">
+             <title>Large quotation icon for visual emphasis</title><use xlink:href="#i-quote" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+            </svg>
+            <blockquote>
+             <p>I'm fascinated by the way our world works. I use technology to make visible what is not visible to the naked eye.</p><cite><strong>Biondo Biondi</strong>Geophysics Professor.</cite>
+            </blockquote>
+           </div>
+          </div>
+         </div>
+         <div id="photo-tiles--3" class="photo-tiles photo-mosaic--thumbs-down-alt">
+          <div class="photo-tile tile-item tile-sizer">
+           <a href="https://earth.stanford.edu/alumni" class="photo-tile__action" title="/alumni">
+            <div class="photo-tile__thumbnail">
+             <img src="/modules/stanford/stanford_earth_helper/modules/stanford_earth_mosaic_blocks/img/alummain.jpg" alt="A group of happy students at a table." typeof="foaf:Image" loading="lazy">
+             <div class="photo-tile__header">
+              <div class="photo-tile__title">
+               <h3>Alumni</h3>
+              </div>
+              <p class="photo-tile__description">We connect and keep learning.</p><span class="photo-tile__arrow">
+               <svg class="i-svg i-svg--arrow-right" role="img">
+                <title>Navigate to item</title><use xlink:href="#i-arrow" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+               </svg></span>
+             </div>
+            </div></a>
+          </div>
+          <div class="photo-thumbs">
+           <div id="photo-thumb--9" class="photo-thumb tile-item">
+            <img src="/modules/stanford/stanford_earth_helper/modules/stanford_earth_mosaic_blocks/img/alum1.jpg" alt="Smiling woman wearing pink dress." typeof="foaf:Image" loading="lazy">
+           </div>
+           <div id="photo-thumb--10" class="photo-thumb tile-item">
+            <img src="/modules/stanford/stanford_earth_helper/modules/stanford_earth_mosaic_blocks/img/alum2.jpg" alt="Couple hugging and looking through glass at the aquarium." typeof="foaf:Image" loading="lazy">
+           </div>
+           <div id="photo-thumb--11" class="photo-thumb tile-item">
+            <img src="/modules/stanford/stanford_earth_helper/modules/stanford_earth_mosaic_blocks/img/alum3.jpg" alt="Smiling man with plant." typeof="foaf:Image" loading="lazy">
+           </div>
+           <div id="photo-thumb--12" class="photo-thumb tile-item">
+            <img src="/modules/stanford/stanford_earth_helper/modules/stanford_earth_mosaic_blocks/img/alum4.jpg" alt="Smiling man in a pink collard shirt." typeof="foaf:Image" loading="lazy">
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div><!-- ______________________ FOOTER _______________________ -->
+    <footer id="footer">
+     <div id="block-linkedininsighttag" class="block-content b32c0671-0190-4fc9-af0e-efb0bde16e20 block-block-content block-linkedininsighttag">
+      <div class="block-content basic body text-with-summary label-hidden">
+       <script type="text/javascript"><!--//--><![CDATA[// ><!--
+
+<!--//--><![CDATA[// ><!--
+
+_linkedin_data_partner_id = "405642";
+
+//--><!]]]]><![CDATA[>
+
+//--><!]]></script>
+       <script type="text/javascript"><!--//--><![CDATA[// ><!--
+
+<!--//--><![CDATA[// ><!--
+
+(function(){var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})();
+
+//--><!]]]]><![CDATA[>
+
+//--><!]]></script>
+       <noscript>
+        <img height="1" width="1" style="display:none;" alt="" class="b-lazy" data-src="https://dc.ads.linkedin.com/collect/?pid=405642&amp;fmt=gif" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+       </noscript>
+      </div>
+     </div>
+     <div id="block-webbybadge" class="webby block-content _1332330-5a20-4926-a2c0-4af99937538e block-block-content block-webbybadge">
+      <div class="block-content basic body text-with-summary label-hidden">
+       <p><img alt="2019 Webby Award Nominee" class="b-lazy" data-src="https://earth.stanford.edu/sites/default/files/styles/thumbnail/public/media/2018-webby-honoree-logo-white-optimized.gif" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+      </div>
+     </div>
+     <div id="block-earthcontactfooterblock" class="stanford-earth-contact-footer-block block-stanford-earth-contact-footer block-earthcontactfooterblock">
+      <style media="screen">
+  #footer__container .contact-footer.visible {background-image:url('/themes/custom/matson/img/optimized/footer-bg.jpg');}
+</style>
+      <footer id="footer__container">
+       <section class="contact-footer lazy-background">
+        <div class="contact-footer__brand">
+         <div id="footer__block-matson-branding" class="system-branding-block block--lockup block-grid-collapse block-system footer__block-matson-branding">
+          <div class="block--lockup__site-logo-wrapper">
+           <a href="/" title="Stanford Earth | School of Earth, Energy &amp; Environmental Sciences" rel="home" class="block--lockup__site-logo"><img src="/themes/custom/matson/img/optimized/stanford-earth-logo%402x.png" alt="Stanford Earth | School of Earth, Energy &amp; Environmental Sciences"></a>
+          </div>
+          <div class="block--lockup__site-name-and-slogan">
+            Stanford Earth 
+          </div>
+          <div class="block--lockup__site-slogan">
+           School of Earth, Energy &amp; Environmental Sciences
+          </div>
+         </div>
+        </div>
+        <div class="contact-footer__social">
+         <h2>Join us on Social Media</h2>
+         <ul class="social-links">
+          <li><a href="https://twitter.com/stanfordearth"><span class="visually-hidden">Twitter</span>
+            <svg class="i-svg i-svg--twitter is-white" role="img" aria-labelledby="svg_twitter">
+             <title id="svg_twitter">Twitter</title><use xlink:href="#i-twitter" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+            </svg></a></li>
+          <li><a href="https://www.facebook.com/stanfordearth"><span class="visually-hidden">Facebook</span>
+            <svg class="i-svg i-svg--fb is-white" role="img" aria-labelledby="svg_facebook">
+             <title id="svg_facebook">Facebook</title><use xlink:href="#i-fb" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+            </svg></a></li>
+          <li><a href="https://www.instagram.com/stanfordearth/"><span class="visually-hidden">Instagram</span>
+            <svg class="i-svg i-svg--instagram is-white" role="img" aria-labelledby="svg_instagram">
+             <title id="svg_instagram">Instagram</title><use xlink:href="#i-instagram" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+            </svg></a></li>
+          <li><a href="https://www.linkedin.com/company/stanford-earth/"><span class="visually-hidden">Linkedin</span>
+            <svg class="i-svg i-svg--linkedin is-white" role="img" aria-labelledby="svg_linkedin">
+             <title id="svg_linkedin">Linkedin</title><use xlink:href="#i-linkedin" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+            </svg></a></li>
+         </ul>
+        </div>
+        <div class="contact-footer__links">
+         <ul class="menu">
+          <li class="menu-item"><a href="/alumni" title="Alumni Page" data-drupal-link-system-path="node/18786">Alumni</a></li>
+          <li class="menu-item"><a href="/giving" title="Give to Stanford Earth" data-drupal-link-system-path="node/3886">Give to Stanford Earth</a></li>
+          <li class="menu-item"><a href="/news-events/media-mentions" title="Newsroom" data-drupal-link-system-path="node/2086">Newsroom</a></li>
+          <li class="menu-item"><a href="/about/contact-us" title="Contact Form" data-drupal-link-system-path="node/2246">Contact</a></li>
+          <li class="menu-item"><a href="https://stanford.service-now.com/it_services?id=sc_cat_item&amp;sys_id=676f7ee513286b40d3b6b3b12244b0e5" title="Link to Website Feedback form in ServiceNow">Provide Website Feedback</a></li>
+          <li class="menu-item"><a href="https://stanford.service-now.com/it_services?id=sc_cat_item&amp;sys_id=02cd3bacdb381810404aa4cb0b9619bd">Report accessibility issues</a></li>
+          <li class="menu-item"><a href="/saml_login" data-drupal-link-system-path="saml_login">Login</a></li>
+         </ul>
+        </div>
+        <div class="contact-footer__subscribe">
+         <h2>Subscribe to Stanford Earth Matters</h2>
+         <p>Our Monthly Research News Alert</p><a class="button__hollow" href="/earth-matters/subscribe">Subscribe</a>
+        </div>
+       </section>
+       <section id="footer__global-footer">
+        <div class="global-footer__inner">
+         <div id="global-footer__brand">
+          <img alt="Stanford University" src="/themes/custom/matson/assets/svg/su_sig_stack_linked.svg" height="49" tabindex="-1" width="105">
+         </div>
+         <div id="global-footer__nav" role="navigation">
+          <nav id="nav__global-links">
+           <a href="https://www.stanford.edu">Stanford Home</a><a href="https://visit.stanford.edu/plan/">Maps &amp; Directions</a><a href="https://stanford.edu/search/">Search Stanford</a><a href="https://emergency.stanford.edu/">Emergency Info</a>
+          </nav>
+         </div>
+         <div id="global-footer__info">
+          <div class="vcard">
+           <span class="copyright-links"><a href="https://www.stanford.edu/site/terms/" title="Terms of use for sites">Terms of Use</a><a href="https://www.stanford.edu/site/privacy/" title="Privacy and cookie policy">Privacy</a><a href="https://uit.stanford.edu/security/copyright-infringement" title="Report alleged copyright infringement">Copyright</a><a href="https://adminguide.stanford.edu/chapter-1/subchapter-5/policy-1-5-4" title="Ownership and use of Stanford trademarks and images">Trademarks</a><a href="https://bulletin.stanford.edu/pages/c7vDgeOuJIfpZe8GKmW3" title="Non-discrimination policy">Non-Discrimination</a><a href="https://www.stanford.edu/site/accessibility" title="Report web accessibility issues">Accessibility</a></span>
+          </div><span class="fn org">© Stanford University. </span><span class="adr"><span class="locality">Stanford, </span><span class="region">California </span><span class="postal-code">94305. </span></span>
+         </div>
+        </div>
+       </section>
+      </footer>
+     </div>
+    </footer><!-- /#footer -->
+   </div>
+  </div>
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <title>Icons</title><desc>
+    List of icons used on the site
+   </desc><defs>
+    <symbol id="i-mail" viewbox="0 0 18 13">
+     <title id="svg_mail">mail</title>
+     <path d="M0 0v0 0 13h18v-13h-18zM1.8 1h14.5l-5.6 5.7-1.5 1.4c-0.1 0.1-0.3 0.1-0.4 0l-1.4-1.4-5.6-5.7zM1 1.7l4.9 5-4.9 4.7v-9.7zM1.8 12l4.8-4.6 1.5 1.5c0.3 0.2 0.6 0.3 0.9 0.3s0.6-0.1 0.9-0.4l1.5-1.5 4.8 4.6h-14.4zM17 11.4l-4.9-4.7 4.9-5v9.7z"></path>
+    </symbol>
+    <symbol id="i-linkedin" viewbox="0 0 13 13">
+     <title>linkedin</title>
+     <path d="M1.6 0.2c0.9 0 1.6 0.7 1.6 1.6s-0.8 1.6-1.6 1.6c-0.9 0-1.6-0.7-1.6-1.6s0.7-1.6 1.6-1.6v0z"></path>
+     <path d="M2.5 13h-1.8c-0.2 0-0.4-0.2-0.4-0.4v-7.9c0-0.2 0.2-0.4 0.4-0.4h1.8c0.2 0 0.4 0.2 0.4 0.4v7.9c0 0.2-0.2 0.4-0.4 0.4v0z"></path>
+     <path d="M13 7c0-1.6-1.2-3-2.9-3h-0.5c-0.9 0-1.7 0.5-2.2 1.2-0.2 0.1-0.2 0.2-0.2 0.2v-0.9c0-0.1-0.1-0.2-0.2-0.2h-2.3c-0.1 0-0.2 0.1-0.2 0.2v8.4c0 0.1 0.1 0.2 0.2 0.2h2.5c0.1 0 0.2-0.1 0.2-0.2v-4.9c0-0.8 0.6-1.5 1.5-1.5 0.4 0 0.8 0.2 1.1 0.4 0.3 0.3 0.4 0.7 0.4 1.1v4.8c0 0.1 0.1 0.2 0.2 0.2h2.2c0.1 0 0.2-0.1 0.2-0.2v-5.8z"></path>
+    </symbol>
+    <symbol id="i-double-carrot-left" viewbox="0 0 13 13">
+     <title>double carrot left</title>
+     <path d="M12.2 0c0.1 0 0.3 0.1 0.4 0.2 0.2 0.2 0.2 0.6 0 0.8l-5.4 5.4 5.4 5.4c0.2 0.2 0.2 0.6 0 0.8s-0.6 0.2-0.8 0l-5.8-5.9c-0.2-0.2-0.2-0.6 0-0.8l5.7-5.7c0.2-0.2 0.3-0.2 0.5-0.2z"></path>
+     <path d="M6.7 0c0.1 0 0.3 0.2 0.4 0.2 0.2 0.2 0.2 0.6 0 0.8l-5.4 5.5 5.4 5.4c0.2 0.2 0.2 0.6 0 0.8s-0.6 0.2-0.8 0l-5.8-5.8c-0.2-0.2-0.2-0.6 0-0.8l5.7-5.7c0.2-0.4 0.4-0.4 0.5-0.4z"></path>
+    </symbol>
+    <symbol id="i-arrow-left" viewbox="0 0 24 13">
+     <title>arrow left</title>
+     <path d="M5.9 0.6c0.1 0 0.3 0.1 0.4 0.2 0.2 0.2 0.2 0.5 0 0.8l-4.4 4.4 21.6 0.1c0.1 0 0.3 0.1 0.4 0.2s0.1 0.2 0.1 0.3c0 0.3-0.2 0.5-0.5 0.5l-21.6-0.1 4.4 4.4c0.2 0.2 0.2 0.5 0 0.8-0.2 0.2-0.5 0.2-0.8 0l-5.3-5.3c-0.1-0.1-0.2-0.3-0.2-0.4s0.1-0.3 0.2-0.4l5.3-5.3c0.1-0.1 0.3-0.2 0.4-0.2z"></path>
+    </symbol>
+    <symbol id="i-double-carrot" viewbox="0 0 13 13">
+     <title>double carrot</title>
+     <path d="M0.9 12.8c-0.1 0-0.3-0.1-0.4-0.2-0.2-0.2-0.2-0.6 0-0.8l5.4-5.3-5.4-5.4c-0.2-0.2-0.2-0.6 0-0.8s0.6-0.2 0.8 0l5.8 5.9c0.2 0.2 0.2 0.6 0 0.8l-5.7 5.7c-0.2 0.1-0.3 0.1-0.5 0.1z"></path>
+     <path d="M6.4 12.8c-0.1 0-0.3-0.1-0.4-0.2-0.2-0.2-0.2-0.6 0-0.8l5.4-5.4-5.4-5.4c-0.2-0.2-0.2-0.6 0-0.8s0.6-0.2 0.8 0l5.8 5.8c0.2 0.2 0.2 0.6 0 0.8l-5.7 5.7c-0.2 0.3-0.4 0.3-0.5 0.3z"></path>
+    </symbol>
+    <symbol id="i-player" viewbox="0 0 13 13">
+     <title>player</title>
+     <path fill="none" stroke="#fff" stroke-width="0.2196" stroke-miterlimit="4" stroke-linecap="butt" stroke-linejoin="miter" style="stroke: var(--color1, #fff)" d="M9.6 6.5l-4.5 3.1v-6.2l4.5 3.1z"></path>
+     <path fill="none" stroke="#fff" stroke-width="0.2196" stroke-miterlimit="4" stroke-linecap="butt" stroke-linejoin="miter" style="stroke: var(--color1, #fff)" d="M12.8 6.5c0 3.4-2.8 6.3-6.3 6.3s-6.3-2.9-6.3-6.3 2.8-6.3 6.3-6.3 6.3 2.8 6.3 6.3z"></path>
+    </symbol>
+    <symbol id="i-instagram" viewbox="0 0 13 13">
+     <title>instagram</title>
+     <path d="M10.8 2.6c0-0.3-0.3-0.6-0.6-0.6s-0.6 0.3-0.6 0.6 0.3 0.6 0.6 0.6c0.3 0 0.6-0.3 0.6-0.6z"></path>
+     <path d="M6.6 9.1c-1.4 0-2.6-1.2-2.6-2.5s1.2-2.6 2.6-2.6 2.5 1.2 2.5 2.5-1.2 2.6-2.5 2.6zM6.6 2.9c-2 0-3.6 1.6-3.6 3.6s1.6 3.6 3.6 3.6 3.6-1.6 3.6-3.6-1.6-3.6-3.6-3.6z"></path>
+     <path d="M11.8 10.3c0 0.9-0.7 1.6-1.6 1.6h-7.5c-0.9 0-1.6-0.7-1.6-1.6v-7.6c0-0.9 0.7-1.6 1.6-1.6h7.5c0.9 0 1.6 0.7 1.6 1.6v7.6zM10.1 0.1h-7.2c-1.5 0-2.8 1.3-2.8 2.8v7.3c0 1.5 1.3 2.8 2.8 2.8h7.3c1.5 0 2.8-1.3 2.8-2.8v-7.3c-0.1-1.6-1.3-2.8-2.9-2.8v0z"></path>
+    </symbol>
+    <symbol id="i-close" viewbox="0 0 13 13">
+     <title>close</title>
+     <path d="M7.1 6.5l5.8-5.8c0.2-0.2 0.2-0.4 0-0.6s-0.4-0.2-0.6 0l-5.8 5.8-5.8-5.8c-0.2-0.1-0.4-0.1-0.6 0-0.1 0.2-0.1 0.4 0 0.6l5.8 5.8-5.8 5.8c-0.2 0.2-0.2 0.4 0 0.6s0.4 0.2 0.6 0l5.8-5.8 5.8 5.8c0.2 0.2 0.4 0.2 0.6 0s0.2-0.4 0-0.6l-5.8-5.8z"></path>
+    </symbol>
+    <symbol id="i-carrot" viewbox="0 0 13 13">
+     <title>carrot</title>
+     <path d="M6.522 8.896l-6.010-6.010c-0.141-0.141-0.283-0.141-0.424 0s-0.141 0.283 0 0.424l6.223 6.223c0.071 0.071 0.141 0.141 0.212 0.071s0.141 0 0.212-0.071l6.152-6.152c0.141-0.141 0.141-0.283 0-0.424s-0.283-0.141-0.424 0l-5.94 5.94z"></path>
+    </symbol>
+    <symbol id="i-quote" viewbox="0 0 20 13">
+     <title>quote</title>
+     <path d="M8.7 0c-4.8 0-8.7 3.9-8.7 8.7 0 0 0 0 0 0.1 0 0 0 0.1 0 0.2 0 2.2 1.8 4 4 4s4-1.8 4-4c0-2.2-1.8-4-4-4-0.8 0-1.5 0.2-2.1 0.6 1.2-2.6 3.8-4.4 6.8-4.4 0.3 0 0.6-0.2 0.6-0.6 0-0.3-0.3-0.6-0.6-0.6z"></path>
+     <path d="M19.2 0c-4.8 0-8.7 3.9-8.7 8.7 0 0 0 0 0 0.1s0 0.2 0 0.2c0 2.2 1.8 4 4 4s4-1.8 4-4c0-2.2-1.8-4-4-4-0.8 0-1.5 0.2-2.1 0.6 1.2-2.5 3.7-4.3 6.7-4.3 0.3 0 0.6-0.3 0.6-0.6 0.1-0.4-0.2-0.7-0.5-0.7z"></path>
+    </symbol>
+    <symbol id="i-fb" viewbox="0 0 13 13">
+     <title>facebook</title>
+     <path d="M7.2 13h-2.8v-6.1h-1.4v-2.4h1.4v-1.4c0-1.9 0.8-3.1 3-3.1h1.9v2.4h-1.2c-0.9 0-0.9 0.3-0.9 0.9v1.2h2.1l-0.2 2.4h-1.9v6.1z"></path>
+    </symbol>
+    <symbol id="i-twitter" viewbox="0 0 16 13">
+     <title>twitter</title>
+     <path d="M16 1.5c-0.6 0.3-1.2 0.4-1.9 0.5 0.7-0.4 1.2-1.1 1.4-1.8-0.6 0.4-1.3 0.6-2.1 0.8-0.6-0.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 0.3 0 0.5 0.1 0.7-2.7-0.1-5.2-1.4-6.8-3.4-0.3 0.5-0.4 1-0.4 1.7 0 1.1 0.6 2.1 1.5 2.7-0.5 0-1-0.2-1.5-0.4v0c0 1.6 1.1 2.9 2.6 3.2-0.3 0.1-0.6 0.1-0.9 0.1-0.2 0-0.4 0-0.6-0.1 0.4 1.3 1.6 2.3 3.1 2.3-1.1 0.9-2.5 1.4-4.1 1.4-0.3 0-0.5 0-0.8 0 1.5 1 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3 0-0.1 0-0.3 0-0.4 0.7-0.5 1.3-1.1 1.7-1.8v0z"></path>
+    </symbol>
+    <symbol id="i-plus" viewbox="0 0 13 13">
+     <title>plus</title>
+     <path d="M13 13h-13v-13h13v13zM0.65 12.35h11.7v-11.7h-11.7v11.7z"></path>
+     <path d="M6.5 10.075c-0.195 0-0.325-0.13-0.325-0.325v-6.5c0-0.195 0.13-0.325 0.325-0.325s0.325 0.13 0.325 0.325v6.5c0 0.195-0.13 0.325-0.325 0.325z"></path>
+     <path d="M9.75 6.825h-6.5c-0.195 0-0.325-0.13-0.325-0.325s0.13-0.325 0.325-0.325h6.5c0.195 0 0.325 0.13 0.325 0.325s-0.13 0.325-0.325 0.325z"></path>
+    </symbol>
+    <symbol id="i-minus" viewbox="0 0 13 13">
+     <title>minus</title>
+     <path d="M13 13h-13v-13h13v13zM0.65 12.35h11.7v-11.7h-11.7v11.7z"></path>
+     <path d="M9.75 6.825h-6.5c-0.195 0-0.325-0.13-0.325-0.325s0.13-0.325 0.325-0.325h6.5c0.195 0 0.325 0.13 0.325 0.325s-0.13 0.325-0.325 0.325z"></path>
+    </symbol>
+    <symbol id="i-search" viewbox="0 0 13 13">
+     <title>search</title>
+     <path d="M12.6 12l-3.2-3.3c0.8-0.9 1.3-2.1 1.3-3.4 0-3-2.4-5.3-5.2-5.3-2.9 0-5.3 2.3-5.3 5.2s2.3 5.2 5.2 5.2c1.2 0 2.2-0.4 3.1-1l3.3 3.4c0.1 0.1 0.3 0.2 0.4 0.2s0.3-0.1 0.4-0.2c0.2-0.2 0.2-0.5 0-0.8zM1.4 5.2c0-2.3 1.8-4.1 4.1-4.1s4.1 1.9 4.1 4.1c0 2.3-1.8 4.1-4.1 4.1s-4.1-1.8-4.1-4.1z"></path>
+    </symbol>
+    <symbol id="i-menu" viewbox="0 0 13 13">
+     <title>menu</title>
+     <path d="M0 1.1h13v1.2h-13v-1.2z"></path>
+     <path d="M0 5.9h13v1.2h-13v-1.2z"></path>
+     <path d="M0 10.8h13v1.2h-13v-1.2z"></path>
+    </symbol>
+    <symbol id="i-arrow" viewbox="0 0 24 13">
+     <title>arrow</title>
+     <path d="M18.1 12.4c-0.1 0-0.3-0.1-0.4-0.2-0.2-0.2-0.2-0.5 0-0.8l4.4-4.4-21.6-0.1c-0.1 0-0.3-0.1-0.4-0.2s-0.1-0.2-0.1-0.3c0-0.3 0.2-0.5 0.5-0.5l21.6 0.1-4.4-4.4c-0.2-0.2-0.2-0.5 0-0.8 0.2-0.2 0.5-0.2 0.8 0l5.3 5.3c0.1 0.1 0.2 0.3 0.2 0.4s-0.1 0.3-0.2 0.4l-5.3 5.3c-0.1 0.1-0.3 0.2-0.4 0.2z"></path>
+    </symbol>
+    <symbol id="i-cloud" viewbox="0 0 13 13">
+     <title>cloud</title>
+     <path d="M9.4 4.9c-0.4 0-0.7 0.3-0.7 0.7s0.3 0.7 0.7 0.7 0.7-0.3 0.7-0.7c0-0.3-0.3-0.7-0.7-0.7zM6.5 4.9c-0.4 0-0.7 0.3-0.7 0.7s0.3 0.7 0.7 0.7c0.4 0 0.7-0.3 0.7-0.7 0-0.3-0.3-0.7-0.7-0.7zM3.6 4.9c-0.4 0-0.7 0.3-0.7 0.7s0.3 0.7 0.7 0.7c0.4 0 0.7-0.3 0.7-0.7 0.1-0.3-0.3-0.7-0.7-0.7zM6.5 10.9c-0.4 0-0.8 0-1.2-0.1-0.2 0.3-0.6 0.6-1 1-1.4 1-3.6 0.6-3.6 0.6s1.1-1.2 1.4-2.8c-1.2-1-2.1-2.4-2.1-3.9 0-2.9 2.9-5.2 6.5-5.2s6.5 2.3 6.5 5.2c0 2.9-2.9 5.2-6.5 5.2z"></path>
+    </symbol>
+    <symbol id="i-clock" viewbox="0 0 13 13">
+     <title>clock</title>
+     <path d="M8.2 8.6l-2-1.3c-0.3-0.2-0.5-0.5-0.4-0.8v-2.2c0-0.4 0.3-0.7 0.7-0.7s0.7 0.3 0.7 0.7v1.7l1.8 1.1c0.4 0.2 0.5 0.7 0.3 1.1s-0.7 0.6-1.1 0.4zM6.5 1.4c-2.8 0-5.1 2.3-5.1 5.1s2.3 5.1 5.1 5.1 5.1-2.3 5.1-5.1-2.3-5.1-5.1-5.1zM6.5 13c-3.6 0-6.5-2.9-6.5-6.5s2.9-6.5 6.5-6.5c3.6 0 6.5 2.9 6.5 6.5s-2.9 6.5-6.5 6.5z"></path>
+    </symbol>
+   </defs>
+  </svg>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/31","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"lazy":{"lazysizes":{"lazyClass":"b-lazy","loadedClass":"b-loaded","loadingClass":"lazyloading","preloadClass":"lazypreload","errorClass":"lazyerror","autosizesClass":"lazyautosizes","srcAttr":"data-src","srcsetAttr":"data-srcset","sizesAttr":"data-sizes","minSize":40,"customMedia":[],"init":true,"expFactor":1.5,"hFac":0.80000000000000004,"loadMode":2,"loadHidden":true,"ricTimeout":0,"throttleDelay":125,"plugins":[]},"placeholderSrc":"data:image\/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==","preferNative":false,"minified":true,"libraryPath":"\/libraries\/lazysizes"},"ajaxTrustedUrl":{"\/search":true},"user":{"uid":0,"permissionsHash":"b7e7fd1eee76fb5a89c98837b3c7127c8ea1123f4e27b79b85f72d90ee8b53eb"}}</script>
+  <script src="/sites/default/files/js/js_sJJNKx-lZLyFRItDoW1dexbHMZQSuajnatjJYyLViEU.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"cd34c8df90","applicationID":"51798863","transactionName":"M1VRZRFVDRVRUkJRDAofclIXXQwIH0FXXwY7U1JSC1E=","queueTime":0,"applicationTime":67,"atts":"HxJSE1lPHhs=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

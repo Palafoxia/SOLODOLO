@@ -1,0 +1,1331 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Add a Quiz Activity</title>
+  <meta content="Learn how to add a Quiz Activity to your course in TITANium." name="description">
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="hE1lcx3hJ/e7c1vP8sG5WYErAJL3prFeKOTGQfpiiO41lY2J27FXsrsk6r4rirIZfElFce117xCOceQY86u2qw==">
+  <link rel="stylesheet" media="screen" href="//assets.screensteps.com/assets/themes/fonts/droid-sans-364ed37cb1e97162731b415aa927f66498ed63a95cbeba694ddee60dd372c14f.css">
+  <link rel="stylesheet" media="screen" href="//assets.screensteps.com/assets/themes/fonts/helvetica-8681273d10a12b4f5502c278efb511b207828996eb6fb7d99fa7abb4cea05b50.css">
+  <link rel="stylesheet" href="//assets.screensteps.com/assets/fontawesome-9b64f06a98b9479593e125f4c10f2698fa8bb635ef3cf3616282a9e41d175c16.css">
+  <link rel="stylesheet" href="//assets.screensteps.com/assets/themes/beta-81e062362d5992fe4be88d9a87c19324121ab8af770754d04248da99e5a2d8a9.css">
+  <style type="text/css" media="all">
+  /* headings */
+  h1,
+  h1.toc-heading,
+  h2.toc-heading {
+    color: #;
+  }
+
+  h2.toc-subheading,
+  h3.toc-subheading,
+  h4.toc-subheading,
+  h5.toc-subheading,
+  h6.toc-subheading {
+    color: #070807;
+  }
+
+  .screensteps-training-site [data-count-bubble]::after {
+    background-color: #070807;
+  }
+
+  .screensteps-article-content h2 {
+    color: #;
+  }
+
+  .screensteps-article-content h3,
+  .screensteps-article-content h4,
+  .screensteps-article-content h5,
+  .screensteps-article-content h6 {
+    color: #;
+  }
+
+  .screensteps-sidebar h3 {
+    color: #1a191a;
+  }
+
+  .sidebar-subheading {
+    color: #4a4848;
+  }
+
+  .comments-heading {
+    color: #;
+  }
+
+  /* base/_buttons */
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"],
+  button,
+  .screensteps-bg-action-color,
+  .screensteps-courses .screensteps-progress-bar::before,
+  .screensteps-courses .screensteps-courses-menu a:hover,
+  .screensteps-courses .screensteps-courses-menu .step-active a::before,
+  .screensteps-training-site .asset-item__progress-bar {
+    background-color: #1a191a;
+  }
+
+  input[type="button"]:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover,
+  button:hover,
+  button.screensteps-bg-action-color:hover,
+  a.screensteps-bg-action-color:hover {
+    background-color: #8a4500;
+  }
+
+  /* base/_forms */
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="text"]:focus,
+  input[type="url"]:focus,
+  input[type="color"]:focus,
+  input[type="date"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="week"]:focus,
+  select[multiple=multiple]:focus,
+  textarea:focus {
+    border-color: #1a191a;
+  }
+
+
+  .screensteps-training-site .screensteps-main-search .search-field:not(:placeholder-shown) {
+    box-shadow: 0 0 0 2px #ffffff;
+  }
+
+  /* base/_typography */
+  body {
+    background-color: #ffffff;
+    color: #;
+  }
+
+  a {
+    color: #1a191a;
+  }
+
+
+
+  /* _screensteps-container */
+  .screensteps-container a:visited {
+    color: #004071;
+  }
+ .screensteps-container a:active,
+ .screensteps-container a:focus,
+ .screensteps-container a:hover {
+    color: #8a4500;
+  }
+
+  /* _screensteps-manual-contents */
+  .screensteps-manual-contents h2 a {
+    color: #1a191a;
+  }
+  /* _screensteps-foldable-sections */
+  .screensteps-main-content .embedded-chapter-article > * {
+    color: #1a191a;
+  }
+
+  /* screensteps-header */
+  .screensteps-branding h1,
+  .screensteps-header .screensteps-branding a,
+  .screensteps-training-site .screensteps-profile-subnav-toggle {
+    color: #004071;
+  }
+
+  .screensteps-header .screensteps-branding a:hover {
+    color: #004071;
+  }
+
+  /* meta data text */
+  .chapter-count,
+  .screensteps-comment-count,
+  .screensteps-lesson-details,
+  .nested-chapter-lessons .here a:after,
+  .screensteps-single-comment time {
+    color: #;
+  }
+
+  /* course tiles */
+  .screensteps-training-site .screensteps-group .asset-list--course a {
+    background-color: #;
+    color: #;
+  }
+
+  .screensteps-training-site .asset-item__progress-bar {
+    background-color: #;
+  }
+
+  .screensteps-training-site .screensteps-group .asset-list--course a:hover {
+    background-color: #;
+  }
+</style>
+  <link rel="icon">
+  <script src="//assets.screensteps.com/assets/application-10a945f50e929cc1e58184ca87f005bd032ee7fe9b1c7368b855e66a5234fab0.js"></script>
+  <script src="//assets.screensteps.com/assets/theme-cae9a1f80906ea92fdc68e13e7545d814402a7aeafd20bbca6accffffa49bbea.js"></script><!--[if lt IE 9]>
+<script src="//assets.screensteps.com/assets/vendor/html5shiv.min-6169624d10bc8403d59c9ace86ab0189063017bfb2139ee074a199cbbdc176b2.js"></script>
+<![endif]-->
+  <style media="">/* ScreenSupport Adjustments */
+.asset-list .divider h4 {
+  color: #4d4d4d;
+}
+
+.screensteps-modal .screensteps-modal__close,.screensteps-modal .screensteps-modal__close:visited {
+    color: #0e4d6f;
+  background-color:#ffffff;
+}
+/* 10.5.2018 trying to fix color contrast for View in Admin Portal link */
+.screensteps-admin-navigation {
+   background-color: #0B579D;
+}
+.screensteps-admin-navigation a:hover {
+   color: #fff;
+}
+
+
+/* trying to fix the color contrast */
+.screensteps-modal {
+color: #0e4d6f;
+background-color:#ffffff;
+}
+
+
+
+/* adjust the wrapper text color */ 
+.screensteps-article .screensteps-textblock.screensteps-wrapper--alert {
+  color: #8d0c0c;
+}
+.screensteps-article .screensteps-textblock.screensteps-wrapper--introduction {
+  color: #0e4d6f;
+}
+
+.screensteps-article .screensteps-textblock.screensteps-wrapper--tip {
+  color: #32531e;
+}
+
+.screensteps-article .screensteps-textblock.screensteps-wrapper--info {
+ color: #0e4d6f;
+}
+
+.screensteps-article .screensteps-textblock.screensteps-wrapper--warning {
+  color: #6a4300;
+}
+
+/* adjust the body text */
+.screensteps-article { color: #4d4d4d; }
+
+body { color: #4d4d4d; }
+
+/* link text color */
+.screensteps-article a {
+ color: #0e4d6f;
+
+}
+
+.screensteps-article a:visited {
+ color: #0e4d6f;
+}
+
+/* background and border */
+.screensteps-article .screensteps-steps .image {
+ background-color: transparent;
+ border: none;
+}
+
+/* attached file color */
+.screensteps-article .screensteps-wrapper--attachment a
+{ color:#0e4d6f;  
+}
+
+/* adjust color of h3 */
+.screensteps-description h3, .screensteps-steps h3
+{color:#4d4d4d;
+}
+
+/* adjust color of h2 */
+.screensteps-description h2, .screensteps-steps h2
+{color:#4d4d4d;
+}
+
+/* to adjust the color of the text in the search bar*/
+.screensteps-main-search .input-prompt {
+  color: #0057a8;
+}
+
+/* to adjust the color of the number of articles in each chapter */
+.chapter-count {
+   color: #004071;
+}
+
+/* to allow videos from our server to play in screensteps*/
+.video-responsive{ overflow:hidden; padding-bottom:56.25%; position:relative; height:0; } .video-responsive video { left:0; top:0; height: auto; width: 100%; position:absolute; }
+
+</style>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71326781-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <noscript>
+    Javascript should be enabled on this page in order to run Google Analytics. 
+  </noscript>
+  <script>
+//<![CDATA[
+    !function(name,path,ctx){
+      var latest,prev=name!=='Keen'&&window.Keen?window.Keen:false;ctx[name]=ctx[name]||{ready:function(fn){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onerror=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;latest=w.Keen;if(prev){w.Keen=prev}else{try{delete w.Keen}catch(e){w.Keen=void 0}}ctx[name]=latest;ctx[name].ready(fn)};s.async=1;s.src=path;h.parentNode.insertBefore(s,h)}}
+    }('KeenAsync','https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.1.3.min.js',this);
+
+    KeenAsync.ready(function(){
+      // Configure a client instance
+      var client = new KeenAsync({
+        projectId: '591daac30935ce40a59fb7ab',
+        writeKey: 'C89A9A1A8DB4C585F119F8F81ABB9621940DBBADDA5C72C2B87B1BD3464890D23FD250B0FFA4A1056DCB210616545B7B6C9DDF2054167B5219A3DD81E8DF90A321BE0C1B35BA19F2E3E85730FB96C1F93F8C66D8CD449FE6EFE43D98453632D1'
+      });
+
+      // Record an event
+      client.recordEvent('pageviews', {
+        title: document.title,
+        ip_address: "${keen.ip}",
+        user_agent: "${keen.user_agent}",
+        user_id: null,
+        user_public_id: null,
+        account_id: "7061f6cd01",
+        account_billing_type: "admin_users",
+        site_id: 12929,
+        manual_id: 48508,
+        article_id: 448983,
+        article_type_id: 0,
+        course_id: null,
+        source_id: 1
+      });
+    });
+
+//]]>
+</script>
+ </head>
+ <body class="helvetica-body droid-sans-header site-article  no-focus-outline" data-base-path="/" data-content-template="2015" data-generating-pdf-text="Creating PDF...">
+  <header class="screensteps-header" role="banner"><a class="skip-navigation--link" href="#screensteps-main-content" id="skip-navigation"> Skip to main content </a>
+   <div class="screensteps-branding">
+    <div class="logo-wrapper"><span class="company-logo"> <a href="/" title="TITANium Resource Center"> <img alt="Cal State Fullerton" class="screensteps-site-logo" src="https://media.screensteps.com/logos/7688/OET_Logo-05.jpg"> </a> </span>
+     <h1 class="company-name">California State University Fullerton</h1>
+    </div>
+    <ul class="screensteps-external-nav" role="navigation">
+     <li><a href="https://canvashelp.fullerton.edu">Switch to Canvas Resource Center</a></li>
+    </ul>
+    <ul class="screensteps-profile-nav" role="navigation">
+    </ul>
+   </div>
+  </header>
+  <div class="screensteps-container-wrapper">
+   <main class="screensteps-container">
+    <div class="screensteps-site-title-wrapper">
+     <h1 class="screensteps-site-title toc-heading">TITANium Resource Center</h1>
+     <div class="screensteps-site-description">
+      <p>Welcome to the TITANium Resource Center where you may find self-help guides on a wide range of topics regarding teaching and learning using TITANium (Moodle). Begin by typing in a keyword and clicking on Search.</p>
+      <p>Canvas guides are available at the <a href="https://canvashelp.fullerton.edu">Canvas Resource Center.</a></p>
+     </div>
+    </div>
+    <div class="screensteps-main-search" role="search">
+     <form id="screensteps-search-form" action="/searches" accept-charset="UTF-8" method="get">
+      <div class="screensteps-search-form"><label for="text">Search term</label>
+       <input type="text" name="text" id="text" class="search-field" title="Enter a keyword or topic to search">
+       <input type="submit" name="commit" value="Search" class="search-submit" data-disable-with="Search">
+      </div>
+     </form>
+    </div>
+    <div class="screensteps-content-wrapper manual-lesson lesson left-sidebar">
+     <div class="screensteps-main-content" role="main">
+      <header class="screensteps-title">
+       <div id="screensteps-breadcrumb" aria-label="breadcrumb" aria-level="3">
+        <a href="/">TITANium Resource Center</a><span class="manual-group-breadcrumb"><a href="/#BEGINHere">BEGIN HERE</a></span><a href="/m/GettingStarted">Getting Started with TITANium</a> <span class="chapter-breadcrumb"><a href="/m/GettingStarted/c/147263">Adding Activities to my course</a></span>How do I add a Quiz?
+       </div>
+      </header>
+      <div id="screensteps-main-content">
+       <div class="screensteps-article" data-screensteps-article>
+        <div class="screensteps-article-content " data-article-id="448983" data-workflow="false">
+         <h1 class="lesson">How do I add a Quiz?</h1>
+         <div class="screensteps-steps" data-role="steps-container">
+          <div class="instructions screensteps-textblock screensteps-wrapper--introduction screensteps-wrapper">
+           <p>You will learn how to add a <strong>Quiz</strong> activity to your course in TITANium. </p>
+           <p>The Quiz activity can be used in multiple ways. Most instructors use it for summative assessments, but it can be used to present content with learning checks; it can be used to quiz students before the class lecture, so the instructor can do a quick review and then address the specific topics where students scored low (formative assessment). Other uses are also possible. </p>
+           <p>Follow these steps to learn how to add a quiz to your course.</p>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="022d23cb-c94a-4a30-8ff1-393efd56ce55" id="">
+           <h2 id="enter-your-course"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 1. Enter your course." href="#enter-your-course">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 1. Enter your course. </h2>
+           <div class="image clearfix">
+            <img alt="course main page" data-srcset="https://media.screensteps.com/image_assets/assets/001/166/430/original/6b7c3b28-4724-4642-8cd0-48d343f1154a.png 667w" data-src="https://media.screensteps.com/image_assets/assets/001/166/430/original/6b7c3b28-4724-4642-8cd0-48d343f1154a.png" class="lazyload lazypreload" style="max-width:667px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/430/original/6b7c3b28-4724-4642-8cd0-48d343f1154a.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="3bc15f7d-a543-4bf9-aad3-6a0260bb7663" id="">
+           <h2 id="click-on-the-gear-icon"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 2. Click on the Gear icon." href="#click-on-the-gear-icon">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 2. Click on the Gear icon. </h2>
+           <div class="image clearfix">
+            <img alt="Gear icon is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/166/418/original/e8dbe2c8-ae9b-46b0-984c-412c8134801d.png 528w" data-src="https://media.screensteps.com/image_assets/assets/001/166/418/original/e8dbe2c8-ae9b-46b0-984c-412c8134801d.png" class="lazyload lazypreload" style="max-width:528px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/418/original/e8dbe2c8-ae9b-46b0-984c-412c8134801d.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="5f30c780-9af9-461d-9e53-75e010885ba6" id="">
+           <h2 id="select-turn-editing-on"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 3. Select Turn editing on." href="#select-turn-editing-on">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 3. Select Turn editing on. </h2>
+           <div class="image clearfix">
+            <img alt=" Turn editing on link is selected" data-srcset="https://media.screensteps.com/image_assets/assets/001/166/424/original/fe593bf7-ac2d-46a1-af3c-f93bb5294e2d.png 520w" data-src="https://media.screensteps.com/image_assets/assets/001/166/424/original/fe593bf7-ac2d-46a1-af3c-f93bb5294e2d.png" class="lazyload lazypreload" style="max-width:520px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/424/original/fe593bf7-ac2d-46a1-af3c-f93bb5294e2d.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="e5e6c49a-07b5-4879-a705-91880f9dbc19" id="">
+           <h2 id="click-on-add-an-activity-or-resource"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 4. Click on Add an activity or resource." href="#click-on-add-an-activity-or-resource">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 4. Click on Add an activity or resource. </h2>
+           <div class="instructions screensteps-textblock ">
+            <p>Scroll down to the Topic section where you want to put the quiz.</p>
+           </div>
+           <div class="image clearfix">
+            <img alt="Add an activity or resource link is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/166/438/original/0a93190b-4123-47bb-88b4-d0640703e2a6.png 509w" data-src="https://media.screensteps.com/image_assets/assets/001/166/438/original/0a93190b-4123-47bb-88b4-d0640703e2a6.png" class="lazyload lazypreload" style="max-width:509px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/438/original/0a93190b-4123-47bb-88b4-d0640703e2a6.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="5560f717-cfc6-4565-abee-4587bb35ba39" id="">
+           <h2 id="select-quiz"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 5. Select Quiz." href="#select-quiz">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 5. Select Quiz. </h2>
+           <div class="image clearfix">
+            <img alt=" Quiz radio button is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/166/410/original/ea220248-c6d9-4f6f-add0-8c77ccdd1275.png 494w" data-src="https://media.screensteps.com/image_assets/assets/001/166/410/original/ea220248-c6d9-4f6f-add0-8c77ccdd1275.png" class="lazyload lazypreload" style="max-width:494px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/410/original/ea220248-c6d9-4f6f-add0-8c77ccdd1275.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="8b3b8a9f-c723-4061-b66b-4259a6514756" id="">
+           <h2 id="click-on-add"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 6. Click on Add." href="#click-on-add">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 6. Click on Add. </h2>
+           <div class="image clearfix">
+            <img alt="Add button is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/166/402/original/8d4621c9-544b-4245-aa8c-0bfd669efb8b.png 494w" data-src="https://media.screensteps.com/image_assets/assets/001/166/402/original/8d4621c9-544b-4245-aa8c-0bfd669efb8b.png" class="lazyload lazypreload" style="max-width:494px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/402/original/8d4621c9-544b-4245-aa8c-0bfd669efb8b.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="18c9f898-8d44-490f-9215-18c1fe25305c" id="">
+           <h2 id="type-a-title"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 7. Type a title." href="#type-a-title">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 7. Type a title. </h2>
+           <div class="image clearfix">
+            <img alt="name field is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/166/432/original/ab693e68-e354-4d50-b47c-aab98e729246.png 512w" data-src="https://media.screensteps.com/image_assets/assets/001/166/432/original/ab693e68-e354-4d50-b47c-aab98e729246.png" class="lazyload lazypreload" style="max-width:512px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/432/original/ab693e68-e354-4d50-b47c-aab98e729246.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="666dd341-58fd-42c6-9a99-bbee6c6095fe" id="">
+           <h2 id="type-a-description"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 8. Type a Description." href="#type-a-description">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 8. Type a Description. </h2>
+           <div class="instructions screensteps-textblock screensteps-wrapper--tip screensteps-wrapper">
+            <p>You can add images, video, audio and formatted text to almost any textbox within an activity or resource.</p>
+           </div>
+           <div class="image clearfix">
+            <img alt="Description field is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/166/422/original/b8b95a04-de56-41f6-9c6a-767a24d07a7d.png 479w" data-src="https://media.screensteps.com/image_assets/assets/001/166/422/original/b8b95a04-de56-41f6-9c6a-767a24d07a7d.png" class="lazyload lazypreload" style="max-width:479px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/422/original/b8b95a04-de56-41f6-9c6a-767a24d07a7d.png">
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="feb612f8-36a3-47ab-8bc6-6ea1a6bcb172" id="adjust-the-timing-settings"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#adjust-the-timing-settings">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#adjust-the-timing-settings" class="embedded-chapter-article" id="screensteps-article-feb612f8-36a3-47ab-8bc6-6ea1a6bcb172" data-lesson-id="feb612f8-36a3-47ab-8bc6-6ea1a6bcb172"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> 9. Adjust the Timing settings. </a>
+            <div class="nested-article" data-lesson-id="feb612f8-36a3-47ab-8bc6-6ea1a6bcb172">
+             <div class="image clearfix">
+              <img alt="Timing settings options " data-srcset="https://media.screensteps.com/image_assets/assets/001/166/416/original/19b8b924-be70-4911-b036-8c9b79f16b95.png 703w" data-src="https://media.screensteps.com/image_assets/assets/001/166/416/original/19b8b924-be70-4911-b036-8c9b79f16b95.png" class="lazyload lazypreload" style="max-width:703px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/416/original/19b8b924-be70-4911-b036-8c9b79f16b95.png">
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="f3e4db4b-5b3b-411a-8804-8abdb25a684f" id="">
+              <h3 id="add-open-and-close-dates-if-desired"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 9.1. Add open and close dates if desired." href="#add-open-and-close-dates-if-desired">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 9.1. Add open and close dates if desired. </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>Click the checkbox to the left of the word "Enable", then set the open and close dates and times. Open and Close dates are not required, but the Close date does affect the Review options section below.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Timing section" data-srcset="https://media.screensteps.com/image_assets/assets/001/166/441/original/1bc06965-08c7-47b6-ad84-f0e0d2b82f09.png 704w" data-src="https://media.screensteps.com/image_assets/assets/001/166/441/original/1bc06965-08c7-47b6-ad84-f0e0d2b82f09.png" class="lazyload lazypreload" style="max-width:704px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/441/original/1bc06965-08c7-47b6-ad84-f0e0d2b82f09.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="82c9de83-7e71-4011-a819-5cc33e80b1f7" id="">
+              <h3 id="set-a-time-limit-if-desired"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 9.2. Set a time limit if desired." href="#set-a-time-limit-if-desired">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 9.2. Set a time limit if desired. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--tip screensteps-wrapper">
+               <p>For a quiz or exam, a tight time limit may discourage cheating because the student doesn't have enough time to look up answers via the internet, but may encourage a student to work with a partner.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Minutes selected from dropdown menu." data-srcset="https://media.screensteps.com/image_assets/assets/001/166/449/original/56c50150-d26b-4926-bf9a-f5e472651a33.png 507w" data-src="https://media.screensteps.com/image_assets/assets/001/166/449/original/56c50150-d26b-4926-bf9a-f5e472651a33.png" class="lazyload lazypreload" style="max-width:507px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/449/original/56c50150-d26b-4926-bf9a-f5e472651a33.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="84460572-7a7a-4452-91d7-2aa6c4d16d9f" id="">
+              <h3 id="click-on-show-more"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 9.3. Click on Show more.." href="#click-on-show-more">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 9.3. Click on Show more.. </h3>
+              <div class="image clearfix">
+               <img alt=" Show more.. link is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/166/444/original/c4bdcc99-59d0-4944-8c54-5a2ce66e3621.png 475w" data-src="https://media.screensteps.com/image_assets/assets/001/166/444/original/c4bdcc99-59d0-4944-8c54-5a2ce66e3621.png" class="lazyload lazypreload" style="max-width:475px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/444/original/c4bdcc99-59d0-4944-8c54-5a2ce66e3621.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="79dbd5a6-8cbc-4de3-87cd-8aa457481b5e" id="">
+              <h3 id="select-open-attempts-are-submitted-automatically"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 9.4. Select 'Open attempts are submitted automatically'." href="#select-open-attempts-are-submitted-automatically">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 9.4. Select 'Open attempts are submitted automatically'. </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>There are three choices for what happens when a timer expires:</p>
+               <p><strong>Open attempts are submitted automatically </strong>is generally the best and the recommended choice because when the timer expires, the quiz closes and all of the non-manually graded question types are graded. Manually graded questions include Essay questions, for example.</p>
+               <p><strong>There is a grade period when open attempts can be submitted, but no more questions answered</strong> allows students to view the quiz until the grace period expires, if enabled. Although students can view their responses, they cannot make any changes to them.</p>
+               <p><strong>Attempts must be submitted before the time expires, or they are not counted</strong> closes the attempt when the timer expires, but the questions are not grades. This choice is not recommended unless you like to add a lot of extra work for yourself. In other words, you would have to grade every single question one by one on a piece of paper.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="'Open attempts are submitted automatically' is selected" data-srcset="https://media.screensteps.com/image_assets/assets/001/166/420/original/7c508f5f-ab04-4a11-a1d0-4de8f0fad0f5.png 792w" data-src="https://media.screensteps.com/image_assets/assets/001/166/420/original/7c508f5f-ab04-4a11-a1d0-4de8f0fad0f5.png" class="lazyload lazypreload" style="max-width:792px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/420/original/7c508f5f-ab04-4a11-a1d0-4de8f0fad0f5.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="7b37cb8a-b6e8-47c7-af17-286d2fe38aaf" id="">
+              <h3 id="select-a-submission-grace-period-is-if-desired"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 9.5. Select a Submission grace period is if desired." href="#select-a-submission-grace-period-is-if-desired">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 9.5. Select a Submission grace period is if desired. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+               <p>The <strong>Submission grace period</strong> is only available, if you have selected to allow a grade period when the timer expires, which requires that you first set a Timer.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Days is selected from the dropdown menu." data-srcset="https://media.screensteps.com/image_assets/assets/001/166/408/original/84f5aac6-6f29-4024-8d50-9352d62208c2.png 460w" data-src="https://media.screensteps.com/image_assets/assets/001/166/408/original/84f5aac6-6f29-4024-8d50-9352d62208c2.png" class="lazyload lazypreload" style="max-width:460px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/408/original/84f5aac6-6f29-4024-8d50-9352d62208c2.png">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="8b28de8c-cbdb-4c97-bd16-6bc2e0208984" id="adjust-the-grade-settings"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#adjust-the-grade-settings">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#adjust-the-grade-settings" class="embedded-chapter-article" id="screensteps-article-8b28de8c-cbdb-4c97-bd16-6bc2e0208984" data-lesson-id="8b28de8c-cbdb-4c97-bd16-6bc2e0208984"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> 10. Adjust the Grade settings. </a>
+            <div class="nested-article" data-lesson-id="8b28de8c-cbdb-4c97-bd16-6bc2e0208984">
+             <div class="image clearfix">
+              <img alt="Adjust the Grade settings." data-srcset="https://media.screensteps.com/image_assets/assets/001/166/447/original/2d60933b-04e6-4acc-8862-b00f6c1c1531.png 429w" data-src="https://media.screensteps.com/image_assets/assets/001/166/447/original/2d60933b-04e6-4acc-8862-b00f6c1c1531.png" class="lazyload lazypreload" style="max-width:429px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/447/original/2d60933b-04e6-4acc-8862-b00f6c1c1531.png">
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="65cf5311-b14e-4a54-b483-c9dea9f08f16" id="">
+              <h3 id="select-a-grade-category-if-desired"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.1. Select a Grade category if desired." href="#select-a-grade-category-if-desired">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 10.1. Select a Grade category if desired. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--tip screensteps-wrapper">
+               <p>In order to select a Grade category, you must first <a href="../../GettingStarted/l/461633-how-do-i-add-a-category-to-the-gradebook" data-internal-link-id="461633" data-internal-link="article" data-internal-manual-id="48508" target="">create one or more categories in the Gradebook</a>.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Select a Grade category if desired." data-srcset="https://media.screensteps.com/image_assets/assets/001/166/453/original/4cbf1f80-681d-4588-8431-0b697c43dfb4.png 464w" data-src="https://media.screensteps.com/image_assets/assets/001/166/453/original/4cbf1f80-681d-4588-8431-0b697c43dfb4.png" class="lazyload lazypreload" style="max-width:464px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/453/original/4cbf1f80-681d-4588-8431-0b697c43dfb4.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="19075889-848f-4f48-84a8-3e1438a4ebc8" id="">
+              <h3 id="set-a-grade-to-pass"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.2. Set a Grade to pass." href="#set-a-grade-to-pass">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 10.2. Set a Grade to pass. </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>The default for the Grade to pass is 0.00. The <strong>Grade to pass</strong> &nbsp;setting will allow you to automatically set a given activity to be &nbsp;marked as "Complete"; thus, allowing a student to go on to the next &nbsp;activity or resource.</p>
+               <p>The screenshot below shows a Grade to pass of 8.00. This would &nbsp;represent 80% of a 10-point quiz, as an example. So, the student would &nbsp;need 80% score to pass the quiz.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Set a Grade to pass." data-srcset="https://media.screensteps.com/image_assets/assets/001/166/484/original/ad3d2931-2726-464e-887b-99f11818aa00.png 450w" data-src="https://media.screensteps.com/image_assets/assets/001/166/484/original/ad3d2931-2726-464e-887b-99f11818aa00.png" class="lazyload lazypreload" style="max-width:450px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/484/original/ad3d2931-2726-464e-887b-99f11818aa00.png">
+              </div>
+              <div class="instructions screensteps-textblock ">
+               <p>The student's grade in the Grader report will display in red if it does&nbsp;not meet the Grade to pass. If it does meet the Grade to pass, it will &nbsp;be in green. </p>
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="13eef494-79c9-4414-9a33-46934a91d7e7" id="">
+              <h3 id="10-3-set-the-allowed-number-of-attempts"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.3. Set the allowed number of attempts." href="#10-3-set-the-allowed-number-of-attempts">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 10.3. Set the allowed number of attempts. </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>For most uses for a Quiz activity, the <strong>Attempts allowed</strong> &nbsp;will be 1 because the activity is being used as a summative assessment. &nbsp;However, there are times when more than one attempt is desired, so use &nbsp;the dropdown to select the desired number of attempts.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Set the allowed number of attempts." data-srcset="https://media.screensteps.com/image_assets/assets/001/166/480/original/2c80f799-1fd5-43cb-b3fa-718269fe4697.png 443w" data-src="https://media.screensteps.com/image_assets/assets/001/166/480/original/2c80f799-1fd5-43cb-b3fa-718269fe4697.png" class="lazyload lazypreload" style="max-width:443px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/166/480/original/2c80f799-1fd5-43cb-b3fa-718269fe4697.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="80488b97-8af9-401b-87c8-51483e282320" id="">
+              <h3 id="10-4-select-a-grading-method"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.4. Select a Grading method." href="#10-4-select-a-grading-method">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 10.4. Select a Grading method. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+               <p>Only if 2 or more attempts are allowed in the <strong>Attempts allowed </strong>field, would the <strong>Grading method</strong> field become active.</p>
+               <p>You can choose:</p>
+               <p><strong>Highest grade</strong> will enter only the highest attempt in &nbsp;the gradebook. If the student takes multiple attempts, only the highest &nbsp;will display in the gradebook. All attempts will still be shown in the &nbsp;Quiz Results page.</p>
+               <p><strong>Average grade</strong> will average the score of the attempts and report that score to the gradebook.</p>
+               <p><strong>First attempt </strong>will only record the first attempt in &nbsp;the gradebook. However, all of the attempts will still be recorded in &nbsp;the Quiz Results page.</p>
+               <p><strong>Last attempt</strong> will record only the score of the latest attempt in the gradebook whether it is the highest or not.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Select a Grading method." data-srcset="https://media.screensteps.com/image_assets/assets/001/167/762/original/8e1550d3-2899-41f3-8d8a-fbb3b7f3e79d.png 376w" data-src="https://media.screensteps.com/image_assets/assets/001/167/762/original/8e1550d3-2899-41f3-8d8a-fbb3b7f3e79d.png" class="lazyload lazypreload" style="max-width:376px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/167/762/original/8e1550d3-2899-41f3-8d8a-fbb3b7f3e79d.png">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="8c0f4cee-bc34-487c-827f-a255c82cd5fa" id="adjust-the-layout-settings"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#adjust-the-layout-settings">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#adjust-the-layout-settings" class="embedded-chapter-article" id="screensteps-article-8c0f4cee-bc34-487c-827f-a255c82cd5fa" data-lesson-id="8c0f4cee-bc34-487c-827f-a255c82cd5fa"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> 11. Adjust the Layout settings. </a>
+            <div class="nested-article" data-lesson-id="8c0f4cee-bc34-487c-827f-a255c82cd5fa">
+             <div class="image clearfix">
+              <img alt="Adjust the Layout settings." data-srcset="https://media.screensteps.com/image_assets/assets/001/167/763/original/822d44cc-bded-4ae3-ad19-607144bb3a88.png 600w" data-src="https://media.screensteps.com/image_assets/assets/001/167/763/original/822d44cc-bded-4ae3-ad19-607144bb3a88.png" class="lazyload lazypreload" style="max-width:600px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/167/763/original/822d44cc-bded-4ae3-ad19-607144bb3a88.png">
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="d81afd9a-74a0-4a50-adab-e861113e9396" id="">
+              <h3 id="select-how-many-questions-to-display-per-page"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 11.1. Select how many questions to display per page." href="#select-how-many-questions-to-display-per-page">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 11.1. Select how many questions to display per page. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--tip screensteps-wrapper">
+               <p>In general one question per page is recommended, so that it is more difficult for students to cheat.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Select how many questions to display per page." data-srcset="https://media.screensteps.com/image_assets/assets/001/167/765/original/a63bcf27-f9bd-40f3-8b07-5853d495f421.png 580w" data-src="https://media.screensteps.com/image_assets/assets/001/167/765/original/a63bcf27-f9bd-40f3-8b07-5853d495f421.png" class="lazyload lazypreload" style="max-width:580px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/167/765/original/a63bcf27-f9bd-40f3-8b07-5853d495f421.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="707024a6-16db-458f-82b0-221466b40f52" id="">
+              <h3 id="click-on-show-more_1"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 11.2. Click on Show more.." href="#click-on-show-more_1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 11.2. Click on Show more.. </h3>
+              <div class="image clearfix">
+               <img alt="Click on Show more.." data-srcset="https://media.screensteps.com/image_assets/assets/001/167/760/original/f2613e8a-f2f6-480d-adff-505f238ccae8.png 496w" data-src="https://media.screensteps.com/image_assets/assets/001/167/760/original/f2613e8a-f2f6-480d-adff-505f238ccae8.png" class="lazyload lazypreload" style="max-width:496px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/167/760/original/f2613e8a-f2f6-480d-adff-505f238ccae8.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="612b5248-67be-4009-939a-6154da294159" id="">
+              <h3 id="select-the-type-of-navigation"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 11.3. Select the type of navigation." href="#select-the-type-of-navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 11.3. Select the type of navigation. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+               <p>There are two types of navigation:</p>
+               <p><strong>Free</strong> is the default and allows the student to go back and forth anyway within a quiz as long as there is still time on the Timer.</p>
+               <p><strong>Sequential</strong> requires that the student answer each question as it is encountered in the quiz.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Select the type of navigation." data-srcset="https://media.screensteps.com/image_assets/assets/001/167/767/original/e1115c8a-cd1e-4e69-a837-5e34f28f8a79.png 352w" data-src="https://media.screensteps.com/image_assets/assets/001/167/767/original/e1115c8a-cd1e-4e69-a837-5e34f28f8a79.png" class="lazyload lazypreload" style="max-width:352px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/167/767/original/e1115c8a-cd1e-4e69-a837-5e34f28f8a79.png">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="dd5c16e5-978e-4875-8256-e98ee22c9f48" id="question-behavior"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#question-behavior">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#question-behavior" class="embedded-chapter-article" id="screensteps-article-dd5c16e5-978e-4875-8256-e98ee22c9f48" data-lesson-id="dd5c16e5-978e-4875-8256-e98ee22c9f48"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> 12. Adjust the Question behavior settings. </a>
+            <div class="nested-article" data-lesson-id="dd5c16e5-978e-4875-8256-e98ee22c9f48">
+             <div class="image clearfix">
+              <img alt="Adjust the Question behavior settings." data-srcset="https://media.screensteps.com/image_assets/assets/001/169/821/original/f8643a11-c431-4e47-a01d-52df2e1d2371.png 502w" data-src="https://media.screensteps.com/image_assets/assets/001/169/821/original/f8643a11-c431-4e47-a01d-52df2e1d2371.png" class="lazyload lazypreload" style="max-width:502px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/169/821/original/f8643a11-c431-4e47-a01d-52df2e1d2371.png">
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="6af69bcd-f9b6-47f1-90b4-54d678e0c244" id="">
+              <h3 id="decide-whether-to-set-the-answer-choices-to-shuffle-within-each-question"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 12.1. Decide whether to set the answer choices to shuffle within each question." href="#decide-whether-to-set-the-answer-choices-to-shuffle-within-each-question">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 12.1. Decide whether to set the answer choices to shuffle within each question. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+               <p>This choice is about shuffling the answers within each question, not shuffling the order of the questions. However, in questions where you have set the answers to not shuffle, those answers will not shuffle whether this setting set to Yes or No.</p>
+              </div>
+              <div class="instructions screensteps-textblock screensteps-wrapper--tip screensteps-wrapper">
+               <p>Don't shuffle answers for questions where you have created answer choices like "All of the above" or "None of the above" or "A and C", etc.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Decide whether to set the answer choices to shuffle within each question." data-srcset="https://media.screensteps.com/image_assets/assets/001/169/819/original/39740d15-b0ff-42bd-8b83-8594b035babf.png 445w" data-src="https://media.screensteps.com/image_assets/assets/001/169/819/original/39740d15-b0ff-42bd-8b83-8594b035babf.png" class="lazyload lazypreload" style="max-width:445px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/169/819/original/39740d15-b0ff-42bd-8b83-8594b035babf.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="18b1de5d-2310-4802-b0c4-c1536b493d6e" id="">
+              <h3 id="decide-on-the-type-of-feedback-students-should-receive"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 12.2. Decide on the type of feedback students should receive." href="#decide-on-the-type-of-feedback-students-should-receive">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 12.2. Decide on the type of feedback students should receive. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--tip screensteps-wrapper">
+               <p>Read the <a href="https://docs.moodle.org/32/en/Question_behaviours" target="_blank">Moodle docs page</a> for detailed information about <strong>How questions behave</strong>.</p>
+              </div>
+              <div class="instructions screensteps-textblock ">
+               <p><strong>Deferred feedback</strong> is the default setting and allows student to see their quiz score after they have finished the attempt (if the the <a href="#review-options" target="">Review options</a> are set to allow that).</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Decide on the type of feedback students should receive." data-srcset="https://media.screensteps.com/image_assets/assets/001/169/823/original/e0ef10e6-1ada-4dbb-ad56-28fa0f476789.png 447w" data-src="https://media.screensteps.com/image_assets/assets/001/169/823/original/e0ef10e6-1ada-4dbb-ad56-28fa0f476789.png" class="lazyload lazypreload" style="max-width:447px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/169/823/original/e0ef10e6-1ada-4dbb-ad56-28fa0f476789.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="09291d9c-3421-4139-9c0b-988e64d0f22e" id="">
+              <h3 id="click-on-show-more_2"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 12.3. Click on Show more.." href="#click-on-show-more_2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 12.3. Click on Show more.. </h3>
+              <div class="image clearfix">
+               <img alt="Click on Show more.." data-srcset="https://media.screensteps.com/image_assets/assets/001/169/825/original/c265cd8d-9b5d-4516-bc0c-bb3c0bd3cd6e.png 460w" data-src="https://media.screensteps.com/image_assets/assets/001/169/825/original/c265cd8d-9b5d-4516-bc0c-bb3c0bd3cd6e.png" class="lazyload lazypreload" style="max-width:460px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/169/825/original/c265cd8d-9b5d-4516-bc0c-bb3c0bd3cd6e.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="a9ff1388-264e-457c-a355-17cf2becd6f0" id="">
+              <h3 id="select-whether-to-allow-question-redos"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 12.4. Select whether to allow question redos." href="#select-whether-to-allow-question-redos">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 12.4. Select whether to allow question redos. </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>A question redo option is only available for immediate types of feedback, such as <strong>Immediate feedback</strong> or <strong>Interactive with multiple tries</strong>.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Select whether to allow question redos." data-srcset="https://media.screensteps.com/image_assets/assets/001/169/881/original/55cd6ff0-ee95-4842-8ae6-9580257ac8f2.png 594w" data-src="https://media.screensteps.com/image_assets/assets/001/169/881/original/55cd6ff0-ee95-4842-8ae6-9580257ac8f2.png" class="lazyload lazypreload" style="max-width:594px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/169/881/original/55cd6ff0-ee95-4842-8ae6-9580257ac8f2.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="9e98d1d1-fb23-4d5f-a89d-e1afe1a752cc" id="">
+              <h3 id="select-whether-attempts-build-upon-previous-attempts"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 12.5. Select whether attempts build upon previous attempts." href="#select-whether-attempts-build-upon-previous-attempts">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 12.5. Select whether attempts build upon previous attempts. </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>If you are allowing 2 or more attempts at a quiz, then you can choose whether an attempt builds upon a previous attempt. The default is set to No.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Select whether attempts build upon previous attempts." data-srcset="https://media.screensteps.com/image_assets/assets/001/169/883/original/c8bae7d0-133b-4b3c-bb82-e306e1884072.png 604w" data-src="https://media.screensteps.com/image_assets/assets/001/169/883/original/c8bae7d0-133b-4b3c-bb82-e306e1884072.png" class="lazyload lazypreload" style="max-width:604px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/169/883/original/c8bae7d0-133b-4b3c-bb82-e306e1884072.png">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="46e7aa54-ee7a-44a0-b38a-f3df41401c0c" id="review-options"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#review-options">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#review-options" class="embedded-chapter-article" id="screensteps-article-46e7aa54-ee7a-44a0-b38a-f3df41401c0c" data-lesson-id="46e7aa54-ee7a-44a0-b38a-f3df41401c0c"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> 13. Adjust the Review options settings. </a>
+            <div class="nested-article" data-lesson-id="46e7aa54-ee7a-44a0-b38a-f3df41401c0c">
+             <div class="instructions screensteps-textblock ">
+              <p>In this section you can adjust which information a student sees during and after the quiz.</p>
+             </div>
+             <div class="image clearfix">
+              <img alt="Adjust the Review options settings." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/190/original/9c18ea4d-d085-4fa7-b63c-f6aeb45e118a.png 393w" data-src="https://media.screensteps.com/image_assets/assets/001/170/190/original/9c18ea4d-d085-4fa7-b63c-f6aeb45e118a.png" class="lazyload lazypreload" style="max-width:393px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/190/original/9c18ea4d-d085-4fa7-b63c-f6aeb45e118a.png">
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="b27343fd-cee4-44dd-9cc5-1eeb8ac4443e" id="">
+              <h3 id="during-the-attempt"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 13.1. During the attempt" href="#during-the-attempt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 13.1. During the attempt </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>The default is to allow the student to only view <strong>The attempt</strong>. This means that students can see the questions and answer them, but they do not know whether the answer is correct or their score or any other feedback.</p>
+              </div>
+              <div class="instructions screensteps-textblock ">
+               <p>The following options are available:</p>
+               <p><strong>The attempt </strong>will allow the student to see the questions. It must be checked; otherwise, nothing will be visible to the student.</p>
+               <p><strong>Whether correct</strong> allows the student to see if their answer choice is correct or not. And is needed if immediate feedback is being used in the quiz.</p>
+               <p><strong>Points </strong>shows the student their score.</p>
+               <p><strong>Specific feedback</strong> provides feedback at the answer-level, if you have provided any when creating the question.</p>
+               <p><strong>General feedback</strong> provides feedback at the question-level, if you have provide any when creating the question.</p>
+               <p><strong>Right answer </strong>shows the correct answer for each question already answered.</p>
+               <p><strong>Overall feedback </strong>shows feedback at the end of the attempt based on the score range, if you have set that up.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="During the attempt" data-srcset="https://media.screensteps.com/image_assets/assets/001/170/904/original/36202128-b019-4ac5-b0cf-045133a4caca.png 222w" data-src="https://media.screensteps.com/image_assets/assets/001/170/904/original/36202128-b019-4ac5-b0cf-045133a4caca.png" class="lazyload lazypreload" style="max-width:222px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/904/original/36202128-b019-4ac5-b0cf-045133a4caca.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="68eae2e4-257a-4b60-8c36-989c3d89cce4" id="">
+              <h3 id="immediately-after-the-attempt"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 13.2. Immediately after the attempt" href="#immediately-after-the-attempt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 13.2. Immediately after the attempt </h3>
+              <div class="instructions screensteps-textblock ">
+               <p><strong>Points</strong> is checked by default. Select the information you want students to view immediately after having completed the quiz.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Immediately after the attempt" data-srcset="https://media.screensteps.com/image_assets/assets/001/170/887/original/06cc6211-8b56-41c7-a0d3-b407bff6e629.png 224w" data-src="https://media.screensteps.com/image_assets/assets/001/170/887/original/06cc6211-8b56-41c7-a0d3-b407bff6e629.png" class="lazyload lazypreload" style="max-width:224px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/887/original/06cc6211-8b56-41c7-a0d3-b407bff6e629.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="4c73d5cb-6a7e-4fbd-8aeb-d3a941b31813" id="">
+              <h3 id="later-while-the-quiz-is-still-open"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 13.3. Later, while the quiz is still open" href="#later-while-the-quiz-is-still-open">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 13.3. Later, while the quiz is still open </h3>
+              <div class="instructions screensteps-textblock ">
+               <p><strong>Points</strong> is checked by default. Select the information you want students to view 2 minutes after having completed the quiz.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Later, while the quiz is still open" data-srcset="https://media.screensteps.com/image_assets/assets/001/170/903/original/e30a4af5-c28a-4221-b1af-adb2abd6e255.png 247w" data-src="https://media.screensteps.com/image_assets/assets/001/170/903/original/e30a4af5-c28a-4221-b1af-adb2abd6e255.png" class="lazyload lazypreload" style="max-width:247px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/903/original/e30a4af5-c28a-4221-b1af-adb2abd6e255.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="6b783cf5-ae52-4f6d-8d47-c0bd474e7a9c" id="">
+              <h3 id="after-the-quiz-is-closed"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 13.4. After the quiz is closed" href="#after-the-quiz-is-closed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 13.4. After the quiz is closed </h3>
+              <div class="instructions screensteps-textblock ">
+               <p><strong>Points</strong> is checked by default. Select the information you want students to view after the C<strong>lose the quiz</strong> date and time has past. If you do not set a date for the <strong>Close the quiz</strong> setting, then this setting here will never take effect.</p>
+              </div>
+              <div class="instructions screensteps-textblock screensteps-wrapper--alert screensteps-wrapper">
+               <p>If Points is unchecked, then the students will not see their score within the Quiz, nor within the User report (Grades).</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="After the quiz is closed" data-srcset="https://media.screensteps.com/image_assets/assets/001/170/896/original/20e44bc1-9e82-4289-97b3-3cd853c713f6.png 190w" data-src="https://media.screensteps.com/image_assets/assets/001/170/896/original/20e44bc1-9e82-4289-97b3-3cd853c713f6.png" class="lazyload lazypreload" style="max-width:190px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/896/original/20e44bc1-9e82-4289-97b3-3cd853c713f6.png">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="71e80da6-6b8e-4fcf-b745-42d8c5648321" id="appearance"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#appearance">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#appearance" class="embedded-chapter-article" id="screensteps-article-71e80da6-6b8e-4fcf-b745-42d8c5648321" data-lesson-id="71e80da6-6b8e-4fcf-b745-42d8c5648321"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> 14. Adjust the Appearance settings. </a>
+            <div class="nested-article" data-lesson-id="71e80da6-6b8e-4fcf-b745-42d8c5648321">
+             <div class="image clearfix">
+              <img alt="Adjust the Appearance settings." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/778/original/abbce694-f353-4d3d-943e-51e7cf15df63.png 380w" data-src="https://media.screensteps.com/image_assets/assets/001/170/778/original/abbce694-f353-4d3d-943e-51e7cf15df63.png" class="lazyload lazypreload" style="max-width:380px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/778/original/abbce694-f353-4d3d-943e-51e7cf15df63.png">
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="65703829-bddc-411c-a9d0-057e9e66420b" id="">
+              <h3 id="select-whether-to-show-the-student-s-image"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 14.1. Select whether to show the student's image." href="#select-whether-to-show-the-student-s-image">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 14.1. Select whether to show the student's image. </h3>
+              <div class="image clearfix">
+               <img alt="Select whether to show the student's picture." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/780/original/8af8a093-7d5e-4126-be4d-2a00551da3cf.png 381w" data-src="https://media.screensteps.com/image_assets/assets/001/170/780/original/8af8a093-7d5e-4126-be4d-2a00551da3cf.png" class="lazyload lazypreload" style="max-width:381px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/780/original/8af8a093-7d5e-4126-be4d-2a00551da3cf.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="80075d8c-8f46-4b64-b41a-002060b61066" id="">
+              <h3 id="select-the-number-of-decimal-points"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 14.2. Select the number of decimal points." href="#select-the-number-of-decimal-points">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 14.2. Select the number of decimal points. </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>Two decimal points is the default, which is also the default for the gradebook.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Select the number of decimal points." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/772/original/ba94c9d7-d3b7-43c5-82c1-ce444a2d1f21.png 341w" data-src="https://media.screensteps.com/image_assets/assets/001/170/772/original/ba94c9d7-d3b7-43c5-82c1-ce444a2d1f21.png" class="lazyload lazypreload" style="max-width:341px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/772/original/ba94c9d7-d3b7-43c5-82c1-ce444a2d1f21.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="13fe28dd-b8c5-4061-aa6b-0633991fc260" id="">
+              <h3 id="click-on-show-more_3"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 14.3. Click on Show more.." href="#click-on-show-more_3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 14.3. Click on Show more.. </h3>
+              <div class="image clearfix">
+               <img alt="Click on Show more.." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/770/original/e4b606f4-9bac-4dae-b7c2-f42f7a3ab3a9.png 348w" data-src="https://media.screensteps.com/image_assets/assets/001/170/770/original/e4b606f4-9bac-4dae-b7c2-f42f7a3ab3a9.png" class="lazyload lazypreload" style="max-width:348px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/770/original/e4b606f4-9bac-4dae-b7c2-f42f7a3ab3a9.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="59cab29d-7c9e-4a26-b6cf-11fc0facab3d" id="">
+              <h3 id="set-the-decimal-place-in-question-grades"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 14.4. Set the decimal place in question grades." href="#set-the-decimal-place-in-question-grades">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 14.4. Set the decimal place in question grades. </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>The default is to have the individual question grades display in the quiz results page the same as for the gradebook overall. </p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Set the decimal place in question grades." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/907/original/12d9c495-df34-44fd-bf0b-ed810fd70f0f.png 404w" data-src="https://media.screensteps.com/image_assets/assets/001/170/907/original/12d9c495-df34-44fd-bf0b-ed810fd70f0f.png" class="lazyload lazypreload" style="max-width:404px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/907/original/12d9c495-df34-44fd-bf0b-ed810fd70f0f.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="6d09056b-40ef-4317-8a6a-6fefcccb47c1" id="">
+              <h3 id="decide-whether-to-show-the-course-blocks"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 14.5. Decide whether to show the course blocks." href="#decide-whether-to-show-the-course-blocks">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 14.5. Decide whether to show the course blocks. </h3>
+              <div class="image clearfix">
+               <img alt="Decide whether to show the course blocks." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/882/original/1d4f05a6-8dfb-4c02-a995-76d59362faa3.png 418w" data-src="https://media.screensteps.com/image_assets/assets/001/170/882/original/1d4f05a6-8dfb-4c02-a995-76d59362faa3.png" class="lazyload lazypreload" style="max-width:418px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/882/original/1d4f05a6-8dfb-4c02-a995-76d59362faa3.png">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="e8706dfd-dc4d-456c-8b9d-570e749f4bb6" id="extra-restrictions-on-attempts"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#extra-restrictions-on-attempts">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#extra-restrictions-on-attempts" class="embedded-chapter-article" id="screensteps-article-e8706dfd-dc4d-456c-8b9d-570e749f4bb6" data-lesson-id="e8706dfd-dc4d-456c-8b9d-570e749f4bb6"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> 15. Adjust the Extra restrictions on attempts settings. </a>
+            <div class="nested-article" data-lesson-id="e8706dfd-dc4d-456c-8b9d-570e749f4bb6">
+             <div class="image clearfix">
+              <img alt="Adjust the Extra restrictions on attempts settings." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/899/original/548c1364-c20e-4018-bb39-a4f8e430d43d.png 374w" data-src="https://media.screensteps.com/image_assets/assets/001/170/899/original/548c1364-c20e-4018-bb39-a4f8e430d43d.png" class="lazyload lazypreload" style="max-width:374px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/899/original/548c1364-c20e-4018-bb39-a4f8e430d43d.png">
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="2b066fb8-fb37-4a99-ae48-c1a2ac97f415" id="">
+              <h3 id="click-on-show-more_4"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 15.1. Click on Show more.." href="#click-on-show-more_4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 15.1. Click on Show more.. </h3>
+              <div class="image clearfix">
+               <img alt="Click on Show more.." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/901/original/35122712-7ae2-412d-b64f-48820e33a04f.png 374w" data-src="https://media.screensteps.com/image_assets/assets/001/170/901/original/35122712-7ae2-412d-b64f-48820e33a04f.png" class="lazyload lazypreload" style="max-width:374px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/901/original/35122712-7ae2-412d-b64f-48820e33a04f.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="528f03e4-1c76-4e07-b9a8-b9103566dff2" id="">
+              <h3 id="type-a-password-if-desired"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 15.2. Type a password if desired." href="#type-a-password-if-desired">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 15.2. Type a password if desired. </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>The Require password field is useful if you are using an online proctoring service such as ProctorU or Proctorio. You provide the company with the password. Students cannot take the quiz without the proctor entering the password.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Type a password if desired." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/905/original/3fcb0c09-34d7-4229-a941-47b7fb8e2da3.png 487w" data-src="https://media.screensteps.com/image_assets/assets/001/170/905/original/3fcb0c09-34d7-4229-a941-47b7fb8e2da3.png" class="lazyload lazypreload" style="max-width:487px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/905/original/3fcb0c09-34d7-4229-a941-47b7fb8e2da3.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="b195dc9a-a661-4c9f-a776-d9504fd3c4e0" id="">
+              <h3 id="type-a-network-sub-net-or-other-ip-address-if-desired"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 15.3. Type a network sub-net or other IP address if desired." href="#type-a-network-sub-net-or-other-ip-address-if-desired">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 15.3. Type a network sub-net or other IP address if desired. </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>This field allows you to specify a particular sub-net or a full IP, so that, for example, students would have to be in a specific computer lab in order to take the quiz.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Type a network sub-net or other IP address if desired." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/888/original/57a09cbf-75ef-4e4b-a9a3-ceedfa62a42c.png 487w" data-src="https://media.screensteps.com/image_assets/assets/001/170/888/original/57a09cbf-75ef-4e4b-a9a3-ceedfa62a42c.png" class="lazyload lazypreload" style="max-width:487px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/888/original/57a09cbf-75ef-4e4b-a9a3-ceedfa62a42c.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="eb0b6b54-411a-4e67-a40e-c9f59a62966f" id="">
+              <h3 id="enable-a-time-delay-if-allowing-multiple-attempts"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 15.4. Enable a time delay if allowing multiple attempts." href="#enable-a-time-delay-if-allowing-multiple-attempts">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 15.4. Enable a time delay if allowing multiple attempts. </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>If you are allowing multiple attempts and do not want the student to take a new attempt directly after finishing a previous attempt, you can set the number of minutes, hours or days which must elapse before a new attempt can be made.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Enable a time delay if allowing multiple attempts." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/890/original/dba51f03-d711-4f61-a3e8-fa6ded1f50c6.png 472w" data-src="https://media.screensteps.com/image_assets/assets/001/170/890/original/dba51f03-d711-4f61-a3e8-fa6ded1f50c6.png" class="lazyload lazypreload" style="max-width:472px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/890/original/dba51f03-d711-4f61-a3e8-fa6ded1f50c6.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="4cb7cb97-4521-4594-b165-4825f45ae149" id="">
+              <h3 id="set-browser-security-if-desired"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 15.5. Set Browser security if desired." href="#set-browser-security-if-desired">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 15.5. Set Browser security if desired. </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>Setting the Browser security to open the quiz in a new pop up window will almost certainly be blocked by the student's web browser.</p>
+              </div>
+              <div class="instructions screensteps-textblock screensteps-wrapper--alert screensteps-wrapper">
+               <p>You will need to tell students to override their <a href="../../FAQ/l/452263-how-do-i-allow-pop-ups-for-titanium-in-google-chrome" data-internal-link-id="452263" data-internal-link="article" data-internal-manual-id="48508" target="">web browser popup setting</a> if you enable Browser security.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Set Browser security if desired." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/883/original/030c1447-23a6-4c23-bb2b-1b2b31572082.png 552w" data-src="https://media.screensteps.com/image_assets/assets/001/170/883/original/030c1447-23a6-4c23-bb2b-1b2b31572082.png" class="lazyload lazypreload" style="max-width:552px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/883/original/030c1447-23a6-4c23-bb2b-1b2b31572082.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="c03fd039-c289-4294-b232-d49faeb6e2da" id="">
+              <h3 id="leave-offline-quizzing-set-to-no"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 15.6. Leave Offline quizzing set to No." href="#leave-offline-quizzing-set-to-no">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 15.6. Leave Offline quizzing set to No. </h3>
+              <div class="image clearfix">
+               <img alt="Leave Offline quizzing set to No." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/892/original/f4796f98-17f3-4932-9860-740b87352fee.png 293w" data-src="https://media.screensteps.com/image_assets/assets/001/170/892/original/f4796f98-17f3-4932-9860-740b87352fee.png" class="lazyload lazypreload" style="max-width:293px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/892/original/f4796f98-17f3-4932-9860-740b87352fee.png">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="5da77fb1-6eab-44ad-8136-1c6034ea603d" id="overall-feedback"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#overall-feedback">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#overall-feedback" class="embedded-chapter-article" id="screensteps-article-5da77fb1-6eab-44ad-8136-1c6034ea603d" data-lesson-id="5da77fb1-6eab-44ad-8136-1c6034ea603d"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> 16. Adjust the Overall feedback settings. </a>
+            <div class="nested-article" data-lesson-id="5da77fb1-6eab-44ad-8136-1c6034ea603d">
+             <div class="instructions screensteps-textblock screensteps-wrapper--warning screensteps-wrapper">
+              <p>Note: for this Overall feedback to display after a quiz has been finished and submitted by a student, the <strong>Overall feedback</strong> field in the <strong><a href="#review-options" target="">Review options</a></strong> section must be checked.</p>
+             </div>
+             <div class="image clearfix">
+              <img alt="Adjust the Overall feedback settings." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/897/original/433269da-7543-4d85-87e9-a3b054461d89.png 698w" data-src="https://media.screensteps.com/image_assets/assets/001/170/897/original/433269da-7543-4d85-87e9-a3b054461d89.png" class="lazyload lazypreload" style="max-width:698px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/897/original/433269da-7543-4d85-87e9-a3b054461d89.png">
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="b9663d23-8a58-428c-9ebf-013d6ce8c6de" id="">
+              <h3 id="click-on-add-3-more-feedback-fields"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 16.1. Click on Add 3 more feedback fields." href="#click-on-add-3-more-feedback-fields">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 16.1. Click on Add 3 more feedback fields. </h3>
+              <div class="image clearfix">
+               <img alt="Click on Add 3 more feedback fields." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/894/original/dd3fafe2-e525-4cb6-80c7-ca45e4ae6730.png 399w" data-src="https://media.screensteps.com/image_assets/assets/001/170/894/original/dd3fafe2-e525-4cb6-80c7-ca45e4ae6730.png" class="lazyload lazypreload" style="max-width:399px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/894/original/dd3fafe2-e525-4cb6-80c7-ca45e4ae6730.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="494a047a-a43e-4fc0-b3d1-4ac0ca31149d" id="">
+              <h3 id="type-text-and-a-grade-boundary"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 16.2. Type text and a Grade boundary." href="#type-text-and-a-grade-boundary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 16.2. Type text and a Grade boundary. </h3>
+              <div class="image clearfix">
+               <img alt="Type text and a Grade boundary." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/931/original/e7983cf7-7087-4d05-a9b1-71eaa2ee3d59.png 436w" data-src="https://media.screensteps.com/image_assets/assets/001/170/931/original/e7983cf7-7087-4d05-a9b1-71eaa2ee3d59.png" class="lazyload lazypreload" style="max-width:436px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/931/original/e7983cf7-7087-4d05-a9b1-71eaa2ee3d59.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="42317721-48f7-4158-a1b1-819b3dd6ab15" id="">
+              <h3 id="continue-with-the-other-grade-boundaries"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 16.3. Continue with the other Grade boundaries." href="#continue-with-the-other-grade-boundaries">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 16.3. Continue with the other Grade boundaries. </h3>
+              <div class="instructions screensteps-textblock ">
+               <p>In this sample quiz, the students must obtain at least 80% to demonstrate mastery and to move on to the next activity.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Continue with the other Grade boundaries." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/929/original/6da5b985-495d-4b53-b089-b3faa6b28770.png 549w" data-src="https://media.screensteps.com/image_assets/assets/001/170/929/original/6da5b985-495d-4b53-b089-b3faa6b28770.png" class="lazyload lazypreload" style="max-width:549px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/929/original/6da5b985-495d-4b53-b089-b3faa6b28770.png">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="8d1c3e90-9f79-49a7-a6b9-615bf4b69825" id="common-module-settings"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#common-module-settings">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#common-module-settings" class="embedded-chapter-article" id="screensteps-article-8d1c3e90-9f79-49a7-a6b9-615bf4b69825" data-lesson-id="8d1c3e90-9f79-49a7-a6b9-615bf4b69825"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> 17. Adjust the Common module settings. </a>
+            <div class="nested-article" data-lesson-id="8d1c3e90-9f79-49a7-a6b9-615bf4b69825">
+             <div class="instructions screensteps-textblock ">
+              <p><a href="../../FAQ/l/743171-how-do-i-use-the-common-module-settings-section-of-an-activity-or-resource" data-internal-link-id="743171" data-internal-link="article" data-internal-manual-id="48508" target="">Read this guide to learn about the Common module settings section</a>.</p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="9c810bc7-e05e-40ce-ba7b-f7218ea05af4" id="restrict-access"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#restrict-access">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#restrict-access" class="embedded-chapter-article" id="screensteps-article-9c810bc7-e05e-40ce-ba7b-f7218ea05af4" data-lesson-id="9c810bc7-e05e-40ce-ba7b-f7218ea05af4"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> 18. Adjust the Restrict access settings. </a>
+            <div class="nested-article" data-lesson-id="9c810bc7-e05e-40ce-ba7b-f7218ea05af4">
+             <div class="instructions screensteps-textblock ">
+              <p><a href="../../FAQ/l/744460-how-do-i-use-the-restrict-access-settings" data-internal-link-id="744460" data-internal-link="article" data-internal-manual-id="48508" target="">Read this guide to learn about using Restrict access</a> - limiting a student's ability to view or access activities, resources, topic sections, etc.</p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="1544abda-4444-413f-a06e-b5c3e1b004ff" id="tags"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#tags">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#tags" class="embedded-chapter-article" id="screensteps-article-1544abda-4444-413f-a06e-b5c3e1b004ff" data-lesson-id="1544abda-4444-413f-a06e-b5c3e1b004ff"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> 19. Add Tags. </a>
+            <div class="nested-article" data-lesson-id="1544abda-4444-413f-a06e-b5c3e1b004ff">
+             <div class="instructions screensteps-textblock ">
+              <p><a href="../../FAQ/l/799818-how-do-i-use-the-tags-section-of-an-activity-or-resource" data-internal-link-id="799818" data-internal-link="article" data-internal-manual-id="48508" target="">Read this guide to learn about using Tags</a>.</p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="e0fdce9d-efc7-413c-af42-a4c5f3a464d0" id="competencies"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#competencies">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#competencies" class="embedded-chapter-article" id="screensteps-article-e0fdce9d-efc7-413c-af42-a4c5f3a464d0" data-lesson-id="e0fdce9d-efc7-413c-af42-a4c5f3a464d0"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> 20. Add Competencies. </a>
+            <div class="nested-article" data-lesson-id="e0fdce9d-efc7-413c-af42-a4c5f3a464d0">
+             <div class="instructions screensteps-textblock ">
+              <p><a href="../../FAQ/l/799859-how-do-i-use-the-competencies-section-of-an-activity-or-resource" data-internal-link-id="799859" data-internal-link="article" data-internal-manual-id="48508" target="">Read this guide to learn about Competencies</a>.</p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="cb4e6912-1cd9-492b-8f7a-ef613ff8fe16" id="">
+           <h2 id="click-on-save-and-display"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 21. Click on Save and display." href="#click-on-save-and-display">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 21. Click on Save and display. </h2>
+           <div class="image clearfix">
+            <img alt="Click on Save and display." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/927/original/33f2f617-7fb1-422a-988f-7954245b175f.png 406w" data-src="https://media.screensteps.com/image_assets/assets/001/170/927/original/33f2f617-7fb1-422a-988f-7954245b175f.png" class="lazyload lazypreload" style="max-width:406px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/927/original/33f2f617-7fb1-422a-988f-7954245b175f.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="ab9b6976-410c-4aba-a1bc-5006cb3671d3" id="">
+           <h2 id="click-on-edit-quiz"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 22. Click on Edit quiz." href="#click-on-edit-quiz">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 22. Click on Edit quiz. </h2>
+           <div class="image clearfix">
+            <img alt="Click on Edit quiz." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/932/original/a9008a40-de6a-4387-b5f3-1097fa607364.png 582w" data-src="https://media.screensteps.com/image_assets/assets/001/170/932/original/a9008a40-de6a-4387-b5f3-1097fa607364.png" class="lazyload lazypreload" style="max-width:582px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/932/original/a9008a40-de6a-4387-b5f3-1097fa607364.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="5851f3b3-1843-4bea-a053-6628f89a3823" id="">
+           <h2 id="type-the-maximum-grade"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 23. Type the Maximum grade." href="#type-the-maximum-grade">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 23. Type the Maximum grade. </h2>
+           <div class="instructions screensteps-textblock ">
+            <p>10 is the default. For best results in the gradebook, use integers.</p>
+           </div>
+           <div class="image clearfix">
+            <img alt="Type the Maximum grade." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/961/original/40b2c79b-a0d4-4a5e-afde-b7712ba707b2.png 730w" data-src="https://media.screensteps.com/image_assets/assets/001/170/961/original/40b2c79b-a0d4-4a5e-afde-b7712ba707b2.png" class="lazyload lazypreload" style="max-width:730px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/961/original/40b2c79b-a0d4-4a5e-afde-b7712ba707b2.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="e545cc64-5442-406f-babf-c3ee25c18e8d" id="">
+           <h2 id="click-on-save"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 24. Click on Save." href="#click-on-save">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 24. Click on Save. </h2>
+           <div class="image clearfix">
+            <img alt="Click on Save." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/963/original/13e0cc9a-187a-4d4c-9ba8-c3b61e1fec38.png 320w" data-src="https://media.screensteps.com/image_assets/assets/001/170/963/original/13e0cc9a-187a-4d4c-9ba8-c3b61e1fec38.png" class="lazyload lazypreload" style="max-width:320px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/963/original/13e0cc9a-187a-4d4c-9ba8-c3b61e1fec38.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="63165b4e-17a2-4374-af71-37fc30c292a9" id="">
+           <h2 id="tick-the-box-for-shuffle"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 25. Tick the box for Shuffle." href="#tick-the-box-for-shuffle">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 25. Tick the box for Shuffle. </h2>
+           <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+            <p>Shuffle will present the questions to the students in a random order.</p>
+           </div>
+           <div class="image clearfix">
+            <img alt="Tick the box for Shuffle." data-srcset="https://media.screensteps.com/image_assets/assets/001/170/998/original/2b0f4c72-9be4-4f90-a5e1-adccd3d0a52a.png 728w" data-src="https://media.screensteps.com/image_assets/assets/001/170/998/original/2b0f4c72-9be4-4f90-a5e1-adccd3d0a52a.png" class="lazyload lazypreload" style="max-width:728px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/170/998/original/2b0f4c72-9be4-4f90-a5e1-adccd3d0a52a.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="c9834931-11ed-4a97-ac1f-3fee8a869493" id="">
+           <h2 id="click-on-add_1"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 26. Click on Add." href="#click-on-add_1">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 26. Click on Add. </h2>
+           <div class="image clearfix">
+            <img alt="Click on Add." data-srcset="https://media.screensteps.com/image_assets/assets/001/171/000/original/656716ac-cbc1-4e98-a698-b69c76346932.png 311w" data-src="https://media.screensteps.com/image_assets/assets/001/171/000/original/656716ac-cbc1-4e98-a698-b69c76346932.png" class="lazyload lazypreload" style="max-width:311px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/171/000/original/656716ac-cbc1-4e98-a698-b69c76346932.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="dd94a38a-3982-41ea-8f6f-eea831348e07" id="">
+           <h2 id="select-a-random-question"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 27. Select a random question." href="#select-a-random-question">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 27. Select a random question. </h2>
+           <div class="instructions screensteps-textblock ">
+            <p>In this demonstration we are adding questions which have already been created. </p>
+           </div>
+           <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+            <p>There are three choices:</p>
+            <p><strong>A new question</strong> allows you to create the question now. This choice is good if you do not have any questions yet created.</p>
+            <p><strong>From question bank</strong> allows you to select one or more questions you have previously imported or created. This choice is good for when you want to do some statistics on how the students do on the Quiz. </p>
+            <p><strong>A random question</strong> allows you to select one or more questions you have previously imported or created. This choice is good if you want to pull a certain number of questions from a larger pool of questions. For example, you have created 70 questions but will only test 50. This can help reduce cheating.</p>
+           </div>
+           <div class="instructions screensteps-textblock screensteps-wrapper--tip screensteps-wrapper">
+            <p>Tip: Read these guide to learn how to:</p>
+            <ul>
+             <li><a href="../../FAQ/l/462823-how-do-i-create-multiple-choice-questions-for-a-quiz" data-internal-link-id="462823" data-internal-link="article" data-internal-manual-id="48508" target="">Create Multiple Choice questions</a></li>
+             <li><a href="../../FAQ/l/482491-how-do-i-upload-an-aiken-format-question-bank-to-my-course" data-internal-link-id="482491" data-internal-link="article" data-internal-manual-id="48508" target="">Upload an Aiken formatted question bank</a></li>
+             <li><a href="../../FAQ/l/620786-how-do-i-import-some-questions-into-my-question-bank" data-internal-link-id="620786" data-internal-link="article" data-internal-manual-id="48508" target="">Import a Moodle XML question bank</a></li>
+             <li><a href="../../FAQ/l/444678-how-do-i-upload-a-question-bank-exported-from-examview" data-internal-link-id="444678" data-internal-link="article" data-internal-manual-id="48508" target="">Import an ExamView question bank</a></li>
+            </ul>
+           </div>
+           <div class="image clearfix">
+            <img alt="Select a random question." data-srcset="https://media.screensteps.com/image_assets/assets/001/181/608/original/7bfcfe37-b1dc-4fef-b194-8d01fc8a3896.png 277w" data-src="https://media.screensteps.com/image_assets/assets/001/181/608/original/7bfcfe37-b1dc-4fef-b194-8d01fc8a3896.png" class="lazyload lazypreload" style="max-width:277px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/181/608/original/7bfcfe37-b1dc-4fef-b194-8d01fc8a3896.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="49889b31-4bbf-47be-9020-f4611fdcf33b" id="">
+           <h2 id="select-the-category-where-the-questions-are-located"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 28. Select the category where the questions are located." href="#select-the-category-where-the-questions-are-located">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 28. Select the category where the questions are located. </h2>
+           <div class="image clearfix">
+            <img alt="Select the category where the questions are located." data-srcset="https://media.screensteps.com/image_assets/assets/001/181/709/original/2530bec0-0aaa-453e-bf12-78bad77dde7f.png 443w" data-src="https://media.screensteps.com/image_assets/assets/001/181/709/original/2530bec0-0aaa-453e-bf12-78bad77dde7f.png" class="lazyload lazypreload" style="max-width:443px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/181/709/original/2530bec0-0aaa-453e-bf12-78bad77dde7f.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="f5050b7c-a3b4-4f35-8bfa-8e9942f68174" id="">
+           <h2 id="check-the-box-to-include-questions-from-subcategories"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 29. Check the box to include questions from subcategories." href="#check-the-box-to-include-questions-from-subcategories">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 29. Check the box to include questions from subcategories. </h2>
+           <div class="instructions screensteps-textblock ">
+            <p>This is only needed if you have subcategories that you want to include.</p>
+           </div>
+           <div class="image clearfix">
+            <img alt="Check the box to include questions from subcategories." data-srcset="https://media.screensteps.com/image_assets/assets/001/181/711/original/9d1d7a38-0573-4b27-a0a5-fb466ea46322.png 450w" data-src="https://media.screensteps.com/image_assets/assets/001/181/711/original/9d1d7a38-0573-4b27-a0a5-fb466ea46322.png" class="lazyload lazypreload" style="max-width:450px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/181/711/original/9d1d7a38-0573-4b27-a0a5-fb466ea46322.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="7c792532-9091-4610-bb8d-d946da604ac2" id="">
+           <h2 id="select-10-for-the-number-of-random-questions"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 30. Select the Number of random questions." href="#select-10-for-the-number-of-random-questions">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 30. Select the Number of random questions. </h2>
+           <div class="instructions screensteps-textblock ">
+            <p>For example, if you want to have a Quiz with 5 questions, but you have created 10, then no two students are going to get the same questions in the same order. This is a good preventative measure to discourage students from collaborating on Quizzes. </p>
+           </div>
+           <div class="image clearfix">
+            <img alt="Select 10 for the Number of random questions." data-srcset="https://media.screensteps.com/image_assets/assets/001/181/703/original/edb135b0-6827-4e11-9a9d-7f7ada7c3032.png 324w" data-src="https://media.screensteps.com/image_assets/assets/001/181/703/original/edb135b0-6827-4e11-9a9d-7f7ada7c3032.png" class="lazyload lazypreload" style="max-width:324px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/181/703/original/edb135b0-6827-4e11-9a9d-7f7ada7c3032.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="0ef06347-a0e8-4095-b53e-379fccb760c5" id="">
+           <h2 id="click-on-add-random-question"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 31. Click on Add random question." href="#click-on-add-random-question">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 31. Click on Add random question. </h2>
+           <div class="image clearfix">
+            <img alt="Click on Add random question." data-srcset="https://media.screensteps.com/image_assets/assets/001/181/705/original/ee903f91-d728-403b-b3c4-a38a30d5d919.png 334w" data-src="https://media.screensteps.com/image_assets/assets/001/181/705/original/ee903f91-d728-403b-b3c4-a38a30d5d919.png" class="lazyload lazypreload" style="max-width:334px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/181/705/original/ee903f91-d728-403b-b3c4-a38a30d5d919.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="9a4cfe3e-4fd8-4065-8fdc-e18b6f1e76d8" id="">
+           <h2 id="now-the-editing-quiz-page-shows-that-there-are-now-10-questions"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 32. Now the Edit quiz page shows that there are now 5 questions." href="#now-the-editing-quiz-page-shows-that-there-are-now-10-questions">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 32. Now the Edit quiz page shows that there are now 5 questions. </h2>
+           <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+            <p>Since there are only 5 questions, but the Quiz is worth 10 points, the value of each question is 2 points. &nbsp;Each question is located on a separate page. 5 questions, 5 pages. </p>
+           </div>
+           <div class="image clearfix">
+            <img alt="Now the Editing quiz page shows that there are now 10 questions." data-srcset="https://media.screensteps.com/image_assets/assets/001/181/707/original/7212d81a-f56b-49a9-b744-a52aab674d88.png 670w" data-src="https://media.screensteps.com/image_assets/assets/001/181/707/original/7212d81a-f56b-49a9-b744-a52aab674d88.png" class="lazyload lazypreload" style="max-width:670px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/181/707/original/7212d81a-f56b-49a9-b744-a52aab674d88.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="4d31a04c-fef1-402b-8c96-70904c24645d" id="">
+           <h2 id="click-on-the-link-to-the-quiz"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 33. Click on the link to the quiz." href="#click-on-the-link-to-the-quiz">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 33. Click on the link to the quiz. </h2>
+           <div class="image clearfix">
+            <img alt="Click on the link to the quiz." data-srcset="https://media.screensteps.com/image_assets/assets/001/181/739/original/1db65723-344b-442c-999a-024127f51810.png 823w" data-src="https://media.screensteps.com/image_assets/assets/001/181/739/original/1db65723-344b-442c-999a-024127f51810.png" class="lazyload lazypreload" style="max-width:823px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/181/739/original/1db65723-344b-442c-999a-024127f51810.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="8c212e06-5f10-49c2-a916-b2ccba30f8b6" id="">
+           <h2 id="click-on-the-gear-icon-and-select-preview"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 34. Click on the Gear icon and select Preview." href="#click-on-the-gear-icon-and-select-preview">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 34. Click on the Gear icon and select Preview. </h2>
+           <div class="image clearfix">
+            <img alt="Click on the Gear icon and select Preview." data-srcset="https://media.screensteps.com/image_assets/assets/001/181/743/original/95c8eca5-6f9c-4ed8-9ed8-9e07b19b07f4.png 276w" data-src="https://media.screensteps.com/image_assets/assets/001/181/743/original/95c8eca5-6f9c-4ed8-9ed8-9e07b19b07f4.png" class="lazyload lazypreload" style="max-width:276px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/181/743/original/95c8eca5-6f9c-4ed8-9ed8-9e07b19b07f4.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="38fe8b43-6140-45ea-b899-ecd20a4e902b" id="">
+           <h2 id="you-can-navigate-the-quiz"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 35. You can now preview the quiz." href="#you-can-navigate-the-quiz">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 35. You can now preview the quiz. </h2>
+           <div class="instructions screensteps-textblock ">
+            <p><strong>Preview</strong> allows you to navigate the quiz as a student would. </p>
+           </div>
+           <div class="image clearfix">
+            <img alt="You can now preview the quiz." data-srcset="https://media.screensteps.com/image_assets/assets/001/181/741/original/8edc4a20-d1ba-42cc-aaad-87dfa545301d.png 822w" data-src="https://media.screensteps.com/image_assets/assets/001/181/741/original/8edc4a20-d1ba-42cc-aaad-87dfa545301d.png" class="lazyload lazypreload" style="max-width:822px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/181/741/original/8edc4a20-d1ba-42cc-aaad-87dfa545301d.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="99948fcf-37f2-4511-8806-634cf90cac74" id="">
+           <h2 id="student-scores-will-report-to-the-grades"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 36. Student scores will report to the Grades." href="#student-scores-will-report-to-the-grades">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 36. Student scores will report to the Grades. </h2>
+           <div class="instructions screensteps-textblock ">
+            <p>A gradebook column will be created automatically when you create a <strong>Quiz</strong> activity. The student scores will be listed.</p>
+           </div>
+           <div class="image clearfix">
+            <img alt="Student scores will report to the Grades." data-srcset="https://media.screensteps.com/image_assets/assets/001/181/745/original/78a31a16-ab37-45f7-8dc2-a0048e488227.png 444w" data-src="https://media.screensteps.com/image_assets/assets/001/181/745/original/78a31a16-ab37-45f7-8dc2-a0048e488227.png" class="lazyload lazypreload" style="max-width:444px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/181/745/original/78a31a16-ab37-45f7-8dc2-a0048e488227.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="ae85bee0-7996-463b-992e-33a3527bcb4f" id="">
+           <h2 id="article-summary"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for Article Summary" href="#article-summary">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> Article Summary </h2>
+           <div class="instructions screensteps-textblock ">
+            <p>You have now learned how to create a quiz in your course in TITANium.</p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="screensteps-next-prev-navigation" data-role="next-previous-nav">
+         <ul>
+          <li class="previous"><strong>Prev:</strong><a href="/m/GettingStarted/l/448982-how-do-i-add-a-questionnaire-activity">How do I add a Questionnaire activity?</a></li>
+          <li class="next"><strong>Next:</strong><a href="/m/GettingStarted/l/448984-how-do-i-add-scheduler-activity">How do I add Scheduler activity?</a></li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div aria-label="sidebar" class="screensteps-sidebar" role="complementary">
+      <div class="screensteps-sidebar-widget" id="lesson-sidebar-info">
+       <h3>Last Updated</h3>
+       <p>Feb 16, 2018</p>
+       <ul class="icon-links">
+       </ul>
+      </div>
+      <div class="screensteps-sidebar-widget" id="other-assets">
+       <h3>Self-Help Guides</h3>
+       <ul class="asset-list with-divider">
+        <li class="divider"><h4 class="sidebar-subheading">BEGIN HERE</h4></li>
+        <li class="manual"><a href="/m/GettingStarted">Getting Started with TITANium</a></li>
+        <li class="manual"><a href="/m/96200">What's new in TITANium 2020-2021?</a></li>
+        <li class="manual"><a href="/m/StudentSelf-HelpGuide">Student Self-Help Guide</a></li>
+        <li class="divider"><h4 class="sidebar-subheading">ADDITIONAL GUIDES</h4></li>
+        <li class="manual"><a href="/m/FAQ">Frequently Asked Questions</a></li>
+        <li class="manual"><a href="/m/Gradebook">Grades - Gradebook Settings in Depth</a></li>
+        <li class="manual"><a href="/m/Respondus">Respondus</a></li>
+        <li class="manual"><a href="/m/ScantronandParScore">Scantron and ParScore</a></li>
+        <li class="divider"><h4 class="sidebar-subheading">Add-Ons for TITANium</h4></li>
+        <li class="manual"><a href="/m/100683">Dropbox in TITANium</a></li>
+        <li class="manual"><a href="/m/100682">Flipgrid in TITANium</a></li>
+        <li class="manual"><a href="/m/100671">Google Docs and Drive in TITANium</a></li>
+        <li class="manual"><a href="/m/100672">H5P in TITANium</a></li>
+        <li class="manual"><a href="/m/iClicker">iClicker in Titanium</a></li>
+        <li class="manual"><a href="/m/100669">ShareStream in TITANium</a></li>
+        <li class="manual"><a href="/m/Turnitin_in_TITANium">Turnitin in TITANium</a></li>
+        <li class="manual"><a href="/m/100673">VoiceThread in TITANium</a></li>
+        <li class="manual"><a href="/m/100674">YouTube in TITANium</a></li>
+        <li class="manual"><a href="/m/100675">Zoom in TITANium</a></li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <script>
+//<![CDATA[
+  jQuery(document).ready(function(jQuery) {
+    var lesson_id = 448983;
+    var current_article_sidebar_text = '(Current Article)';
+    var section_id = 147263;
+    var expansion = 'one';
+    switch(expansion) {
+      case 'none':
+        jQuery('ul.nested-chapter-lessons').hide();
+        break;
+      case 'all':
+        jQuery('ul.nested-chapter-lessons').show();
+        jQuery('li.chapter-list-item a.toggle-lessons').addClass('open');
+        break;
+      case 'one':
+        jQuery('ul.nested-chapter-lessons').hide();
+        jQuery('li.chapter-list-item[data-section-id="' + section_id + '"] ul.nested-chapter-lessons').show();
+        jQuery('li.chapter-list-item[data-section-id="' + section_id + '"] a.toggle-lessons').addClass('open');
+        break;
+    }
+    jQuery('li.chapter-list-item[data-section-id="' + section_id + '"]').addClass('here');
+    jQuery('li[data-lesson-id="' + lesson_id + '"]').addClass('here');
+    jQuery('li[data-lesson-id="' + lesson_id + '"] a').attr('data-current-article-text', current_article_sidebar_text);
+  });
+
+//]]>
+</script>
+    <noscript>
+     Enable javascript to expand/contract chapters
+    </noscript>
+   </main>
+  </div>
+  <div aria-labelledby="modal-label" class="screensteps-modal" id="screensteps-modal" role="dialog"><span id="modal-label"> Inline referenced article </span>
+   <div class="screensteps-modal__box"><a class="screensteps-modal__close" href="#"> × </a><span class="screensteps-loading-wrapper"> <span class="screensteps-loading"></span> </span>
+    <div class="screensteps-modal__content screensteps-article-content"></div>
+   </div>
+  </div>
+ </body>
+</html>

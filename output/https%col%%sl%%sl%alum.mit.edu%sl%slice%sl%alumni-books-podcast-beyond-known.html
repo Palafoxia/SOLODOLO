@@ -1,0 +1,1098 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"1120062969",accountID:"1028497",trustKey:"1028497",xpid:"VQYFWVJaDxABVFBWBgAFXlEA",licenseKey:"ab0374a39e",applicationID:"1014112851"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(31),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(32),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError";if(!c.disabled){var l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(14),t(13),"addEventListener"in window&&t(7),c.xhrWrappable&&t(15),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){U++,L=g.hash,this[u]=y.now()}function o(){U--,g.hash!==L&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(11),b=t(12),E=t(9),R=t(7),O=t(14),T=t(8),S=t(15),P=t(10),M=t("ee"),C=M.get("tracer"),N=t(23);t(17),y.features.spa=!0;var L,U=0;M.on(u,r),b.on(p,r),P.on(p,r),M.on(d,o),b.on(l,o),P.on(l,o),M.buffer([u,d,"xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+c,"clearTimeout"+s,u]),S.buffer([u,"new-xhr","send-xhr"+s]),T.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),C.buffer([u,"no-"+u]),P.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,m+s),a(T,m+"-done"),a(P,"new-jsonp"),a(P,"jsonp-end"),a(P,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,N(!0)),w[v]("load",i,N(!0)),w[v]("popstate",function(){i(0,U>1)},N(!0))}},{}],5:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function o(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+p])try{window.performance[h](m,o,!1)}catch(t){}else try{window.performance[h]("webkit"+m,o,!1)}catch(t){}}function i(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(14),f=t(13),u=t(6),d=t(23),p="learResourceTimings",l="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",O=t("loader");if(!O.disabled){O.features.stn=!0,t(9),"addEventListener"in window&&t(7);var T=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof T&&(this.bstStart=O.now())}),a.on(b,function(t,e){var n=t[0];n instanceof T&&s("bst",[n,e,this.bstStart,O.now()])}),c.on(x,function(t,e,n){this.bstStart=O.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),this.bstType])}),f.on(x,function(){this.bstStart=O.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=O.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):l in window.performance&&(window.performance["c"+p]?window.performance[l](m,o,d(!1)):window.performance[l]("webkit"+m,o,d(!1))),document[l]("scroll",i,d(!1)),document[l]("keypress",i,d(!1)),document[l]("click",i,d(!1))}}},{}],6:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver}},{}],7:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],8:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(32),a=t(31);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],9:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],10:[function(t,e,n){function r(t){function e(){f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}function n(){f.emit("jsonp-error",[],l),f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var d=s(a),p="function"==typeof d.parent[d.key];if(p){var l={};u.inPlace(d.parent,[d.key],"cb-",l),t.addEventListener("load",e,c(!1)),t.addEventListener("error",n,c(!1)),f.emit("new-jsonp",[t.src],l)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(d);return e?e[1]:null}function a(t,e){var n=t.match(l),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(p);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t(23),f=t("ee").get("jsonp"),u=t("wrap-function")(f);if(e.exports=f,o()){var d=/[?&](?:callback|cb)=([^&#]+)/,p=/(.*)\.([^.]+)/,l=/^(\w+)(\.|$)(.*)$/,h=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?u.inPlace(Node.prototype,h,"dom-"):(u.inPlace(HTMLElement.prototype,h,"dom-"),u.inPlace(HTMLHeadElement.prototype,h,"dom-"),u.inPlace(HTMLBodyElement.prototype,h,"dom-")),f.on("dom-start",function(t){r(t[0])})}},{}],11:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],12:[function(t,e,n){function r(t){var e=i.context(),n=s(t,"executor-",e,null,!1),r=new f(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,s=o(i),c=t(31),f=NREUM.o.PR;e.exports=i,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(f,arguments),s=f.resolve(a);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),o.wrapInPlace(f.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=s(n[0],"cb-",r,null,!1),n[1]=s(n[1],"cb-",r,null,!1);var c=t.apply(this,n);return r.nextPromise=c,i.emit("propagate",[e,!0],c,!1,!1),c}}),i.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this,null,!1),t[1]=s(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],13:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],14:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],15:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){x.push(t),m&&(E?E.then(a):w?w(a):(R=-R,O.data=R))}function a(){for(var t=0;t<x.length;t++)r([],x[t]);x.length&&(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(7);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=t(23),l=NREUM.o,h=l.XHR,m=l.MO,v=l.PR,w=l.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,o,p(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),m){var E=v&&v.resolve();if(!w&&!v){var R=1,O=document.createTextNode(R);new m(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===g||a()})},{}],16:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",s=1,c="",f="";return o+"@nr="+i+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(28),h=t(18);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],17:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);return e.protocol&&"data"===e.protocol?void g("Ajax/DataUrl/Excluded"):void(e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,s("xhr",[e,n,this.startTime,this.endTime,"xhr"],this)))}}function o(t,e){var n=c(e),r=t.params;r.hostname=n.hostname,r.port=n.port,r.protocol=n.protocol,r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(18),f=t(16).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(24),m=t(22),v=t(19),w=t(23),g=t(25).recordSupportability,y=NREUM.o.REQ,x=window.XMLHttpRequest;a.features.xhr=!0,t(15),t(8),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){i(e,t)},w(!1)),h&&(h>34||h<10)||t.addEventListener("progress",function(t){e.lastSize=t.loaded},w(!1))}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<p;s++)e.addEventListener(d[s],this.listener,w(!1))}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("xhr-resolved",function(){this.endTime=a.now()}),u.on("addEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof x&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),this.dt=e,t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},i=this.target;if("string"==typeof i?n=i:"object"==typeof i&&i instanceof y?n=i.url:window.URL&&"object"==typeof i&&i instanceof URL&&(n=i.href),o(this,n),"data"!==this.params.protocol){var s=(""+(i&&i instanceof y&&i.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}}),u.on("fetch-done",function(t,e){if(this.endTime=a.now(),this.params||(this.params={}),"data"===this.params.protocol)return void g("Ajax/DataUrl/Excluded");this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime,this.endTime,"fetch"],this)})}},{}],18:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];if(0===(t||"").indexOf("data:"))return{protocol:"data"};var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],19:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(22);e.exports=r},{}],20:[function(t,e,n){function r(){}function o(t,e,n,r){return function(){return u.recordSupportability("API/"+e+"/called"),i(t+e,[f.now()].concat(s(arguments)),n?null:this,r),n?void 0:this}}var i=t("handle"),a=t(31),s=t(32),c=t("ee").get("tracer"),f=t("loader"),u=t(25),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",h=l+"ixn-";a(p,function(t,e){d[e]=o(l,e,!0,"api")}),d.addPageAction=o(l,"addPageAction",!0),d.setCurrentRouteName=o(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=o(h,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),u.recordSupportability("API/noticeError/called"),i("err",[t,f.now(),!1,e])}},{}],21:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],22:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],23:[function(t,e,n){var r=!1;try{var o=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,o),window.removeEventListener("testPassive",null,o)}catch(i){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],24:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],25:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return i("storeMetric",n,null,"api"),n}function o(t,e){var n=[s,t,{name:t},e];return i("storeEventMetrics",n,null,"api"),n}var i=t("handle"),a="sm",s="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:s},recordSupportability:r,recordCustom:o}},{}],26:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,s=t(33);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],27:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;var o=[r],i=a({});i&&o.push(i),l("lcp",o)}}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function s(t){if(t instanceof w&&!y){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=h.now()?n.fid=h.now()-e:e>h.offset&&e<=Date.now()?(e-=h.offset,n.fid=h.now()-e):e=h.now(),y=!0,l("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=h.now(),l("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,d,p,l=t("handle"),h=t("loader"),m=t(30),v=t(23),w=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(g){}d=new PerformanceObserver(o);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(g){}p=new PerformanceObserver(i);try{p.observe({type:"layout-shift",buffered:!0})}catch(g){}}if("addEventListener"in document){var y=!1,x=["click","keydown","mousedown","pointerdown","touchstart"];x.forEach(function(t){document.addEventListener(t,s,v(!1))})}m(c)}},{}],28:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(t)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],29:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],30:[function(t,e,n){function r(t){function e(){t(s&&document[s]?document[s]:document[i]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,o(!1))}var o=t(23);e.exports=r;var i,a,s;"undefined"!=typeof document.hidden?(i="hidden",a="visibilitychange",s="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",a="webkitvisibilitychange",s="webkitVisibilityState")},{}],31:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],32:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],33:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var s=e(o),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var p=d[y[n]];return p&&p.push([x,n,r,s]),s}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){l.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function i(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",f=t("gos"),u=t(31),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=O.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+O.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===m.readyState&&i()}function i(){s("mark",["domContent",a()+O.offset],null,"api")}var a=t(26),s=t("handle"),c=t(31),f=t("ee"),u=t(29),d=t(21),p=t(23),l=d.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,v="addEventListener",w="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!1;NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1216.min.js"},R=g&&y&&y[v]&&!/CriOS/.test(navigator.userAgent),O=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(20),t(27),m[v]?(m[v]("DOMContentLoaded",i,p(!1)),h[v]("load",r,p(!1))):(m[w]("onreadystatechange",o),h[w]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var i,a,u,p;try{a=this,i=d(arguments),u="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,c],u],t)}s(n+"start",[i,a,c],u,f);try{return p=e.apply(a,i)}catch(h){throw s(n+"err",[i,a,h],u,f),h}finally{s(n+"end",[i,a,p],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,o,c,i))}function s(n,r,i,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,i,e,a)}catch(c){o([c,n,r,i],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function s(t,e){var n=e(t);return n[p]=t,i(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(32),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,17,5,3,4]);</script>
+  <meta property="fb:app_id" content="184683071273">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://alum.mit.edu/slice/alumni-books-podcast-beyond-known">
+  <meta property="og:title" content="Alumni Books Podcast: Beyond the Known">
+  <meta property="og:description" content="Hear Andrew Rader PhD ’09 discuss his new book about technology and the human drive to explore.">
+  <meta property="og:image" content="https://alum.mit.edu/sites/default/files/images/Slice.19.11.08_Rader.jpg">
+  <meta name="google-site-verification" content="">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@MIT_alumni">
+  <meta name="twitter:description" content="Hear Andrew Rader PhD ’09 discuss his new book about technology and the human drive to explore.">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png">
+  <link rel="canonical" href="https://alum.mit.edu/slice/alumni-books-podcast-beyond-known">
+  <link rel="shortlink" href="https://alum.mit.edu/node/95960">
+  <link href="/themes/custom/mitaa/slice_favicon.png" rel="shortcut icon" type="image/png">
+  <title>Alumni Books Podcast: Beyond the Known | alum.mit.edu</title>
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/ajax-progress.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/align.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/autocomplete-loading.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/fieldgroup.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/container-inline.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/clearfix.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/details.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/hidden.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/item-list.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/js.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/nowrap.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/position-container.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/progress.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/reset-appearance.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/resize.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/sticky-header.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-counter.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-counters.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-general-info.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tabledrag.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tablesort.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tree-child.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/views/views.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/modules/contrib/paragraphs/css/paragraphs.unpublished.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/core/assets/vendor/normalize-css/normalize.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/core/normalize-fixes.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/themes/custom/mitaa/css/mitaa.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/action-links.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/breadcrumb.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/button.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/collapse-processed.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/container-inline.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/details.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/exposed-filters.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/field.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/form.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/icons.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/inline-form.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/item-list.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/link.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/links.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/menu.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/more-link.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/pager.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tabledrag.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tableselect.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tablesort.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tabs.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/textarea.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/ui-dialog.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/messages.css?rdh1gx"><!-- 
+<meta name="description" content="The MIT Alumni Association seeks to engage and inspire the MIT global community to make a better world. It provides a lifelong community for MIT graduates, a launching pad for students, and growing connection among MIT friends.">
+--><!-- Page hiding snippet (recommended)  -->
+  <style>.async-hide { opacity: 0 !important} </style>
+  <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-TMD98T':true});</script><!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TMD98T');</script><!-- End Google Tag Manager --><!-- Facebook Pixel Code -->
+  <script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '1667256053562016'); 
+fbq('track', 'PageView');
+fbq('track', 'ViewContent');
+</script>
+  <noscript>&lt;img height="1" width="1" src="https://www.facebook.com/tr?id=1667256053562016&amp;amp;ev=PageView &amp;amp;noscript=1"&gt;
+  </noscript><!-- End Facebook Pixel Code -->
+ </head>
+ <body class="no-sidebars slice-of-mit has-publication force-condensed condensed path-node page-node-type-story"><!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMD98T" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript><!-- End Google Tag Manager (noscript) --><a href="#main-content" class="visually-hidden focusable skip-link"> Skip to main content </a>
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div role="document" class="page" id="page">
+    <header class="site-header" id="site-header">
+     <div class="top-share"><a id="share-group__toggle2" aria-expanded="false" href="#"><i class="icon-share"></i>Share</a>
+      <div id="share-group__container">
+       <div class="addthis_inline_share_toolbox"></div>
+      </div>
+     </div>
+     <div class="title-bar" data-responsive-toggle="mobile-menu" data-hide-for="large"><!--<a href="/" class="icon-mit-alumni-logo"></a>--><a href="/"><img class="mit-logo" src="/themes/custom/mitaa/images/MITALUMNI_LOGO.svg"></a>
+      <div class="title-bar-center nav-section-heading"></div><button id="mobile-menu__toggle" class="menu-icon" type="button" data-toggle="" aria-label="Toggle Mobile Menu" aria-expanded="false"></button>
+     </div>
+     <div id="mobile-menu" class="mobile-menu">
+      <div class="scroll">
+       <div class="region ">
+        <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page" data-drupal-selector="views-exposed-form-search-page" id="block-searchpage-block-mobile" data-block-plugin-id="views_exposed_filter_block:search-page">
+         <div class="inner">
+          <form action="/search" method="get" id="views-exposed-form-search-page" accept-charset="UTF-8">
+           <div class="form--inline clearfix">
+            <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-keywords form-item-keywords"><label for="edit-keywords--2">Keywords</label>
+             <input data-drupal-selector="edit-keywords" type="text" id="edit-keywords--2" name="keywords" value="" size="30" maxlength="128" class="form-text">
+            </div>
+            <div class="js-form-item form-item js-form-type-select form-type-select js-form-item-sort-by form-item-sort-by"><label for="edit-sort-by--2">Sort by</label><select data-drupal-selector="edit-sort-by" id="edit-sort-by--2" name="sort_by" class="form-select"><option value="search_api_relevance" selected>Relevance</option><option value="date">Date</option></select>
+            </div>
+            <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2">
+             <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Search" class="button js-form-submit form-submit">
+            </div>
+           </div>
+          </form>
+         </div>
+        </div>
+        <nav role="navigation" id="block-useraccountmenu-2" data-block-plugin-id="system_menu_block:account" class="block block-menu navigation menu--account">
+         <h2 class="visually-hidden" id="block-useraccountmenu-2-menu">User account menu</h2>
+         <ul class="menu">
+          <li class="menu-item alumni-directory"><a href="/directory">Alumni Directory</a></li>
+          <li class="menu-item login"><a href="/login">Login</a></li>
+          <li class="menu-item menu-item--expanded my-account"><a href="/myaccount" target="" rel="">My Account</a>
+           <ul class="menu">
+            <li class="menu-item volunteer-tools"><a href="/knowledge-base" target="" rel="" data-drupal-link-system-path="knowledge-base">Volunteer Tools</a></li>
+            <li class="menu-item edit-profile"><a href="/myaccount/#/edit-profile--personal" target="" rel="">Edit Profile</a></li>
+            <li class="menu-item communities"><a href="/myaccount/#/communities" target="" rel="">Communities</a></li>
+            <li class="menu-item subscriptions"><a href="/myaccount/#/subscriptions" target="" rel="">Subscriptions</a></li>
+            <li class="menu-item email--forwarding"><a href="/myaccount/#/email-forwarding" target="" rel="">Email &amp; Forwarding</a></li>
+            <li class="menu-item event-history"><a href="/myaccount/#/event-history" target="" rel="">Event History</a></li>
+            <li class="menu-item giving-history"><a href="/myaccount/#/giving-history" target="" rel="">Giving History</a></li>
+            <li class="menu-item account-settings"><a href="/myaccount/#/account-settings" target="" rel="">Account Settings</a></li>
+            <li class="menu-item logout"><a href="/logout" target="" rel="" class="my-account-logout">Logout</a></li>
+           </ul></li>
+          <li class="menu-item give-now"><a href="https://giving.mit.edu/give/to?fundId=3746200&amp;source=WBAAW" target="" rel="" class="hide-desktop give-now-link">Give Now</a></li>
+         </ul>
+        </nav>
+        <nav role="navigation" id="block-mainnavigation-2" data-block-plugin-id="system_menu_block:main" class="block block-menu navigation menu--main">
+         <h2 class="visually-hidden" id="block-mainnavigation-2-menu">Main navigation</h2>
+         <ul class="menu">
+          <li class="menu-item menu-item--collapsed"><a href="/communities" target="" rel="" title="Communities" data-drupal-link-system-path="node/2653">Communities</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/events" target="" rel="" data-drupal-link-system-path="node/2650">Events</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/careers" target="" rel="" data-drupal-link-system-path="node/2652">Careers</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/learn" target="" rel="" data-drupal-link-system-path="node/2660">Learn</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/volunteer" target="" rel="" title="Volunteer" data-drupal-link-system-path="node/2710">Volunteer</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/about" target="" rel="" data-drupal-link-system-path="node/2662">About</a></li>
+          <li class="menu-item">
+           <div data-block-plugin-id="mitaa_personalized_give_button" class="block block-mitaa-custom-blocks block-mitaa-personalized-give-button"><a href="https://giving.mit.edu/give/to?fundId=3746200&amp;source=WBAAW" target="" rel="" class="noshow-giving-modal give-now-button button hide-mobile">Give Now</a>
+           </div></li>
+         </ul>
+        </nav>
+        <nav role="navigation" id="block-topics-2" data-block-plugin-id="system_menu_block:topics" class="block block-menu navigation menu--topics">
+         <h2 id="block-topics-2-menu">Topics</h2>
+         <ul class="menu">
+          <li class="menu-item"><a href="/topic/career" target="" rel="" title="Career" data-drupal-link-system-path="taxonomy/term/83">Career</a></li>
+          <li class="menu-item"><a href="/topic/mentoring" target="" rel="" title="Mentoring" data-drupal-link-system-path="taxonomy/term/190">Mentoring</a></li>
+          <li class="menu-item"><a href="/topic/mit-better-world" target="" rel="" title="MIT Better World" data-drupal-link-system-path="taxonomy/term/191">MIT Better World</a></li>
+          <li class="menu-item"><a href="/topic/alumni-profiles" target="" rel="" title="Alumni Profiles" data-drupal-link-system-path="taxonomy/term/184">Alumni Profiles</a></li>
+          <li class="menu-item"><a href="/topic/geek-culture" target="" rel="" title="Modern Geekhood" data-drupal-link-system-path="taxonomy/term/60">Geek Culture</a></li>
+          <li class="menu-item"><a href="/topic/research" target="" rel="" title="Research" data-drupal-link-system-path="taxonomy/term/65">Research</a></li>
+         </ul>
+        </nav>
+        <nav role="navigation" id="block-followus-3" data-block-plugin-id="system_menu_block:follow-us" class="block block-menu navigation menu--follow-us">
+         <h2 id="block-followus-3-menu">Follow Us</h2>
+         <ul class="menu">
+          <li class="menu-item"><a href="/slice" target="" rel="" class="has-icon has-icon-social--slice" title="Slice of MIT" data-drupal-link-system-path="node/7948">Slice of MIT</a></li>
+          <li class="menu-item"><a href="http://www.facebook.com/MITAA" target="_blank" rel="" class="has-icon has-icon-social--facebook" title="Facebook">Facebook</a></li>
+          <li class="menu-item"><a href="http://twitter.com/MIT_alumni" target="_blank" rel="" class="has-icon has-icon-social--twitter" title="Twitter">Twitter</a></li>
+          <li class="menu-item"><a href="https://www.youtube.com/alumniMIT" target="_blank" rel="" class="has-icon has-icon-social--youtube" title="YouTube">YouTube</a></li>
+          <li class="menu-item"><a href="http://instagram.com/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--instagram" title="Instagram">Instagram</a></li>
+          <li class="menu-item"><a href="https://www.linkedin.com/groups/69586/" target="_blank" rel="" class="has-icon has-icon-social--linkedin" title="LinkedIn">LinkedIn</a></li>
+          <li class="menu-item"><a href="https://soundcloud.com/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--soundcloud" title="SoundCloud">SoundCloud</a></li>
+          <li class="menu-item"><a href="https://www.snapchat.com/add/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--snapchat" title="Snapchat">Snapchat</a></li>
+          <li class="menu-item"><a href="http://www.pinterest.com/mitalumiassoc/" target="_blank" rel="" class="has-icon has-icon-social--pinterest" title="Pinterest">Pinterest</a></li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div><!--
+			<div class="top-share">
+                            <a id="share-group__toggle2" aria-expanded="false" href="#"><i class="icon-share"></i>Share</a>
+                            <div id="share-group__container">
+                               <div class="addthis_inline_share_toolbox"></div>
+                            </div>
+                        </div>
+-->
+     <div class="top-bar">
+      <div class="container">
+       <div class="top-bar-content"><a href="/"><img class="mit-logo" src="/themes/custom/mitaa/images/MITALUMNI_LOGO.svg"></a>
+        <div class="top-bar-left"><a id="topic-main-menu__toggle" aria-expanded="false" href="#">Topics</a><a id="condensed-menu__toggle" aria-expanded="false" href="#">Menu<i class="menu-icon"></i></a>
+        </div>
+        <div class="top-bar-center nav-section-heading"></div>
+        <div class="top-bar-right"><a id="search-group__toggle" aria-expanded="false" href="#"><i class="icon-search"></i>Search</a><a id="share-group__toggle" aria-expanded="false" href="#"><i class="icon-share"></i>Share</a>
+         <div id="share-group__container">
+          <div class="addthis_inline_share_toolbox"></div>
+         </div>
+         <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page" data-drupal-selector="views-exposed-form-search-page" id="block-searchpage-block-topbar" data-block-plugin-id="views_exposed_filter_block:search-page">
+          <div class="inner">
+           <form action="/search" method="get" id="views-exposed-form-search-page" accept-charset="UTF-8">
+            <div class="form--inline clearfix">
+             <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-keywords form-item-keywords"><label for="edit-keywords--3">Keywords</label>
+              <input data-drupal-selector="edit-keywords" type="text" id="edit-keywords--3" name="keywords" value="" size="30" maxlength="128" class="form-text">
+             </div>
+             <div class="js-form-item form-item js-form-type-select form-type-select js-form-item-sort-by form-item-sort-by"><label for="edit-sort-by--3">Sort by</label><select data-drupal-selector="edit-sort-by" id="edit-sort-by--3" name="sort_by" class="form-select"><option value="search_api_relevance" selected>Relevance</option><option value="date">Date</option></select>
+             </div>
+             <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--3">
+              <input data-drupal-selector="edit-submit-search-2" type="submit" id="edit-submit-search--2" value="Search" class="button js-form-submit form-submit">
+             </div>
+            </div>
+           </form>
+          </div>
+         </div>
+         <nav role="navigation" id="block-useraccountmenu" data-block-plugin-id="system_menu_block:account" class="block block-menu navigation menu--account">
+          <h2 class="visually-hidden" id="block-useraccountmenu-menu">User account menu</h2>
+          <ul class="menu">
+           <li class="menu-item alumni-directory"><a href="/directory">Alumni Directory</a></li>
+           <li class="menu-item login"><a href="/login">Login</a></li>
+           <li class="menu-item menu-item--expanded my-account"><a href="/myaccount" target="" rel="">My Account</a>
+            <ul class="menu">
+             <li class="menu-item volunteer-tools"><a href="/knowledge-base" target="" rel="" data-drupal-link-system-path="knowledge-base">Volunteer Tools</a></li>
+             <li class="menu-item edit-profile"><a href="/myaccount/#/edit-profile--personal" target="" rel="">Edit Profile</a></li>
+             <li class="menu-item communities"><a href="/myaccount/#/communities" target="" rel="">Communities</a></li>
+             <li class="menu-item subscriptions"><a href="/myaccount/#/subscriptions" target="" rel="">Subscriptions</a></li>
+             <li class="menu-item email--forwarding"><a href="/myaccount/#/email-forwarding" target="" rel="">Email &amp; Forwarding</a></li>
+             <li class="menu-item event-history"><a href="/myaccount/#/event-history" target="" rel="">Event History</a></li>
+             <li class="menu-item giving-history"><a href="/myaccount/#/giving-history" target="" rel="">Giving History</a></li>
+             <li class="menu-item account-settings"><a href="/myaccount/#/account-settings" target="" rel="">Account Settings</a></li>
+             <li class="menu-item logout"><a href="/logout" target="" rel="" class="my-account-logout">Logout</a></li>
+            </ul></li>
+           <li class="menu-item give-now"><a href="https://giving.mit.edu/give/to?fundId=3746200&amp;source=WBAAW" target="" rel="" class="hide-desktop give-now-link">Give Now</a></li>
+          </ul>
+         </nav>
+         <div id="block-personalizedgreeting" data-block-plugin-id="mitaa_personalized_greeting" class="block block-mitaa-custom-blocks block-mitaa-personalized-greeting">
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="icon-mit-logo--gray"></div>
+     </div>
+     <div class="secondary-nav">
+      <div class="container">
+       <div class="region ">
+        <nav role="navigation" id="block-mainnavigation" data-block-plugin-id="system_menu_block:main" class="block block-menu navigation menu--main">
+         <h2 class="visually-hidden" id="block-mainnavigation-menu">Main navigation</h2>
+         <ul class="menu">
+          <li class="menu-item menu-item--collapsed"><a href="/communities" target="" rel="" title="Communities" data-drupal-link-system-path="node/2653">Communities</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/events" target="" rel="" data-drupal-link-system-path="node/2650">Events</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/careers" target="" rel="" data-drupal-link-system-path="node/2652">Careers</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/learn" target="" rel="" data-drupal-link-system-path="node/2660">Learn</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/volunteer" target="" rel="" title="Volunteer" data-drupal-link-system-path="node/2710">Volunteer</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/about" target="" rel="" data-drupal-link-system-path="node/2662">About</a></li>
+          <li class="menu-item">
+           <div data-block-plugin-id="mitaa_personalized_give_button" class="block block-mitaa-custom-blocks block-mitaa-personalized-give-button"><a href="https://giving.mit.edu/give/to?fundId=3746200&amp;source=WBAAW" target="" rel="" class="noshow-giving-modal give-now-button button hide-mobile">Give Now</a>
+           </div></li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+      <div id="topic-main-menu" class="topic-main-menu">
+       <div class="inside">
+        <div class="container">
+         <div class="topic-main-menu__topics columns medium-7">
+          <div class="region ">
+           <nav role="navigation" id="block-topics" data-block-plugin-id="system_menu_block:topics" class="block block-menu navigation menu--topics">
+            <h2 id="block-topics-menu">Topics</h2>
+            <ul class="menu">
+             <li class="menu-item"><a href="/topic/career" target="" rel="" title="Career" data-drupal-link-system-path="taxonomy/term/83">Career</a></li>
+             <li class="menu-item"><a href="/topic/mentoring" target="" rel="" title="Mentoring" data-drupal-link-system-path="taxonomy/term/190">Mentoring</a></li>
+             <li class="menu-item"><a href="/topic/mit-better-world" target="" rel="" title="MIT Better World" data-drupal-link-system-path="taxonomy/term/191">MIT Better World</a></li>
+             <li class="menu-item"><a href="/topic/alumni-profiles" target="" rel="" title="Alumni Profiles" data-drupal-link-system-path="taxonomy/term/184">Alumni Profiles</a></li>
+             <li class="menu-item"><a href="/topic/geek-culture" target="" rel="" title="Modern Geekhood" data-drupal-link-system-path="taxonomy/term/60">Geek Culture</a></li>
+             <li class="menu-item"><a href="/topic/research" target="" rel="" title="Research" data-drupal-link-system-path="taxonomy/term/65">Research</a></li>
+            </ul>
+           </nav>
+          </div>
+         </div>
+         <div class="topic-main-menu__follow-us columns medium-5">
+          <div class="region ">
+           <nav role="navigation" id="block-followus" data-block-plugin-id="system_menu_block:follow-us" class="block block-menu navigation menu--follow-us">
+            <h2 id="block-followus-menu">Follow Us</h2>
+            <ul class="menu">
+             <li class="menu-item"><a href="/slice" target="" rel="" class="has-icon has-icon-social--slice" title="Slice of MIT" data-drupal-link-system-path="node/7948">Slice of MIT</a></li>
+             <li class="menu-item"><a href="http://www.facebook.com/MITAA" target="_blank" rel="" class="has-icon has-icon-social--facebook" title="Facebook">Facebook</a></li>
+             <li class="menu-item"><a href="http://twitter.com/MIT_alumni" target="_blank" rel="" class="has-icon has-icon-social--twitter" title="Twitter">Twitter</a></li>
+             <li class="menu-item"><a href="https://www.youtube.com/alumniMIT" target="_blank" rel="" class="has-icon has-icon-social--youtube" title="YouTube">YouTube</a></li>
+             <li class="menu-item"><a href="http://instagram.com/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--instagram" title="Instagram">Instagram</a></li>
+             <li class="menu-item"><a href="https://www.linkedin.com/groups/69586/" target="_blank" rel="" class="has-icon has-icon-social--linkedin" title="LinkedIn">LinkedIn</a></li>
+             <li class="menu-item"><a href="https://soundcloud.com/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--soundcloud" title="SoundCloud">SoundCloud</a></li>
+             <li class="menu-item"><a href="https://www.snapchat.com/add/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--snapchat" title="Snapchat">Snapchat</a></li>
+             <li class="menu-item"><a href="http://www.pinterest.com/mitalumiassoc/" target="_blank" rel="" class="has-icon has-icon-social--pinterest" title="Pinterest">Pinterest</a></li>
+            </ul>
+           </nav>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div id="content-wrapper">
+     <section id="breadcrumb">
+      <div class="container">
+       <div class="columns">
+        <div class="region ">
+         <div id="block-mitaa-breadcrumbs" data-block-plugin-id="system_breadcrumb_block" class="block block-system block-system-breadcrumb-block">
+          <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+           <h2 class="visually-hidden">Breadcrumb</h2><a href="/">alum.mit.edu</a><a href="/topic/alumni-life">Alumni Life</a><span class="text-item">Alumni Books Podcast: Beyond the Known</span>
+          </nav>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <main role="main" class="main"><a id="main-content" tabindex="-1"></a>
+      <section class="content">
+       <div class="region ">
+        <div data-drupal-messages-fallback class="hidden"></div>
+        <div class="container">
+         <div id="block-mitaa-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+         </div>
+        </div>
+        <div id="block-mitaa-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+         <article data-history-node-id="95960" class="node node--type-story node--view-mode-full clearfix node--promoted">
+          <div>
+           <div class="story-full story-standard-full">
+            <div class="block-region-publication-header">
+             <div data-block-plugin-id="entity_field:node:field_publication" class="block block-ctools-block block-entity-fieldnodefield-publication">
+              <div class="field field--name-field-publication field--type-entity-reference field--label-hidden field__item">
+               <div data-history-node-id="2771" role="article" about="/slice-mit" class="pub-header pub-header--slice-of-mit">
+                <div class="container">
+                 <article id="node-2771">
+                  <div class="clearfix text-formatted field field--name-field-header field--type-text-long field--label-hidden field__item"><a class="slice-logo" href="/slice"> 
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="46 35 261 76" preserveaspectratio="xMidYMin meet" width="100%" xml:space="preserve">
+                     <style type="text/css">
+    .st0{fill:#9b7537}         /* crust starting color will transition to #68511E  */
+    .st1{fill:#ffffff;}        /* bread starting color will transition to #CEA45B  */
+    .st3{fill:#D22030;}        /* SLICE MIT color red from new web site */
+    .st4{fill:#A5A398;}        /* SIQ—Surprising Insightful Quirky*/
+
+ /* These animations toast the bread over the course of 10 seconds and do so just once */ 
+ /* The scaled viewport is set to 100% of the browser, set the width to the desired value in px */
+ /* The viewbox values are set to crop the graphics tight to within 1px */
+ /* svg { border: solid 1px red;} */
+    
+.st0 {
+animation-delay: 1s;
+animation-name: crust-color;
+animation-duration: 10s;
+animation-iteration-count:1;
+animation-fill-mode: forwards;
+-webkit-animation-delay: 1s; 
+-webkit-animation-name: crust-color;
+-webkit-animation-duration: 10s;
+-webkit-animation-iteration-count:1;
+-webkit-animation-fill-mode: forwards;
+}
+.st1 {
+animation-delay: 1s; 
+animation-name: toast-color;
+animation-duration: 10s;
+animation-iteration-count:1;
+animation-fill-mode: forwards;
+-webkit-animation-delay: 1s; 
+-webkit-animation-name: toast-color;
+-webkit-animation-duration: 10s;
+-webkit-animation-iteration-count:1;
+-webkit-animation-fill-mode: forwards;
+}
+@keyframes toast-color {
+0% {fill:#ffffff;}
+100% {fill:#CEA45B;}
+}
+@-webkit-keyframes toast-color {
+0% {fill:#ffffff;}
+100% {fill:#CEA45B;}
+}
+@keyframes crust-color {
+0% {fill:#9b7537;}
+100% {fill:#68511e;}
+}
+@-webkit-keyframes crust-color {
+0% {fill:#9b7537;}
+100% {fill:#68511e;}
+}
+</style><g> 
+                      <path id="CRUST" class="st0" d="M229.1,52.6c-1.2-4.7-11.1-10.6-19.4-13.7c-6.5-2.4-18.5-4.2-24.4-2.3c-2.8,0.3-5,1.3-5.9,3.3
+        c-1.8,4.1,0.6,5.8,2.2,6.9c0.2,0.1,0.3,0.2,0.5,0.3c-0.2,1.4-2.6,8.5-4.4,13.8c-2.2,6.5-3.6,10.5-3.7,11.4
+        c-0.2,1.7,0.3,2.5,2.2,4.1C178.2,78,200,86.5,202,87c0.7,0.2,1.3,0.3,1.9,0.3c0.3,0,0.5,0,0.7-0.1c3.1,0.8,5.9,0.1,6.7-1.6
+        c1.3-2.7,10.6-22.1,11.6-23.1c0.5-0.5,2-0.3,2-0.3s0,0.1,0.9-0.2C228.6,61.1,230,56.4,229.1,52.6z" /> 
+                      <path id="BREAD" class="st1" d="M203.7,41.1c-8.4-3.1-21.1-5.4-23.2-0.7c-1.4,3.2,0.2,4.4,1.8,5.5c0.3,0.2,0.5,0.4,0.8,0.5
+        c0.5,0.4,0.7,0.5-4.3,14.9c-1.7,5.1-3.5,10.3-3.6,11.2c-0.1,1.1,0,1.6,1.8,3.1c1.7,1.4,22.8,9.6,25.4,10.4c2.7,0.8,3.2-0.3,4-2
+        c0.4-0.8,1.4-3.2,2.7-6.3c4.9-11.6,7.5-17.5,8.1-18.2c0.6-0.6,1.9-0.5,2.4-0.4l0.8-0.2c1-0.2,2.7-0.5,2.3-4.5
+        C222.2,50.1,212.8,44.5,203.7,41.1z" /> 
+                      <g id="Lines">
+                       <g>
+                        <path class="st0" d="M217.4,58.1c-0.2,0-0.3-0.1-0.4-0.3c-0.1-0.2,0.1-0.4,0.3-0.5c0.6-0.2,1.1-0.2,1.5-0.2
+                c1.1-0.1,1.5-0.1,1.4-2.2c-0.2-3.9-9-8.9-17.2-12c-6.8-2.5-15.3-4.6-19-2.7c-0.9,0.4-1.5,1.1-1.7,2c-0.1,0.2-0.3,0.3-0.5,0.3
+                c-0.2-0.1-0.3-0.3-0.3-0.5c0.3-1.1,1-1.9,2.1-2.4c4.9-2.5,16.3,1.5,19.6,2.7c6.4,2.4,17.4,7.8,17.7,12.7c0.1,2.7-0.8,3-2.2,3.1
+                c-0.4,0-0.9,0.1-1.3,0.2C217.5,58.1,217.4,58.1,217.4,58.1z" />
+                       </g>
+                       <g>
+                        <path class="st0" d="M202.7,84.5c-0.5,0-1-0.1-1.6-0.3c-1.9-0.6-20.3-8.2-22.5-9.5c-2-1-1.8-2.1-1.7-3.1v-0.3
+                c0-0.2,0.2-0.4,0.4-0.4s0.4,0.2,0.4,0.4v0.3c-0.1,1-0.2,1.5,1.3,2.3c2.1,1.1,20.5,8.9,22.4,9.4c2.5,0.7,3-0.3,3.7-1.9l0.4,0.1
+                l0.4,0.2C205.2,83.2,204.5,84.5,202.7,84.5z" />
+                       </g>
+                      </g> 
+                      <g id="Bits">
+                       <g>
+                        <g>
+                         <path class="st0" d="M214.6,53.7c-0.1,0-0.3,0-0.4-0.2c-0.1,0-0.1-0.1-0.2-0.1c-0.3-0.2-0.6-0.5-0.1-1.2l0,0
+                    c0.1-0.2,0.4-0.3,0.7-0.3c0.4,0,0.9,0.3,1,0.7c0.1,0.2,0,0.3-0.1,0.5C215.3,53.3,214.9,53.7,214.6,53.7z M214.5,52.2
+                    c-0.1,0-0.2,0-0.2,0.1l0,0c-0.3,0.5-0.2,0.6,0,0.8c0.1,0,0.1,0.1,0.2,0.1c0.2,0.1,0.3,0.1,0.8-0.4v-0.1
+                    C215.2,52.5,214.9,52.3,214.5,52.2L214.5,52.2z M214.1,52.3L214.1,52.3L214.1,52.3z" />
+                        </g>
+                        <g>
+                         <path class="st0" d="M216.4,55.1c-0.2,0-0.4-0.1-0.6-0.3c-0.1-0.2-0.2-0.5,0-0.7c0.1-0.2,0.3-0.3,0.5-0.3l0,0
+                    c0.2,0,0.4,0.1,0.6,0.3c0.1,0.2,0.1,0.4-0.1,0.6C216.8,55,216.7,55.1,216.4,55.1C216.5,55.1,216.5,55.1,216.4,55.1z M216.3,54.2
+                    c-0.1,0-0.1,0-0.2,0.1c-0.1,0.1-0.1,0.2,0,0.3s0.2,0.2,0.3,0.2s0.1,0,0.1-0.1c0.1-0.1,0.1-0.3,0.1-0.3
+                    C216.6,54.3,216.6,54.3,216.3,54.2L216.3,54.2L216.3,54.2z" />
+                        </g>
+                        <g>
+                         <path class="st0" d="M214.8,55.2c-0.1,0-0.1,0-0.2,0c-0.2-0.1-0.3-0.3-0.3-0.4c0-0.2,0.1-0.4,0.3-0.5s0.3-0.1,0.5,0.1l0,0
+                    c0.1,0.1,0.3,0.3,0.2,0.5c0,0.1-0.1,0.3-0.3,0.4C214.9,55.1,214.8,55.2,214.8,55.2z M214.8,54.4
+                    C214.7,54.4,214.7,54.4,214.8,54.4c-0.1,0.1-0.2,0.1-0.2,0.2c0,0.1,0.1,0.2,0.1,0.2h0.1c0.1-0.1,0.2-0.1,0.2-0.2
+                    C215,54.7,215,54.6,214.8,54.4L214.8,54.4C214.8,54.5,214.8,54.4,214.8,54.4z" />
+                        </g>
+                        <g>
+                         <path class="st0" d="M216.8,53.3c-0.1,0-0.1,0-0.2,0c-0.2-0.1-0.3-0.2-0.3-0.4s0.1-0.4,0.3-0.5s0.3-0.1,0.5,0.1
+                    c0.1,0.1,0.3,0.3,0.2,0.5c0,0.1-0.1,0.3-0.3,0.4C216.9,53.2,216.8,53.3,216.8,53.3z M216.8,52.5
+                    C216.8,52.5,216.7,52.5,216.8,52.5c-0.1,0.1-0.2,0.1-0.2,0.2c0,0.1,0.1,0.2,0.1,0.2h0.1c0.1-0.1,0.2-0.1,0.2-0.2
+                    C217,52.8,217,52.7,216.8,52.5L216.8,52.5C216.8,52.6,216.8,52.5,216.8,52.5z" />
+                        </g>
+                        <g>
+                         <path class="st0" d="M215.6,56.3h-0.1c-0.1-0.1-0.2-0.2-0.2-0.3s0.1-0.3,0.2-0.4c0.1-0.1,0.3,0,0.4,0l0,0
+                    c0.1,0.1,0.2,0.2,0.2,0.4c0,0.1-0.1,0.2-0.2,0.3C215.8,56.3,215.7,56.3,215.6,56.3z M215.6,55.7L215.6,55.7
+                    c-0.1,0-0.2,0.1-0.1,0.2c0,0.1,0.1,0.2,0.1,0.2s0,0,0.1,0s0.1-0.1,0.1-0.1C215.8,55.9,215.8,55.9,215.6,55.7
+                    C215.7,55.8,215.7,55.8,215.6,55.7C215.7,55.8,215.7,55.7,215.6,55.7z" />
+                        </g>
+                       </g>
+                       <g>
+                        <g>
+                         <path class="st0" d="M184.7,45c-0.1,0-0.3,0-0.4-0.2c-0.1,0-0.1-0.1-0.2-0.1c-0.4-0.2-0.6-0.5-0.1-1.3l0,0
+                    c0.1-0.2,0.4-0.3,0.7-0.3c0.4,0,0.9,0.3,1.1,0.7c0.1,0.2,0,0.4-0.1,0.5C185.4,44.7,185.1,45,184.7,45z M184.6,43.6
+                    c-0.1,0-0.2,0-0.3,0.1l0,0c-0.3,0.5-0.2,0.6,0,0.8c0.1,0,0.1,0.1,0.2,0.1c0.2,0.1,0.3,0.1,0.8-0.4v-0.1
+                    C185.4,43.8,185,43.6,184.6,43.6C184.7,43.6,184.6,43.6,184.6,43.6z M184.2,43.6L184.2,43.6L184.2,43.6z" />
+                        </g>
+                        <g>
+                         <path class="st0" d="M186.6,46.5c-0.2,0-0.4-0.1-0.6-0.3c-0.1-0.2-0.2-0.5,0-0.7c0.1-0.2,0.3-0.3,0.6-0.3l0,0
+                    c0.2,0,0.5,0.1,0.6,0.3s0.1,0.4-0.1,0.6C187,46.4,186.9,46.5,186.6,46.5C186.7,46.5,186.7,46.5,186.6,46.5z M186.5,45.6
+                    c-0.1,0-0.1,0-0.2,0.1c-0.1,0.1-0.1,0.2,0,0.3s0.2,0.2,0.3,0.2s0.1,0,0.1-0.1c0.1-0.2,0.1-0.3,0.1-0.3
+                    C186.8,45.7,186.8,45.6,186.5,45.6L186.5,45.6z" />
+                        </g>
+                        <g>
+                         <path class="st0" d="M184.9,46.5c-0.1,0-0.1,0-0.2,0c-0.2-0.1-0.3-0.3-0.3-0.5s0.1-0.4,0.3-0.5s0.3-0.1,0.5,0.1
+                    c0.1,0.1,0.3,0.3,0.2,0.5c0,0.1-0.1,0.3-0.3,0.4C185.1,46.5,185,46.5,184.9,46.5z M184.9,45.8L184.9,45.8
+                    c-0.1,0.1-0.2,0.1-0.2,0.2c0,0.1,0.1,0.2,0.1,0.2h0.1c0.1-0.1,0.2-0.1,0.2-0.2C185.2,46,185.1,46,184.9,45.8L184.9,45.8
+                    C185,45.8,185,45.8,184.9,45.8z" />
+                        </g>
+                        <g>
+                         <path class="st0" d="M187,44.6c-0.1,0-0.1,0-0.2,0c-0.2-0.1-0.3-0.3-0.3-0.5s0.1-0.4,0.3-0.5s0.4-0.1,0.5,0.1l0,0
+                    c0.1,0.1,0.3,0.3,0.2,0.5c0,0.2-0.1,0.3-0.3,0.4C187.1,44.6,187,44.6,187,44.6z M187,43.9C187,43.9,186.9,43.9,187,43.9
+                    c-0.1,0.1-0.2,0.1-0.2,0.2c0,0.1,0.1,0.2,0.1,0.2h0.1c0.1-0.1,0.2-0.1,0.2-0.2C187.2,44.1,187.2,44,187,43.9L187,43.9L187,43.9z
+                    " />
+                        </g>
+                        <g>
+                         <path class="st0" d="M185.8,47.7h-0.1c-0.1-0.1-0.2-0.2-0.2-0.4c0-0.1,0.1-0.3,0.2-0.4c0.1-0.1,0.3,0,0.4,0l0,0
+                    c0.1,0.1,0.2,0.2,0.2,0.4c0,0.1-0.1,0.2-0.2,0.3C185.9,47.7,185.9,47.7,185.8,47.7z M185.8,47.1L185.8,47.1
+                    c-0.1,0-0.2,0.1-0.1,0.2c0,0.1,0.1,0.2,0.1,0.2s0,0,0.1,0c0.1-0.1,0.1-0.1,0.1-0.1C186,47.3,186,47.3,185.8,47.1L185.8,47.1
+                    C185.9,47.2,185.9,47.1,185.8,47.1z" />
+                        </g>
+                       </g>
+                       <g>
+                        <g>
+                         <path class="st0" d="M180,72.2c-0.2,0-0.4-0.1-0.7-0.5c-0.1-0.2-0.2-0.4,0-0.7c0.2-0.4,0.6-0.8,1-0.8c0.2,0,0.3,0.1,0.4,0.2
+                    c0.2,0.4,0.6,1,0,1.4c-0.1,0-0.1,0.1-0.2,0.1C180.3,72.1,180.2,72.2,180,72.2z M179.5,71.5c0.4,0.5,0.5,0.4,0.7,0.2
+                    c0.1,0,0.1-0.1,0.2-0.1c0.2-0.1,0.2-0.3-0.1-0.9c0,0,0-0.1-0.1-0.1c-0.2,0-0.5,0.3-0.6,0.6C179.5,71.3,179.5,71.4,179.5,71.5z" />
+                        </g>
+                        <g>
+                         <path class="st0" d="M182.2,70.7c-0.2,0-0.3-0.1-0.5-0.2c-0.2-0.2-0.2-0.4-0.1-0.6l0,0c0.1-0.2,0.2-0.4,0.5-0.4
+                    c0.2,0,0.4,0.1,0.6,0.2c0.1,0.1,0.2,0.3,0.1,0.4c0,0.2-0.2,0.4-0.4,0.5C182.3,70.7,182.2,70.7,182.2,70.7z M182.2,69.8
+                    L182.2,69.8c-0.1,0-0.1,0.1-0.2,0.3l0,0c0,0.1,0,0.2,0,0.2c0.1,0.1,0.2,0.1,0.3,0.1c0.1-0.1,0.2-0.2,0.3-0.3
+                    c0-0.1,0-0.1-0.1-0.1C182.3,69.9,182.2,69.8,182.2,69.8z M181.8,70L181.8,70L181.8,70z" />
+                        </g>
+                        <g>
+                         <path class="st0" d="M181.8,72.1h-0.1c-0.2,0-0.3-0.2-0.4-0.4c0-0.2,0-0.3,0.2-0.4c0.1-0.1,0.3-0.2,0.5-0.1
+                    c0.1,0.1,0.2,0.2,0.3,0.4c0,0.1,0,0.3-0.1,0.4C182.1,72.1,182,72.1,181.8,72.1z M181.9,71.5c0,0-0.1,0-0.2,0.1l0,0
+                    c0,0-0.1,0-0.1,0.1s0.1,0.2,0.1,0.2c0.1,0,0.2,0,0.3-0.1c0,0,0,0,0-0.1C182,71.5,182,71.5,181.9,71.5L181.9,71.5z M181.6,71.4
+                    L181.6,71.4L181.6,71.4z" />
+                        </g>
+                        <g>
+                         <path class="st0" d="M180.7,69.7h-0.1c-0.2,0-0.3-0.2-0.4-0.4c0-0.2,0-0.3,0.2-0.4l0,0c0.1-0.1,0.3-0.2,0.5-0.1
+                    c0.1,0.1,0.2,0.2,0.3,0.4c0,0.1,0,0.3-0.1,0.4C181,69.6,180.8,69.7,180.7,69.7z M180.5,69.1l-0.1,0.1c0,0.1,0.1,0.1,0.1,0.2
+                    c0.1,0,0.2,0,0.2-0.1c0,0,0,0,0-0.1C180.7,69,180.6,69,180.5,69.1C180.7,69,180.7,69,180.5,69.1L180.5,69.1z" />
+                        </g>
+                        <g>
+                         <path class="st0" d="M183.3,71.6C183.3,71.6,183.2,71.6,183.3,71.6c-0.2,0-0.3-0.2-0.4-0.3c0-0.1,0-0.3,0.2-0.3l0,0
+                    c0.1-0.1,0.2-0.1,0.4-0.1c0.1,0,0.2,0.1,0.2,0.3c0,0.1,0,0.2-0.1,0.3C183.5,71.5,183.4,71.6,183.3,71.6z M183.2,71.1
+                    C183.2,71.1,183.1,71.1,183.2,71.1c0,0.2,0.1,0.2,0.1,0.2c0.1,0,0.2,0,0.2,0s0,0,0-0.1s-0.1-0.2-0.1-0.2S183.3,71,183.2,71.1
+                    L183.2,71.1z" />
+                        </g>
+                       </g>
+                      </g> 
+                      <g id="OF" transform="translate(129.781513, 2.400000)">
+                       <g class="st2">
+                        <path class="st0" d="M62.4,53.8c1.8,0,3.2,0.4,4.1,1.3c1,0.9,1.5,2.1,1.5,3.6c0,2-0.7,3.7-2.1,5c-1.4,1.3-3.1,2-5.3,2
+                c-1.7,0-3.1-0.5-4-1.4c-1-0.9-1.4-2.2-1.4-3.8c0-1,0.2-1.9,0.6-2.8c0.4-0.9,1-1.6,1.7-2.3c0.6-0.5,1.4-1,2.2-1.3
+                C60.6,54,61.5,53.8,62.4,53.8z M62.2,55.3c-0.9,0-1.6,0.5-2.1,1.6c-0.6,1.1-0.8,2.5-0.8,4.3c0,1,0.2,1.8,0.5,2.3s0.8,0.7,1.4,0.7
+                c0.8,0,1.5-0.6,2.1-1.7s0.8-2.5,0.8-4.2c0-1.1-0.1-1.8-0.4-2.3S62.8,55.3,62.2,55.3z" />
+                        <path class="st0" d="M79.1,52.1L77,49.6c-0.4,0.8-0.7,1.6-0.9,2.4s-0.4,1.6-0.6,2.4h3.2v1.7h-3.4l-0.8,5.5
+                c-0.2,1.5-0.6,2.7-1,3.8c-0.5,1.1-1.1,2.1-2,3c-0.7,0.7-1.3,1.3-2,1.6s-1.4,0.5-2.1,0.5c-0.6,0-1.2-0.2-1.5-0.5
+                c-0.4-0.4-0.6-0.8-0.6-1.4c0-0.4,0.1-0.8,0.4-1.1s0.6-0.6,1.1-0.7l2.7,2c0.4-0.9,0.8-2.5,1.1-4.9v-0.2l1.1-7.5L70,56.3V55
+                l1.9-0.9c0.3-1.7,1-3.1,2.2-4.1c1.1-1,2.5-1.5,4-1.5c0.8,0,1.5,0.2,2.1,0.5s0.8,0.8,0.8,1.3c0,0.4-0.2,0.8-0.5,1.1
+                C80.2,51.7,79.7,52,79.1,52.1z" />
+                       </g>
+                      </g> 
+                     </g><g id="SLICEMIT"> 
+                      <path class="st3" d="M47.2,71.8V61.5h3.6V64c1.7,3.1,3.9,4.6,6.7,4.6c1.4,0,2.6-0.4,3.6-1.3s1.4-2,1.4-3.4c0-1.3-0.4-2.3-1.2-2.9
+        c-0.8-0.6-2.3-1.2-4.5-1.8c-2.5-0.7-4.4-1.3-5.7-1.9c-1.2-0.6-2.2-1.5-2.9-2.6s-1.1-2.5-1.1-4c0-2.4,0.8-4.3,2.4-5.7
+        c1.6-1.4,3.6-2.1,6-2.1c2.3,0,4.4,0.7,6.3,2.2v-1.9h3.5v8.6h-3.5v-2c-1.5-2.2-3.5-3.3-6-3.3c-1.6,0-2.7,0.4-3.6,1.1
+        c-0.8,0.7-1.2,1.6-1.2,2.6c0,0.8,0.2,1.4,0.6,2s1,1,1.6,1.3c0.7,0.3,1.9,0.7,3.9,1.1c2.5,0.7,4.3,1.3,5.4,1.8
+        c1.1,0.6,2.1,1.5,2.9,2.8c0.8,1.3,1.2,2.8,1.2,4.6c0,2.4-0.9,4.4-2.6,6s-3.8,2.4-6.3,2.4c-2.6,0-4.9-0.9-7-2.8v2.3h-3.5V71.8z" /> 
+                      <path class="st3" d="M73.3,68.3V47h-3.7v-3.6h11.6V47h-3.4v21.3h8.7v-9.7h4v13.2H69.7v-3.6L73.3,68.3L73.3,68.3z" /> 
+                      <path class="st3" d="M96.3,68.3V47h-3.1v-3.6h10.4V47h-3.1v21.3h3.1v3.6H93.3v-3.6H96.3z" /> 
+                      <path class="st3" d="M132.2,60.3l3.7,2.1c-0.8,3.2-2.5,5.6-5,7.3s-5.4,2.6-8.7,2.6c-4.3,0-7.7-1.4-10.3-4.2s-3.9-6.2-3.9-10.3
+        c0-4.5,1.3-8.1,3.9-10.8c2.6-2.7,6-4,10.2-4c3.7,0,6.8,1,9.4,3v-2.6h3.7v9.1h-3.7c-0.8-1.8-2.1-3.3-3.8-4.3s-3.5-1.5-5.4-1.5
+        c-2.8,0-5.2,1-7,3.1s-2.7,4.6-2.7,7.7c0,3.2,1,5.8,2.9,7.8c1.9,2,4.3,3,6.9,3c2.2,0,4.2-0.7,6-2.1
+        C130.2,64.8,131.4,62.9,132.2,60.3z" /> 
+                      <path class="st3" d="M143.8,68.3V47h-3.7v-3.6h23.6V52h-3.5v-5h-12.1v8.4h10.6V59h-10.6v9.3h12.1v-5.2h3.5v8.7h-23.6v-3.6
+        L143.8,68.3L143.8,68.3z" /> 
+                      <path class="st3" d="M235.2,68.3V47h-3.4v-3.6h9.7l7.5,19.5l7.6-19.5h9.8V47H263v21.3h3.4v3.6h-10.7v-3.6h3.4V47l-9.8,25.1h-0.8
+        L238.7,47v21.3h3.1v3.6h-10v-3.6H235.2z" /> 
+                      <path class="st3" d="M272.8,68.3V47h-3.1v-3.6h10.4V47H277v21.3h3.1v3.6h-10.4v-3.6H272.8z" /> 
+                      <path class="st3" d="M292.4,68.3V47h-5.9v7.2H283V43.4h23v10.8h-3.5V47h-5.8v21.3h3.7v3.6h-11.6v-3.6H292.4z" /> 
+                     </g><g id="SIQ" class="st2"> 
+                      <path class="st4" d="M46.4,106.4V102h1.5v1.1c0.7,1.3,1.7,2,2.9,2c0.6,0,1.1-0.2,1.5-0.6s0.6-0.9,0.6-1.5c0-0.6-0.2-1-0.5-1.3
+        c-0.3-0.3-1-0.5-1.9-0.8c-1.1-0.3-1.9-0.6-2.4-0.8s-0.9-0.6-1.3-1.1c-0.3-0.5-0.5-1.1-0.5-1.7c0-1,0.3-1.8,1-2.5S48.9,94,50,94
+        c1,0,1.9,0.3,2.7,0.9v-0.8h1.5v3.7h-1.5V97c-0.6-0.9-1.5-1.4-2.6-1.4c-0.7,0-1.2,0.2-1.5,0.5c-0.4,0.3-0.5,0.7-0.5,1.1
+        c0,0.3,0.1,0.6,0.3,0.9c0.2,0.2,0.4,0.4,0.7,0.5s0.8,0.3,1.7,0.5c1.1,0.3,1.9,0.5,2.3,0.8c0.5,0.2,0.9,0.6,1.3,1.2
+        c0.4,0.6,0.5,1.2,0.5,2c0,1-0.4,1.9-1.1,2.6s-1.6,1-2.7,1c-1.1,0-2.1-0.4-3-1.2v1H46.4z" /> 
+                      <path class="st4" d="M66,104.9v1.5h-3.1v-1c-1,0.7-1.9,1.1-2.8,1.1c-0.6,0-1-0.1-1.4-0.4c-0.4-0.2-0.6-0.6-0.7-1
+        c-0.1-0.4-0.2-1-0.2-1.9v-3.9h-1.2v-1.5h2.9v5.2c0,0.6,0,1,0.1,1.3s0.1,0.4,0.3,0.5s0.4,0.2,0.6,0.2c0.8,0,1.6-0.4,2.5-1.1v-4.6
+        h-1.5v-1.5h3.2v7H66z" /> 
+                      <path class="st4" d="M69,104.9v-5.5h-1.7v-1.5h3v1.9c0.2-0.5,0.4-0.9,0.8-1.2s0.7-0.5,1.1-0.7s0.9-0.2,1.5-0.2h0.4v1.7h-0.3
+        c-0.8,0-1.5,0.1-1.9,0.3s-0.7,0.5-0.9,0.9c-0.2,0.4-0.3,1.3-0.3,2.4v1.9h1.9v1.5h-5.2v-1.5H69z" /> 
+                      <path class="st4" d="M77.1,108.8v-9.4h-1.4v-1.5h3.1v1.3c0.8-1,1.8-1.5,3-1.5c1.2,0,2.2,0.4,3,1.2s1.2,1.9,1.2,3.2
+        c0,1.4-0.4,2.5-1.3,3.3s-1.8,1.2-2.9,1.2c-1.1,0-2.1-0.4-3-1.3v3.4h1.7v1.5h-4.9v-1.5H77.1z M78.7,102.3c0,0.5,0.1,0.9,0.3,1.3
+        s0.5,0.8,0.9,1.1c0.4,0.3,0.9,0.4,1.5,0.4c0.8,0,1.5-0.3,2-0.8s0.8-1.3,0.8-2.2c0-0.9-0.3-1.6-0.8-2.1s-1.2-0.8-1.8-0.8
+        c-0.7,0-1.4,0.3-1.9,0.8C79,100.7,78.7,101.4,78.7,102.3z" /> 
+                      <path class="st4" d="M89.5,104.9v-5.5h-1.7v-1.5h3v1.9c0.2-0.5,0.4-0.9,0.8-1.2s0.7-0.5,1.1-0.7s0.9-0.2,1.5-0.2h0.4v1.7h-0.3
+        c-0.8,0-1.5,0.1-1.9,0.3s-0.7,0.5-0.9,0.9c-0.2,0.4-0.3,1.3-0.3,2.4v1.9H93v1.5h-5.2v-1.5H89.5z" /> 
+                      <path class="st4" d="M97.9,104.9v-5.5h-1.3v-1.5h3v7h1.3v1.5h-4.3v-1.5H97.9z M97.6,95c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3
+        c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7s-0.1,0.5-0.3,0.7c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3S97.6,95.3,97.6,95z" /> 
+                      <path class="st4" d="M102.7,106.4v-2.9h1.5v0.3c0.1,0.4,0.3,0.7,0.6,1s0.8,0.4,1.3,0.4c0.5,0,1-0.1,1.3-0.3s0.5-0.4,0.5-0.8
+        c0-0.3-0.1-0.6-0.4-0.7s-0.8-0.3-1.6-0.4c-1.2-0.2-2-0.5-2.5-1c-0.5-0.4-0.8-1-0.8-1.7c0-0.7,0.3-1.3,0.8-1.8s1.3-0.7,2.2-0.7
+        c0.8,0,1.5,0.2,2.1,0.5v-0.4h1.5v2.8h-1.5v-0.5c-0.5-0.7-1.1-1-2-1c-0.4,0-0.8,0.1-1.1,0.3s-0.4,0.4-0.4,0.8c0,0.3,0.1,0.5,0.4,0.7
+        s0.8,0.2,1.7,0.4c0.8,0.1,1.5,0.3,1.9,0.5s0.8,0.5,1.1,0.9s0.4,0.9,0.4,1.4c0,0.8-0.3,1.4-0.9,1.9c-0.6,0.5-1.4,0.7-2.4,0.7
+        c-0.9,0-1.6-0.2-2.2-0.6v0.5H102.7z" /> 
+                      <path class="st4" d="M112.8,104.9v-5.5h-1.3v-1.5h3v7h1.3v1.5h-4.3v-1.5H112.8z M112.6,95c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3
+        c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7s-0.1,0.5-0.3,0.7c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3S112.6,95.3,112.6,95z" /> 
+                      <path class="st4" d="M120.5,97.9v1c1.1-0.8,2.1-1.2,2.9-1.2c0.6,0,1,0.1,1.4,0.4s0.6,0.6,0.7,1c0.1,0.4,0.2,0.9,0.2,1.7v4.1h1.4
+        v1.5H124v-5.6c0-0.6-0.1-1.1-0.3-1.3s-0.4-0.3-0.7-0.3c-0.7,0-1.6,0.4-2.5,1.1v4.6h1.5v1.5h-4.6v-1.5h1.5v-5.5h-1.5v-1.5H120.5z" /> 
+                      <path class="st4" d="M139,97.9v1.5h-1.5v6.3c0,0.9,0,1.5-0.1,1.9c-0.1,0.4-0.3,0.8-0.6,1.3c-0.3,0.4-0.8,0.8-1.5,1.1
+        s-1.4,0.4-2.3,0.4c-1.3,0-2.4-0.4-3.4-1.1l1.1-1.2c0.7,0.6,1.5,0.9,2.4,0.9c0.5,0,0.9-0.1,1.3-0.3c0.4-0.2,0.7-0.4,0.9-0.7
+        s0.3-0.5,0.4-0.8c0.1-0.2,0.1-0.6,0.1-1.2v-0.8c-0.3,0.3-0.7,0.7-1.2,0.9s-1.2,0.4-1.8,0.4c-1.2,0-2.2-0.4-3-1.3s-1.2-1.9-1.2-3.1
+        c0-1.3,0.4-2.4,1.3-3.3c0.8-0.8,1.8-1.2,2.9-1.2c1.1,0,2.1,0.4,3,1.3v-1.2H139z M130.3,102.3c0,0.9,0.3,1.6,0.8,2.1
+        s1.1,0.8,1.9,0.8c0.8,0,1.4-0.3,2-0.8s0.8-1.3,0.8-2.1c0-0.9-0.3-1.6-0.8-2.1s-1.2-0.8-1.9-0.8s-1.4,0.3-1.9,0.8
+        C130.6,100.7,130.3,101.4,130.3,102.3z" /> 
+                      <path class="st4" d="M140.7,106.4v-2.2h2.2v2.2H140.7z" /> 
+                      <path class="st4" d="M150.8,104.9v-9.2h-1.3v-1.5h4.5v1.5h-1.3v9.2h1.3v1.5h-4.5v-1.5H150.8z" /> 
+                      <path class="st4" d="M158.9,97.9v1c1.1-0.8,2.1-1.2,2.9-1.2c0.6,0,1,0.1,1.4,0.4s0.6,0.6,0.7,1c0.1,0.4,0.2,0.9,0.2,1.7v4.1h1.4
+        v1.5h-3.1v-5.6c0-0.6-0.1-1.1-0.3-1.3s-0.4-0.3-0.7-0.3c-0.7,0-1.6,0.4-2.5,1.1v4.6h1.5v1.5h-4.6v-1.5h1.5v-5.5h-1.5v-1.5H158.9z" /> 
+                      <path class="st4" d="M167,106.4v-2.9h1.5v0.3c0.1,0.4,0.3,0.7,0.6,1s0.8,0.4,1.3,0.4c0.5,0,1-0.1,1.3-0.3s0.5-0.4,0.5-0.8
+        c0-0.3-0.1-0.6-0.4-0.7s-0.8-0.3-1.6-0.4c-1.2-0.2-2-0.5-2.5-1c-0.5-0.4-0.8-1-0.8-1.7c0-0.7,0.3-1.3,0.8-1.8s1.3-0.7,2.2-0.7
+        c0.8,0,1.5,0.2,2.1,0.5v-0.4h1.5v2.8h-1.5v-0.5c-0.5-0.7-1.1-1-2-1c-0.4,0-0.8,0.1-1.1,0.3s-0.4,0.4-0.4,0.8c0,0.3,0.1,0.5,0.4,0.7
+        s0.8,0.2,1.7,0.4c0.8,0.1,1.5,0.3,1.9,0.5s0.8,0.5,1,0.9s0.4,0.9,0.4,1.4c0,0.8-0.3,1.4-0.9,1.9c-0.6,0.5-1.4,0.7-2.4,0.7
+        c-0.9,0-1.6-0.2-2.2-0.6v0.5H167z" /> 
+                      <path class="st4" d="M177.2,104.9v-5.5h-1.3v-1.5h3v7h1.3v1.5h-4.3v-1.5H177.2z M176.9,95c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3
+        c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7s-0.1,0.5-0.3,0.7c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3S176.9,95.3,176.9,95z" /> 
+                      <path class="st4" d="M192.3,97.9v1.5h-1.5v6.3c0,0.9,0,1.5-0.1,1.9c-0.1,0.4-0.3,0.8-0.6,1.3c-0.3,0.4-0.8,0.8-1.5,1.1
+        s-1.4,0.4-2.3,0.4c-1.3,0-2.4-0.4-3.4-1.1l1.1-1.2c0.7,0.6,1.5,0.9,2.4,0.9c0.5,0,0.9-0.1,1.3-0.3c0.4-0.2,0.7-0.4,0.9-0.7
+        s0.3-0.5,0.4-0.8c0.1-0.2,0.1-0.6,0.1-1.2v-0.8c-0.3,0.3-0.7,0.7-1.2,0.9s-1.2,0.4-1.8,0.4c-1.2,0-2.2-0.4-3-1.3s-1.2-1.9-1.2-3.1
+        c0-1.3,0.4-2.4,1.3-3.3c0.8-0.8,1.8-1.2,2.9-1.2c1.1,0,2.1,0.4,3,1.3v-1.2H192.3z M183.7,102.3c0,0.9,0.3,1.6,0.8,2.1
+        s1.1,0.8,1.9,0.8c0.8,0,1.4-0.3,2-0.8s0.8-1.3,0.8-2.1c0-0.9-0.3-1.6-0.8-2.1s-1.2-0.8-1.9-0.8s-1.4,0.3-1.9,0.8
+        C183.9,100.7,183.7,101.4,183.7,102.3z" /> 
+                      <path class="st4" d="M195.1,104.9v-9.3h-1.5v-1.5h3.2v4.7c1-0.8,2-1.2,2.9-1.2c0.6,0,1,0.1,1.4,0.4s0.6,0.5,0.7,0.9
+        c0.1,0.4,0.2,0.9,0.2,1.7v4.3h1.5v1.5h-3.1v-5.2c0-0.6,0-1.1-0.1-1.3s-0.2-0.4-0.3-0.5s-0.4-0.2-0.7-0.2c-0.6,0-1.5,0.4-2.5,1.1
+        v4.7h1.5v1.5h-4.7v-1.5H195.1z" /> 
+                      <path class="st4" d="M204.8,99.4v-1.5h1.1v-1.3l1.7-1.5v2.8h1.6v1.5h-1.6v4.1c0,0.7,0,1.1,0.1,1.2c0.1,0.2,0.3,0.2,0.5,0.2
+        c0.3,0,0.6-0.1,0.9-0.2v1.5c-0.4,0.2-0.9,0.2-1.3,0.2c-0.5,0-0.9-0.1-1.2-0.3c-0.3-0.2-0.5-0.5-0.6-0.8s-0.1-0.9-0.1-1.8v-4.2
+        H204.8z" /> 
+                      <path class="st4" d="M212.1,104.9v-5.5h-1.2v-1.5h1.2v-1.2c0-1,0.2-1.8,0.7-2.1s1-0.6,1.6-0.6c1.3,0,2,0.7,2.2,2l-1.5,0.2
+        c-0.1-0.5-0.3-0.8-0.6-0.8c-0.3,0-0.4,0.1-0.5,0.3c-0.1,0.2-0.1,0.5-0.1,1.1v1.2h1.5v1.5h-1.5v5.5h1.6v1.5h-4.5v-1.5H212.1z" /> 
+                      <path class="st4" d="M226.3,104.9v1.5h-3.1v-1c-1,0.7-1.9,1.1-2.8,1.1c-0.6,0-1-0.1-1.4-0.4c-0.4-0.2-0.6-0.6-0.7-1
+        c-0.1-0.4-0.2-1-0.2-1.9v-3.9h-1.2v-1.5h2.9v5.2c0,0.6,0,1,0.1,1.3s0.1,0.4,0.3,0.5s0.4,0.2,0.6,0.2c0.8,0,1.6-0.4,2.5-1.1v-4.6
+        h-1.5v-1.5h3.2v7H226.3z" /> 
+                      <path class="st4" d="M229.1,104.9v-9.3h-1.5v-1.5h3.2v10.7h1.3v1.5h-4.5v-1.5H229.1z" /> 
+                      <path class="st4" d="M234.8,106.4v-2.2h2.2v2.2H234.8z" /> 
+                      <path class="st4" d="M251,106.6l0.4,0.2c1,0.4,1.7,0.6,2.2,0.6c0.2,0,0.4,0,0.6-0.1l-0.7,1.5c-0.2,0-0.3,0-0.5,0
+        c-0.6,0-1.4-0.2-2.4-0.7c-0.9-0.4-1.6-0.6-2.1-0.6c-0.5,0-0.9,0.1-1.3,0.4l-0.5-0.7c0.3-0.4,0.8-0.6,1.4-0.7
+        c-1-0.3-1.8-0.8-2.5-1.5s-1.2-1.4-1.4-2.2c-0.3-0.8-0.4-1.6-0.4-2.4c0-1.7,0.6-3.2,1.7-4.4c1.1-1.2,2.7-1.8,4.6-1.8
+        s3.4,0.6,4.6,1.8s1.8,2.7,1.8,4.5c0,1-0.2,1.9-0.6,2.7c-0.4,0.9-1,1.7-1.9,2.3S252.1,106.5,251,106.6z M245.9,100.3
+        c0,1.3,0.4,2.5,1.2,3.4s1.8,1.4,3.1,1.4c1.3,0,2.3-0.5,3.1-1.4s1.2-2,1.2-3.3c0-1.3-0.4-2.4-1.2-3.3s-1.9-1.3-3.1-1.3
+        c-1.2,0-2.3,0.4-3.1,1.3S245.9,99,245.9,100.3z" /> 
+                      <path class="st4" d="M268.1,104.9v1.5h-3.1v-1c-1,0.7-1.9,1.1-2.8,1.1c-0.6,0-1-0.1-1.4-0.4c-0.4-0.2-0.6-0.6-0.7-1
+        c-0.1-0.4-0.2-1-0.2-1.9v-3.9h-1.2v-1.5h2.9v5.2c0,0.6,0,1,0.1,1.3s0.1,0.4,0.3,0.5s0.4,0.2,0.6,0.2c0.8,0,1.6-0.4,2.5-1.1v-4.6
+        h-1.5v-1.5h3.2v7H268.1z" /> 
+                      <path class="st4" d="M270.9,104.9v-5.5h-1.3v-1.5h3v7h1.3v1.5h-4.3v-1.5H270.9z M270.6,95c0-0.3,0.1-0.5,0.3-0.7s0.4-0.3,0.7-0.3
+        c0.3,0,0.5,0.1,0.7,0.3s0.3,0.4,0.3,0.7s-0.1,0.5-0.3,0.7c-0.2,0.2-0.4,0.3-0.7,0.3c-0.3,0-0.5-0.1-0.7-0.3S270.6,95.3,270.6,95z" /> 
+                      <path class="st4" d="M277.1,104.9v-5.5h-1.7v-1.5h3v1.9c0.2-0.5,0.4-0.9,0.8-1.2s0.7-0.5,1.1-0.7s0.9-0.2,1.5-0.2h0.4v1.7h-0.3
+        c-0.8,0-1.5,0.1-1.9,0.3s-0.7,0.5-0.9,0.9c-0.2,0.4-0.3,1.3-0.3,2.4v1.9h1.9v1.5h-5.2v-1.5H277.1z" /> 
+                      <path class="st4" d="M284.8,104.9v-9.3h-1.5v-1.5h3.2v7.6l3.2-2.5h-1.4v-1.4h4.7v1.4h-1.3l-3.2,2.7l3,3h1.5v1.5h-2.2l-4.3-4.3v2.8
+        h1.5v1.5h-4.7v-1.5H284.8z" /> 
+                      <path class="st4" d="M297.9,106.3l-2.8-6.9h-1.4v-1.5h4.2v1.5h-1l1.8,4.7l1.8-4.7h-1.1v-1.5h4.1v1.5h-1.3l-4.2,10.8h-2.8v-1.5h1.7
+        L297.9,106.3z" /> 
+                      <path class="st4" d="M304.1,106.4v-2.2h2.2v2.2H304.1z" /> 
+                     </g>
+                    </svg> </a>
+                   <h6>An MIT Alumni Association Publication</h6>
+                  </div><!--
+<div class="top-share">
+                            <a id="share-group__toggle2" aria-expanded="false" href="#"><i class="icon-share"></i>Share</a>
+                            <div id="share-group__container">
+                               <div class="addthis_inline_share_toolbox"></div>
+                            </div>
+                        </div>
+-->
+                  <div class="m-pub-bar-wrap">
+                   <a id="m-pub-menu-btn">slice Topics</a>
+                  </div>
+                  <div class="pub-bar">
+                   <ul class="menu">
+                    <li class="menu-item"><a href="/topic/research" target="" rel="" title="Research" data-drupal-link-system-path="taxonomy/term/65">Research</a></li>
+                    <li class="menu-item"><a href="/topic/alumni-life" target="" rel="" data-drupal-link-system-path="taxonomy/term/51">Alumni Life</a></li>
+                    <li class="menu-item"><a href="/topic/campus-culture" target="" rel="" title="Campus Culture" data-drupal-link-system-path="taxonomy/term/53">Campus Culture</a></li>
+                    <li class="menu-item"><a href="/topic/video" target="" rel="" title="Video" data-drupal-link-system-path="taxonomy/term/81">Video</a></li>
+                    <li class="menu-item"><a href="/topic/podcast" target="" rel="" title="Podcast" data-drupal-link-system-path="taxonomy/term/84">Podcast</a></li>
+                    <li class="menu-item"><a href="/slice/about" target="" rel="" title="About the Slice of MIT blog" data-drupal-link-system-path="node/55243">About</a></li>
+                   </ul>
+                   <div class="pub-search">
+                    <div data-block-plugin-id="views_exposed_filter_block:slice_search-page" class="block block-views block-views-exposed-filter-blockslice-search-page">
+                     <h2 class="block-label">Search | Slice of MIT</h2>
+                     <form class="views-exposed-form" data-drupal-selector="views-exposed-form-slice-search-page" action="/slice/search" method="get" id="views-exposed-form-slice-search-page" accept-charset="UTF-8">
+                      <div class="form--inline clearfix">
+                       <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-keywords form-item-keywords"><label for="edit-keywords">Keywords</label>
+                        <input data-drupal-selector="edit-keywords" type="text" id="edit-keywords" name="keywords" value="" size="30" maxlength="128" class="form-text">
+                       </div>
+                       <div class="js-form-item form-item js-form-type-select form-type-select js-form-item-sort-by form-item-sort-by"><label for="edit-sort-by">Sort by</label><select data-drupal-selector="edit-sort-by" id="edit-sort-by" name="sort_by" class="form-select"><option value="search_api_relevance" selected>Relevance</option><option value="date">Date</option></select>
+                       </div>
+                       <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                        <input data-drupal-selector="edit-submit-slice-search" type="submit" id="edit-submit-slice-search" value="Search" class="button js-form-submit form-submit">
+                       </div>
+                      </div>
+                     </form>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="m-pub-menu">
+                   <ul class="menu">
+                    <li class="menu-item"><a href="/topic/research" target="" rel="" title="Research" data-drupal-link-system-path="taxonomy/term/65">Research</a></li>
+                    <li class="menu-item"><a href="/topic/alumni-life" target="" rel="" data-drupal-link-system-path="taxonomy/term/51">Alumni Life</a></li>
+                    <li class="menu-item"><a href="/topic/campus-culture" target="" rel="" title="Campus Culture" data-drupal-link-system-path="taxonomy/term/53">Campus Culture</a></li>
+                    <li class="menu-item"><a href="/topic/video" target="" rel="" title="Video" data-drupal-link-system-path="taxonomy/term/81">Video</a></li>
+                    <li class="menu-item"><a href="/topic/podcast" target="" rel="" title="Podcast" data-drupal-link-system-path="taxonomy/term/84">Podcast</a></li>
+                    <li class="menu-item"><a href="/slice/about" target="" rel="" title="About the Slice of MIT blog" data-drupal-link-system-path="node/55243">About</a></li>
+                   </ul>
+                  </div>
+                 </article>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="row row-1">
+             <div class="container">
+              <div class="block-region-row1">
+               <div data-block-plugin-id="system_breadcrumb_block" class="block block-system block-system-breadcrumb-block">
+                <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+                 <h2 class="visually-hidden">Breadcrumb</h2><a href="/">alum.mit.edu</a><a href="/topic/alumni-life">Alumni Life</a><span class="text-item">Alumni Books Podcast: Beyond the Known</span>
+                </nav>
+               </div>
+               <article id="node-95960" class="node__story-top " data-history-node-id="95960" role="article" about="/slice/alumni-books-podcast-beyond-known">
+                <div class="left">
+                 <h1 class="page-title story-title"><span class="field field--name-title field--type-string field--label-hidden">Alumni Books Podcast: Beyond the Known</span></h1>
+                 <ul class="info inline-list">
+                  <li class="date">
+                   <div class="field field--name-field-publication-date field--type-datetime field--label-hidden field__item">
+                    <time datetime="2019-11-12T12:00:00Z" class="datetime">Nov 12, 2019</time>
+                   </div></li>
+                  <li class="author">
+                   <div class="field field--name-field-author field--type-entity-reference field--label-hidden field__item">
+                    Joe McGonegal
+                   </div></li>
+                  <li class="source">
+                   <div class="field field--name-field-source field--type-string field--label-hidden field__item">
+                    Slice of MIT
+                   </div></li>
+                 </ul>
+                </div>
+                <div class="right">
+                 <h2 class="block-label">Filed Under</h2>
+                 <ul class="topics">
+                  <li class="item"><a href="/topic/alumni-life" hreflang="en">Alumni Life</a></li>
+                  <li class="item"><a href="/topic/books" hreflang="en">Books</a></li>
+                  <li class="item"><a href="/topic/podcast" hreflang="en">Podcast</a></li>
+                  <li class="item"><a href="/topic/space" hreflang="en">Space</a></li>
+                 </ul>
+                </div>
+               </article>
+              </div>
+             </div>
+            </div>
+            <div class="row row-2">
+             <div class="abs">
+              <div class="container">
+               <div class="block-region-row2-right">
+                <h2 class="block-label">Recommended</h2>
+                <div class="views-element-container">
+                 <div class="view view-list-of-additional-stories view-id-list_of_additional_stories view-display-id-block_1 js-view-dom-id-4bda98b81bc95d85d8227b6aaa15b1639f530c5ef376b097103530c698e4655e">
+                  <div class="view-content">
+                   <div class="views-row">
+                    <article id="node-101896" class="recommended-teaser " data-history-node-id="101896" role="article" about="/slice/ocean-warrior">
+                     <div class="field--name-field-image">
+                      <a href="/slice/ocean-warrior"> <img src="/sites/default/files/styles/thumbnail/public/images/Slice.22.06.15_Moreau.jpg?h=aa6c0f32&amp;itok=HyM_HFMP" width="90" height="90" alt="Manuel Moreu portrait" loading="lazy" typeof="foaf:Image" class="image-style-thumbnail"></a>
+                     </div>
+                     <h5 class="title"><a href="/slice/ocean-warrior" rel="bookmark"><span class="field field--name-title field--type-string field--label-hidden">Ocean Warrior</span> </a></h5>
+                    </article>
+                   </div>
+                   <div class="views-row">
+                    <article id="node-101895" class="recommended-teaser " data-history-node-id="101895" role="article" about="/slice/open-source-tool-software-security">
+                     <div class="field--name-field-image">
+                      <a href="/slice/open-source-tool-software-security"> <img src="/sites/default/files/styles/thumbnail/public/images/Slice.22.06.13_r2c.jpg?h=b69e0e0e&amp;itok=6dcyVKEu" width="90" height="90" alt="Three MIT alumni portraits with a digital lock above their heads" loading="lazy" typeof="foaf:Image" class="image-style-thumbnail"></a>
+                     </div>
+                     <h5 class="title"><a href="/slice/open-source-tool-software-security" rel="bookmark"><span class="field field--name-title field--type-string field--label-hidden">An Open-Source Tool For Software Security</span> </a></h5>
+                    </article>
+                   </div>
+                   <div class="views-row">
+                    <article id="node-101894" class="recommended-teaser " data-history-node-id="101894" role="article" about="/slice/building-next-version-internet">
+                     <div class="field--name-field-image">
+                      <a href="/slice/building-next-version-internet"> <img src="/sites/default/files/styles/thumbnail/public/images/Slice_22.Kirin%20Sinha_credit_Pooja%20Dhar.jpg?h=cf3e9931&amp;itok=ynMSzcl1" width="90" height="90" alt="Kirin Sinha portrait sitting on a chair next to a plant " loading="lazy" typeof="foaf:Image" class="image-style-thumbnail"></a>
+                     </div>
+                     <h5 class="title"><a href="/slice/building-next-version-internet" rel="bookmark"><span class="field field--name-title field--type-string field--label-hidden">Building the Next Version of the Internet </span> </a></h5>
+                    </article>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="block-region-row2-left">
+              <div data-block-plugin-id="entity_field:node:field_image" class="block block-ctools-block block-entity-fieldnodefield-image">
+               <div class="field field--name-field-image field--type-entity-reference field--label-hidden field__item"> <picture> 
+                 <source srcset="/sites/default/files/styles/article_desktop/public/images/Slice.19.11.08_Rader.jpg?itok=BtalIU8k 1x" media="all and (min-width: 900px)" type="image/jpeg"> 
+                 <source srcset="/sites/default/files/styles/article_mobile/public/images/Slice.19.11.08_Rader.jpg?itok=Hnj1Mgdk 1x" media="all and (max-width: 899px)" type="image/jpeg"> 
+                 <img src="/sites/default/files/styles/article_desktop/public/images/Slice.19.11.08_Rader.jpg?itok=BtalIU8k" alt="" typeof="foaf:Image"> 
+                </picture>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="row row-3">
+             <div class="container">
+              <div class="row3-sidebar"><!-- Go to www.addthis.com/dashboard to customize your tools -->
+               <div class="addthis_inline_share_toolbox_a035"></div>
+              </div>
+              <div class="block-region-row3-right">
+               <div data-block-plugin-id="entity_field:node:field_body_paragraphs" class="block block-ctools-block block-entity-fieldnodefield-body-paragraphs">
+                <div class="paragraph-text">
+                 <p><span><span>Andrew Rader PhD ’09 combines his love of exploration and history in a new book, <em>Beyond the Known: How Exploration Created the Modern World and Will Take Us to the Stars</em>, published this fall by Scribner. </span></span></p>
+                 <p><span><span>In the book, Rader, a mission manager at SpaceX <a href="https://alum.mit.edu/slice/animals-mars-book-piques-kids-interest-space">whose prior book</a> celebrated the possibilities of travel to Mars, argues that technology innovation has evolved in parallel with exploration and that our greatest technical advances as humans have been a product of the drive to explore.</span></span></p>
+                 <p><span><span>“Humans are unique from other animals in several ways,” says Rader, “and technology has allowed humans to occupy the entire world. What created the technology? Exploration really generated the incentives that created the technology to allow us to be distributed through the entire world.” </span></span></p>
+                 <p><span><span>Listen to a Q&amp;A with Rader about the book in the <a href="https://soundcloud.com/mitalumni/beyond-the-known-alumni-books-podcast"><em>Slice of MIT</em> alumni books podcast</a>.</span></span></p>
+                </div>
+                <div class="paragraph-text">
+                 <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/692761282%3Fsecret_token%3Ds-bqdW4&amp;color=%23ce1126&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+                </div>
+                <div class="paragraph-text">
+                 <p>Rader’s new book examines earthbound explorers, some well known and others long-overlooked, and the technical innovations that enabled their journeys.</p>
+                 <p>In later chapters, Rader also forecasts the technical innovations necessary for interplanetary and interstellar exploration, from lithium solar sails to fusion. Given the demands of his current job, Rader thinks a lot about the possible ways to enable human travel to Mars.</p>
+                 <p>“The problem with a giant waiting-to-go-until-we’re-completely-ready-to-go approach is that’s not really how exploration has ever worked,” says Rader. “Columbus set out to the Americas with flimsy Mediterranean coastal ships because large ocean-going ships hadn’t really been invented yet. In exploration, people have always achieved by doing what you can with what you have.”</p>
+                 <p>Listen to the complete interview <a href="https://soundcloud.com/mitalumni/beyond-the-known-alumni-books-podcast">here</a>.</p>
+                </div>
+                <div class="accordion">
+                 <div class="accordion-item"> 
+                  <div class="paragraph paragraph--type--new-accordion-items paragraph--view-mode--default">
+                   <h3 class="heading"><a class="accordion-title" aria-expanded="false">Transcript (click to expand)</a></h3>
+                   <div class="accordion-content">
+                    <p><em>You’re listening to the </em>Slice of MIT<em> podcast, a production of the MIT Alumni Association.</em></p>
+                    <p><span><span><strong>Joe McGonegal:</strong> This is Joe McGonegal on the <em>Slice of MIT</em> alumni books podcast. Andrew Rader, PhD, class of '09 is the author of <em>Beyond the Known: How Exploration Created the Modern World</em>, published in November 2019 by Scribner. Rader is a mission manager at SpaceX in Los Angeles. He holds a PhD in aerospace engineering from MIT, and he specialized in long-duration spaceflight. He also worked as a postdoc in SEARI, the Systems Engineering Advancement Research Initiative. </span></span></p>
+                    <p><span><span>In 2013, he won the Discovery Channel's competitive television series <em>Canada's Greatest Know-It-All</em>. I think readers of this book will certainly get a sense for Rader's great appetite for knowledge. And he also co-hosts a weekly podcast, <em>Spellbound</em>, which covers topics from science to economics to history and psychology. You can learn more at Andrew-Rader.com. <em>Beyond the Known</em> is Rader's first book for adults. And it's a pleasure to have you on the line, Andrew. Why write this book now? </span></span></p>
+                    <p><span><span><strong>Andrew Rader:</strong> So I see humanity as this trajectory from our very beginning to the far future. And I started thinking about the history of humanity and how it related to exploration. Space exploration in particular is something that I'm really interested in. Obviously I studied that at MIT and it's what I do now at SpaceX. And I have a love of history as well. It never really occurred to me that history and aerospace engineering were really that different because they were sort of along the same trajectory. Although they're totally different disciplines and I guess, to some extent, use different methods—a lot more math in engineering than there is in history, obviously—it seems to me that they tell the same story. It's the story of humanity's progression from the very start. </span></span></p>
+                    <p><span><span>Humans are unique from other animals in several ways. One of them being language. That's one that Yuval Noah Harari really talks about in <em>Sapiens</em>. But the other one is technology, obviously. And technology is the element that allows humans to occupy the entire world. Most animals are confined to small areas. They have their established ranges. But humans are very different. Humans use their technology to spread to the entire world. Humans you find in the northern reaches of the Arctic, the Inuit, for example. You find humans living in the jungle. </span></span></p>
+                    <p><span><span>Everywhere on Earth you find humans. In fact, before what's really the age of exploration, there were already humans living almost everywhere. The exception being Antarctica and some islands far out at sea. But there are humans everywhere. So what enables humans to occupy the entire world? It's our technology. And what created the technology? It's an arms race. I think that exploration really generated the incentives that created the technology that allowed us to be distributed throughout the entire world. </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong> So now is a good time to look back, you would say? </span></span></p>
+                    <p><span><span><strong>Rader:</strong> We live in a time where we have the technology to destroy ourselves. We have nuclear weapons, there's all these cataclysms that we can potentially see on the horizon—climate change, asteroids from space, super volcanoes, all these things. But for the first time in history, we also have the technology to leave our planet, and that's really unique. Life has been around for several billion years on Earth, but this is the first time where it actually is contemplating itself and thinking, Hey, I don't necessarily have to stay on this planet exclusively. I may be able to go to other planets. </span></span></p>
+                    <p><span><span>So that's super unique, and that's why I think it's a really interesting time that we live at. And it's only been this way since the 1960s, really. You could argue, When do we have the technology to go to other planets? I think we do now, to some extent, but we certainly don't have the technology to go to other stars. But I think that it's a necessary first step to go and explore and develop our own solar system first to create the incentives that will drive our technology to get beyond that. And that's the way the history of exploration has always worked. It's always been a significant technology driver. </span></span></p>
+                    <p><span><span>When I started writing the book, I just wanted to write a story about history, and that evolved in engineering and this story of human trajectory. But I became convinced that one of the main technological drivers in history has actually been exploration because they work hand-in-hand, and it's this virtuous cycle where you get technology enabling exploration and then exploration creating the incentives that drive technology. So they work hand-in-hand. It's why we have transoceanic liners and air travel. We wouldn't have that if we didn't have people living across oceans. And those people got across oceans because they did what they could with what they had. They went across the oceans with very basic technology, and that created the incentives to drive technology further. It created this revolution in ship design initially and eventually air design, air travel, and created the modern world. </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong> As an engineer, you're very fascinated with just vessel construction. You work for a company that's doing so much innovative work with vessel construction. But at the same time, nothing all that different from what human beings have been doing. </span></span></p>
+                    <p><span><span>RADER: Yeah, totally. I started with the Romans and the Egyptians and the Phoenicians. And the technology that they employed enabled them to do amazing things. We had seafaring technology that could cross oceans back with the Phoenicians and the Egyptians and the Greeks. It doesn't mean they necessarily did. That's actually a chapter I have, questioning whether there may have been more context than we think about. Even the Polynesians crossed oceans with what we would consider primitive technology, but they're really suited to the task—outrigger canoes that are really seaworthy. </span></span></p>
+                    <p><span><span>So you're right, this expedition has always driven this development of technological progress. There's this engineering iteration, what works. And actually, I get really into it in a few chapters, particularly in the aircraft design because it's this upward trajectory from—starts with ships, obviously, and then goes to airplanes and eventually spacecraft. Especially when you get to airplanes, there's a real differentiation coming out between science and engineering. And science is know-why and engineering is know-how, and this is something I learned from the MIT course Aircraft Design. </span></span></p>
+                    <p><span><span>But there was also one by David Mindell about Apollo, and he talked about how when we knew our first building rockets, we didn't know how to build rockets. So we just tried hundreds of different variations and saw which ones worked. And you use the ones that work and you discard the ones that don't. This is an evolution, actually. I kind of think that development of engineering progress is very similar to evolution by natural selection. Because engineers often just try things, especially as it’s basic. It's all about test. Does it work? You can design something, but you're not really sure if it will work. A physicist might sit in a lab with a blackboard and think about equations and try to think about how the universe works, but it's done with thought experiments. </span></span></p>
+                    <p><span><span>For engineering it's not like that; it's all practical. You go out in the yard and you build it, you test it. Does it work? If it does, great. How can we make it better? If it doesn't work, let's get rid of it and make something else. This is how we developed airfoils for airplanes, basically. NACA, which is the predecessor to NASA, they didn't know how airfoils work. They had very basic understanding, maybe Bernoulli's equation or something like that. But they didn't have computational fluid dynamics. They could not design on a computer an airfoil that would work. So what they did is, they took thousands of different iterations, put them in a wind tunnel, and made a catalog—this one has these properties, this one has these properties. We don't know how they work, but it doesn't matter—they work. [LAUGHS] </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong> You talk about some very well-known explorers over history, some lesser-known ones. There's a chapter covering Columbus's journey, Amelia Earhart. And you work for somebody whose name is pretty well-known in exploration now. What about the presence of leadership to push humanity forward? </span></span></p>
+                    <p><span><span><strong>Rader:</strong> Yeah, this has always been true. And it's people who are willing to take risks. And they may not know everything, they may not know every piece of the puzzle, but they just go out there and see if it works, basically. The greatest exploratory achievements in our history—like Magellan, he didn't know if there was a passage around South America. He just kind of thought, maybe there is, maybe there isn't. Let's just go and try it. From a modern perspective, it was absolutely foolhardy. It was totally crazy. He said it was a couple hundred—227, I think, or something like that, crew. And one of the six ships managed to make it around the world. But these people took amazing risks. Some of them paid off and some of them didn't, but all of them were super important to advancing our knowledge of Earth and developing our technology as well. </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong> You write that Magellan managed to cross the Pacific without even finding one of Polynesia's islands. </span></span></p>
+                    <p><span><span><strong>Rader:</strong> Yeah, that's one of the things that really fascinated European explorers—I have an early chapter on the Polynesians—is that they managed to settle every speck of land within an area larger than Africa. The Pacific, in total, would fit all the continents within it. And the Polynesian explorers 1,500 years ago managed to cross this vast ocean and settle all these specks of land. The funny thing is, European explorers didn't find a lot of these places later. So the Polynesians were, you could say, maybe better explorers early on. Magellan crossed the Pacific, and the first landfall he had was in Guam and then the Philippines. </span></span></p>
+                    <p><span><span>But the Polynesians covered this vast area, and it's super fascinating. The Europeans had no idea how they got there. When they got to, for example, Easter Island, they looked at the flimsy canoes that the locals had. How could these people cross oceans with this? So they had come up with all these bizarre ideas about how they got there. They thought maybe there was this giant supercontinent and there was some volcanic cataclysm and it got submerged, and the Polynesians on the islands were the people who were just left on the mountaintops poking above the water. </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong> The intentionality of it, too, in the Polynesians, that they clearly brought their families, their domestic animals. I've put my dog in a canoe for five minutes and realized what a mistake it was. I can't imagine these people crossing 1,000 miles with a dog in the canoe. </span></span></p>
+                    <p><span><span><strong>Rader:</strong> Oh, yeah, totally. It was very deliberate. It's absolutely astounding. I think this is one of the most amazing things in exploratory history, is how could you travel 1,000 miles in a canoe and know where you're going, know that there's another island out there, even though you've never seen it, no one's ever reported it, no one has ever been there? But you can measure the currents just with your naked eye and estimate—some of the techniques they use are really fascinating. </span></span></p>
+                    <p><span><span>They look at the clouds, and clouds get broken up by mountains often and things like that. And islands change how water currents flow, so they look at the waves and say, oh, well, based on these wave patterns, I think there might be some kind of breaking up of the waves by a piece of land out there. So there must be an island there. Or they'd have basically a guidance system. They'd bring a bird, and then release a bird and the bird would fly up into the air. And if the bird could see land from way up high, it would fly towards the land, and then they could follow that. So they had these little involuntary scouting birds. </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong> Well, sails are really a nice thread throughout the book, too. Talk about the lithium sails, being powered by the sun with lithium sails. </span></span></p>
+                    <p><span><span><strong>Rader:</strong> Yeah. I think it's like 1/1,000 of a sheet of paper or something like that. It's incredibly thin. And you couldn't even really launch it from Earth, at least not a super ultra-thin one. It wouldn't survive launch. So you'd have to somehow build and unfurl this giant sail in space. And you're talking about a force equivalent to blowing on a sheet of paper. It's incredible sizes, and you have to keep the mast way down. So really, solar sails probably are only applicable for robotic explorations. But they're great for cruising around the solar system. But, of course, as you get farther out from the sun, you'll lose your mode of power. </span></span></p>
+                    <p><span><span>But you could have a giant laser. That's the alternative, I guess. You have a giant laser on Earth pushing the sail. So that's one possible way to get to another planet. I really think that getting to other stars is going to rely on something like fusion rockets. And even then, it's pretty dicey and takes a long, long time. So I see our future—I really liked <em>Star Trek</em>, but I see our future as more giant colony ships or something like that, running on asteroids, hibernation, 100-year voyages, that sort of thing. But if you think about it, our ancestors left Africa 100,000 years ago and took about 85,000 years to get to North America. So— </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong> We're not doing bad. </span></span></p>
+                    <p><span><span><strong>Rader:</strong> [LAUGHS] Yeah, it's not unprecedented. </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong> Talk about the process of writing the book and its reception to date. </span></span></p>
+                    <p><span><span><strong>Rader:</strong> I had several really positive reviews talking about how it's a really interesting idea, that exploration has been the main driver of technology throughout history. Writing the book, I guess I started out with this idea of this historical arc because it combines my two loves of history and engineering, or science maybe. But as I developed it, my arguments, I think, got a lot sharper. And one of the things—I think now my favorite chapter is actually this one just talking about empires of trade. And it's the transition between old-style exploration and the modern world. </span></span></p>
+                    <p><span><span>And this chapter really lays out the argument why and how exploration created the modern world. And you think about some of the innovations we have, even in, for example, economics. Banking, insurance, and the stock market were all basically created in response to exploration, or to enable exploration, particularly if you include exploratory voyages of trade, like the Dutch. When we went to Amsterdam, my girlfriend at the time really wanted to go to the art museum and I just wanted to go to the Maritime Museum because I was fascinated by Dutch Naval history. I guess it's kind of niche. </span></span></p>
+                    <p><span><span>But if you think about it, the Netherlands is something like a quarter of the size of Maine. And at one time, they had more than half the sailing ships in the world and controlled most of the world trade. They had this golden age in the late 1500s, early 1600s. That's why you even have New York and you still have a lot of Dutch culture in the United States from that. We had a Dutch president, Martin Van Buren, South Africa, Van Diemen's Land, and Indonesia, and Australia, too. So the stock market was created there for the Dutch East India Company. That was the first instance of a publicly traded joint stock corporation. </span></span></p>
+                    <p><span><span>Insurance was created to enable sea voyages and to spread the risk of sea voyages. And banking was invented by the Italian city-states for merchant voyages, so the traders could deposit money in one city, withdraw in another city. Then you don't have to carry piles of cash that pirates can come and steal or trade goods that pirates can come and steal. So many innovations of the world were created to support exploration or as a result of exploration. So we have this picture that Europeans developed a technological advantage and then went out into the world to use that technological advantage to control world trade. </span></span></p>
+                    <p><span><span>As anyone can tell, by 1900, something like six European empires controlled more than half the world's population in trade. But I think this is a reversal of cause and effect largely. And the scientific revolution, I think, was actually benefited to a large degree by these voyages of exploration. And so the contribution of the activities themselves to the progress, it's not a story of progress in a vacuum. It's a story of progress working hand-in-hand with exploration. So when you think about it, what motivated Portugal to go out and send explorers down the coast of Africa? Or what motivated Columbus? </span></span></p>
+                    <p><span><span>They were motivated actually by a relative poverty of Europe at the time. Because China and Asia were the center of the world—China and India. And Europeans wanted to get to India to buy spices. They didn't even know that most of the spices didn't come from India, they actually came from Southeast Asia. But it was this goal to go out and both create trade routes in the Indian Ocean, but also take over the trade routes that already existed. Because the wealthiest places in the world at the time were India and China, by far. </span></span></p>
+                    <p><span><span>If you look at China in the 1400s, it was vastly wealthier than Europe. And they had a program of exploration that went into the Indian Ocean and Middle East and Africa and sailed around with grand treasure ships with crews of 30,000. The biggest ships could hold Columbus's tiny little fleet in one of their cargo holds. But China decided ultimately not to explore. They dismantled their fleets and stopped exploring and turned inwards. And I think this is another lesson from the book, is that outward facing and challenging ourselves and putting ourselves at the leading edge of what's possible, that's what's important to drive progress. </span></span></p>
+                    <p><span><span>And that's one of the reasons why I think space exploration is really important, because it's constantly challenging ourselves. That's a lesson from history and empires or countries that have challenged themselves. Civilizations that have challenged themselves are the ones that succeed. </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong><em> Kirkus</em> has said of your book, it's a highly flattering view of human aspirations. When I hear you describing Columbus and European conquests, I hear in your description of it more of an optimistic outlook on humanity and its motives than others describe in other histories of European conquests. At any point in your research or in your writing or in your thinking, does more of a glass-half-empty perspective on humanity cloud your vision? </span></span></p>
+                    <p><span><span><strong>Rader:</strong> Well, I'm certainly an optimist for humanity. And I guess I follow Steven Pinker. I think he's absolutely right, that the world is better than it's ever been before. War has basically disappeared. Standards of living are increasing. Literacy is just off the charts compared to historically. Poverty rates are falling. Crime is falling. In almost every measurable way, the world is getting better. So I'm definitely an optimist. </span></span></p>
+                    <p><span><span>You're absolutely right that the story of European exploration is very mixed. Obviously it harmed vast numbers of people, didn't create slavery but obviously it vastly expanded it. There is huge downsides to this as well. And obviously European domination of the world and colonialism isn't looked upon too kindly these days, and indeed it was very bad for many of the people who experienced it. It's the technological progress generated by that, I think, is pretty huge. There's obviously a trade-off there, and depending on your perspective, it certainly might not be judged a good thing. </span></span></p>
+                    <p><span><span>However, going into space carries none of these drawbacks, because there aren't indigenous populations or anything like that. So it still creates that technological drive, but you don't have to worry about harming others in the process. </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong> Talk about Mars a little bit here. Chapter 21 is called "The Road to Mars." You offer three engineering options for getting to Mars in it. Could you outline those for us? And talk about both where SpaceX is going now, but also maybe you wrote that chapter a year ago. Has your thinking changed in the last few months on it at all? </span></span></p>
+                    <p><span><span><strong>Rader:</strong> Yeah. It hasn't changed a lot recently, my view on it. So the three options are the minimalist approach, which is basically Robert Zubrin's approach of Mars Direct, where you go with small ships and you pre-emplace supplies, which is actually a good idea for any way of going to Mars. So you just go as fast as you possibly can and make sure that you make propellant on Mars out of frozen water and carbon dioxide. You make oxygen methane propellant, and you have your return ship waiting on Mars before you actually set out so you're ready to go back. So minimalist approach is you go as soon as possible using pre-emplaced ships and a return ship. </span></span></p>
+                    <p><span><span>Then you could have—imagine the second approach might be to just wait until you construct a giant Battlestar Galactica spaceship in Earth orbit, and you just go with everything you need. This is historically what, I guess, NASA has generally pursued. Although obviously we're not really super close to that. </span></span></p>
+                    <p><span><span>The problem with a giant waiting until we're completely ready to go approach is that's not really how exploration has ever worked. So Columbus set out to the Americas with flimsy Mediterranean coastal ships because large ocean-going ships really hadn't been invented yet. And they weren't invented until you have that incentive of needing to cross oceans. So it's putting the cart before the horse. And in exploration, people have always achieved with doing what you can with what you have. </span></span></p>
+                    <p><span><span>So the other approach is to build a single ship which would launch into orbit, but then refuel before going to Mars. And that's this Starship approach which Elon is pursuing. And I'm actually really behind that approach, I think it's a really good idea. It wasn't my initial thinking. My initial thinking was more of the minimalist Zubrin approach. But I actually really think this is a good way to do it. </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong> And will you yourself sign up? </span></span></p>
+                    <p><span><span><strong>Rader:</strong> I already volunteered to go to Mars one-way. So yeah, totally. But for me now, it's obviously dependent on personal situation. I have a child now and a wife and that kind of thing. At the time, I didn't. So it depends on the situation. But I think there certainly are people who would go. Under certain circumstances, I would as well, but it now is a little more complicated with a family. </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong> You are or were a candidate to be an astronaut in your home country of Canada. A great majority of your listeners are American, but give us some appreciation for the wanderlust Canadians have, and particularly Canada's contributions to the space program overall. </span></span></p>
+                    <p><span><span><strong>Rader:</strong> So Canada has astronauts that go to the space station regularly. Actually, we might have one right now, David Saint-Jacques. I think he's probably still up there. And Chris Hadfield obviously famously serenaded us from space with David Bowie. [LAUGHS] But Canada was a really early country to launch a satellite. So Canada has always had a pretty robust space station. And disproportionate to its population, it's had a high number of astronauts. Obviously the United States is number one, Soviets and Russia, if you put those together, are number two, and I think maybe Germany or France are number three. And Germany benefits obviously from having astronauts on both sides of the Iron Curtain back in the day. But Canada, I think, is number fourth or fifth. And Canada's population is smaller than that of California. So Canada has a pretty robust space program. </span></span></p>
+                    <p><span><span>The other thing is, I actually wrote an article that we're looking to get published right now about Canada's role in exploration. It's titled something like "Canada Did It First, but America Took the Credit." Because if you look at the history of exploration, there's so many Canadian achievements or Canadian-adjacent achievements basically that we think about North America—for example, the Vikings. They didn't land in America, they landed in Canada. What was the first British colony in North America? </span></span></p>
+                    <p><span><span>The oldest city in America is generally considered to be St. Augustine, 1565. But there was actually a French one established before that in Quebec. And the first British one is often considered to be Jamestown in 1607. But actually, St. John's, Newfoundland, predates that. And you talk about the exploration of America, of the United States in particular, and a lot of it was done by Canadians actually or certainly people from Canada. The first expedition to sail down the Mississippi, the Joliet expedition, sailed all the way to Arkansas. So a lot of the Mississippi, Wisconsin, Minnesota, there are schools named after them. </span></span></p>
+                    <p><span><span>Even the West, the first people to travel across and see the Rocky Mountains was this French-Canadian explorer 80 years before Lewis and Clark. And then even crossing the continent to the Pacific and finding a water route through the continental Pacific was actually not first done by Lewis and Clark, but Alexander Mackenzie, who did it about 15 years before. So all these great Canadian achievements that we don't hear about are really fascinating to me. And even talking about when you get to the aviation chapter, and people obviously know about Charles Lindbergh. But he was something like the 60th or 70th person to cross the Atlantic in an aircraft. So many of those were balloons earlier. But eight years before, Alcock and Brown were the first to cross the Atlantic on a modified World War I bomber, and they landed in Newfoundland. So that was Canadian, too. </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong> You were born in Ottawa. This book is, to a large extent, about migration. You're a Canadian living and working in the United States. So what insights did your research offer about migration and policies about migration? Not just in the United States, but the human tendency to view migrants as a threat. </span></span></p>
+                    <p><span><span><strong>Rader:</strong> I guess I don't really talk about that in terms of the politics of what's going on right now in the US. I obviously think migration is a good thing and it brings an influx of new ideas. And so I think dynamism you get from immigrants is kind of like the dynamism you would get from exploration, because it's really an exchange of ideas. That's one of the most important things throughout history, is exchanging different ideas. And cultural exchanges is really huge. This is why I think, for example, the Silk Road was created after the travels of Alexander the Great. And this mixing between ideas from the East in India and Persia with Greek ideas, this is what stimulated, I think, the Greek golden age and this massive technological development. So any time you have mixing of people and exchanging of ideas, this is very important for the dynamism of society. </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong> How is your MIT education alive and well and put to good use in the writing of this book? </span></span></p>
+                    <p><span><span><strong>Rader:</strong> I actually used a great deal of course material from MIT as inspiration. Several of the courses directly inspired several of the chapters, particularly the aviation chapters I mentioned earlier and how engineering works. That was really interesting, and I got to dig through my memory banks to see what I remember from those courses. And some of the space chapters as well was obviously huge. So definitely, there's a lot of inspiration that I received just directly from some MIT courses. </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong> What else needs to be written on this topic? Will there be a follow-up book to this? </span></span></p>
+                    <p><span><span>RADER: So not specifically on exploration, because I covered the whole gamut from the beginning of humans to the far future. So there's not really much more ground to cover in exploration. But this idea of the evolution of technology being this natural selection–like process and how it happens as society, I think there's a lot to explore there. So that's something I'm going to look at for another book. </span></span></p>
+                    <p><span><span><strong>McGonegal:</strong> Andrew Rader, PhD, class of '09, is the author of <em>Beyond the Known, How Exploration Created the Modern World</em>. It's available in November 2019 by Scribner at your favorite local bookstore or online. Andrew, thanks for chatting with us. </span></span></p>
+                    <p><span><span><strong>Rader:</strong> Thank you very much. </span></span></p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="entity_field:node:field_topics" class="block block-ctools-block block-entity-fieldnodefield-topics">
+                <h2 class="block-label">Filed Under</h2>
+                <ul class="topics">
+                 <li class="item"><a href="/topic/alumni-life" hreflang="en">Alumni Life</a></li>
+                 <li class="item"><a href="/topic/books" hreflang="en">Books</a></li>
+                 <li class="item"><a href="/topic/podcast" hreflang="en">Podcast</a></li>
+                 <li class="item"><a href="/topic/space" hreflang="en">Space</a></li>
+                </ul>
+               </div>
+               <section class="comments-section">
+                <p class="comment-login-message"><a href="/caslogin?returnto=%2Fslice%2Falumni-books-podcast-beyond-known%23comment-form">Log in</a> to post comments</p>
+               </section>
+              </div>
+             </div>
+            </div>
+            <div class="block-region-row5"></div>
+            <div class="block-region-row6">
+             <div class="row story-bottom">
+              <div class="container">
+               <div class="left">
+                <ul class="topics">
+                 <li class="item"><a href="/topic/alumni-life">More Alumni Life</a> </li>
+                </ul>
+                <div class="views-element-container">
+                 <div class="view view-story-list-of-related-stories-by-first-topic view-id-story_list_of_related_stories_by_first_topic view-display-id-block_1 js-view-dom-id-0a4b8185b33ab40cfa1cd299d7bf98000028ca6340b62e25e2e8510903a8004e">
+                  <div class="view-content">
+                   <div class="views-row">
+                    <article id="node-101896" class="recommended-teaser " data-history-node-id="101896" role="article" about="/slice/ocean-warrior">
+                     <div class="field--name-field-image">
+                      <a href="/slice/ocean-warrior"> <img src="/sites/default/files/styles/thumbnail/public/images/Slice.22.06.15_Moreau.jpg?h=aa6c0f32&amp;itok=HyM_HFMP" width="90" height="90" alt="Manuel Moreu portrait" loading="lazy" typeof="foaf:Image" class="image-style-thumbnail"></a>
+                     </div>
+                     <h5 class="title"><a href="/slice/ocean-warrior" rel="bookmark"><span class="field field--name-title field--type-string field--label-hidden">Ocean Warrior</span> </a></h5>
+                    </article>
+                   </div>
+                   <div class="views-row">
+                    <article id="node-101895" class="recommended-teaser " data-history-node-id="101895" role="article" about="/slice/open-source-tool-software-security">
+                     <div class="field--name-field-image">
+                      <a href="/slice/open-source-tool-software-security"> <img src="/sites/default/files/styles/thumbnail/public/images/Slice.22.06.13_r2c.jpg?h=b69e0e0e&amp;itok=6dcyVKEu" width="90" height="90" alt="Three MIT alumni portraits with a digital lock above their heads" loading="lazy" typeof="foaf:Image" class="image-style-thumbnail"></a>
+                     </div>
+                     <h5 class="title"><a href="/slice/open-source-tool-software-security" rel="bookmark"><span class="field field--name-title field--type-string field--label-hidden">An Open-Source Tool For Software Security</span> </a></h5>
+                    </article>
+                   </div>
+                   <div class="views-row">
+                    <article id="node-101894" class="recommended-teaser " data-history-node-id="101894" role="article" about="/slice/building-next-version-internet">
+                     <div class="field--name-field-image">
+                      <a href="/slice/building-next-version-internet"> <img src="/sites/default/files/styles/thumbnail/public/images/Slice_22.Kirin%20Sinha_credit_Pooja%20Dhar.jpg?h=cf3e9931&amp;itok=ynMSzcl1" width="90" height="90" alt="Kirin Sinha portrait sitting on a chair next to a plant " loading="lazy" typeof="foaf:Image" class="image-style-thumbnail"></a>
+                     </div>
+                     <h5 class="title"><a href="/slice/building-next-version-internet" rel="bookmark"><span class="field field--name-title field--type-string field--label-hidden">Building the Next Version of the Internet </span> </a></h5>
+                    </article>
+                   </div>
+                   <div class="views-row">
+                    <article id="node-101893" class="recommended-teaser " data-history-node-id="101893" role="article" about="/slice/sounding-alarm-noise-and-health">
+                     <div class="field--name-field-image">
+                      <a href="/slice/sounding-alarm-noise-and-health"> <img src="/sites/default/files/styles/thumbnail/public/images/Slice.22.06.07_Banks.jpg?h=aa6c0f32&amp;itok=728yV9cA" width="90" height="90" alt="Jamie Banks wearing a backpack on a hike with trees and a stream behind her" loading="lazy" typeof="foaf:Image" class="image-style-thumbnail"></a>
+                     </div>
+                     <h5 class="title"><a href="/slice/sounding-alarm-noise-and-health" rel="bookmark"><span class="field field--name-title field--type-string field--label-hidden">Sounding the Alarm on Noise and Health </span> </a></h5>
+                    </article>
+                   </div>
+                   <div class="views-row">
+                    <article id="node-101861" class="recommended-teaser " data-history-node-id="101861" role="article" about="/slice/triathlons-aerospace-alumna-pursues-passions-leadership-and-manufacturing">
+                     <div class="field--name-field-image">
+                      <a href="/slice/triathlons-aerospace-alumna-pursues-passions-leadership-and-manufacturing"> <img src="/sites/default/files/styles/thumbnail/public/images/Slice_22.06.02_Braun.jpg?h=b69e0e0e&amp;itok=vFkZ9SaB" width="90" height="90" alt="Caitlin Braun stands in a large industrial space with manufacturing tools " loading="lazy" typeof="foaf:Image" class="image-style-thumbnail"></a>
+                     </div>
+                     <h5 class="title"><a href="/slice/triathlons-aerospace-alumna-pursues-passions-leadership-and-manufacturing" rel="bookmark"><span class="field field--name-title field--type-string field--label-hidden">From Triathlons to Aerospace, Alumna Pursues Passions for Leadership and Manufacturing</span> </a></h5>
+                    </article>
+                   </div>
+                   <div class="views-row">
+                    <article id="node-101863" class="recommended-teaser " data-history-node-id="101863" role="article" about="/slice/alumna-amy-brand-directs-mit-press-toward-freer-and-more-open-future">
+                     <div class="field--name-field-image">
+                      <a href="/slice/alumna-amy-brand-directs-mit-press-toward-freer-and-more-open-future"> <img src="/sites/default/files/styles/thumbnail/public/images/Slice_22.05.31_Brand_DianaLevine.jpg?h=aa6c0f32&amp;itok=xuM3wFNV" width="90" height="90" alt="Amy Brand portrait " loading="lazy" typeof="foaf:Image" class="image-style-thumbnail"></a>
+                     </div>
+                     <h5 class="title"><a href="/slice/alumna-amy-brand-directs-mit-press-toward-freer-and-more-open-future" rel="bookmark"><span class="field field--name-title field--type-string field--label-hidden">Alumna Amy Brand Directs the MIT Press Toward a Freer and More Open Future</span> </a></h5>
+                    </article>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="right">
+                <h2 class="block-label larger-block-label">Related Articles</h2>
+                <div class="views-element-container">
+                 <div class="view view-story-list-of-additional-stories-6-items-just-titles view-id-story_list_of_additional_stories_6_items_just_titles view-display-id-block_1 js-view-dom-id-bab4245ccd1a9fc8779e696c95b558c87503654c4c27fc47804189f0e7e80d23">
+                  <div class="view-content">
+                   <div>
+                    <ul>
+                     <li><a href="/slice/wonder-woman-rocket-science" hreflang="en">Wonder Woman of Rocket Science</a></li>
+                     <li><a href="/slice/asteroid-whisperer" hreflang="en">Asteroid Whisperer</a></li>
+                     <li><a href="/slice/yupik-fishing-ancestry-inspires-alaskan-engineer-and-author" hreflang="en">Yup’ik Fishing Ancestry Inspires Alaskan Engineer and Author</a></li>
+                     <li><a href="/slice/creating-space-good-nasa-and-beyond" hreflang="en">Creating Space for Good, at NASA and Beyond </a></li>
+                     <li><a href="/slice/former-space-shuttle-engineer-explores-politics-space" hreflang="en">Former Space Shuttle Engineer Explores the Politics of Space</a></li>
+                     <li><a href="/slice/looking-mars-life-weve-never-known-it" hreflang="en">Looking to Mars for Life as We’ve Never Known It</a></li>
+                    </ul>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </article>
+        </div>
+       </div>
+      </section>
+     </main>
+     <footer class="footer" role="contentinfo">
+      <div class="container">
+       <div class="footer__logo-address"><a href="http://web.mit.edu/">
+         <div class="icon-mit-logo--black" style="width: 60px; height: 32px;"></div></a>
+        <div class="region ">
+         <div id="block-footeraddress-2" data-block-plugin-id="block_content:55918e43-24ce-49b9-8212-5ee967e71c27" class="block block-block-content block-block-content55918e43-24ce-49b9-8212-5ee967e71c27">
+          <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+           <h3>MIT Alumni Association</h3>
+           <p>600 Memorial Drive<br> Cambridge, MA 02139<br> 617-253-8200</p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="footer__primary-menu">
+        <div class="region ">
+         <nav role="navigation" id="block-footermainnavigation" data-block-plugin-id="system_menu_block:footer-main-navigation" class="block block-menu navigation menu--footer-main-navigation">
+          <h2 class="visually-hidden" id="block-footermainnavigation-menu">Footer Main Navigation</h2>
+          <ul class="menu">
+           <li class="menu-item"><a href="/communities" target="" rel="" title="Description of takaf." data-drupal-link-system-path="node/2653">Communities</a></li>
+           <li class="menu-item"><a href="/events" target="" rel="" title="Description of junanuliv." data-drupal-link-system-path="node/2650">Events</a></li>
+           <li class="menu-item"><a href="/careers" target="" rel="" title="Careers" data-drupal-link-system-path="node/2652">Careers</a></li>
+           <li class="menu-item"><a href="/learn" target="" rel="" title="Learn" data-drupal-link-system-path="node/2660">Learn</a></li>
+           <li class="menu-item"><a href="/volunteer" target="" rel="" title="Volunteer" data-drupal-link-system-path="node/2710">Volunteer</a></li>
+           <li class="menu-item"><a href="/about" target="" rel="" title="About" data-drupal-link-system-path="node/2662">About</a></li>
+          </ul>
+         </nav>
+        </div>
+       </div>
+       <div class="footer__secondary-menu">
+        <div class="region ">
+         <nav role="navigation" id="block-mitaa-footer" data-block-plugin-id="system_menu_block:footer" class="block block-menu navigation menu--footer">
+          <h2 class="visually-hidden" id="block-mitaa-footer-menu">Footer menu</h2>
+          <ul class="menu">
+           <li class="menu-item"><a href="/communities/mit-students" target="" rel="" data-drupal-link-system-path="node/2656">Students</a></li>
+           <li class="menu-item"><a href="/communities/family-friends" target="" rel="" data-drupal-link-system-path="communities/family-friends">Family &amp; Friends</a></li>
+           <li class="menu-item"><a href="/knowledge-base" target="" rel="" data-drupal-link-system-path="knowledge-base">Volunteer Knowledge Base</a></li>
+           <li class="menu-item"><a href="/about/contact-us" target="" rel="" title="Contact the Alumni Association" data-drupal-link-system-path="node/2861">Contact Us</a></li>
+          </ul>
+         </nav>
+         <nav role="navigation" id="block-footerutility" data-block-plugin-id="system_menu_block:footer-utility" class="block block-menu navigation menu--footer-utility">
+          <h2 class="visually-hidden" id="block-footerutility-menu">Footer Utility</h2>
+          <ul class="menu">
+           <li class="menu-item"><a href="/myaccount" target="" rel="">My Account</a></li>
+           <li class="menu-item"><a href="/directory" target="" rel="">Alumni Directory</a></li>
+           <li class="menu-item"><a href="https://giving.mit.edu/give/to?fundId=3746200&amp;source=WBAAW" target="" rel="">Giving to MIT</a></li>
+           <li class="menu-item"><a href="/about/infinite-connection-terms-conditions-use" target="" rel="" data-drupal-link-system-path="node/2860">Terms of Use</a></li>
+           <li class="menu-item"><a href="/about/privacy-statement" target="" rel="" data-drupal-link-system-path="node/91944">Privacy Statement</a></li>
+           <li class="menu-item"><a href="http://accessibility.mit.edu/">Accessibility</a></li>
+          </ul>
+         </nav>
+        </div>
+       </div>
+       <div class="footer__last-column">
+        <div class="footer__search">
+         <div class="region ">
+          <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page" data-drupal-selector="views-exposed-form-search-page" id="block-searchpage-block-footer" data-block-plugin-id="views_exposed_filter_block:search-page">
+           <div class="inner">
+            <form action="/search" method="get" id="views-exposed-form-search-page" accept-charset="UTF-8">
+             <div class="form--inline clearfix">
+              <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-keywords form-item-keywords"><label for="edit-keywords--4">Keywords</label>
+               <input data-drupal-selector="edit-keywords" type="text" id="edit-keywords--4" name="keywords" value="" size="30" maxlength="128" class="form-text">
+              </div>
+              <div class="js-form-item form-item js-form-type-select form-type-select js-form-item-sort-by form-item-sort-by"><label for="edit-sort-by--4">Sort by</label><select data-drupal-selector="edit-sort-by" id="edit-sort-by--4" name="sort_by" class="form-select"><option value="search_api_relevance" selected>Relevance</option><option value="date">Date</option></select>
+              </div>
+              <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--4">
+               <input data-drupal-selector="edit-submit-search-3" type="submit" id="edit-submit-search--3" value="Search" class="button js-form-submit form-submit">
+              </div>
+             </div>
+            </form>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="footer__follow-us">
+         <div class="region ">
+          <nav role="navigation" id="block-followus-2" data-block-plugin-id="system_menu_block:follow-us" class="block block-menu navigation menu--follow-us">
+           <h2 id="block-followus-2-menu">Follow Us</h2>
+           <ul class="menu">
+            <li class="menu-item"><a href="/slice" target="" rel="" class="has-icon has-icon-social--slice" title="Slice of MIT" data-drupal-link-system-path="node/7948">Slice of MIT</a></li>
+            <li class="menu-item"><a href="http://www.facebook.com/MITAA" target="_blank" rel="" class="has-icon has-icon-social--facebook" title="Facebook">Facebook</a></li>
+            <li class="menu-item"><a href="http://twitter.com/MIT_alumni" target="_blank" rel="" class="has-icon has-icon-social--twitter" title="Twitter">Twitter</a></li>
+            <li class="menu-item"><a href="https://www.youtube.com/alumniMIT" target="_blank" rel="" class="has-icon has-icon-social--youtube" title="YouTube">YouTube</a></li>
+            <li class="menu-item"><a href="http://instagram.com/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--instagram" title="Instagram">Instagram</a></li>
+            <li class="menu-item"><a href="https://www.linkedin.com/groups/69586/" target="_blank" rel="" class="has-icon has-icon-social--linkedin" title="LinkedIn">LinkedIn</a></li>
+            <li class="menu-item"><a href="https://soundcloud.com/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--soundcloud" title="SoundCloud">SoundCloud</a></li>
+            <li class="menu-item"><a href="https://www.snapchat.com/add/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--snapchat" title="Snapchat">Snapchat</a></li>
+            <li class="menu-item"><a href="http://www.pinterest.com/mitalumiassoc/" target="_blank" rel="" class="has-icon has-icon-social--pinterest" title="Pinterest">Pinterest</a></li>
+           </ul>
+          </nav>
+         </div>
+        </div>
+       </div>
+      </div>
+     </footer>
+    </div>
+   </div>
+  </div>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/95960","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxTrustedUrl":{"\/search":true,"\/slice\/search":true},"ajax":[],"user":{"uid":0,"permissionsHash":"d5277d6a62a2676bb3bd853fcceccc0288e4e0302c28c40ad47ff9a11309b329"}}</script>
+  <script src="/core/assets/vendor/jquery/jquery.min.js?v=3.6.0"></script>
+  <script src="/core/misc/drupalSettingsLoader.js?v=9.3.12"></script>
+  <script src="/core/misc/drupal.js?v=9.3.12"></script>
+  <script src="/core/misc/drupal.init.js?v=9.3.12"></script>
+  <script src="/core/assets/vendor/picturefill/picturefill.min.js?v=3.0.3"></script>
+  <script src="/core/assets/vendor/js-cookie/js.cookie.min.js?v=3.0.1"></script>
+  <script src="/core/misc/jquery.cookie.shim.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/vendor/modernizr.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/vendor/enquire.min.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/vendor/select2.min.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/vendor/jquery.magnific-popup.min.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/vendor/owl.carousel.min.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/vendor/typeahead.bundle.min.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/scripts.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/carousels.js?v=9.3.12"></script><!-- Go to www.addthis.com/dashboard to customize your tools --> 
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59e62efd276b13cb"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ab0374a39e","applicationID":"1014112851","transactionName":"Z1QGZBZQVkNYU0YNWV4eJVMQWFdeFnRAEUZRXTheC1VdbHpfXBBEX10IVRZtdl9dVWQNU0dyC14QQ1dcVVVASQhGWAFH","queueTime":0,"applicationTime":1110,"atts":"SxMFEl5KRU0=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

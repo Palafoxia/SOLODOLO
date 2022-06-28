@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>CAS - Central Authentication Service</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="/cas/webjars/normalize.css/8.0.1/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/cas/webjars/bootstrap/5.1.0/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" type="text/css" href="/cas/webjars/material-components-web/12.0.0/dist/material-components-web.css">
+  <link rel="stylesheet" type="text/css" href="/cas/webjars/mdi__font/5.8.55/css/materialdesignicons.css">
+  <link rel="stylesheet" type="text/css" href="/cas/css/cas.css">
+  <link rel="stylesheet" type="text/css" href="/cas/css/custom.css">
+  <link rel="shortcut icon" href="/cas/favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ </head>
+ <body class="login mdc-typography">
+  <script type="text/javascript" src="/cas/webjars/es5-shim/4.5.9/es5-shim.js"></script>
+  <script type="text/javascript" src="/cas/webjars/css-vars-ponyfill/2.3.1/dist/css-vars-ponyfill.min.js"></script>
+  <script type="text/javascript" src="/cas/webjars/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="/cas/webjars/material-components-web/12.0.0/dist/material-components-web.js"></script>
+  <script type="text/javascript" src="/cas/js/cas.js"></script>
+  <script>
+    if (typeof resourceLoadedSuccessfully === "function") {
+        resourceLoadedSuccessfully();
+    }
+    $(function () {
+        cssVars({});
+    });
+</script>
+  <script>
+    /*<![CDATA[*/
+
+    var trackGeoLocation = false;
+
+    var googleAnalyticsTrackingId = "UA-36516510-3";
+
+    if (googleAnalyticsTrackingId != null && googleAnalyticsTrackingId != '') {
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', googleAnalyticsTrackingId, 'auto');
+        ga('send', 'pageview');
+    }
+
+    /*]]>*/
+</script>
+  <div>
+   <header id="app-bar" class="mdc-top-app-bar mdc-top-app-bar--fixed mdc-elevation--z4">
+    <nav class="mdc-top-app-bar__row">
+     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+     </section>
+     <section class="mdc-top-app-bar__section"><span class="cas-brand mx-auto"> <span class="sr-only">CAS</span> <img id="cas-logo" class="cas-logo" title="CAS" src="/cas/images/cas-logo.png"></span>
+     </section>
+     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+     </section>
+    </nav>
+   </header>
+   <script>var countMessages = 0;</script>
+   <script type="text/javascript">
+
+        (function (material) {
+            var header = {
+                init: function () {
+                    header.attachTopbar();
+                    material.autoInit();
+                },
+                attachDrawer: function () {
+                    var elm = document.getElementById('app-drawer');
+                    if (elm != null) {
+                        var drawer = material.drawer.MDCDrawer.attachTo(elm);
+                        var closeDrawer = function (evt) {
+                            drawer.open = false;
+                        };
+                        drawer.foundation.handleScrimClick = closeDrawer;
+                        document.onkeydown = function (evt) {
+                            evt = evt || window.event;
+                            if (evt.keyCode == 27) {
+                                closeDrawer();
+                            }
+                        };
+                        header.drawer = drawer;
+                        return drawer;
+                    }
+                    return undefined;
+                },
+                attachTopbar: function (drawer) {
+
+                    var drawer = header.attachDrawer();
+                    var dialog = header.attachNotificationDialog();
+
+                    if (drawer != undefined) {
+                        header.attachDrawerToggle(drawer);
+                    }
+                    if (dialog != undefined) {
+                        header.attachNotificationToggle(dialog);
+                    }
+                },
+                checkCaps: function (ev) {
+                    var s = String.fromCharCode(ev.which);
+                    if (s.toUpperCase() === s && s.toLowerCase() !== s && !ev.shiftKey) {
+                        ev.target.parentElement.classList.add('caps-on');
+                    } else {
+                        ev.target.parentElement.classList.remove('caps-on');
+                    }
+                },
+                attachDrawerToggle: function (drawer) {
+                    let appBar = document.getElementById('app-bar');
+                    if (appBar != null) {
+                        var topAppBar = material.topAppBar.MDCTopAppBar.attachTo(appBar);
+                        topAppBar.setScrollTarget(document.getElementById('main-content'));
+                        topAppBar.listen('MDCTopAppBar:nav', function () {
+                            drawer.open = !drawer.open;
+                        });
+                        return topAppBar;
+                    }
+                    return undefined;
+                },
+                attachNotificationDialog: function () {
+                    var element = document.getElementById('cas-notification-dialog');
+                    if (element != null) {
+                        return material.dialog.MDCDialog.attachTo(element);
+                    }
+                    return undefined;
+                },
+                attachNotificationToggle: function (dialog) {
+                    var btn = document.getElementById('cas-notifications-menu');
+                    if (btn != null) {
+                        btn.addEventListener('click', function () {
+                            dialog.open();
+                        });
+                    }
+                }
+            }
+            document.addEventListener('DOMContentLoaded', function () {
+                header.init();
+                if (countMessages == 0) {
+                    window.jQuery('#notifications-count').remove();
+                } else {
+                    window.jQuery('#notifications-count').text("(" + countMessages + ")")
+                }
+            });
+        })(mdc);
+    </script>
+  </div>
+  <div class="mdc-drawer-scrim"></div>
+  <div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust d-flex justify-content-center">
+   <main role="main" id="main-content" class="container-lg py-4">
+    <div id="content" class="d-flex justify-content-center">
+     <div class="d-flex justify-content-center flex-md-row flex-column mdc-card mdc-card-content w-lg-25">
+      <section id="loginForm" class="login-section login-form">
+       <div class="d-flex flex-column justify-content-between m-auto">
+        <div>
+         <div id="serviceui" class="mb-4">
+          <div class="d-flex align-items-center p-2">
+           <img src="/cas/images/pu_shield.png" alt="">
+           <div id="servicedesc" class="ml-2">
+            <h2>careerdevelopment_princeton_edu</h2>
+            <p>careerdevelopment.princeton.edu</p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="form-wrapper">
+         <form method="post" id="fm1" action="login"><a href="http://www.princeton.edu/"><img src="/cas/images/pu_signature.svg" alt="Princeton University"></a>
+          <h1 class="text-center"><i class="mdi mdi-security"></i><span>Central Authentication Service</span></h1>
+          <section class="cas-field my-3" id="usernameSection">
+           <div class="d-flex"><label for="username" class="mdc-text-field mdc-text-field--outlined"> <input class="mdc-text-field__input" id="username" size="25" type="text" accesskey="n" autocomplete="off" name="username" value=""><span class="mdc-notched-outline"> <span class="mdc-notched-outline__leading"></span> <span class="mdc-notched-outline__notch"> <span class="mdc-floating-label">NetID:</span> </span> <span class="mdc-notched-outline__trailing"></span> </span> </label>
+            <script type="text/javascript">
+                            /*<![CDATA[*/
+                            var username = "";
+                            var disabled = false;
+
+                            if (username != null && username !== '') {
+                                $('#username').val(username);
+                                if (disabled) {
+                                    $('#usernameSection').hide();
+                                }
+                            }
+                            /*]]>*/
+                        </script>
+           </div>
+          </section>
+          <section class="cas-field my-3 mdc-input-group">
+           <div class="mdc-input-group-field mdc-input-group-field-append">
+            <div class="d-flex caps-check"><label for="password" class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon"> <input class="mdc-text-field__input pwd" type="password" id="password" size="25" accesskey="p" autocomplete="off" name="password" value=""><span class="mdc-notched-outline"> <span class="mdc-notched-outline__leading"></span> <span class="mdc-notched-outline__notch"> <span class="mdc-floating-label">Password:</span> </span> <span class="mdc-notched-outline__trailing"></span> </span> </label>
+            </div>
+            <div class="mdc-text-field-helper-line caps-warn">
+             <p class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg text-danger"><span>CAPSLOCK key is turned on!</span></p>
+            </div>
+           </div><button class="reveal-password mdc-button mdc-button--raised mdc-input-group-append mdc-icon-button" type="button"> <i class="mdi mdi-eye reveal-password-icon"></i> <span class="sr-only">Toggle Password</span> </button>
+          </section>
+          <section class="cas-field my-3">
+          </section>
+          <div class="sr-only"><a href="https://oit.princeton.edu/policies/access-accounts" id="aap" alt="Access to Accounts Policy"> By proceeding to access and use University computing and network resources through this sign-on, you agree to abide by applicable laws and University policies in your use of these resources. The University's right to access, preserve, and review information stored on or transmitted through these resources is described in the Access to Accounts Policy. </a>
+          </div>
+          <section class="cas-field">
+           <div>
+            <br>
+           </div>
+           <input type="hidden" name="execution" value="002186d6-630c-4ac2-9fda-5607a6e629c1_ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmQ2eXpnVTY1NG90TUdTVGdPQkNoMUEyaFR4Z09lQTRQRDc5T1B0LTI0Y0VoSXY4UTVUd1lsU0NBM0RDNFMtYUtMZzJDSDVsSTQtZUhVLU9RRFlIR3B6SE84MGtKOS1KVEF4dmNSN3BPNktIWUN1VDMwQ2dkYUs5anJvOVQ3X2dzbldVYUpFQV9IaGtNYVNYWFg1d3NFVmR2OHBFcXVQTjd1TmZPbThLdUUwT2VqXzViTm5NWTB0bUVPbVVKQjJGcnBLZkduZGZoRGhzUXNDMVFyT2hrRTlMTWR0cmxvbS0za1lVcmhKN0pWa0c0SFJHTmh1eGV4NHRzSFBSS05nbkZWTEQ0SnlrT19iUlU4V0d0anAyeWlqWG5iaFVtVmc5dmZnaEg0M0tUU0VLZWh1bnlUSXBMdnFnY3VWRkpHTHFrcGZ0TDVYLWx0TEZMekU3MnltOHFsRU1UN3VRaDdMbFdoN3JLQktfQ3h2c0UyTGc1YnBCUG9GTXpiSHNnNDBGWTU4dXdpYXZLUy1CYkgzYVhKR3NHVWtDREoyNF9ZQ3pZSTAzRm15SkRUUTBtRHZPTDczb1hVZ2twSzNETzhwaHFJQVMwYktpNmN0cl9PUGwwTDBIakpLMGtSWURhbUZwWERsS3pqOFFIUldIbW1hTFVPNWZJenhFZXhnUnlHQl9qbUxOWTF2VVM0R0hCQXcyckY1Tml2d1EySkxPS05jUGVvVlZiaDJ5UUFzOGd5ZndNZHd3cFdzYWRhSnBfTjdTdk1UNTNUMjNGMHZ2R1JpenJxSmhNTFpGZ0VVeW5WeGtXb3UyRTlYZ2s3QUViSUdDSlpXeWJKN2tyQUcySHBndUZPaFhYamF6TDRzN0E3RlVtNEFlOTVIYWRNTkZIV1YyUmVBWkpKSlJvUGlpUzJsaUl4bTBzTmNxTEZCaHJjVnFaaDFkU0pYelM2b2VNY2gwT2V5cWhObG1yb05Gb3RrQ2F5RnhXUFg4bER0cGtGNF8xUEJLVDEzaV83RmhyeGJhMVZFWElCdzBVM2hnRnN2ei1WcWJWTWhJZ3lNYWpSVVJLbmtmT0RBSU1ScHdmWDhQaHNaNHdYMWJQOU5ZNUJvZkNPOGsyaHEtRUFvZE5CYUJYaFBqWGZkTEw3ZTc1QU5CaGxXdWlzczhpc0U1eWR5SzF6S1RDSDRGT1ZaS2dIbWpPUHI3cHJzNEc0UWpFOVFkMmxuWkdLdzVnbjNhc2VvN1F0NDBuMHU3dW5rTGtGYVlVdjRDM0drSXpIRmM3WlJNaF9SejV4UDZlQXZTcE5RbEQtOEd4U1loZ2lPRV83RDZaNlQ5eDhLaTU1YVFIX19UUUJrNW5uNm5RYW9kM3VQQVFINUlva2ZoUDh6Tm9VeVp1ZHRfUHhyX1l0QlRuVWRNVWdGM3pENV8tckJ3Z0tTeVlFdV90QnRwUEtPTXExUGU5dWZuYkV1QVdYQnc4OFVBUVl3ckdCV1BYLVppYmJabmRVcHNmcWxabzctNWhFREFlOE1Ia05VUnNVVkh6NURHQ0tmTU4tU2wtVkV5dnA1dTNRQ0I2a1hJWlUyTW9pTXVUVXlzU1hnSHZHelUzZS1BUmhESEZNSG5jOTQ3amZRMWx5c0NjN3FMTHB2YWpKUDNMajAtY2t4WlBNeGxiWXVacHlnMGx5ano0cVRoUzdVTXRiRU5TaU9nb2ZnQkJ0VVUxQXFERUt3TXdSSjVaNjA5N0huM3A4TXdPdXl5UHVMeDQzTUVCMEE3ZWE1bmlESm5HV0lsMGJHc3dpTUxoT0RiQnpobkphTFBsRHE0RlRaSHRPQTRNaHhlUmJwSk1UcjFzcFB0SDFDbVcxWXpnejZHU29ZUEpqN04xckpOTHp2eXdSMzRrRjNBa1Z1dk56MERBUmx1SkxORTBYc21oQ1RMRng0SkFlSmJrb2NySXQwaW1kREZKQ3Q2Q19HSXRvWHhDd21uWVhsdkhtZDBDUExnUUVyRWFnWUN4bjVwVGdJN0hxMjl1WVRGeVp6Y0tUSUQwV3RoSDUzNXNKV20xT003aXBZX2NzQVc3bVdrQkMxaDNIeElFbVRXR3llRk9kUnEtSHhMdmluSEVLX2habUUxQTFjS2VxSmNsWmh1bmZ1QVkxRW9oSE1ZaEU5UV9jOTczV0JpeFBEa0p1cWxsTXZyUlNCT1Rua3BwcDdjU21SOGRkRTBIR3VHNXl3VEFCb01WUG5FOFR6RG4xNkpCdFU1bVlFUXVsQWx1VkRxSTJFTFVHdk9USDFmbGkwV1dNS29WNDlRTmlxMVVoRG1oLWg1a3BKU04wMFpfbWlKU1VLUm96S0lFa3VXc0dYU19tTTFlTTkzWHFDajVLUkRyZ3VkUWhXTnpPdThRZzlrTThtMVlHVzBCQ1h6clZITXEyN3QxUFNEYjRhMGh2dWQ2R2NBSW1uTmFza0ZUUmNsOGRudHZ2X252Y0RMNUNlNEV4aDN2TUpHV1hQNEd0bmhGeUlicnVXS1VXQVlZTVY5RjliWVdJdWVKMWo1YnU5NWFhQmljQ20zbm42YldHRXVrQVdybFZMTXVpU0NFQTdWV2VjRlF1Y1FfUFlZay1kZjBnSEttT19STlljX0ZLMEs1Qm96dzJQd3ltbnRJa2xDVVoyTjRQTk9TUjRfV2ZaMDdocFRxV0NxV3l3amY1UzJkQXM1eWN3UEh1UnoxSXhWRUdra3NDbEk4eThnSGF5RjRVV3Ixb0VDNUVON3RwS0lWb0w0SlpVWTNWWExfNTN6Nld0Y2xFOHgwNVRPcTQ3cjNqMkllWU5qbUd0eU5mMC0zTE1RcmJsX21LdXJpYTRyTkpwZ2ZSaTI2RVpiZ2p1TGdZdWFIQ0Q2WjBPUFNZZ0ZwVEJPemR1aFJEcjJ6QTNid3h5bkxYZHd1S0o4YnhBNVU4TE1WZmJtZnpSbHY2LTlKZ24xak43U2NMMEZQOGZoc2lXdGdlcXh0eXBYb3J3d09DNjUzTmh2bUNWVVI0UlEybzhtRnJBNGRnUk55XzQzX2Q2ek1kbDVPLWRockx1b0VnZHF4QlJ3b2dmMHRFMUNLUjdydnF1NnVCSGY5QTVJTUpfUzl5ZmNOWU1hUU92SHM2Mk1oTk1zSks5UDZzOHhQbWx5ZHU0UnowLUhoUW9pQmNmRXFEblRGSDJrWkxEOGg3Z09wOU5xUWp6aUsyY1JtbzJUdUdrc0hfTENnTkZDdjlSN3dOYURFd1RnNDVyNjhkS1pYX3FsSExtMkZNY1NDd1BkRWIxTzUzZnNjR25nSjFKRUxGVVl6RnEwekpMRk9MZWhrZy03NEE1QTdheW9FWklBS1hzNlNCb0ZnTVZyZ01CcGJoVzZNNDJPbV9OUktYMzRGMkdGRDMyYnZ4SFdmVWdOUWdINWdfeDZtbVlVZzJKQ3EzQ0w4UTZqWEpqTE9NSDI1WkZ2T1QzMVFlUzFKMmU5NUhSTWpxRkVHTFd1ZnRuU0hESVczSDM3R0ZmTHR4OXdfcHloM2doSVl5cFp0aFF4cVhwRURzSHcyNWZiekkyZTBlN1FxN0gwVkEtZFhxbk5DaUZrUXFHUTBPUzgySmNWUG15elBuVVZ1ZHpfb2ZIclhvQVBsbEpEeWpHQVpYOWV0bGxzVFhFdUcwTmRIa2NkQ2l3dmJrY1dKSEMzMjdSU1lBWE51U2hPQlRIdllyalNXaGJNR0JJUTRwVzI4NEphSnBqMGJWUjZVRE5ibHNkQ0dnWEhOOXp1ZjF2UW5CVjdhdV9vRWJhTjFWNWhHTDBqRWxRMGlodVdMSmJhYnd0MEZ6c3pqSE0xVFVPaC1TQ1Zqek9obEh5S29QWmRMa2xjRThTdDRQUFJhMTVYZWJycGRRU2pla1RNcVZzdWhtQXhqTkY4eTlUeXgzeVdmWElCVWZjNDR2cmZnMkZMVkZPWmF5V1RxYUI2RGF0SGEzZV9Nd2t3SGFEbFc5MGQ0ZUwtT0gxd1h5bXpEeENUMTIxcXZYQmJvU1lVUEtRRm50NlFqVGtDNFBGbnZGS3o3VVlHdzRDR1hmVXpyb2xqSkNaaWVfaExsYy0yVkcxazBMcFZkWUI5TFRMbEZSWnZIQ0ktMHF2d29hLTBIQkxUNXFlN2dLVElvdWdBNXZWcHBRbVp4SWszMzJKazI2ZmE0bzh6YXlmSko0T2ZQYU1sZ3pqbTlYYXhCZkd3aHQzOGhVRVUwWFhtTlFsa0RqWEhkWElmdDNtQVhaaGxORWcwc0xmR3oxNy1YZ3ZoRGxEQWZxZUU2eDNBRUdnY3htc216MTlLazZ6OFI5NUZGbGRlbkhndEI4dElVRmVYZzhNLWl1RlYxYnlJMmJ4OTk0OWw5NmJkakpGdmtvYWpLWkYwSldRYlBZLXRvdnRuajNOSmFhcTFPdl9WTXRkbEkxOG9GMGJ6eElOSW1LNVFxaDVyLTZTcFkySWhJeDBvMVlvdXA2Wld1SGZ1SGNScEV2azFhNkNJdlZ6VF94cmh2XzBlOVNXcVNCbTUtSzVjZldKR1ZVVVA0X3J0R3lyREoxQjl1MHhXT2NlMXhvNWZEa0xlWjhXZ2hVSG91eUVkWGJfbDIxSG91bjctRXJuLTJ5YUUtaUZxRHlxU2xzTW5OVHBhSEJiUnJ4WlZZN3diR0p0NFhXTFVqUVFSOU5Ycjg0dF9LQi1nVGRZYS00elNpd0kwM2F5d1dLYmEtb0YzLW1qbXFxcE5ua0ZqQWFULU14MzZFZ045dHgwbFhDc2hGREVaUTlBdXhjZXJYaVc0WjhCZXZkUmZIQTlXYUJrMm1MMVJiazJKRkFpYjUzS2FtV040QV80aHdrX2NETzA2WUo1N1A3cFF0VzhYQXR6OUY2alhySDJOWUNzWkU5NEV0ckpvOXNOcHpZNm8wbjVsN2s2OTlxNVpLcDFvX0ZXaHZ4ckk1V0JTeDdxeFF6VVdHVzkyc0lEMjFnUnpSUzc4X1k5LWViMWdqZEU3Q0pXU1pvLXFHT1B6NVFJTlZIMXpLOTBvcDVRQUhzSUZZbV9falYwa2hIUXJKM1RLSy1EX1NGRzRfaDZXT3oxOXg2bXZVaC1CTy0tWV9oZVNqNWRzbjdOOFJhM0NpTHdTdjdNdU5Ud2FYSFBLSlRxdU5QYklSbnJkNk41MEdRSERzX3puWFY3UElNcFlXVkpOTjlYZkliRTZwY2JGMGFnd05hTUNVZUdxSnV3TGxOeFBZQlBBTzdQM1hIYjU0eWhJRjZPOVBybmNiSTAwTkhjOHhZY1Z4OUtkWktzbnpsNHJlR1N3VFN4ZTM3RnFMaXV5bUNXTWZQdzlaVlktY25yTktiRGhLMTRvTnpUWklJNTRTd3JpdEYyQVF1WTAtNXJOUnJZclNHTGY2eTQzVGJOOFJycVJIMlA0cHE1c294Nmw0Q0tuSHFmc0M4T0tVcXFYckdzc1ZyR09oSWR3MDNwRE1DSUU1UUNPU0dwTGc4MUVKYWNmMjJLVjdKTmVoLThuc0l4Z0oyUXVCMFhNajZ5M1RNQ21sUEYzUHJkb3JabmFOb1J4c1E3LVh2YXRNRVpoUG1QeUZlOHN0QmlYYXJ5YU8tdmY2VlRIODdDdGozLXJjODIzNFB5dHc1VWhTeGNfWFRVNHJwTlJyVzl5VDdUMldkaHRKaFl0SnJ4cEE5S2ktWWc2UVRLWmRBaVJUNGFGSnoteFFsS1RXRWNYem9YcUlvUmgzM015VjBuZTd4dFczdHpwNFBCc3dYSGNGTk1CaUNqbndtMUdBeGQ5cmF1djJnYmdIaFdBZWZIVlVTS0NMMnM2V2xLTzhYeUQxMEFQMUthdko4b3hlZ1c1NEQ2N0FpYjNzajFpNXItUUJNUlF1T1p3eF91M1c0Q19nRzNUYWtndkg1MS1wX1ZZN084eU45OS16bUU4WWkyXzMzaFU5Nk04Y0NqSmZaVVJyZU1YQmIwOGVPNHV5eGlRdVpIUnpJd2VKM2Z3OFJaY00wdlpNNmgtYkIybWZISlAzb2N2Mmk4OVJXUldTOWllemVBYzkuQU5rd3BBMGM0NVVjc3VpQ09ZRk03bnpJMnNRck9QZVBJU0FfRDZJY1U2X25hT2Q2bWl3X1FQXzAwSWl5S19CTEdPRmw4cXBEMC1xdHY3eFhMZE1EcUE=">
+           <input type="hidden" name="_eventId" value="submit">
+           <input type="hidden" name="geolocation">
+          </section>
+          <div><button class="mdc-button mdc-button--raised" name="submit" type="submit"> <span class="mdc-button__label">Login</span> </button>
+          </div>
+         </form>
+         <hr class="my-4">
+         <div id="pmlinks" class="my-2">
+          <br>
+          <div><a href="https://kb.princeton.edu/KB0013520" id="helplink" alt="Change my Password or Get Help">Change my Password or Get Help</a>
+           <br>
+          </div>
+         </div>
+         <script type="text/javascript">
+                /*<![CDATA[*/
+                var i = "One moment please..."
+                var j = "Login"
+                    /*]]>*/
+                    $(window).on('pageshow', function () {
+                        $(':submit').prop('disabled', false);
+                        $(':submit').attr('value', j);
+                    });
+                $(document).ready(function () {
+                    $("#fm1").submit(function () {
+                        $(":submit").attr("disabled", true);
+                        $(":submit").attr("value", i);
+                        return true;
+                    });
+                });
+            </script>
+         <div class="disclaimer" aria-hidden="true">
+           By proceeding to access and use University computing and network resources through this sign-on, you agree to abide by applicable laws and University policies in your use of these resources. The University's right to access, preserve, and review information stored on or transmitted through these resources is described in the <a href="https://oit.princeton.edu/policies/access-accounts" id="aap" alt="Access to Accounts Policy" tabindex="-1">Access to Accounts Policy</a>. 
+         </div>
+        </div>
+        <div id="sidebar">
+         <div class="sidebar-content">
+          <p>For security reasons, please <a href="logout">log out</a> and exit your web browser when you are done accessing services that require authentication!</p>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+    </div>
+   </main>
+  </div>
+  <footer class="py-4 d-flex justify-content-center cas-footer"><span id="copyright" class="mr-2 d-inline-block">© 2022 The Trustees of <a href="http://www.princeton.edu/">Princeton University</a></span>
+  </footer>
+ </body>
+</html>

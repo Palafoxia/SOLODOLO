@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"1120062969",accountID:"1028497",trustKey:"1028497",xpid:"VQYFWVJaDxABVFBWBgAFXlEA",licenseKey:"ab0374a39e",applicationID:"1014112851"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(31),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(32),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError";if(!c.disabled){var l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(14),t(13),"addEventListener"in window&&t(7),c.xhrWrappable&&t(15),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){U++,L=g.hash,this[u]=y.now()}function o(){U--,g.hash!==L&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(11),b=t(12),E=t(9),R=t(7),O=t(14),T=t(8),S=t(15),P=t(10),M=t("ee"),C=M.get("tracer"),N=t(23);t(17),y.features.spa=!0;var L,U=0;M.on(u,r),b.on(p,r),P.on(p,r),M.on(d,o),b.on(l,o),P.on(l,o),M.buffer([u,d,"xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+c,"clearTimeout"+s,u]),S.buffer([u,"new-xhr","send-xhr"+s]),T.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),C.buffer([u,"no-"+u]),P.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,m+s),a(T,m+"-done"),a(P,"new-jsonp"),a(P,"jsonp-end"),a(P,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,N(!0)),w[v]("load",i,N(!0)),w[v]("popstate",function(){i(0,U>1)},N(!0))}},{}],5:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function o(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+p])try{window.performance[h](m,o,!1)}catch(t){}else try{window.performance[h]("webkit"+m,o,!1)}catch(t){}}function i(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(14),f=t(13),u=t(6),d=t(23),p="learResourceTimings",l="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",O=t("loader");if(!O.disabled){O.features.stn=!0,t(9),"addEventListener"in window&&t(7);var T=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof T&&(this.bstStart=O.now())}),a.on(b,function(t,e){var n=t[0];n instanceof T&&s("bst",[n,e,this.bstStart,O.now()])}),c.on(x,function(t,e,n){this.bstStart=O.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),this.bstType])}),f.on(x,function(){this.bstStart=O.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=O.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):l in window.performance&&(window.performance["c"+p]?window.performance[l](m,o,d(!1)):window.performance[l]("webkit"+m,o,d(!1))),document[l]("scroll",i,d(!1)),document[l]("keypress",i,d(!1)),document[l]("click",i,d(!1))}}},{}],6:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver}},{}],7:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],8:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(32),a=t(31);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],9:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],10:[function(t,e,n){function r(t){function e(){f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}function n(){f.emit("jsonp-error",[],l),f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var d=s(a),p="function"==typeof d.parent[d.key];if(p){var l={};u.inPlace(d.parent,[d.key],"cb-",l),t.addEventListener("load",e,c(!1)),t.addEventListener("error",n,c(!1)),f.emit("new-jsonp",[t.src],l)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(d);return e?e[1]:null}function a(t,e){var n=t.match(l),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(p);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t(23),f=t("ee").get("jsonp"),u=t("wrap-function")(f);if(e.exports=f,o()){var d=/[?&](?:callback|cb)=([^&#]+)/,p=/(.*)\.([^.]+)/,l=/^(\w+)(\.|$)(.*)$/,h=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?u.inPlace(Node.prototype,h,"dom-"):(u.inPlace(HTMLElement.prototype,h,"dom-"),u.inPlace(HTMLHeadElement.prototype,h,"dom-"),u.inPlace(HTMLBodyElement.prototype,h,"dom-")),f.on("dom-start",function(t){r(t[0])})}},{}],11:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],12:[function(t,e,n){function r(t){var e=i.context(),n=s(t,"executor-",e,null,!1),r=new f(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,s=o(i),c=t(31),f=NREUM.o.PR;e.exports=i,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(f,arguments),s=f.resolve(a);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),o.wrapInPlace(f.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=s(n[0],"cb-",r,null,!1),n[1]=s(n[1],"cb-",r,null,!1);var c=t.apply(this,n);return r.nextPromise=c,i.emit("propagate",[e,!0],c,!1,!1),c}}),i.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this,null,!1),t[1]=s(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],13:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],14:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],15:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){x.push(t),m&&(E?E.then(a):w?w(a):(R=-R,O.data=R))}function a(){for(var t=0;t<x.length;t++)r([],x[t]);x.length&&(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(7);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=t(23),l=NREUM.o,h=l.XHR,m=l.MO,v=l.PR,w=l.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,o,p(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),m){var E=v&&v.resolve();if(!w&&!v){var R=1,O=document.createTextNode(R);new m(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===g||a()})},{}],16:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",s=1,c="",f="";return o+"@nr="+i+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(28),h=t(18);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],17:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);return e.protocol&&"data"===e.protocol?void g("Ajax/DataUrl/Excluded"):void(e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,s("xhr",[e,n,this.startTime,this.endTime,"xhr"],this)))}}function o(t,e){var n=c(e),r=t.params;r.hostname=n.hostname,r.port=n.port,r.protocol=n.protocol,r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(18),f=t(16).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(24),m=t(22),v=t(19),w=t(23),g=t(25).recordSupportability,y=NREUM.o.REQ,x=window.XMLHttpRequest;a.features.xhr=!0,t(15),t(8),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){i(e,t)},w(!1)),h&&(h>34||h<10)||t.addEventListener("progress",function(t){e.lastSize=t.loaded},w(!1))}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<p;s++)e.addEventListener(d[s],this.listener,w(!1))}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("xhr-resolved",function(){this.endTime=a.now()}),u.on("addEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof x&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),this.dt=e,t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},i=this.target;if("string"==typeof i?n=i:"object"==typeof i&&i instanceof y?n=i.url:window.URL&&"object"==typeof i&&i instanceof URL&&(n=i.href),o(this,n),"data"!==this.params.protocol){var s=(""+(i&&i instanceof y&&i.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}}),u.on("fetch-done",function(t,e){if(this.endTime=a.now(),this.params||(this.params={}),"data"===this.params.protocol)return void g("Ajax/DataUrl/Excluded");this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime,this.endTime,"fetch"],this)})}},{}],18:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];if(0===(t||"").indexOf("data:"))return{protocol:"data"};var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],19:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(22);e.exports=r},{}],20:[function(t,e,n){function r(){}function o(t,e,n,r){return function(){return u.recordSupportability("API/"+e+"/called"),i(t+e,[f.now()].concat(s(arguments)),n?null:this,r),n?void 0:this}}var i=t("handle"),a=t(31),s=t(32),c=t("ee").get("tracer"),f=t("loader"),u=t(25),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",h=l+"ixn-";a(p,function(t,e){d[e]=o(l,e,!0,"api")}),d.addPageAction=o(l,"addPageAction",!0),d.setCurrentRouteName=o(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=o(h,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),u.recordSupportability("API/noticeError/called"),i("err",[t,f.now(),!1,e])}},{}],21:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],22:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],23:[function(t,e,n){var r=!1;try{var o=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,o),window.removeEventListener("testPassive",null,o)}catch(i){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],24:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],25:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return i("storeMetric",n,null,"api"),n}function o(t,e){var n=[s,t,{name:t},e];return i("storeEventMetrics",n,null,"api"),n}var i=t("handle"),a="sm",s="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:s},recordSupportability:r,recordCustom:o}},{}],26:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,s=t(33);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],27:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;var o=[r],i=a({});i&&o.push(i),l("lcp",o)}}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function s(t){if(t instanceof w&&!y){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=h.now()?n.fid=h.now()-e:e>h.offset&&e<=Date.now()?(e-=h.offset,n.fid=h.now()-e):e=h.now(),y=!0,l("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=h.now(),l("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,d,p,l=t("handle"),h=t("loader"),m=t(30),v=t(23),w=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(g){}d=new PerformanceObserver(o);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(g){}p=new PerformanceObserver(i);try{p.observe({type:"layout-shift",buffered:!0})}catch(g){}}if("addEventListener"in document){var y=!1,x=["click","keydown","mousedown","pointerdown","touchstart"];x.forEach(function(t){document.addEventListener(t,s,v(!1))})}m(c)}},{}],28:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(t)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],29:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],30:[function(t,e,n){function r(t){function e(){t(s&&document[s]?document[s]:document[i]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,o(!1))}var o=t(23);e.exports=r;var i,a,s;"undefined"!=typeof document.hidden?(i="hidden",a="visibilitychange",s="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",a="webkitvisibilitychange",s="webkitVisibilityState")},{}],31:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],32:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],33:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var s=e(o),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var p=d[y[n]];return p&&p.push([x,n,r,s]),s}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){l.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function i(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",f=t("gos"),u=t(31),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=O.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+O.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===m.readyState&&i()}function i(){s("mark",["domContent",a()+O.offset],null,"api")}var a=t(26),s=t("handle"),c=t(31),f=t("ee"),u=t(29),d=t(21),p=t(23),l=d.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,v="addEventListener",w="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!1;NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1216.min.js"},R=g&&y&&y[v]&&!/CriOS/.test(navigator.userAgent),O=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(20),t(27),m[v]?(m[v]("DOMContentLoaded",i,p(!1)),h[v]("load",r,p(!1))):(m[w]("onreadystatechange",o),h[w]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var i,a,u,p;try{a=this,i=d(arguments),u="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,c],u],t)}s(n+"start",[i,a,c],u,f);try{return p=e.apply(a,i)}catch(h){throw s(n+"err",[i,a,h],u,f),h}finally{s(n+"end",[i,a,p],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,o,c,i))}function s(n,r,i,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,i,e,a)}catch(c){o([c,n,r,i],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function s(t,e){var n=e(t);return n[p]=t,i(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(32),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,17,5,3,4]);</script>
+  <meta property="fb:app_id" content="184683071273">
+  <meta property="og:type" content="Article">
+  <meta property="og:url" content="https://alum.mit.edu/volunteer/recognition-and-awards/annual-awards/2016-award-winners">
+  <meta property="og:title" content="2016 Award Winners">
+  <meta property="og:description" content="MIT alumni, friends, and groups received this year’s awards.">
+  <meta name="google-site-verification" content="">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@MIT_alumni">
+  <meta name="twitter:description" content="MIT alumni, friends, and groups received this year’s awards.">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/themes/custom/mitaa/favicon.png" type="image/png">
+  <link rel="canonical" href="https://alum.mit.edu/volunteer/recognition-and-awards/annual-awards/2016-award-winners">
+  <link rel="shortlink" href="https://alum.mit.edu/node/2854">
+  <title>2016 Award Winners | alum.mit.edu</title>
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/ajax-progress.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/align.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/autocomplete-loading.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/fieldgroup.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/container-inline.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/clearfix.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/details.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/hidden.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/item-list.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/js.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/nowrap.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/position-container.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/progress.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/reset-appearance.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/resize.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/sticky-header.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-counter.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-counters.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-general-info.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tabledrag.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tablesort.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tree-child.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/views/views.module.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/modules/contrib/paragraphs/css/paragraphs.unpublished.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/core/assets/vendor/normalize-css/normalize.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/core/normalize-fixes.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/themes/custom/mitaa/css/mitaa.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/action-links.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/breadcrumb.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/button.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/collapse-processed.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/container-inline.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/details.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/exposed-filters.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/field.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/form.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/icons.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/inline-form.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/item-list.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/link.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/links.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/menu.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/more-link.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/pager.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tabledrag.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tableselect.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tablesort.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tabs.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/textarea.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/ui-dialog.css?rdh1gx">
+  <link rel="stylesheet" media="all" href="/core/themes/classy/css/components/messages.css?rdh1gx"><!-- 
+<meta name="description" content="The MIT Alumni Association seeks to engage and inspire the MIT global community to make a better world. It provides a lifelong community for MIT graduates, a launching pad for students, and growing connection among MIT friends.">
+--><!-- Page hiding snippet (recommended)  -->
+  <style>.async-hide { opacity: 0 !important} </style>
+  <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-TMD98T':true});</script><!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TMD98T');</script><!-- End Google Tag Manager --><!-- Facebook Pixel Code -->
+  <script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '1667256053562016'); 
+fbq('track', 'PageView');
+fbq('track', 'ViewContent');
+</script>
+  <noscript>&lt;img height="1" width="1" src="https://www.facebook.com/tr?id=1667256053562016&amp;amp;ev=PageView &amp;amp;noscript=1"&gt;
+  </noscript><!-- End Facebook Pixel Code -->
+ </head>
+ <body class="no-sidebars path-node page-node-type-page"><!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMD98T" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript><!-- End Google Tag Manager (noscript) --><a href="#main-content" class="visually-hidden focusable skip-link"> Skip to main content </a>
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div role="document" class="page" id="page">
+    <header class="site-header" id="site-header">
+     <div class="top-share"><a id="share-group__toggle2" aria-expanded="false" href="#"><i class="icon-share"></i>Share</a>
+      <div id="share-group__container">
+       <div class="addthis_inline_share_toolbox"></div>
+      </div>
+     </div>
+     <div class="title-bar" data-responsive-toggle="mobile-menu" data-hide-for="large"><!--<a href="/" class="icon-mit-alumni-logo"></a>--><a href="/"><img class="mit-logo" src="/themes/custom/mitaa/images/MITALUMNI_LOGO.svg"></a>
+      <div class="title-bar-center nav-section-heading"></div><button id="mobile-menu__toggle" class="menu-icon" type="button" data-toggle="" aria-label="Toggle Mobile Menu" aria-expanded="false"></button>
+     </div>
+     <div id="mobile-menu" class="mobile-menu">
+      <div class="scroll">
+       <div class="region ">
+        <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page" data-drupal-selector="views-exposed-form-search-page" id="block-searchpage-block-mobile" data-block-plugin-id="views_exposed_filter_block:search-page">
+         <div class="inner">
+          <form action="/search" method="get" id="views-exposed-form-search-page" accept-charset="UTF-8">
+           <div class="form--inline clearfix">
+            <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-keywords form-item-keywords"><label for="edit-keywords">Keywords</label>
+             <input data-drupal-selector="edit-keywords" type="text" id="edit-keywords" name="keywords" value="" size="30" maxlength="128" class="form-text">
+            </div>
+            <div class="js-form-item form-item js-form-type-select form-type-select js-form-item-sort-by form-item-sort-by"><label for="edit-sort-by">Sort by</label><select data-drupal-selector="edit-sort-by" id="edit-sort-by" name="sort_by" class="form-select"><option value="search_api_relevance" selected>Relevance</option><option value="date">Date</option></select>
+            </div>
+            <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+             <input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Search" class="button js-form-submit form-submit">
+            </div>
+           </div>
+          </form>
+         </div>
+        </div>
+        <nav role="navigation" id="block-useraccountmenu-2" data-block-plugin-id="system_menu_block:account" class="block block-menu navigation menu--account">
+         <h2 class="visually-hidden" id="block-useraccountmenu-2-menu">User account menu</h2>
+         <ul class="menu">
+          <li class="menu-item alumni-directory"><a href="/directory">Alumni Directory</a></li>
+          <li class="menu-item login"><a href="/login">Login</a></li>
+          <li class="menu-item menu-item--expanded my-account"><a href="/myaccount" target="" rel="">My Account</a>
+           <ul class="menu">
+            <li class="menu-item volunteer-tools"><a href="/knowledge-base" target="" rel="" data-drupal-link-system-path="knowledge-base">Volunteer Tools</a></li>
+            <li class="menu-item edit-profile"><a href="/myaccount/#/edit-profile--personal" target="" rel="">Edit Profile</a></li>
+            <li class="menu-item communities"><a href="/myaccount/#/communities" target="" rel="">Communities</a></li>
+            <li class="menu-item subscriptions"><a href="/myaccount/#/subscriptions" target="" rel="">Subscriptions</a></li>
+            <li class="menu-item email--forwarding"><a href="/myaccount/#/email-forwarding" target="" rel="">Email &amp; Forwarding</a></li>
+            <li class="menu-item event-history"><a href="/myaccount/#/event-history" target="" rel="">Event History</a></li>
+            <li class="menu-item giving-history"><a href="/myaccount/#/giving-history" target="" rel="">Giving History</a></li>
+            <li class="menu-item account-settings"><a href="/myaccount/#/account-settings" target="" rel="">Account Settings</a></li>
+            <li class="menu-item logout"><a href="/logout" target="" rel="" class="my-account-logout">Logout</a></li>
+           </ul></li>
+          <li class="menu-item give-now"><a href="https://giving.mit.edu/give/to?fundId=3746200&amp;source=WBAAW" target="" rel="" class="hide-desktop give-now-link">Give Now</a></li>
+         </ul>
+        </nav>
+        <nav role="navigation" id="block-mainnavigation-2" data-block-plugin-id="system_menu_block:main" class="block block-menu navigation menu--main">
+         <h2 class="visually-hidden" id="block-mainnavigation-2-menu">Main navigation</h2>
+         <ul class="menu">
+          <li class="menu-item menu-item--collapsed"><a href="/communities" target="" rel="" title="Communities" data-drupal-link-system-path="node/2653">Communities</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/events" target="" rel="" data-drupal-link-system-path="node/2650">Events</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/careers" target="" rel="" data-drupal-link-system-path="node/2652">Careers</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/learn" target="" rel="" data-drupal-link-system-path="node/2660">Learn</a></li>
+          <li class="menu-item menu-item--expanded menu-item--active-trail"><a href="/volunteer" target="" rel="" title="Volunteer" data-drupal-link-system-path="node/2710">Volunteer</a>
+           <ul class="submenu">
+            <li class="menu-item"><a href="/volunteer/explore-volunteer-opportunities" target="" rel="" title="Explore Volunteer Opportunities" data-drupal-link-system-path="node/2838">Volunteer Opportunities</a></li>
+            <li class="menu-item menu-item--expanded menu-item--active-trail"><a href="/volunteer/recognition-and-awards" target="" rel="" title="Recognition and Awards" data-drupal-link-system-path="node/2844">Recognition and Awards</a>
+             <ul class="submenu">
+              <li class="menu-item menu-item--expanded menu-item--active-trail"><a href="/volunteerrecognition-and-awards/annual-awards" target="" rel="" title="Annual Volunteer Awards" data-drupal-link-system-path="node/2846">Annual Awards</a>
+               <ul class="submenu">
+                <li class="menu-item"><a href="/volunteerrecognition-and-awardsannual-awards/2021-award-winners" data-drupal-link-system-path="node/99497">2021 Award Winners</a></li>
+                <li class="menu-item"><a href="/volunteer/recognition-and-awards/annual-awards/2020-award-winners" data-drupal-link-system-path="node/97035">2020 Award Winners</a></li>
+                <li class="menu-item"><a href="/volunteer/recognition-and-awards/annual-awards/2019-award-winners" data-drupal-link-system-path="node/94219">2019 Award Winners</a></li>
+                <li class="menu-item"><a href="/volunteer/recognition-and-awards/annual-awards/2018-award-winners" data-drupal-link-system-path="node/91671">2018 Award Winners</a></li>
+                <li class="menu-item"><a href="/volunteer/recognition-and-awards/annual-awards/2017-award-winners" title="2017 Award Winners" data-drupal-link-system-path="node/2856">2017 Award Winners</a></li>
+                <li class="menu-item menu-item--active-trail"><a href="/volunteer/recognition-and-awards/annual-awards/2016-award-winners" title="2016 Award Winners" data-drupal-link-system-path="node/2854" class="is-active">2016 Award Winners</a></li>
+               </ul></li>
+              <li class="menu-item"><a href="/submit-annual-award-nomination" title="Submit Annual Award Nomination" data-drupal-link-system-path="node/16256">Submit Annual Award Nomination</a></li>
+             </ul></li>
+            <li class="menu-item menu-item--collapsed"><a href="/knowledge-base" target="" rel="" title="Volunteer Tools" data-drupal-link-system-path="knowledge-base">Volunteer Knowledge Base</a></li>
+            <li class="menu-item menu-item--collapsed"><a href="/alc" data-drupal-link-system-path="node/100131">ALC</a></li>
+            <li class="menu-item"><a href="/volunteer/legislative-advocacy-network" data-drupal-link-system-path="node/99587">Legislative Advocacy Network</a></li>
+            <li class="menu-item menu-item--collapsed"><a href="/service-initiative" data-drupal-link-system-path="node/100141">The MIT Alumni Better World Service Initiative</a></li>
+            <li class="menu-item"><a href="/volunteer/volunteer-view-march-2022" data-drupal-link-system-path="node/101511">Volunteer View</a></li>
+           </ul></li>
+          <li class="menu-item menu-item--collapsed"><a href="/about" target="" rel="" data-drupal-link-system-path="node/2662">About</a></li>
+          <li class="menu-item">
+           <div data-block-plugin-id="mitaa_personalized_give_button" class="block block-mitaa-custom-blocks block-mitaa-personalized-give-button"><a href="https://giving.mit.edu/give/to?fundId=3746200&amp;source=WBAAW" target="" rel="" class="noshow-giving-modal give-now-button button hide-mobile">Give Now</a>
+           </div></li>
+         </ul>
+        </nav>
+        <nav role="navigation" id="block-topics-2" data-block-plugin-id="system_menu_block:topics" class="block block-menu navigation menu--topics">
+         <h2 id="block-topics-2-menu">Topics</h2>
+         <ul class="menu">
+          <li class="menu-item"><a href="/topic/career" target="" rel="" title="Career" data-drupal-link-system-path="taxonomy/term/83">Career</a></li>
+          <li class="menu-item"><a href="/topic/mentoring" target="" rel="" title="Mentoring" data-drupal-link-system-path="taxonomy/term/190">Mentoring</a></li>
+          <li class="menu-item"><a href="/topic/mit-better-world" target="" rel="" title="MIT Better World" data-drupal-link-system-path="taxonomy/term/191">MIT Better World</a></li>
+          <li class="menu-item"><a href="/topic/alumni-profiles" target="" rel="" title="Alumni Profiles" data-drupal-link-system-path="taxonomy/term/184">Alumni Profiles</a></li>
+          <li class="menu-item"><a href="/topic/geek-culture" target="" rel="" title="Modern Geekhood" data-drupal-link-system-path="taxonomy/term/60">Geek Culture</a></li>
+          <li class="menu-item"><a href="/topic/research" target="" rel="" title="Research" data-drupal-link-system-path="taxonomy/term/65">Research</a></li>
+         </ul>
+        </nav>
+        <nav role="navigation" id="block-followus-3" data-block-plugin-id="system_menu_block:follow-us" class="block block-menu navigation menu--follow-us">
+         <h2 id="block-followus-3-menu">Follow Us</h2>
+         <ul class="menu">
+          <li class="menu-item"><a href="/slice" target="" rel="" class="has-icon has-icon-social--slice" title="Slice of MIT" data-drupal-link-system-path="node/7948">Slice of MIT</a></li>
+          <li class="menu-item"><a href="http://www.facebook.com/MITAA" target="_blank" rel="" class="has-icon has-icon-social--facebook" title="Facebook">Facebook</a></li>
+          <li class="menu-item"><a href="http://twitter.com/MIT_alumni" target="_blank" rel="" class="has-icon has-icon-social--twitter" title="Twitter">Twitter</a></li>
+          <li class="menu-item"><a href="https://www.youtube.com/alumniMIT" target="_blank" rel="" class="has-icon has-icon-social--youtube" title="YouTube">YouTube</a></li>
+          <li class="menu-item"><a href="http://instagram.com/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--instagram" title="Instagram">Instagram</a></li>
+          <li class="menu-item"><a href="https://www.linkedin.com/groups/69586/" target="_blank" rel="" class="has-icon has-icon-social--linkedin" title="LinkedIn">LinkedIn</a></li>
+          <li class="menu-item"><a href="https://soundcloud.com/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--soundcloud" title="SoundCloud">SoundCloud</a></li>
+          <li class="menu-item"><a href="https://www.snapchat.com/add/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--snapchat" title="Snapchat">Snapchat</a></li>
+          <li class="menu-item"><a href="http://www.pinterest.com/mitalumiassoc/" target="_blank" rel="" class="has-icon has-icon-social--pinterest" title="Pinterest">Pinterest</a></li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+     </div><!--
+			<div class="top-share">
+                            <a id="share-group__toggle2" aria-expanded="false" href="#"><i class="icon-share"></i>Share</a>
+                            <div id="share-group__container">
+                               <div class="addthis_inline_share_toolbox"></div>
+                            </div>
+                        </div>
+-->
+     <div class="top-bar">
+      <div class="container">
+       <div class="top-bar-content"><a href="/"><img class="mit-logo" src="/themes/custom/mitaa/images/MITALUMNI_LOGO.svg"></a>
+        <div class="top-bar-left"><a id="topic-main-menu__toggle" aria-expanded="false" href="#">Topics</a><a id="condensed-menu__toggle" aria-expanded="false" href="#">Menu<i class="menu-icon"></i></a>
+        </div>
+        <div class="top-bar-center nav-section-heading"></div>
+        <div class="top-bar-right"><a id="search-group__toggle" aria-expanded="false" href="#"><i class="icon-search"></i>Search</a><a id="share-group__toggle" aria-expanded="false" href="#"><i class="icon-share"></i>Share</a>
+         <div id="share-group__container">
+          <div class="addthis_inline_share_toolbox"></div>
+         </div>
+         <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page" data-drupal-selector="views-exposed-form-search-page" id="block-searchpage-block-topbar" data-block-plugin-id="views_exposed_filter_block:search-page">
+          <div class="inner">
+           <form action="/search" method="get" id="views-exposed-form-search-page" accept-charset="UTF-8">
+            <div class="form--inline clearfix">
+             <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-keywords form-item-keywords"><label for="edit-keywords--2">Keywords</label>
+              <input data-drupal-selector="edit-keywords" type="text" id="edit-keywords--2" name="keywords" value="" size="30" maxlength="128" class="form-text">
+             </div>
+             <div class="js-form-item form-item js-form-type-select form-type-select js-form-item-sort-by form-item-sort-by"><label for="edit-sort-by--2">Sort by</label><select data-drupal-selector="edit-sort-by" id="edit-sort-by--2" name="sort_by" class="form-select"><option value="search_api_relevance" selected>Relevance</option><option value="date">Date</option></select>
+             </div>
+             <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2">
+              <input data-drupal-selector="edit-submit-search-2" type="submit" id="edit-submit-search--2" value="Search" class="button js-form-submit form-submit">
+             </div>
+            </div>
+           </form>
+          </div>
+         </div>
+         <nav role="navigation" id="block-useraccountmenu" data-block-plugin-id="system_menu_block:account" class="block block-menu navigation menu--account">
+          <h2 class="visually-hidden" id="block-useraccountmenu-menu">User account menu</h2>
+          <ul class="menu">
+           <li class="menu-item alumni-directory"><a href="/directory">Alumni Directory</a></li>
+           <li class="menu-item login"><a href="/login">Login</a></li>
+           <li class="menu-item menu-item--expanded my-account"><a href="/myaccount" target="" rel="">My Account</a>
+            <ul class="menu">
+             <li class="menu-item volunteer-tools"><a href="/knowledge-base" target="" rel="" data-drupal-link-system-path="knowledge-base">Volunteer Tools</a></li>
+             <li class="menu-item edit-profile"><a href="/myaccount/#/edit-profile--personal" target="" rel="">Edit Profile</a></li>
+             <li class="menu-item communities"><a href="/myaccount/#/communities" target="" rel="">Communities</a></li>
+             <li class="menu-item subscriptions"><a href="/myaccount/#/subscriptions" target="" rel="">Subscriptions</a></li>
+             <li class="menu-item email--forwarding"><a href="/myaccount/#/email-forwarding" target="" rel="">Email &amp; Forwarding</a></li>
+             <li class="menu-item event-history"><a href="/myaccount/#/event-history" target="" rel="">Event History</a></li>
+             <li class="menu-item giving-history"><a href="/myaccount/#/giving-history" target="" rel="">Giving History</a></li>
+             <li class="menu-item account-settings"><a href="/myaccount/#/account-settings" target="" rel="">Account Settings</a></li>
+             <li class="menu-item logout"><a href="/logout" target="" rel="" class="my-account-logout">Logout</a></li>
+            </ul></li>
+           <li class="menu-item give-now"><a href="https://giving.mit.edu/give/to?fundId=3746200&amp;source=WBAAW" target="" rel="" class="hide-desktop give-now-link">Give Now</a></li>
+          </ul>
+         </nav>
+         <div id="block-personalizedgreeting" data-block-plugin-id="mitaa_personalized_greeting" class="block block-mitaa-custom-blocks block-mitaa-personalized-greeting">
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="icon-mit-logo--gray"></div>
+     </div>
+     <div class="secondary-nav">
+      <div class="container">
+       <div class="region ">
+        <nav role="navigation" id="block-mainnavigation" data-block-plugin-id="system_menu_block:main" class="block block-menu navigation menu--main">
+         <h2 class="visually-hidden" id="block-mainnavigation-menu">Main navigation</h2>
+         <ul class="menu">
+          <li class="menu-item menu-item--collapsed"><a href="/communities" target="" rel="" title="Communities" data-drupal-link-system-path="node/2653">Communities</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/events" target="" rel="" data-drupal-link-system-path="node/2650">Events</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/careers" target="" rel="" data-drupal-link-system-path="node/2652">Careers</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/learn" target="" rel="" data-drupal-link-system-path="node/2660">Learn</a></li>
+          <li class="menu-item menu-item--collapsed menu-item--active-trail"><a href="/volunteer" target="" rel="" title="Volunteer" data-drupal-link-system-path="node/2710">Volunteer</a></li>
+          <li class="menu-item menu-item--collapsed"><a href="/about" target="" rel="" data-drupal-link-system-path="node/2662">About</a></li>
+          <li class="menu-item">
+           <div data-block-plugin-id="mitaa_personalized_give_button" class="block block-mitaa-custom-blocks block-mitaa-personalized-give-button"><a href="https://giving.mit.edu/give/to?fundId=3746200&amp;source=WBAAW" target="" rel="" class="noshow-giving-modal give-now-button button hide-mobile">Give Now</a>
+           </div></li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+      <div id="topic-main-menu" class="topic-main-menu">
+       <div class="inside">
+        <div class="container">
+         <div class="topic-main-menu__topics columns medium-7">
+          <div class="region ">
+           <nav role="navigation" id="block-topics" data-block-plugin-id="system_menu_block:topics" class="block block-menu navigation menu--topics">
+            <h2 id="block-topics-menu">Topics</h2>
+            <ul class="menu">
+             <li class="menu-item"><a href="/topic/career" target="" rel="" title="Career" data-drupal-link-system-path="taxonomy/term/83">Career</a></li>
+             <li class="menu-item"><a href="/topic/mentoring" target="" rel="" title="Mentoring" data-drupal-link-system-path="taxonomy/term/190">Mentoring</a></li>
+             <li class="menu-item"><a href="/topic/mit-better-world" target="" rel="" title="MIT Better World" data-drupal-link-system-path="taxonomy/term/191">MIT Better World</a></li>
+             <li class="menu-item"><a href="/topic/alumni-profiles" target="" rel="" title="Alumni Profiles" data-drupal-link-system-path="taxonomy/term/184">Alumni Profiles</a></li>
+             <li class="menu-item"><a href="/topic/geek-culture" target="" rel="" title="Modern Geekhood" data-drupal-link-system-path="taxonomy/term/60">Geek Culture</a></li>
+             <li class="menu-item"><a href="/topic/research" target="" rel="" title="Research" data-drupal-link-system-path="taxonomy/term/65">Research</a></li>
+            </ul>
+           </nav>
+          </div>
+         </div>
+         <div class="topic-main-menu__follow-us columns medium-5">
+          <div class="region ">
+           <nav role="navigation" id="block-followus" data-block-plugin-id="system_menu_block:follow-us" class="block block-menu navigation menu--follow-us">
+            <h2 id="block-followus-menu">Follow Us</h2>
+            <ul class="menu">
+             <li class="menu-item"><a href="/slice" target="" rel="" class="has-icon has-icon-social--slice" title="Slice of MIT" data-drupal-link-system-path="node/7948">Slice of MIT</a></li>
+             <li class="menu-item"><a href="http://www.facebook.com/MITAA" target="_blank" rel="" class="has-icon has-icon-social--facebook" title="Facebook">Facebook</a></li>
+             <li class="menu-item"><a href="http://twitter.com/MIT_alumni" target="_blank" rel="" class="has-icon has-icon-social--twitter" title="Twitter">Twitter</a></li>
+             <li class="menu-item"><a href="https://www.youtube.com/alumniMIT" target="_blank" rel="" class="has-icon has-icon-social--youtube" title="YouTube">YouTube</a></li>
+             <li class="menu-item"><a href="http://instagram.com/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--instagram" title="Instagram">Instagram</a></li>
+             <li class="menu-item"><a href="https://www.linkedin.com/groups/69586/" target="_blank" rel="" class="has-icon has-icon-social--linkedin" title="LinkedIn">LinkedIn</a></li>
+             <li class="menu-item"><a href="https://soundcloud.com/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--soundcloud" title="SoundCloud">SoundCloud</a></li>
+             <li class="menu-item"><a href="https://www.snapchat.com/add/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--snapchat" title="Snapchat">Snapchat</a></li>
+             <li class="menu-item"><a href="http://www.pinterest.com/mitalumiassoc/" target="_blank" rel="" class="has-icon has-icon-social--pinterest" title="Pinterest">Pinterest</a></li>
+            </ul>
+           </nav>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div id="content-wrapper">
+     <section id="breadcrumb">
+      <div class="container">
+       <div class="columns">
+        <div class="region ">
+         <div id="block-mitaa-breadcrumbs" data-block-plugin-id="system_breadcrumb_block" class="block block-system block-system-breadcrumb-block">
+          <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+           <h2 class="visually-hidden">Breadcrumb</h2><a href="/">Home</a><a href="/volunteer">Volunteer</a><a href="/volunteer/recognition-and-awards">Recognition and Awards</a><a href="/volunteerrecognition-and-awards/annual-awards">Annual Awards</a><span class="text-item">2016 Award Winners</span>
+          </nav>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <main role="main" class="main"><a id="main-content" tabindex="-1"></a>
+      <section class="content">
+       <div class="region ">
+        <div data-drupal-messages-fallback class="hidden"></div>
+        <div class="container">
+         <div id="block-mitaa-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+         </div>
+        </div>
+        <div id="block-mitaa-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+         <article data-history-node-id="2854" class="node node--type-page node--view-mode-full clearfix">
+          <div>
+           <div class="generic-page">
+            <div class="block-region-branding-area-mobile"></div>
+            <div class="breadcrumb-row">
+             <div class="container">
+              <div class="block-region-breadcrumb">
+               <div data-block-plugin-id="system_breadcrumb_block" class="block block-system block-system-breadcrumb-block">
+                <nav class="breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+                 <h2 class="visually-hidden">Breadcrumb</h2><a href="/">Home</a><a href="/volunteer">Volunteer</a><a href="/volunteer/recognition-and-awards">Recognition and Awards</a><a href="/volunteerrecognition-and-awards/annual-awards">Annual Awards</a><span class="text-item">2016 Award Winners</span>
+                </nav>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="generic-page-top">
+             <div class="inner">
+              <div class="right">
+               <div class="generic-page-top-right">
+                <div class="block-region-generic-page-top">
+                 <article id="node-2854" class="generic-page-top-section " data-history-node-id="2854" role="article" about="/volunteer/recognition-and-awards/annual-awards/2016-award-winners">
+                  <h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">2016 Award Winners</span></h1>
+                  <div class="clearfix text-formatted field field--name-field-simple-body field--type-text-long field--label-hidden field__item">
+                   <p>Congratulations to the following MIT alumni, friends, and groups who were selected to receive this year’s awards.</p>
+                   <p>Awards, with the exception of Honorary Membership, are presented at a celebratory dinner&nbsp;during the Alumni Leadership Conference on Saturday, September 24, 2016.&nbsp;</p>
+                   <p>&nbsp;</p>
+                  </div>
+                 </article>
+                </div>
+               </div>
+               <div class="generic-page-middle">
+                <div class="block-region-generic-page-middle">
+                 <div data-block-plugin-id="entity_field:node:field_body_paragraphs" class="block block-ctools-block block-entity-fieldnodefield-body-paragraphs">
+                  <div class="field field--name-field-body-paragraphs field--type-entity-reference-revisions field--label-hidden field__items">
+                   <div class="field__item"> 
+                    <div class="accordion">
+                     <div class="accordion-item"> 
+                      <div class="paragraph paragraph--type--new-accordion-items paragraph--view-mode--default">
+                       <h3 class="heading"><a class="accordion-title" aria-expanded="false">2016 Bronze Beaver Award Recipients</a></h3>
+                       <div class="accordion-content">
+                        <p><strong>Gerald M. Appelstein ’80</strong></p>
+                        <p>Jerry has been a tireless champion for many of MIT’s initiatives and a dedicated volunteer in countless ways. He has held leadership positions with the Corporation Development Committee, the Educational Council, the Undergraduate Practice Opportunities Program (UPOP), the Council for the Arts at MIT, the Corporation Visiting Committee for Libraries, and the Alumni Association Board of Directors. Jerry’s esteemed Institute service dates back to his graduation year of 1980, with service on the Dormitory Council. After graduation, he immediately volunteered to be an MIT educational counselor, and he remains one today. He has contributed his fundraising leadership and infinite wisdom during two terms on the Annual Fund Board and 10 years as a Corporation Development Committee member (with three years as the national engagement chair). Always the lively host, Jerry provides infectious enthusiasm and encouragement of others at William Barton Rogers Society (WBRS)and MIT club events, as well as UPOP receptions. It is no surprise that he was the first WBRS chair and has flown to California, Texas, Washington DC, and Florida to be the introductory speaker for Alumni Association WBRS celebrations with former President Susan Hockfield. Most importantly, Jerry is an outstanding ambassador to all alumni and to the Institute at large. As a good citizen in the name of MIT, he responded in record time to the Boston Marathon terrorist activities, becoming one of the first to make a gift in Officer Sean Collier’s memory and in honor of Sean’s selfless service to MIT. Very few alumni exemplify the commitment to excellence and leadership more than Jerry does. His tremendous loyalty, initiative, and sustained service make him a most deserving recipient of the Bronze Beaver Award.</p>
+                        <h4>Barry R. Bronfin ’60, SM ’61, ScD ’63</h4>
+                        <p>Beginning in the early 1970s, Barry has been heavily involved with regional fund soliciting and telethons, serving as chair and cochair of various class reunion gift committees, a member of the Corporation Development Committee (CDC) and Annual Fund Board, and national committee regional chair for the Campaign for MIT. Besides fund and resource development activities, he devoted much of his time to Alumni Association boards and committees such as the K–12 STEM Education Working Group and was a member of the Alumni Association Board of Directors. He has found time to serve as a mentor for the Undergraduate Practice Opportunities Program and as an Educational Council representative. His tireless and creative devotion to the MIT Club of Hartford as chair, director, and Alumni Association liaison over the years has made the club a most vibrant organization, drawing many alumni and others to its events. Barry was recognized with the Harold E. Lobdell ’17 Distinguished Service Award in 1985 and received the Henry O. Kane ’24 Award in 2005 for his fundraising efforts as cochair of his 45th Reunion Gift Committee. He also served as cochair of the 50th Reunion Gift Committee. He was responsible for recruiting 36 committee members nationwide and drafted solicitation assignments to ensure the success of the gift campaign. Because of his outstanding effort and strong leadership, he and the committee were awarded the Great Dome Award. Barry has made an impact through his involvement with the Club of Hartford and in various gift solicitation roles. He was the chair of the Club of Hartford from 1976–1979 and became reengaged in club activities as a director in 2006. Barry conceived the class of 1960 project—the Endowment Fund for Innovation in Education (EFIE)—launched at the class’ 25th reunion. Barry’s more than 40 years of service and devotion to the Institute, as well as the variety and depth of his contributions, is truly inspiring. He is in the highest tier of alumni volunteers and is worthy of highest recognition with the Bronze Beaver Award.</p>
+                        <h4>Mohammed A. Jameel ’78</h4>
+                        <p>Corporation Member Mohammed Abdul Latif Jameel is a dedicated supporter of initiatives at MIT that improve lives around the world and is a true titan in giving back in time, talent, and treasure to MIT. He has been engaged with MIT since the early 1990s, when he established a scholarship fund for students from Saudi Arabia and other specified countries in memory of his father. Since 1994, he has supported the educational aspirations of more than 140 students at MIT through the Abdul Latif Jameel Toyota Endowed Scholarship Fund. Many of these students are from developing countries. Last year was the 25th anniversary of the fund, and students were asked to update the Institute on their lives since MIT. Mohammed was presented with this information, and he subsequently reached out personally to all who responded. He is very interested in building a network of these scholars and has invested time and personal energy in doing so. In 2005, he made a gift to endow the Abdul Latif Jameel Poverty Action Lab (J-PAL), followed by substantial contribution in 2009 to greatly expand its work. J-PAL is a research center at MIT’s economics department whose founders pioneered the use of randomized controlled trials to test the effectiveness of antipoverty programs in developing countries. Today, J-PAL has seven offices worldwide and 102 researchers working on more than 500 field projects in 66 countries. Some 203 million people have been reached by policies found to be effective by J-PAL studies. He has also supported D-Lab’s Scale-Ups program, which develops and helps commercialize affordable products for the poor. In 2014, Mohammed established the Abdul Latif Jameel World Water and Food Security Lab at MIT to spearhead research that will help humankind adapt to a rapidly changing planet and combat worldwide water and food supply scarcity. He was named a member of the MT Corporation in 2009 and became a life member in 2014. Mohammed’s ability to inspire others, lead diverse constituents around common goals, and create meaningful connections between institutions and nations make him a deserving recipient of the Bronze Beaver Award.</p>
+                        <p>&nbsp;</p>
+                       </div>
+                      </div>
+                     </div>
+                     <div class="accordion-item"> 
+                      <div class="paragraph paragraph--type--new-accordion-items paragraph--view-mode--default">
+                       <h3 class="heading"><a class="accordion-title" aria-expanded="false">2016 Henry B. Kane ’24 Award Recipients</a></h3>
+                       <div class="accordion-content">
+                        <h4>Inge Gedo ’85</h4>
+                        <p>Inge has a long history of service to the Institute. Currently a director of the Club of Washington DC, Inge has also lent her time and talents to her class as president since their graduation. Inge is an Educational Counselor, and she has helped plan every class reunion. A large part of her many contributions to the Institute has been her dedication to fundraising. Inge has not only helped plan each class reunion, she has also been on her class Reunion Gift Committee each year. Inge has participated wholeheartedly in these fundraising efforts, including serving as one of the cochairs for their milestone 25th reunion. She understands the importance of both leadership and annual gifts to the Institute, and demonstrates this in her own loyal philanthropy to MIT. In 2015, the Class of 1985 set an ambitious goal of 42 percent participation among their class. Inge was their most diligent volunteer, consistently reaching out to classmates, following up, and encouraging their participation in the Reunion Gift Campaign and their attendance at Tech Reunions itself. Inge reached more than 50 classmates through her efforts and inspired others on the Reunion Gift Committee to follow up with as many of their classmates as possible, particularly in the final weeks of the campaign. Inge’s outstanding abilities as a volunteer leader do not end with her personal dedication to the cause, or even her ability to inspire her classmates to do more for the Institute. She is also incredibly collaborative and supportive of staff and is a delight to work alongside.</p>
+                        <h4>Dirk A. (Derry) Kabcenell ’75</h4>
+                        <p>Over the past 15 years, Derry has been an outstanding fundraising volunteer for the Institute and has contributed substantially to the activities of the Alumni Association and Resource Development. Derry is an exceptional partner who embraces fundraising best practices, and he looks for new ways to contribute to the fundraising objectives and the MIT community at large. He began his volunteer service as a member of the Reunion Gift Committee over 15 years ago, in honor of his 25th reunion. Since then, Derry has faithfully served on the Reunion Gift Committee for his 30th, 35th, and most recently, his 40th reunion. As an experienced volunteer, Derry was an outstanding advocate for the MIT Annual Fund. He attended regional training sessions that allowed him to share his expertise with committee members across reunion years. Derry embraced the new volunteer resources available to him and shared his enthusiasm with the Reunion Gift Committee, encouraging others to use these resources as well. Derry was one of the most active members of the Reunion Gift Committee, and his exceptional work helped the class surpass their aggressive goals of 40 percent participation and $4.8 million raised. He was thorough in his outreach and connected with each of his prospects by email and by phone multiple times. Nearly all of Derry’s prospects contributed to the campaign, and Derry’s solicitations totaled nearly $30,000, one of the highest totals of all Reunion Gift Committee members. As well as being a highly effective volunteer, Derry is an absolute pleasure to work with. He is responsive and always offers to do more!</p>
+                        <h4>Jesse Lipcon ’65, SM ’66</h4>
+                        <p>Jesse celebrated his 50th reunion in June 2015. He served as a member of the Class of 1965 Reunion Gift Committee as well as its Reunion Committee. Jesse rowed crew while an MIT student and that theme, which is a deeply meaningful one for him, has strongly influenced his work as an MIT volunteer. Jesse’s alumni volunteer service began in the early 2000s through the Venture Mentoring Service and the MIT Crew Alumni Association. In 2004, Jesse served as a member of his 40th Reunion Gift Committee. At that time, he focused on engaging other crew alumni in the Class of 1965 as donors to MIT, whether in support of crew or any other designation. He has great follow-through and reliability, and he takes his commitment as a volunteer to heart. Jesse has gone on to become a member of the MIT Annual Fund Board, where he served with distinction. He became a member of the Friends of DAPER Board, and he renewed his term as a member of the MIT Crew Alumni Association. He has accomplished a great deal in the past 16 years for his class and for the Institute. In addition, as an ongoing member of both the William Barton Rogers Society and the 1861 Circle, Jesse continues to serve as a role model for other alumni, as he continues to give back to MIT himself and encourages others to follow suit. Jesse is respected by staff and fellow alumni alike.</p>
+                       </div>
+                      </div>
+                     </div>
+                     <div class="accordion-item"> 
+                      <div class="paragraph paragraph--type--new-accordion-items paragraph--view-mode--default">
+                       <h3 class="heading"><a class="accordion-title" aria-expanded="false">2016 Harold E. Lobdell ’17 Distinguished Service Award Recipients</a></h3>
+                       <div class="accordion-content">
+                        <h4>Farrokh K. Captain ’66, SM ’67, MO ’68</h4>
+                        <p>Farrokh has remained committed to MIT for four decades and has rendered valuable volunteer services to the Institute even though he lives far from campus. He has been a torch bearer of MIT in South Asia for more than three decades now. He has served for 30 years as MIT’s regional chair for Pakistan and the MIT Enterprise Forum. Currently, he also serves as the president of the MIT Alumni Club of Pakistan. He has been an Educational Counselor for the last 30 years and has interviewed hundreds of applicants for MIT admissions. He has regularly hosted MIT alumni events in Pakistan, providing support out of his own pocket during the last two decades and while remaining a generous donor to the annual fund. Recently on campus celebrating his 50th reunion, Farrokh’s leadership and outreach is felt beyond Pakistan.</p>
+                        <h4>Steven C. Carhart ’70, SM ’72</h4>
+                        <p>Steve’s commitment to the Institute extends back to his undergraduate days when he served as editor of The Tech. More recently, he concluded multiple terms as the alumni corporation president of Phi Beta Epsilon (PBE). Steve has worked tirelessly and selflessly as a volunteer, usually with little fanfare or recognition for his service. Steve’s ability to lead was showcased during his first tenure as editor in the spring of 1969, which coincided with a period of unrest on campus due to tensions over the Vietnam War and classified research on campus. Little did Steve realize when he became the PBE corporation president in 2009 that his time in office would again coincide with a period that would have tested any leader’s mettle. While on the verge of commencing a major fundraising and renovation plan for the PBE house at 400 Memorial Drive, the organization was challenged with allegations in 2010 that threatened its very survival. Steve devoted countless hours of phone calls, correspondence, and meetings with MIT administrators, alumni, and undergraduate members to resolve contentious issues and build consensus upon a path forward that ensured PBE’s future. He spearheaded the Vision 2020 fundraising effort, personally traveling across the United States and to other countries in order to present the plans to potential alumni donors for the fraternity’s much-needed renovation. These efforts culminated in the successful completion of the project in 2013. Through it all, Steve continued to guide the entire brotherhood through a forward-thinking period of change, leading by example and ensuring that there was strong alumni leadership to work with undergraduates.</p>
+                        <h4>Mary T. (Teri) Centner ’89</h4>
+                        <p>Teri has been a devoted volunteer for more than 20 years. Teri was an active leader of the MIT Club of Southern California, serving in multiple roles. She relocated to southern California from Washington, DC, in 2001 and immediately immersed herself in club activities. As the club’s vice president of programs, she was responsible for significant programming upgrades and development. She also served as the club’s president and vice president of communications. To every role, she brought good humor, consistency, follow-through, and dependability. When she returned to the DC area, Teri once again became involved in the Club of Washington DC. She decided that the club should have a social media presence and she made it happen, with active accounts on Facebook and Twitter. She became involved in the club’s K–12 STEM outreach and is active herself in the FIRST Robotics Competitions as a mentor and a judge. Three years ago, she accepted the path toward leadership in the Club of Washington DC, first serving as second vice president, then as first vice president, and currently as president. It is unusual for a volunteer to have led two separate significant-sized clubs in major alumni markets, but Teri has done so with diplomacy, energy, and joy.</p>
+                        <h4>Cristina Dolan SM ’94</h4>
+                        <p>An active alumna in the New York City area for almost 15 years, Cris’s passion and dedication for MIT is evident in all the ways she contributes to the alumni community. As a board member, vice president of communications, executive vice president, and president of the MIT Club of New York, Cris brought exclusive programming to alumni and was responsible for the club’s now famed Statue of Liberty logo and Tiffany &amp; Co. engraved glass apple gifts for speakers. With her unique brand of entrepreneurship and ability to connect organizations, Cris has brought growth and sponsorship opportunities to numerous MIT-affiliated organizations. The MIT Enterprise Forum, where she has been on the global board and currently serves as chair of the New York chapter, has especially experienced a resurgence in interest with Cris’s leadership. Most recently, Cris has been the main organizer and driving force behind the “Dream It. Code It. Win It.” coding competition, run in conjunction with the MIT Club of New York and MIT Enterprise Forum of New York City. This student coding competition provides opportunities to young entrepreneurs and has won numerous awards for its support of STEM initiatives. Cris is always willing to help fellow alumni with a connection, career advice, and opportunities. She is a true star in the alumni community and deserves recognition for the longevity and quality of her contribution to the Institute.</p>
+                        <h4>L. Dennis Shapiro ’55, SM ’57</h4>
+                        <p>Dennis makes use of all the best attributes alumni volunteers should have: tact, discernment, high standards, enthusiasm for the community, and a strong belief in the Institute and its mission. Throughout all of his volunteer activities, Dennis has sought to raise the sophistication and tone of MIT programs and events to a level suited to the Institute’s place as one of the world’s great institutions of learning. The transformational aspect of this approach was most vividly seen at the 60th reunion of the Class of 1955 in June 2015. Feeling that something more than ties to friends and MIT would be needed to make the 60th reunion a draw for classmates, Dennis quietly put forward a bold proposal. Adding the spice of novelty to the committee’s desire for an elegant evening, Dennis arranged for the class dinner to be held at the New England Historic Genealogical Society (NEHGS) in Back Bay. The effect of these plans was so successful that the Class of 1955 not only saw reunion attendance grow beyond average, but reservations for this event exceeded the building’s legal capacity! Dennis’ proposal led to near- record-breaking 60th reunion attendance, and his vision, practical planning, and demeanor make him an example of the best kind of collaborative alumni volunteer.</p>
+                        <h4>Bruce D. Wedlock ’56, SM ’58, ScD ’62</h4>
+                        <p>Bruce has made significant contributions to the Alumni Association, primarily in the area of support for the Office of Fraternities, Sororities, and Independent Living Groups (FSILG) system, from the mid-1960s until retirement last year from the alumni corporation of Phi Kappa Sigma Fraternity’s board of directors. Bruce’s service began as a trustee for MIT’s Alpha Mu chapter of PKS, which he had joined as a student. When the trust created a corporation to manage the house property, Bruce also became a director and an officer, serving at various times as secretary, treasurer, and vice president for physical plant management. These responsibilities led him to become the treasurer for the capital campaign for PKS’s major renovation in 1997, which raised over $814,000, far more than anyone had dared to project. His role as alumni house manager also led him to realize just how much that responsibility had grown in size and complexity over the years. Bruce researched and wrote the first House Manager’s Manual, detailing required inspection schedules, outside inspection agencies, and what inspectors looked for. This became the text for the Association of Living Group’s (AILG) new course, House Manager 101, and an essential guide for this difficult work that is central to preserving properties that are the links to the happy student days of many MIT alumni. Bruce’s leadership, counsel and contributions to MIT are truly impressive.</p>
+                        <h4>Kenneth Kwokmung Yeung ’88, SM ’89</h4>
+                        <p>Ken has consistently provided a remarkable service to the Alumni Association and MIT through his volunteer work and leadership in the MIT Club of Hong Kong and his persistent effort in promoting cooperation between MIT alumni clubs in Greater China. Ken was elected in 2007 as a member of the MIT Club of Hong Kong board of directors, and he served as the director of Greater China Liaison Officers for 2007–2009. He spearheaded interclub cooperation with various Greater China clubs and facilitated the cross-marketing of events to alumni in Beijing, Shanghai, and Taiwan. Ken’s initiative provided valuable networking opportunities for alumni in Greater China and enabled frequent travelers to engage in MIT alumni activities wherever they are. Ken was re-elected in 2009 and served as vice president of the MIT Club of Hong Kong for 2009–2011. As he traveled frequently in Greater China, he continued to promote interclub cooperation and explored joint initiatives such as quarterly Greater China club meetings, the Taiwan Club joining the Ivy Ball in Hong Kong, and sharing of speakers. Ken was also involved in helping and advising the reestablishment of the Beijing and Shanghai clubs in 2010 after former club presidents stepped down. During this period, Ken supported the Hong Kong Club’s president in leading volunteers, organizing club activities, and increasing members’ participation. Ken’s efforts continued after he was elected as president of the MIT Club of Hong Kong in 2011 and re-elected in 2013 for another two-year term. Ken is a talented volunteer leader and his ability to create meaningful connections is unparalleled.</p>
+                       </div>
+                      </div>
+                     </div>
+                     <div class="accordion-item"> 
+                      <div class="paragraph paragraph--type--new-accordion-items paragraph--view-mode--default">
+                       <h3 class="heading"><a class="accordion-title" aria-expanded="false"> 2016 Margaret L. A. MacVicar ’65, ScD ’67 Award Recipients</a></h3>
+                       <div class="accordion-content">
+                        <h4>Ryan F. Allard ’06</h4>
+                        <p>Ryan is dedicated in his service to annual giving at MIT, especially in his role as cochair of the Class of 2006 Gift Committee during the past ten years. Together with cochair Kyle Zeller ’06, Ryan led his class and MIT10 to modern day participation records. Ryan began his excellent work with the Annual Fund through the Tech Caller program, where he served as a caller for one year and student supervisor for two years. In his senior year, after a shift in the strategic approach to student philanthropy in the Annual Fund, Ryan was asked to serve as the Senior Gift chair. Along with members of the Class of 2006 Senior Gift Committee, Ryan ushered in a new era of success with MIT student philanthropy when the class achieved a participation rate of 51 percent. Ryan’s personal outreach, ability to inspire the committee, and creativity on social media participation helped skyrocket class gift participation from seven percent in April to 32 percent by the end of June. Ryan’s success leading the Class of 2006 has persisted, and for the past decade, the Class of 2006 has relied on Ryan to help lead class giving efforts. Ryan always lends his time and talents to achieve outstanding annual results. During the past decade, Ryan has played an integral role in leading philanthropic change amongst MIT students and young alumni. He is an exemplary partner with MIT Annual Fund staff and he has encouraged volunteers and staff to develop new strategies that positively impact MIT philanthropy. His volunteer leadership, as well as the example he serves for future generations of MIT10 volunteers, is invaluable.</p>
+                        <h4>Clinton C. Blackburn ’08</h4>
+                        <p>Clinton is exactly the type of young leader the Awards Committee had in mind when discussions began about the new MacVicar Award. Clinton’s volunteer leadership for MIT began as a student and continued with the Alumni Association immediately following his graduation. As a student, Clinton served as undergraduate association chair and on his Senior Class Gift Committee. Upon graduation, his gift committee volunteer activities continued for three years on the MIT10 Class Gift Committee, while he was also an active member of the MIT Club of Boston. Four years after graduation, Clinton undertook leadership roles with the MIT Club of Boston, serving concurrently as assistant vice president of programs and co-director of arts and entertainment. During this time, he also served on his five-year class reunion committee and reunion gift committee. Clinton has consistently taken higher leadership roles within the Club of Boston. These include vice president of communications, co-director of MIT10, clerk, and his service as club president. In addition to his class and club activities, Clinton is a member of Black Alumni of MIT (BAMIT) and has been active with the MIT Admissions Office. Clinton is a tremendously talented volunteer who is a shining star in the MIT community.</p>
+                        <h4>Bridget C. Brett ’06, SM ’08</h4>
+                        <p>Bridget is all about MIT! From her days as a campus tour guide to her term as MIT Club of South Texas president and her current activities with the MIT Club of Northern California, Bridget has embodied the characteristics of a motivated MIT Alumni Association leader. It is amazing how many ways Bridget has had an impact on MIT alumni in the few short years since her graduation. She is her class president, past president of the MIT Club of South Texas, and she has served on her class gift committee, her class reunion committee, and as a career fair recruiter for her former employer. While Bridget was in graduate school at MIT, she contacted alumni clubs around the country in her capacity as Class of 2006 vice president and started a “Pub Night on the Sixes” event in several cities, where local ’06 alumni gathered for a social get-together. Bridget arranged for regional clubs to advertise and market these events. When she moved to Houston, she cold-called the Club of South Texas president and inquired about volunteering. She joined the Club board of directors in 2010 and started organizing events for MIT10 alumni and activities for the entire MIT community in Houston. By 2013, Bridget became the club’s president elect and served the following year as president. In her term as president, Bridget has demonstrated great dedication and poise in each of her volunteer assignments and leadership.</p>
+                        <h4>Elaine J. Harris ’78</h4>
+                        <p>As the Black Alumni of MIT (BAMIT) chair, Elaine led the organization with overall strategic and day-to-day operations. In this role, Elaine showed outstanding leadership qualities in articulating and maintaining mission-focused strategies, prioritizing resources, and leveraging relationships and team members to effectively achieve organizational goals. Elaine led a group that organized the BAMIT fundraising event in New York City, which earned the group an MIT Alumni Association Great Dome Award in 2013. At the end of her term in September 2013, BAMIT had more than $20,000 in its bank account. Elaine built solid relationships with the Office of the Institute Community and Equity Officer, the Office of Minority Education (OME), and the Office of the Dean of Graduate Education. She provided consistent support and guidance to campus during the Black Lives Matter campaign last year via her relationships with OME, Department of Student Life staff, leaders of the Black Student Union, and Chocolate City. In 2015, Elaine cochaired a committee on a pilot initiative created by the Admissions Office to increase yield from admitted black students. Thirty-one alumni from the 1970s to the 2000s volunteered to contact admitted students. Elaine spent countless hours matching students to alumni using Course and location. Seventy-eight percent of students contacted by black alumni enrolled in the Class of 2019. Elaine set the bar high for the next volunteer to take on this initiative. Elaine brings grace and good nature to her volunteer assignments and greatly contributes to all of the initiatives in which she is involved.</p>
+                        <h4>Joseph H. Levitch ’69</h4>
+                        <p>Joe has been actively engaged with MIT in many ways as a dedicated volunteer, enthusiastic MIT ambassador, and is a joy for staff to collaborate with. Joe was an instrumental force on the Priscilla King Gray Public Service Center Leadership Council from 2009–2015, sharing his passion for helping students continue their community service efforts. He advocated for the value of the Public Service Center’s work among MIT administration and peers when he helped spearhead fundraising efforts for the PSC Leadership Council in 2013. Joe’s involvement with the Public Service Center led him to become the generous alumni challenger for the Underclassmen Giving Campaign (UGC) 2014 and 2015. As a challenger, Joe did not simply agree to match the students’ gifts. He was integrally involved in motivating the volunteers, sending them encouraging emails, and, despite living in Minnesota, stopping by the Lobby 10 booth during the UGC’s active weeks. Joe actively engaged students in conversation, and chatted with student donors about the projects they hoped to see sponsored by the Public Service Center. After his first year sponsoring the challenge, he was so inspired by their work, campaign results, and personal stories that he stated his intention to take on the role of alumnus challenger again within minutes of closing out the 2014 campaign! In 2014–2015, Joe served on the Alumni Association Program Committee, which assessed and made recommendations on undergraduate alumni programming, and was an integral part of the committee’s success. Joe is always willing to take on extra tasks and his enthusiasm and dedication are contagious!</p>
+                        <h4>Kathreen E. Thome ’09</h4>
+                        <p>Kathreen is an extremely dedicated and innovative volunteer leader. She started volunteering for MIT through the MIT Educational Council and the Club of Wisconsin shortly after she graduated in 2009. During six years of volunteering for the MIT Club of Wisconsin, Kathreen held many roles, including vice president of communications, MIT10 chair, executive vice president, and president. She handled all of the club’s web and email event marketing using iModules and organized programs that appeal to MIT10 alumni. In 2013, Kathreen was nominated by board members to be the club president for a two-year term. Beyond her MIT10 responsibilities, Kathreen was so enthusiastic and dedicated that she proposed and implemented additional events to serve alumni of other ages, as the club’s board and general alumni population in the region skew older. Club members witnessed Kathreen’s dedication on many occasions, such as when she would drive two and a half hours on a weeknight to attend board meetings and events. Another more recent example of Kathreen’s dedication was a five-hour bus trip in the rain to attend the Strategic Visioning Session for alumni volunteer leaders held in Chicago in October 2014. She applied what she learned from the visioning session to the club’s half-year strategic planning meeting soon after. Kathreen is a true go-getter combining enthusiasm with strategic thinking. She has had a very meaningful impact on everyone she has worked alongside.</p>
+                        <h4>Vandita M. Wilson ’90</h4>
+                        <p>From the start, it was clear that Vandita was an enthusiastic and dedicated member of the Class of 1990 reunion planning committee. She responded to all MIT Alumni Association staff emails and phone calls promptly and completed all requests for information and outreach with gusto. She reached out to members of the class by phone and email, trying until the last moment to increase participation in their 25th reunion. When it was clear that the class turnout was going to be less than hoped for, Vandita immediately began looking at ways to improve the process for the next reunion cycle. She hit the ground running at Tech Reunions 2015, arranging a time to speak with MIT staff about what could be done in the next five years to rally the class, then following up with her fellow reunion planning committee members. After the reunion weekend, she responded immediately to a follow-up survey with detailed and thoughtful observations and suggestions. As a member of her 25th Reunion Gift Committee, Vandita also worked tirelessly to reach out and encourage her fellow classmates to give back to MIT, contacting more than 300 classmates. She directly secured 77 gifts totaling more than $58,000, which drove the reunion gift participation to a class record of 42 percent. Vandita was a key contributor in the Reunion Gift Committee conference calls throughout the year and helped identify new ways to engage classmates and encourage giving at all levels. In addition to taking on multiple volunteer roles during her reunion year, Vandita has served as the Class of 1990 secretary since 2011 and as president since 2015. Vandidta’s constant enthusiasm and unwavering dedication distinguishes her as a superb volunteer leader.</p>
+                        <h4>Kyle M. Zeller ’06</h4>
+                        <p>Since 2006, Kyle has amassed a significant amount of success in leadership roles as a volunteer with the Annual Fund. Alongside Class of 2006 Gift Committee cochair Ryan Allard ’06, Kyle has led his class and MIT10 to modern day participation records. Kyle has served as a model cochair for MIT10 annual giving volunteers since he first took on the role in the fall 2006. He has helped set the bar for what all MIT10 volunteer chairs should aim to achieve. Kyle began his work with the Annual Fund through the Tech Caller program, where he served as a caller for two years and focused specifically on DAPER fundraising. In his senior year, after a shift in the approach to student philanthropy raised expectations for Senior Gift participation, Kyle became an even more a successful Tech Callers fundraiser and he was amongst the first people recruited to join the Class of 2006 Senior Gift committee. Alongside members of the committee, Kyle helped usher in a new era of success with MIT student philanthropy when the class achieved a 51 percent participation rate. Due to his success with the Senior Gift and the leadership skills he displayed, Kyle was named cochair of the Class of 2006 gift committee. When the class did not have immediate success, Kyle’s collaborations with Annual Fund staff, personal outreach, ability to lead, and social media ingenuity helped quadruple participation from seven percent to 32 percent in less than three months. Kyle’s success leading the Class of 2006 has persisted and the class has relied on him to help lead class giving efforts. Year after year, Kyle lends his time and talents to achieve outstanding annual results. During the past decade, he has played an integral role in leading philanthropic change amongst MIT students and young alumni, and he is an exemplary volunteer leader.</p>
+                       </div>
+                      </div>
+                     </div>
+                     <div class="accordion-item"> 
+                      <div class="paragraph paragraph--type--new-accordion-items paragraph--view-mode--default">
+                       <h3 class="heading"><a class="accordion-title" aria-expanded="false">2016 George B. Morgan ’20 Award Recipients</a></h3>
+                       <div class="accordion-content">
+                        <h4>Hope M. Barrett ’98</h4>
+                        <p>Hope first became an educational counselor (EC) in 1998 in Atlanta, Georgia, and has been deeply committed to the Educational Council and its mission of serving students. She became regional chair in spring 2015. MIT staff members describe Hope as warm, engaging, and always willing to help out where needed. Hope is very knowledgeable about the landscape of the Atlanta region. Befitting a talented MIT alumna, she has pioneered many technological innovations and combines this with a personal touch to improve her region. Greater Atlanta is one of the largest regions in the country—thanks to its surging number of applicants—and has more than 70 ECs. Hope used software to map both applicants and ECs and analyzed the data to better identify EC assignments and areas where more EC recruitment is necessary. Hope has been excellent at keeping her ECs fully informed through a newsletter she created. Her newsletters are well- designed and compelling, and Hope regularly uses them to recognize ECs in her region for exceptional service, an essential part of a volunteer organization.</p>
+                        <h4>Eleanore G. Klepser ’66</h4>
+                        <p>Eleanore started as an educational counselor in Port Alleghany, Pennsylvania, in 1981. She continued her service as an EC when she moved to Buffalo, New York, and then became regional chair of the area in 2002. Eleanore has been involved in many aspects of MIT outreach. She attends several college fairs and the Alumni Leadership Conference and is the Educational Council representative for the MIT Club of Western New York. In fact,after chatting with Eleanore at an EC workshop on campus during Tech Reunions, Dean of Admissions Stu Schmill ’86 was surprised to learn that she hadn’t already received a Morgan Award! Eleanore has been such a solid contributor for many years. Her interview reports are always exceptional, and she earned a spot in the “All 5’s Club” for high ratings. She does a wonderful job providing the proper context for each applicant, which helps the Admissions Office make better decisions. Eleanore is a great ambassador for MIT and she has made wonderful connections with MIT applicants during her time as an educational counselor. Eleanore is truly committed to helping prospective students realize their dream of attending MIT.</p>
+                        <h4>Anna E. Lee ’97</h4>
+                        <p>Anna became an educational counselor in northern Virginia shortly after her MIT graduation. An alumna of the Thomas Jefferson High School for Science and Technology, she was thrilled to join the team of ECs who focused on interviewing students from her high school alma mater. In 2011, Anna volunteered to become a vice chair in northern Virginia and took over the coordination of a team of more than two dozen ECs who interview Jefferson High students. With a heavy load of manually assigned interviews each season, Anna has one of the more involved vice chair positions. She works hard to recruit ECs, particularly those who attended Jefferson, and has managed the school’s interview coordination as it has grown from about 50 students per year to nearly 100. Anna is diligent in her efforts to keep ECs informed and engaged, a valuable asset for retaining volunteers. Her timely communications motivate ECs and provide information about their positive impact. Anna has influenced the applicant experience through organizing local admitted student receptions and outreach. Anna’s service to the Educational Council has been noteworthy, and she graciously makes each season a success.</p>
+                        <h4>Richard C. Lufkin ’68</h4>
+                        <p>Rick has been an educational counselor since 1980 and served most of those years as regional vice chair in Northern New Jersey. His commitment to the Educational Council and to the students he interviews is unparalleled. He is in constant contact with the multiple counselors in his sub-region, hosts Educational Council events at his home, attends all Educational Council functions, stays in touch with students he recommended who attend MIT, and regularly participates in programs and workshops at the Alumni Leadership Conference. Rick is available whenever someone needs help, and he will do anything to further his commitment to MIT and the Educational Council. For example, at an MIT Club of Northern New Jersey holiday party this past winter, Rick spoke to five new potential ECs. With a glow in his eyes, he explained that being an educational counselor was the most inspiring and rewarding job for any alumni volunteer. His enthusiasm and joy as an EC after more than 35 years is a pleasure to see, and the level of enthusiasm and passion that he displays as an educational counselor is unsurpassed. It is clear that Rick is committed to finding the best candidates for MIT.</p>
+                        <h4>Barry J. Margulies ’89</h4>
+                        <p>Barry became an educational counselor in the Baltimore, Maryland, region in 1993. He became vice chair in 2009 and regional chair in 2010. He takes his role of regional chair seriously—coordinating the efforts of ECs in the region, actively troubleshooting for problems, and communicating frequently with the EC office. As regional chair, he pays attention to what is happening with the ECs in his region, checks in with them often, and offers help if needed. Barry spends time each season mapping out the best configurations for EC/high school matches and holds training workshops for new ECs in the area. When the Admissions staff travel to Baltimore each year, Barry is friendly, enthusiastic, and incredibly supportive. The Admissions staff held training webinars for the new ECs and Barry helped answer questions by alumni, staff, prospective students, and their families. Barry always goes the extra mile and has made a positive impact on many students over the years.</p>
+                        <h4>Edward H. Nakamoto ’88</h4>
+                        <p>Ed joined the Educational Council in 2000 and volunteered as an EC for several years until he became regional chair of Hawaii in 2005. Ed has the unique challenge of being regional chair for an entire state and has to manage ECs from multiple towns—and multiple islands—within Hawaii. He ensures that the process works well and every applicant can have an interview, a major challenge due to the nature of the area. He is a thoughtful interviewer and writes excellent interview reports that ensure that MIT can choose the best candidates for its next freshman class. He received very positive feedback from his interviewees on the EC survey in 2015 and graciously hosts the admitted-student gathering each spring. He has been a huge help to the Admissions Office when they visit Hawaii, working with the staff, coordinating the central meeting, and always going the extra mile to help. In 2013, in advance of a planned Admissions visit to Hawaii, Ed stopped by the EC office when he was in Cambridge to discuss possible schools to visit, the context of the area, and plans for the venue. When Admissions Office colleagues visited the island, he even drove them around during their stay so that they wouldn’t have to rent a car. His support of both the volunteers and the Admissions staff is top-rate.</p>
+                        <h4>Michael A. Paluszek ’76, EAA ’79, SM ’79</h4>
+                        <p>Michael joined the Educational Council in 2000 and was named the Club Area of Princeton’s vice chair in 2004, a role he still serves today. Michael is an engaged volunteer who is proactive with ECs in his region. He is “on the ball” as deadlines approach and quick to remind his ECs about outstanding reports, which benefits students and the Admissions Office. Michael has attended numerous college fairs and organizes and hosts spring yield meetings for the Admissions Office. He does more than a dozen interviews himself and picks up extras when other ECs are unable to. He is quick to respond when ECs reach out to him for help. Over the last several years, the Admissions Office has curtailed its recruitment travel and cannot visit the Princeton area each year. Michael, not wanting the students in his area to lack the information they need, has begun to visit several area high schools to discuss MIT and its admissions and interview process. He is well-regarded by the schools for his efforts, and his visits are greatly appreciated by students. Michael does admirable outreach work for the Admissions Office, and his attention to detail and care for applicants distinguish Michael as an exceptional educational counselor.</p>
+                        <h4>Christina Suk Fun Poon ’88</h4>
+                        <p>Christina joined the Education Council in 1990 and became the regional chair of Hong Kong in 2009. She has been a valued Council member in all her roles, including interviewing students, submitting excellent reports, interacting with her ECs, and managing the region she oversees. She communicates frequently with the EC Office and keeps the office aware of the needs of her region. Christina coordinates an annual spring gathering event for admitted students in Hong Kong. This is a challenge in a region that has so few admits, but Christina does a stellar job. Christina led the implementation of an important change for interviews in Asia. As MIT’s applications from the southern China region grew, the Institute had no infrastructure to handle it. In 2008, Christina took on the role of vice chair in the Hong Kong region with a goal of developing a strategy for southern China. She skillfully coordinated with the regional chair for China—who lived in Beijing, more than 1,200 miles away—to ensure that all students were being served. Further, she worked with the ECs in Hong Kong to ensure an excellent interview experience for all students. Christina has an outstanding ability to communicate Admissions Office messages to students as well as her local ECs.</p>
+                        <h4>Tanya E. Segel ’84</h4>
+                        <p>Tanya was appointed to the Educational Council in 1991. She served as an EC for 24 years in New Haven, Connecticut, until she became regional chair in 2015. Tanya consistently submits excellent interview reports and is a member of the “All 5’s Club” for her high ratings. Tanya’s reports provide much-needed context for each applicant and ensure that the Admissions Office can choose the best candidates for MIT’s next freshman class. Over the last several years, Tanya has graciously opened up her home to local ECs and admissions officers and has hosted dinners to bring them together. Her efforts on behalf of the council have been invaluable for many years. Tanya understands exactly what the Admissions Office is looking for, represents MIT to prospective students in model fashion, and is a shining star in the council community.</p>
+                        <h4>Michael T. Strauss ’79, ’85, PhD ’85</h4>
+                        <p>Mike began interviewing as an EC in 1995 and continued in that role until he became regional chair for the North Shore in Massachusetts in 2007. The Admissions staff have just two words to say about Mike: “He’s great!” As a local EC, Mike is well- known to the staff as he often attends information sessions and EC workshops on campus. In fact, it would be hard to imagine an information session without him! Mike is an incredibly valued member of the council. He consistently writes excellent interview reports and provides admissions with the necessary background and context of each applicant. He is particularly good about communicating with the EC Office and keeping staff aware of what is happening in his region. As a regional chair, he is very proactive with his ECs and brings them together as needs arise. Mike is willing to help out when needed and is one of the select few ECs whom the council can count on to do an extra interview or an interview that requires a special touch. Mike is a thoughtful and dedicated educational councilor who sets a wonderful example of service and willingness to give back to MIT.</p>
+                        <h4>Mary F. Tong ’90, SM ’91</h4>
+                        <p>Mary joined the Educational Council in 2003. She was originally based in Taichung, Taiwan, and covered most of the interviews from central to southern Taiwan. She is always willing to assist where it’s needed. After moving to Taipei, Taiwan, she continued to interview students in Taipei and helped with the load from central to southern Taiwan. Mary is a solid, loyal, and caring EC who takes the time to keep the small group of Taiwan ECs, MIT students, and parents in touch and connected. Mary maintains a directory for the group, and she consistently helps make families of newly admitted students more comfortable with sending their children from Taiwan to MIT, especially those students who have never travelled abroad. Additionally, Mary graciously hosts an annual summer event for current students and newly admitted students to connect them with each other. Says Tina Lee, regional chair, “I wish we could clone her!” Mary’s thoughtful approach and attention to detail are invaluable to the Educational Council, and her tremendous support and encouragement to prospective students is exemplary.</p>
+                        <h4>Michael R. Wildermuth ’72</h4>
+                        <p>Michael joined the council in 1996 and over the years, he has never received less than a 4 as a rating. It is apparent how much Michael enjoys his work as an EC and how much he wants to contribute to the process. He asks well-thought-out questions and has never been reluctant to contact the EC Office with any comments or concerns. Michael lives in the Lima, Ohio, area and interviews about six applicants annually. For the past several years, he has received a 5 rating on all of his interview reports. Michael has displayed sustained excellence and effort as an EC for many years. He goes quietly about his work and never looks for praise or credit, but he deserves recognition for his continued dedication and performance. He covers a large geographic area, and his interviews are conducted in a timely manner and his reports submitted promptly. Michael’s contribution to the process is more than just his reports. It includes the friendly face he provides to the students he meets each year as they apply for admission. Michael’s distinguished service to MIT and his ability to meaningfully connect with prospective students and their families is remarkable.</p>
+                       </div>
+                      </div>
+                     </div>
+                     <div class="accordion-item"> 
+                      <div class="paragraph paragraph--type--new-accordion-items paragraph--view-mode--default">
+                       <h3 class="heading"><a class="accordion-title" aria-expanded="false">2016 Great Dome Award Recipients</a></h3>
+                       <div class="accordion-content">
+                        <h4>MIT Club of Northren California: Energy &amp; Environment Track</h4>
+                        <p>The Energy &amp; Environment Series of the MIT Club of Northern California has achieved success in its mission to engage and inform MIT alumni and their colleagues in important topics relating to the replacement of fossil fuels for energy generation and transportation, as well as other aspects of protecting the environment and sustaining critical natural resources. Led by club vice president Doug Spreng ’65, the Energy &amp; Environment (E&amp;E) team consists of about 35 MIT alumni volunteers in the region. Since 2009, the E&amp;E team has produced more than 40 evening events, with a dinner and networking session before each two-hour program. The E&amp;E programs include guest speakers and panel discussions from local industry leaders that typically cover subjects such as solar power generation, storage, electric vehicles, and the electric grid. The team pioneered the “MITEI on the Road” series, which highlights MIT faculty research over a wide range of technologies and applications, featuring luminaries like Donald Sadoway, Vladimir Bulovic, Angela Belcher, Anantha Chandrakasan, and Richard Lester. The team launched the successful Energy Tours program in 2012, 27 tours of companies engaged in low-carbon electric power generation, demand response, biofuels, and management of the California electric grid. Nearly 6,000 attendees have attended E&amp;E events during the length of the series, which resulted in a large increase in membership and a strong financial base for the club with the resulting surpluses to be used for the club’s MIT Scholarship Fund, including the club’s gift of $75,000 to the fund this year.</p>
+                        <h4>MIT Club of South Texas: Science Olympiad Invitational</h4>
+                        <p>Part of the mission of the MIT Club of South Texas is to help educate people in the Houston area in science, math, and engineering. The Club lives its mission through ongoing, multifaceted K–12 STEM activities undertaken by club members, including the highly successful Inaugural MIT Club of South Texas/Lone Star College-Kingwood Science Olympiad Invitational in December 2014. The event was conceived, proposed, and organized by Coleen Smith ’87, and Marilyn Taggi Cisar ’76 served as the coordinator for Club of South Texas activities. Nearly five months of planning and preparation included engaging the MIT Club of South Texas community and networking with teachers and coaches of the middle and high school Science Olympiad teams in the area. The event was advertised through the Texas Science Olympiad organization, and connections were made at Title 1 schools by event organizers. The prestigious MIT name lent credibility to the event and helped it reach near-capacity. Science Olympiad competitions are like academic track meets, consisting of 23 team events in division separated by grade levels. Events can cover genetics, earth science, chemistry, anatomy, physics, geology, mechanical engineering, and technology. The Club of South Texas board encouraged club members to participate through email and newsletter solicitations for several months and generously donated money to help cover the single biggest out-of-pocket cost—the much-coveted Science Olympiad medals for event winners. Eighteen members of the MIT community stepped up to help with this new event. MIT participants ranged from current students to parents, MIT10 graduates, and alumni from earlier decades. More than half of the MIT volunteers were new to Science Olympiad—which helped the club engage new alumni and volunteers—and all brought a unique MIT perspective to the learning experience!</p>
+                        <h4>Sigma Chi Fraternity, MIT Alpha Theta Chapter</h4>
+                        <p>The Alpha Theta chapter of Sigma Chi has demonstrated commitment to the Institute as the oldest continuously operating fraternity at MIT. Their recently completed capital campaign, which funded an award-winning renovation of their Back Bay townhouse, accomplished their goal of building a “first-class living and learning environment” that still felt like a home. They sensitively restored their landmark residence and upgraded it for the next generation of MIT students. The building now has updated plumbing, electrical, air conditioning, heating, lighting, life safety system, computer networking, kitchen and bathrooms, a five-stop elevator and extended central stair, and an additional fifth floor. Working with their project team, Sigma Chi was able to complete this comprehensive overhaul of 532 Beacon St. with so much historic integrity that it earned a Preservation Achievement Award from the Boston Preservation Alliance— putting it in the company of Fenway Park and Trinity Church. The Beacon to the Future campaign’s chair, Doug Bailey ’72, SM ’74, ME ’75 deserves much credit for spearheading the fundraising efforts, but no project of this scope is accomplished by one person alone. It is a testament to the entire chapter, which was able to solicit necessary funding from their alumni and use the Independent Residence Development Fund to finance the construction. Karl Büttner ’87, administrative chair of the campaign as well as a member of the building committee and former house corporation president, was instrumental in the effort. Completing this sort of project on schedule demanded the cooperation of the undergraduate members, who were inconvenienced and displaced during the eight-month construction period. This success is the result of a coordinated group effort.</p>
+                       </div>
+                      </div>
+                     </div>
+                     <div class="accordion-item"> 
+                      <div class="paragraph paragraph--type--new-accordion-items paragraph--view-mode--default">
+                       <h3 class="heading"><a class="accordion-title" aria-expanded="false"> 2016 Honorary Membership in the Alumni Association Recipients</a></h3>
+                       <div class="accordion-content">
+                        <ul>
+                         <li>John H. Harbison</li>
+                         <li>Candace L. Royer</li>
+                        </ul>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="left">
+               <div class="block-region-generic-page-top-sidebar">
+                <nav role="navigation" data-block-plugin-id="menu_block:main" class="block block-menu navigation menu--main">
+                 <h2 class="visually-hidden" id="-menu">Secondary navigation</h2>
+                 <ul class="main-menu-block" id="generic-page-menu">
+                  <li class="menu-item menu-item--active-trail"><a href="/volunteer" target="" rel="" title="Volunteer" data-drupal-link-system-path="node/2710">Volunteer</a>
+                   <ul class="submenu">
+                    <li class="menu-item"><a href="/volunteer/explore-volunteer-opportunities" target="" rel="" title="Explore Volunteer Opportunities" data-drupal-link-system-path="node/2838">Volunteer Opportunities</a></li>
+                    <li class="menu-item menu-item--active-trail"><a href="/volunteer/recognition-and-awards" target="" rel="" title="Recognition and Awards" data-drupal-link-system-path="node/2844">Recognition and Awards</a>
+                     <ul class="submenu">
+                      <li class="menu-item menu-item--active-trail"><a href="/volunteerrecognition-and-awards/annual-awards" target="" rel="" title="Annual Volunteer Awards" data-drupal-link-system-path="node/2846">Annual Awards</a>
+                       <ul class="submenu">
+                        <li class="menu-item"><a href="/volunteerrecognition-and-awardsannual-awards/2021-award-winners" data-drupal-link-system-path="node/99497">2021 Award Winners</a></li>
+                        <li class="menu-item"><a href="/volunteer/recognition-and-awards/annual-awards/2020-award-winners" data-drupal-link-system-path="node/97035">2020 Award Winners</a></li>
+                        <li class="menu-item"><a href="/volunteer/recognition-and-awards/annual-awards/2019-award-winners" data-drupal-link-system-path="node/94219">2019 Award Winners</a></li>
+                        <li class="menu-item"><a href="/volunteer/recognition-and-awards/annual-awards/2018-award-winners" data-drupal-link-system-path="node/91671">2018 Award Winners</a></li>
+                        <li class="menu-item"><a href="/volunteer/recognition-and-awards/annual-awards/2017-award-winners" title="2017 Award Winners" data-drupal-link-system-path="node/2856">2017 Award Winners</a></li>
+                        <li class="menu-item menu-item--active-trail"><a href="/volunteer/recognition-and-awards/annual-awards/2016-award-winners" title="2016 Award Winners" data-drupal-link-system-path="node/2854" class="is-active">2016 Award Winners</a></li>
+                       </ul></li>
+                      <li class="menu-item"><a href="/submit-annual-award-nomination" title="Submit Annual Award Nomination" data-drupal-link-system-path="node/16256">Submit Annual Award Nomination</a></li>
+                     </ul></li>
+                    <li class="menu-item"><a href="/knowledge-base" target="" rel="" title="Volunteer Tools" data-drupal-link-system-path="knowledge-base">Volunteer Knowledge Base</a>
+                     <ul class="submenu">
+                      <li class="menu-item"><a href="/volunteervolunteer-knowledge-base/data-request-volunteers-form" data-drupal-link-system-path="node/8026">Data Request Form for Volunteers</a></li>
+                     </ul></li>
+                    <li class="menu-item"><a href="/alc" data-drupal-link-system-path="node/100131">ALC</a>
+                     <ul class="submenu">
+                      <li class="menu-item"><a href="/alc/schedule" data-drupal-link-system-path="node/100270">Schedule</a></li>
+                      <li class="menu-item"><a href="/alc/2021-featured-speakers" data-drupal-link-system-path="node/100484">Featured Speakers</a></li>
+                      <li class="menu-item"><a href="/alc/training-academy" data-drupal-link-system-path="node/100132">Training Academy</a></li>
+                      <li class="menu-item"><a href="/alc/faq" title="ALC Frequently Asked Questions" data-drupal-link-system-path="node/3036">FAQs</a></li>
+                      <li class="menu-item"><a href="/alc/awards" title="ALC Awards" data-drupal-link-system-path="node/3033">Awards</a></li>
+                      <li class="menu-item"><a href="/alc/sponsors" data-drupal-link-system-path="node/100247">Sponsors</a></li>
+                      <li class="menu-item"><a href="/volunteeralc/mitalc-online-party-kit" data-drupal-link-system-path="node/100483">Online Party Kit</a></li>
+                      <li class="menu-item"><a href="/alc/contact" title="ALC Contact" data-drupal-link-system-path="node/3037">Contact</a></li>
+                     </ul></li>
+                    <li class="menu-item"><a href="/volunteer/legislative-advocacy-network" data-drupal-link-system-path="node/99587">Legislative Advocacy Network</a></li>
+                    <li class="menu-item"><a href="/service-initiative" data-drupal-link-system-path="node/100141">The MIT Alumni Better World Service Initiative</a>
+                     <ul class="submenu">
+                      <li class="menu-item"><a href="/service-initiative-faq" data-drupal-link-system-path="node/98789">Frequently Asked Questions</a></li>
+                      <li class="menu-item"><a href="/better-world-service-award" data-drupal-link-system-path="node/100404">The MIT Alumni Better World Service Award</a></li>
+                     </ul></li>
+                    <li class="menu-item"><a href="/volunteer/volunteer-view-march-2022" data-drupal-link-system-path="node/101511">Volunteer View</a></li>
+                   </ul></li>
+                 </ul>
+                </nav>
+               </div> 
+               <div class="generic-page-middle-sidebar">
+                <div class="block-region-generic-page-middle-sidebar">
+                 <div class="views-element-container block block-views block-views-blockgeneric-page-sidebar-content-block-1" data-block-plugin-id="views_block:generic_page_sidebar_content-block_1">
+                  <div>
+                   <div class="view view-generic-page-sidebar-content view-id-generic_page_sidebar_content view-display-id-block_1 js-view-dom-id-c37ae66bbc23f8bf74af8fbd7b3c51437e952d4122fdc812c764641acfd8dc09">
+                    <div class="view-content">
+                     <div class="generic-page-sidebar-content">
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </article>
+        </div>
+       </div>
+      </section>
+     </main>
+     <footer class="footer" role="contentinfo">
+      <div class="container">
+       <div class="footer__logo-address"><a href="http://web.mit.edu/">
+         <div class="icon-mit-logo--black" style="width: 60px; height: 32px;"></div></a>
+        <div class="region ">
+         <div id="block-footeraddress-2" data-block-plugin-id="block_content:55918e43-24ce-49b9-8212-5ee967e71c27" class="block block-block-content block-block-content55918e43-24ce-49b9-8212-5ee967e71c27">
+          <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
+           <h3>MIT Alumni Association</h3>
+           <p>600 Memorial Drive<br> Cambridge, MA 02139<br> 617-253-8200</p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="footer__primary-menu">
+        <div class="region ">
+         <nav role="navigation" id="block-footermainnavigation" data-block-plugin-id="system_menu_block:footer-main-navigation" class="block block-menu navigation menu--footer-main-navigation">
+          <h2 class="visually-hidden" id="block-footermainnavigation-menu">Footer Main Navigation</h2>
+          <ul class="menu">
+           <li class="menu-item"><a href="/communities" target="" rel="" title="Description of takaf." data-drupal-link-system-path="node/2653">Communities</a></li>
+           <li class="menu-item"><a href="/events" target="" rel="" title="Description of junanuliv." data-drupal-link-system-path="node/2650">Events</a></li>
+           <li class="menu-item"><a href="/careers" target="" rel="" title="Careers" data-drupal-link-system-path="node/2652">Careers</a></li>
+           <li class="menu-item"><a href="/learn" target="" rel="" title="Learn" data-drupal-link-system-path="node/2660">Learn</a></li>
+           <li class="menu-item"><a href="/volunteer" target="" rel="" title="Volunteer" data-drupal-link-system-path="node/2710">Volunteer</a></li>
+           <li class="menu-item"><a href="/about" target="" rel="" title="About" data-drupal-link-system-path="node/2662">About</a></li>
+          </ul>
+         </nav>
+        </div>
+       </div>
+       <div class="footer__secondary-menu">
+        <div class="region ">
+         <nav role="navigation" id="block-mitaa-footer" data-block-plugin-id="system_menu_block:footer" class="block block-menu navigation menu--footer">
+          <h2 class="visually-hidden" id="block-mitaa-footer-menu">Footer menu</h2>
+          <ul class="menu">
+           <li class="menu-item"><a href="/communities/mit-students" target="" rel="" data-drupal-link-system-path="node/2656">Students</a></li>
+           <li class="menu-item"><a href="/communities/family-friends" target="" rel="" data-drupal-link-system-path="communities/family-friends">Family &amp; Friends</a></li>
+           <li class="menu-item"><a href="/knowledge-base" target="" rel="" data-drupal-link-system-path="knowledge-base">Volunteer Knowledge Base</a></li>
+           <li class="menu-item"><a href="/about/contact-us" target="" rel="" title="Contact the Alumni Association" data-drupal-link-system-path="node/2861">Contact Us</a></li>
+          </ul>
+         </nav>
+         <nav role="navigation" id="block-footerutility" data-block-plugin-id="system_menu_block:footer-utility" class="block block-menu navigation menu--footer-utility">
+          <h2 class="visually-hidden" id="block-footerutility-menu">Footer Utility</h2>
+          <ul class="menu">
+           <li class="menu-item"><a href="/myaccount" target="" rel="">My Account</a></li>
+           <li class="menu-item"><a href="/directory" target="" rel="">Alumni Directory</a></li>
+           <li class="menu-item"><a href="https://giving.mit.edu/give/to?fundId=3746200&amp;source=WBAAW" target="" rel="">Giving to MIT</a></li>
+           <li class="menu-item"><a href="/about/infinite-connection-terms-conditions-use" target="" rel="" data-drupal-link-system-path="node/2860">Terms of Use</a></li>
+           <li class="menu-item"><a href="/about/privacy-statement" target="" rel="" data-drupal-link-system-path="node/91944">Privacy Statement</a></li>
+           <li class="menu-item"><a href="http://accessibility.mit.edu/">Accessibility</a></li>
+          </ul>
+         </nav>
+        </div>
+       </div>
+       <div class="footer__last-column">
+        <div class="footer__search">
+         <div class="region ">
+          <div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-page" data-drupal-selector="views-exposed-form-search-page" id="block-searchpage-block-footer" data-block-plugin-id="views_exposed_filter_block:search-page">
+           <div class="inner">
+            <form action="/search" method="get" id="views-exposed-form-search-page" accept-charset="UTF-8">
+             <div class="form--inline clearfix">
+              <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-keywords form-item-keywords"><label for="edit-keywords--3">Keywords</label>
+               <input data-drupal-selector="edit-keywords" type="text" id="edit-keywords--3" name="keywords" value="" size="30" maxlength="128" class="form-text">
+              </div>
+              <div class="js-form-item form-item js-form-type-select form-type-select js-form-item-sort-by form-item-sort-by"><label for="edit-sort-by--3">Sort by</label><select data-drupal-selector="edit-sort-by" id="edit-sort-by--3" name="sort_by" class="form-select"><option value="search_api_relevance" selected>Relevance</option><option value="date">Date</option></select>
+              </div>
+              <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--3">
+               <input data-drupal-selector="edit-submit-search-3" type="submit" id="edit-submit-search--3" value="Search" class="button js-form-submit form-submit">
+              </div>
+             </div>
+            </form>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="footer__follow-us">
+         <div class="region ">
+          <nav role="navigation" id="block-followus-2" data-block-plugin-id="system_menu_block:follow-us" class="block block-menu navigation menu--follow-us">
+           <h2 id="block-followus-2-menu">Follow Us</h2>
+           <ul class="menu">
+            <li class="menu-item"><a href="/slice" target="" rel="" class="has-icon has-icon-social--slice" title="Slice of MIT" data-drupal-link-system-path="node/7948">Slice of MIT</a></li>
+            <li class="menu-item"><a href="http://www.facebook.com/MITAA" target="_blank" rel="" class="has-icon has-icon-social--facebook" title="Facebook">Facebook</a></li>
+            <li class="menu-item"><a href="http://twitter.com/MIT_alumni" target="_blank" rel="" class="has-icon has-icon-social--twitter" title="Twitter">Twitter</a></li>
+            <li class="menu-item"><a href="https://www.youtube.com/alumniMIT" target="_blank" rel="" class="has-icon has-icon-social--youtube" title="YouTube">YouTube</a></li>
+            <li class="menu-item"><a href="http://instagram.com/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--instagram" title="Instagram">Instagram</a></li>
+            <li class="menu-item"><a href="https://www.linkedin.com/groups/69586/" target="_blank" rel="" class="has-icon has-icon-social--linkedin" title="LinkedIn">LinkedIn</a></li>
+            <li class="menu-item"><a href="https://soundcloud.com/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--soundcloud" title="SoundCloud">SoundCloud</a></li>
+            <li class="menu-item"><a href="https://www.snapchat.com/add/mitalumni" target="_blank" rel="" class="has-icon has-icon-social--snapchat" title="Snapchat">Snapchat</a></li>
+            <li class="menu-item"><a href="http://www.pinterest.com/mitalumiassoc/" target="_blank" rel="" class="has-icon has-icon-social--pinterest" title="Pinterest">Pinterest</a></li>
+           </ul>
+          </nav>
+         </div>
+        </div>
+       </div>
+      </div>
+     </footer>
+    </div>
+   </div>
+  </div>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2854","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxTrustedUrl":{"\/search":true},"ajax":[],"user":{"uid":0,"permissionsHash":"d5277d6a62a2676bb3bd853fcceccc0288e4e0302c28c40ad47ff9a11309b329"}}</script>
+  <script src="/core/assets/vendor/jquery/jquery.min.js?v=3.6.0"></script>
+  <script src="/core/misc/drupalSettingsLoader.js?v=9.3.12"></script>
+  <script src="/core/misc/drupal.js?v=9.3.12"></script>
+  <script src="/core/misc/drupal.init.js?v=9.3.12"></script>
+  <script src="/core/assets/vendor/js-cookie/js.cookie.min.js?v=3.0.1"></script>
+  <script src="/core/misc/jquery.cookie.shim.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/vendor/modernizr.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/vendor/enquire.min.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/vendor/select2.min.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/vendor/jquery.magnific-popup.min.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/vendor/owl.carousel.min.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/vendor/typeahead.bundle.min.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/scripts.js?v=9.3.12"></script>
+  <script src="/themes/custom/mitaa/js/carousels.js?v=9.3.12"></script><!-- Go to www.addthis.com/dashboard to customize your tools --> 
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59e62efd276b13cb"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ab0374a39e","applicationID":"1014112851","transactionName":"Z1QGZBZQVkNYU0YNWV4eJVMQWFdeFnRAEUZRXTheC1VdbHpfXBBEX10IVRZtdl9dVWQNU0dyC14QQ1dcVVVASQhGWAFH","queueTime":0,"applicationTime":1972,"atts":"SxMFEl5KRU0=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

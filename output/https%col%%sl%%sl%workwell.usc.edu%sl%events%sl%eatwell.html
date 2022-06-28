@@ -1,0 +1,1885 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="pingback" href="https://workwell.usc.edu/xmlrpc.php">
+  <link rel="shortcut icon" href="https://workwell.usc.edu/wp-content/themes/usc-gateway-2018/assets/images/favicon.ico?ver=1.0.28">
+  <title>EatWell Webinar Series – WorkWell Center</title>
+  <meta name="robots" content="max-image-preview:large">
+  <link rel="dns-prefetch" href="//use.fontawesome.com">
+  <link rel="dns-prefetch" href="//s.w.org"><!-- This site uses the Google Analytics by MonsterInsights plugin v8.3.2 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+  <script src="//www.googletagmanager.com/gtag/js?id=UA-196965734-10" data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '8.3.2';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-196965734-10',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						if ( document.cookie.indexOf( disableStrs[ index ] + '=true' ) > -1 ) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						document.cookie = disableStrs[ index ] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if ( mi_track_user ) {
+					function __gtagDataLayer() {
+						dataLayer.push( arguments );
+					}
+
+					function __gtagTracker( type, name, parameters ) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply( null, arguments );
+							return;
+						}
+
+						if ( type === 'event' ) {
+							
+															parameters.send_to = monsterinsights_frontend.ua;
+								__gtagDataLayer( type, name, parameters );
+													} else {
+							__gtagDataLayer.apply( null, arguments );
+						}
+					}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+											} );
+															__gtagTracker( 'config', 'UA-196965734-10', {"forceSSL":"true","link_attribution":"true"} );
+										window.gtag = __gtagTracker;											(function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+																				if ( ! ( ! args.hasOwnProperty(arg) || ! gaMap.hasOwnProperty(arg) ) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						})();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script><!-- / Google Analytics by MonsterInsights -->
+  <link rel="stylesheet" id="usc-lcs-style-css-css" href="https://workwell.usc.edu/wp-content/plugins/usc-gateway-localist-event-styles/public/css/usc-gateway-localist-custom-styles.css?ver=1.0.0" type="text/css" media="all">
+  <link rel="stylesheet" id="sb_instagram_styles-css" href="https://workwell.usc.edu/wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=2.9.9" type="text/css" media="all">
+  <link rel="stylesheet" id="wp-block-library-css" href="https://workwell.usc.edu/wp-includes/css/dist/block-library/style.min.css?ver=5.8.4" type="text/css" media="all">
+  <link rel="stylesheet" id="usc-breadcrumbs-block-style-css-css" href="https://workwell.usc.edu/wp-content/plugins/usc-breadcrumbs-block/dist/blocks.style.build.css?ver=1627428682" type="text/css" media="all">
+  <link rel="stylesheet" id="genesis-blocks-style-css-css" href="https://workwell.usc.edu/wp-content/plugins/genesis-blocks/dist/blocks.style.build.css?ver=1641327201" type="text/css" media="all">
+  <link rel="stylesheet" id="dashicons-css" href="https://workwell.usc.edu/wp-includes/css/dashicons.min.css?ver=5.8.4" type="text/css" media="all">
+  <link rel="stylesheet" id="advgb_editor_styles-css" href="https://workwell.usc.edu/wp-content/plugins/advanced-gutenberg/assets/css/editor.css?ver=2.11.2" type="text/css" media="all">
+  <link rel="stylesheet" id="usc-gateway-2018-style-css" href="https://workwell.usc.edu/wp-content/themes/usc-gateway-2018/assets/css/usc-gateway-2018.css?ver=1.0.28" type="text/css" media="screen,print">
+  <link rel="stylesheet" id="slb_core-css" href="https://workwell.usc.edu/wp-content/plugins/simple-lightbox/client/css/app.css?ver=2.8.1" type="text/css" media="all">
+  <link rel="stylesheet" id="font-awesome-official-css" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" type="text/css" media="all" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <link rel="stylesheet" id="font-awesome-official-v4shim-css" href="https://use.fontawesome.com/releases/v5.15.4/css/v4-shims.css" type="text/css" media="all" integrity="sha384-Vq76wejb3QJM4nDatBa5rUOve+9gkegsjCebvV/9fvXlGWo4HCMR4cJZjjcF6Viv" crossorigin="anonymous">
+  <style id="font-awesome-official-v4shim-inline-css" type="text/css">
+@font-face {
+font-family: "FontAwesome";
+font-display: block;
+src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.eot"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+
+@font-face {
+font-family: "FontAwesome";
+font-display: block;
+src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+@font-face {
+font-family: "FontAwesome";
+font-display: block;
+src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.eot"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+unicode-range: U+F004-F005,U+F007,U+F017,U+F022,U+F024,U+F02E,U+F03E,U+F044,U+F057-F059,U+F06E,U+F070,U+F075,U+F07B-F07C,U+F080,U+F086,U+F089,U+F094,U+F09D,U+F0A0,U+F0A4-F0A7,U+F0C5,U+F0C7-F0C8,U+F0E0,U+F0EB,U+F0F3,U+F0F8,U+F0FE,U+F111,U+F118-F11A,U+F11C,U+F133,U+F144,U+F146,U+F14A,U+F14D-F14E,U+F150-F152,U+F15B-F15C,U+F164-F165,U+F185-F186,U+F191-F192,U+F1AD,U+F1C1-F1C9,U+F1CD,U+F1D8,U+F1E3,U+F1EA,U+F1F6,U+F1F9,U+F20A,U+F247-F249,U+F24D,U+F254-F25B,U+F25D,U+F267,U+F271-F274,U+F279,U+F28B,U+F28D,U+F2B5-F2B6,U+F2B9,U+F2BB,U+F2BD,U+F2C1-F2C2,U+F2D0,U+F2D2,U+F2DC,U+F2ED,U+F328,U+F358-F35B,U+F3A5,U+F3D1,U+F410,U+F4AD;
+}
+</style>
+  <script type="text/javascript" id="monsterinsights-frontend-script-js-extra">
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/workwell.usc.edu","hash_tracking":"false","ua":"UA-196965734-10","v4_id":""};
+/* ]]> */
+</script>
+  <script type="text/javascript" src="https://workwell.usc.edu/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.3.2" id="monsterinsights-frontend-script-js"></script>
+  <script type="text/javascript" src="https://workwell.usc.edu/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+  <script type="text/javascript" src="https://workwell.usc.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script><!--[if lte IE 9]>
+<script type='text/javascript' src='https://workwell.usc.edu/wp-content/themes/usc-gateway-2018/assets/js/vendor/html5shiv.min.js?ver=1.0.28' id='html5-shiv-js'></script>
+<![endif]-->
+  <link rel="https://api.w.org/" href="https://workwell.usc.edu/wp-json/">
+  <link rel="alternate" type="application/json" href="https://workwell.usc.edu/wp-json/wp/v2/pages/310">
+  <link rel="canonical" href="https://workwell.usc.edu/events/eatwell/">
+  <link rel="shortlink" href="https://workwell.usc.edu/?p=310">
+  <link rel="alternate" type="application/json+oembed" href="https://workwell.usc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fworkwell.usc.edu%2Fevents%2Featwell%2F">
+  <link rel="alternate" type="text/xml+oembed" href="https://workwell.usc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fworkwell.usc.edu%2Fevents%2Featwell%2F&amp;format=xml">
+  <style></style>
+  <style type="text/css">.blue-message {
+background: none repeat scroll 0 0 #3399ff;
+    color: #ffffff;
+    text-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+} 
+.green-message {
+background: none repeat scroll 0 0 #8cc14c;
+    color: #ffffff;
+    text-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+} 
+.orange-message {
+background: none repeat scroll 0 0 #faa732;
+    color: #ffffff;
+    text-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+} 
+.red-message {
+background: none repeat scroll 0 0 #da4d31;
+    color: #ffffff;
+    text-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+} 
+.grey-message {
+background: none repeat scroll 0 0 #53555c;
+    color: #ffffff;
+    text-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+} 
+.left-block {
+background: none repeat scroll 0 0px, radial-gradient(ellipse at center center, #ffffff 0%, #f2f2f2 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #8b8e97;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+} 
+.right-block {
+background: none repeat scroll 0 0px, radial-gradient(ellipse at center center, #ffffff 0%, #f2f2f2 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #8b8e97;
+    padding: 10px;
+    margin: 10px;
+    float: right;
+} 
+.blockquotes {
+background: none;
+    border-left: 5px solid #f1f1f1;
+    color: #8B8E97;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 22px;
+    padding-left: 15px;
+    padding: 10px;
+    width: 60%;
+    float: left;
+} 
+</style>
+  <style id="uagb-style-conditional-extension">@media (min-width: 1025px){body .uag-hide-desktop.uagb-google-map__wrap,body .uag-hide-desktop{display:none}}@media (min-width: 768px) and (max-width: 1024px){body .uag-hide-tab.uagb-google-map__wrap,body .uag-hide-tab{display:none}}@media (max-width: 767px){body .uag-hide-mob.uagb-google-map__wrap,body .uag-hide-mob{display:none}}</style>
+  <style id="uagb-style-frontend-310">.wp-block-uagb-table-of-contents .uagb-toc__wrap{display:inline-block}.wp-block-uagb-table-of-contents ul.uagb-toc__list,.wp-block-uagb-table-of-contents ol.uagb-toc__list{margin-left:2.2em;padding-left:0px;margin-bottom:0}.wp-block-uagb-table-of-contents ul.uagb-toc__list li,.wp-block-uagb-table-of-contents ol.uagb-toc__list li{margin:0}.wp-block-uagb-table-of-contents.uagb-toc__align-left{text-align:left}.wp-block-uagb-table-of-contents.uagb-toc__align-center{text-align:center}.wp-block-uagb-table-of-contents.uagb-toc__align-right{text-align:right}.wp-block-uagb-table-of-contents ul li:empty{display:none}.wp-block-uagb-table-of-contents .uagb-toc__title-wrap{display:flex;align-items:center}.wp-block-uagb-table-of-contents .uagb-toc__is-collapsible.uagb-toc__title-wrap{cursor:pointer}.wp-block-uagb-table-of-contents .uag-toc__collapsible-wrap svg{width:20px;height:20px}.wp-block-uagb-table-of-contents .uag-toc__collapsible-wrap{margin-left:10px;display:flex;cursor:pointer}.wp-block-uagb-table-of-contents.uagb-toc__collapse .uagb-toc__list-wrap{display:none}ol.uagb-toc__list li.uagb-toc__list ul,ol.uagb-toc__list ul.uagb-toc__list ul{list-style-type:circle}ol.uagb-toc__list>ul,ol.uagb-toc__list>li{list-style-type:disc}.uagb-toc__scroll-top{display:none;position:fixed;bottom:50px;right:50px;padding:10px;background:#ccd0d4;cursor:pointer;font-size:1rem;line-height:1.85714285714286}.uagb-toc__scroll-top svg{margin-left:0px;transform:translate(0, -20%) rotate(180deg);width:1.6em;height:.6em;fill:currentColor}.uagb-toc__scroll-top.uagb-toc__show-scroll{display:inline-table}
+.uagb-block-8184928a .uagb-toc__list-wrap li a{color: #333;}.uagb-block-8184928a .uagb-toc__title-wrap{justify-content: flex-start;}.uagb-block-8184928a .uagb-toc__title{font-weight: 500;font-size: 20px;}.uagb-block-8184928a .uagb-toc__wrap{border-style: none;border-width: 1px;border-color: #333;padding-left: 0;padding-right: 0;padding-top: 30px;padding-bottom: 30px;background: #ffffff;}.uagb-block-8184928a .uagb-toc__list-wrap{column-count: 1;overflow: hidden;}.uagb-block-8184928a .uagb-toc__list-wrap > ul.uagb-toc__list > li:first-child{padding-top: 0;}.uagb-block-8184928a .uagb-toc__list-wrap ul.uagb-toc__list:last-child > li:last-child{padding-bottom: 0;}.uagb-columns__wrap{position:relative}.uagb-columns__wrap .uagb-columns__inner-wrap{margin-left:auto;margin-right:auto;position:relative;z-index:2}.uagb-columns__wrap .uagb-columns__overlay{height:100%;width:100%;top:0;left:0;position:absolute}.uagb-columns__wrap .uagb-columns__video-wrap{height:100%;width:100%;top:0;left:0;position:absolute;overflow:hidden;z-index:0;-webkit-transition:opacity 1s;-o-transition:opacity 1s;transition:opacity 1s}.uagb-columns__wrap .uagb-columns__video-wrap video{max-width:100%;width:100%;height:100%;margin:0;line-height:1;border:none;display:inline-block;vertical-align:baseline;-o-object-fit:cover;object-fit:cover;background-size:cover}.uagb-columns__wrap .uagb-column__wrap{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.uagb-columns__wrap .uagb-columns__shape{overflow:hidden;position:absolute;left:0;width:100%;line-height:0;direction:ltr;z-index:1}.uagb-columns__wrap .uagb-columns__shape-top{top:-3px}.uagb-columns__wrap .uagb-columns__shape-bottom{bottom:-3px}.uagb-columns__wrap .uagb-columns__shape[data-negative="false"].uagb-columns__shape-bottom{-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}.uagb-columns__wrap .uagb-columns__shape[data-negative="true"].uagb-columns__shape-top{-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}.uagb-columns__wrap .uagb-columns__shape.uagb-columns__shape-flip svg{transform:translateX(-50%) rotateY(180deg)}.uagb-columns__wrap .uagb-columns__shape svg{display:block;width:-webkit-calc(100% + 1.3px);width:calc(100% + 1.3px);position:relative;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%)}.uagb-columns__wrap .uagb-columns__shape .uagb-columns__shape-fill{fill:#333;-webkit-transform-origin:center;-ms-transform-origin:center;transform-origin:center;-webkit-transform:rotateY(0deg);transform:rotateY(0deg)}.uagb-columns__wrap .uagb-columns__shape.uagb-columns__shape-above-content{z-index:9;pointer-events:none}.uagb-columns__valign-center .uagb-column__wrap,.uagb-columns__valign-middle .uagb-column__wrap{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}.uagb-columns__valign-top .uagb-column__wrap{-webkit-box-align:flex-start;-webkit-align-items:flex-start;-ms-flex-align:flex-start;align-items:flex-start}.uagb-columns__valign-bottom .uagb-column__wrap{-webkit-box-align:flex-end;-webkit-align-items:flex-end;-ms-flex-align:flex-end;align-items:flex-end}.uagb-columns__inner-wrap{display:flex;flex-wrap:nowrap}.uagb-columns__columns-1>.uagb-column__wrap{width:100%}.uagb-columns__columns-2>.uagb-column__wrap{width:50%}.uagb-columns__columns-3>.uagb-column__wrap{width:33.33%}.uagb-columns__columns-4>.uagb-column__wrap{width:25%}.uagb-columns__columns-5>.uagb-column__wrap{width:20%}.uagb-columns__columns-6>.uagb-column__wrap{width:16.66%}.uagb-columns__gap-nogap>.wp-block[data-type="uagb/column"] .uagb-column__inner-wrap{padding:0}.uagb-columns__gap-default>.wp-block[data-type="uagb/column"] .uagb-column__inner-wrap{padding:10px}.uagb-columns__gap-narrow>.wp-block[data-type="uagb/column"] .uagb-column__inner-wrap{padding:5px}.uagb-columns__gap-extended>.wp-block[data-type="uagb/column"] .uagb-column__inner-wrap{padding:15px}.uagb-columns__gap-wide>.wp-block[data-type="uagb/column"] .uagb-column__inner-wrap{padding:20px}.uagb-columns__gap-wider>.wp-block[data-type="uagb/column"] .uagb-column__inner-wrap{padding:30px}@media (max-width: 976px){.uagb-columns__stack-tablet>.uagb-columns__columns-1>.uagb-column__wrap,.uagb-columns__stack-tablet>.uagb-columns__columns-2>.uagb-column__wrap,.uagb-columns__stack-tablet>.uagb-columns__columns-3>.uagb-column__wrap,.uagb-columns__stack-tablet>.uagb-columns__columns-4>.uagb-column__wrap,.uagb-columns__stack-tablet>.uagb-columns__columns-5>.uagb-column__wrap,.uagb-columns__stack-tablet>.uagb-columns__columns-6>.uagb-column__wrap{width:100% !important}.uagb-columns__stack-tablet>.uagb-columns__inner-wrap{display:block}.uagb-columns__stack-tablet.uagb-columns__reverse-tablet .uagb-columns__inner-wrap{display:flex;flex-direction:column-reverse}.uagb-columns__reverse-tablet .uagb-columns__inner-wrap{display:flex;flex-direction:row-reverse}}@media (max-width: 767px){.uagb-columns__stack-mobile>.uagb-columns__columns-1>.uagb-column__wrap,.uagb-columns__stack-mobile>.uagb-columns__columns-2>.uagb-column__wrap,.uagb-columns__stack-mobile>.uagb-columns__columns-3>.uagb-column__wrap,.uagb-columns__stack-mobile>.uagb-columns__columns-4>.uagb-column__wrap,.uagb-columns__stack-mobile>.uagb-columns__columns-5>.uagb-column__wrap,.uagb-columns__stack-mobile>.uagb-columns__columns-6>.uagb-column__wrap{width:100% !important}.uagb-columns__stack-mobile>.uagb-columns__inner-wrap{display:block}.uagb-columns__stack-mobile.uagb-columns__reverse-mobile .uagb-columns__inner-wrap{display:flex;flex-direction:column-reverse}.uagb-columns__reverse-mobile .uagb-columns__inner-wrap{display:flex;flex-direction:row-reverse}}@media (min-width: 768px) and (max-width: 1024px){.wp-block-uagb-columns.uagb-columns__wrap.uagb-columns__background-image{background-attachment:scroll}}@media (max-width: 449px){.uagb-columns__wrap .uagb-column__wrap.uagb-column__background-image{background-attachment:scroll !important}}
+.uagb-column__wrap{position:relative;overflow:hidden}.uagb-column__wrap .uagb-column__inner-wrap{margin-left:auto;margin-right:auto;position:relative;z-index:2;width:100%}.uagb-column__wrap.uagb-column__align-left .uagb-column__inner-wrap{margin-left:0;margin-right:auto}.uagb-column__wrap.uagb-column__align-right .uagb-column__inner-wrap{margin-left:auto;margin-right:0}.uagb-column__wrap .uagb-column__overlay{height:100%;width:100%;top:0;left:0;position:absolute}.uagb-column__wrap .uagb-column__video-wrap{height:100%;width:100%;top:0;left:0;position:absolute;overflow:hidden;z-index:0;-webkit-transition:opacity 1s;-o-transition:opacity 1s;transition:opacity 1s}.uagb-column__wrap .uagb-column__video-wrap video{max-width:100%;width:100%;height:100%;margin:0;line-height:1;border:none;display:inline-block;vertical-align:baseline;-o-object-fit:cover;object-fit:cover;background-size:cover}.wp-block-uagb-columns>.editor-inner-blocks>.editor-block-list__layout>[data-type="uagb/column"]{display:flex;flex-direction:column;flex:1;padding-left:0;padding-right:0;margin-left:-14px;margin-right:-14px;min-width:0;word-break:break-word;overflow-wrap:break-word;flex-basis:100%}@media (max-width: 976px){.uagb-column__align-tablet-left .uagb-column__inner-wrap{margin-left:0;margin-right:auto}.uagb-column__align-tablet-right .uagb-column__inner-wrap{margin-left:auto;margin-right:0}}@media (max-width: 767px){.uagb-column__align-mobile-left .uagb-column__inner-wrap{margin-left:0;margin-right:auto}.uagb-column__align-mobile-right .uagb-column__inner-wrap{margin-left:auto;margin-right:0}}@media (max-width: 449px){.uagb-columns__wrap.uagb-columns__background-image{background-attachment:scroll !important}}
+.uagb-block-085e70ac.uagb-columns__wrap{padding-top: 0;padding-bottom: 0;padding-left: 0;padding-right: 0;}.uagb-block-085e70ac .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-085e70ac > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-085e70ac .uagb-column__inner-wrap{padding: 10px;}.uagb-block-085e70ac .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-085e70ac .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-085e70ac.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-fd6543fe.uagb-column__wrap{width: 50%;}.wp-block-uagb-column.uagb-block-726219fa.uagb-column__wrap{width: 50%;}.uagb-block-12f28a3d.uagb-columns__wrap{padding-top: 0;padding-bottom: 0;padding-left: 0;padding-right: 0;}.uagb-block-12f28a3d .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-12f28a3d > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-12f28a3d .uagb-column__inner-wrap{padding: 10px;}.uagb-block-12f28a3d .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-12f28a3d .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-12f28a3d.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-6546476f.uagb-column__wrap{width: 50%;}.wp-block-uagb-column.uagb-block-6735ce53.uagb-column__wrap{width: 50%;}.uagb-block-f9b806d7.uagb-columns__wrap{padding-top: 0;padding-bottom: 0;padding-left: 0;padding-right: 0;}.uagb-block-f9b806d7 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-f9b806d7 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-f9b806d7 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-f9b806d7 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-f9b806d7 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-f9b806d7.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-d7a27e0c.uagb-column__wrap{width: 50%;}.wp-block-uagb-column.uagb-block-2b2c7b5e.uagb-column__wrap{width: 50%;}.uagb-block-9b284d17.uagb-columns__wrap{padding-top: 0;padding-bottom: 0;padding-left: 0;padding-right: 0;}.uagb-block-9b284d17 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-9b284d17 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-9b284d17 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-9b284d17 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-9b284d17 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-9b284d17.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-8a4d97bc.uagb-column__wrap{width: 50%;}.wp-block-uagb-column.uagb-block-55943b19.uagb-column__wrap{width: 50%;}.uagb-block-96f5c5f6.uagb-columns__wrap{padding-top: 0;padding-bottom: 0;padding-left: 0;padding-right: 0;}.uagb-block-96f5c5f6 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-96f5c5f6 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-96f5c5f6 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-96f5c5f6 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-96f5c5f6 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-96f5c5f6.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-42dffa2b.uagb-column__wrap{width: 50%;}.wp-block-uagb-column.uagb-block-f60f6545.uagb-column__wrap{width: 50%;}.uagb-block-2006f627.uagb-columns__wrap{padding-top: 0;padding-bottom: 0;padding-left: 0;padding-right: 0;}.uagb-block-2006f627 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-2006f627 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-2006f627 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-2006f627 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-2006f627 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-2006f627.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-1c306e3a.uagb-column__wrap{width: 50%;}.wp-block-uagb-column.uagb-block-06cdfa08.uagb-column__wrap{width: 50%;}.uagb-block-ce1f6edb.uagb-columns__wrap{padding-top: 0;padding-bottom: 0;padding-left: 0;padding-right: 0;}.uagb-block-ce1f6edb .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-ce1f6edb > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-ce1f6edb .uagb-column__inner-wrap{padding: 10px;}.uagb-block-ce1f6edb .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-ce1f6edb .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-ce1f6edb.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-d5dcd5fb.uagb-column__wrap{width: 50%;}.wp-block-uagb-column.uagb-block-bfbabd07.uagb-column__wrap{width: 50%;}.uagb-block-95643dea.uagb-columns__wrap{padding-top: 0;padding-bottom: 0;padding-left: 0;padding-right: 0;}.uagb-block-95643dea .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-95643dea > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-95643dea .uagb-column__inner-wrap{padding: 10px;}.uagb-block-95643dea .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-95643dea .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-95643dea.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-6e824deb.uagb-column__wrap{width: 50%;}.wp-block-uagb-column.uagb-block-ff8f56de.uagb-column__wrap{width: 50%;}.uagb-team__outer-wrap .uagb-team__prefix{font-size:15px;font-style:italic;color:#888}.uagb-team__outer-wrap .uagb-team__image-wrap img{display:inline;height:auto !important;max-width:100%;width:inherit;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;-webkit-border-radius:inherit;border-radius:inherit}.uagb-team__outer-wrap .uagb-team__image-wrap.uagb-team__image-crop-circle img{-webkit-border-radius:100%;border-radius:100%}.uagb-team__outer-wrap .uagb-team__image-wrap.uagb-team__image-crop-square img{-webkit-border-radius:0;border-radius:0}.uagb-team__outer-wrap .uagb-team__social-icon-wrap ul{list-style:none;display:flex}.uagb-team__outer-wrap .uagb-team__social-icon a span,.uagb-team__outer-wrap .uagb-team__social-icon a span:before{color:inherit;font-size:inherit;height:inherit;width:inherit}.uagb-team__outer-wrap .uagb-team__social-icon a{font-size:20px;width:20px;height:20px;color:#333;display:block}.uagb-team__outer-wrap .uagb-team__social-icon{margin-right:20px;margin-left:0}.uagb-team__outer-wrap .uagb-team__social-list{margin:0;padding:0}.uagb-team__image-position-above.uagb-team__align-center{text-align:center}.uagb-team__image-position-above.uagb-team__align-left{text-align:left}.uagb-team__image-position-above.uagb-team__align-right{text-align:right}.uagb-team__image-position-left .uagb-team__wrap,.uagb-team__image-position-right .uagb-team__wrap{-js-display:flex;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex}.uagb-team__image-position-left .uagb-team__content{text-align:left}.uagb-team__image-position-right .uagb-team__content{text-align:right}.uagb-team__image-position-left .uagb-team__social-icon-wrap ul{justify-content:flex-start;margin:0;padding:0}.uagb-team__image-position-right .uagb-team__social-icon-wrap ul{justify-content:flex-end;margin:0;padding:0}.uagb-team__image-position-left li{margin-right:5px}.uagb-team__image-position-right li{margin-left:5px}.uagb-team__image-position-above .uagb-team__social-icon-wrap{display:inline-block}.uagb-team__image-position-above.uagb-team__align-center .uagb-team__content{text-align:center}.uagb-team__image-position-above.uagb-team__align-left .uagb-team__content{text-align:left}.uagb-team__image-position-above.uagb-team__align-right .uagb-team__content{text-align:right}@media only screen and (max-width: 976px){.uagb-team__stack-tablet,.uagb-team__stack-tablet .uagb-team__content{text-align:center}.uagb-team__stack-tablet .uagb-team__wrap{display:inline-block}.uagb-team__stack-tablet .uagb-team__image-wrap{margin-left:auto !important;margin-right:auto !important}.uagb-team__stack-tablet .uagb-team__social-icon-wrap ul{justify-content:center}}@media screen and (max-width: 767px){.uagb-team__stack-mobile,.uagb-team__stack-mobile .uagb-team__content{text-align:center}.uagb-team__stack-mobile .uagb-team__wrap{display:inline-block}.uagb-team__stack-mobile .uagb-team__image-wrap{margin-left:auto !important;margin-right:auto !important}.uagb-team__stack-mobile .uagb-team__social-icon-wrap ul{justify-content:center}}
+.uagb-block-0dc67ea2.uagb-columns__wrap{padding-top: 20px;padding-bottom: 20px;padding-left: 0;padding-right: 0;}.uagb-block-0dc67ea2 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-0dc67ea2 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-0dc67ea2 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-0dc67ea2 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-0dc67ea2 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-0dc67ea2.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-bcaddab3.uagb-column__wrap{width: 33.33%;}.uagb-block-9a1d5406 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-9a1d5406 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-9a1d5406 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-9a1d5406 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-9a1d5406.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-9a1d5406.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-9a1d5406.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-9a1d5406.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-9a1d5406.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-9a1d5406 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-3a222b56.uagb-column__wrap{width: 33.33%;}.uagb-block-4527e48a p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-4527e48a .uagb-team__prefix{font-size: 15px;line-height: 1.2em;color: #888888;}.uagb-block-4527e48a .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-4527e48a .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-4527e48a.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-4527e48a.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-4527e48a.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-4527e48a.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-4527e48a.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-4527e48a .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-2a788ffe.uagb-column__wrap{width: 33.33%;}.uagb-block-3fb427a7.uagb-columns__wrap{padding-top: 20px;padding-bottom: 20px;padding-left: 0;padding-right: 0;}.uagb-block-3fb427a7 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-3fb427a7 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-3fb427a7 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-3fb427a7 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-3fb427a7 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-3fb427a7.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-ee5515b8.uagb-column__wrap{width: 33.33%;}.uagb-block-9cc30d1c p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-9cc30d1c .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-9cc30d1c .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-9cc30d1c .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-9cc30d1c.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-9cc30d1c.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-9cc30d1c.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-9cc30d1c.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-9cc30d1c.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-9cc30d1c .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-5a9517b8.uagb-column__wrap{width: 33.33%;}.uagb-block-2328dee4 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-2328dee4 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-2328dee4 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-2328dee4 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-2328dee4.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-2328dee4.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-2328dee4.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-2328dee4.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-2328dee4.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-2328dee4 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-085b6ced.uagb-column__wrap{width: 33.33%;}.uagb-block-e0dfa0a8.uagb-columns__wrap{padding-top: 20px;padding-bottom: 20px;padding-left: 0;padding-right: 0;}.uagb-block-e0dfa0a8 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-e0dfa0a8 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-e0dfa0a8 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-e0dfa0a8 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-e0dfa0a8 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-e0dfa0a8.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-15f57e71.uagb-column__wrap{width: 33.33%;}.uagb-block-d08a6bbb p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-d08a6bbb .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-d08a6bbb .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-d08a6bbb .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-d08a6bbb.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-d08a6bbb.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-d08a6bbb.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-d08a6bbb.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-d08a6bbb.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-d08a6bbb .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-9f10c5d4.uagb-column__wrap{width: 33.33%;}.uagb-block-cef18df2 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-cef18df2 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-cef18df2 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-cef18df2 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-cef18df2.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-cef18df2.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-cef18df2.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-cef18df2.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-cef18df2.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-cef18df2 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-264b08d7.uagb-column__wrap{width: 33.33%;}.uagb-block-c19d179d.uagb-columns__wrap{padding-top: 20px;padding-bottom: 20px;padding-left: 0;padding-right: 0;}.uagb-block-c19d179d .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-c19d179d > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-c19d179d .uagb-column__inner-wrap{padding: 10px;}.uagb-block-c19d179d .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-c19d179d .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-c19d179d.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-f587a9d0.uagb-column__wrap{width: 33.33%;}.uagb-block-3f832070 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-3f832070 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-3f832070 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-3f832070 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-3f832070.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-3f832070.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-3f832070.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-3f832070.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-3f832070.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-3f832070 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-1c5034d8.uagb-column__wrap{width: 33.33%;}.uagb-block-8d0a3c5b p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-8d0a3c5b .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-8d0a3c5b .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-8d0a3c5b .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-8d0a3c5b.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-8d0a3c5b.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-8d0a3c5b.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-8d0a3c5b.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-8d0a3c5b.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-8d0a3c5b .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-4bb3fdda.uagb-column__wrap{width: 33.33%;}.uagb-block-70719c78.uagb-columns__wrap{padding-top: 20px;padding-bottom: 20px;padding-left: 0;padding-right: 0;}.uagb-block-70719c78 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-70719c78 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-70719c78 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-70719c78 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-70719c78 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-70719c78.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-dc8a16b2.uagb-column__wrap{width: 33.33%;}.uagb-block-34f0b4f5 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-34f0b4f5 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-34f0b4f5 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-34f0b4f5 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-34f0b4f5.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-34f0b4f5.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-34f0b4f5.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-34f0b4f5.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-34f0b4f5.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-34f0b4f5 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-59ad4cc0.uagb-column__wrap{width: 33.33%;}.uagb-block-2d3491a6 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-2d3491a6 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-2d3491a6 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-2d3491a6 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-2d3491a6.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-2d3491a6.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-2d3491a6.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-2d3491a6.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-2d3491a6.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-2d3491a6 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-270a3ee1.uagb-column__wrap{width: 33.33%;}.uagb-block-32fcaaf7.uagb-columns__wrap{padding-top: 20px;padding-bottom: 20px;padding-left: 0;padding-right: 0;}.uagb-block-32fcaaf7 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-32fcaaf7 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-32fcaaf7 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-32fcaaf7 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-32fcaaf7 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-32fcaaf7.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-991e836e.uagb-column__wrap{width: 33.33%;}.uagb-block-dcdf4f51 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-dcdf4f51 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-dcdf4f51 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-dcdf4f51 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-dcdf4f51.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-dcdf4f51.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-dcdf4f51.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-dcdf4f51.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-dcdf4f51.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-dcdf4f51 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-d4a0a42d.uagb-column__wrap{width: 33.33%;}.uagb-block-fe582098 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-fe582098 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-fe582098 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-fe582098 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-fe582098.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-fe582098.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-fe582098.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-fe582098.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-fe582098.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-fe582098 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-10d1b6b0.uagb-column__wrap{width: 33.33%;}.uagb-block-0e775682.uagb-columns__wrap{padding-top: 20px;padding-bottom: 20px;padding-left: 0;padding-right: 0;}.uagb-block-0e775682 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-0e775682 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-0e775682 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-0e775682 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-0e775682 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-0e775682.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-5ce01331.uagb-column__wrap{width: 33.33%;}.uagb-block-70f6c6d0 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-70f6c6d0 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-70f6c6d0 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-70f6c6d0 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-70f6c6d0.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-70f6c6d0.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-70f6c6d0.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-70f6c6d0.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-70f6c6d0.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-70f6c6d0 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-fca4c9b2.uagb-column__wrap{width: 33.33%;}.uagb-block-c50f19ee p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-c50f19ee .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-c50f19ee .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-c50f19ee .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-c50f19ee.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-c50f19ee.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-c50f19ee.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-c50f19ee.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-c50f19ee.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-c50f19ee .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-472fae29.uagb-column__wrap{width: 33.33%;}.uagb-block-cf67973d.uagb-columns__wrap{padding-top: 20px;padding-bottom: 20px;padding-left: 0;padding-right: 0;}.uagb-block-cf67973d .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-cf67973d > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-cf67973d .uagb-column__inner-wrap{padding: 10px;}.uagb-block-cf67973d .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-cf67973d .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-cf67973d.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-3d783a10.uagb-column__wrap{width: 33.33%;}.uagb-block-363d395f p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-363d395f .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-363d395f .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-363d395f .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-363d395f.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-363d395f.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-363d395f.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-363d395f.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-363d395f.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-363d395f .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-069562b9.uagb-column__wrap{width: 33.33%;}.uagb-block-d711f1a2 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-d711f1a2 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-d711f1a2 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-d711f1a2 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-d711f1a2.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-d711f1a2.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-d711f1a2.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-d711f1a2.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-d711f1a2.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-d711f1a2 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.wp-block-uagb-column.uagb-block-5cc2f3ae.uagb-column__wrap{width: 33.33%;}.uagb-block-0f929366 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-0f929366 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-0f929366 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-0f929366 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-0f929366.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-0f929366.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-0f929366.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-0f929366.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-0f929366.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-0f929366 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.uagb-block-64dba839.uagb-columns__wrap{padding-top: 10px;padding-bottom: 10px;padding-left: 0;padding-right: 0;}.uagb-block-64dba839 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-64dba839 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-64dba839 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-64dba839 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-64dba839 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-64dba839.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-c93ff066.uagb-column__wrap{padding-top: 30px;padding-bottom: 30px;padding-left: 30px;padding-right: 30px;margin-right: 15px;width: 100%;}.wp-block-uagb-column.uagb-block-c93ff066 > .uagb-column__overlay{background-color: #fafafa;}.uagb-block-b1f2710b.uagb-columns__wrap{padding-top: 10px;padding-bottom: 10px;padding-left: 0;padding-right: 0;}.uagb-block-b1f2710b .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-b1f2710b > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-b1f2710b .uagb-column__inner-wrap{padding: 10px;}.uagb-block-b1f2710b .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-b1f2710b .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-b1f2710b.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-cf303227.uagb-column__wrap{padding-top: 30px;padding-bottom: 30px;padding-left: 30px;padding-right: 30px;margin-right: 15px;width: 100%;}.wp-block-uagb-column.uagb-block-cf303227 > .uagb-column__overlay{background-color: #fafafa;}.uagb-block-e879871c.uagb-columns__wrap{padding-top: 10px;padding-bottom: 10px;padding-left: 0;padding-right: 0;}.uagb-block-e879871c .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-e879871c > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-e879871c .uagb-column__inner-wrap{padding: 10px;}.uagb-block-e879871c .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-e879871c .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-e879871c.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-40874c21.uagb-column__wrap{padding-top: 30px;padding-bottom: 30px;padding-left: 30px;padding-right: 30px;margin-right: 15px;width: 100%;}.wp-block-uagb-column.uagb-block-40874c21 > .uagb-column__overlay{background-color: #fafafa;}.uagb-block-575dc12f.uagb-columns__wrap{padding-top: 10px;padding-bottom: 10px;padding-left: 0;padding-right: 0;}.uagb-block-575dc12f .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-575dc12f > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-575dc12f .uagb-column__inner-wrap{padding: 10px;}.uagb-block-575dc12f .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-575dc12f .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-575dc12f.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-4bdc63c6.uagb-column__wrap{padding-top: 30px;padding-bottom: 30px;padding-left: 30px;padding-right: 30px;margin-right: 15px;width: 100%;}.wp-block-uagb-column.uagb-block-4bdc63c6 > .uagb-column__overlay{background-color: #fafafa;}.uagb-block-4c92c9c9.uagb-columns__wrap{padding-top: 10px;padding-bottom: 10px;padding-left: 0;padding-right: 0;}.uagb-block-4c92c9c9 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-4c92c9c9 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-4c92c9c9 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-4c92c9c9 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-4c92c9c9 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-4c92c9c9.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-7d89a724.uagb-column__wrap{padding-top: 30px;padding-bottom: 30px;padding-left: 30px;padding-right: 30px;margin-right: 15px;width: 100%;}.wp-block-uagb-column.uagb-block-7d89a724 > .uagb-column__overlay{background-color: #fafafa;}.uagb-block-e7c3a988.uagb-columns__wrap{padding-top: 10px;padding-bottom: 10px;padding-left: 0;padding-right: 0;}.uagb-block-e7c3a988 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-e7c3a988 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-e7c3a988 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-e7c3a988 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-e7c3a988 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-e7c3a988.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-647d7233.uagb-column__wrap{padding-top: 30px;padding-bottom: 30px;padding-left: 30px;padding-right: 30px;margin-right: 15px;width: 100%;}.wp-block-uagb-column.uagb-block-647d7233 > .uagb-column__overlay{background-color: #fafafa;}.uagb-block-121882f7.uagb-columns__wrap{padding-top: 10px;padding-bottom: 10px;padding-left: 0;padding-right: 0;}.uagb-block-121882f7 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-121882f7 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-121882f7 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-121882f7 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-121882f7 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-121882f7.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-c69a924d.uagb-column__wrap{padding-top: 30px;padding-bottom: 30px;padding-left: 30px;padding-right: 30px;margin-right: 15px;width: 100%;}.wp-block-uagb-column.uagb-block-c69a924d > .uagb-column__overlay{background-color: #fafafa;}.uagb-block-287c33a9.uagb-columns__wrap{padding-top: 10px;padding-bottom: 10px;padding-left: 0;padding-right: 0;}.uagb-block-287c33a9 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-287c33a9 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-287c33a9 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-287c33a9 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-287c33a9 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-287c33a9.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-8a3d34ad.uagb-column__wrap{padding-top: 30px;padding-bottom: 30px;padding-left: 30px;padding-right: 30px;margin-right: 15px;width: 100%;}.wp-block-uagb-column.uagb-block-8a3d34ad > .uagb-column__overlay{background-color: #fafafa;}.uagb-block-d6d156b9.uagb-columns__wrap{padding-top: 20px;padding-bottom: 20px;padding-left: 0;padding-right: 0;}.uagb-block-d6d156b9 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-d6d156b9 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-d6d156b9 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-d6d156b9 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-d6d156b9 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-d6d156b9.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-c9b4f886.uagb-column__wrap{width: 33.3%;}.uagb-block-b688131f p.uagb-team__desc{font-size: 15px;margin-bottom: 1px;}.uagb-block-b688131f .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-b688131f .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-b688131f .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-b688131f.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-b688131f.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-b688131f.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-b688131f.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-b688131f.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-b688131f .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.uagb-block-b688131f h3.uagb-team__title{font-size: 20px;}.wp-block-uagb-column.uagb-block-e2bd5029.uagb-column__wrap{width: 33.3%;}.uagb-block-d3bf8881 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-d3bf8881 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-d3bf8881 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-d3bf8881 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-d3bf8881.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-d3bf8881.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-d3bf8881.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-d3bf8881.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-d3bf8881.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-d3bf8881 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.uagb-block-d3bf8881 h3.uagb-team__title{font-size: 20px;}.wp-block-uagb-column.uagb-block-2a4f5a96.uagb-column__wrap{width: 33%;}.uagb-block-f072e82b p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-f072e82b .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-f072e82b .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-f072e82b .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-f072e82b.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-f072e82b.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-f072e82b.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-f072e82b.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-f072e82b.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-f072e82b .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.uagb-block-f072e82b h3.uagb-team__title{font-size: 20px;}.uagb-block-72a0a4c6.uagb-columns__wrap{padding-top: 20px;padding-bottom: 20px;padding-left: 0;padding-right: 0;}.uagb-block-72a0a4c6 .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-72a0a4c6 > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-72a0a4c6 .uagb-column__inner-wrap{padding: 10px;}.uagb-block-72a0a4c6 .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-72a0a4c6 .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-72a0a4c6.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-e493732c.uagb-column__wrap{width: 33.3%;}.uagb-block-e4323074 p.uagb-team__desc{font-size: 15px;margin-bottom: 1px;}.uagb-block-e4323074 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-e4323074 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-e4323074 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-e4323074.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-e4323074.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-e4323074.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-e4323074.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-e4323074.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-e4323074 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.uagb-block-e4323074 h3.uagb-team__title{font-size: 20px;}.wp-block-uagb-column.uagb-block-7952b04e.uagb-column__wrap{width: 33.3%;}.uagb-block-e5c62520 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-e5c62520 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-e5c62520 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-e5c62520 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-e5c62520.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-e5c62520.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-e5c62520.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-e5c62520.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-e5c62520.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-e5c62520 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.uagb-block-e5c62520 h3.uagb-team__title{font-size: 20px;}.wp-block-uagb-column.uagb-block-907afd43.uagb-column__wrap{width: 33%;}.uagb-block-cb6239d3 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-cb6239d3 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-cb6239d3 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-cb6239d3 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-cb6239d3.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-cb6239d3.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-cb6239d3.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-cb6239d3.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-cb6239d3.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-cb6239d3 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.uagb-block-cb6239d3 h3.uagb-team__title{font-size: 20px;}.uagb-block-7636b9bc.uagb-columns__wrap{padding-top: 20px;padding-bottom: 20px;padding-left: 0;padding-right: 0;}.uagb-block-7636b9bc .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-7636b9bc > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-7636b9bc .uagb-column__inner-wrap{padding: 10px;}.uagb-block-7636b9bc .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-7636b9bc .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-7636b9bc.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-b162dfc8.uagb-column__wrap{width: 33.3%;}.uagb-block-23ffe0f9 p.uagb-team__desc{font-size: 15px;margin-bottom: 1px;}.uagb-block-23ffe0f9 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-23ffe0f9 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-23ffe0f9 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-23ffe0f9.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-23ffe0f9.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-23ffe0f9.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-23ffe0f9.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-23ffe0f9.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-23ffe0f9 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.uagb-block-23ffe0f9 h3.uagb-team__title{font-size: 20px;}.wp-block-uagb-column.uagb-block-eda519fb.uagb-column__wrap{width: 33.3%;}.uagb-block-44576013 p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-44576013 .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-44576013 .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-44576013 .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-44576013.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-44576013.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-44576013.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-44576013.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-44576013.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-44576013 .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}.uagb-block-44576013 h3.uagb-team__title{font-size: 20px;}.wp-block-uagb-column.uagb-block-fe459e55.uagb-column__wrap{width: 33%;}.uagb-block-cf4b345a p.uagb-team__desc{font-size: 15px;margin-bottom: 10px;}.uagb-block-cf4b345a .uagb-team__prefix{font-size: 15px;color: #888888;}.uagb-block-cf4b345a .uagb-team__social-icon a{color: #333;font-size: 20px;width: 20px;height: 20px;line-height: 20px;}.uagb-block-cf4b345a .uagb-team__social-icon svg{fill: #333;width: 20px;height: 20px;}.uagb-block-cf4b345a.uagb-team__image-position-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-cf4b345a.uagb-team__image-position-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-cf4b345a.uagb-team__image-position-above.uagb-team__align-center .uagb-team__social-icon{margin-right: 10px;margin-left: 10px;}.uagb-block-cf4b345a.uagb-team__image-position-above.uagb-team__align-left .uagb-team__social-icon{margin-right: 20px;margin-left: 0;}.uagb-block-cf4b345a.uagb-team__image-position-above.uagb-team__align-right .uagb-team__social-icon{margin-left: 20px;margin-right: 0;}.uagb-block-cf4b345a .uagb-team__image-wrap{margin-top: 15px;margin-bottom: 15px;margin-left: auto;margin-right: auto;width: 120px;}@media only screen and (max-width: 976px) {.uagb-block-8184928a .uagb-toc__list-wrap{column-count: 1;overflow: hidden;}.uagb-block-8184928a .uagb-toc__list-wrap > ul.uagb-toc__list > li:first-child{padding-top: 0;}.uagb-block-8184928a .uagb-toc__list-wrap ul.uagb-toc__list:last-child > li:last-child{padding-bottom: 0;}}@media only screen and (max-width: 767px) {.uagb-block-8184928a .uagb-toc__list-wrap{column-count: 1;overflow: hidden;}.uagb-block-8184928a .uagb-toc__list-wrap > ul.uagb-toc__list > li:first-child{padding-top: 0;}.uagb-block-8184928a .uagb-toc__list-wrap ul.uagb-toc__list:last-child > li:last-child{padding-bottom: 0;}.wp-block-uagb-column.uagb-block-c93ff066.uagb-column__wrap{margin-bottom: 10px;}.wp-block-uagb-column.uagb-block-cf303227.uagb-column__wrap{margin-bottom: 10px;}.wp-block-uagb-column.uagb-block-40874c21.uagb-column__wrap{margin-bottom: 10px;}.wp-block-uagb-column.uagb-block-4bdc63c6.uagb-column__wrap{margin-bottom: 10px;}.wp-block-uagb-column.uagb-block-7d89a724.uagb-column__wrap{margin-bottom: 10px;}.wp-block-uagb-column.uagb-block-647d7233.uagb-column__wrap{margin-bottom: 10px;}.wp-block-uagb-column.uagb-block-c69a924d.uagb-column__wrap{margin-bottom: 10px;}.wp-block-uagb-column.uagb-block-8a3d34ad.uagb-column__wrap{margin-bottom: 10px;}}</style> 
+  <style type="text/css" id="wp-custom-css">
+			/**NEW ROYAL SLIDER ADJUSTMENTS**/
+
+/* make post title white within split screen template*/
+.rs-usc-gateway-default-template h3 {
+	color: white;
+} 
+
+
+/*SITE BRANDING ADJUSTMENTS*/
+.site-branding-usc {
+	z-index: 999;
+}
+
+.site-footer a:hover {
+	color: #ffcc00;
+}
+
+.site-footer a:active {
+	border: 2px dashed #ffcc00;
+}
+
+
+
+/*Recently Updated Posts adjustments*/
+.entry-content .rpwe-title {
+		font-size: 28px!important;
+    font-weight: 700!important;
+    line-height: 32px!important;
+}
+
+.entry-content .rpwe-block li {
+	margin-bottom: 1.5em;
+}
+
+/*ADD'L GATEWAY THEME ADJUSTMENTS*/
+
+/* Hides duplicate H1 for screen readers */
+.screen-reader-text {
+	display: none;
+}
+
+
+h1.is-style-cardinal-bar {
+	margin-top: 1em;
+	
+}
+
+/* INSERT MARGIN SPACING AT THE TOP OF EACH PAGE
+.page-template-default .site-content .entry-header:before {
+	margin-top: 2em;
+}
+*/
+
+.site-sidebar  {
+    margin-top: 4em;
+}
+
+.categories .category-single {
+	display:  none;
+}
+
+.wp-block-buttons>.wp-block-button {
+	padding: 2px
+}
+
+/* HIDDEN BREACRUMBS
+.breadcrumbs {
+	display: none;
+}
+*/
+
+.wp-block-separator {
+	opacity: 1;
+	border: none;
+}
+
+span.lw_event_item_date {
+	background-color: rgba(0,0,0)!important;
+}
+
+
+/*LOCALIST EVENTS ADJUSTMENTS*/
+.localist-widget-hl .event-details {
+	background: black!important;
+}
+
+.localist-widget-hl .event-card {
+	color: black!important;
+}
+
+.event-detail-title {
+	background-color: black!important;
+}
+
+.lw_event_list {
+	margin-left: 0px;
+}
+
+/*RESPONSIVE ADJUSTMENTS*/
+
+
+@media only screen and (max-width: 768px) {
+	.entry-content {
+		width: 100%
+	}
+}
+
+/*Ninja Tables Adjustments*/
+
+.footable .pagination>.disabled>a {
+	color: #222;
+}
+
+.footable .pagination>.active>a {
+	background-color: #990000;
+  border-color: #990000;
+}
+
+.footable .pagination>li>a {
+	color: #990000;
+}
+
+/*H1 BANNER TYPOGRAPHY*/
+h1.is-style-display-2 {
+	font-size: 3.5rem;
+	line-height: 1.2;
+}
+
+h1.is-style-display-3 {
+	font-size: 2.5rem;
+	
+}
+
+/*WordPress Icons*/
+.wp-block-image-icon {
+	width: 60%;
+	display:block;
+	margin:auto;
+}
+
+/*Team Cards*/
+.team-card {
+	margin: 20px;
+	background: #fafafa;
+}
+
+.card-text {
+	padding-left: 20px;
+}
+
+/*Meet the Team Page Styling*/
+.bio-name {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.wp-block-image {
+	margin-bottom: 0;
+}
+
+h1.is-style-cardinal-bar-2:before {
+	width: 5rem;
+	background: #900;
+	content: "";
+	display: block;
+	height: 0.5rem;
+	margin: 0 0 1.5rem;
+	position: relative;
+	top: 0;
+}
+
+@media screen and (max-width: 48em) {
+
+.full-template-padding {
+	padding: 0 1rem;
+}
+	}
+
+/* EatWell Page Styling */
+@media screen and (max-width: 48em) {
+.wp-block-buttons.mobile-register-button {
+		justify-content: center;
+	}
+}
+
+/* Guides and Tipsheets archive styling */
+span#guides,span#tipsheets {
+	flex-grow: 0;
+}
+
+		</style>
+ </head>
+ <body class="page-template-default page page-id-310 page-child parent-pageid-206 usc-gateway-2018-light usc-display-new-badge usc-gateway-localist-custom-styles usc-notification-bar">
+  <div class="site"> <a class="skip-link screen-reader-text" aria-label="Skip to main content" href="#main">Skip to main content</a><a class="skip-link screen-reader-text" aria-label="Skip to secondary content" href="#secondary">Skip to secondary content</a> 
+   <header id="masthead" class="site-header" role="banner">
+    <div class="site-header-wrapper">
+     <div class="site-branding-usc"><a class="site-branding-usc-logo" href="http://www.usc.edu">University of Southern California</a>
+     </div>
+     <div class="site-branding-unique">
+      <h1 class="site-branding-title"><a href="https://workwell.usc.edu/" rel="home">WorkWell Center</a></h1>
+     </div>
+     <nav id="site-navigation" class="site-navigation" role="navigation">
+      <div class="site-navigation-wrapper">
+       <h2 class="site-navigation-title screen-reader-text">Primary Menu</h2>
+       <div class="menu-main-menu-container">
+        <ul id="menu-main-menu" class="site-navigation-menu">
+         <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-240"><a href="https://workwell.usc.edu/">Home</a></li>
+         <li id="menu-item-204" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-204"><a href="https://workwell.usc.edu/about/">About</a>
+          <ul class="sub-menu">
+           <li id="menu-item-329" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-329"><a href="https://workwell.usc.edu/about/meet-the-team/">Meet the Team</a></li>
+          </ul></li>
+         <li id="menu-item-212" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-212"><a href="https://workwell.usc.edu/services/">Services</a>
+          <ul class="sub-menu">
+           <li id="menu-item-266" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-266"><a href="https://workwell.usc.edu/services/health-and-well-being/">Health &amp; Well-being Program</a></li>
+           <li id="menu-item-269" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-269"><a href="https://workwell.usc.edu/services/counseling/">Counseling</a></li>
+           <li id="menu-item-275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-275"><a href="https://workwell.usc.edu/services/coaching/">Coaching</a></li>
+           <li id="menu-item-274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-274"><a href="https://workwell.usc.edu/services/consulting/">Consulting</a></li>
+           <li id="menu-item-273" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-273"><a href="https://workwell.usc.edu/services/talks-and-groups/">Talks &amp; Groups</a></li>
+           <li id="menu-item-348" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-348"><a href="https://workwell.usc.edu/services/critical-incident-stress-management/">Critical Incident Stress Management</a></li>
+          </ul></li>
+         <li id="menu-item-211" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-211"><a href="https://workwell.usc.edu/events/">Events</a>
+          <ul class="sub-menu">
+           <li id="menu-item-657" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-310 current_page_item menu-item-657"><a href="https://workwell.usc.edu/events/eatwell/" aria-current="page">EatWell Webinar Series</a></li>
+           <li id="menu-item-916" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-916"><a href="https://workwell.usc.edu/events/live-well-stress-less-challenge/">Live Well, Stress Less Challenge</a></li>
+           <li id="menu-item-328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-328"><a href="https://workwell.usc.edu/events/parent-connect/">Parent Connect</a></li>
+           <li id="menu-item-327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-327"><a href="https://workwell.usc.edu/events/thriving-thursdays/">Thriving Thursdays</a></li>
+          </ul></li>
+         <li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-210"><a href="https://workwell.usc.edu/tools-resources/">Tools &amp; Resources</a></li>
+         <li id="menu-item-209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-209"><a href="https://workwell.usc.edu/contact/">Contact</a></li>
+        </ul>
+       </div> 
+       <div class="site-menu-toggle-wrapper"><a href="javascript:void(0);" class="site-menu-toggle" aria-label="Navigation Menu" aria-expanded="false">
+         <svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+          <title id="icon_title">Menu</title><desc id="icon_desc">
+           An icon that consists of three parallel horizontal lines suggestive of a list.
+          </desc><path d="M0 0h24v24H0z" fill="none" /><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+         </svg></a>
+       </div>
+       <div class="site-search-toggle-wrapper"><a href="javascript:void(0);" class="site-search-toggle" aria-label="Search" aria-expanded="false">
+         <svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+          <title id="icon_title">Search</title><desc id="icon_desc">
+           An icon of a magnifying glass.
+          </desc><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" /><path d="M0 0h24v24H0z" fill="none" />
+         </svg></a>
+       </div>
+      </div>
+     </nav>
+    </div>
+    <div class="site-search-wrapper">
+     <div class="site-search">
+      <form role="search" method="get" class="search-form" action="https://workwell.usc.edu/"><label> <span class="screen-reader-text">Search for:</span> <input type="text" class="search-field" name="s" placeholder="Search..." title="search"> <input type="submit" class="visuallyhidden" value="Submit"> </label><a href="javascript:void(0);" class="search-icon-close">
+        <svg class="svg-icon" width="20" height="20" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+         <title id="icon_title">Close</title><desc id="icon_desc">
+          An icon of a letter X.
+         </desc><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" /><path d="M0 0h24v24H0z" fill="none" />
+        </svg><span class="screen-reader-text">Close Search</span></a>
+      </form>
+     </div>
+    </div>
+   </header><!-- #masthead -->
+   <div id="content" class="site-content">
+    <h2 class="screen-reader-text">Breadcrumb Navigation</h2>
+    <nav aria-label="Breadcrumb" class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+     <ol>
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="https://workwell.usc.edu/" itemprop="item" class="home">Home</a></li> 
+      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="https://workwell.usc.edu/events/" itemprop="item">Events</a></li> 
+      <li><a href aria-current="page" class="current">EatWell Webinar Series</a></li>
+     </ol>
+    </nav><!-- .breadcrumbs -->
+    <div id="primary" class="content-area">
+     <main id="main" class="site-main" role="main">
+      <article id="post-310" class="post-310 page type-page status-publish hentry">
+       <header class="entry-header">
+        <h1 class="entry-title">EatWell Webinar Series</h1> 
+        <div class="entry-meta">
+        </div><!-- .entry-meta -->
+       </header><!-- .entry-header -->
+       <div class="entry-content">
+        <figure class="wp-block-image size-large">
+         <img loading="lazy" width="1024" height="390" src="https://workwell.usc.edu/wp-content/uploads/2022/02/EatWell-Artwork-web-banner-021422-1024x390.jpg" alt="EatWell Webinar Series website banner" class="wp-image-725" srcset="https://workwell.usc.edu/wp-content/uploads/2022/02/EatWell-Artwork-web-banner-021422-1024x390.jpg 1024w, https://workwell.usc.edu/wp-content/uploads/2022/02/EatWell-Artwork-web-banner-021422-300x114.jpg 300w, https://workwell.usc.edu/wp-content/uploads/2022/02/EatWell-Artwork-web-banner-021422-768x293.jpg 768w, https://workwell.usc.edu/wp-content/uploads/2022/02/EatWell-Artwork-web-banner-021422-1536x585.jpg 1536w" sizes="(max-width: 1024px) 100vw, 1024px">
+        </figure>
+        <p>Access to healthy foods and beverages plays a vital role in our overall health and well-being. The Healthy Habits EatWell webinar series, which will take place at 12 p.m. every Thursday from March 10 to April 28, will feature registered dietitians and nutrition experts providing tips, resources, and support to faculty and staff to help you improve your health and quality of life through nutrition and healthy eating habits.</p>
+        <p>For questions, contact Julie Chobdee, Health &amp; Well-Being Program Manager, at&nbsp;<a href="mailto:jchobdee@usc.edu">jchobdee@usc.edu</a>.</p>
+        <div class="wp-block-uagb-table-of-contents uagb-toc__align-left uagb-toc__columns-1   uagb-block-8184928a " data-scroll="1" data-offset="30" data-delay="800">
+         <div class="uagb-toc__wrap">
+          <div class="uagb-toc__title-wrap">
+           <div class="uagb-toc__title">
+           </div>
+          </div>
+          <div class="uagb-toc__list-wrap">
+           <ol class="uagb-toc__list">
+            <li class="uagb-toc__list"><a href="#previous-sessions-8">Previous Sessions (8)</a></li>
+            <li class="uagb-toc__list"><a href="#meet-the-healthy-habits-eatwell-team">Meet the Healthy Habits EatWell Team</a></li>
+           </ol> 
+          </div>
+         </div>
+        </div>
+        <div style="height:40px" aria-hidden="true" class="wp-block-spacer uag-hide-desktop uag-hide-tab uag-hide-mob"></div>
+        <div class="wp-block-group">
+         <div class="wp-block-group__inner-container">
+          <h3 class="is-style-cardinal-bar uag-hide-desktop uag-hide-tab uag-hide-mob">Upcoming Sessions (1)</h3>
+          <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-085e70ac uag-hide-desktop uag-hide-tab uag-hide-mob">
+           <div class="uagb-columns__overlay"></div>
+           <div class="uagb-columns__inner-wrap uagb-columns__columns-2">
+            <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-fd6543fe">
+             <div class="uagb-column__overlay"></div>
+             <div class="uagb-column__inner-wrap">
+              <p>Week 1 (
+               <meta charset="utf-8">March 10, 12–12:50 p.m.)</p>
+             </div>
+            </div>
+            <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-726219fa">
+             <div class="uagb-column__overlay"></div>
+             <div class="uagb-column__inner-wrap">
+              <p>
+               <meta charset="utf-8"><a href="#week1" data-type="internal" data-id="#week1">Celebrate a World of Flavors</a></p>
+             </div>
+            </div>
+           </div>
+          </section>
+          <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-12f28a3d uag-hide-desktop uag-hide-tab uag-hide-mob">
+           <div class="uagb-columns__overlay"></div>
+           <div class="uagb-columns__inner-wrap uagb-columns__columns-2">
+            <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-6546476f">
+             <div class="uagb-column__overlay"></div>
+             <div class="uagb-column__inner-wrap">
+              <p>Week 2 (March 17, 12-12:50 p.m.)</p>
+             </div>
+            </div>
+            <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-6735ce53">
+             <div class="uagb-column__overlay"></div>
+             <div class="uagb-column__inner-wrap">
+              <p>
+               <meta charset="utf-8">
+               <meta charset="utf-8"><a href="#week2" data-type="internal" data-id="#week2">Eating Greens and More!</a></p>
+             </div>
+            </div>
+           </div>
+          </section>
+          <p></p>
+         </div>
+        </div>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-f9b806d7 uag-hide-desktop uag-hide-tab uag-hide-mob">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-2">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-d7a27e0c">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <p><strong>
+              <meta charset="utf-8"></strong>Week 3 (March 24, 12-12:50 p.m.)</p>
+           </div>
+          </div>
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-2b2c7b5e">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <p>
+             <meta charset="utf-8">
+             <meta charset="utf-8"><a href="#week3" data-type="internal">Eat Like a Champ: How to Fuel for the Everyday Athlete</a></p>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-9b284d17 uag-hide-desktop uag-hide-tab uag-hide-mob">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-2">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-8a4d97bc">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <p><strong>
+              <meta charset="utf-8"></strong>Week 4 (March 31, 12-12:50 p.m.)</p>
+           </div>
+          </div>
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-55943b19">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <p>
+             <meta charset="utf-8">
+             <meta charset="utf-8"><a href="#week4">Sorting Out Popular Diets and Social Media Influences on Diet Culture</a></p>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-96f5c5f6 uag-hide-desktop uag-hide-tab uag-hide-mob">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-2">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-42dffa2b">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <p><strong>
+              <meta charset="utf-8"></strong>Week 5 (
+             <meta charset="utf-8">April 7, 12-12:50 p.m.)</p>
+           </div>
+          </div>
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-f60f6545">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <p>
+             <meta charset="utf-8">
+             <meta charset="utf-8"><a href="#week5">Quick and Healthy Meals for Busy Schedules</a></p>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-2006f627 uag-hide-desktop uag-hide-tab uag-hide-mob">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-2">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-1c306e3a">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <p><strong>
+              <meta charset="utf-8"></strong>Week 6 (
+             <meta charset="utf-8">April 14, 12-12:50 p.m.)</p>
+           </div>
+          </div>
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-06cdfa08">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <p>
+             <meta charset="utf-8">
+             <meta charset="utf-8"><a href="#week6">Food and Mood and Mindful Eating</a></p>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-ce1f6edb uag-hide-desktop uag-hide-tab uag-hide-mob">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-2">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-d5dcd5fb">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <p><strong>
+              <meta charset="utf-8"></strong>Week 7 (
+             <meta charset="utf-8">April 21, 12-12:50 p.m.)</p>
+           </div>
+          </div>
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-bfbabd07">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <p>
+             <meta charset="utf-8">
+             <meta charset="utf-8"><a href="#week7">Eating Sustainably</a></p>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-95643dea uag-hide-desktop uag-hide-tab uag-hide-mob">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-2">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-6e824deb">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <p><strong>
+              <meta charset="utf-8"></strong>Week 8 (
+             <meta charset="utf-8">April 28, 12-12:50 p.m.)</p>
+           </div>
+          </div>
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-ff8f56de">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <p>
+             <meta charset="utf-8">
+             <meta charset="utf-8"><a href="#week8">Nutrition for Health and Longevity</a></p>
+           </div>
+          </div>
+         </div>
+        </section>
+        <div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
+        <h3 class="is-style-cardinal-bar uag-hide-desktop uag-hide-tab uag-hide-mob" id="upcoming-sessions-e0147646-d514-4e75-bd35-b4eec6969394">Upcoming sessions</h3>
+        <div id="week1" class="wp-block-group uag-hide-desktop uag-hide-tab uag-hide-mob">
+         <div class="wp-block-group__inner-container">
+          <div class="wp-block-group">
+           <div class="wp-block-group__inner-container">
+            <h3 id="event-title-date-97e07600-f6dd-4bbb-8755-6880174bb6b3">Week 1: Celebrate a World of Flavors</h3>
+            <p>March 10, 2022, 12–12:50 p.m.</p>
+            <p>In accordance with the National Nutrition Month theme this year to celebrate a world of flavors, we will highlight the unique, cultural variety of foods available to people from around the world and the health benefits of some spices used in these dishes.</p>
+            <h4 id="panelists-aa799ed1-1dce-46b5-a8b5-7419af3810f3">Panelists</h4>
+            <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-0dc67ea2">
+             <div class="uagb-columns__overlay"></div>
+             <div class="uagb-columns__inner-wrap uagb-columns__columns-3">
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-bcaddab3">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-9a1d5406">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Farika-Reyes-e1644450835999-150x150.jpg" alt="Farika Reyes">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">
+                     <meta charset="utf-8">Farika Reyes</h5><span class="uagb-team__prefix">
+                     <meta charset="utf-8">RD, CNSC</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">
+                     <meta charset="utf-8">Clinical Inpatient Dietitian,<br>Keck Medicine of USC</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-3a222b56">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-4527e48a">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Jaynita-Patel-e1644452007453-150x150.jpg" alt="Jaynita Patel">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">
+                     <meta charset="utf-8">Jaynita Patel</h5><span class="uagb-team__prefix">
+                     <meta charset="utf-8">MS, RDN, CNSC</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">
+                     <meta charset="utf-8">Clinical Cardiothoracic Transplant Dietitian,<br>Keck Medicine of USC</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-2a788ffe">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap"></div>
+              </div>
+             </div>
+            </section>
+            <div class="wp-block-group">
+             <div class="wp-block-group__inner-container">
+              <div class="wp-block-buttons is-content-justification-left mobile-register-button">
+               <div class="wp-block-button is-style-fill">
+                <a class="wp-block-button__link" href="https://usc.zoom.us/webinar/register/WN_gAF4g35NTxeusu_jMijNMQ" target="_blank" rel="noreferrer noopener">Register</a>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="color:#ddd" class="wp-block-genesis-blocks-gb-spacer uag-hide-desktop uag-hide-tab uag-hide-mob gb-block-spacer gb-divider-solid gb-spacer-divider gb-divider-size-1">
+         <hr style="height:30px">
+        </div>
+        <div id="week2" class="wp-block-group">
+         <div class="wp-block-group__inner-container">
+          <div class="wp-block-group uag-hide-desktop uag-hide-tab uag-hide-mob">
+           <div class="wp-block-group__inner-container">
+            <h3 id="event-title-date-5016657b-984a-47dd-8674-b000ee092583">Week 2: Eating Greens and More!</h3>
+            <p>March 17, 2022 (Saint Patrick’s Day), 12–12:50 p.m.</p>
+            <p>Eat green! In honor of St. Patty’s Day, we will highlight eating greens as well as other important nutrients and ways to incorporate them into your daily eating plan.</p>
+            <h4 id="panelists-e4b25381-ce4d-40e5-85ba-2561dd824263">Panelists</h4>
+            <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-3fb427a7">
+             <div class="uagb-columns__overlay"></div>
+             <div class="uagb-columns__inner-wrap uagb-columns__columns-3">
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-ee5515b8">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-9cc30d1c">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Cecilia-Fei-e1644452406721-150x150.jpg" alt="Cecilia Fei">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">Cecilia Fei </h5><span class="uagb-team__prefix">RD, CNSC</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">
+                     <meta charset="utf-8">Registered Dietitian,<br>Clinical Nutrition, Keck Medicine of USC</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-5a9517b8">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-2328dee4">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Lisa-Statner-e1644452773886-150x150.jpg" alt="Lisa Statner">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">Lisa Statner</h5><span class="uagb-team__prefix">
+                     <meta charset="utf-8">MS, RDN</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">
+                     <meta charset="utf-8">Outpatient Oncology Dietitian,<br>USC Norris Cancer Hospital</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-085b6ced">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap"></div>
+              </div>
+             </div>
+            </section>
+            <div class="wp-block-buttons mobile-register-button">
+             <div class="wp-block-button is-style-fill">
+              <a class="wp-block-button__link" href="https://usc.zoom.us/webinar/register/WN_gAF4g35NTxeusu_jMijNMQ" target="_blank" rel="noreferrer noopener">Register</a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="color:#ddd" class="wp-block-genesis-blocks-gb-spacer uag-hide-desktop uag-hide-tab uag-hide-mob gb-block-spacer gb-divider-solid gb-spacer-divider gb-divider-size-1">
+         <hr style="height:30px">
+        </div>
+        <div id="week3" class="wp-block-group uag-hide-desktop uag-hide-tab uag-hide-mob">
+         <div class="wp-block-group__inner-container">
+          <div class="wp-block-group">
+           <div class="wp-block-group__inner-container">
+            <h3 id="event-title-date-5016657b-984a-47dd-8674-b000ee092583">Week 3: Eat Like a Champ: How to Fuel for the Everyday Athlete</h3>
+            <p>
+             <meta charset="utf-8">March 24, 2022, 12–12:50 p.m.</p>
+            <p>Not an elite athlete? No problem. Learn how to fuel like one to reach your maximum potential.</p>
+            <h4 id="panelists-e4b25381-ce4d-40e5-85ba-2561dd824263">Panelists</h4>
+            <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-e0dfa0a8">
+             <div class="uagb-columns__overlay"></div>
+             <div class="uagb-columns__inner-wrap uagb-columns__columns-3">
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-15f57e71">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-d08a6bbb">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Katie-Valdes-e1644452937235-150x150.png" alt="Katie Valdes">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">Katie Valdes</h5><span class="uagb-team__prefix">MS, RD, CSSD</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">Director of Performance Nutrition,<br>USC Athletics</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-9f10c5d4">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-cef18df2">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Lily-V.-Reisinger-e1644453014889-150x150.png" alt="Lily V. Reisinger">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">Lily V. Reisinger</h5><span class="uagb-team__prefix">Masters of Science</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">Candidate &amp; Dietetic Intern,<br>USC Leonard Davis</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-264b08d7">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap"></div>
+              </div>
+             </div>
+            </section>
+            <div class="wp-block-buttons mobile-register-button">
+             <div class="wp-block-button is-style-fill">
+              <a class="wp-block-button__link" href="https://usc.zoom.us/webinar/register/WN_gAF4g35NTxeusu_jMijNMQ">Register</a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="color:#ddd" class="wp-block-genesis-blocks-gb-spacer uag-hide-desktop uag-hide-tab uag-hide-mob gb-block-spacer gb-divider-solid gb-spacer-divider gb-divider-size-1">
+         <hr style="height:30px">
+        </div>
+        <div id="week4" class="wp-block-group uag-hide-desktop uag-hide-tab uag-hide-mob">
+         <div class="wp-block-group__inner-container">
+          <div class="wp-block-group">
+           <div class="wp-block-group__inner-container">
+            <h3 id="event-title-date-5016657b-984a-47dd-8674-b000ee092583">Week 4: Sorting Out Popular Diets and Social Media Influences on Diet Culture</h3>
+            <p>
+             <meta charset="utf-8">March 31, 2022, 12–12:50 p.m.</p>
+            <p>Confused about all the nutrition information you hear and read about? This session will help you navigate the many “diets” and social media messages about food and nutrition.</p>
+            <h4 id="panelists-e4b25381-ce4d-40e5-85ba-2561dd824263">Panelists</h4>
+            <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-c19d179d">
+             <div class="uagb-columns__overlay"></div>
+             <div class="uagb-columns__inner-wrap uagb-columns__columns-3">
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-f587a9d0">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-3f832070">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Jenny-Frutchey-e1644453145335-150x150.jpg" alt="Jenny Frutchey">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">Jenny Frutchey</h5><span class="uagb-team__prefix">MPH, RD, CSO, CNSC</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">Assistant Director of Clinical Nutrition,<br>Keck Medicine of USC</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-1c5034d8">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-8d0a3c5b">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Brittany-Gurney-e1644453216253-150x150.png" alt="Brittany Gurney">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">Brittany Gurney</h5><span class="uagb-team__prefix">MS, RD, CNSC</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">Outpatient Dietitian,<br>Clinical Nutrition, Keck Medicine of USC</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-4bb3fdda">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap"></div>
+              </div>
+             </div>
+            </section>
+            <div class="wp-block-buttons mobile-register-button">
+             <div class="wp-block-button is-style-fill">
+              <a class="wp-block-button__link" href="https://usc.zoom.us/webinar/register/WN_gAF4g35NTxeusu_jMijNMQ" target="_blank" rel="noreferrer noopener">Register</a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="color:#ddd" class="wp-block-genesis-blocks-gb-spacer uag-hide-desktop uag-hide-tab uag-hide-mob gb-block-spacer gb-divider-solid gb-spacer-divider gb-divider-size-1">
+         <hr style="height:30px">
+        </div>
+        <div id="week5" class="wp-block-group uag-hide-desktop uag-hide-tab uag-hide-mob">
+         <div class="wp-block-group__inner-container">
+          <div class="wp-block-group">
+           <div class="wp-block-group__inner-container">
+            <h3 id="event-title-date-5016657b-984a-47dd-8674-b000ee092583">Week 5: Quick and Healthy Meals for Busy Schedules</h3>
+            <p>
+             <meta charset="utf-8">April 7, 2022, 12–12:50 p.m.</p>
+            <p>This session will provide strategies for busy people with busy schedules, such as ideas for quick and healthy breakfast, lunch, dinner, and snacks, along with cooking and preparation tips.</p>
+            <h4 id="panelists-e4b25381-ce4d-40e5-85ba-2561dd824263">Panelists</h4>
+            <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-70719c78">
+             <div class="uagb-columns__overlay"></div>
+             <div class="uagb-columns__inner-wrap uagb-columns__columns-3">
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-dc8a16b2">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-34f0b4f5">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Lindsey-Pine-e1644453378577-150x150.jpg" alt="Lindsey Pine">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">Lindsey Pine</h5><span class="uagb-team__prefix">MS, RDN, CLT</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">Registered Dietitian,<br>USC Hospitality</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-59ad4cc0">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-2d3491a6">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Michelle-Smith-e1644453439206-150x150.jpg" alt="Michelle Smith">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">Michelle Smith</h5><span class="uagb-team__prefix">RD, CDN, CSOWM</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">Bariatric Dietitian,<br>Keck Medicine of USC</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-270a3ee1">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap"></div>
+              </div>
+             </div>
+            </section>
+            <div class="wp-block-buttons mobile-register-button">
+             <div class="wp-block-button is-style-fill">
+              <a class="wp-block-button__link" href="https://usc.zoom.us/webinar/register/WN_gAF4g35NTxeusu_jMijNMQ" target="_blank" rel="noreferrer noopener">Register</a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="color:#ddd" class="wp-block-genesis-blocks-gb-spacer uag-hide-desktop uag-hide-tab uag-hide-mob gb-block-spacer gb-divider-solid gb-spacer-divider gb-divider-size-1">
+         <hr style="height:30px">
+        </div>
+        <div id="week6" class="wp-block-group uag-hide-desktop uag-hide-tab uag-hide-mob">
+         <div class="wp-block-group__inner-container">
+          <div class="wp-block-group">
+           <div class="wp-block-group__inner-container">
+            <h3 id="event-title-date-5016657b-984a-47dd-8674-b000ee092583">Week 6: Food and Mood and Mindful Eating</h3>
+            <p>
+             <meta charset="utf-8">April 14, 2022, 12–12:50 p.m.</p>
+            <p>Certain foods and eating patterns can impact our mood and energy levels. Learn more about eating patterns to promote a better mood, sustained energy, and ways to eat more mindfully.</p>
+            <h4 id="panelists-e4b25381-ce4d-40e5-85ba-2561dd824263">Panelists</h4>
+            <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-32fcaaf7">
+             <div class="uagb-columns__overlay"></div>
+             <div class="uagb-columns__inner-wrap uagb-columns__columns-3">
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-991e836e">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-dcdf4f51">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Laura-Kauffman-e1644453538123-150x150.jpg" alt="Laura Kauffman">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">Laura Kauffman</h5><span class="uagb-team__prefix">MS, RDN</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">Outpatient Clinical Dietitian,<br>Keck Medicine of USC</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-d4a0a42d">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-fe582098">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Lisa-Statner-e1644452773886-150x150.jpg" alt="Lisa Statner">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">Lisa Statner</h5><span class="uagb-team__prefix"> MS, RDN </span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">Outpatient Oncology Dietitian,<br>USC Norris Cancer Hospital</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-10d1b6b0">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap"></div>
+              </div>
+             </div>
+            </section>
+            <div class="wp-block-buttons mobile-register-button">
+             <div class="wp-block-button is-style-fill">
+              <a class="wp-block-button__link" href="https://usc.zoom.us/webinar/register/WN_gAF4g35NTxeusu_jMijNMQ" target="_blank" rel="noreferrer noopener">Register</a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="color:#ddd" class="wp-block-genesis-blocks-gb-spacer uag-hide-desktop uag-hide-tab uag-hide-mob gb-block-spacer gb-divider-solid gb-spacer-divider gb-divider-size-1">
+         <hr style="height:30px">
+        </div>
+        <div id="week7" class="wp-block-group uag-hide-desktop uag-hide-tab uag-hide-mob">
+         <div class="wp-block-group__inner-container">
+          <div class="wp-block-group">
+           <div class="wp-block-group__inner-container">
+            <h3 id="event-title-date-5016657b-984a-47dd-8674-b000ee092583">Week 7: Eating Sustainably</h3>
+            <p>
+             <meta charset="utf-8">April 21, 2022, 12–12:50 p.m.</p>
+            <p>Eat sustainably in celebration of Earth Week. Sustainable eating is about choosing foods that are healthful to our environment, bodies, and budget.</p>
+            <h4 id="panelists-e4b25381-ce4d-40e5-85ba-2561dd824263">Panelist</h4>
+            <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-0e775682">
+             <div class="uagb-columns__overlay"></div>
+             <div class="uagb-columns__inner-wrap uagb-columns__columns-3">
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-5ce01331">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-70f6c6d0">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Michelle-D.-Katz-e1644453744176-150x150.png" alt="Michelle D. Katz">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">Michelle D. Katz</h5><span class="uagb-team__prefix">MS, RD, MPH, CHES</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">Registered Dietitian and Certified Health Educator,<br>USC Student Health Keck Medicine of USC</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-fca4c9b2">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-c50f19ee">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Patrice-Barber-150x150.jpg" alt="Patrice Barber">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">Patrice Barber</h5><span class="uagb-team__prefix">RD</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">Registered Dietitian<br>USC Student Health Keck Medicine of USC</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-472fae29">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap"></div>
+              </div>
+             </div>
+            </section>
+            <div class="wp-block-buttons mobile-register-button">
+             <div class="wp-block-button is-style-fill">
+              <a class="wp-block-button__link" href="https://usc.zoom.us/webinar/register/WN_gAF4g35NTxeusu_jMijNMQ" target="_blank" rel="noreferrer noopener">Register</a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="color:#ddd" class="wp-block-genesis-blocks-gb-spacer uag-hide-desktop uag-hide-tab uag-hide-mob gb-block-spacer gb-divider-solid gb-spacer-divider gb-divider-size-1">
+         <hr style="height:30px">
+        </div>
+        <div id="week8" class="wp-block-group uag-hide-desktop uag-hide-tab uag-hide-mob">
+         <div class="wp-block-group__inner-container">
+          <div class="wp-block-group">
+           <div class="wp-block-group__inner-container">
+            <h3 id="event-title-date-5016657b-984a-47dd-8674-b000ee092583">Week 8: Nutrition for Health and Longevity</h3>
+            <p>
+             <meta charset="utf-8">April 28, 2022, 12–12:50 p.m.</p>
+            <p>You are what you eat. Learn ways to eat to live healthier and longer. Find out more about the Blue Zones, with a focus on the Mediterranean, Adventist, and Okinawan ways of eating and living, and the latest on nutrition research related to healthy aging.</p>
+            <h4 id="panelists-e4b25381-ce4d-40e5-85ba-2561dd824263">Panelists</h4>
+            <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-cf67973d">
+             <div class="uagb-columns__overlay"></div>
+             <div class="uagb-columns__inner-wrap uagb-columns__columns-3">
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-3d783a10">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-363d395f">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Frida-Hovik-e1644454026964-150x150.png" alt="Frida Hovik">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">Frida Hovik</h5><span class="uagb-team__prefix">MS</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">Ph.D. Candidate,<br>The USC Leonard Davis School of Gerontology</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-069562b9">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-d711f1a2">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Joy-Liu-e1644454090258-150x150.jpg" alt="Joy Liu">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">Joy Liu</h5><span class="uagb-team__prefix">MS, RDN</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">Abdominal Organ Transplant Dietitian,<br>USC Transplant Institute</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-5cc2f3ae">
+               <div class="uagb-column__overlay"></div>
+               <div class="uagb-column__inner-wrap">
+                <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-0f929366">
+                 <div class="uagb-team__wrap">
+                  <div class="uagb-team__content">
+                   <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                    <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Susan-Kim-e1644454158345-150x150.jpg" alt="Susan Kim">
+                   </div>
+                   <div class="uagb-team__title-wrap">
+                    <h5 class="uagb-team__title">Susan Kim</h5><span class="uagb-team__prefix">MS, RDN, CCTD</span>
+                   </div>
+                   <div class="uagb-team__desc-wrap">
+                    <p class="uagb-team__desc">Clinical Nutrition &amp; Wellness Manager,<br>USC Transplant Institute</p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </section>
+            <div class="wp-block-buttons mobile-register-button">
+             <div class="wp-block-button is-style-fill">
+              <a class="wp-block-button__link" href="https://usc.zoom.us/webinar/register/WN_gAF4g35NTxeusu_jMijNMQ" target="_blank" rel="noreferrer noopener">Register</a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
+        <h2 class="is-style-cardinal-bar" id="previous-sessions-339c7a91-5be5-450d-8c93-6c35b0fcb946">Previous Sessions (8)</h2>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-64dba839">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-1">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-color uagb-block-c93ff066">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <h3><strong>
+              <meta charset="utf-8">Week 1: Celebrate a World of Flavors</strong></h3>
+            <p id="july15">
+             <meta charset="utf-8">March 10, 2022, 12–12:50 p.m.</p>
+            <p style="font-size:18px">
+             <meta charset="utf-8">In accordance with the National Nutrition Month theme this year to celebrate a world of flavors, we will highlight the unique, cultural variety of foods available to people from around the world and the health benefits of some spices used in these dishes.</p>
+            <p><strong><a href="https://usc.zoom.us/rec/share/4szCdjN822XcFeuPM2zRUkrb7mqsRa9__PRqmfAqZTbl6vCV2rw-3osXweJgOlP_.zhfpDDtIWAPID0EE">View Recording</a></strong></p>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-b1f2710b">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-1">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-color uagb-block-cf303227">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <h3><strong>
+              <meta charset="utf-8">Week 2: Eating Greens and More!</strong></h3>
+            <p id="july15">
+             <meta charset="utf-8">March 17, 2022 (Saint Patrick’s Day), 12–12:50 p.m.</p>
+            <p style="font-size:18px">
+             <meta charset="utf-8">Eat green! In honor of St. Patty’s Day, we will highlight eating greens as well as other important nutrients and ways to incorporate them into your daily eating plan.</p>
+            <p><strong><a href="https://usc.zoom.us/rec/share/KjVhsSuHveM3uQzeoq3WFEHpt3pXPfv2qTJknbl8La_j7OD2e45waLQda2Bc-fZL.npjQ6gIAhgTFzbhy?startTime=1647543612000" data-type="URL" data-id="https://usc.zoom.us/rec/share/KjVhsSuHveM3uQzeoq3WFEHpt3pXPfv2qTJknbl8La_j7OD2e45waLQda2Bc-fZL.npjQ6gIAhgTFzbhy?startTime=1647543612000">View Recording</a></strong></p>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-e879871c">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-1">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-color uagb-block-40874c21">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <h3><strong>
+              <meta charset="utf-8">Week 3: Eat Like a Champ: How to Fuel for the Everyday Athlete</strong></h3>
+            <p id="july15">March 24, 2022, 12–12:50 p.m.</p>
+            <p style="font-size:18px">
+             <meta charset="utf-8">Not an elite athlete? No problem. Learn how to fuel like one to reach your maximum potential.</p>
+            <p><strong><a href="https://usc.zoom.us/rec/share/sij2_heLKRUvX3WVrLviX6EpeG-r4TdwIf_O1ceimdfr95kxrzgicv1wwsiyHzk3.eiH3dnwnBocWpjQb?startTime=1648148408000" data-type="URL" data-id="https://usc.zoom.us/rec/share/sij2_heLKRUvX3WVrLviX6EpeG-r4TdwIf_O1ceimdfr95kxrzgicv1wwsiyHzk3.eiH3dnwnBocWpjQb?startTime=1648148408000">View Recording</a></strong></p>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-575dc12f">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-1">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-color uagb-block-4bdc63c6">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <h3><strong>
+              <meta charset="utf-8">Week 4: Sorting Out Popular Diets and Social Media Influences on Diet Culture</strong></h3>
+            <p id="july15">
+             <meta charset="utf-8">March 31, 2022, 12–12:50 p.m.</p>
+            <p style="font-size:18px">
+             <meta charset="utf-8">Confused about all the nutrition information you hear and read about? This session will help you navigate the many “diets” and social media messages about food and nutrition.</p>
+            <p><strong><a href="https://usc.zoom.us/rec/play/ETqqeGzxw7AQtmJNKAO381RGCfn6Vjbk1z7kEm8ZVaRVS8I14qIsj8gNubJmYfxwgVdV9l2GeCkLmzhf.WwwPNBvWkcfrbNGF?startTime=1648753203000" data-type="URL" data-id="https://usc.zoom.us/rec/play/ETqqeGzxw7AQtmJNKAO381RGCfn6Vjbk1z7kEm8ZVaRVS8I14qIsj8gNubJmYfxwgVdV9l2GeCkLmzhf.WwwPNBvWkcfrbNGF?startTime=1648753203000">View Recording</a></strong></p>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-4c92c9c9">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-1">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-color uagb-block-7d89a724">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <h3><strong>
+              <meta charset="utf-8">
+              <meta charset="utf-8">Week 5: Quick and Healthy Meals for Busy Schedules</strong></h3>
+            <p id="july15">
+             <meta charset="utf-8">
+             <meta charset="utf-8">April 7, 2022, 12–12:50 p.m.</p>
+            <p style="font-size:18px">
+             <meta charset="utf-8">
+             <meta charset="utf-8">This session will provide strategies for busy people with busy schedules, such as ideas for quick and healthy breakfast, lunch, dinner, and snacks, along with cooking and preparation tips.</p>
+            <p><strong><a href="https://usc.zoom.us/rec/play/5flWzWWJwB-sM4F8xVXvGQfA1uxQwpXaC2T48ZW9nTUE92knoSTwoHVtQDIHXJUb2ZfP846swTlrEDzJ.XQQdd5RTYhGVfgQy?startTime=1649358005000" data-type="URL" data-id="https://usc.zoom.us/rec/play/5flWzWWJwB-sM4F8xVXvGQfA1uxQwpXaC2T48ZW9nTUE92knoSTwoHVtQDIHXJUb2ZfP846swTlrEDzJ.XQQdd5RTYhGVfgQy?startTime=1649358005000">View Recording</a></strong></p>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-e7c3a988">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-1">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-color uagb-block-647d7233">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <h3><strong>
+              <meta charset="utf-8">
+              <meta charset="utf-8">
+              <meta charset="utf-8">Week 6: Food and Mood and Mindful Eating</strong></h3>
+            <p id="july15">
+             <meta charset="utf-8">
+             <meta charset="utf-8">
+             <meta charset="utf-8">April 14, 2022, 12–12:50 p.m.</p>
+            <p style="font-size:18px">
+             <meta charset="utf-8">
+             <meta charset="utf-8">
+             <meta charset="utf-8">Certain foods and eating patterns can impact our mood and energy levels. Learn more about eating patterns to promote a better mood, sustained energy, and ways to eat more mindfully.</p>
+            <p><strong><a href="https://usc.zoom.us/rec/play/G-vb7uPmWTgh8Bx7Ayzvk0WGDkbDkcVuIWH9Y2vOh3zirfcCRWcOpaAtTkyxA2IcaYf4NSlLjBNp9S3b.OJwgueFLfpo_iwYS?autoplay=true" data-type="URL" data-id="https://usc.zoom.us/rec/play/G-vb7uPmWTgh8Bx7Ayzvk0WGDkbDkcVuIWH9Y2vOh3zirfcCRWcOpaAtTkyxA2IcaYf4NSlLjBNp9S3b.OJwgueFLfpo_iwYS?autoplay=true">View Recording</a></strong></p>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-121882f7">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-1">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-color uagb-block-c69a924d">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <h3><strong>
+              <meta charset="utf-8">
+              <meta charset="utf-8">
+              <meta charset="utf-8">
+              <meta charset="utf-8">Week 7: Eating Sustainably</strong></h3>
+            <p id="july15">
+             <meta charset="utf-8">
+             <meta charset="utf-8">
+             <meta charset="utf-8">
+             <meta charset="utf-8">April 21, 2022, 12–12:50 p.m.</p>
+            <p style="font-size:18px">
+             <meta charset="utf-8">
+             <meta charset="utf-8">
+             <meta charset="utf-8">
+             <meta charset="utf-8">Eat sustainably in celebration of Earth Week. Sustainable eating is about choosing foods that are healthful to our environment, bodies, and budget.</p>
+            <p><strong><a href="https://usc.zoom.us/rec/play/nSSLcyxs1R-JwOO6AVVfXMiLRWxgzpFJWwg88d7grRXFRdbtnqO32dWZu2Fp2642n1Cr-pjAPhd3keO2.c9QySwC1h36IRmA8?autoplay=true&amp;startTime=1650567606000">View Recording</a></strong></p>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-287c33a9">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-1">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-color uagb-block-8a3d34ad">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <h3><strong>
+              <meta charset="utf-8">
+              <meta charset="utf-8">
+              <meta charset="utf-8">
+              <meta charset="utf-8">
+              <meta charset="utf-8">Week 8: Nutrition for Health and Longevity</strong></h3>
+            <p id="july15">
+             <meta charset="utf-8">
+             <meta charset="utf-8">
+             <meta charset="utf-8">
+             <meta charset="utf-8">
+             <meta charset="utf-8">April 28, 2022, 12–12:50 p.m.</p>
+            <p style="font-size:18px">
+             <meta charset="utf-8">
+             <meta charset="utf-8">
+             <meta charset="utf-8">
+             <meta charset="utf-8">
+             <meta charset="utf-8">You are what you eat. Learn ways to eat to live healthier and longer. Find out more about the Blue Zones, with a focus on the Mediterranean, Adventist, and Okinawan ways of eating and living, and the latest on nutrition research related to healthy aging.</p>
+            <p><strong><a href="https://usc.zoom.us/rec/share/Vz6HO4cXWP2J51yhrqJ_gNzhSr6OHfkfTk2vmJEXgsiq4QNAdlwUZ7xhT5njWceC.dtPmm6TxKZXFCszm?startTime=1651172402000" data-type="URL" data-id="https://usc.zoom.us/rec/share/Vz6HO4cXWP2J51yhrqJ_gNzhSr6OHfkfTk2vmJEXgsiq4QNAdlwUZ7xhT5njWceC.dtPmm6TxKZXFCszm?startTime=1651172402000">View Recording</a></strong></p>
+           </div>
+          </div>
+         </div>
+        </section>
+        <p></p>
+        <div style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
+        <h2 class="is-style-cardinal-bar" id="meet-the-team-e5d7ab68-2a53-4cfc-98bb-ef5ba4644ea3">Meet the Healthy Habits EatWell Team</h2>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-d6d156b9">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-3">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-c9b4f886">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-b688131f">
+             <div class="uagb-team__wrap">
+              <div class="uagb-team__content">
+               <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/01/Lara-Hilton-150x150.png" alt="Lara Hilton">
+               </div>
+               <div class="uagb-team__title-wrap">
+                <h3 class="uagb-team__title"><strong>Lara Hilton</strong></h3><span class="uagb-team__prefix"></span>
+               </div>
+               <div class="uagb-team__desc-wrap">
+                <p class="uagb-team__desc">Director,<br>USC WorkWell Center</p>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-e2bd5029">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-d3bf8881">
+             <div class="uagb-team__wrap">
+              <div class="uagb-team__content">
+               <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/01/Julie-Chobdee-150x150.png" alt="Julie Chobdee">
+               </div>
+               <div class="uagb-team__title-wrap">
+                <h3 class="uagb-team__title"><strong>Julie Chobdee</strong></h3><span class="uagb-team__prefix"></span>
+               </div>
+               <div class="uagb-team__desc-wrap">
+                <p class="uagb-team__desc">Health &amp; Well-being Program Manager,<br>USC WorkWell Center</p>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-2a4f5a96">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-f072e82b">
+             <div class="uagb-team__wrap">
+              <div class="uagb-team__content">
+               <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/01/Suzanne-Huynh-150x150.png" alt="Suzanne Huynh">
+               </div>
+               <div class="uagb-team__title-wrap">
+                <h3 class="uagb-team__title"><strong>Suzzane Huynh</strong></h3><span class="uagb-team__prefix"></span>
+               </div>
+               <div class="uagb-team__desc-wrap">
+                <p class="uagb-team__desc">Health &amp; Well-being Coordinator,<br>USC WorkWell Center</p>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-72a0a4c6">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-3">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-e493732c">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-e4323074">
+             <div class="uagb-team__wrap">
+              <div class="uagb-team__content">
+               <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Karla-Sifuentes-e1644454324829-150x150.jpg" alt="Karla Sifuentes">
+               </div>
+               <div class="uagb-team__title-wrap">
+                <h3 class="uagb-team__title"><strong>Karla Sifuentes</strong></h3><span class="uagb-team__prefix"></span>
+               </div>
+               <div class="uagb-team__desc-wrap">
+                <p class="uagb-team__desc">Communications / Marketing Intern,<br>USC WorkWell Center</p>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-7952b04e">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-e5c62520">
+             <div class="uagb-team__wrap">
+              <div class="uagb-team__content">
+               <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Bernifka-Saint-Jean-e1644454416120-150x150.jpg" alt="Bernifka Saint Jean">
+               </div>
+               <div class="uagb-team__title-wrap">
+                <h3 class="uagb-team__title"><strong>Bernifka Saint Jean</strong></h3><span class="uagb-team__prefix"></span>
+               </div>
+               <div class="uagb-team__desc-wrap">
+                <p class="uagb-team__desc">Communications / Marketing Intern,<br>USC WorkWell Center</p>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-907afd43">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-cb6239d3">
+             <div class="uagb-team__wrap">
+              <div class="uagb-team__content">
+               <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Brittany-Kwong-e1644454561319-150x150.jpg" alt="Brittany Kwong">
+               </div>
+               <div class="uagb-team__title-wrap">
+                <h3 class="uagb-team__title"><strong>Brittany Kwong</strong></h3><span class="uagb-team__prefix"></span>
+               </div>
+               <div class="uagb-team__desc-wrap">
+                <p class="uagb-team__desc">Nutrition Intern,<br>USC WorkWell Center</p>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-7636b9bc">
+         <div class="uagb-columns__overlay"></div>
+         <div class="uagb-columns__inner-wrap uagb-columns__columns-3">
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-b162dfc8">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-23ffe0f9">
+             <div class="uagb-team__wrap">
+              <div class="uagb-team__content">
+               <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Morgan-Michalak-e1644454682707-150x150.jpg" alt="Morgan Michalak">
+               </div>
+               <div class="uagb-team__title-wrap">
+                <h3 class="uagb-team__title"><strong>Morgan Michalak</strong></h3><span class="uagb-team__prefix"></span>
+               </div>
+               <div class="uagb-team__desc-wrap">
+                <p class="uagb-team__desc">Nutrition Intern,<br>USC WorkWell Center</p>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p></p>
+           </div>
+          </div>
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-eda519fb">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-44576013">
+             <div class="uagb-team__wrap">
+              <div class="uagb-team__content">
+               <div class="uagb-team__image-wrap uagb-team__image-crop-circle">
+                <img class="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Rachel-Arnold-e1644454782558-150x150.jpg" alt="Rachel Arnold">
+               </div>
+               <div class="uagb-team__title-wrap">
+                <h3 class="uagb-team__title">
+                 <meta charset="utf-8"><strong>
+                  <meta charset="utf-8"><strong>
+                   <meta charset="utf-8"><strong>Rachel Arnold</strong></strong></strong></h3><span class="uagb-team__prefix"></span>
+               </div>
+               <div class="uagb-team__desc-wrap">
+                <p class="uagb-team__desc">Nutrition Intern,<br>USC WorkWell Center</p>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-fe459e55">
+           <div class="uagb-column__overlay"></div>
+           <div class="uagb-column__inner-wrap">
+            <div class="wp-block-uagb-team uagb-team uagb-team__outer-wrap uagb-team__image-position-above uagb-team__align-center uagb-team__stack-tablet uagb-block-cf4b345a">
+             <div class="uagb-team__wrap">
+              <div class="uagb-team__content">
+               <div class="uagb-team__title-wrap">
+                <h3 class="uagb-team__title"></h3><span class="uagb-team__prefix"></span>
+               </div>
+               <div class="uagb-team__desc-wrap">
+                <p class="uagb-team__desc"></p>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </section>
+        <p style="font-size:19px"><em>The series is sponsored by the WorkWell Center in partnership with:</em></p>
+        <div class="wp-block-columns">
+         <div class="wp-block-column">
+          <ul style="font-size:18px">
+           <li><em>Clinical Nutrition at Keck Medicine of USC</em></li>
+           <li><em>Keck School of Medicine</em></li>
+           <li><em>USC Athletics</em></li>
+           <li><em>USC Hospitality</em></li>
+          </ul>
+         </div>
+         <div class="wp-block-column">
+          <ul style="font-size:18px">
+           <li><em>USC Leonard Davis School of Gerontology</em></li>
+           <li><em>USC Student Health Center/Keck Medicine of USC</em></li>
+           <li><em>USC Transplant Institute/Keck Medicine of USC</em></li>
+          </ul>
+         </div>
+        </div>
+       </div><!-- .entry-content -->
+       <footer class="entry-footer">
+       </footer><!-- .entry-footer -->
+      </article><!-- #post-## -->
+     </main><!-- #main -->
+    </div><!-- #primary -->
+    <div id="secondary" class="site-sidebar" role="complementary">
+     <nav class="section-tree-navigation">
+      <ul class="menu">
+       <li class="page_item page-item-310 current_page_item"><a href="https://workwell.usc.edu/events/eatwell/">EatWell Webinar Series</a></li>
+       <li class="page_item page-item-877"><a href="https://workwell.usc.edu/events/live-well-stress-less-challenge/">Live Well, Stress Less Challenge</a></li>
+       <li class="page_item page-item-292"><a href="https://workwell.usc.edu/events/parent-connect/">Parent Connect</a></li>
+       <li class="page_item page-item-296"><a href="https://workwell.usc.edu/events/thriving-thursdays/">Thriving Thursdays</a></li>
+      </ul>
+     </nav>
+    </div><!-- #secondary -->
+   </div><!-- .site-content -->
+   <footer id="colophon" class="site-footer " role="contentinfo">
+    <div class="site-footer-wrapper">
+     <div class="site-footer-columns site-info columns-3">
+      <div class="footer-column">
+       <aside id="text-7" class="widget widget_text">
+        <h1 class="widget-title">USC WorkWell Center</h1> 
+        <div class="textwidget">
+         <p>UPC – Figueroa Building<br> 3535 S Figueroa St, Suite E202<br> Los Angeles, CA 90007</p>
+         <p>HSC – Soto 1 Building<br> 1845 N Soto St #112<br> Los Angeles, CA 90032</p>
+         <p>Human Resources, Equity, and Compliance<br> University of Southern California</p>
+         <p>Ph. 213-821-0800<br> Em. <a href="mailto:workwell@usc.edu" target="_blank" rel="noopener">workwell@usc.edu</a></p>
+        </div>
+       </aside>
+      </div>
+      <div class="footer-column-2">
+       <aside id="text-3" class="widget widget_text">
+        <h1 class="widget-title">University Links</h1> 
+        <div class="textwidget">
+         <p><a href="https://svphr.usc.edu" target="_blank" rel="noopener">University Human Resources</a></p>
+         <div class="textwidget">
+          <p><a href="https://eeotix.usc.edu/" target="_blank" rel="noopener">Office for Equity, Equal Opportunity, and Title IX</a></p>
+          <p><a href="https://report.usc.edu/" target="_blank" rel="noopener">Office of Professionalism and Ethics</a></p>
+          <p><a href="https://ooc.usc.edu/" target="_blank" rel="noopener">Office of Culture, Ethics, and Compliance</a></p>
+          <p><a href="https://ooc.usc.edu/how-to-use-help-hotline/">How to Report a Concern – Help &amp; Hotline</a></p>
+          <p><a href="https://eeotix.usc.edu/notice-of-non-discrimination/">Notice of Non-Discrimination</a></p>
+         </div>
+        </div>
+       </aside>
+      </div>
+      <div class="footer-column-3">
+       <aside id="search-11" class="widget widget_search">
+        <h1 class="widget-title">Search This Site</h1>
+        <form role="search" method="get" class="search-form" action="https://workwell.usc.edu/"><label> <span class="screen-reader-text">Search for:</span> <input type="text" class="search-field" name="s" placeholder="Search..." title="search"> <input type="submit" class="visuallyhidden" value="Submit"> </label><a href="javascript:void(0);" class="search-icon-close">
+          <svg class="svg-icon" width="20" height="20" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+           <title id="icon_title">Close</title><desc id="icon_desc">
+            An icon of a letter X.
+           </desc><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" /><path d="M0 0h24v24H0z" fill="none" />
+          </svg><span class="screen-reader-text">Close Search</span></a>
+        </form>
+       </aside>
+      </div>
+     </div> 
+    </div>
+    <div class="site-footer-strip-wrapper">
+     <div class="site-footer-strip">
+      <div class="site-footer-strip-left">
+       <div class="site-footer-credits">
+        <span class="theme-credit">University of Southern California</span>
+       </div>
+       <div class="site-footer-strip-left-widgets">
+        <aside id="text-4" class="widget widget_text"> 
+         <div class="textwidget">
+          <p>Built using the USC Gateway 2018 WordPress Theme |&nbsp;Website issues? Contact <a href="http://it.provost.usc.edu/">USC Provost IT</a></p>
+          <p>&nbsp;</p>
+         </div>
+        </aside>
+       </div>
+      </div>
+      <div class="site-footer-strip-right"></div>
+     </div>
+    </div> 
+   </footer><!-- .site-footer -->
+   <script type="text/javascript">
+		function genesisBlocksShare( url, title, w, h ){
+			var left = ( window.innerWidth / 2 )-( w / 2 );
+			var top  = ( window.innerHeight / 2 )-( h / 2 );
+			return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=600, height=600, top='+top+', left='+left);
+		}
+	</script><!-- Instagram Feed JS --> 
+   <script type="text/javascript">
+var sbiajaxurl = "https://workwell.usc.edu/wp-admin/admin-ajax.php";
+</script> 
+   <link rel="stylesheet" id="usc-display-new-badge-style-css" href="https://workwell.usc.edu/wp-content/plugins/usc-display-new-badge/public/css/usc-display-new-badge.css?ver=1.0.0" type="text/css" media="all">
+   <link rel="stylesheet" id="usc-notification-bar-style-css" href="https://workwell.usc.edu/wp-content/plugins/usc-notification-bar/public/css/usc-notification-bar.css?ver=1.0" type="text/css" media="all">
+   <script type="text/javascript" src="https://workwell.usc.edu/wp-content/plugins/genesis-blocks/dist/assets/js/dismiss.js?ver=1641327201" id="genesis-blocks-dismiss-js-js"></script>
+   <script type="text/javascript" src="https://workwell.usc.edu/wp-content/plugins/ultimate-addons-for-gutenberg/assets/js/table-of-contents.js?ver=1.25.2" id="uagb-table-of-contents-js"></script>
+   <script type="text/javascript" src="https://workwell.usc.edu/wp-content/themes/usc-gateway-2018/assets/js/vendor/modernizr.js?ver=1.0.28" id="modernizr-js"></script>
+   <script type="text/javascript" src="https://workwell.usc.edu/wp-content/themes/usc-gateway-2018/assets/js/lib/usc-gateway-2018.min.js?ver=1.0.28" id="theme-scripts-js"></script>
+   <script type="text/javascript" src="https://workwell.usc.edu/wp-content/plugins/page-links-to/dist/new-tab.js?ver=3.3.6" id="page-links-to-js"></script>
+   <script type="text/javascript" src="https://workwell.usc.edu/wp-includes/js/wp-embed.min.js?ver=5.8.4" id="wp-embed-js"></script>
+   <script async defer type="text/javascript" src="https://workwell.usc.edu/wp-content/plugins/usc-notification-bar/public/js/usc-notification-bar.js?ver=1.0" id="usc-notification-bar-scripts-js"></script>
+   <script type="text/javascript" id="slb_context">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB ) { {$.extend(SLB, {"context":["public","user_guest"]});} }})})(jQuery);}/* ]]> */</script>
+   <script type="text/javascript" id="uagb-script-frontend-310">document.addEventListener("DOMContentLoaded", function(){ 			jQuery( document ).ready(function() {
+				UAGBTableOfContents._run( {"mappingHeaders":[false,true,false,false,false,false],"scrollToTop":false}, '.uagb-block-8184928a' );
+			});
+			 })</script>
+  </div><!-- .site -->
+ </body>
+</html>

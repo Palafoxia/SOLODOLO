@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"427707476"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-1706522-17", {"cookieDomain":"auto"});ga("require", "linkid", "linkid.js");ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});ga("set", "page", location.pathname + location.search + location.hash);ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <link rel="canonical" href="https://rrr.princeton.edu/">
+  <link rel="shortlink" href="https://rrr.princeton.edu/">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/profiles/ps/themes/ps_tiger/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Rights, Rules, Responsibilities</title>
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf2296/files/css/css_mRFm2bA5X0k595rQj3DLKDsynLQJ0JlgVQt7As6vedI.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf2296/files/css/css_6i6t-lzEW777OTBb93mRbgsnh6uneKFzKrqqZ_PDdL0.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/xxx7asp.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/bok5fgz.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf2296/files/css/css_gkuD_lYIG395Itv9g7h6aunEGZnq-h4ZkygfoB7o1MY.css">
+ </head>
+ <body class="front page-node-10 content-type-ps-basic-page flavor1 fontset1 menu1 sticky-main-menu layout-block-padding-medium">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="page page-container"> 
+    <header role="banner" class="header region region-header" id="header">
+     <h1 class="sr-only sr-site-name">Rights, Rules, Responsibilities</h1>
+     <div class="skip-links"><a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to content</a><a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to search</a>
+     </div>
+     <div class="header-container container">
+      <div class="princeton-branding">
+       <div class="container"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"> <img src="/profiles/ps/themes/ps_base/images/pu-logo.svg" alt="Princeton University"> </a>
+       </div>
+      </div>
+      <div class="site-branding">
+       <div class="container">
+        <div class="row">
+         <div class="site-info">
+          <div class="site-name"><a href="/" title="Home" rel="home">Rights, Rules, Responsibilities</a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <nav aria-label="site" class="main-menu">
+       <h2 class="sr-only">Main Menu</h2>
+       <div class="container navbar-expand-lg"><button class="toggle-mobile-menu unbutton" type="button" data-toggle="collapse" data-target="#menu-container" aria-controls="menu-container" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-mobile-menu-icon"> <span class="toggle-mobile-menu-title">Menu</span> <i class="fa fa-bars" aria-hidden="true"></i> </span> </button>
+        <div id="menu-container" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item expanded"><a href="/university" data-drupal-link-system-path="node/11">University-wide Regulations</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/university#comp11" data-drupal-link-system-path="node/11">1.1 University Principles of General Conduct and Regulations</a></li>
+            <li class="submenu-item"><a href="/university-wide-regulations/12-university-wide-conduct-regulations#comp12" data-drupal-link-system-path="node/4">1.2 University-wide Conduct Regulations</a></li>
+            <li class="submenu-item"><a href="/university#comp13" data-drupal-link-system-path="node/11">1.3 Title IX Sexual Harassment and University Sexual Misconduct</a></li>
+            <li class="submenu-item"><a href="/university#comp14" data-drupal-link-system-path="node/11">1.4 The University, the Law, and Property Rights</a></li>
+            <li class="submenu-item"><a href="/university#comp15" data-drupal-link-system-path="node/11">1.5 Guidelines Relating to the Tax-Exempt Status of the University and Political Activities</a></li>
+            <li class="submenu-item"><a href="/university#comp16" data-drupal-link-system-path="node/11">1.6 Health and Safety Policies</a></li>
+            <li class="submenu-item"><a href="/university#comp17" data-drupal-link-system-path="node/11">1.7 Resolution of Complaints against Members of the University Community</a></li>
+            <li class="submenu-item"><a href="/university#comp18" data-drupal-link-system-path="node/11">1.8 The Council of the Princeton University Community (CPUC)</a></li>
+            <li class="submenu-item"><a href="/university#comp19" data-drupal-link-system-path="node/11">1.9 The Judicial Committee of the Council of the Princeton University Community</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/students-and-university" data-drupal-link-system-path="node/12">Students and the University</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/students#comp21">2.1 Rights and Responsibilities of Students</a></li>
+            <li class="submenu-item"><a href="/students#comp22">2.2 Regulations Concerning Specific Aspects of Student Life</a></li>
+            <li class="submenu-item"><a href="/students#comp23">2.3 The Undergraduate Honor System</a></li>
+            <li class="submenu-item"><a href="/students#comp24">2.4 Academic Regulations</a></li>
+            <li class="submenu-item"><a href="/students#comp25">2.5 University Discipline</a></li>
+            <li class="submenu-item"><a href="/students#comp26">2.6 The Graduate School</a></li>
+            <li class="submenu-item"><a href="/students#comp27">2.7 Student Privacy Rights under Federal Law</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/university-and-community" data-drupal-link-system-path="node/13">The University and the Community</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/community#comp31">3.1 Community Use of University Resources</a></li>
+            <li class="submenu-item"><a href="/community#comp32">3.2 Regulations Governing Solicitation, Distribution, and Peaceful Dissent, Protests, and Demonstrations by Off-Campus Individuals or Organizations</a></li>
+            <li class="submenu-item"><a href="/community#comp33">3.3 University Security Policy for Persons Who Are Not Members of the University</a></li>
+           </ul></li>
+          <li class="nav-item"><a href="/eop" data-drupal-link-system-path="node/14">EOP</a></li>
+          <li class="nav-item"><a href="/bookindex" data-drupal-link-system-path="node/15">Index</a></li>
+         </ul>
+         <div class="utility-menu">
+          <ul class="nav navbar-nav utility-nav">
+           <li class="nav-item"><a href="/caslogin" class="ps-login-logout-link" data-drupal-link-system-path="caslogin">Log in</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </nav>
+      <div class="search-bar" id="search-bar">
+       <div class="container navbar-expand-lg" role="search">
+        <h2 class="sr-only">Search</h2><button class="toggle-searchbar unbutton" type="button" data-toggle="collapse" data-target="#search-bar-container" aria-controls="search-bar-container" aria-expanded="false" aria-label="Toggle search"> <span class="toggle-search-icon"> <i class="fas fa-search" aria-hidden="true"></i> </span> </button>
+        <div id="search-bar-container" class="collapse navbar-collapse">
+         <div class="search-block-form contextual-region block block-search container-inline" id="block-searchform">
+          <form action="/search" method="get" id="search-block-form" accept-charset="UTF-8">
+           <div id="search-toggled" class="form-group js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label"><label for="edit-search-keys" class="visually-hidden">Search</label>
+            <input placeholder="Search" type="search" id="edit-search-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control">
+           </div>
+           <div data-drupal-selector="edit-search-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-search-actions">
+            <input type="submit" id="edit-search-submit" value="Submit" class="button js-form-submit form-submit btn btn-primary">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="breadcrumb region region-breadcrumb" id="breadcrumb">
+     <div class="container">
+     </div>
+    </div>
+    <div class="highlighted" id="highlighted">
+     <div class="container">
+      <div class="region region-highlighted">
+       <div data-drupal-messages-fallback class="hidden"></div>
+      </div>
+     </div>
+    </div>
+    <div id="main" class="main-container">
+     <div class="container">
+      <div class="row">
+       <main class="main main-content col-md-12"><a id="main-content" class="sr-only skip-link"></a>
+        <div class="region region-content">
+         <div id="block-ps-tiger-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+          <h1 class="hidden page-title"> Rights, Rules, Responsibilities </h1>
+         </div>
+         <div id="block-ps-tiger-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+          <article role="article" about="/home" class="node node--type-ps-basic-page node--view-mode-full">
+           <div class="node__content">
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-block-plugin-id="ps_node_view" class="block block-ps-core block-ps-node-view">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <figure class="align-right media--type-image media--view-mode-ps-extra-small-freeform figure">
+                  <img src="/sites/g/files/toruqf2296/files/styles/freeform_750w/public/media/pu-rrr-2021-cover-600.jpg?itok=t_k2vXQi" width="600" height="927" alt="Cover of the RRR 2021 edition" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                 </figure>
+                 <p><a name="compintro" id="compintro"></a><em>Rights, Rules, Responsibilities </em>(<a href="https://rrr.princeton.edu/sites/rrr/files/resource-links/pu-rrr-2021.pdf">PDF, 4.5 Mb</a>) is intended to provide a concise reference and guide for all members of the Princeton University community.</p>
+                 <p>Included here are brief statements of University policies most likely to be applicable to and of interest to all University constituencies. For further information on particular aspects of policies and procedures—or their application to particular situations—consult <a class="drupal-migration-processed" href="/node/12">Section 2 "Students and the University"</a> or the policy manuals available from the <a href="https://dof.princeton.edu/policies-procedure">Office of the Dean of the Faculty</a> and the <a href="http://www.princeton.edu/hr/policies/">Office of Human Resources</a>.</p>
+                 <h3><a class="drupal-migration-processed" href="/node/11">1. University-wide Regulations</a><a name="comppart1" id="comppart1"></a></h3>
+                 <ul class="toc">
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/11#comp11">1.1 University Principles of General Conduct and Regulations</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp111">1.1.1 Introduction</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp112">1.1.2 Academic Integrity</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp113">1.1.3 Statement on Freedom of Expression</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp114">1.1.4 Statement on Diversity and Community</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp115">1.1.5 Honesty and Cooperation in University Matters</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp116">1.1.6 Confidentiality of Records</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp117">1.1.7 Range of Penalties</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/11#compinformalsanctions">Informal Sanctions</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/11#compformalsanctions">Formal Sanctions</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp118">1.1.8 Circumstances Affecting Health or Safety</a></li>
+                   </ul></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/11#comp12">1.2 University-wide Conduct Regulations</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp121">1.2.1 Respect for Others</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp122">1.2.2 Discrimination or Harassment (Based on a Protected Characteristic)</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp123">1.2.3 Peaceful Dissent, Protests, and Demonstrations</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp124">1.2.4 Distribution of Written Materials by Members of the University Community</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp125">1.2.5 Personal Safety</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp126">1.2.6 Programs Involving Minors</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp127">1.2.7 Quiet</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp128">1.2.8 TigerCards (ID Cards) and Other Identification</a></li>
+                   </ul></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/11#comp13">1.3 Title IX Sexual Harassment and University Sexual Misconduct</a></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/11#comp14">1.4 The University, the Law, and Property Rights</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp141">1.4.1 On-Campus Misconduct and the Law</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/11#comp141">Persons on Leave of Absence; Persons Who Are Not Members of the University</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp142">1.4.2 Off-Campus Misconduct</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp143">1.4.3 Violations of Local, State, or Federal Law</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp144">1.4.4 University Discipline and the Courts</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp145">1.4.5 University Safety, Security, and Law Enforcement</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/11#comp145">Official Scheduled Inspection</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/11#comp145">Emergency Entries</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp146">1.4.6 Regulations Regarding Security and Prior Restraint</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/11#comp146">Security Measures</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/11#comp146">Prior Restraint</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp147">1.4.7 Property</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp148">1.4.8 Library Use</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp149">1.4.9 Computer and Network Use</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp1410">1.4.10 Patent and Copyright Policies</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp1411">1.4.11 Princeton University Name, Marks, and Seal</a></li>
+                   </ul></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/11#comp15">1.5 Guidelines Relating to the Tax-Exempt Status of the University and Political Activities</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp151">1.5.1 Introduction</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp152">1.5.2 Guidelines</a></li>
+                   </ul></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/11#comp16">1.6 Health and Safety Policies</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp161">1.6.1 Drugs</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/11#comp161">State Laws</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/11#comp161">University Policy Concerning Use of Illegal Drugs</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp162">1.6.2 Alcoholic Beverages</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp163">1.6.3 Smoking</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp164">1.6.4 Public Health</a></li>
+                   </ul></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/11#comp17">1.7 Resolution of Complaints Against Members of the University Community</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp171">1.7.1 Informal Procedures</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp172">1.7.2 Formal Procedures</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp173">1.7.3 Protection from Retaliation</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp174">1.7.4 Academic Matters</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp175">1.7.5 Nonacademic Matters Other Than Sexual Misconduct Involving Students</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp176">1.7.6 Nonacademic Matters Involving Undergraduate Student Organizations</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp177">1.7.7 Nonacademic Matters Other Than Sexual Misconduct Regarding Faculty, Staff, or Administration</a></li>
+                   </ul></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/11#comp18">1.8 The Council of the Princeton University Community (CPUC)</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp181">1.8.1 Powers</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp182">1.8.2 Membership</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp183">1.8.3 Committees</a></li>
+                   </ul></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/11#comp19">1.9 The Judicial Committee of the Council of the Princeton University Community</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp191">1.9.1 Powers and Membership</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp192">1.9.2 General Procedures</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp193">1.9.3 Procedure in Cases Not Previously Heard by Another Authority</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp194">1.9.4 Procedure in Appeals of Cases Previously Heard by Another Authority</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp195">1.9.5 Responsibilities of the Chair</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp196">1.9.6 Order of Proceedings in Cases of the First Instance</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp197">1.9.7 Order of Proceedings in Appeals Cases</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp198">1.9.8 Procedural Requests</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp199">1.9.9 Evidence</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp1910">1.9.10 Reports</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/11#comp1911">1.9.11 Appeals from Decisions of the Judicial Committee</a></li>
+                   </ul></li>
+                 </ul>
+                 <h3><a class="drupal-migration-processed" href="/node/12">2. Students and the University</a><a name="comppart2" id="comppart2"></a></h3>
+                 <ul class="toc">
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/12#comp21">2.1 Rights and Responsibilities of Students</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp211">2.1.1 Faculty Procedures of Concern to Students</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp211">Attendance at Faculty Meetings</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp211">Faculty Reconsideration of Proposals Regarding Undergraduate Curriculum</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp211">Graduate Student Departmental Committees</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp211">Interaction of Undergraduate Student Government Committees and Faculty Committees</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp211">Individual Student Appeal from Decisions of Faculty Committees</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp211">Coordination Between Faculty and Students on Matters Affecting Student Life</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp211">Undergraduate Departmental Committees</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp212">2.1.2 Undergraduate Student Government</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp212">Introduction</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp212">Objects of the USG Senate</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp212">Members of the USG Senate</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp212">Committees of the USG Senate</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp212">Objects of Class Government</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp212">Class Officers</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp212">Referenda</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp213">2.1.3 Campus Associations and Activities</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp214">2.1.4 Student Publications</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp215">2.1.5 Students with Disabilities and Requests for Reasonable Accommodation</a></li>
+                   </ul></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/12#comp22">2.2 Regulations Concerning Specific Aspects of Student Life</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp221">2.2.1 Dormitory Regulations</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp221">Noise</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp221">Animals in Housing</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp221">Posting of Notices</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp221">Smoking</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp221">Fire Safety Policy</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp221">Candle/Flammable Liquid/Incense/Fireworks Policy</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp221">Storage</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp221">Lofts</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp221">Privacy and Right of Re-entry</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp221">Search of Dormitory Rooms</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp222">2.2.2 Other Building and Safety Regulations</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp223">2.2.3 Campus Dining Regulations</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp224">2.2.4 Health Regulations</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp225">2.2.5 Disorderly Conduct</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp226">2.2.6 University Ban on the Nude Olympics</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp227">2.2.7 Hazing</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp227">New Jersey Law</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp227">University Prohibition on Hazing</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp227">Acceptable Behavior</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp228">2.2.8 Fraternities and Sororities</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp228">Prohibited Activities</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp228">Students Covered by This Policy</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp228">Definition of a Fraternity or Sorority</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp228">Consequences</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp229">2.2.9 Alcohol Policy</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp229">What Are the Responsibilities of Princeton University Students?</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp229">When Will the Department of Public Safety or Other University Administrators Intervene?</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp229">When Are Princeton University Students in Violation of the Alcohol Policy?</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp229">What Are the Consequences of Violating the Alcohol Policy?</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp2210">2.2.10 Drug Policy</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp2211">2.2.11 Conduct at Prospect Avenue Clubs</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp2212">2.2.12 Transportation and Parking Services</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp2212">Undergraduate Student Parking Policy</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp2212">Undergraduate Student Parking</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp2212">Guests</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp2213">2.2.13 Legal Assistance</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp2214">2.2.14 Financial Regulations</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp2215">2.2.15 Use of University Monies (Including Student Fees)</a></li>
+                   </ul></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/12#comp23">2.3 The Undergraduate Honor System</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp231">2.3.1 Jurisdiction Over Undergraduates for Violations of Academic Rules and Regulations</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp232">2.3.2 Introduction</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp232">Student Obligation to the Honor Code</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp232">Examination Procedures Set by Faculty</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp232">Role of Honor Committee</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp233">2.3.3 Current Procedure</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp233">Report and Investigation of a Suspected Violation</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp233">Hearing</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp233">Decision and Results</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp233">Acquittal</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp233">Guilty Verdict and Consequences</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp233">Appeal</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp234">2.3.4 Constitution of the Honor System</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp234">Article I</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp234">Article II</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp234">Article III</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp234">Article IV</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp234">Article V</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp234">Article VI</a></li>
+                     </ul></li>
+                   </ul></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/12#comp24">2.4 Academic Regulations</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp241">2.4.1 Introduction</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp242">2.4.2 Jurisdiction over Undergraduates for Violations of Academic Rules and Regulations</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp243">2.4.3 Student Acknowledgment of Original Work</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp244">2.4.4 Transcription or Publication of Course-Related Materials</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp245">2.4.5 Tutoring</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp246">2.4.6 General Requirements for the Acknowledgment of Sources in Academic Work</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp246">Quotations</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp246">Paraphrasing</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp246">Ideas and Facts</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp246">Footnotes and Bibliography</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp246">Electronic and Other Sources</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp246">Laboratory Work, Problem Sets, Computer Programs, and Homework</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp246">Multiple Submission</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp246">Oral Reports</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp246">Standard Forms of Reference</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp247">2.4.7 Definitions of Academic Violations Under the Jurisdiction of the Faculty-Student Committee on Discipline and the Subcommittee on Student Life and Discipline of the Faculty Committee on the Graduate School</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp247">Plagiarism</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp247">Unauthorized Multiple Submission</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp247">False Citation</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp247">False Data</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp247">Attempt to Gain an Unfair Advantage</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp247">Violation of Examination Procedures</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp247">Aiding Plagiarism or Any Other Academic Violation</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp248">2.4.8 Violations</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp248">Jurisdiction</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp248">Student’s Defense</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp248">Seriousness of the Offense</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp248">Penalties</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp249">2.4.9 Examples of Plagiarism</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp249">Original source:</a>
+                       <ul>
+                        <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp249">1. Example of Verbatim Plagiarism, or Unacknowledged Direct Quotation</a></li>
+                        <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp249">2. Example of Lifting Selected Passages and Phrases Without Proper Acknowledgement</a></li>
+                        <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp249">3. Example of Paraphrasing the Text While Maintaining the Basic Paragraph and Sentence Structure</a></li>
+                       </ul></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp249">Collaboration</a></li>
+                     </ul></li>
+                   </ul></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/12#comp25">2.5 University Discipline</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp251">2.5.1 Jurisdiction</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp251">Cases Involving Undergraduates</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp251">Cases Involving Graduate Students</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp251">Cases Involving Both Undergraduates and Graduate Students</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp251">Sexual Misconduct</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp252">2.5.2 The Faculty-Student Committee on Discipline</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp252">Membership</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp252">Investigation of Alleged Infractions</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp252">Notice and Convening of Hearings</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp252">Enrollment and Residence Status</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp252">Conduct of Hearings</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp252">Deliberations and Findings</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp252">Appeals in Behavioral Cases</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp252">Appeals in Academic Cases</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp253">2.5.3 Adjudication of Infractions That Do Not Result in Separation (Undergraduate)</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp253">General Procedures</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp253">Appeals</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp254">2.5.4 Records of Proceedings (Undergraduate)</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp255">2.5.5 Penalties</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp256">2.5.6 Grievance Procedures</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp256">2.5.7 Special Procedures in Cases Involving Both Undergraduate and Graduate Students</a></li>
+                   </ul></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/12#comp26">2.6 The Graduate School</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp261">2.6.1 Jurisdiction over Graduate Students for Violations of Academic Rules and Regulations</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp262">2.6.2 The Graduate Student Government</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp262">Purpose</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp262">Structure</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp262">Getting Involved</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp263">2.6.3 Dormitory Regulations</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp264">2.6.4 Alcohol Policy</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp265">2.6.5 Dining Regulations</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp266">2.6.6 Financial Regulations</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/12#comp267">2.6.7 The Graduate School Judicial System</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp267">Academic and Nonacademic Disciplinary Procedures</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp267">Appeal on Academic and Nonacademic Disciplinary Matters</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp267">Penalties</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp267">Enrollment and Resident Status</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp267">Records of Proceedings</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/12#comp267">Graduate Student Grievances</a></li>
+                     </ul></li>
+                   </ul></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/12#comp27">2.7 Student Privacy Rights under Federal Law</a></li>
+                 </ul>
+                 <h3><a class="drupal-migration-processed" href="/node/13">3. The University and the Community</a><a name="comppart3" id="comppart3"></a></h3>
+                 <ul class="toc">
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/13#comp31">3.1 Community Use of University Resources</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/13#comp311">3.1.1 Introduction</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/13#comp312">3.1.2 Administration</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/13#comp313">3.1.3 Types of Facility Use</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/13#comp313">By Explicit Invitation</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/13#comp313">By Implicit Invitation</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/13#comp313">By Participation in University-Sponsored or Sanctioned Programs</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/13#comp313">By Renting University Facilities in Periods of Low Usage, Especially in the Summer</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/13#comp313">By Private Invitation</a></li>
+                     </ul></li>
+                   </ul></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/13#comp32">3.2 Regulations Governing Solicitation, Distribution, and Peaceful Dissent, Protests, and Demonstrations by Off-Campus Individuals or Organizations</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/13#comp321">3.2.1 Commercial Sales</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/13#comp322">3.2.2 Charitable, Political, Religious, or Other Solicitation or Distribution</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/13#comp323">3.2.3 Peaceful Dissent, Protests, and Demonstrations</a></li>
+                   </ul></li>
+                  <li class="tocB"><a class="drupal-migration-processed" href="/node/13#comp33">3.3 University Security Policy for Persons Who Are Not Members of the University</a>
+                   <ul>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/13#comp331">3.3.1 Overview</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/13#comp332">3.3.2 Short-Term Persona Non Grata (“Short-Term Notice”)</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/13#comp332">Circumstances That May Lead to the Issuance of a Short-Term Notice</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/13#comp332">Short-Term Notice Review Process</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/13#comp333">3.3.3 Long-Term Persona Non Grata (“Long-Term Notice”)</a>
+                     <ul>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/13#comp333">Circumstances That May Lead to the Issuance of a Long-Term Notice</a></li>
+                      <li class="tocD"><a class="drupal-migration-processed" href="/node/13#comp333">Long-Term Notice Review Process</a></li>
+                     </ul></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/13#comp334">3.3.4 Information Included in a PNG Notice</a></li>
+                    <li class="tocC"><a class="drupal-migration-processed" href="/node/13#comp335">3.3.5 Criminal Violation</a></li>
+                   </ul></li>
+                 </ul>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+              </div>
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </main>
+      </div>
+     </div>
+    </div>
+    <footer role="contentinfo" class="footer region region-footer" id="footer">
+     <h2 class="sr-only">Footer</h2>
+     <div class="container">
+      <div class="constrained-bkg-constrained-content layout layout--threecol-33-34-33">
+       <div class="layout-inner-container">
+        <div class="layout__region layout__region--first layout__region--thirds layout__region--narrow">
+         <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+          <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+           Princeton, New Jersey 08544 USA - Operator: (609) 258-3000
+          </div>
+         </div>
+        </div>
+        <div class="layout__region layout__region--second layout__region--thirds layout__region--narrow">
+        </div>
+        <div class="layout__region layout__region--third layout__region--thirds layout__region--narrow">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="subfooter">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-4">
+         <div class="subfooter-links">
+          <ul class="list-unstyled">
+           <li><a href="https://accessibility.princeton.edu/resources/accessibility-help" target="_blank">Accessibility</a></li>
+          </ul>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <p class="copyright-text"> © 2022 The Trustees of Princeton University </p>
+        </div>
+        <div class="col-md-4 text-sm-left text-md-right copyright"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"><img src="/profiles/ps/themes/ps_base/images/pu-logo-stacked.svg" alt="Princeton University"> </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div> 
+  </div><span id="ps-current-username" data-username=""></span>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/10","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackUrlFragments":true},"all_documents_new_window":false,"select2_simple":{"selector":".node-form select:not(.disable-select2,[name$=\u0027[actions][bundle]\u0027],.ui-timepicker-select,[name*=\u0027field_ps_timeline_feature_items\u0027]),.select2-form select,#drupal-off-canvas select[multiple]"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":true,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":[]}},"ajax":[],"user":{"uid":0,"permissionsHash":"a3c39dc99502e6c65bc12566320e7c5bd823d87e8b7b1ebfac10cfd20900113b"}}</script>
+  <script src="/sites/g/files/toruqf2296/files/js/js_3jBSokaNX_cMgeJVLHunQjoQoJkV4AHdbZSIzAJJNMs.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"427707476","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":865,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

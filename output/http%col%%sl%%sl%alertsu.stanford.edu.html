@@ -1,0 +1,922 @@
+<!doctype html><!--[if IE 7]> <html lang="en" class="ie7"> <![endif]--><!--[if IE 8]> <html lang="en" class="ie8"> <![endif]--><!--[if IE 9]> <html lang="en" class="ie9"> <![endif]--><!--[if !IE]><!-->
+<html lang="en"> <!--<![endif]--> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="format-detection" content="telephone=no"> 
+  <link rel="shortcut icon" type="image/x-icon" href="https://police.stanford.edu/favicon.ico"> 
+  <link rel="stylesheet" href="https://police.stanford.edu/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="https://police.stanford.edu/css/font-awesome.min.css" type="text/css"> 
+  <link rel="stylesheet" href="https://police.stanford.edu/css/base.min.css?v=0.1" type="text/css"> 
+  <link rel="stylesheet" href="https://police.stanford.edu/css/style.css?v=0.1" type="text/css"> 
+  <link rel="stylesheet" href="https://police.stanford.edu/css/web-header.css" type="text/css"> 
+  <link rel="stylesheet" href="https://police.stanford.edu/css/popover.css" type="text/css"> 
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet" type="text/css"> 
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700" rel="stylesheet" type="text/css"> 
+  <link rel="stylesheet" href="https://police.stanford.edu/css/style.css" type="text/css"> <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="css/ie8.css" />
+  <![endif]--> <!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="css/ie7.css" />
+  <![endif]--> <!-- JS and jQuery --> 
+  <link rel="stylesheet" href="https://police.stanford.edu/css/jquery-ui.css" type="text/css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <script src="https://police.stanford.edu/js/jquery-1.10.2.js"></script> 
+  <script src="https://police.stanford.edu/js/jquery-ui.js"></script> <!--require("head.html");
+
+<!--include page level css here -->
+  <style>
+	.button {
+		background-color: #8c1515; /* Cardinal Red */
+		border: none;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+		-webkit-transition-duration: 0.4s; /* Safari */
+		transition-duration: 0.4s;
+	}
+
+	.buttonshadow {
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	}
+
+	.buttonshadow:hover {
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+</style>
+  <title>Stanford University Department of Public Safety</title>
+  <meta name="description" content="police.stanford.edu"> 
+ </head>
+ <body> 
+  <div id="alerts"></div> 
+  <div id="su-wrap"> <!-- used to force footer to bottom of short pages --> 
+   <div id="su-content"> <!-- used to force footer to bottom of short pages --> <!--header--> 
+    <script>
+	
+	$(function () {
+       
+        $("#searchbox input").keydown(function (e) {
+            if (e.keyCode == 13) {
+                $("#searchbox a").click();
+            }
+        });
+        $("#searchbox a").click(function () {
+            var keyWord = $("#searchbox input#search_text").val();
+            if (keyWord.length <= 0) { return false; }
+            keyWord  = keyWord.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+            keyWord = encodeURIComponent(keyWord.replace("<"," ").replace(">"," ") );
+            var link = 'https://police.stanford.edu';
+            if (link.indexOf("?") >= 0 )
+                link = link + "&q=" + keyWord;
+            else
+                link = link + "?q=" + keyWord;
+            if ('False' == 'True') {
+                window.top.location.href = link;
+                return false;
+            } else {
+                window.location.href = link;
+				javascript:void window.open("https://police.stanford.edu");
+            }            
+        });
+    });
+
+</script> 
+    <div data-vide-bg="images/homecoming"> <!-- Div to place video behind header and welcome --> 
+     <div id="header" class="clearfix" role="banner" style="border-sytle:solid;color:white;min-width:325px"> 
+      <div class="container-fluid"> 
+       <div class="row"> 
+        <div class="col-md-12 col-lg-12"> 
+         <div class="container-fluid"> 
+          <div class="row"> 
+           <div class="hidden-xs" id="logo" style="float:left;"> <a href="https://police.stanford.edu/index.html"><img class="img-responsive" src="https://police.stanford.edu/images/stanford-white.png" alt="Stanford University Department of Public Safety"></a> 
+           </div> 
+           <div class="hidden-sm hidden-md hidden-lg" id="logo" style="float:left;"> <a href="https://police.stanford.edu/index.html"><img class="img-responsive" src="https://police.stanford.edu/images/stanford-white-dps2.png" alt="Stanford University Department of Public Safety" style="height:35px;margin:0px;padding:0px"></a> 
+           </div> 
+           <div id="signature" class="hidden-xs"> 
+            <div id="site-name" style="font-size:150%;position:absolute;top:10px;width:100%;button-focus:none;"> <a href="https://police.stanford.edu/index.html">Department of Public Safety</a> 
+            </div> 
+           </div> <span style="float:right;"> 
+            <nav class="navbar navbar-default" role="navigation" style="background-color:transparent;font-size:75%;height:25px;top:10px;"> 
+             <div class="navbar-header"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse" style="background-color:transparent !important;font-size:200%;top:-15px;"> ☰ </button> 
+             </div> 
+             <div class="collapse navbar-collapse" id="example-navbar-collapse" style="background-color:rgba(140,21,21,0.8)"> 
+              <ul class="nav navbar-nav" style="background-color:rgba(140,21,21,0.4"> <!--This section is for Clery CSA report
+
+--> 
+               <style>
+	
+.dropbtn {
+  background-color: #8c1515;
+  color: white;
+  padding: 2px;
+  font-size: 17px;
+  border: none;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: left-side;
+  font-size: 17px;
+  background-color: #c9c9c9;
+  min-width: 170px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 0.5;
+}
+.dropdown-content a {
+  color: White;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #8c1515;}
+@media only screen and (min-width: 768px) {
+
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown-content {position: absolute;
+    right: 0;}
+}
+.showmoblle{
+display:block !important;
+}
+.dropdown:hover .dropbtn {background-color: #8c1515; /* Cardinal Red */;}
+
+
+</style> 
+               <li style="background-color:rgba(140,21,21,0.4);"><a href="#menu">MENU</a></li> <!--<li style="background-color:rgba(140,21,21,0.4);"><a href = "https://police.stanford.edu/alert/index.html" alt="AlertSU">ALERTS</a></li>--> <!------Adding Alert here----> <!--<li style="background-color:rgba(140,21,21,0.4);"><A HREF="https://police.stanford.edu/alertsu.html" alt="AlertSU">ALERTS</a></li> --> 
+               <li style="background-color:rgba(140,21,21,0.4);"><a href="#Alerts" data-toggle="modal" data-target="#AlertModal">ALERTS</a></li> 
+               <li style="background-color:rgba(140,21,21,0.4);"><a href="#contactsection">CONTACT</a></li> 
+               <li style="background-color:rgba(140,21,21,0.4);"><a href="#resources" data-toggle="modal" data-target="#resources">RESOURCES</a></li> 
+               <li style="background-color:rgba(140,21,21,0.4);"><a href="https://police.stanford.edu/active-threat.html">ACTIVE THREAT</a></li> 
+               <li>
+                <div class="dropdown"> <button class="dropbtn">CLERY CSA</button> 
+                 <div class="dropdown-content"> <!--<a href="/dev/clerytravelform_version1.html">Clery Travel Form</a>--> <a href="/cleryindex.html">Clery Travel Form</a> <a href="/pdf/CSA-Flowchart.pdf">Clery Reporting Guideline</a> <a href="/pdf/CSA-Report-Form.pdf">CSA Report Form</a> 
+                 </div> 
+                </div> <!--<div class="search_overlay"></div>
+<a href="javascript:void(0);"" class="search-trigger hidden-xs">Search</a>
+<div class="top_search">
+    <a class="close_search" href="#">CLOSE</a>
+    <div class="search_block">
+        <div id="searchbox" class="clearfix">
+            <label style="display: none;" for="search_text">Search</label>
+            <input style="background-color:rgba(140,21,21,0.4);" title="Search..." id="search_text" placeholder="Search..." type="text">
+            <a href="javascript:void(0);">Go</a>
+        </div>
+
+        
+    </div>
+</div>--> <!-------------------------Test 2---------------------------> <!--<form role="search" id="form">
+  <input type="search" id="query" name="q"
+   placeholder="Search..."
+   aria-label="Search through site content">
+  <button><svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg></button>
+</form>--> </li> 
+              </ul> 
+             </div> 
+            </nav> </span> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> <!--Body-->
+     <div class="container-fluid">
+      <div class="row row-eq-height">
+       <div id="sdps-intro" class="col-sm-3 col-md-3" style="min-width:320px;">
+        <p><a href="covid_info.html"><button type="button" class="button buttonshadow">COVID-19 Resources<span class="fa fa-angle-right" aria-hidden="true"></span></button></a></p>
+        <p><br><br><img src="images/welcome_everyone_new.png" alt="Welcome Everyone"><br><br></p>
+        <div style="font-size:150%;color:(140,21,21);text-decoration:underline;">
+         Our Mission
+        </div>
+        <p></p>
+        <p style="font-size:95%;padding-bottom:20px;">The Stanford University Department of Public Safety exists to provide a safe, secure atmosphere which is conducive to freedom of expression and movement, for people and their property at Stanford University, within the constraints of the Federal, State, and Local laws and ordinances.</p>
+        <p style="padding-bottom:20px;">To learn more, see our <button id="modal-link" data-toggle="modal" data-target="#core-values">Core Values.</button></p>
+        <p><a href="welcome.html"><button type="button" class="button buttonshadow">Welcome Video</button></a><br><br><b> <!--<marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();"><a href="pdf/CommunityOutreachFlyer.pdf">DPS Selfie Challenge </a></marquee>--> <!--<marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();"><a href="Denim_day.html">SUDPS Supports Denim Day Apr 29</a></marquee>
+				
+				<!-- 
+				<marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();"><a href="protest_BLM.html"><picture data-anchor-v="center" data-anchor-h="center"><img role="presentation" alt src="images/bg-lawenforecement-protest.jpg"></picture>Public Safety During Protest</a></marquee>
+				
+				--> </b></p>
+       </div><b> 
+        <div id="main-content" class="col-sm-9 col-md-9" role="main" style="top:150px;left:30px;width:70%;min-width:300px;margin-bottom:200px;min-height:500px;">
+         <div class="ui-widget" id="example"> 
+          <input type="text" placeholder="Search.." id="autocomplete-4" name="search"><button class="but" type="submit" onclick="myFunction()"><i class="fa fa-search"></i></button>
+         </div>
+        </div> </b>
+      </div><b> </b>
+     </div><b> </b>
+    </div><b> <a class="menu" id="menu"></a> <a class="clery" id="clery"> </a>
+     <div class="container">
+      <a class="clery" id="clery"> </a>
+      <div class="row" style="position:relative;background-color: rgba(255,255,255,0); padding-top:20px; padding-bottom:40px;">
+       <a class="clery" id="clery"> 
+        <div class="col-md-1 hidden-xs hidden-sm" style="padding-left:0px;"></div> </a>
+       <div class="text-center col-md-11" style="padding-top:20px;">
+        <a class="clery" id="clery"> <!--<marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();"><a href="pdf/CommunityOutreachFlyer.pdf">DPS Selfie Challenge </a></marquee>--> <!--CURRENTLY UNAVAILABLE
+									   
+				<marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();"><a href="pdf/PAC12ChiefsContinuedcommitment.pdf">Statement from PAC12 Chiefs of Police: A Commitment to Build Trust </a></marquee> --> </a>
+        <div class="row" style="position:relative;background-color: rgba(255,255,255,0); padding-top:20px; padding-bottom:40px;">
+         <a class="clery" id="clery"> </a><a href="#menu"><img src="https://police.stanford.edu/images/our-services.png" alt="Our Services"></a> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="container-fluid"> 
+       <div class="row"> 
+        <div class="hidden-xs col-sm-2"></div> 
+        <div class="col-sm-5 center-block" style="padding:20px 15px 15px 15px;font-size:125%;background-color: rgba(240,240,240,0);"> 
+         <div class="container-fluid center-block"> 
+          <div class="row center-block" id="service-desc"> 
+           <div class="col-sm-2 center-block" style="width:100px;"> 
+            <img src="https://police.stanford.edu/images/report.png" alt="Reports"> 
+           </div> <!--<div class="col-sm-2 text-xs-right" style="min-width:280px;">--> 
+           <div class="col-sm-5 text-xs-center" style="min-width:280px;white-space:nowrap;"> 
+            <ul style="list-style-type:circle;"> 
+             <li style="color:black"><a href="https://police.stanford.edu/security-report.html">Safety, Security &amp; Fire Report</a> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/hate-violence-report.html">CA Ed. Code:Hate Violence Incidents</a> </li>
+             <li style="color:black"><button id="modal-link" data-toggle="modal" data-target="#csa">CSA Resources</button> </li>
+             <li style="color:black">
+              <div class="emergency alt">
+               <a href="https://stanford.app.box.com/v/Parking-and-Circulation-Map">Parking and Circulation Map</a>
+              </div> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/training-policy-procedures.html">Training, Policies &amp; Procedures</a></li>
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="col-sm-5 center-block" style="padding:20px 15px 15px 15px;font-size:125%;background-color: rgba(240,240,240,0);"> 
+         <div class="container-fluid center-block"> 
+          <div class="row center-block" id="service-desc"> 
+           <div class="col-sm-2 center-block" style="width:100px;"> 
+            <img src="https://police.stanford.edu/images/bicycle.png" alt="bicycle"> 
+           </div> 
+           <div class="col-sm-5 text-xs-center" style="min-width:280px;"> 
+            <ul style="list-style-type:circle;"> 
+             <li style="color:black"><a href="https://police.stanford.edu/bicycle-abatement.html">Bike Abatement</a> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/bicycle-citations.html">Bike Citations</a> </li>
+             <li style="color:black"><button id="modal-link" data-toggle="modal" data-target="#bicycle-donation">Bike Donations </button> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/bicycle-faq.html">Bike FAQs</a> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/bicycle-safety-class.html">Bike Safety Class</a> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/bicycle-sale.html">Bike Sale</a></li>
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="container-fluid"> 
+       <div class="row"> 
+        <div class="hidden-xs col-sm-2"></div> 
+        <div class="col-sm-5" style="padding:20px 15px 15px 15px;font-size:125%;background-color:rgba(240,240,240,0);"> 
+         <div class="container-fluid"> 
+          <div class="row center-block" id="service-desc"> 
+           <div class="col-md-2 col-sm-2 center-block" style="width:100px;"> 
+            <img src="https://police.stanford.edu/images/calendar.png" alt="livescan"> 
+           </div> 
+           <div class="col-sm-5 text-xs-center" style="min-width:280px;"> 
+            <ul style="list-style-type:circle;"> <!--<li style="color:black"><A HREF="https://police.stanford.edu/alert/index.html" >Alerts </A><!-- commented Feb 9,2021--> <!--Feb 27--- testing new link--------------------------------------------------------------------------------------------> <!--<li style="color:black"><A HREF="https://police.stanford.edu/alert/index.html" >Alerts </A>--> <!------------------------------------------------------------------> 
+             <li style="color:black"><a href="https://police.stanford.edu/alert/index.html" data-notifications="1">Alerts </a> <!----------temp working alert su-----> <!--<button id="modal-link" data-toggle="modal" data-target="#AlertModal"data-notifications=1>Alerts </button>--> </li>
+             <li style="color:black"><button id="modal-link" data-toggle="modal" data-target="#NotificationModal">Announcements </button> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/pdf/communitybulletin080519.pdf" target="_new">Community Bulletin 08/05/2019</a> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/pdf/Case19-206-0025UBulletin.pdf" target="_new">Community Bulletin 07/26/2019</a> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/livescan.html">LiveScan Appointment</a></li>
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="col-sm-5" style="padding:20px 15px 15px 15px;font-size:125%;background-color: rgba(240,240,240,0);"> 
+         <div class="container-fluid"> 
+          <div class="row center-block" id="service-desc"> 
+           <div class="col-sm-2 center-block" style="width:100px;"> 
+            <img src="https://police.stanford.edu/images/padlock.png" alt="calendar"> 
+           </div> 
+           <div class="col-sm-5 text-xs-center" style="min-width:280px;white-space:nowrap;"> 
+            <ul style="list-style-type:circle;"> 
+             <li style="color:black"><a href="https://www.identitytheftcouncil.org/">Identify Theft Council @Stanford</a> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/active-threat.html">Active Threat Video</a> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/event-security-request.html">Event Security</a> </li>
+             <li style="color:black"><button id="modal-link" data-toggle="modal" data-target="#house-check">House Check </button> </li>
+             <li style="color:black"><button id="modal-link" data-toggle="modal" data-target="#security-assessment">Security Assessment </button> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/event-security-request.html">Traffic Control</a></li>
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="container-fluid" style="margin-bottom:30px;"> 
+       <div class="row"> 
+        <div class="hidden-xs col-sm-2"></div> 
+        <div class="col-sm-5" style="padding:20px 15px 15px 15px;font-size:125%;background-color: rgba(240,240,240,0);"> 
+         <div class="container-fluid"> 
+          <div class="row center-block" id="service-desc"> 
+           <div class="col-md-2 col-sm-2 center-block" style="width:100px;"> 
+            <img src="https://police.stanford.edu/images/form.png" alt="forms"> 
+           </div> 
+           <div class="col-sm-5 text-xs-center" style="min-width:280px;white-space:nowrap;"> 
+            <ul style="list-style-type:circle;"> 
+             <li style="color:black"><button id="modal-link" data-toggle="modal" data-target="#clearance"> Background &amp; Clearance Request</button> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/pdf/EmployeeComplaintForm.pdf" target="_new">Complaint Form </a> <!---------------------------------------------------------------------------> </li>
+             <li style="color:black"><button id="modal-link" data-toggle="modal" data-target="#police_reprequest">Completed Police Report Request</button> <!--<li style="color:black"><a href="https://police.stanford.edu/pdf/Report_Request_Form.pdf" target="_new">Completed Police Report Request </a>--> <!-----------------------------OLD LINK--------------------------------------------------------------> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/pdf/House_Check.pdf" target="_new"> House Check Request</a> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/pdf/Collision_Report.pdf" target="_new">Report a Non Injury Collision </a></li>
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="col-sm-5" style="padding:20px 15px 15px 15px;font-size:125%;background-color: rgba(240,240,240,0);"> 
+         <div class="container-fluid"> 
+          <div class="row center-block" id="service-desc"> 
+           <div class="col-sm-2 center-block" style="width:100px;"> 
+            <img src="https://police.stanford.edu/images/handshake.png" alt="Community Outreach"> 
+           </div> 
+           <div class="col-sm-5 text-xs-center" style="min-width:320px;"> 
+            <ul style="list-style-type:circle;"> 
+             <li style="color:black"><a href="https://police.stanford.edu/community-outreach.html">Community Outreach</a> <!--<li style="color:black"><a href="https://police.stanford.edu/community-police-academy.html">Community Police Academy</a>--> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/publicsafety-campuscourse.html">Public Safety Community Courses</a> </li>
+             <li style="color:black"><a href="https://police.stanford.edu/employment.html">Employment</a> </li>
+             <li style="color:black"><button id="modal-link" data-toggle="modal" data-target="#lost-found">Lost &amp; Found </button> </li>
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> <a class="contactsection" id="contactsection"></a> 
+      <div name="contact" id="contact" class="row" style="position:relative;color:#ffffff;background: linear-gradient(to right, #0f1521, #313842);"> 
+       <div class="col-md-4" style="padding:50px;"> <span style="color:#71CCF8;"><h1>Contact Us</h1></span> 
+        <h3><u><b>Emergencies</b></u><b> – Call 9-1-1</b></h3> 
+        <p>9-9-1-1 from a main campus phone (e.g. request medical assistance, report a crime that is in progress)</p> 
+        <br> 
+        <h3><u><b>Non-Emergency Response</b></u><b> <br><a href="tel:1-650-329-2413">
+           <div style="color:#FFFFFF;">
+             -(650) 329-2413
+           </div></a></b></h3> 
+        <p>(e.g. file a police report, report a crime or a public safety concern that has already occurred, etc…)</p> 
+        <br> 
+        <h3><u><b>Main Office</b></u><b><a href="tel:1-650-723-9633">
+           <div style="color:#FFFFFF;">
+            -(650) 723-9633
+           </div></a></b></h3> 
+        <p>233 Bonair Siding<br>Stanford, CA 94305 <br><br> </p>
+        <h3><b><a style="color:#ffffff;" data-toggle="modal" href="#email-list">Email Us</a></b></h3> 
+       </div> 
+       <div class="col-md-8 text-center" style="padding:55px;"> <span style="color:#71CCF8;"><h1>How to Find Us</h1></span> 
+        <br> 
+        <div id="map_canvas" src="http://custom-maps.stanford.edu/view//Maps/30285?format=embed" style="width:100%;"></div> <!--<div class="item carousel-borders"><img src="https://custom-maps.stanford.edu/view//Maps/30285?"></div>--> <!--<iframe src="http://custom-maps.stanford.edu/view//Maps/30285?format=embed" width="320" height="240"></iframe>--> 
+        <div class="row" style="padding-top:20px;"> 
+         <div class="col-md-6 col-xs-6"> <a style="color:#ffffff;text-align:right;font-size:150%;" data-toggle="modal" href="#streetview">Street View</a> 
+         </div> 
+         <div class="col-md-5 col-xs-5"> <a style="color:#ffffff;text-align:right;font-size:150%;" data-toggle="modal" href="#parking">Parking</a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> <!-- #su-content --> </b>
+   </div><b> <!-- #su-wrap --> <!-- BEGIN footer --> 
+    <div id="footer" class="clearfix footer" role="contentinfo"> <!-- Global footer snippet start --> 
+     <div id="global-footer" style="padding-top:1px;"> 
+      <div class="container" style="padding-left:25px;"> 
+       <div class="row"> 
+        <div id="bottom-logo" class="col-xs-6 col-sm-2" style="float:left;padding-right:50px;background-color:rgba(140,21,21,0.0);"> <a href="https://www.stanford.edu"> <img src="https://www-media.stanford.edu/su-identity/images/footer-stanford-logo@2x.png" alt="Stanford University" width="105" height="49"> </a> 
+        </div> <!-- #bottom-logo end --> 
+        <div id="bottom-text" class="col-xs-6 col-sm-10" style="margin-top:-10px;"> 
+         <ul> 
+          <li class="home"><a href="https://www.stanford.edu">Stanford Home</a></li> 
+          <li class="maps alt"><a href="https://visit.stanford.edu/plan/">Maps &amp; Directions</a></li> 
+          <li class="search-stanford"><a href="https://www.stanford.edu/search/">Search Stanford</a></li> 
+          <li class="emergency alt"><a href="https://emergency.stanford.edu">Emergency Info</a></li> 
+         </ul> 
+         <ul id="policy-links"> 
+          <li class="terms alt"><a href="https://www.stanford.edu/site/terms/" title="Terms of use for sites">Terms of Use</a></li> 
+          <li class="terms alt"><a href="https://www.stanford.edu/site/privacy/" title="Privacy and cookie policy">Privacy</a></li> 
+          <li class="copyright"><a href="https://uit.stanford.edu/security/copyright-infringement" title="Report alleged copyright infringement">Copyright</a></li> 
+          <li><a href="https://adminguide.stanford.edu/chapter-1/subchapter-5/policy-1-5-4" title="Ownership and use of Stanford trademarks and images">Trademark</a></li> 
+          <li><a href="http://exploredegrees.stanford.edu/nonacademicregulations/nondiscrimination/" title="Non-discrimination policy">Non-Discrimination</a></li> 
+          <li><a href="https://www.stanford.edu/site/accessibility" title="Report web accessibility issues">Accessibility</a></li> 
+         </ul> 
+         <p class="copyright vcard" style="padding-left:0px;">© <span class="fn org">Stanford University</span>, <span class="adr"> <span class="locality">Stanford</span>, <span class="region">California</span> <span class="postal-code">94305</span></span>.</p> 
+        </div> <!-- .bottom-text end --> 
+       </div> <!-- .row end --> 
+      </div> <!-- .container end --> 
+     </div> <!-- global-footer end --> <!-- Global footer snippet end --> 
+    </div> <!-- END footer --> <!-- Modal --> 
+    <div class="modal fade" id="csa" role="dialog" style="top:100px;min-width:300px;z-index:2147483647;"> 
+     <div class="modal-dialog"> <!-- Modal content--> 
+      <div class="modal-content"> 
+       <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button> 
+        <div class="row"> 
+         <div class="col-sm-12 col-md-12 text-center" style="padding-top:5px;padding-bottom:10px;font-size:150%;color: #6A6A6A;" id="notificationtitle">
+           CSA Resources 
+         </div> 
+        </div> 
+       </div> 
+       <div class="modal-body"> 
+        <div class="portlet-body form"> 
+         <br><a href="https://police.stanford.edu/pdf/CSA-Report-Form.pdf" target="_new">CSA Report Form </a> 
+         <p><a href="https://police.stanford.edu/pdf/CSA-Flowchart.pdf" target="_new">Decision Tree</a> <!--<p><a href="https://police.stanford.edu/pdf/CSA-Flochart.pdf" target="_new">Flowchart</a>--> </p>
+        </div> 
+       </div> 
+       <div class="modal-footer"> 
+        <div class="row"> 
+         <div class="col-sm-9"></div> 
+         <div class="col-sm-3"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> <!-- This section is for Police report
+<div class="modal fade" id="csa" role="dialog" style="top:100px;min-width:300px;z-index:2147483647;">
+	<div class="modal-dialog">
+		
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<div class="row">
+					<div class="col-sm-12 col-md-12 text-center" style="padding-top:5px;padding-bottom:10px;font-size:150%;color: #6A6A6A;" id="notificationtitle" >
+						CSA Resources
+					</div>
+				</div>
+			</div>
+			<div class="modal-body">
+				<div class="portlet-body form">
+					<br><a href="https://police.stanford.edu/pdf/CSA-Report-Form.pdf" target="_new">CSA Report Form </a> 
+					<p><a href="https://police.stanford.edu/pdf/CSA-Flowchart.pdf" target="_new">Decision Tree</a>
+					
+				</div>
+			</div>
+			
+						<div class="modal-footer">
+				<div class="row">
+					<div class="col-sm-9"></div>
+					<div class="col-sm-3">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>--> 
+    <div class="modal fade" id="clearance" role="dialog" style="top:100px;min-width:300px;z-index:2147483647;"> 
+     <div class="modal-dialog"> <!-- Modal content--> 
+      <div class="modal-content"> 
+       <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button> 
+        <div class="row"> 
+         <div class="col-sm-12 col-md-12 text-center" style="padding-top:5px;padding-bottom:10px;font-size:150%;color: #6A6A6A;" id="notificationtitle">
+           Clearance Letters &amp; Background Checks 
+         </div> 
+        </div> 
+       </div> 
+       <div class="modal-body"> 
+        <div class="portlet-body form"> 
+         <p><mark>We will no longer be accepting requests for Background Checks or Clearance Letters</mark> </p>
+         <p style="padding-top:15px;"><font style="color:black;font-weight:bold;">These requests should be submitted to:</font> <br> <br>Santa Clara County Sheriffs Office <br>55 West Younger Avenue <br>San Jose, CA 95110 <br><a href="tel:1-408-808-4705">(408) 808.4705</a> </p>
+         <p>Please visit the <a href="https://www.sccgov.org/sites/sheriff/Pages/records.aspx" target="_blank">Sheriff's website</a> for more information. </p>
+        </div> 
+       </div> 
+       <div class="modal-footer"> 
+        <div class="row"> 
+         <div class="col-sm-9"></div> 
+         <div class="col-sm-3"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="modal fade" id="NotificationModal" role="dialog" style="top:100px;min-width:300px;z-index:2147483647;"> 
+     <div class="modal-dialog"> <!-- Modal content--> 
+      <div class="modal-content"> 
+       <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button> 
+        <div class="row"> 
+         <div class="col-sm-12 col-md-12 text-center" style="padding-top:5px;padding-bottom:10px;font-size:150%;color: #6A6A6A;" id="notificationtitle">
+           Announcements 
+         </div> 
+        </div> 
+        <div class="row"> 
+         <div class="col-sm-12" style="text-align:center;font-size:75%;"> <a href="https://police.stanford.edu/alert/index.html">(See Alerts for emergency information) </a> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="modal-body"> 
+        <div id="notification" style="padding-left:0px;"></div> 
+       </div> 
+       <div class="modal-footer"> 
+        <div class="row"> 
+         <div class="col-sm-9"></div> 
+         <div class="col-sm-3"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="modal fade" id="AlertModal" role="dialog" style="top:100px;min-width:300px;z-index:2147483647;"> 
+     <div class="modal-dialog"> 
+      <div class="modal-content"> 
+       <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button> 
+        <div class="row"> 
+         <div class="col-sm-3 col-md-3 hidden-xs"> 
+          <img class="center-block" src="https://police.stanford.edu/images/megaphone-r.png" alt="Alert SU" style="height:55px;margin-top:25px;"> 
+         </div> 
+         <div class="col-sm-6 col-md-6 text-center" style="padding-top:20px;"> 
+          <p style="padding-top:5px;padding-bottom:0px;text-align:center;font-weight:300;font-size:150%;color:#6A6A6A;">AlertSU Notices </p>
+         </div> 
+        </div> 
+       </div> 
+       <div class="modal-body"> 
+        <ul id="feed" style="padding-left:0px;list-style-type:none;"></ul> 
+       </div> 
+       <div class="modal-footer"> 
+        <div class="row"> 
+         <div class="col-sm-9 col-md-9 text-left" style="padding-left:15px;"> <!-- <a href="https://police.stanford.edu/alert/archive.html">Previous Alerts</a> --> <a href="https://police.stanford.edu/alertsu.html">Previous Alerts</a> 
+          <br> <a href="https://police.stanford.edu/alert/alertsu-faq.html">Alerts Frequently Asked Questions</a> 
+          <br> <a href="https://police.stanford.edu/notification.html">See Announcements for Upcoming events </a> 
+         </div> 
+         <div class="col-sm-3 col-md-3" style="padding-top:15px;"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> </b>
+   <div class="modal fade" id="resources" role="dialog" style="top:100px;">
+    <b> </b>
+    <div class="modal-dialog">
+     <b> <!-- Modal content--> </b>
+     <div class="modal-content">
+      <b> 
+       <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button> 
+        <div style="font-size:150%">
+         Resources
+        </div> 
+       </div> </b>
+      <div class="modal-body">
+       <b> </b>
+       <div class="portlet-body form">
+        <b> 
+         <ul class="nav nav-tabs" role="tablist"> 
+          <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#sexual-assault" role="tab"><b>Sexual-Assault</b></a> </li> 
+          <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#prevention" role="tab"><b>Court/Fire/Sheriff</b></a> </li> 
+          <li class="nav-item active"> <a class="nav-link" data-toggle="tab" href="#campus-services" role="tab"><b>Services</b></a> </li> 
+          <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#policy" role="tab"><b>Policy</b></a> </li> 
+         </ul> <!-- Tab panes --> </b>
+        <div class="tab-content" style="margin-left:20px;">
+         <b> <!-- Sexual-Assault  --> 
+          <div class="tab-pane fade" id="sexual-assault" role="tabpanel"> 
+           <p><br><a href="https://vaden.stanford.edu/get-help-now/sexual-assault" target="_blank">Vaden Health Center - Confidential Support Team</a> (CST) <br>Sexual Assault Hotline at 650-725-9955. <br> Business Hours: Office Line: 650-736-6933 </p>
+           <p><a href="https://titleix.stanford.edu" target="_blank">Title IX Education Policy &amp; Sexual Violence</a> <br>(650) 497-4955 or <a href="mailto:titleix@stanford.edu">titleix@stanford.edu</a> </p>
+           <p><a href="https://harass.stanford.edu" target="_blank">Sexual Harassment Policy Office</a> (SHPO) <br>650.724.2120 </p>
+           <p><a href="https://sara.stanford.edu" target="_blank">Sexual Assault &amp; Relationship Abuse Education &amp; Response</a> (SARA) <br>(650) 725-9129 </p>
+           <p><a href="pdf/Stanford-PREA.pdf" target="_blank">Holding Facility Compliance</a> (THF Compliance) </p>
+          </div> <!-- Court/Fire/Sheriff  --> </b>
+         <div class="tab-pane fade" id="prevention" role="tabpanel">
+          <b> <p><br><a href="https://www.citationprocessingcenter.com/" target="_blank">Santa Clara Citation Processing Center</a> (CPC) <br>Parking Citation Appeals </p></b>
+          <p><b><a href="http://www.scscourt.org/general_info/contact/courthouses/santaclara.shtml" target="_blank">Santa Clara Courthouse</a> (traffic) <br>(408) 556-3000 </b></p>
+          <p><b><a href="http://www.scscourt.org/" target="_blank">Santa Clara County Superior Court</a></b> (criminal and civil) <br>(650) 462-3800 </p>
+          <p><a href="http://www.stanford.edu/dept/EHS/prod/general/fire/" target="_blank">Stanford University Fire Marshal's Office</a> <br>(650) 723-0448 </p>
+          <p><a href="https://www.sccgov.org/sites/Sheriff/Pages/sheriff.aspx" target="_blank">Santa Clara County Office of the Sheriff</a> <br>(408) 808-4400 </p>
+         </div> <!-- Campus Services  --> <!--<div class="tab-pane fade in active" id="campus-services" role="tabpanel">--> 
+         <div class="tab-pane fade" id="campus-services" role="tabpanel"> 
+          <p><br><a href="https://alcohol.stanford.edu/5-sure-students-united-risk-elimination" target="_blank">5-SURE, Students United for Risk Elimination</a> (Campus Escorts) <br>(650) 725-SURE (7873) </p>
+          <p><a href="https://ehs.stanford.edu/" target="_blank">Department of Environmental Health and Safety</a> <br>(650) 723-0448 </p>
+          <p><a href="#lost-and-found" data-toggle="modal" data-target="#lost-found">Lost and Found</a> </p>
+          <p><a href="http://transportation.stanford.edu/marguerite/" target="_blank">Marguerite Shuttle Service</a>&nbsp;&nbsp;(<a href="http://supublic.etaspot.net/" target="_blank">Live Map</a>) <br>(650) 723-9362 </p>
+          <p><a href="http://transportation.stanford.edu" target="_blank">Parking &amp; Transportation Services</a> <br>(650) 723-9362 </p>
+          <p><a href="https://lbre.stanford.edu/guides/pest-control-campus" target="_blank">Pest Control</a> on Campus </p>
+          <p>Suggested <a href="https://stanford.app.box.com/v/Suggested-Travel-Routes-Map" target="_blank">Travel Routes</a> </p>
+          <p><a href="https://police.stanford.edu/traumakits.html">Trauma Kit Program</a> and <a href="http://custom-maps.stanford.edu/view//Maps/19938?format=embed" target="_blank">Locations</a> </p>
+         </div> 
+         <div class="tab-pane fade" id="policy" role="tabpanel"> 
+          <p><br><a href="https://ehs.stanford.edu/manual/emergency-response-guidelines" target="_blank" style="font:bold;">Emergency Response Guide</a> </p>
+          <p><a href="https://police.stanford.edu/pdf/stanford_university_prohibited_weapons_policy.pdf" target="_blank">Weapons Policy</a> </p>
+          <p><a href="https://transportation.stanford.edu/sites/default/files/2016-07/Stanford_University_Traffic_and_Parking_Code_0.pdf" target="_blank">Parking &amp; Traffic Code</a> </p>
+          <p><a href="https://doresearch.stanford.edu/policies/research-policy-handbook/environmental-health-and-safety/operation-unmanned-flying-vehicles" target="_blank">UFV (Drone) Policy</a> and <a href="https://doresearch.stanford.edu/sites/default/files/documents/16_08_26_stanford_ufv_faqs_final265799.pdf" target="_blank">FAQs </a> </p>
+          <p><a href="https://police.stanford.edu/pdf/vssguidelines.pdf" target="_blank">Video Surveillance Guidelines </a> </p>
+         </div> 
+        </div> 
+       </div> 
+       <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="modal fade" id="lost-found" role="dialog" style="top:100px;"> 
+    <div class="modal-dialog"> <!-- Modal content--> 
+     <div class="modal-content"> 
+      <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button> 
+       <h1>Lost and Found</h1> 
+      </div> 
+      <div class="modal-body"> 
+       <div class="portlet-body form"> 
+        <p>To report a lost/found item please send an Email to <a href="mailto:lostandfoundsu@stanford.edu"> <b>lostandfoundsu@stanford.edu</b></a> with the following: </p>
+        <ul> 
+         <li>Detailed Description </li>
+         <li>Location </li>
+         <li>Time and Date the item was lost/found. </li>
+         <li>Contact information </li>
+        </ul> 
+        <p>Your email will be forwarded to a list of personnel responsible for Lost and Found items in various departments throughout the University. </p>
+        <p><mark>You will only be contacted in the event that one of these recipients has the item you have lost, or is looking for the item you have found.</mark> </p>
+        <p>If you are affiliated with Stanford, please make sure your <a href="https://stanfordwho.stanford.edu" target="_blank">Stanford WHO</a> information is up to date. </p>
+        <p>If you have any additional questions, you can contact SUDPS at <a href="tel:1-650-723-9639">(650) 723-9639</a>. </p>
+       </div> 
+      </div> 
+      <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="modal fade" id="bicycle-donation" role="dialog" style="top:100px;"> 
+    <div class="modal-dialog"> <!-- Modal content--> 
+     <div class="modal-content"> 
+      <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button> 
+       <h1>Bike Donation Options</h1> 
+      </div> 
+      <div class="modal-body"> 
+       <div class="portlet-body form"> <!--<p style="padding-bottom:15px;"><a href=" https://www.stanford.bike/" target="_blank">Stanford Bike Project</a>--> 
+        <p style="padding-bottom:15px;">Stanford University Department Of Public Safety (On Campus) <a href="https://police.stanford.edu/pdf/SUPDS-Bike-donation-Form.pdf" target="_blank">Complete the form</a> and bring it with your bike to <a href="https://police.stanford.edu#contactsection" target="_blank">711 Serra Street</a>. </p>
+        <p style="padding-bottom:15px;">Nearest Salvation Army </p>
+        <p><a href="https://campusbikeshop.com/product/campus-bike-shop-service-package-for-bikes-not-purchased-at-the-shop-525.htm" target="_blank">On campus storage Option</a> </p>
+       </div> 
+      </div> 
+      <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="modal fade" id="security-assessment" role="dialog" style="top:100px;"> 
+    <div class="modal-dialog"> <!-- Modal content--> 
+     <div class="modal-content"> 
+      <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button> 
+       <h1>Security Assessment</h1> 
+      </div> 
+      <div class="modal-body"> 
+       <div class="portlet-body form"> 
+        <p>Faculty and staff residing in University housing may request a security assessment by trained SUDPS crime prevention staff. Stanford building managers may also request an assessment of their facilities. </p>
+        <p>The assessment will include a review of areas such as doors, locks, windows, and the general perimeter. </p>
+        <p>Contact Bill Larson (<a href="mailto:community-outreach@lists.stanford.edu" target="_top">community-outreach@lists.stanford.edu</a>) </p>
+       </div> 
+      </div> 
+      <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="modal fade" id="house-check" role="dialog" style="top:100px;"> 
+    <div class="modal-dialog"> <!-- Modal content--> 
+     <div class="modal-content"> 
+      <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button> 
+       <h1>House Check</h1> 
+      </div> 
+      <div class="modal-body"> 
+       <div class="portlet-body form"> 
+        <p>If you are going to be away from your home for a period of time and wish the Department of Public Safety to check your home periodically, complete the following form and return it to SUDPS (If you are a frequent traveler, please send us updated information on your absences). </p>
+        <p><a href="pdf/House_Check2022.pdf" target="_new">House Checks Request Form</a> </p>
+        <p>You can also call <b>650-723-9633</b> M-F, 8 am - 5 pm to schedule a free spot check of your Stanford residence. </p>
+       </div> 
+      </div> 
+      <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> <!----police request report updated -----> 
+   <div class="modal fade" id="police_reprequest" role="dialog" style="top:100px;"> 
+    <div class="modal-dialog"> <!-- Modal content--> 
+     <div class="modal-content"> 
+      <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button> 
+       <h1 style="text-align:center">Department of Public Safety Records Request form</h1> 
+      </div> 
+      <div class="modal-body"> 
+       <div class="portlet-body form"> 
+        <p>Click here for the <a href="pdf/Report_Request_Form.pdf" target="_new"><b>Records Request Form</b></a>. You may complete the form online and print the completed form, or print the blank form and complete the information manually. <b>Return the completed form along with any supporting documentation and a scanned copy of your ID to Stanford University Department of Public Safety:</b> </p>
+        <p>By Email: <a href="mailto:police-records@lists.stanford.edu"><b>police-records@lists.stanford.edu</b></a> <br> </p>
+        <p><b>By U.S. Mail to:</b> <br>Stanford University <br>Department of Public Safety <br>Records Unit <br>233 Bonair Siding Rd. <br>Stanford, CA 94305-7240 <br>(Please allow time for mail delivery) <br><br><b>By Campus ID Mail to:</b> <br>Public Safety <br>Mail Code 7240 <br>(Please allow time for mail delivery) <br> </p>
+        <p><b>By Fax to: <a href="tel:1-650-323-1185">650-323-1185</a></b> <br> </p>
+        <p><b>or By delivery in person:</b> <br>Public Safety Building <br>233 Bonair Siding Rd. <br>Stanford, CA 94305-7240 </p>
+        <h2 style="text-align:center"><b> <i>If you have any questions call the SUDPS Records Unit at <a href="tel:1-650-723-9633">650-723-9633</a></i></b></h2> 
+       </div> 
+      </div> 
+      <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> <!-----------------------------------------END--------------------------------------------------> 
+   <div class="modal fade" id="parking" role="dialog" style="top:100px;"> 
+    <div class="modal-dialog"> <!-- Modal content--> 
+     <div class="modal-content"> 
+      <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button> 
+       <h1>DPS Parking - Interactive Map</h1> 
+      </div> 
+      <div class="modal-body"> 
+       <div class="portlet-body form"> 
+        <p>Free, one hour <a href="images/PampasParking.jpg">visitor parking</a> is located at the end of Pampas Lane just beyond Bonair Siding. The <a href="images/233DPSBuilding.jpg">DPS building</a> is located to the left on the map below. </p>
+        <p> <!--<iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1474473121440!6m8!1m7!1sLUYjRulZiIsmcSylw8T_kg!2m2!1d37.42741757498197!2d-122.1576156872584!3f286.7946328123239!4f6.522099029298033!5f0.7820865974627469" width="550" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>--> <iframe src="https://www.google.com/maps/embed?pb=!4v1619551768878!6m8!1m7!1sKa5APV9a_V78m_BcBGQucg!2m2!1d37.43009017986539!2d-122.1564210515149!3f23.553109371900824!4f5.516528925619838!5f0.4000000000000002" width="550" height="450" frameborder="0" style="border:0;" allowfullscreen></iframe> </p>
+       </div> 
+      </div> 
+      <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="modal fade" id="streetview" role="dialog" style="top:100px;"> 
+    <div class="modal-dialog"> <!-- Modal content--> 
+     <div class="modal-content"> 
+      <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button> 
+       <h1>DPS Street View - Interactive Map</h1> 
+      </div> 
+      <div class="modal-body"> 
+       <div class="portlet-body form"> 
+        <p>We are located at the corner of Pampas Lane and Bonair Siding Road. Enter Pampas Lane from Serra Street, pass the credit union and make a left on Bonair Siding Road. Alternatively, enter Bonair Siding Road from Campus Drive (near Maples Pavilion) and travel down Bonair Siding Road to our new building at 233 Bonair Siding Road. The front entrance to the building is near the flagpole on Bonair Siding. </p>
+        <p>The Live Scan office is located inside the Public Safety lobby. </p>
+        <p>One hour <a data-toggle="modal" href="#parking" data-dismiss="modal">free parking</a> is located at the end of Pampas Lane just beyond Bonair Siding. </p>
+        <p> <!--<iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1474652617172!6m8!1m7!1sZJAN52ndYInTZ1wq6dqapA!2m2!1d37.4270834!2d-122.1580802!3f293.27!4f2.6200000000000045!5f0.7820865974627469" width="550" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>--> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.349192515255!2d-122.15950858420987!3d37.428854839757896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbad929d8fd3f%3A0xf1034a8d936698b8!2s233%20Bonair%20Siding%20Rd%2C%20Stanford%2C%20CA%2094305!5e0!3m2!1sen!2sus!4v1613075730604!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen aria-hidden="false" tabindex="0"></iframe> </p>
+       </div> 
+      </div> 
+      <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="modal fade" id="email-list" role="dialog" style="top:100px;"> 
+    <div class="modal-dialog"> <!-- Modal content--> 
+     <div class="modal-content"> 
+      <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button> 
+       <h1>Email Public Safety</h1> 
+      </div> 
+      <div class="modal-body"> 
+       <div class="portlet-body form"> 
+        <p>AlertSU: <a href="mailto:alertsudps@lists.stanford.edu?Subject=AlertSU%20Question">alertsudps@lists.stanford.edu</a> </p>
+        <p>Bike Abatement: <a href="mailto:bike-abatement@lists.stanford.edu?Subject=Bike%20Abatement" target="_top">bike-abatement@lists.stanford.edu</a> </p>
+        <p>Bike Diversion: <a href="mailto:dps-bikediversion@lists.stanford.edu">dps-bikediversion@lists.stanford.edu</a> </p>
+        <p>Community Outreach: <a href="mailto:community-outreach@lists.stanford.edu">community-outreach@lists.stanford.edu</a> </p>
+        <p>DPS Explorers: <a href="mailto:dps-explorers@lists.stanford.edu">dps-explorers@lists.stanford.edu</a> </p>
+        <p>Event Parking: <a href="mailto:eventparking@stanford.edu?Subject=Parking%20Request">eventparking@stanford.edu</a> </p>
+        <p>Event Security: <a href="mailto:event_security@lists.stanford.edu?Subject=PE-100%20Form">event_security@lists.stanford.edu</a> </p>
+        <p>General Police: <a href="mailto:police@stanford.edu">police@stanford.edu</a> </p>
+        <p>Lost and Found: <a href="mailto:lostandfoundsu@stanford.edu"> lostandfoundsu@stanford.edu</a> </p>
+       </div> 
+      </div> 
+      <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="modal fade" id="core-values" role="dialog" style="top:100px;"> 
+    <div class="modal-dialog"> <!-- Modal content--> 
+     <div class="modal-content"> 
+      <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button> 
+       <h1>Core Values</h1> 
+      </div> 
+      <div class="modal-body"> 
+       <div class="portlet-body form"> 
+        <p>The members of the Stanford University Department of Public Safety are committed to the goal of providing high quality services with a positive, cooperative attitude. </p>
+        <p>To achieve that goal: </p>
+        <ul> 
+         <li>We pledge to honor the spirit and letter of the laws we are charged to uphold. </li>
+         <li>We will dedicate our full attention to our duties in order to promote a safe environment while earning and maintaining the public's trust. </li>
+         <li>We will endeavor to continually enhance our professional skills and knowledge. </li>
+         <li>We will hold each other accountable for demonstrating professional and ethical behavior. </li>
+         <li>We will actively identify and pursue opportunities to improve our department and the ways we serve the campus community. </li>
+        </ul> 
+        <p>The hallmarks of our service are a constant dedication to the principles of honesty, integrity, fairness, courage and courtesy. </p>
+       </div> 
+      </div> 
+      <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <script src="https://police.stanford.edu/js/newfunctuion.js"></script> 
+   <script src="https://police.stanford.edu/js/moment.min.js"></script> 
+   <script src="https://police.stanford.edu/js/bootstrap.min.js"></script> 
+   <script src="https://police.stanford.edu/js/jquery.vide.js"></script> 
+   <script src="https://police.stanford.edu/js/base.js"></script> 
+   <script src="https://police.stanford.edu/js/custom.js"></script> 
+   <script>	
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-35141420-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+		
+		function initMap() {
+			//var myLatLng = {lat: 37.427484, lng: -122.158426};
+			
+			var myLatLng = {lat: 37.427972, lng: -122.15875};
+
+			var map = new google.maps.Map(document.getElementById('map_canvas'), {
+				zoom: 15,
+				center: myLatLng,
+				navigationControl: true,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			});
+
+			var marker = new google.maps.Marker({
+			  position: myLatLng,
+			  map: map,
+			  title: 'Stanford Department of Public Safety'
+			});
+		}
+		
+		function initialize() {
+		   initMap();
+		   initAutocomplete();
+		}
+	</script> 
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD3ENVaoEPhxhbmHuyk5te1NinPa5myEU&amp;libraries=places&amp;callback=initMap" async defer></script> 
+   <script type="text/javascript">
+ 	$(document).ready(function(){
+		var alerturl = "https://police.stanford.edu/alertsu.json"; 
+		console.log("alerturl",alerturl);
+		$.ajaxSetup({cache:false});
+	    $.getJSON(alerturl, function(result){
+			
+			console.log("Testing alert",result);
+			if ( !result) {
+				return true;
+			}
+			var d = new Date();
+			var pubdate = new Date(result.PubDate);
+			pubdate.setDate(pubdate.getDate()+3);
+			var headerdate = new Date(result.PubDate);
+			
+			alertid = result.AlertID;
+			active = result.Active;
+			
+			if (d > pubdate || active != '1'){
+				$('#feed').append('<li style="text-align:center;"><div style="font-size:125%;color:#6A6A6A;">There are currently no Alerts.</div>');
+				alertexpired = "yes";
+			}else{
+				description = result.Description;
+				description = description.replace(/<a[^>]*>|<\/a>/g, "");
+				description = description.replace(/<(.|\n)*?>/g, '');
+				desclen = 400; //number of characters to display on the alert
+				if (description.length > desclen) {
+					description = description.substring(0, desclen) + " ... <P><a href=\"alertsu.html?alertid=" + result.AlertID + "#top\"> Visit Page</a>";
+				} else {
+					description = description.substr(0, desclen) + " <P><a href=\"alertsu.html?alertid=" + result.AlertID + "#top\"> Visit Page</a>";
+				}
+
+				alertbody = '<div style="text-align:center;font-weight:400;font-size:150%;"><a href="alertsu.html?alertid=' + result.AlertID + '#top">' + result.Title + '</a></div><div style="text-align:center;">Posted: ' + headerdate.toLocaleString() + '</div><div style="padding-top:30px;">' + description + '</div>';
+				alertbody.replace(("\n", "\t", "\r"), '');
+				
+				$('#feed').html(alertbody);
+				alertexpired = "no";
+			}	
+			
+			// Display Alert and set localstorage so alert only displays once
+			alertpage = 'no';
+			if (localStorage.getItem("AlertID") != alertid && alertexpired == "no" && alertpage == "no") {
+				$(window).load(function(){
+					$('#AlertModal').modal('show');
+					localStorage.setItem("AlertID",alertid);
+				});
+			}
+			
+			
+        }).error(function(jqXHR, textStatus, errorThrown) {
+        console.log("error " + textStatus);
+        console.log("incoming Text " + jqXHR.responseText);
+    });
+	
+	
+		$('#notification').append('<span style="font-size:14pt;">There are no active notifications.</span><P>');
+		
+	    $("#prev-btn").click(function(){
+			$("#previous").toggle();
+		});
+	});
+	
+	
+	// Display Notification and set localstorage so note only displays once
+	if (localStorage.getItem("NoteID") != 0 && "yes" == "no") {
+		$(window).load(function(){
+			$('#NotificationModal').modal('show');
+			localStorage.setItem("NoteID","0");
+		});
+	}
+	
+	
+
+</script> <!-- include page level javascript here -->
+  </div>
+ </body>
+</html>

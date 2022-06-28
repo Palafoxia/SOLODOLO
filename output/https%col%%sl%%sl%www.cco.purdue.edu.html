@@ -1,0 +1,696 @@
+<!--
+The following people have participated in building and maintaining this project:
+--------------------------------------------------
+Tianyu Chen: https://github.com/cty123
+--------------------------------------------------
+Shen Wei Leong: leong16@purdue.edu
+--------------------------------------------------
+Yifei Hu: ai8hyf@gmail.com
+--------------------------------------------------
+Hemanth Devarapalli: https://github.com/itsmehemant123
+--------------------------------------------------
+Andy Wagner: https://github.com/AHWagner007
+--------------------------------------------------
+William Huang: mail.william.huang@gmail.com
+--------------------------------------------------
+Sonali Patil: https://github.com/sonalipatil
+--------------------------------------------------
+Dan Morton: dmorton2297@gmail.com
+--------------------------------------------------
+Sri Yogesh Dorbala: yogeshdorbala@gmail.com
+--------------------------------------------------
+Shiwen Xu: vicky.xu071@gmail.com
+--------------------------------------------------
+Jisun Kang: lobotomi@gmail.com
+--------------------------------------------------
+Ye Qiaofei: https://github.com/yeziyqf
+--------------------------------------------------
+Yun-Han: https://github.com/yunhan
+--------------------------------------------------
+Ayushi Gupta: https://github.com/AyushiG123
+--------------------------------------------------
+Ruoyu Song: lucky061681@gmail.com
+--------------------------------------------------
+Paht Juangphanich: paht.juangphanich@gmail.com
+--------------------------------------------------
+Benjamin Eichhorn: https://github.com/beichhor
+--------------------------------------------------
+Rahul Patni: https://github.com/patnir
+--------------------------------------------------
+Shreya Inamdar: https://github.com/shreya-inamdar
+--------------------------------------------------
+and more...
+--><!doctype html>
+<html lang="en"> 
+ <head> 
+  <title>Purdue CCO</title> 
+  <meta content="Purdue CCO" name="author"> 
+  <meta charset="utf-8"> 
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"> 
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"> <!-- Fav icon --> 
+  <link href="/Content/Layout/favicon.ico" rel="shortcut icon"> <!-- Bootstrap CDN --> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> <!-- Font Awesome --> 
+  <script src="https://use.fontawesome.com/a5992bcfed.js"></script> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" integrity="sha256-piqEf7Ap7CMps8krDQsSOTZgF+MU/0MPyPW2enj5I40=" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700" rel="stylesheet"> <!-- Load Template Font --> 
+  <link href="https://www.purdue.edu/purdue/fonts/united-sans/united-sans.css" rel="stylesheet"> 
+  <link href="https://use.typekit.net/ghc8hdz.css" rel="stylesheet"> <!-- Load base stylesheet --> 
+  <link href="/bundles/css/base?v=Hp8PEunEBQGs3iNhw_gzYoTqj9FvxWMulDSsCaKSNdg1" rel="stylesheet"> 
+  <style>
+      .covid19-stripe {
+        font-size: 18pt;
+        background-color: #C5A563; 
+        text-align: center; 
+        padding: 1rem; 
+        text-decoration: none;
+        color: black;
+      }
+      
+      .covid19-stripe:hover {
+        color: black;
+        text-decoration: underline;
+      }
+      
+      .fa-chevron-up{
+        font-size: 20px;
+        cursor:pointer;
+        margin-bottom: 10px;
+        transition: font-weight .2s, transform .2s;
+      }
+      .fa-chevron-up:hover{
+        font-weight: bold;
+        transform: scale(1.5, 1.5);
+        transition: font-weight .2s, transform .2s;
+      }
+      a.header-text-dept, a.header-text-dept:hover{
+        color: white;
+        text-decoration: none;
+      }
+      div#top-left-dropdown{
+        left: 0;
+        border-radius: 0;
+      }
+      div#top-left-dropdown a{
+        padding: 3px 15px;
+      }
+      div#top-left-dropdown a:hover{
+        background-color: #cfb991;
+      }
+
+    </style> 
+  <link href="/bundles/css/DataTables?v=lj6mQUgzhn8FE2LjyXLfjJ53GKhXnlGLlQk7G2jzc8w1" rel="stylesheet"> 
+ </head> 
+ <body class="d-flex flex-column" style="min-height: 100vh"> <!-- Top Quicklink Bar --> 
+  <nav class="navbar navbar-expand-lg nav-quicklink"> 
+   <div class="container"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> <span>Quick Links</span> </button> 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+     <ul class="navbar-nav mr-auto"> 
+      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false"> Find Info For </a> 
+       <div class="dropdown-menu" id="top-left-dropdown"> <a class="dropdown-item" href="https://www.purdue.edu/purdue/academics/index.php">Academics</a> <a class="dropdown-item" href="https://www.purdue.edu/purdue/admissions/index.php">Admissions</a> <a class="dropdown-item" href="https://www.purdue.edu/purdue/current_students/index.php">Current Students</a> <a class="dropdown-item" href="https://www.purdue.edu/purdue/athletics/index.php">Athletics</a> <a class="dropdown-item" href="https://www.purdue.edu/purdue/about/index.php">About</a> <a class="dropdown-item" href="https://www.purdue.edu/purdue/careers/index.php">Careers</a> <a class="dropdown-item" href="https://www.purdue.edu/purdue/prospective_students/index.php">Prospective Students</a> <a class="dropdown-item" href="https://www.purdue.edu/purdue/research/index.php">Research and Partnerships</a> <a class="dropdown-item" href="https://www.purdue.edu/purdue/commercialization/index.php">Entrepreneurship and Commercialization</a> <a class="dropdown-item" href="https://www.purdue.edu/engagement/">Office of Engagement</a> 
+       </div> </li> 
+     </ul> 
+     <ul class="navbar-nav ml-auto"> 
+      <li class="nav-item"> <a class="nav-link" href="https://www.purdue.edu/purdue/apply/">Apply</a> </li> 
+      <li class="nav-item"> <a class="nav-link" href="https://www.purdue.edu/newsroom/">News</a> </li> 
+      <li class="nav-item"> <a class="nav-link" href="https://www.purdue.edu/president/">President</a> </li> 
+      <li class="nav-item"> <a class="nav-link" href="https://www.purdueteamstore.com/">Shop</a> </li> 
+      <li class="nav-item"> <a class="nav-link" href="https://www.purdue.edu/visit/">Visit</a> </li> 
+      <li class="nav-item"> <a class="nav-link" href="https://connect.purdue.edu/s/givenow">Give</a> </li> 
+      <li class="nav-item"> <a class="nav-link" href="https://www.purdue.edu/emergency/">Emergency</a> </li> 
+      <li class="nav-item dropdown"> <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-expanded="false"> <i class="fa fa-search"> </i> </a> 
+       <div class="dropdown-menu"> 
+        <form action="/Home/Search" method="post">
+         <input id="query" name="query" placeholder="Search" type="text" value="">
+        </form> 
+       </div> </li> 
+     </ul> 
+    </div> 
+   </div> 
+  </nav> <!-- Logo Section--> 
+  <div class="header-board"> 
+   <div class="container"> 
+    <div class="row"> 
+     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 header-badge"> <a href="https://www.purdue.edu"> <img src="/Content/Layout/logo.svg" alt="Purdue logo"> </a> 
+     </div> 
+     <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 header-text"> <a href="/" class="header-text-dept">Career Success</a> <span> <a href="/" class="header-text-desc">Center for Career Opportunities</a> &amp; <a href="https://www.purdue.edu/preprofessional/" class="header-text-desc"> Pre-Professional Advising </a> </span> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div> 
+   <nav class="navbar navbar-expand-lg nav-main"> 
+    <div class="container"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> <span>Menu</span> </button> 
+     <div class="collapse navbar-collapse" id="navbarNav"> 
+      <ul class="navbar-nav ml-auto"> 
+       <li class="nav-item active"> <a class="nav-link" href="/">Home</a> </li> 
+       <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false"> Students </a> 
+        <div class="dropdown-menu"> <a class="dropdown-item" href="/Home/myCCO">myCCO for Students</a> <a class="dropdown-item" href="/Students/WhatWeOffer">What We Offer</a> <a class="dropdown-item" href="/Calendar/Index">Calendar of Career Events</a> <a class="dropdown-item" href="/Students/CareerCompass">Explore Majors &amp; Careers</a> <a class="dropdown-item" href="/Students/InternshipAndJobSearch">Internship &amp; Job Search</a> <a class="dropdown-item" href="/Students/ResumesAndCVs">Resumes &amp; CVs</a> <a class="dropdown-item" href="/Students/CoverLetters">Cover Letters</a> <a class="dropdown-item" href="/Students/BuildYourNetwork">Build Your Network</a> <a class="dropdown-item" href="/Students/AcetheInterview">Ace the Interview</a> <a class="dropdown-item" href="/Students/JobOffersandNegotiation">Job Offers &amp; Negotiation</a> <a class="dropdown-item" href="/Students/Post-GradDataAndSurveys">Post-Grad Data &amp; Surveys</a> <a class="dropdown-item" href="https://www.purdue.edu/preprofessional">Pre-Med, -Health, -Law Advising</a> <a class="dropdown-item" href="/Students/GraduateSchool">Graduate School</a> <a class="dropdown-item" href="/Students/StudentswithDisabilities">Disabled Students</a> <a class="dropdown-item" href="/Students/LGBTQStudents">LGBTQ Students</a> <a class="dropdown-item" href="/InternationalStudent">International Students</a> <a class="dropdown-item" href="/Students/VeteranStudents">Military Veteran Students</a> <a class="dropdown-item" href="/Students/GraduateStudents">Graduate Students</a> 
+        </div> </li> 
+       <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false"> Employers </a> 
+        <div class="dropdown-menu"> <a class="dropdown-item" href="/Employers/MyCCO">MyCCO @ Purdue Online Job Board</a> <a class="dropdown-item" href="/Employers/HireStudentsAndAlumni">Hire Students &amp; Alumni</a> <a class="dropdown-item" href="/Employers/PromoteYourPositionAndBrand">Promote Your Position &amp; Brand</a> <a class="dropdown-item" href="/Employers/CareerFairs">Career Fairs</a> <a class="dropdown-item" href="/Employers/RecruitingGuidelines">Recruiting Guidelines</a> <a class="dropdown-item" href="/Employers/PurdueStudentAndAlumniData">Purdue Student &amp; Alumni Data</a> <a class="dropdown-item" href="/Employers/21stCenturyPartnersProgram">21st Century Partners Program</a> <a class="dropdown-item" href="/Employers/ContactInfo">Contact Info</a> 
+        </div> </li> 
+       <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false"> Faculty &amp; Staff </a> 
+        <div class="dropdown-menu"> <a class="dropdown-item" href="/FacultyAndStaff/myCCO">Faculty &amp; Staff myCCO Account</a> <a class="dropdown-item" href="/FacultyAndStaff/ReferStudentstotheCCO">Refer Students to the CCO</a> <a class="dropdown-item" href="/Outreach/Create">Invite the CCO to Speak</a> <a class="dropdown-item" href="/Calendar/SubmitEvent">Submit a Calendar Event</a> <a class="dropdown-item" href="/FacultyAndStaff/ReferPotentialEmployers">Refer Potential Employers</a> <a class="dropdown-item" href="/Employers/DepartmentContact">Academic Department Liaisons</a> <a class="dropdown-item" href="/FacultyAndStaff/CCOResourcesintheClassroom">CCO Resources in the Classroom</a> <a class="dropdown-item" href="/FacultyAndStaff/ResumeReviewAssignment">Resume Review Assignment</a> <a class="dropdown-item" href="/FacultyAndStaff/MockInterviewAssignment">Mock Interview Assignment</a> 
+        </div> </li> 
+       <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false"> Alumni </a> 
+        <div class="dropdown-menu"> <a class="dropdown-item" href="/Alumni/WhatWeOffer">What We Offer</a> <a class="dropdown-item" href="/Home/myCCO">myCCO for Alumni</a> <a class="dropdown-item" href="/Alumni/CCOHandbook">CCO Handbook</a> <a class="dropdown-item" href="/Alumni/AlumniStartingSalaries">Alumni Starting Salaries</a> 
+        </div> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+  </div> 
+  <style type="text/css">
+.styled_announcement{
+  font-size: 120%;
+}
+.styled_announcement>p, .styled_announcement>ul, .styled_announcement>ol{
+  margin-bottom: 0.3rem !important;
+}
+.career-campus-button {
+    background-image: url(./Content/CareerCampus/images/CareerCampusButton.png);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-size: contain;
+    box-shadow: 5px 5px 15px 5px gray;
+    transition: border 0.1s;
+}
+.career-campus-button:hover {
+      border: 2px solid black;
+      transition: border 0.1s;
+}
+
+.announcement-board span{
+  font-size: 200%;
+  font-weight: bolder;
+}
+
+.banner-text{
+position: absolute;
+top: 20px;
+padding-left: 40px;
+font-weight: bolder;
+font-size: 320%;
+max-width: 70%;
+line-height: 60px;
+}
+
+#service-banner{
+text-align: center; 
+background-color: white; color: black;
+}
+
+.section-title{
+  font-size: 280%;
+  margin-bottom: 0;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.section-sub-title{
+  font-size: 120%;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card-text>a{
+  text-decoration: none;
+  color: white;
+  transition: all .5s;
+}
+.card-text>a:hover{
+  color: #c5a563;
+  transition: all .5s;
+}
+
+.card-img-top{
+  cursor: default;
+}
+
+.short-hr{
+  width: 100px;
+  border-width: 5px;
+  border-color: #c5a563;
+}
+
+#service-banner div.card{
+  font-size: 160%;
+  font-weight: bold;
+  
+}
+
+#service-banner div.card{
+  background-image: url(https://purdue.edu/purdue/images/templateElements/2015/stripes-tile.png);
+  background-repeat: repeat;
+  color: white;
+  cursor: pointer;
+  border-radius: 0;
+  border: none;
+}
+
+.gold-btn-group a{
+    font-family: "United Sans",Impact,"Arial Black","sans serif";
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem 0.5rem;
+    background: #CFB991;
+    border: 2px solid #8e6f3e;
+    color: #000 !important;
+    text-decoration: none;
+    transition: all ease 0.2s;
+    letter-spacing: 0.05em;
+    width: 100%;
+    position: relative;
+    line-height: 1.4;
+}
+
+.top-left-banner{
+  border: 5px solid black;
+}
+
+.side-btn-group{
+  height: 100%;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.side-btn-group a{
+  display: flex;
+  height: 100%;
+  background-image: url(https://purdue.edu/purdue/images/templateElements/2015/stripes-tile.png);
+  background-repeat: repeat;
+  color: white;
+  font-weight: bold;
+  font-size: 200%;
+  align-content: center;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all .5s;
+}
+
+.side-btn-group a:hover{
+  color: #c5a563;
+  transition: all .5s;
+}
+
+.grid{
+  text-align: center;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.grid-item, .grid-item img{
+display: inline-block;
+}
+
+.grid-item img{
+display: inline-block;
+max-height: 70px;
+max-width: 50vw;
+border: 2px solid black;
+margin: 3px;
+padding: 5px;
+}
+
+.black-bg-logo{
+  background-color: white;
+}
+
+@media only screen and (max-width: 620px) {
+  .banner-text{
+    top: 20px;
+    padding-left: 30px;
+    font-size: 250%;
+    max-width: 70%;
+    line-height: 40px
+  }
+  .career-campus-button{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .banner-text{
+    top: 10px;
+    padding-left: 20px;
+    font-size: 220%;
+    max-width: 70%;
+    line-height: 35px
+  }
+  .card-img-top{
+    display: none;
+  }
+  .card-text{
+    font-size: 80%;
+  }
+  .card-body{
+    padding: 5px;
+  }
+  #service-banner div.card{
+  margin-bottom: 10px;
+  }
+}
+
+
+</style> 
+  <div style="background-color: black;" id="cover" hidden> 
+   <img id="cover-img" onresize="resizeAnnouncement()" src="/Content/Home/poster_V2.jpg" alt="CCO Poster" width="100%"> 
+  </div> 
+  <div class="container mt-4"> 
+   <div class="row"> 
+    <div class="col-lg-8 mb-4"> 
+     <div class="banner-text">
+      Purdue Center for Career Opportunities
+     </div> 
+     <img class="top-left-banner" height="auto" width="100%" src="/Content/Home/BannerNoText.png" alt="Announcement"> 
+    </div> 
+    <div class="col-lg-4 mb-4"> 
+     <div style="display: flex" class="side-btn-group"> <a href="/Home/myCCO">MyCCO</a> <a href="/Students/WhatWeOffer?tab=CCOHandbook">CCO Handbook</a> <a href="/Calendar">Calendar</a> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="container mb-4"> 
+   <div class="row gold-btn-group"> 
+    <div class="proof-point-item col-lg-3 col-md-3 col-sm-6 col-xs-12"> <a href="https://ccomarketing.wixsite.com/purdueccoblog/"> BLOG </a> 
+    </div> 
+    <div class="proof-point-item col-lg-3 col-md-3 col-sm-6 col-xs-12"> <a href="https://www.purduecco.com/inside-track"> INSIDE TRACK </a> 
+    </div> 
+    <div class="proof-point-item col-lg-3 col-md-3 col-sm-6 col-xs-12"> <a href="https://www.purdue.edu/preprofessional/"> Pre-Professional </a> 
+    </div> 
+    <div class="proof-point-item col-lg-3 col-md-3 col-sm-6 col-xs-12"> <a href="/outreach/create"> OUTREACH </a> 
+    </div> 
+   </div> 
+  </div> 
+  <div id="service-banner" class="container mt-4"> 
+   <h2 class="section-title">CCO Services</h2> 
+   <h3 class="section-sub-title"> Schedule an Appointment through BoilerConnect by clicking below or call 765-494-3981 </h3> 
+   <hr class="short-hr"> 
+   <div class="row"> 
+    <div class="col-md-4 col-sm-12"> 
+     <div class="card"> 
+      <img src="Content/Home/chat.jpg" class="card-img-top" alt="Career Development &amp; Job Search"> 
+      <div class="card-body"> 
+       <p class="card-text"><a href="https://purdue.campus.eab.com/capabilities#/my/appointment-new">Career Development <br>&amp; Job Search</a></p> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="col-md-4 col-sm-12"> 
+     <div class="card"> 
+      <img src="Content/Home/strategy.jpg" class="card-img-top" alt="Pre-Professional Advising"> 
+      <div class="card-body"> 
+       <p class="card-text"><a href="https://purdue.campus.eab.com/capabilities#/my/appointment-new">Pre-Professional <br> Advising</a></p> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="col-md-4 col-sm-12"> 
+     <div class="card"> 
+      <img src="Content/Home/advising.jpg" class="card-img-top" alt="Just Chat"> 
+      <div class="card-body"> 
+       <p class="card-text"><a href="https://purdue.campus.eab.com/capabilities#/my/appointment-new">Quick Chat<br>(Fall &amp; Spring Only)</a></p> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> <!-- Doughnut chart--> 
+  <div class="doughnut-board-container mt-4" style="background-color: white; text-align: center;"> 
+   <div class="doughnut-chart-board container"> 
+    <h2 class="section-title">Let Data Speak</h2> 
+    <h3 class="section-sub-title">Purdue's Next Step Survey Data for the Class of May 2021</h3> 
+    <hr class="short-hr"> 
+    <div class="row"> 
+     <div class="col-sm-6 col-md-3 col-lg-3 doughnut-chart"> 
+      <canvas id="bar-career-chart"></canvas> <a href="/Data/Index">had successful career outcomes</a> 
+     </div> 
+     <div class="col-sm-6 col-md-3 col-lg-3 doughnut-chart"> 
+      <canvas id="bar-professional-chart"></canvas> <a href="/Data/Index">had at least one professional experience</a> 
+     </div> 
+     <div class="col-sm-6 col-md-3 col-lg-3 doughnut-chart"> 
+      <canvas id="bar-grad-chart"></canvas> <a href="/Data/Index">were accepted to graduate school</a> 
+     </div> 
+     <div class="col-sm-6 col-md-3 col-lg-3 doughnut-chart"> 
+      <canvas id="bar-more-chart"></canvas> <a href="/Data/Index">Want to learn More about the data?</a> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="container-fluid mt-3 mb-5"> 
+   <h2 class="section-title">Partners</h2> 
+   <h3 class="section-sub-title">Purdue CCO and the 21st Century Partners Program</h3> 
+   <hr class="short-hr"> 
+   <div class="grid"> 
+    <div class="grid-item"> <a href="http://www.aldiuscareers.com/"> <img class="black-bg-logo" src="/Partners/Image/Aldi.png" alt="Aldi.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.aboutschwab.com/work-at-schwab"> <img class="black-bg-logo" src="/Partners/Image/CharlesSchwab.png" alt="CharlesSchwab.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.nucor.com/careers/"> <img class="black-bg-logo" src="/Partners/Image/NucorCorporation.png" alt="NucorCorporation.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.unionpacific.jobs/"> <img class="black-bg-logo" src="/Partners/Image/UnionPacific.png" alt="UnionPacific.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.us.airliquide.com/en/careers.html"> <img class="black-bg-logo" src="/Partners/Image/AirLiquide.png" alt="AirLiquide.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.bechtel.com/university.html"> <img class="black-bg-logo" src="/Partners/Image/Bechtel.png" alt="Bechtel.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://phillips66.jobs/"> <img class="black-bg-logo" src="/Partners/Image/Phillips66.png" alt="Phillips66.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="https://www.lilly.com"> <img src="/Partners/Image/Lilly.jpg" alt="Lilly.jpg"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.us.endress.com/careers"> <img class="black-bg-logo" src="/Partners/Image/EndressHauser.png" alt="EndressHauser.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://careers.chevron.com/"> <img class="black-bg-logo" src="/Partners/Image/Chevron.png" alt="Chevron.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.3m.com/3M/en_US/careers-us/?WT.mc_id=www.3m.com/careers-us"> <img class="black-bg-logo" src="/Partners/Image/3M.png" alt="3M.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.ge.com/careers/index.html"> <img class="black-bg-logo" src="/Partners/Image/GeneralElectric.png" alt="GeneralElectric.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.sonepar-us.com"> <img class="black-bg-logo" src="/Partners/Image/Sonepar.png" alt="Sonepar.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.caterpillar.com/careers"> <img class="black-bg-logo" src="/Partners/Image/Caterpillar.png" alt="Caterpillar.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="https://www.textron.com/"> <img class="black-bg-logo" src="/Partners/Image/Textron.png" alt="Textron.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://careers.cummins.com/default.aspx?"> <img class="black-bg-logo" src="/Partners/Image/Cummins.png" alt="Cummins.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://girtzindustries.com/contact-us/job-opportunities/"> <img class="black-bg-logo" src="/Partners/Image/GirtzIndustries.png" alt="GirtzIndustries.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://go.enterpriseholdings.com/students/entry-level-professionals/"> <img class="black-bg-logo" src="/Partners/Image/Enterprise.png" alt="Enterprise.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.chryslercareers.com/"> <img class="black-bg-logo" src="/Partners/Image/FiatChryslerAutomobiles.png" alt="FiatChryslerAutomobiles.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="https://careers.clevelandcliffs.com/"> <img class="black-bg-logo" src="/Partners/Image/ClevelandCliffs.png" alt="ClevelandCliffs.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.gm.com/corporate/careers/"> <img src="/Partners/Image/GeneralMotors.jpg" alt="GeneralMotors.jpg"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.deere.com/en_US/careers/country_index.html"> <img class="black-bg-logo" src="/Partners/Image/JohnDeere.png" alt="JohnDeere.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.kimball.com/careers"> <img class="black-bg-logo" src="/Partners/Image/KimballInternational.png" alt="KimballInternational.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.nscorp.com/students"> <img class="black-bg-logo" src="/Partners/Image/NorfolkSouthern.png" alt="NorfolkSouthern.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.northropgrumman.com/Careers/StudentsAndNewGrads/Pages/default.aspx"> <img class="black-bg-logo" src="/Partners/Image/NorthropGrumman.png" alt="NorthropGrumman.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.parker.com/careers"> <img class="black-bg-logo" src="/Partners/Image/ParkerHannifin.png" alt="ParkerHannifin.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://pepsicojobs.com/campus-recruiting"> <img class="black-bg-logo" src="/Partners/Image/PepsiCo.png" alt="PepsiCo.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="https://andersonsinc.com/"> <img src="/Partners/Image/TheAndersons.jpg" alt="TheAndersons.jpg"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.kennametal.com"> <img src="/Partners/Image/KennametalInc.jpg" alt="KennametalInc.jpg"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.ensign-bickfordind.com/university-recruiting/"> <img class="black-bg-logo" src="/Partners/Image/EnsignBickfordIndustriesInc.png" alt="EnsignBickfordIndustriesInc.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="https://www.sandia.gov/"> <img class="black-bg-logo" src="/Partners/Image/SandiaNationalLaboratories.png" alt="SandiaNationalLaboratories.png"> </a> 
+    </div> 
+    <div class="grid-item"> <a href="http://www.KARglobal.com"> <img src="/Partners/Image/KARGlobal.jpg" alt="KARGlobal.jpg"> </a> 
+    </div> 
+   </div> 
+  </div> <!-- Link Board --> 
+  <div class="link-board"> 
+   <div class="container"> 
+    <div class="row"> 
+     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"> 
+      <div class="link-darker"> 
+       <div class="link-board-column"> 
+        <div class="icon"> <i class="fas fa-calendar-alt fa-3x" aria-hidden="true"></i> 
+        </div> 
+        <div class="header-line"> 
+         <h2>Calendar</h2> 
+        </div> 
+        <div class="divider"></div> 
+        <div class="link-menu"> 
+         <ul> 
+          <li> <a href="/Calendar/Index?filter=CareerFair">Career Fair</a> </li> 
+          <li> <a href="/Calendar/Index?filter=InformationSession">Information Session</a> </li> 
+          <li> <a href="/Calendar/Index?filter=Workshop">Workshop</a> </li> 
+          <li> <a href="/Calendar/Index?filter=CompanyHostedEvent">Company Hosted Event</a> </li> 
+          <li> <a href="/Calendar">View Complete Calendar</a> </li> 
+          <li> <a href="/Calendar/SubmitEvent">Submit Event</a> </li> 
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"> 
+      <div class="link-darker"> 
+       <div class="link-board-column"> 
+        <div class="icon"> <i class="fas fa-graduation-cap fa-3x" aria-hidden="true"></i> 
+        </div> 
+        <div class="header-line"> 
+         <h2>Students</h2> 
+        </div> 
+        <div class="divider"></div> 
+        <div class="link-menu"> 
+         <ul> 
+          <li> <a href="/Home/myCCO">MyCCO</a> </li> 
+          <li> <a href="https://www.purdue.edu/boilerconnect/">Drop-ins &amp; Appointments</a> </li> 
+          <li> <a href="/Students/WhatWeOffer?tab=CCOHandbook">CCO Handbook</a> </li> 
+          <li> <a href="https://purdue.biginterview.com/">Big Interview</a> </li> 
+          <li> <a href="https://upkey.com/partners/purdue">Upkey</a> </li> 
+          <li> <a href="http://www.vmock.com/purdue">VMOCK</a> </li> 
+          <li> <a href="https://roadtripnation.com/edu/purdue">Roadtrip Nation</a> </li> 
+          <li> <a href="http://career.lib.purdue.edu/">Career Research Portal</a> </li> 
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"> 
+      <div class="link-darker"> 
+       <div class="link-board-column"> 
+        <div class="icon"> <i class="fas fa-building fa-3x" aria-hidden="true"></i> 
+        </div> 
+        <div class="header-line"> 
+         <h2>Employers</h2> 
+        </div> 
+        <div class="divider"></div> 
+        <div class="link-menu"> 
+         <ul> 
+          <li> <a href="/Employers/HireStudentsAndAlumni">Hire Students &amp; Alumni</a> </li> 
+          <li> <a href="/Employers/RecruitingGuidelines">Recruiting Guidelines</a> </li> 
+          <li> <a href="/Employers/ResumeRequest">Resume Search Request</a> </li> 
+          <li> <a href="/Employers/myCCOatPurdue">MyCCO @purdue Online Job Board</a> </li> 
+          <li> <a href="/Employers/CareerFairs">Career Fairs</a> </li> 
+          <li> <a href="/Employers/ContactInfo">Contact Info</a> </li> 
+          <li> <a href="/Employers/VirtualRecruitment">Virtual Recruiting</a> </li> 
+          <li> <a href="/Partners/Index">21st Century Partner List</a> </li> 
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"> 
+      <div class="link-darker"> 
+       <div class="link-board-column"> 
+        <div class="icon"> <i class="fa fa-envelope fa-3x" aria-hidden="true"></i> 
+        </div> 
+        <div class="header-line"> 
+         <h2>Others</h2> 
+        </div> 
+        <div class="divider"></div> 
+        <div class="link-menu"> 
+         <ul> 
+          <li> <a href="/FacultyAndStaff/myCCO">Fac/Staff MyCCO Acct</a> </li> 
+          <li> <a href="/Outreach/Create">Invite the CCO to Speak</a> </li> 
+          <li> <a href="#">Workshop Topics</a> </li> 
+          <li> <a href="/Home/MyCCO">Alumni MyCCO Acct</a> </li> 
+          <li> <a href="/Alumni/AlumniStartingSalaries">Alumni Starting Salaries</a> </li> 
+          <li> <a href="/Data/Index">Student/Alumni Data</a> </li> 
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> <a class="career-campus-button" href="/CareerCampus"></a> 
+  <script>
+function resizeAnnouncement(){
+  let cover_height = document.getElementById("cover-img").offsetHeight;
+  document.getElementById("announcement-bar").style.height = cover_height + "px";
+}
+
+setInterval(function (){
+  if(document.getElementById("announcement-bar")!=null){
+    resizeAnnouncement()
+  }
+}, 250)
+
+</script> <!-- Footer --> 
+  <footer class="footer"> 
+   <div class="container"> 
+    <div class="chevron"> <i class="fas fa-chevron-up"></i> 
+    </div> 
+    <div class="univ-title"> 
+     <h5>PURDUE CENTER FOR CAREER OPPORTUNITIES</h5> 
+    </div> 
+    <div class="univ-title"> 
+     <p>PURDUE UNIVERSITY</p> 
+    </div> 
+    <div class="divider"> 
+    </div> 
+    <div class="univ-title"> 
+     <p>Connect with us</p> 
+    </div> 
+    <div class="univ-title"> <a href="https://www.facebook.com/PurdueCCO"> <i class="fab fa-facebook-square fa-2x"></i> </a> <a href="https://www.linkedin.com/groups/2461294/profile"> <i class="fab fa-linkedin fa-2x"></i> </a> <a href="https://www.pinterest.com/purduecco/"> <i class="fab fa-pinterest-square fa-2x"></i> </a> <a href="https://twitter.com/purduecco"> <i class="fab fa-twitter-square fa-2x"></i> </a> <a href="https://ccomarketing.wixsite.com/purdueccoblog"> <i class="fab fa-wix fa-2x"></i> </a> <a href="https://www.instagram.com/purduecco/"> <i class="fab fa-instagram fa-2x"></i> </a> <a href="https://www.youtube.com/user/PurdueCCO"> <i class="fab fa-youtube-square fa-2x"></i> </a> 
+    </div> 
+    <div class="univ-title"> 
+     <p> Young Hall, Room 132, 155 S. Grant Street, West Lafayette, IN 47907 ● (765) 494-3981 ● E-Mail askcco@purdue.edu </p> 
+    </div> 
+    <div class="divider"></div> 
+    <div class="univ-title"> 
+     <p>© 2021 Purdue University. An equal access/equal opportunity university</p> 
+    </div> 
+    <div class="univ-title"> 
+     <p> If you have trouble accessing this page because of a disability, please contact the Purdue Operations and Communications Team through our Web Assistance Form </p> 
+    </div> 
+   </div> 
+  </footer> <!-- Bootstrap Script CDN --> 
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script> 
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> 
+  <script>
+$(".fa-chevron-up").click(function() {
+    $("html").animate({ scrollTop: 0 }, "fast");
+})
+
+function sendAnalytics(){
+    
+    let isMobileDevice = 0; 
+    
+    if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
+        || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0,4))) { 
+        isMobileDevice = 1;
+    }
+    
+    $.ajax({
+        type: "POST",
+        url: '/Analytics/AddRecordAjax',
+        data: {"url": window.location.href, "isMobile": isMobileDevice},
+        dataType: "text",
+        error: function() { console.log("error") }
+    });
+}
+
+sendAnalytics()
+</script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script> 
+  <script src="/Scripts/Home/chartPlugin.js"></script> 
+  <script>
+    initChart(document.getElementById("bar-career-chart"), 96.4, 100 - 96.4, "96.4%");
+    initChart(document.getElementById("bar-professional-chart"), 81.8, 100 - 81.8, "81.8%");
+    initChart(document.getElementById("bar-grad-chart"), 24.7, 100 - 24.7, "24.7%");
+    initChartFontawesome(document.getElementById("bar-more-chart"), 100, 0);
+  </script>  
+ </body>
+</html>

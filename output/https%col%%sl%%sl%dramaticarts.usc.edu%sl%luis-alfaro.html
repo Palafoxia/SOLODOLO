@@ -1,0 +1,381 @@
+<!doctype html><!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]--><!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]--><!--[if IE 9]>
+<html class="ie ie9" lang="en-US">
+<![endif]--><!--[if !(IE 7) | !(IE 8) | !(IE 9)  ]><!-->
+<html lang="en-US"><!--<![endif]-->
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luis Alfaro · School of Dramatic Arts · USC</title>
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="pingback" href="https://dramaticarts.usc.edu/xmlrpc.php">
+  <script type="text/javascript">
+	base  = 'https://dramaticarts.usc.edu';
+	theme = 'https://dramaticarts.usc.edu/wp-content/themes/drama/';
+	ajax  = 'https://dramaticarts.usc.edu/wp-admin/admin-ajax.php';
+</script>
+  <meta name="robots" content="max-image-preview:large">
+  <link rel="dns-prefetch" href="//dramaticarts.usc.edu">
+  <link rel="dns-prefetch" href="//s.w.org"><!-- This site uses the Google Analytics by MonsterInsights plugin v8.3.4 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+  <script src="//www.googletagmanager.com/gtag/js?id=UA-35715541-1" data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '8.3.4';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-35715541-1',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						if ( document.cookie.indexOf( disableStrs[ index ] + '=true' ) > -1 ) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						document.cookie = disableStrs[ index ] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if ( mi_track_user ) {
+					function __gtagDataLayer() {
+						dataLayer.push( arguments );
+					}
+
+					function __gtagTracker( type, name, parameters ) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply( null, arguments );
+							return;
+						}
+
+						if ( type === 'event' ) {
+							
+															parameters.send_to = monsterinsights_frontend.ua;
+								__gtagDataLayer( type, name, parameters );
+													} else {
+							__gtagDataLayer.apply( null, arguments );
+						}
+					}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+											} );
+															__gtagTracker( 'config', 'UA-35715541-1', {"forceSSL":"true","link_attribution":"true"} );
+										window.gtag = __gtagTracker;											(function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+																				if ( ! ( ! args.hasOwnProperty(arg) || ! gaMap.hasOwnProperty(arg) ) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						})();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script><!-- / Google Analytics by MonsterInsights -->
+  <link rel="stylesheet" id="drama-style-css" href="https://dramaticarts.usc.edu/wp-content/themes/drama/style.css?ver=20220223" type="text/css" media="screen,print">
+  <script type="text/javascript" id="monsterinsights-frontend-script-js-extra">
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/dramaticarts.usc.edu","hash_tracking":"false","ua":"UA-35715541-1","v4_id":""};
+/* ]]> */
+</script>
+  <script type="text/javascript" src="https://dramaticarts.usc.edu/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.3.4" id="monsterinsights-frontend-script-js"></script>
+  <script type="text/javascript" src="https://dramaticarts.usc.edu/wp-content/themes/drama/js/jquery.min.js" id="jquery-js"></script>
+  <script type="text/javascript" src="https://dramaticarts.usc.edu/wp-content/themes/drama/js/picturefill.min.js" id="picturefill-js"></script>
+  <link rel="https://api.w.org/" href="https://dramaticarts.usc.edu/wp-json/">
+  <link rel="alternate" type="application/json" href="https://dramaticarts.usc.edu/wp-json/wp/v2/posts/2040">
+  <link rel="canonical" href="https://dramaticarts.usc.edu/luis-alfaro/">
+  <link rel="shortlink" href="https://dramaticarts.usc.edu/?p=2040">
+  <link rel="alternate" type="application/json+oembed" href="https://dramaticarts.usc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdramaticarts.usc.edu%2Fluis-alfaro%2F">
+  <link rel="alternate" type="text/xml+oembed" href="https://dramaticarts.usc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdramaticarts.usc.edu%2Fluis-alfaro%2F&amp;format=xml">
+  <link rel="icon" href="https://dramaticarts.usc.edu/wp-content/uploads/2021/06/usc-shield-125x125.png" sizes="32x32">
+  <link rel="icon" href="https://dramaticarts.usc.edu/wp-content/uploads/2021/06/usc-shield-250x250.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="https://dramaticarts.usc.edu/wp-content/uploads/2021/06/usc-shield-250x250.png">
+  <meta name="msapplication-TileImage" content="https://dramaticarts.usc.edu/wp-content/uploads/2021/06/usc-shield-300x300.png">
+  <style type="text/css" id="wp-custom-css">
+			figcaption.boxed {
+    color: #fff;
+    font-size: .85em;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #ccc;
+}
+.events-list .events .item, .events-list .events .item.column {max-width: 400px}
+
+.content-area figcaption p {
+    margin-bottom: 0;
+}
+
+@media only screen and (min-width: 52em) {
+figcaption {
+    border-bottom: 1px solid transparent;
+}
+}		</style>
+  <meta name="google-site-verification" content="CRbys5O2P9HU8v7aHthxZ59lD-TP_VZpTULdPCf3t5A">
+ </head>
+ <body class="post-template-default single single-post postid-2040 single-format-standard post-category-faculty full ">
+  <div class="site-wrapper"><a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+   <header class="site-header" role="banner">
+    <div class="site-branding">
+     <h1 class="brand-title"><a href="//www.usc.edu">University of Southern California</a></h1>
+     <h2 class="site-title"><a href="https://dramaticarts.usc.edu/" rel="home">School of Dramatic Arts</a></h2>
+    </div><!-- .site-branding -->
+    <nav id="site-navigation" class="site-navigation" role="navigation"><a class="menu-toggle" href="#menu-primary">Menu</a><a class="home-link" href="https://dramaticarts.usc.edu/" rel="home">School of Dramatic Arts</a>
+     <ul id="menu-social-media" class="site-social">
+      <li id="menu-item-3155" class="flickr menu-item menu-item-type-custom menu-item-object-custom menu-item-3155"><a target="_blank" rel="noopener" href="https://www.flickr.com/photos/uscschooloftheatre/sets/">Flickr</a></li>
+      <li id="menu-item-60" class="facebook menu-item menu-item-type-custom menu-item-object-custom menu-item-60"><a target="_blank" rel="noopener" href="https://www.facebook.com/USCSchoolofDramaticArts">Facebook</a></li>
+      <li id="menu-item-7629" class="instagram menu-item menu-item-type-custom menu-item-object-custom menu-item-7629"><a target="_blank" rel="noopener" href="https://instagram.com/uscsda/">Instagram</a></li>
+      <li id="menu-item-61" class="twitter menu-item menu-item-type-custom menu-item-object-custom menu-item-61"><a target="_blank" rel="noopener" href="https://twitter.com/USCSDA">Twitter</a></li>
+      <li id="menu-item-15901" class="youtube menu-item menu-item-type-custom menu-item-object-custom menu-item-15901"><a href="https://www.youtube.com/channel/UCfyLvGOv29U790dq05zNVgQ">YouTube</a></li>
+      <li id="menu-item-62" class="search menu-item menu-item-type-custom menu-item-object-custom menu-item-62"><a href="#search-form">Search</a></li>
+     </ul> 
+    </nav><!-- .site-navigation -->
+   </header>
+   <div id="content">
+    <main id="main" class="site-main" role="main">
+     <div id="primary" class="content-area">
+      <article id="post-2040" class="content-block post-2040 post type-post status-publish format-standard has-post-thumbnail hentry category-faculty tag-dramatic-writing tag-featured tag-performance">
+       <div class="entry-content">
+        <div class="faculty-header">
+         <ul class="media"> 
+          <li><img width="1080" height="720" src="https://dramaticarts.usc.edu/wp-content/uploads/2022/02/LuisAlfaro-web.jpg" class="attachment-full size-full" alt="Luis Alfaro" loading="lazy" srcset="https://dramaticarts.usc.edu/wp-content/uploads/2022/02/LuisAlfaro-web.jpg 1080w, https://dramaticarts.usc.edu/wp-content/uploads/2022/02/LuisAlfaro-web-300x200.jpg 300w, https://dramaticarts.usc.edu/wp-content/uploads/2022/02/LuisAlfaro-web-1024x683.jpg 1024w, https://dramaticarts.usc.edu/wp-content/uploads/2022/02/LuisAlfaro-web-768x512.jpg 768w" sizes="(max-width: 1080px) 100vw, 1080px"></li>
+          <li><img width="902" height="600" src="https://dramaticarts.usc.edu/wp-content/uploads/2022/02/Alfaro_Luis.jpg" class="attachment-full size-full" alt="" loading="lazy" srcset="https://dramaticarts.usc.edu/wp-content/uploads/2022/02/Alfaro_Luis.jpg 902w, https://dramaticarts.usc.edu/wp-content/uploads/2022/02/Alfaro_Luis-300x200.jpg 300w, https://dramaticarts.usc.edu/wp-content/uploads/2022/02/Alfaro_Luis-768x511.jpg 768w" sizes="(max-width: 902px) 100vw, 902px"></li>
+          <li><img width="1000" height="1000" src="https://dramaticarts.usc.edu/wp-content/uploads/2017/10/StJude_Photo1-1000x1000.jpg" class="attachment-drama-lg-square-img size-drama-lg-square-img" alt="Luis Alfaro" loading="lazy" srcset="https://dramaticarts.usc.edu/wp-content/uploads/2017/10/StJude_Photo1-1000x1000.jpg 1000w, https://dramaticarts.usc.edu/wp-content/uploads/2017/10/StJude_Photo1-150x150.jpg 150w, https://dramaticarts.usc.edu/wp-content/uploads/2017/10/StJude_Photo1-125x125.jpg 125w, https://dramaticarts.usc.edu/wp-content/uploads/2017/10/StJude_Photo1-250x250.jpg 250w, https://dramaticarts.usc.edu/wp-content/uploads/2017/10/StJude_Photo1-500x500.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px"></li> 
+         </ul>
+         <div class="person-meta">
+          <header class="entry-header">
+           <h1 class="entry-title">Luis Alfaro</h1>
+          </header>
+          <div class="position">
+           <p>Associate Professor of Dramatic Writing</p>
+          </div>
+          <div class="contact">
+           <a class="email" href="mailto:luisalfa@usc.edu">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path d="M21 4.5H3C2.60218 4.5 2.22064 4.65804 1.93934 4.93934C1.65804 5.22064 1.5 5.60218 1.5 6V18C1.5 18.3978 1.65804 18.7794 1.93934 19.0607C2.22064 19.342 2.60218 19.5 3 19.5H21C21.3978 19.5 21.7794 19.342 22.0607 19.0607C22.342 18.7794 22.5 18.3978 22.5 18V6C22.5 5.60218 22.342 5.22064 22.0607 4.93934C21.7794 4.65804 21.3978 4.5 21 4.5ZM19.35 6L12 11.085L4.65 6H19.35ZM3 18V6.6825L11.5725 12.615C11.698 12.7021 11.8472 12.7488 12 12.7488C12.1528 12.7488 12.302 12.7021 12.4275 12.615L21 6.6825V18H3Z" />
+            </svg> luisalfa@usc.edu</a><a class="phone" href="tel:213740‑3302">
+            <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <path d="M19.4282 2.07826L19.3951 2.05762L15.2186 0L10.7107 6.0105L12.7847 8.77597C12.7226 9.8189 12.2803 10.8029 11.5416 11.5416C10.8028 12.2804 9.8188 12.7227 8.77587 12.7847L6.01045 10.7107L0 15.2185L2.04049 19.3602L2.05767 19.3951L2.07836 19.4281C2.18725 19.6036 2.33923 19.7482 2.51984 19.8483C2.70046 19.9484 2.90368 20.0006 3.11018 20H4.18787C6.26435 20 8.3205 19.591 10.2389 18.7964C12.1573 18.0017 13.9005 16.837 15.3687 15.3687C16.837 13.9004 18.0017 12.1573 18.7964 10.2389C19.591 8.32046 20 6.2643 20 4.18782V3.11008C20.0007 2.90359 19.9485 2.70036 19.8484 2.51975C19.7483 2.33914 19.6036 2.18715 19.4282 2.07826ZM18.4566 4.18782C18.4566 12.0556 12.0556 18.4566 4.18787 18.4566H3.31584L1.95059 15.685L6.01074 12.6399L8.27122 14.3352H8.52845C10.0681 14.3335 11.5441 13.7211 12.6328 12.6325C13.7215 11.5438 14.3338 10.0677 14.3356 8.52811V8.27089L12.6403 6.01046L15.685 1.95054L18.4566 3.31603V4.18782Z" />
+            </svg> (213) 740‑3302</a>
+          </div>
+         </div> 
+        </div>
+        <div class="faculty-profile">
+         <div class="biography">
+          <h2>Biography</h2>
+          <p><span style="font-weight: 400;">Luis Alfaro is a Chicano playwright born and raised blocks from USC in the Pico-Union district of downtown Los Angeles.</span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;">Alfaro is the associate artistic director of Center Theatre Group, the resident theatre company of the Music Center of Los Angeles County, home of the Mark Taper Forum, Ahmanson Theatre and Kirk Douglas Theater. </span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;">Alfaro is the recipient of a John D. and Catherine T. MacArthur Foundation Fellowship, popularly known as a “genius grant,” awarded to people who have demonstrated expertise and exceptional creativity in their respective fields.</span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;">He has also received recognition from: the PEN America/Laura Pels International Foundation Theater Award for a Master Dramatist; United States Artist Fellowship; Ford Foundation’s Art of Change Fellowship; Joyce Foundation Fellowship; Mellon Foundation Fellowship, and the Annenberg Artist-in-Residence for the city of Santa Monica; among others. He is the only playwright to have received two Kennedy Center ‘Fund for New American Play’ awards in the same year.</span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;">Alfaro spent six seasons as the inaugural playwright-in-residence of the 90-year-old Oregon Shakespeare Festival (2013-2019); a member of the Playwright’s Ensemble at Chicago’s Victory Gardens Theatre (2013-2020); a resident artist at the Mark Taper Forum (1995-2005); an inaugural member of the Latinx Playwrights ‘Circle of Imaginistas’ at the Los Angeles Theatre Center (2021); and has worked with the Ojai Playwrights Conference since 2002.</span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;">His plays and performances include </span><i><span style="font-weight: 400;">Electricidad</span></i><span style="font-weight: 400;">, </span><i><span style="font-weight: 400;">Oedipus El Rey</span></i><span style="font-weight: 400;">, </span><i><span style="font-weight: 400;">Mojada</span></i><span style="font-weight: 400;">, </span><i><span style="font-weight: 400;">Delano</span></i><span style="font-weight: 400;">, </span><i><span style="font-weight: 400;">Body of Faith</span></i><span style="font-weight: 400;">, </span><i><span style="font-weight: 400;">Straight as a Line</span></i><span style="font-weight: 400;">, and have been seen at regional theatres throughout the United States, Latin America, Canada and Europe. </span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;">Alfaro spent over two decades in the Los Angeles Poetry and Performance Art communities. </span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;">He is an associate professor with tenure at the University of Southern California (USC). Previously, he taught at California Institute of the Arts (Cal-Arts), and in the Writers Program at UCLA Extension.</span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;"><br> </span><span style="font-weight: 400;">He has an Emmy-nominated short film, </span><i><span style="font-weight: 400;">Chicanismo</span></i><span style="font-weight: 400;"> (Best Experimental Film, San Antonio CineFestival, Best Short, CineAccion San Francisco) and an award-winning recording, </span><i><span style="font-weight: 400;">down town</span></i><span style="font-weight: 400;">, on SST/New Alliance Records (Best Spoken-Word Release, National Association of Independent Record Distributors).</span></p>
+         </div>
+         <div class="profile-sidebar">
+          <h2 class="related-news">Related News</h2>
+          <ul class="related">
+           <li><a href="https://dramaticarts.usc.edu/photo-gallery-the-odyssey-anniversary-benefit/"><span class="date">December 27, 2021</span><h3>Photo Gallery: The Odyssey Anniversary Benefit</h3></a></li>
+           <li><a href="https://dramaticarts.usc.edu/luis-alfaro-named-associate-artistic-director-at-center-theatre-group/"><span class="date">July 15, 2021</span><h3>Luis Alfaro named Associate Artistic Director at Center Theatre Group</h3></a></li>
+           <li><a href="https://dramaticarts.usc.edu/luis-alfaro-nominated-for-drama-desk-award/"><span class="date">April 21, 2020</span><h3>Luis Alfaro nominated for Drama Desk Award</h3></a></li>
+           <li><a href="https://dramaticarts.usc.edu/expanding-the-circle-a-faculty-dispatch-by-luis-alfaro/"><span class="date">April 8, 2020</span><h3>Expanding the circle: a faculty dispatch by Luis Alfaro</h3></a></li>
+           <li><a href="https://dramaticarts.usc.edu/luis-alfaros-play-participates-in-ctg-community-partnership/"><span class="date">September 20, 2018</span><h3>Luis Alfaro's play participates in CTG community partnership</h3></a></li>
+           <li><a href="https://dramaticarts.usc.edu/2016-ovation-awards-nominees/"><span class="date">November 2, 2016</span><h3>Faculty nominated for 2016 Ovation Awards</h3></a></li>
+           <li><a href="https://dramaticarts.usc.edu/suzan-lori-parks-speaks-at-town-and-gown/"><span class="date">October 8, 2016</span><h3>Suzan-Lori Parks speaks at Town and Gown</h3></a></li>
+           <li><a href="https://dramaticarts.usc.edu/luis-alfaro-reimagines-sophocles-for-todays-audiences/"><span class="date">October 24, 2017</span><h3>Luis Alfaro reimagines Sophocles for today's audiences</h3></a></li>
+          </ul>
+         </div>
+        </div> 
+       </div><!-- .entry-content -->
+      </article><!-- #post-2040 -->
+     </div><!-- #primary -->
+    </main><!-- #main -->
+   </div>
+   <div class="site-footer-wrapper">
+    <footer id="colophon" class="site-footer" role="contentinfo">
+     <ul id="menu-primary" class="site-nav">
+      <li id="menu-item-792" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-792"><a href="https://dramaticarts.usc.edu/apply/">Apply</a></li>
+      <li id="menu-item-791" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-791"><a href="https://dramaticarts.usc.edu/programs/">Programs</a></li>
+      <li id="menu-item-790" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-790"><a href="https://dramaticarts.usc.edu/on-stage/">On Stage</a></li>
+      <li id="menu-item-435" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-435"><a href="https://dramaticarts.usc.edu/category/news/">News</a></li>
+      <li id="menu-item-2801" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2801"><a href="https://dramaticarts.usc.edu/faculty/">Faculty</a></li>
+      <li id="menu-item-783" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-783"><a href="https://dramaticarts.usc.edu/alumni/">Alumni</a></li>
+      <li id="menu-item-789" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-789"><a href="https://dramaticarts.usc.edu/giving/">Giving</a></li>
+      <li id="menu-item-788" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-788"><a href="https://dramaticarts.usc.edu/about/">About</a></li>
+     </ul>
+     <form role="search" method="get" id="search-form" class="site-search" action="https://dramaticarts.usc.edu/">
+      <label for="search-query" class="sr-only">Search</label>
+      <input type="text" id="search-query" class="search-field" name="s" title="search" placeholder="search for..."><button type="submit" class="search-submit">search</button>
+     </form> 
+     <div class="social-menu">
+      <ul id="menu-social-media-1" class="social">
+       <li class="flickr menu-item menu-item-type-custom menu-item-object-custom menu-item-3155"><a target="_blank" rel="noopener" href="https://www.flickr.com/photos/uscschooloftheatre/sets/">Flickr</a></li>
+       <li class="facebook menu-item menu-item-type-custom menu-item-object-custom menu-item-60"><a target="_blank" rel="noopener" href="https://www.facebook.com/USCSchoolofDramaticArts">Facebook</a></li>
+       <li class="instagram menu-item menu-item-type-custom menu-item-object-custom menu-item-7629"><a target="_blank" rel="noopener" href="https://instagram.com/uscsda/">Instagram</a></li>
+       <li class="twitter menu-item menu-item-type-custom menu-item-object-custom menu-item-61"><a target="_blank" rel="noopener" href="https://twitter.com/USCSDA">Twitter</a></li>
+       <li class="youtube menu-item menu-item-type-custom menu-item-object-custom menu-item-15901"><a href="https://www.youtube.com/channel/UCfyLvGOv29U790dq05zNVgQ">YouTube</a></li>
+       <li class="search menu-item menu-item-type-custom menu-item-object-custom menu-item-62"><a href="#search-form">Search</a></li>
+      </ul> 
+     </div><!--/.social-menu-->
+     <div class="audiences-menu">
+      <ul id="menu-audiences" class="audiences">
+       <li id="menu-item-7702" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7702"><a target="_blank" rel="noopener" href="https://sdastudents.usc.edu">For Current Students</a></li>
+       <li id="menu-item-1171" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1171"><a href="https://dramaticarts.usc.edu/parents/">For Parents</a></li>
+       <li id="menu-item-781" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-781"><a target="_blank" rel="noopener" href="https://sites.usc.edu/sdaemployees">For Faculty &amp; Staff</a></li>
+      </ul> 
+     </div><!--/.audiences-menu-->
+     <div class="basics">
+      <h3><a href="https://dramaticarts.usc.edu/">USC School of Dramatic Arts</a></h3>
+      <ul id="menu-miscellaneous-links" class="misc">
+       <li id="menu-item-793" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-793"><a href="https://dramaticarts.usc.edu/contact/">Contact Information</a></li>
+       <li id="menu-item-795" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-795"><a href="https://dramaticarts.usc.edu/employment/">Employment</a></li>
+       <li id="menu-item-794" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-794"><a href="https://dramaticarts.usc.edu/emergency/">Emergency Information</a></li>
+       <li id="menu-item-801" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-801"><a href="https://dramaticarts.usc.edu/location/">Location and Directions</a></li>
+      </ul> 
+     </div><!--/.basics-->
+    </footer><!--/.site-footer-->
+   </div><!--/.site-footer-wrapper-->
+   <ul class="credits">
+    <li class="privacy"><a href="https://www.usc.edu/privacy-notice/">Privacy Notice</a></li>
+    <li class="non-discrimination"><a href="https://www.usc.edu/notice-of-non-discrimination/">Notice of Non-Discrimination</a></li>
+    <li class="site-feedback">Send website feedback to <a href="mailto:sdaweb@usc.edu">sdaweb@usc.edu</a></li>
+   </ul>
+  </div><!--/.site-wrapper -->
+  <script type="text/javascript" src="https://dramaticarts.usc.edu/wp-content/plugins/new-royalslider/lib/royalslider/jquery.royalslider.min.js" id="royalslider-js"></script>
+  <script type="text/javascript" src="https://dramaticarts.usc.edu/wp-content/themes/drama/js/drama.js" id="drama-js"></script>
+  <script type="text/javascript" src="https://dramaticarts.usc.edu/wp-includes/js/wp-embed.min.js?ver=5.8.2" id="wp-embed-js"></script>
+ </body>
+</html>

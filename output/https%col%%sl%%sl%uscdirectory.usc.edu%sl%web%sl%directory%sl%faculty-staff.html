@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en-US">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>USC Faculty and Staff Directory</title>
+  <link rel="icon" href="../images/favicon.ico">
+  <link rel="stylesheet" href="../style.css?v=3" type="text/css" media="screen,print">
+ </head>
+ <body class="faculty-staff">
+  <header class="site-header"> 
+   <div class="site-branding-wrapper">
+    <div class="site-branding">
+     <h1 class="brand-title"><a href="http://www.usc.edu">University of Southern California</a></h1>
+    </div><!-- .site-branding -->
+   </div><!-- .site-branding-wrapper -->
+  </header>
+  <div class="content-area page-header">
+   <div class="wrapper">
+    <h1>USC Directory Search</h1>
+   </div>
+  </div>
+  <div class="tabs">
+   <ul>
+    <li class="active faculty-staff"><a href="/web/directory/faculty-staff/">Faculty and Staff</a></li>
+    <li class="students"><a href="/web/directory/student/">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="460.75px" height="604.46px" viewbox="0 0 460.75 604.46" enable-background="new 0 0 460.75 604.46" xml:space="preserve">
+       <path fill="#010101" d="M438.601,256.811h-33.15c-4.25,0-8.5-3.4-8.5-8.5v-78.2c0-90.1-69.7-166.6-159.8-170 C142.8-3.29,64.6,72.36,64.6,166.71v82.45c0,4.25-3.4,8.5-8.5,8.5H22.95C10.2,257.66,0,267.86,0,280.61v300.9 c0,12.75,10.2,22.949,22.95,22.949h414.8c12.75,0,22.95-10.199,22.95-22.949V279.76C461.55,267.01,451.351,256.811,438.601,256.811 z M116.45,166.71c0-65.45,54.4-118.15,120.7-114.75c62.05,3.4,109.649,56.1,109.649,118.15v79.05c0,4.25-3.399,8.5-8.5,8.5H124.1 c-4.25,0-8.5-3.4-8.5-8.5v-82.45H116.45z" />
+      </svg>Students</a></li>
+    <li class="departments"><a href="http://departmentsdirectory.usc.edu">Departments &amp; Offices</a></li>
+    <li class="web"><a href="/web/directory/web/">Search USC Websites</a></li>
+   </ul>
+  </div>
+  <div class="content-area page-body">
+   <div class="main">
+    <p class="description">Use this form to find people who work for USC.</p>
+    <form class="ajax directory-search" name="directory" method="get" data-dir="faculty-staff" action="">
+     <section class="basic">
+      <div class="field"><label for="basic">Basic search</label>
+       <input type="text" id="basic" name="q" value="" placeholder="name, department, or job title" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off">
+      </div>
+     </section>
+     <div class="count">
+      <a href="#"><span class="sr-only">Start typing your search and the number of results will appear here</span></a>
+     </div><a class="toggle advanced" href="#">Advanced search</a>
+     <section class="advanced">
+      <div class="wrapper">
+       <div class="field"><label for="first">First name</label>
+        <input type="text" id="first" name="first" value="" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off">
+       </div>
+       <div class="field"><label for="last">Last name</label>
+        <input type="text" id="last" name="last" value="" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off">
+       </div>
+       <div class="field"><label for="title">Title</label>
+        <input type="text" id="title" name="title" value="" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off">
+       </div>
+       <div class="field"><label for="dept">Department</label>
+        <input type="text" id="dept" name="department" value="" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off">
+       </div>
+       <div class="field"><label for="div">Division</label>
+        <input type="text" id="div" name="division" value="" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off">
+       </div>
+       <div class="field"><label for="email">Email</label>
+        <input type="email" id="email" name="mail" value="" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off">
+       </div>
+       <div class="field"><label for="tel">Telephone</label>
+        <input type="tel" id="tel" name="tel" value="" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off">
+       </div>
+      </div>
+     </section><button type="submit" class="search">Search</button>
+    </form>
+    <section class="results">
+     <h1>Search results</h1>
+     <table class="list sortable">
+      <thead>
+       <tr class="headings">
+        <th class="name" data-column="name"><span>Name</span></th>
+        <th class="department" data-column="department"><span>Department</span></th>
+        <th class="division" data-column="division"><span>Division</span></th>
+        <th class="contact" data-column="contact"><span>Contact</span></th>
+       </tr>
+      </thead>
+      <tbody></tbody>
+     </table>
+    </section>
+   </div><!--/.main-->
+   <div class="help-area"></div>
+  </div><!--/.content-area-->
+  <section class="related">
+   <div class="wrapper"><a class="close" href="#">close</a>
+    <h1>How to update</h1>
+    <p>Faculty and staff may update directory information via <a href="https://wd5.myworkday.com/usc/fx/home.flex">Workday</a> or by contacting their HR/Payroll Analyst.</p>
+   </div>
+  </section>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-584548-6', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/directory.js?v=1"></script>
+ </body>
+</html>

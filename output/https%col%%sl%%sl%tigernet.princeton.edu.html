@@ -1,0 +1,923 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:fb="http://www.facebook.com/2008/fbml"> 
+ <head id="MainHead">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>
+	TigerNet - Login
+</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+  <link href="css/fonts/fonts.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/vendor.css"> <!-- app styles --> 
+  <link rel="stylesheet" href="/s/resources/css/appstyles.css">
+  <link id="MainStyle" rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png"> <!-- Respond.js for IE8 support of media queries --> <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--> <!-- SV: A~1uswebblue01#Re // --> 
+  <script id="MainScript" language="javascript"></script> 
+  <meta property="og:title" content="Login/Logout"> 
+  <meta property="twitter:title" content="Login/Logout"><!-- Shared Custom Header Markup START -->
+  <style>
+.anchor {display:none;}
+</style><!-- Shared Custom Header Markup END --><!-- Custom Header Markup START -->
+  <style>
+.sideBar .secondaryNav .sidebarNavWrap > ul > li {display:none;}
+.sideBar .secondaryNav .sidebarNavWrap > ul > li.redirect {display:none;}
+.sideBar .secondaryNav .sidebarNavWrap > ul > li.anchor {display:block;}
+#cid_40_btnEncompassLogin {
+display: none;
+}
+</style><!-- Custom Header Markup END -->
+  <link href="/WebResource.axd?d=EFjvvw03I-qWJ1M2kiKip3b3N4W8-Ge5eseJetRFgFrUi0Bb77fs_ps3xQXItZVoHua-LIMvWRqadlOSXmAZ72PvDIfRyZmtd1X-e65PHQYzNit3EhCJe_qUXAJBr0kcdb9Ovw2&amp;t=637369927100000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  <link href="/WebResource.axd?d=iRvtG_52nRe3qtmT7s2t729exzqE4ilZmcbFqHsPz2XojG-OhHKLThFNVc_wDIMFTOxcWsRMky3wkwJF_dlJCfs1NvGSSzfMuSaN2Hr4SLyID0mzDk-kclNTF26fKAvq8KNc9r4IwpLH_FsU2enyoAUEJnk1&amp;t=637369927100000000" type="text/css" rel="stylesheet" class="Telerik_stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/calendar.min.css?v=64.2.0.03237" media="all">
+  <link rel="stylesheet" type="text/css" href="/s/resources/css/imodbase.css?v=64.2.0.03237" media="all">
+  <link rel="stylesheet" type="text/css" href="/scripts/fancybox/2.1.5/jquery.fancybox.css?v=64.2.0.03237" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/controls/login/Login.min.css?v=64.2.0.03237" media="all">
+ </head> 
+ <body id="MainBody" class="IMOD3 interior"> 
+  <form name="MainForm" method="post" action="/s/1760/02-tigernet/20/interior.aspx?sid=1760&amp;gid=2&amp;pgid=3&amp;cid=40&amp;returnurl=https%3a%2f%2ftigernet.princeton.edu%2fs%2f1760%2f02-tigernet%2f20%2finterior.aspx%3fgid%3d2%26pgid%3d254" id="MainForm"> 
+   <div> 
+    <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""> 
+    <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""> 
+    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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"> 
+   </div> 
+   <script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['MainForm'];
+if (!theForm) {
+    theForm = document.MainForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script> 
+   <script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZCZ76J-ssiHfhyqTgvrhSvAQbnWZ6XwQhtsP9TsdhsZ6HFyzkw2&amp;t=637811513229275428" type="text/javascript"></script> 
+   <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" type="text/javascript"></script> 
+   <script src="https://secure.tigernet.princeton.edu/scripts/Bundles/DefaultPageBundle.debug.js?jsversion=64.2.0.03237" type="text/javascript"></script> 
+   <script type="text/javascript">
+//<![CDATA[
+imod.dom.AddHandler(window, 'load', function() { imod.Accessibility.Enable508SkipNav('#main'); });GroupQueryString = 'sid=1760&gid=2';
+imod.dom.AddHandler(window, "load", CreateFloaterDiv);
+
+	function CreateFloaterDiv() {
+		window.fd = new imod_FloaterDiv("FloaterDivTitle", "FloaterDivText","","true","","");
+		fd.Width = 400;
+		fd.Height = 200;
+	}
+
+						var _gaq = _gaq || [];
+						_gaq.push(['_setAccount', 'UA-1512522-20']); _gaq.push(['_trackPageview']);
+						(function() {
+						var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+						'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0];
+						s.parentNode.insertBefore(ga, s);
+						})();function LoadCMSCalendarData_RadCalcid_17815() {
+ if(!window.fd)
+{
+setTimeout(LoadCMSCalendarData_RadCalcid_17815, 100);
+return;
+}
+fd.AddContent("2/15/2021RadCalcid_17815","2/15/2021","<div class=\\\"FloaterDivContentItem\\\"><b><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17815&calpgid=3&pgid=252&ecid=17835&crid=0&cid=40\">Alumni Directory</a></b>&nbsp;<br />Date: 2/15/2021<br />A comprehensive suite of tools to deliver targeted and engaging email messages, create custom queries and view reports.<br /><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17815&calpgid=3&pgid=252&ecid=17835&crid=0&cid=40\">Continued...</a></div><div class=\\\"FloaterDivContentItem\\\"><b><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17815&calpgid=3&pgid=252&ecid=17836&crid=0&cid=40\">My TigerNet Profile</a></b>&nbsp;<br />Date: 2/15/2021<br />View and update your personal and professional information in your My TigerNet Profile.<br /><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17815&calpgid=3&pgid=252&ecid=17836&crid=0&cid=40\">Continued...</a></div><div class=\\\"FloaterDivContentItem\\\"><b><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17815&calpgid=3&pgid=252&ecid=17837&crid=0&cid=40\">Alumni Email</a></b>&nbsp;<br />Date: 2/15/2021<br />Use either University-created email forwarding or a full email account through Gmail with your @alumni.princeton.edu email address.<br /><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17815&calpgid=3&pgid=252&ecid=17837&crid=0&cid=40\">Continued...</a></div><div class=\\\"FloaterDivContentItem\\\"><b><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17815&calpgid=3&pgid=252&ecid=17838&crid=0&cid=40\">Discussion Groups</a></b>&nbsp;<br />Date: 2/15/2021<br />Come together and communicate with fellow alumni on a variety of different topics including classes, regions, professional/career, eating clubs and other interests.<br /><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17815&calpgid=3&pgid=252&ecid=17838&crid=0&cid=40\">Continued...</a></div><div class=\\\"FloaterDivContentItem\\\"><b><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17815&calpgid=3&pgid=252&ecid=17839&crid=0&cid=40\">Alumni News & Notes</a></b>&nbsp;<br />Date: 2/15/2021<br />Share news and events with friends and TigerNet community members or find out what your fellow alumni are up to these days.<br /><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17815&calpgid=3&pgid=252&ecid=17839&crid=0&cid=40\">Continued...</a></div>");
+}
+imod.dom.AddHandler(window, "load", LoadCMSCalendarData_RadCalcid_17815);
+function LoadCMSCalendarData_RadCalcid_17817() {
+ if(!window.fd)
+{
+setTimeout(LoadCMSCalendarData_RadCalcid_17817, 100);
+return;
+}
+fd.AddContent("2/15/2021RadCalcid_17817","2/15/2021","<div class=\\\"FloaterDivContentItem\\\"><b><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17821&crid=0&cid=40\">What criteria must my password meet?</a></b>&nbsp;<br />Date: 2/15/2021<br /><p>During the&nbsp;<a href=\"https://puwebp.princeton.edu/tigerNet/startPage.jsf?type=A1\" target=\"_blank\">TigerNet registration</a> process, your selected password must meet specific password security rules.</p>\r\n<p>You will be required to select a password or passphrase that meets the following security rules:<br>\r\n<br>\r\nPASSWORD:\r\n</p>\r\n<ul>\r\n    <li>contains at least 10 characters, and a maximum of 15 characters</li>\r\n    <li>contains both upper and lower case characters</li>\r\n    <li>contains at least one number</li>\r\n    <li>contains at least one of the following characters:<br>\r\n    ~!@#$%^&amp;*()_+={}[]|:;\"&lt;&gt;,.?</li>\r\n    <li>must not contain your first name, last name or NetID</li>\r\n</ul>\r\nPASSPHRASE:\r\n<ul>\r\n    <li> contains at least 15 characters consisting of letters and spaces</li>\r\n    <li> contains at least 1 number OR 1 symbol</li>\r\n    <li>must not contain your first name, last name or NetID</li>\r\n</ul>\r\n<p>To review these rules, please visit the <a href=\"https://puwebp.princeton.edu/tigerNet/startPage.jsf\" target=\"_blank\">TigerNet Passwords page</a>&nbsp;and select \"Change Password.\"<br>\r\n</p><br /><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17821&crid=0&cid=40\">Continued...</a></div><div class=\\\"FloaterDivContentItem\\\"><b><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17822&crid=0&cid=40\"> Who is eligible to access the TigerNet Online Community?</a></b>&nbsp;<br />Date: 2/15/2021<br />Princeton University undergraduate and graduate alumni are eligible to sign up for the TigerNet Online Community. Current students can also access certain portions of the site using their University NetID and password. Access is not granted to: honorary members, exchange students, relatives (spouse, widow/er, child, sibling) or friends.<br /><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17822&crid=0&cid=40\">Continued...</a></div><div class=\\\"FloaterDivContentItem\\\"><b><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17823&crid=0&cid=40\">What portions of TigerNet can current students, faculty and staff access with their University NetID and password?</a></b>&nbsp;<br />Date: 2/15/2021<br />Current students, faculty and staff are eligible for limited access to TigerNet. Current students may access the Alumni Directory Search and Discussion Groups. Faculty and staff may access Discussion Groups. PLEASE NOTE: Any section you do not have access to will return an error message.<br /><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17823&crid=0&cid=40\">Continued...</a></div><div class=\\\"FloaterDivContentItem\\\"><b><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17824&crid=0&cid=40\">Is TigerNet a secure database?</a></b>&nbsp;<br />Date: 2/15/2021<br />TigerNet is a secure, password-protected online database owned by Princeton University and serviced through iModules. Authentication is controlled through the TigerNet Authentication System (TAS) on University servers, and the web pages are protected by an SSL Certificate. A verified University affiliation and authenticated login are required to access the information contained in TigerNet. For more information, visit our <a href=\"https://alumni.princeton.edu/tigernet-authentication-service-tas\">TAS fact sheet</a>.<br /><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17824&crid=0&cid=40\">Continued...</a></div><div class=\\\"FloaterDivContentItem\\\"><b><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17826&crid=0&cid=40\">How do I register for TigerNet?</a></b>&nbsp;<br />Date: 2/15/2021<br />You can register for TigerNet by clicking \"Getting Started\" on the left side navigation on the <a href=\"https://tigernet.princeton.edu/\">TigerNet homepage</a>.<br /><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17826&crid=0&cid=40\">Continued...</a></div><div class=\\\"FloaterDivContentItem\\\"><b><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17829&crid=0&cid=40\">Can I change my TigerNet account NetID?</a></b>&nbsp;<br />Date: 2/15/2021<br />TigerNet account NetIDs can only be changed for compelling reasons, such as a legal name change or security concerns. If you feel you have a compelling reason to request a NetID change, please email <a href=\"mailto:tigernet@princeton.edu\">tigernet@princeton.edu</a>.<br /><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17829&crid=0&cid=40\">Continued...</a></div><div class=\\\"FloaterDivContentItem\\\"><b><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17828&crid=0&cid=40\">Can I change my TigerNet password?</a></b>&nbsp;<br />Date: 2/15/2021<br />Yes. To change your TigerNet account password, please go to <a href=\"https://puwebp.princeton.edu/tigerNet/startPage.jsf?type=A1\" target=\"_blank\">TigerNet Account Services</a>.<br /><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17828&crid=0&cid=40\">Continued...</a></div><div class=\\\"FloaterDivContentItem\\\"><b><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17827&crid=0&cid=40\">I forgot my password. How can I access my account?</a></b>&nbsp;<br />Date: 2/15/2021<br />Alumni can reset and change their own password through a self-service interface known as <a href=\"https://puwebp.princeton.edu/tigerNet/startPage.jsf?type=A1\">TigerNet Account Services</a>. Information will be sent to the email address designated as \"preferred\" in the TigerNet system.<br /><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17827&crid=0&cid=40\">Continued...</a></div><div class=\\\"FloaterDivContentItem\\\"><b><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17830&crid=0&cid=40\">Can I use my TigerNet account NetID and password to access other alumni-related websites?</a></b>&nbsp;<br />Date: 2/15/2021<br />Your TigerNet account NetID and password can be used to access the following websites:\r\n<ul>\r\n    <li><a href=\"https://secure.redesign-imodules.com/tigernet\" target=\"_self\">Alumni Association\'s TigerNet Online Community</a></li>\r\n    <li><a href=\"https://admissionapp.princeton.edu/asc-interview/index.jsf\" target=\"_blank\" class=\"ext\" rel=\"noopener noreferrer\">Alumni Schools Committee Resources<span class=\"ext\" aria-label=\"(link is external)\"></span></a></li>\r\n    <li><a href=\"http://registrar.princeton.edu/student-services/transcript/\" target=\"_blank\" class=\"ext\" rel=\"noopener noreferrer\">Princeton Transcript Requests<span class=\"ext\" aria-label=\"(link is external)\"></span></a></li>\r\n    <li><a href=\"http://volunteer.princeton.edu/\" target=\"_blank\" class=\"ext\" rel=\"noopener noreferrer\">Annual Giving\'s Tiger Tracks<span class=\"ext\" aria-label=\"(link is external)\"></span></a></li>\r\n    <li><a href=\"http://paw.princeton.edu/issues/2011/07/06/sections/class-notes/\" target=\"_blank\" class=\"ext\" rel=\"noopener noreferrer\">PAW Class Notes<span class=\"ext\" aria-label=\"(link is external)\"></span></a></li>\r\n</ul><br /><a href=\"https://tigernet.princeton.edu/?sid=1760&gid=2&calcid=17817&calpgid=3&pgid=252&ecid=17830&crid=0&cid=40\">Continued...</a></div>");
+}
+imod.dom.AddHandler(window, "load", LoadCMSCalendarData_RadCalcid_17817);
+//]]>
+</script> 
+   <script src="js/main.js" type="text/javascript"></script> 
+   <script src="js/imods.custom.js" type="text/javascript"></script> 
+   <script src="js/imodsModernizr.js" type="text/javascript"></script> 
+   <script src="https://secure.tigernet.princeton.edu/scripts/Common/imod_FloaterDiv.js?jsversion=64.2.0.03237" type="text/javascript"></script> 
+   <script src="https://secure.tigernet.princeton.edu/scripts/enc-18167.js?jsversion=64.2.0.03237" type="text/javascript"></script> 
+   <script src="https://secure.tigernet.princeton.edu/scripts/features/cms/calendarcontrol.js?jsversion=64.2.0.03237" type="text/javascript"></script> 
+   <script src="/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvo7yvhF8GnOgTa40Fb-ucItHZzp1-olgTqnLAStWI_gpm5dEDRm122y8GPZlnBsnPBgT1UcFytTUN5HhCHoM-T8vK-_FB2z5dNWsvEgCm7kZApoqFRkHjasuyx7Cn2KoOgzP1pw1&amp;t=ffffffffaa493ab8" type="text/javascript"></script> 
+   <script src="/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8ONMrFXDUXqBmVyrE__qZ9moSTw0l8UiBkvctBuqzwiozgJL4h-9SeajzJWb59DifZG51TSrbY-3WWO6VFMRPfkOUYHgHG7eH1_SoRdtpvVbEzqHxJLmdoIYyDMyD6AS5ViLSWQI1&amp;t=ffffffffaa493ab8" type="text/javascript"></script> 
+   <script src="/ScriptResource.axd?d=TDVjdgRbdvNAY3tnbizUcJ7Ccie2T27bo6ITvJ9Ct0oT0FFAoUdY7IiGiFEd1v94ouoIprLyrXUDtmzXqLBt_JqI5mcc1XzatC8Jro9ikUsUcZxE0&amp;t=ffffffffeee79234" type="text/javascript"></script> 
+   <script src="/ScriptResource.axd?d=A22-SyJgKhJ5FWUJePaPlOM-cJpkzjCUjZgfYq6l_Gpvqn4MEGRye2G2qBpBi7rGfqUDMaayCAWYmPdCpHkWA58L4T4Q5pc7CcSG31ISzov576ha9Yv2ShLhTK9KIKGbMXDQKw2&amp;t=ffffffffeee79234" type="text/javascript"></script> 
+   <script src="/ScriptResource.axd?d=mbGZm65DzNC0tMTq0ElbcWPQ3lQ7MFNRdks8k1w71IgjNIdN4uZAuc73XClgPgHQTQbBnBFRWzR0aQ0lU2SBNzO-zCAafdgthjnL-jQEm0QR4OuublCFWAvVVefT1yqQAluOOw2&amp;t=ffffffffeee79234" type="text/javascript"></script> 
+   <script src="/ScriptResource.axd?d=cmIcXiVJ__exjjpjrN730pgXc0a4kmaBmRVevvCI0gVobO1f0d97T3QjV6A4TgvGBOsmmCxiTqDLuZ-FUl8oLxPhQEb58ARsNZVrGjyNMhLXYSForTjQdYRslD-XYf4fsmubdQ2&amp;t=ffffffffeee79234" type="text/javascript"></script> 
+   <script src="/ScriptResource.axd?d=aoSSiMnLNTC20U5L7LFIKtflbIBeZfbvvisHJqcFMnm_DlOP3P1srsYO0Fe95OJwj2KAM4NxK3EwVBEfTA6V5iVqVUwugF6UZ_Wjd30iMixzKwWLihzGCgL8q8KdJIqvlHxiJyy0-Apm27ElIIMGVYeSwV81&amp;t=ffffffffeee79234" type="text/javascript"></script> 
+   <script src="/ScriptResource.axd?d=GUyLPMOEFhffuIMm6XZ0oDZqUelR18jxjcqAV_TiJm_ASuxjdRqgggxak9wNVZ596diMiMUFpkW0JX4bcEjvep5lahr0m16xVmkdmrm82earLXcVTzKzVk2VXvH6M89pKYG-Oipwbd3vFEzf8uVjqTmSXlE1&amp;t=ffffffffeee79234" type="text/javascript"></script> 
+   <script src="/ScriptResource.axd?d=utaAJrK4EroNO-KNr3p19L7F7QRu0X_h3g5Ub5-Lj0Vuse0lUT5JPe7meOAq_4Y3oMrkMDtpc4XzxTElYUmlSJqTKtge000uJ9GTmusbxyojEXcgcGcVL8VkPvpxd6pom3Slrg2&amp;t=ffffffffeee79234" type="text/javascript"></script> 
+   <script src="/ScriptResource.axd?d=7RME8vhSRqt3Mqdxi2yQ2stkYx5GmBQWIunbZ4mLLns3fv6o5umxOhP381GMCRzTVaU4vNk35OniinXgjOdeaiKQpmtKhGcE9w7XjdOEegusmmRwGClafdbVCNJ5WSKNQ_18Eg2&amp;t=ffffffffeee79234" type="text/javascript"></script> 
+   <div> 
+    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="88C0588B"> 
+    <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="JD0Shg5efItmPsaCcmaZ9TiPpL4shzxrv6ACy13ki5qEUR24k7Dxl+x6KYqa8Xp/tNU2IvGNyOKQtNdCeTyZ8PvbFbQVNLh8kqeriPokXzFsB0aViKlxptNZHdXOjHi6VerzjRIpT9ad3kUrF/oPds7n5PakF+MQfn4rCJGXp3Bw0xV4n/V1lMiARqJeBOl7DpsFuw=="> 
+   </div>
+   <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl10', 'MainForm', [], [], [], 90, '');
+//]]>
+</script> <!-- SiteBuilder // --> <!-- NavMaster // --> 
+   <div class="pageWrap"> <!-- HEADER --> 
+    <header class="structHead" role="banner" id="top"> 
+     <div class="mainHeaderWrap"> 
+      <div class="container"> 
+       <div class="row"> 
+        <div id="ContentLogo" class="col-md-10 col-lg-offset-1 col-lg-6 headLogo">
+         <a href="http://alumni.princeton.edu/"><img alt="Princeton University Alumni home." src="images/logo.svg"></a> 
+        </div> 
+        <div class="col-md-35 col-md-offset-3 col-lg-offset-1 col-lg-39 headerRight"> 
+         <div role="navigation" aria-label="Mobile Main Menu" class="d-sm-none d-md-none d-lg-none"> <button class="js-offcanvas-trigger" data-offcanvas-trigger="off-canvas" aria-label="Open Mobile Navigation"> <span class="menuTitle">Menu</span> <span class="icon"></span> </button> 
+         </div> 
+         <div class="row utilityWrap"> 
+          <div class="utilityLinks"> 
+           <nav id="ContentUtilityNav20" aria-label="Utility" class="imodSiteMap"> 
+            <ul> 
+             <li class=" "><a href="https://reunions.princeton.edu/">Reunions</a></li> 
+             <li class=" "><a href="https://alumni.princeton.edu/contact-us">Contact</a></li> 
+             <li class=" "><a href="https://tigernet.princeton.edu/">TigerNet</a></li> 
+             <li class=" "><a href="https://makeagift.princeton.edu/MainSite/MakeAGift?utm_campaign=givingtoprinceton&amp;utm_medium=web&amp;utm_source=giving">Make a Gift</a></li> 
+            </ul> 
+           </nav> 
+          </div> <button type="button" id="searchToggleUtil" class="searchBtn" role="search" aria-label="Open site search.">
+           <svg class="icon">
+            <use xlink:href="#icon-search" />
+           </svg></button> 
+          <div id="searchWrap"> 
+           <div class="searchWrapInner align-items-center"> 
+            <div id="ContentSearch" class="search"> <label for="cid_17777_tbSearch" id="cid_17777_litSearch">Search Content: </label>
+             <input name="cid_17777$tbSearch" type="text" size="10" id="cid_17777_tbSearch"><span class="SearchModuleSpacer">&nbsp;</span> <button id="cid_17777_hbtnSearch" type="button" class="button" title="Go" onclick="return cid_17777_hbtnSearch_Click();">Go</button> 
+            </div> <button type="button" id="closeSearch" class="closeSearch" aria-label="Close Search"> 
+             <svg class="icon">
+              <use xlink:href="#icon-close" />
+             </svg> </button> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="row"> <!-- Desktop Navigation Bar --> 
+          <div class="desktopNav d-none d-sm-flex d-md-flex"> 
+           <nav id="ContentTopNav20" class="desktopNavInner imodSiteMap" aria-label="Main Site"> 
+            <ul> 
+             <li class=" mainTopNav"><a href="https://alumni.princeton.edu/our-community">Our Community</a> 
+              <ul> 
+               <li class=" "><a href="https://alumni.princeton.edu/our-community/alumni-association">Alumni Association</a> 
+                <ul> 
+                 <li class=" "><a href="https://alumni.princeton.edu/our-community/alumni-association/alumni-council">Alumni Council Executive Committee</a></li> 
+                </ul> </li> 
+               <li class=" "><a href="https://alumni.princeton.edu/our-community/awards">Awards</a></li> 
+               <li class=" "><a href="https://alumni.princeton.edu/our-community/our-stories">Our Stories</a></li> 
+              </ul> </li> 
+             <li class=" mainTopNav"><a href="https://alumni.princeton.edu/connect">Connect</a> 
+              <ul> 
+               <li class=" "><a href="https://alumni.princeton.edu/connect/goin-back">Goin’ Back</a></li> 
+               <li class=" "><a href="https://alumni.princeton.edu/connect/princeton-journeys">Travel with Princeton Journeys</a></li> 
+               <li class=" "><a href="https://alumni.princeton.edu/connect/continued-learning">Continued Learning</a></li> 
+              </ul> </li> 
+             <li class=" mainTopNav"><a href="https://alumni.princeton.edu/volunteer">Volunteer</a> 
+              <ul> 
+               <li class=" "><a href="https://alumni.princeton.edu/volunteer/volunteer-opportunities">Opportunities</a> 
+                <ul> 
+                 <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/volunteer-opportunities-affinity-groups">Affinity Groups</a></li> 
+                 <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/annual-giving">Annual Giving</a></li> 
+                 <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/arts">Arts</a></li> 
+                 <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/athletics">Athletics</a></li> 
+                 <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/classes-and-reunions">Class and Reunions</a></li> 
+                 <li class=" "><a href="https://tigernet.princeton.edu/s/1760/02-tigernet/20/interior.aspx?sid=1760&amp;gid=2&amp;pgid=6732">Entrepreneurship</a></li> 
+                 <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/classes-and-reunions#ew-6251">Graduate Alumni</a></li> 
+                 <li class=" "><a href="https://alumni.princeton.edu/our-community/alumni-association/princeton-schools-committee">Interview Prospective Students</a></li> 
+                 <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/mentorship-professional-development">Mentorship/Professional Development</a></li> 
+                 <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/regional">Region</a></li> 
+                </ul> </li> 
+               <li class=" "><a href="https://alumni.princeton.edu/volunteer/resources">Resources</a> 
+                <ul> 
+                 <li class=" "><a href="https://alumni.princeton.edu/volunteer/resources/annual-giving">Annual Giving</a></li> 
+                 <li class=" "><a href="https://alumni.princeton.edu/volunteer/resources/class-volunteers">Class</a></li> 
+                 <li class=" "><a href="https://alumni.princeton.edu/volunteer/resources/regional-volunteers">Region</a></li> 
+                 <li class=" "><a href="https://tigernet.princeton.edu/s/1760/02-tigernet/20/interior.aspx?sid=1760&amp;gid=2&amp;pgid=6727">Reunions</a></li> 
+                </ul> </li> 
+              </ul> </li> 
+             <li class=" mainTopNav"><a href="https://alumni.princeton.edu/give">Give</a> 
+              <ul> 
+               <li class=" "><a href="https://alumni.princeton.edu/give/annual-giving">Annual Giving</a></li> 
+               <li class=" "><a href="https://alumni.princeton.edu/give/gift-planning">Gift Planning</a></li> 
+               <li class=" "><a href="https://alumni.princeton.edu/thanks-to-you">Thanks to You</a></li> 
+               <li class=" "><a href="https://alumni.princeton.edu/give/how-make-gift">How to Make a Gift</a></li> 
+              </ul> </li> 
+             <li class=" mainTopNav"><a href="https://alumni.princeton.edu/venture-forward">VENTURE FORWARD</a> 
+              <ul> 
+               <li class=" "><a href="https://alumni.princeton.edu/campaign-impact">CAMPAIGN IMPACT</a> 
+                <ul> 
+                 <li class=" "><a href="https://alumni.princeton.edu/venture-forward/campaign-impact/access-and-affordability">ACCESS &amp; AFFORDABILITY</a></li> 
+                 <li class=" "><a href="https://ams.princeton.edu/">AMERICAN STUDIES</a></li> 
+                 <li class=" "><a href="https://alumni.princeton.edu/annual-giving">ANNUAL GIVING</a></li> 
+                 <li class=" "><a href="https://goprincetontigers.com/news/2021/10/1/general-venture-forward-princeton-athletics.aspx">ATHLETICS</a></li> 
+                 <li class=" "><a href="https://alumni.princeton.edu/venture-forward/campaign-impact/bioengineering">BIOENGINEERING</a></li> 
+                 <li class=" "><a href="https://alumni.princeton.edu/venture-forward/campaign-impact/data-science">DATA SCIENCE</a></li> 
+                 <li class=" "><a href="https://alumni.princeton.edu/environment">ENVIRONMENT</a></li> 
+                 <li class=" "><a href="https://alumni.princeton.edu/volunteer">SERVICE</a></li> 
+                </ul> </li> 
+              </ul> </li> 
+            </ul> 
+           </nav> 
+           <div class="utilFixedWrap"> <button type="button" id="utilToggleFixed" class="utilBtn" aria-label="Open utility menu.">
+             <svg class="icon">
+              <use xlink:href="#menu-burger" />
+             </svg></button> 
+            <div class="utilityLinksDD"> 
+             <nav id="ContentUtilityNavFixed20" aria-label="Utility Dropdown"> 
+              <ul> 
+               <li class=" "><a href="https://reunions.princeton.edu/">Reunions</a></li> 
+               <li class=" "><a href="https://alumni.princeton.edu/contact-us">Contact</a></li> 
+               <li class=" "><a href="https://tigernet.princeton.edu/">TigerNet</a></li> 
+               <li class=" "><a href="https://makeagift.princeton.edu/MainSite/MakeAGift?utm_campaign=givingtoprinceton&amp;utm_medium=web&amp;utm_source=giving">Make a Gift</a></li> 
+              </ul> 
+             </nav> 
+            </div> 
+           </div> <button type="button" id="searchToggleFixed" class="searchBtn" role="search" aria-label="Open site search.">
+            <svg class="icon">
+             <use xlink:href="#icon-search" />
+            </svg></button> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </header> <!-- MAIN CONTENT AREA --> 
+    <main id="main" class="structBody c-offcanvas-content-wrap"> <!-- One Col Interior Verison --> 
+     <section class="twoCol-layout"> 
+      <div class="container"> 
+       <div class="row bodyRowWrap"> 
+        <div id="pageNameMobile" class="col-12 d-md-none"></div> 
+        <div class="col-12 col-lg-offset-1 col-lg-12 sideBar"> 
+         <div class="mobileFixed two-columns__sticky--desktop"> 
+          <div id="ContentMiddleLayoutSidebarTitle" class="sidebarTitle">
+           Jump to: 
+          </div> 
+          <nav id="ContentSidebarNav20" class="secondaryNav" aria-label="Section"> 
+           <div class="sidebarNavWrap">
+            <button type="button" class="d-sm-none" id="mobileSidebarNavToggle" aria-controls="sidebarNav" aria-expanded="false"><span class="txt">Menu</span><span class="iconArw">
+              <svg class="icon">
+               <use xlink:href="#icon-arrow-down" />
+              </svg></span></button>
+            <ul id="sidebarNav"> 
+             <li class=" anchor loggedIn-Page"><a href="#intro">Introduction</a></li> 
+             <li class=" anchor loggedIn-Page"><a href="#login">Alumni Login</a></li> 
+             <li class=" anchor loggedIn-Page"><a href="#gettingstarted">Getting Started</a></li> 
+             <li class=" anchor"><a href="#community">Online Community</a></li> 
+             <li class=" redirect"><a href="https://tigernet.princeton.edu/s/1760/02-tigernet/20/interior.aspx?gid=2&amp;pgid=254&amp;sid=1760#community">Online Community</a></li> 
+             <li class=" anchor"><a href="#faqs">Frequently Asked Questions</a></li> 
+             <li class=" redirect"><a href="https://tigernet.princeton.edu/s/1760/02-tigernet/20/interior.aspx?gid=2&amp;pgid=254&amp;sid=1760#faqs">Frequently Asked Questions</a></li> 
+             <li class=" anchor"><a href="#helpdesk">TigerNet Help Desk</a></li> 
+             <li class=" redirect"><a href="https://tigernet.princeton.edu/s/1760/02-tigernet/20/interior.aspx?gid=2&amp;pgid=254&amp;sid=1760#helpdesk">TigerNet Help Desk</a></li> 
+             <li class=" anchor"><a href="#policy">TigerNet Policy</a></li> 
+             <li class=" redirect"><a href="https://tigernet.princeton.edu/s/1760/02-tigernet/20/interior.aspx?gid=2&amp;pgid=254&amp;sid=1760#policy">TigerNet Policy</a></li> 
+             <li class=" "><a href="https://princeton.imodules.com/s/1760/02-tigernet/index.aspx?sid=1760&amp;gid=2&amp;pgid=94&amp;cid=256#/PersonalProfile">My Profile</a></li> 
+             <li class=" "><a href="https://tigernet.princeton.edu/s/1760/02-tigernet/20/interior.aspx?sid=1760&amp;gid=2&amp;pgid=2377">My Alumni Email</a></li> 
+             <li class=" "><a href="https://tigernet.princeton.edu/s/1760/02-tigernet/20/interior.aspx?sid=1760&amp;gid=2&amp;pgid=521">Leadership Search</a></li> 
+            </ul>
+           </div> 
+          </nav> 
+         </div> 
+        </div> <!-- MAIN COLUMN --> 
+        <section class="col-12 col-lg-offset-1 col-lg-32 mainWrap"> 
+         <div class="d-none d-md-block pageName"> 
+          <div id="ContentMiddleLayoutPageName">
+           <h1>TigerNet</h1> 
+          </div> 
+          <div id="ContentPageName"></div> 
+         </div> 
+         <div id="ContentMiddleLayoutModule"></div> 
+         <div id="ContentMiddle">
+          <div tabindex="-1" class="anchorLanding" id="intro">
+           &nbsp;
+          </div> 
+          <p>Welcome to TigerNet, Princeton's online alumni community and suite of volunteer tools. Only TigerNet provides you with a secure, password-protected location to connect with fellow Princetonians. The TigerNet suite of online services is free and available to all Princeton alumni, so register today and start taking advantage of all that TigerNet has to offer.</p> 
+          <hr> 
+          <div tabindex="-1" class="anchorLanding" id="login">
+           &nbsp;
+          </div> 
+          <h2 class="h3">TigerNet Login</h2> 
+          <div class="divLoginStructContainer"> 
+           <div id="cid_40_vsLogin" class="error" style="color:Red;display:none;"> 
+           </div> <span id="cid_40_lblPageTitle" class="PageTitleHeader">Login</span> 
+           <div id="divSsoLogin" class="encompassOrSsoLogin" visible="False"> 
+            <input type="submit" name="cid_40$btnEncompassLogin" value="Encompass Login" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;cid_40$btnEncompassLogin&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="cid_40_btnEncompassLogin" class="buttonEncompassLogin">
+            <input type="submit" name="cid_40$btnSsoLogin" value="Login" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;cid_40$btnSsoLogin&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="cid_40_btnSsoLogin" class="buttonSsoLogin"> 
+           </div> <!--<div class="row">
+    	<div class="col-sm-12 instructionTxt">
+        	<span id="cid_40_lblLoginInstructions" class="instructions">If you are already registered, please log in with your information below.  If you have not yet registered and would like to do so, please <a href="/s/1760/index.aspx?sid=1760&gid=2&pgid=8">click here to begin the process.</a></span>
+        </div>
+    </div>--> 
+          </div> 
+          <div id="gettingstarted" class="anchorLanding" tabindex="-1">
+           &nbsp;
+          </div> 
+          <h2 class="h3">Getting Started</h2> 
+          <p>Access to the TigerNet Online Community portion of the Alumni Association's website is only given to undergraduate and graduate alumni of Princeton.</p> 
+          <p>New graduates (undergraduates and graduates, beginning with the Class of 2006) <strong>do not need to register</strong> for access to TigerNet. The University automatically grants access to new alumni post-commencement via their existing University NetID and password.</p> 
+          <p>Register via the <a href="https://puwebp.princeton.edu/tigerNet/">TigerNet Authentication System (TAS)</a>.</p> 
+          <hr> 
+          <div id="community" class="anchorLanding" tabindex="-1">
+           &nbsp;
+          </div> 
+          <h2 class="h3">Online Community</h2> 
+          <p>The TigerNet Online Community provides you with a secure, password-protected location to connect with fellow Princetonians. This suite of online services is free and available to all Princeton alumni, so register today and start taking advantage of all that the TigerNet Online Community has to offer.</p> 
+          <input type="hidden" id="hfddlRecordsMode" name="hfddlRecordsMode" value=""> 
+          <div id="imodcmscalendar17815" class="imodcmscalendar listing-view" style="width:100%;">
+           <div style="text-align:left;"></div>
+           <div class="cms-listing">
+            <div style="clear:both;">
+             <div class="newsItem hasThumb"> 
+              <div class="tools"></div> <a href="https://tigernet.princeton.edu/s/1760/02-tigernet/index.aspx?sid=1760&amp;gid=2&amp;pgid=6#/Search/Advanced" target="_self"> 
+               <div class="thumb">
+                <img alt="" src="/s/1760/images/content_images/directory_637489745888112115.png">
+               </div> 
+               <div class="text"> 
+                <div class="title">
+                 Alumni Directory
+                </div> 
+                <div aria-hidden="true" class="preview">
+                 A comprehensive suite of tools to deliver targeted and engaging email messages, create custom queries and view reports.
+                </div> 
+               </div> </a> 
+             </div>
+             <div class="newsItem hasThumb"> 
+              <div class="tools"></div> <a href="https://princeton.imodules.com/s/1760/02-tigernet/index.aspx?sid=1760&amp;gid=2&amp;pgid=94&amp;cid=256#/PersonalProfile" target="_self"> 
+               <div class="thumb">
+                <img alt="" src="/s/1760/images/content_images/profile_637489746473178811.png">
+               </div> 
+               <div class="text"> 
+                <div class="title">
+                 My TigerNet Profile
+                </div> 
+                <div aria-hidden="true" class="preview">
+                 View and update your personal and professional information in your My TigerNet Profile.
+                </div> 
+               </div> </a> 
+             </div>
+             <div class="newsItem hasThumb"> 
+              <div class="tools"></div> <a href="https://alumni.princeton.edu/tigernet/onlinecommunity/email" target="_self"> 
+               <div class="thumb">
+                <img alt="" src="/s/1760/images/content_images/alumemail_637489747598020136.png">
+               </div> 
+               <div class="text"> 
+                <div class="title">
+                 Alumni Email
+                </div> 
+                <div aria-hidden="true" class="preview">
+                 Use either University-created email forwarding or a full email account through Gmail with your @alumni.princeton.edu email address.
+                </div> 
+               </div> </a> 
+             </div>
+             <div class="newsItem hasThumb"> 
+              <div class="tools"></div> <a href="http://princeton.connectedcommunity.org/amslogin" target="_self"> 
+               <div class="thumb">
+                <img alt="" src="/s/1760/images/content_images/discussion_637489748187376716.jpg">
+               </div> 
+               <div class="text"> 
+                <div class="title">
+                 Discussion Groups
+                </div> 
+                <div aria-hidden="true" class="preview">
+                 Come together and communicate with fellow alumni on a variety of different topics including classes, regions, professional/career, eating clubs and other interests.
+                </div> 
+               </div> </a> 
+             </div>
+             <div class="newsItem hasThumb"> 
+              <div class="tools"></div> <a href="https://tigernet.princeton.edu/s/1760/02-tigernet/20/interior.aspx?sid=1760&amp;gid=2&amp;pgid=106" target="_self"> 
+               <div class="thumb">
+                <img alt="" src="/s/1760/images/content_images/newsnotes_637489748676639835.png">
+               </div> 
+               <div class="text"> 
+                <div class="title">
+                 Alumni News &amp; Notes
+                </div> 
+                <div aria-hidden="true" class="preview">
+                 Share news and events with friends and TigerNet community members or find out what your fellow alumni are up to these days.
+                </div> 
+               </div> </a> 
+             </div>
+            </div>
+           </div>
+           <div class="cms-footer-icons"></div>
+          </div>
+          <input name="cid_17815$hidSelectedDate" type="hidden" id="cid_17815_hidSelectedDate"> 
+          <input type="hidden" id="hfddlRecordsMode" name="hfddlRecordsMode" value=""> 
+          <div id="imodcmscalendar17817" class="imodcmscalendar listing-view" style="width:100%;">
+           <div id="CalTitle17817">
+            <hr> 
+            <div tabindex="-1" class="anchorLanding" id="faqs">
+             &nbsp;
+            </div> 
+            <h2 class="h3">Frequently Asked Questions</h2>
+           </div>
+           <div style="text-align:left;"></div>
+           <div class="cms-listing">
+            <div style="clear:both;">
+             <div class="panelCollapse collapseItem"> <a data-toggle="collapse" class="collapsed accordionToggle" role="button" aria-expanded="false"> <span class="accText">What criteria must my password meet?</span> <span aria-hidden="true" class="arrows">
+                <svg class="icon">
+                 <use xlink:href="#arrow-down" />
+                </svg></span> </a> 
+              <div class="panel-collapse collapse collapseItem" role="tabpanel"> 
+               <div class="accordionPanelWrap panel-body"> 
+                <div class="preview">
+                 <p>During the&nbsp;<a href="https://puwebp.princeton.edu/tigerNet/startPage.jsf?type=A1" target="_blank">TigerNet registration</a> process, your selected password must meet specific password security rules.</p> 
+                 <p>You will be required to select a password or passphrase that meets the following security rules:<br> <br> PASSWORD: </p> 
+                 <ul> 
+                  <li>contains at least 10 characters, and a maximum of 15 characters</li> 
+                  <li>contains both upper and lower case characters</li> 
+                  <li>contains at least one number</li> 
+                  <li>contains at least one of the following characters:<br> ~!@#$%^&amp;*()_+={}[]|:;"&lt;&gt;,.?</li> 
+                  <li>must not contain your first name, last name or NetID</li> 
+                 </ul> PASSPHRASE: 
+                 <ul> 
+                  <li> contains at least 15 characters consisting of letters and spaces</li> 
+                  <li> contains at least 1 number OR 1 symbol</li> 
+                  <li>must not contain your first name, last name or NetID</li> 
+                 </ul> 
+                 <p>To review these rules, please visit the <a href="https://puwebp.princeton.edu/tigerNet/startPage.jsf" target="_blank">TigerNet Passwords page</a>&nbsp;and select "Change Password."<br> </p>
+                </div> 
+               </div> 
+              </div> 
+             </div>
+             <div class="panelCollapse collapseItem"> <a data-toggle="collapse" class="collapsed accordionToggle" role="button" aria-expanded="false"> <span class="accText"> Who is eligible to access the TigerNet Online Community?</span> <span aria-hidden="true" class="arrows">
+                <svg class="icon">
+                 <use xlink:href="#arrow-down" />
+                </svg></span> </a> 
+              <div class="panel-collapse collapse collapseItem" role="tabpanel"> 
+               <div class="accordionPanelWrap panel-body"> 
+                <div class="preview">
+                 Princeton University undergraduate and graduate alumni are eligible to sign up for the TigerNet Online Community. Current students can also access certain portions of the site using their University NetID and password. Access is not granted to: honorary members, exchange students, relatives (spouse, widow/er, child, sibling) or friends.
+                </div> 
+               </div> 
+              </div> 
+             </div>
+             <div class="panelCollapse collapseItem"> <a data-toggle="collapse" class="collapsed accordionToggle" role="button" aria-expanded="false"> <span class="accText">What portions of TigerNet can current students, faculty and staff access with their University NetID and password?</span> <span aria-hidden="true" class="arrows">
+                <svg class="icon">
+                 <use xlink:href="#arrow-down" />
+                </svg></span> </a> 
+              <div class="panel-collapse collapse collapseItem" role="tabpanel"> 
+               <div class="accordionPanelWrap panel-body"> 
+                <div class="preview">
+                 Current students, faculty and staff are eligible for limited access to TigerNet. Current students may access the Alumni Directory Search and Discussion Groups. Faculty and staff may access Discussion Groups. PLEASE NOTE: Any section you do not have access to will return an error message.
+                </div> 
+               </div> 
+              </div> 
+             </div>
+             <div class="panelCollapse collapseItem"> <a data-toggle="collapse" class="collapsed accordionToggle" role="button" aria-expanded="false"> <span class="accText">Is TigerNet a secure database?</span> <span aria-hidden="true" class="arrows">
+                <svg class="icon">
+                 <use xlink:href="#arrow-down" />
+                </svg></span> </a> 
+              <div class="panel-collapse collapse collapseItem" role="tabpanel"> 
+               <div class="accordionPanelWrap panel-body"> 
+                <div class="preview">
+                 TigerNet is a secure, password-protected online database owned by Princeton University and serviced through iModules. Authentication is controlled through the TigerNet Authentication System (TAS) on University servers, and the web pages are protected by an SSL Certificate. A verified University affiliation and authenticated login are required to access the information contained in TigerNet. For more information, visit our <a href="https://alumni.princeton.edu/tigernet-authentication-service-tas">TAS fact sheet</a>.
+                </div> 
+               </div> 
+              </div> 
+             </div>
+             <div class="panelCollapse collapseItem"> <a data-toggle="collapse" class="collapsed accordionToggle" role="button" aria-expanded="false"> <span class="accText">How do I register for TigerNet?</span> <span aria-hidden="true" class="arrows">
+                <svg class="icon">
+                 <use xlink:href="#arrow-down" />
+                </svg></span> </a> 
+              <div class="panel-collapse collapse collapseItem" role="tabpanel"> 
+               <div class="accordionPanelWrap panel-body"> 
+                <div class="preview">
+                 You can register for TigerNet by clicking "Getting Started" on the left side navigation on the <a href="https://tigernet.princeton.edu/">TigerNet homepage</a>.
+                </div> 
+               </div> 
+              </div> 
+             </div>
+             <div class="panelCollapse collapseItem"> <a data-toggle="collapse" class="collapsed accordionToggle" role="button" aria-expanded="false"> <span class="accText">Can I change my TigerNet account NetID?</span> <span aria-hidden="true" class="arrows">
+                <svg class="icon">
+                 <use xlink:href="#arrow-down" />
+                </svg></span> </a> 
+              <div class="panel-collapse collapse collapseItem" role="tabpanel"> 
+               <div class="accordionPanelWrap panel-body"> 
+                <div class="preview">
+                 TigerNet account NetIDs can only be changed for compelling reasons, such as a legal name change or security concerns. If you feel you have a compelling reason to request a NetID change, please email <a href="mailto:tigernet@princeton.edu">tigernet@princeton.edu</a>.
+                </div> 
+               </div> 
+              </div> 
+             </div>
+             <div class="panelCollapse collapseItem"> <a data-toggle="collapse" class="collapsed accordionToggle" role="button" aria-expanded="false"> <span class="accText">Can I change my TigerNet password?</span> <span aria-hidden="true" class="arrows">
+                <svg class="icon">
+                 <use xlink:href="#arrow-down" />
+                </svg></span> </a> 
+              <div class="panel-collapse collapse collapseItem" role="tabpanel"> 
+               <div class="accordionPanelWrap panel-body"> 
+                <div class="preview">
+                 Yes. To change your TigerNet account password, please go to <a href="https://puwebp.princeton.edu/tigerNet/startPage.jsf?type=A1" target="_blank">TigerNet Account Services</a>.
+                </div> 
+               </div> 
+              </div> 
+             </div>
+             <div class="panelCollapse collapseItem"> <a data-toggle="collapse" class="collapsed accordionToggle" role="button" aria-expanded="false"> <span class="accText">I forgot my password. How can I access my account?</span> <span aria-hidden="true" class="arrows">
+                <svg class="icon">
+                 <use xlink:href="#arrow-down" />
+                </svg></span> </a> 
+              <div class="panel-collapse collapse collapseItem" role="tabpanel"> 
+               <div class="accordionPanelWrap panel-body"> 
+                <div class="preview">
+                 Alumni can reset and change their own password through a self-service interface known as <a href="https://puwebp.princeton.edu/tigerNet/startPage.jsf?type=A1">TigerNet Account Services</a>. Information will be sent to the email address designated as "preferred" in the TigerNet system.
+                </div> 
+               </div> 
+              </div> 
+             </div>
+             <div class="panelCollapse collapseItem"> <a data-toggle="collapse" class="collapsed accordionToggle" role="button" aria-expanded="false"> <span class="accText">Can I use my TigerNet account NetID and password to access other alumni-related websites?</span> <span aria-hidden="true" class="arrows">
+                <svg class="icon">
+                 <use xlink:href="#arrow-down" />
+                </svg></span> </a> 
+              <div class="panel-collapse collapse collapseItem" role="tabpanel"> 
+               <div class="accordionPanelWrap panel-body"> 
+                <div class="preview">
+                 Your TigerNet account NetID and password can be used to access the following websites: 
+                 <ul> 
+                  <li><a href="https://secure.redesign-imodules.com/tigernet" target="_self">Alumni Association's TigerNet Online Community</a></li> 
+                  <li><a href="https://admissionapp.princeton.edu/asc-interview/index.jsf" target="_blank" class="ext" rel="noopener noreferrer">Alumni Schools Committee Resources<span class="ext" aria-label="(link is external)"></span></a></li> 
+                  <li><a href="http://registrar.princeton.edu/student-services/transcript/" target="_blank" class="ext" rel="noopener noreferrer">Princeton Transcript Requests<span class="ext" aria-label="(link is external)"></span></a></li> 
+                  <li><a href="http://volunteer.princeton.edu/" target="_blank" class="ext" rel="noopener noreferrer">Annual Giving's Tiger Tracks<span class="ext" aria-label="(link is external)"></span></a></li> 
+                  <li><a href="http://paw.princeton.edu/issues/2011/07/06/sections/class-notes/" target="_blank" class="ext" rel="noopener noreferrer">PAW Class Notes<span class="ext" aria-label="(link is external)"></span></a></li> 
+                 </ul>
+                </div> 
+               </div> 
+              </div> 
+             </div>
+            </div>
+           </div>
+           <div class="cms-footer-icons"></div>
+          </div>
+          <input name="cid_17817$hidSelectedDate" type="hidden" id="cid_17817_hidSelectedDate"> 
+          <div tabindex="-1" class="anchorLanding" id="helpdesk">
+           &nbsp;
+          </div> 
+          <h2 class="h3">TigerNet Help Desk</h2> 
+          <p>In order to ensure that your question or concern is addressed as promptly as possible, contact the appropriate TigerNet Help Desk.</p> 
+          <p>&nbsp;</p> 
+          <div class="snippetrow">
+           <div class="split50left">
+            <h3>Community Help Desk</h3>
+            <p><strong>For issues related to:</strong> Alumni Directory, My TigerNet Profile, Alumni Email, Discussion Groups, Alumni News &amp; Notes</p>
+            <ul class="contact">
+             <li class="mail"><a href="mailto:tigernet@princeton.edu">tigernet@princeton.edu</a></li>
+             <li class="phone">609-258-1542</li>
+            </ul>
+           </div>
+           <div class="split50right">
+            <h3>Volunteer Tools Help Desk</h3>
+            <p><strong>For issues related to:</strong> Broadcast Email, Website Content Management</p>
+            <ul class="contact">
+             <li class="mail"><a href="mailto:alumnivolunteers@princeton.edu">alumnivolunteers@princeton.edu</a></li>
+             <li class="phone">855-249-1829</li>
+            </ul>
+            <p><strong>Hours:</strong></p>
+            <p>Monday-Friday: <br> 8:00 a.m. – 6:00 p.m. ET</p>
+            <p>Saturday-Sunday:<br> 10:00 a.m. – 3:00 p.m. ET</p>
+           </div>
+          </div> 
+          <div class="snippetrow">
+           <div>
+            <hr>
+            <div tabindex="-1" class="anchorLanding" id="policy">
+             &nbsp;
+            </div>
+            <h2 class="h3">TigerNet Policy</h2>
+            <p>TigerNet is a set of online services created to further communication among alumni and students of Princeton University. TigerNet is owned and operated by The Trustees of Princeton University.</p>
+            <p>Princeton prizes the diversity of viewpoints fostered by academic institutions and is steadfast in its commitment to freedom of expression, encouraging the free exchange of ideas and perspectives.</p>
+            <p>Consistent with the principles expressed in Rights, Rules, and Responsibilities published by the University, TigerNet is intended to foster a diversity of perspectives in a climate of civility and mutual respect. This requires respect for others' viewpoints and individuality and obligates all users of these services to exercise discretion and maintain civility in their communications on TigerNet.</p>
+            <p>To that end, all those individuals utilizing TigerNet agree not to engage in abusive, harassing, threatening or hostile communications that demean, intimidate or result in injury to another individual because of personal characteristics or beliefs, particularly those including, but not limited to, sex, sexual orientation, race, ethnicity, national origin, religion, disability or handicap. Certain uses of TigerNet are inconsistent with the purposes for which it was created. Such uses include, but are not limited to, those that: 1) are illegal or fraudulent; 2) inaccurately imply endorsement, approval or sponsorship by Princeton University or any office of the University; or 3) involve mass distributions for any personal, commercial (e.g., ads or spamming) or political activity. Not condoning censorship, Princeton cannot protect individuals against the existence or receipt of materials that may be offensive to them. However, if Princeton believes, in its sole discretion, that a user’s participation in TigerNet creates liability for Princeton or violates the guidelines set forth here, Princeton reserves the right to take any and all actions it deems necessary and appropriate including, but not limited to: deleting a posting, limiting or denying a user's access to TigerNet, or canceling a discussion group.</p>
+            <p>Princeton University reserves the right to discontinue any and all services at any time or to unilaterally revise the terms of this policy without advance notice. Use of TigerNet constitutes your agreement to abide by these regulations.</p>
+           </div>
+          </div> 
+         </div> 
+        </section> 
+       </div> 
+      </div> 
+     </section> 
+    </main> <!-- /.structBody --> <!-- FOOTER --> 
+    <footer> 
+     <div class="container"> 
+      <div class="row"> 
+       <div class="col-2 col-md-7 col-md-offset-1 footLogo"> 
+        <div id="ContentFooterLogo">
+         <a target="_blank" href="http://alumni.princeton.edu/"> <img class="footLogo" alt="Princeton Unversity Alumni home." src="images/logo_reverse.svg"> </a> 
+        </div> 
+       </div> 
+       <div class="col-2 col-md-10 col-md-offset-4 footCta"> 
+        <div id="ContentFooterCta"></div> 
+       </div> 
+       <div class="col-2 col-md-35 col-md-offset-13 col-lg-22 col-lg-offset-3 footLinks"> 
+        <nav id="ContentFooterLinks" class="imodSiteMap"> 
+         <ul class="row split-list"> 
+          <li class=" "><a href="http://alumni.princeton.edu/contact/">Contact</a></li> 
+          <li class=" "><a href="http://alumni.princeton.edu/about/">About</a></li> 
+          <li class=" "><a href="https://alumni.princeton.edu/calendar">Events</a></li> 
+          <li class=" "><a href="https://alumni.princeton.edu/alumniservices">Alumni Services</a></li> 
+          <li class=" "><a href="https://makeagift.princeton.edu/MainSite/MakeAGift?utm_campaign=givingtoprinceton&amp;utm_medium=web&amp;utm_source=giving">Make A Gift</a></li> 
+          <li class=" "><a href="https://www.princeton.edu/">Princeton University</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+      </div> 
+      <div class="row"> 
+       <div class="d-none d-sm-block col-md-46 col-md-offset-1"> 
+        <div class="ftDivider"></div> 
+       </div> 
+      </div> 
+      <div class="row align-items-center"> 
+       <div class="col-2 col-md-30 col-md-offset-1 subFootLeft"> 
+        <div id="ContentFooterLeft">
+         <div class="d-sm-none"> 
+          <ul class="social"> 
+           <li> <a href="https://www.facebook.com/princetonalumni" target="_blank" aria-label="Like Princeton Alumni on Facebook"> 
+             <svg class="icon">
+              <use xlink:href="#social-facebook" />
+             </svg> </a> <br> </li> 
+           <li><a href="https://twitter.com/princetonalumni" target="_blank" aria-label="Follow Princeton Alumni on Twitter"> 
+             <svg class="icon">
+              <use xlink:href="#social-twitter" />
+             </svg> </a><br> </li> 
+           <li><a href="https://www.linkedin.com/groups?gid=3482603" target="_blank" aria-label="Join Princeton Alumni on LinkedIn"> 
+             <svg class="icon">
+              <use xlink:href="#social-linkedin" />
+             </svg> </a><br> </li> 
+           <li><a href="https://instagram.com/princetonalumni" target="_blank" aria-label="Follow Princeton Alumni on Instagram"> 
+             <svg class="icon">
+              <use xlink:href="#social-instagram" />
+             </svg> </a><br> </li> 
+          </ul> 
+         </div> 
+         <ul class="copyright"> 
+          <li>Copyright © 2022 The Trustees of Princeton University</li> 
+          <li><a href="https://accessibility.princeton.edu/resources/accessibility-help">Accessibility</a></li> 
+          <li><a href="https://advancementdataprivacy.princeton.edu/">Advancement Data Privacy Policy</a></li> 
+         </ul> 
+        </div> 
+       </div> 
+       <div class="d-none d-sm-block col-md-16 subFootRight"> 
+        <div id="ContentFooterRight" class="ctaBtn">
+         <ul class="social"> 
+          <li> <a aria-label="Like Princeton Alumni on Facebook" target="_blank" href="https://www.facebook.com/princetonalumni"> 
+            <svg class="icon">
+             <use xlink:href="#social-facebook" />
+            </svg> </a> <br> </li> 
+          <li><a aria-label="Follow Princeton Alumni on Twitter" target="_blank" href="https://twitter.com/princetonalumni"> 
+            <svg class="icon">
+             <use xlink:href="#social-twitter" />
+            </svg> </a><br> </li> 
+          <li><a aria-label="Join Princeton Alumni on LinkedIn" target="_blank" href="https://www.linkedin.com/groups?gid=3482603"> 
+            <svg class="icon">
+             <use xlink:href="#social-linkedin" />
+            </svg> </a><br> </li> 
+          <li><a aria-label="Follow Princeton Alumni on Instagram" target="_blank" href="https://instagram.com/princetonalumni"> 
+            <svg class="icon">
+             <use xlink:href="#social-instagram" />
+            </svg> </a><br> </li> 
+         </ul> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </footer> 
+    <svg class="d-none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 19 19" style="enable-background:new 0 0 19 19;" xml:space="preserve"> <symbol id="icon-search" viewbox="0 0 19 19"> 
+      <path d="M7.61742592,0 C11.8244141,0 15.2348518,3.41043775 15.2348518,7.61742592 C15.2348518,9.35472836 14.6532599,10.9561927 13.6741528,12.2377421 L19,17.5636444 L17.5636444,19 L12.2377421,13.6741528 C10.9561927,14.6532599 9.35472836,15.2348518 7.61742592,15.2348518 C3.41043775,15.2348518 0,11.8244141 0,7.61742592 C0,3.41043775 3.41043775,0 7.61742592,0 Z M7.61742592,2.03131358 C4.53230126,2.03131358 2.03131358,4.53230126 2.03131358,7.61742592 C2.03131358,10.7025506 4.53230126,13.2035383 7.61742592,13.2035383 C10.7025506,13.2035383 13.2035383,10.7025506 13.2035383,7.61742592 C13.2035383,4.53230126 10.7025506,2.03131358 7.61742592,2.03131358 Z" id="search"></path> 
+     </symbol> <symbol id="menu-burger" viewbox="0 0 25 14"> 
+      <path d="M25,12 L25,14 L0,14 L0,12 L25,12 Z M20,6 L20,8 L0,8 L0,6 L20,6 Z M25,0 L25,2 L0,2 L0,0 L25,0 Z" id="Combined-Shape"></path> 
+     </symbol> <symbol id="icon-close" viewbox="0 0 18 18"> 
+      <path d="M16.5696808,1.59872116e-14 L18,1.43031922 L10.43,9 L18,16.5696808 L16.5696808,18 L9,10.43 L1.43031922,18 L-4.26325641e-14,16.5696808 L7.569,9 L-4.4408921e-14,1.43031922 L1.43031922,1.59872116e-14 L9,7.57 L16.5696808,1.59872116e-14 Z" id="close"></path> 
+     </symbol> <symbol id="arrow-down" viewbox="0 0 15 9"> 
+      <polygon id="icon-arrow-down" points="7.5 6.21428571 13.7142857 0 15 1.28571429 7.5 8.78571429 0 1.28571429 1.28571429 1.07663483e-15"></polygon> 
+     </symbol> <symbol id="arrow-up" viewbox="0 0 15 9"> 
+      <polygon id="icon-arrow-up" transform="translate(7.500000, 4.392857) scale(1, -1) translate(-7.500000, -4.392857) " points="7.5 6.21428571 13.7142857 0 15 1.28571429 7.5 8.78571429 0 1.28571429 1.28571429 1.07663483e-15"></polygon> 
+     </symbol> <symbol id="arrow-left" viewbox="0 0 9 16"> 
+      <polygon id="icon-arrow-left" transform="translate(4.392857, 7.500000) rotate(90.000000) translate(-4.392857, -7.500000) " points="4.39285714 9.32142857 10.6071429 3.10714286 11.8928571 4.39285714 4.39285714 11.8928571 -3.10714286 4.39285714 -1.82142857 3.10714286"></polygon> 
+     </symbol> <symbol id="arrow-right" viewbox="0 0 9 15"> 
+      <polygon id="icon-arrow-right" transform="translate(4.392857, 7.500000) scale(-1, 1) rotate(90.000000) translate(-4.392857, -7.500000) " points="4.39285714 9.32142857 10.6071429 3.10714286 11.8928571 4.39285714 4.39285714 11.8928571 -3.10714286 4.39285714 -1.82142857 3.10714286"></polygon> 
+     </symbol> <symbol id="social-facebook" viewbox="0 0 19 19"> 
+      <path d="M17.9512,0 L1.0488,0 C0.469563754,0 0,0.469563754 0,1.0488 L0,17.9512 C0,18.5304362 0.469563754,19 1.0488,19 L10.14904,19 L10.14904,11.65232 L7.68132,11.65232 L7.68132,8.77648 L10.14904,8.77648 L10.14904,6.6614 C10.14904,4.20736 11.64776,2.87128 13.83732,2.87128 C14.5762868,2.86864677 15.3148441,2.90644995 16.04968,2.98452 L16.04968,5.548 L14.53576,5.548 C13.34788,5.548 13.11836,6.11344 13.11836,6.94412 L13.11836,8.77572 L15.96608,8.77572 L15.5952,11.65156 L13.11836,11.65156 L13.11836,19 L17.9512,19 C18.5304362,19 19,18.5304362 19,17.9512 L19,1.0488 C19,0.469563754 18.5304362,0 17.9512,0 Z" id="socialicon-facebook-path"></path> 
+     </symbol> <symbol id="social-instagram" viewbox="0 0 19 19"> 
+      <path d="M9.5,0 C6.9,0 6.6,0 5.6,0.1 C4.6,0.1 3.9,0.3 3.3,0.5 C2.7,0.7 2.1,1.1 1.6,1.6 C1.1,2.1 0.7,2.7 0.5,3.3 C0.3,3.9 0.1,4.6 0.1,5.6 C0,6.6 0,6.9 0,9.5 C0,12.1 0,12.4 0.1,13.4 C0.1,14.4 0.3,15.1 0.5,15.7 C0.7,16.3 1.1,16.9 1.6,17.4 C2.1,17.9 2.7,18.3 3.3,18.5 C3.9,18.7 4.6,18.9 5.6,18.9 C6.6,18.9 6.9,19 9.5,19 C12.1,19 12.4,19 13.4,18.9 C14.4,18.9 15.1,18.7 15.7,18.5 C16.3,18.3 16.9,17.9 17.4,17.4 C17.9,16.9 18.3,16.3 18.5,15.7 C18.7,15.1 18.9,14.4 18.9,13.4 C18.9,12.4 19,12.1 19,9.5 C19,6.9 19,6.6 18.9,5.6 C18.9,4.6 18.7,3.9 18.5,3.3 C18.3,2.7 17.9,2.1 17.4,1.6 C16.9,1.1 16.3,0.7 15.7,0.5 C15.1,0.3 14.4,0.1 13.4,0.1 C12.4,0 12.1,0 9.5,0 M9.5,1.7 C12,1.7 12.3,1.7 13.3,1.8 C14.2,1.8 14.7,2 15.1,2.1 C15.5,2.3 15.9,2.5 16.2,2.8 C16.5,3.1 16.7,3.5 16.9,3.9 C17,4.2 17.2,4.7 17.2,5.7 C17.2,6.7 17.3,7 17.3,9.6 C17.3,12.1 17.3,12.4 17.2,13.4 C17.2,14.3 17,14.8 16.9,15.2 C16.7,15.6 16.5,16 16.2,16.3 C15.9,16.6 15.6,16.8 15.1,17 C14.8,17.1 14.3,17.3 13.3,17.3 C12.3,17.3 12,17.4 9.5,17.4 C7,17.4 6.7,17.4 5.7,17.3 C4.8,17.3 4.3,17.1 3.9,17 C3.5,16.8 3.1,16.6 2.8,16.3 C2.5,16 2.3,15.6 2.1,15.2 C2,14.9 1.8,14.4 1.8,13.4 C1.8,12.4 1.7,12.1 1.7,9.6 C1.7,7.1 1.7,6.8 1.8,5.7 C1.8,4.8 2,4.3 2.1,3.9 C2.3,3.5 2.5,3.1 2.8,2.8 C3.1,2.5 3.4,2.3 3.9,2.1 C4.2,2 4.7,1.8 5.7,1.8 C6.7,1.7 7,1.7 9.5,1.7 M9.5,12.7 C7.8,12.7 6.3,11.3 6.3,9.5 C6.3,7.7 7.7,6.3 9.5,6.3 C11.3,6.3 12.7,7.7 12.7,9.5 C12.7,11.3 11.2,12.7 9.5,12.7 M9.5,4.6 C6.8,4.6 4.6,6.8 4.6,9.5 C4.6,12.2 6.8,14.4 9.5,14.4 C12.2,14.4 14.4,12.2 14.4,9.5 C14.4,6.8 12.2,4.6 9.5,4.6 M15.7,4.4 C15.7,5 15.2,5.5 14.6,5.5 C14,5.5 13.5,5 13.5,4.4 C13.5,3.8 14,3.3 14.6,3.3 C15.2,3.3 15.7,3.8 15.7,4.4" id="socialicon-instagram-path"></path> 
+     </symbol> <symbol id="social-linkedin" viewbox="0 0 19 19"> 
+      <path d="M19,15.4220779 C19,17.3961039 17.3961039,19 15.4220779,19 L3.57792208,19 C1.6038961,19 0,17.3961039 0,15.4220779 L0,3.57792208 C0,1.6038961 1.6038961,0 3.57792208,0 L15.4220779,0 C17.3961039,0 19,1.6038961 19,3.57792208 L19,15.4220779 Z M4.44155844,3.20779221 C3.45454545,3.20779221 2.83766234,3.82467532 2.83766234,4.68831169 C2.71428571,5.55194805 3.33116883,6.16883117 4.31818182,6.16883117 L4.31818182,6.16883117 C5.30519481,6.16883117 5.92207792,5.55194805 5.92207792,4.68831169 C5.92207792,3.82467532 5.30519481,3.20779221 4.44155844,3.20779221 Z M5.7987013,15.9155844 L5.7987013,7.27922078 L2.96103896,7.27922078 L2.96103896,15.9155844 L5.7987013,15.9155844 Z M16.038961,15.9155844 L16.038961,10.9805195 C16.038961,8.38961039 14.6818182,7.15584416 12.7077922,7.15584416 C11.2272727,7.15584416 10.6103896,8.01948052 10.2402597,8.63636364 L10.2402597,8.63636364 L10.2402597,7.4025974 L7.4025974,7.4025974 C7.4025974,7.4025974 7.4025974,8.26623377 7.4025974,16.038961 L10.2402597,16.038961 L10.2402597,11.1038961 C10.2402597,10.8571429 10.2402597,10.6103896 10.3636364,10.3636364 C10.487013,9.87012987 10.9805195,9.37662338 11.8441558,9.37662338 C12.8311688,9.37662338 13.3246753,10.1168831 13.3246753,11.3506494 L13.3246753,15.9155844 L16.038961,15.9155844 L16.038961,15.9155844 Z" id="socialicon-linkedin-path"></path> 
+     </symbol> <symbol id="social-twitter" viewbox="0 0 19 16"> 
+      <path d="M19,1.8173913 C18.3391304,2.06521739 17.5956522,2.31304348 16.7695652,2.47826087 C17.5130435,1.9826087 18.173913,1.15652174 18.4217391,0.247826087 C17.6782609,0.660869565 16.8521739,0.991304348 15.9434783,1.15652174 C15.2826087,0.495652174 14.2913043,1.15463195e-14 13.0521739,1.15463195e-14 C10.8217391,1.15463195e-14 9.16956522,1.65217391 9.16956522,3.8826087 C9.16956522,4.13043478 9.16956522,4.54347826 9.33478261,4.79130435 C6.11304348,4.62608696 3.22173913,3.13913043 1.23913043,0.660869565 C1.07391304,1.32173913 0.743478261,1.9826087 0.743478261,2.72608696 C0.743478261,4.04782609 1.40434783,5.36956522 2.39565217,5.94782609 C1.73478261,5.94782609 1.07391304,5.7 0.57826087,5.45217391 L0.57826087,5.45217391 C0.57826087,7.43478261 1.9,9.00434783 3.7173913,9.25217391 C3.46956522,9.4173913 3.22173913,9.5 2.80869565,9.5 C2.56086957,9.5 2.31304348,9.5 2.06521739,9.5 C2.56086957,11.0695652 4.04782609,12.1434783 5.7,12.226087 C4.37826087,13.3 2.72608696,13.8782609 0.908695652,13.8782609 C0.495652174,13.8782609 0.247826087,13.8782609 0,13.8782609 C1.65217391,15.0347826 3.8,15.5304348 5.94782609,15.5304348 C13.1347826,15.5304348 17.0173913,9.5826087 17.0173913,4.46086957 C17.0173913,4.29565217 17.0173913,4.04782609 17.0173913,3.96521739 C17.8434783,3.22173913 18.5043478,2.64347826 19,1.8173913" id="socialicon-twitter-path"></path> 
+     </symbol> <symbol id="social-youtube" viewbox="0 0 26 18"> 
+      <path d="M25.5220588,3.82352941 C25.5220588,3.82352941 25.2352941,2.10294118 24.4705882,1.33823529 C23.5147059,0.286764706 22.3676471,0.286764706 21.8897059,0.286764706 C18.3529412,-1.24344979e-14 12.9044118,-1.24344979e-14 12.9044118,-1.24344979e-14 L12.9044118,-1.24344979e-14 C12.9044118,-1.24344979e-14 7.45588235,-1.24344979e-14 3.91911765,0.286764706 C3.34558824,0.286764706 2.29411765,0.286764706 1.24264706,1.33823529 C0.477941176,2.10294118 0.286764706,3.82352941 0.286764706,3.82352941 C0.286764706,3.82352941 0,5.83088235 0,7.93382353 L0,9.84558824 C0,11.8529412 0.286764706,13.9558824 0.286764706,13.9558824 C0.286764706,13.9558824 0.573529412,15.6764706 1.33823529,16.4411765 C2.29411765,17.4926471 3.63235294,17.3970588 4.20588235,17.4926471 C6.30882353,17.6838235 13,17.7794118 13,17.7794118 C13,17.7794118 18.4485294,17.7794118 22.0808824,17.4926471 C22.5588235,17.3970588 23.7058824,17.3970588 24.6617647,16.4411765 C25.4264706,15.6764706 25.7132353,13.9558824 25.7132353,13.9558824 C25.7132353,13.9558824 26,11.9485294 26,9.84558824 L26,7.93382353 C25.8088235,5.83088235 25.5220588,3.82352941 25.5220588,3.82352941 Z M10.2279412,12.4264706 L10.2279412,5.25735294 L17.1102941,8.69852941 L10.2279412,12.4264706 Z" id="socialicon-youtube-path"></path> 
+     </symbol> 
+    </svg> <!-- Navigation drawer --> 
+    <div class="js-offcanvas" id="off-canvas" role="complementary"> 
+     <div class="c-offcanvas__inner"> 
+      <div class="menuTitleBar"> 
+       <h2 class="sr-only">Mobile Menu</h2> 
+      </div> 
+      <nav id="ContentMobileNav20" class="mainNav"> 
+       <ul> 
+        <li class=" mainTopNav"><a href="https://alumni.princeton.edu/our-community">Our Community</a> 
+         <ul> 
+          <li class=" "><a href="https://alumni.princeton.edu/our-community/alumni-association">Alumni Association</a> 
+           <ul> 
+            <li class=" "><a href="https://alumni.princeton.edu/our-community/alumni-association/alumni-council">Alumni Council Executive Committee</a></li> 
+           </ul> </li> 
+          <li class=" "><a href="https://alumni.princeton.edu/our-community/awards">Awards</a></li> 
+          <li class=" "><a href="https://alumni.princeton.edu/our-community/our-stories">Our Stories</a></li> 
+         </ul> </li> 
+        <li class=" mainTopNav"><a href="https://alumni.princeton.edu/connect">Connect</a> 
+         <ul> 
+          <li class=" "><a href="https://alumni.princeton.edu/connect/goin-back">Goin’ Back</a></li> 
+          <li class=" "><a href="https://alumni.princeton.edu/connect/princeton-journeys">Travel with Princeton Journeys</a></li> 
+          <li class=" "><a href="https://alumni.princeton.edu/connect/continued-learning">Continued Learning</a></li> 
+         </ul> </li> 
+        <li class=" mainTopNav"><a href="https://alumni.princeton.edu/volunteer">Volunteer</a> 
+         <ul> 
+          <li class=" "><a href="https://alumni.princeton.edu/volunteer/volunteer-opportunities">Opportunities</a> 
+           <ul> 
+            <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/volunteer-opportunities-affinity-groups">Affinity Groups</a></li> 
+            <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/annual-giving">Annual Giving</a></li> 
+            <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/arts">Arts</a></li> 
+            <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/athletics">Athletics</a></li> 
+            <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/classes-and-reunions">Class and Reunions</a></li> 
+            <li class=" "><a href="https://tigernet.princeton.edu/s/1760/02-tigernet/20/interior.aspx?sid=1760&amp;gid=2&amp;pgid=6732">Entrepreneurship</a></li> 
+            <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/classes-and-reunions#ew-6251">Graduate Alumni</a></li> 
+            <li class=" "><a href="https://alumni.princeton.edu/our-community/alumni-association/princeton-schools-committee">Interview Prospective Students</a></li> 
+            <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/mentorship-professional-development">Mentorship/Professional Development</a></li> 
+            <li class=" "><a href="https://alumni.princeton.edu/volunteer/opportunities/regional">Region</a></li> 
+           </ul> </li> 
+          <li class=" "><a href="https://alumni.princeton.edu/volunteer/resources">Resources</a> 
+           <ul> 
+            <li class=" "><a href="https://alumni.princeton.edu/volunteer/resources/annual-giving">Annual Giving</a></li> 
+            <li class=" "><a href="https://alumni.princeton.edu/volunteer/resources/class-volunteers">Class</a></li> 
+            <li class=" "><a href="https://alumni.princeton.edu/volunteer/resources/regional-volunteers">Region</a></li> 
+            <li class=" "><a href="https://tigernet.princeton.edu/s/1760/02-tigernet/20/interior.aspx?sid=1760&amp;gid=2&amp;pgid=6727">Reunions</a></li> 
+           </ul> </li> 
+         </ul> </li> 
+        <li class=" mainTopNav"><a href="https://alumni.princeton.edu/give">Give</a> 
+         <ul> 
+          <li class=" "><a href="https://alumni.princeton.edu/give/annual-giving">Annual Giving</a></li> 
+          <li class=" "><a href="https://alumni.princeton.edu/give/gift-planning">Gift Planning</a></li> 
+          <li class=" "><a href="https://alumni.princeton.edu/thanks-to-you">Thanks to You</a></li> 
+          <li class=" "><a href="https://alumni.princeton.edu/give/how-make-gift">How to Make a Gift</a></li> 
+         </ul> </li> 
+        <li class=" mainTopNav"><a href="https://alumni.princeton.edu/venture-forward">VENTURE FORWARD</a> 
+         <ul> 
+          <li class=" "><a href="https://alumni.princeton.edu/campaign-impact">CAMPAIGN IMPACT</a> 
+           <ul> 
+            <li class=" "><a href="https://alumni.princeton.edu/venture-forward/campaign-impact/access-and-affordability">ACCESS &amp; AFFORDABILITY</a></li> 
+            <li class=" "><a href="https://ams.princeton.edu/">AMERICAN STUDIES</a></li> 
+            <li class=" "><a href="https://alumni.princeton.edu/annual-giving">ANNUAL GIVING</a></li> 
+            <li class=" "><a href="https://goprincetontigers.com/news/2021/10/1/general-venture-forward-princeton-athletics.aspx">ATHLETICS</a></li> 
+            <li class=" "><a href="https://alumni.princeton.edu/venture-forward/campaign-impact/bioengineering">BIOENGINEERING</a></li> 
+            <li class=" "><a href="https://alumni.princeton.edu/venture-forward/campaign-impact/data-science">DATA SCIENCE</a></li> 
+            <li class=" "><a href="https://alumni.princeton.edu/environment">ENVIRONMENT</a></li> 
+            <li class=" "><a href="https://alumni.princeton.edu/volunteer">SERVICE</a></li> 
+           </ul> </li> 
+         </ul> </li> 
+       </ul> 
+      </nav> 
+      <nav id="ContentMobUtility20" class="mobileMemberTools"> 
+       <ul> 
+        <li class=" "><a href="https://reunions.princeton.edu/">Reunions</a></li> 
+        <li class=" "><a href="https://alumni.princeton.edu/contact-us">Contact</a></li> 
+        <li class=" "><a href="https://tigernet.princeton.edu/">TigerNet</a></li> 
+        <li class=" "><a href="https://makeagift.princeton.edu/MainSite/MakeAGift?utm_campaign=givingtoprinceton&amp;utm_medium=web&amp;utm_source=giving">Make a Gift</a></li> 
+       </ul> 
+      </nav> <button class="js-offcanvas-close sr-only sr-only-focusable" tabindex="0"> <span class="text">Close</span> <i class="icon-close fa fa-times"></i> </button> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="HELPPROVIDER_RadToolTip" style="display:none;position:absolute;"> <!-- 2014.2.724.45 -->
+    <div id="HELPPROVIDER_RadToolTip_Content"></div>
+    <input id="HELPPROVIDER_RadToolTip_ClientState" name="HELPPROVIDER_RadToolTip_ClientState" type="hidden"> 
+   </div> 
+   <script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("cid_40_vsLogin"));
+//]]>
+</script> 
+   <script type="text/javascript">
+//<![CDATA[
+var cid_40_vsLogin = document.all ? document.all["cid_40_vsLogin"] : document.getElementById("cid_40_vsLogin");
+cid_40_vsLogin.displaymode = "List";
+cid_40_vsLogin.validationGroup = "LoginForm";
+//]]>
+</script> 
+   <script type="text/javascript">
+//<![CDATA[
+
+if (window.CmsMenuBar) {CmsMenuBar.LogoutUrl = 'https://secure.tigernet.princeton.edu/?sid=1760&gid=2&pgid=61&logout=1';}
+if (window.CmsMenuBar) {CmsMenuBar.AuthenticationTicket = '';}
+if (window.CmsMenuBar) {CmsMenuBar.SiteId = '1760';}
+if (window.CmsMenuBar) {CmsMenuBar.GroupId = '2';}
+
+
+jQuery(document).ready(function(){
+	
+	var cookiesEnabled = false;
+	var TEST_COOKIE = 'test_cookie';
+	jQuery.cookie( TEST_COOKIE, true );
+	if ( jQuery.cookie ( TEST_COOKIE ) )
+	{
+		jQuery.cookie( TEST_COOKIE, null );
+		cookiesEnabled = true;
+	}
+	if (!cookiesEnabled)
+	{
+		if (CanRedirect)
+				{
+						window.location = RedirectUrl;
+				}
+	}
+});
+RedirectUrl = 'https://secure.tigernet.princeton.edu/s/1760/02-tigernet/20/interior.aspx?sid=1760&gid=2&returnurl=https%3a%2f%2ftigernet.princeton.edu%2fs%2f1760%2f02-tigernet%2f20%2finterior.aspx%3fgid%3d2%26pgid%3d254&pgid=3&cid=421';CanRedirect = true;
+if (typeof IModController != 'undefined' && typeof IModController.init == 'function') {
+	IModController.init(1760,2,'TigerNet','1.2',0,false,true);
+	IModController.siteLoginUrl = 'https://secure.tigernet.princeton.edu';
+}
+
+
+jQuery(document).ready(function(){
+	imod.HelpProvider.init({"HelpIconUrl":"\/images\/icons\/v2\/context_help.gif","HelpItems":[]},{helpIconUrl: '/images/icons/v2/context_help.gif'});
+});
+
+jQuery(document).ready(function(){
+	imod.SessionData.Data = {"SessionId":"e52bbfb8-5bd5-41d0-944d-0c101a8b3b71","SiteViewMode":1};
+});
+
+imod.Security.LogoutUrl = 'https://secure.tigernet.princeton.edu/?sid=1760&gid=2&pgid=61&logout=1';
+imod.Security.AuthenticationTicket = '';
+imod.Security.SiteId = '1760';
+imod.Security.GroupId = '2';
+imod.Browser.IsSmartPhone = false;
+imod.Browser.IsTablet = false;
+imod.Browser.PlatformName = "Windows NT";
+imod.Browser.BrowserName = "Chrome";
+imod.Browser.BrowserVersion = "Unknown";
+imod.Browser.IsMobile = "False";
+imod.Security.IsImodEmployee = false;
+imod.Security.LoginSessionMonitorEnabled = false;
+imod.Security.LoginDomain = "https://secure.tigernet.princeton.edu";
+
+imod$('cid_17777_tbSearch').onkeypress=SearchKeyCheck17777;function SearchKeyCheck17777(e){	if(window.event != null)	{		e = window.event;	}	if(e.keyCode == 13)	{		cid_17777_hbtnSearch_Click();		return false;	}}	function cid_17777_hbtnSearch_Click()	{		var SearchParam = document.getElementById('cid_17777_tbSearch');		if(SearchParam.value.length > 0)		{			window.location = "https://tigernet.princeton.edu?sid=1760&gid=2&page_id=3&pgid=253&cid=645&ecid=17777&search=" + escape(SearchParam.value);		}		else		{			SearchParam.style['background'] = 'red';		}		return false;	}
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('cid_40_vsLogin');
+
+    jQuery("#hfddlRecordsMode").val("");
+    jQuery(document).on('change',"#ddlRecordsMode", function(){
+        jQuery("#hfddlRecordsMode").val("true");
+    }); 
+
+    jQuery("#hfddlRecordsMode").val("");
+    jQuery(document).on('change',"#ddlRecordsMode", function(){
+        jQuery("#hfddlRecordsMode").val("true");
+    }); 
+
+jQuery(document).ready(function(){
+	
+
+    var currSection = jQuery("ul#sidebarNav li.selected > a").text();
+    jQuery("#mobileSidebarNavToggle .txt").text(currSection);
+
+
+
+    var waypoints = jQuery('.anchorLanding').waypoint({
+    handler: function(direction) {
+        console.log(this.element.id + ' hit');
+        var anchorId = this.element.id;
+        jQuery('.sideBar .secondaryNav .sidebarNavWrap > ul > li.anchor').removeClass('selected');
+        jQuery('.sideBar .secondaryNav .sidebarNavWrap > ul > li.anchor').each(function() {
+            if(jQuery(this).children('a').attr('href') === '#' + anchorId) {
+                jQuery(this).addClass('selected');
+            }
+        })
+        
+    },
+    offset: '50px',
+    continuous: false
+    })
+
+
+
+
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadToolTip, {"_cssClass":"","_manualCloseButtonText":"Close","clientStateFieldID":"HELPPROVIDER_RadToolTip_ClientState","formID":"MainForm","hideEvent":4,"position":13,"relativeTo":1,"showEvent":16,"skin":"Default","width":"350px"}, null, null, $get("HELPPROVIDER_RadToolTip"));
+});
+//]]>
+</script> 
+  </form> <!-- Unminified and externally loading scripts -->  
+ </body>
+</html>

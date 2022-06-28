@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"427707476"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-135647062-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <link rel="canonical" href="https://oit.princeton.edu/about-oit/it-governance/administrative/pmt">
+  <meta name="description" content="The Project Managers Team (PMT) provides leadership and guidance on the delivery of administrative products and services, and continues to support the application and data management principles established under Partnership 2000.&nbsp;The PMT acts as the “working group” in support of the efforts of the Enterprise Systems Planning Group (ESPG). The sp...">
+  <meta property="og:site_name" content="Office of Information Technology">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://oit.princeton.edu/about-oit/it-governance/administrative/pmt">
+  <meta property="og:title" content="Project Managers Team">
+  <meta property="og:description" content="The Project Managers Team (PMT) provides leadership and guidance on the delivery of administrative products and services, and continues to support the application and data management principles established under Partnership 2000.&nbsp;The PMT acts as the “working group” in support of the efforts of the Enterprise Systems Planning Group (ESPG). The sp...">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:widgets:csp" content="on">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/sites/g/files/toruqf1106/files/favicon_3.ico" type="image/vnd.microsoft.icon">
+  <title>Project Managers Team | Office of Information Technology</title>
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1106/files/css/css_uy03OG5gbsqyk7wuW795bEytSaPKtZNW3-S4k0Tgu3E.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1106/files/css/css_1prhxtvxq6YtbaaqGTWaME8KYz_-Q8ljDzSry7LZZCQ.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/xxx7asp.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/bok5fgz.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1106/files/css/css_hVcwcTbJI6WYcbnmtCN8EScKtZYtLWbIS05Zm_KpJXI.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1106/files/css/css_cW9x9elUwmdbOebJ3zbTKbRfti1nmSdNvu6bOs5PvGA.css">
+ </head>
+ <body class="not-front section-about-oit page-node-211 content-type-ps-basic-page flavor1 fontset1 menu1 sticky-main-menu layout-block-padding-medium">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="page page-container"> 
+    <header role="banner" class="header region region-header" id="header">
+     <h1 class="sr-only sr-site-name">Office of Information Technology</h1>
+     <div class="skip-links"><a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to content</a><a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to search</a>
+     </div>
+     <div class="header-container container">
+      <div class="princeton-branding">
+       <div class="container"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"> <img src="/profiles/ps/themes/ps_base/images/pu-logo.svg" alt="Princeton University"> </a>
+       </div>
+      </div>
+      <div class="site-branding">
+       <div class="container">
+        <div class="row"><a href="/" title="Home" rel="home" class="site-logo"> <img src="/sites/g/files/toruqf1106/files/oit_shield_color_rgb200.png" alt="Home" typeof="foaf:Image"> </a>
+        </div>
+       </div>
+      </div>
+      <nav aria-label="site" class="main-menu">
+       <h2 class="sr-only">Main Menu</h2>
+       <div class="container navbar-expand-lg"><button class="toggle-mobile-menu unbutton" type="button" data-toggle="collapse" data-target="#menu-container" aria-controls="menu-container" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-mobile-menu-icon"> <span class="toggle-mobile-menu-title">Menu</span> <i class="fa fa-bars" aria-hidden="true"></i> </span> </button>
+        <div id="menu-container" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item"><a href="/" data-drupal-link-system-path="<front>">Home</a></li>
+          <li class="nav-item expanded"><a href="/get-started" data-drupal-link-system-path="node/206">Get Started with IT</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/get-started/first-year-students" data-drupal-link-system-path="node/356">First-year students</a></li>
+            <li class="submenu-item"><a href="/get-started/graduate-students" data-drupal-link-system-path="node/361">Graduate students</a></li>
+            <li class="submenu-item"><a href="/get-started/faculty-and-staff" data-drupal-link-system-path="node/366">Faculty and staff</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/initiatives" data-drupal-link-system-path="node/212">Initiatives</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item expanded"><a href="/initiatives/princeton-network-upgrade" data-drupal-link-system-path="node/261">Princeton Network Upgrade</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/initiatives/princeton-network-upgrade/general-faqs" data-drupal-link-system-path="node/266">General FAQs</a></li>
+             </ul></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/policies" data-drupal-link-system-path="node/199">Policies</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/policies/access-accounts" data-drupal-link-system-path="node/200">Access to Accounts</a></li>
+            <li class="submenu-item"><a href="/policies/data-center-policy" data-drupal-link-system-path="node/201">Data Center Policy</a></li>
+            <li class="submenu-item"><a href="/policies/desc-security" data-drupal-link-system-path="node/202">DeSC Security</a></li>
+            <li class="submenu-item"><a href="/policies/information-security" data-drupal-link-system-path="node/203">Information Security</a></li>
+            <li class="submenu-item"><a href="/policies/software-retention" data-drupal-link-system-path="node/204">Software Retention</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/join-our-team" data-drupal-link-system-path="node/219">Join Our Team</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/join-our-team/careers" data-drupal-link-system-path="node/221">Current Job Opportunities</a></li>
+            <li class="submenu-item expanded"><a href="/join-our-team/meet-our-team" data-drupal-link-system-path="node/222">Meet Our Team</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/join-our-team/meet-our-team/yogesh" data-drupal-link-system-path="node/233">Yogesh</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/join-our-team/subscribe" data-drupal-link-system-path="node/228">Subscribe</a></li>
+           </ul></li>
+          <li class="nav-item expanded active"><a href="/about-oit" data-drupal-link-system-path="node/194">About OIT</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/about-oit/organization" data-drupal-link-system-path="node/195">Our organization</a></li>
+            <li class="submenu-item expanded active"><a href="/about-oit/it-governance" data-drupal-link-system-path="node/196">IT Governance</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item expanded active"><a href="/about-oit/it-governance/administrative" data-drupal-link-system-path="node/214">Administrative</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+               <ul class="submenu collapse" role="list">
+                <li class="submenu-item"><a href="/about-oit/it-governance/administrative/sagit" data-drupal-link-system-path="node/209">SAGIT</a></li>
+                <li class="submenu-item"><a href="/about-oit/it-governance/administrative/espg" data-drupal-link-system-path="node/210">ESPG</a></li>
+                <li class="submenu-item active"><a href="/about-oit/it-governance/administrative/pmt" data-drupal-link-system-path="node/211" class="is-active">PMT</a></li>
+               </ul></li>
+              <li class="submenu-item"><a href="/about-oit/it-governance/academic" data-drupal-link-system-path="node/216">Academic</a></li>
+              <li class="submenu-item"><a href="/about-oit/it-governance/research" data-drupal-link-system-path="node/215">Research</a></li>
+              <li class="submenu-item"><a href="/about-oit/it-governance/it-decision-making-principles" data-drupal-link-system-path="node/208">IT Decision-Making Principles</a></li>
+              <li class="submenu-item"><a href="/about-oit/it-governance/system-selection-process" data-drupal-link-system-path="node/207">System Selection Process</a></li>
+              <li class="submenu-item"><a href="/about-oit/it-governance/annual-it-planning-process" data-drupal-link-system-path="node/217">Annual IT Planning Process</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/about-oit/annual-reports" data-drupal-link-system-path="node/197">Annual Reports</a></li>
+           </ul></li>
+         </ul>
+         <div class="utility-menu">
+          <ul class="nav navbar-nav utility-nav">
+           <li class="nav-item"><a href="/events" data-drupal-link-system-path="node/250">Events</a></li>
+           <li class="nav-item"><a href="/news" data-drupal-link-system-path="node/254">News</a></li>
+           <li class="nav-item"><a href="https://informationsecurity.princeton.edu/">Security</a></li>
+           <li class="nav-item"><a href="https://princeton.service-now.com/service?id=contact_us#Information%20Technology">Get Help</a></li>
+           <li class="nav-item"><a href="/caslogin" class="ps-login-logout-link" data-drupal-link-system-path="caslogin">Log in</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </nav>
+      <div class="search-bar" id="search-bar">
+       <div class="container navbar-expand-lg" role="search">
+        <h2 class="sr-only">Search</h2><button class="toggle-searchbar unbutton" type="button" data-toggle="collapse" data-target="#search-bar-container" aria-controls="search-bar-container" aria-expanded="false" aria-label="Toggle search"> <span class="toggle-search-icon"> <i class="fas fa-search" aria-hidden="true"></i> </span> </button>
+        <div id="search-bar-container" class="collapse navbar-collapse">
+         <div class="search-block-form contextual-region block block-search container-inline" id="block-searchform">
+          <form action="/search" method="get" id="search-block-form" accept-charset="UTF-8">
+           <div id="search-toggled" class="form-group js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label"><label for="edit-search-keys" class="visually-hidden">Search</label>
+            <input placeholder="Search" type="search" id="edit-search-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control">
+           </div>
+           <div data-drupal-selector="edit-search-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-search-actions">
+            <input type="submit" id="edit-search-submit" value="Submit" class="button js-form-submit form-submit btn btn-primary">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="breadcrumb region region-breadcrumb" id="breadcrumb">
+     <div class="container">
+      <nav role="navigation" aria-label="breadcrumb">
+       <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/about-oit">About OIT</a></li>
+        <li class="breadcrumb-item"><a href="/about-oit/it-governance">IT Governance</a></li>
+        <li class="breadcrumb-item"><a href="/about-oit/it-governance/administrative">Administrative IT Governance</a></li>
+       </ol>
+      </nav>
+     </div>
+    </div>
+    <div class="highlighted" id="highlighted">
+     <div class="container">
+      <div class="region region-highlighted">
+       <div data-drupal-messages-fallback class="hidden"></div>
+      </div>
+     </div>
+    </div>
+    <div id="main" class="main-container">
+     <div class="container">
+      <div class="row">
+       <div class="sidebar-first section order-first col-sm-4 col-md-3 col-lg-2">
+        <nav class="main-sidebar-menu" aria-label="section">
+         <h2 class="sr-only">Section Menu</h2>
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item"><a href="/about-oit/organization" data-drupal-link-system-path="node/195">Our organization</a></li>
+          <li class="nav-item expanded active"><a href="/about-oit/it-governance" data-drupal-link-system-path="node/196">IT Governance</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item expanded active"><a href="/about-oit/it-governance/administrative" data-drupal-link-system-path="node/214">Administrative</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/about-oit/it-governance/administrative/sagit" data-drupal-link-system-path="node/209">SAGIT</a></li>
+              <li class="submenu-item"><a href="/about-oit/it-governance/administrative/espg" data-drupal-link-system-path="node/210">ESPG</a></li>
+              <li class="submenu-item active"><a href="/about-oit/it-governance/administrative/pmt" data-drupal-link-system-path="node/211" class="is-active">PMT</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/about-oit/it-governance/academic" data-drupal-link-system-path="node/216">Academic</a></li>
+            <li class="submenu-item"><a href="/about-oit/it-governance/research" data-drupal-link-system-path="node/215">Research</a></li>
+            <li class="submenu-item"><a href="/about-oit/it-governance/it-decision-making-principles" data-drupal-link-system-path="node/208">IT Decision-Making Principles</a></li>
+            <li class="submenu-item"><a href="/about-oit/it-governance/system-selection-process" data-drupal-link-system-path="node/207">System Selection Process</a></li>
+            <li class="submenu-item"><a href="/about-oit/it-governance/annual-it-planning-process" data-drupal-link-system-path="node/217">Annual IT Planning Process</a></li>
+           </ul></li>
+          <li class="nav-item"><a href="/about-oit/annual-reports" data-drupal-link-system-path="node/197">Annual Reports</a></li>
+         </ul>
+        </nav>
+       </div>
+       <main class="main main-content col-sm-12 col-lg-10 order-last"><a id="main-content" class="sr-only skip-link"></a>
+        <div class="region region-content">
+         <div id="block-ps-oit-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+          <h1 class="page-title"> Project Managers Team </h1>
+         </div>
+         <div id="block-ps-oit-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+          <article role="article" about="/about-oit/it-governance/administrative/pmt" class="node node--type-ps-basic-page node--view-mode-full">
+           <div class="node__content">
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-block-plugin-id="ps_node_view" class="block block-ps-core block-ps-node-view">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p>The Project Managers Team (PMT) provides leadership and guidance on the delivery of administrative products and services, and continues to support the application and data management principles established under Partnership 2000.&nbsp;The PMT acts as the “working group” in support of the efforts of the Enterprise Systems Planning Group (ESPG). The specific charge of the group is to:</p>
+                 <ul>
+                  <li>Identify, assess, and prioritize mandatory maintenance (regulatory updates, software upgrades) and enhancements (to fill gaps in current functionality and/or deliver new functionality) to University systems;</li>
+                  <li>Coordinate systems requirements across offices and departments;</li>
+                  <li>Facilitate activities that foster the improved use of IT products and services at the University;</li>
+                  <li>Achieve the highest level of customer satisfaction in meeting the IT needs of the University community.</li>
+                 </ul>
+                 <h2>2021-2022 Meeting Schedule</h2>
+                 <p><em>Note: All meetings are from 3PM - 4:30PM, unless otherwise noted.&nbsp; All meetings will be held at 701 Carnegie Center MPRs when appropriate, or a Zoom link will be supplied in advance.</em></p>
+                 <ul>
+                  <li>September 8, 2021</li>
+                  <li>November 10, 2021</li>
+                  <li>January 12, 2022</li>
+                  <li>March 9, 2022</li>
+                  <li>May 11, 2022 (Spring Summit 12-4:30)</li>
+                 </ul>
+                 <p><strong><a href="https://sp.princeton.edu/oit/PATCO/ITGov/PMT/default.aspx">PMT Sharepoint Site</a>&nbsp;(campus resources only)</strong></p>
+                 <h2>Members of the PMT</h2>
+                 <ul>
+                  <li>Mary Albert, OIT, Digital Accessibility</li>
+                  <li>Elizabeth Badger, Financial Aid and Student Employment</li>
+                  <li>Debby Becker, OIT,&nbsp;Database Management Services</li>
+                  <li>Jennifer Broome-Chung, Facilities</li>
+                  <li>Ted Bross, OIT, Center for Data, Analytics, and Reporting (CeDAR)</li>
+                  <li>Mike Caddell, Center for Career Development</li>
+                  <li>Elaine Cha, Human Resources</li>
+                  <li>Tran Cheung, Office of Audit and Compliance</li>
+                  <li>Karen Chirik, Academic Managers Group</li>
+                  <li>Eva M. Connelly, Facilities</li>
+                  <li>Esme Cowles, Library</li>
+                  <li>Colin Currie (chair), OIT, Software and Application Services</li>
+                  <li>Zack Davis, Office of Research and Project Administration (ORPA)</li>
+                  <li>Matt Eaton, Undergraduate Admission</li>
+                  <li>Steve Elwood, Office of Environmental Health and Safety</li>
+                  <li>Cathy Galloway, OIT, Project and Technology Consulting Office (PATCO)</li>
+                  <li>Shachi Gawande,&nbsp;OIT, Project and Technology Consulting Office (PATCO)</li>
+                  <li>Marissa Gonzalez, OIT, Enterprise Infrastructure Services</li>
+                  <li>Pat Graber, Office of the Provost</li>
+                  <li>Lynn Grant,&nbsp;University Services, Housing and Real Estate Services</li>
+                  <li>Ash Hadap, OIT, Enterprise Resource Planning (ERP)</li>
+                  <li>Martin B. Harrison, OIT, Project and Technology Consulting Office (PATCO)</li>
+                  <li>Michelle Horgan, University Services, Conference &amp; Event Services</li>
+                  <li>Theresa Hvisdock, OIT, Project and Technology Consulting Office (PATCO)</li>
+                  <li>Sarah Kampel, OIT, Enterprise Infrastructure Services</li>
+                  <li>Kislay Kaushik, Office of the VP for Finance and Treasury</li>
+                  <li>Christian Knoebel, Office of Communications</li>
+                  <li>George Kopf, OIT, Software Infrastructure Services</li>
+                  <li>Charles Kruger, OIT, Enterprise Infrastructure Services</li>
+                  <li>Mike Lee, Graduate School</li>
+                  <li>Andrew Leman,&nbsp;OIT, Project and Technology Consulting Office (PATCO)</li>
+                  <li>Jaysen LeSage, Office of the Dean of the College</li>
+                  <li>Matt Malloy, Office of the Dean for Research</li>
+                  <li>Michael Maysilles, Office of the Registrar</li>
+                  <li>Sushma Mendu, OIT, Package Adoption and Configuration</li>
+                  <li>Jill Moraca, OIT, Web Development Services</li>
+                  <li>Judy Oakley, University Health Services</li>
+                  <li>Chris Oswald, Office of Audit and Compliance</li>
+                  <li>Harris Otubu,&nbsp;OIT, Project and Technology Consulting Office (PATCO)</li>
+                  <li>Shruti Pawar, Office of the Dean of the Faculty</li>
+                  <li>Janet Pumo,&nbsp;OIT, Project and Technology Consulting Office (PATCO)</li>
+                  <li>Sal Rosario, OIT,&nbsp; Project and Technology Consulting Office (PATCO)</li>
+                  <li>Michele Ruditis, Office of Development</li>
+                  <li>Tim Schengrund, Human Resources</li>
+                  <li>Eemaan Siddiqi, OIT, Custom Solutions and Integration</li>
+                  <li>Nancy Silldorff, OIT, Service Management Office (SMO)</li>
+                  <li>Annette Tate, Office of the Dean for Research</li>
+                  <li>Keller Taylor, Public Safety</li>
+                  <li>Tara Texiera, Human Resources</li>
+                  <li>Joshua P. Thomas, University Services</li>
+                  <li>Suneetha Vaitheswaran, OIT, Software and Application Services</li>
+                  <li>Roger Weisenberg, Office of the VP for Finance and Treasury</li>
+                  <li>Russell Wells, OIT, Person Office</li>
+                  <li>Devesh Yadav, Office of the VP for Finance and Treasury</li>
+                  <li>Tara Zarillo, Office of the Executive Vice President</li>
+                  <li>Susan Zaslaw, OIT, Project and Technology Consulting Office (PATCO)</li>
+                 </ul>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+              </div>
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </main>
+      </div>
+     </div>
+    </div>
+    <footer role="contentinfo" class="footer region region-footer" id="footer">
+     <h2 class="sr-only">Footer</h2>
+     <div class="container">
+      <div class="constrained-bkg-constrained-content layout layout--threecol-33-34-33">
+       <div class="layout-inner-container">
+        <div class="layout__region layout__region--first layout__region--thirds layout__region--narrow">
+         <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+          <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+           <ul>
+            <li><a href="https://princeton.service-now.com/snap?id=sc_cat_item&amp;sys_id=588cfb664fcd124022a859dd0210c7ca">Report an Issue</a></li>
+            <li><a href="tel:+16092584357">8-HELP (4357)</a></li>
+            <li><a href="https://princeton.service-now.com/%24sp.do?id=chat">Live Chat</a></li>
+            <li><a href="https://kb.princeton.edu/9454">Walk-in Help: Solutions Center</a></li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="layout__region layout__region--second layout__region--thirds layout__region--narrow">
+         <nav role="navigation" aria-labelledby="-menu" data-block-plugin-id="menu_block:footer" class="block block-menu navigation menu--footer">
+          <h2 class="visually-hidden" id="-menu">Footer menu</h2>
+          <ul class="nav">
+           <li class="nav-item"><a href="http://www.princeton.edu/changepassword">Change Password</a></li>
+           <li class="nav-item"><a href="https://princeton.service-now.com/snap?id=outages">Outages &amp; Alerts</a></li>
+           <li class="nav-item"><a href="https://itpolicy.princeton.edu/">IT Policy</a></li>
+          </ul>
+         </nav>
+        </div>
+        <div class="layout__region layout__region--third layout__region--thirds layout__region--narrow">
+         <div data-block-plugin-id="inline_block:ps_social_links" class="block-ps-social-links block block-layout-builder block-inline-blockps-social-links">
+          <ul class="ps-social-links--platforms platforms vertical">
+           <li><a href="http://twitter.com/puoitsoc" title="Outages &amp; Alerts"> <span class="fab fa-twitter fa-2x" aria-hidden="true"></span> <span class="social-link-label">Outages &amp; Alerts</span> </a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="subfooter">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-4">
+         <div class="subfooter-links">
+          <ul class="list-unstyled">
+           <li><a href="https://accessibility.princeton.edu/resources/accessibility-help" target="_blank">Accessibility</a></li>
+          </ul>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <p class="copyright-text"> © 2022 The Trustees of Princeton University </p>
+        </div>
+        <div class="col-md-4 text-sm-left text-md-right copyright"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"><img src="/profiles/ps/themes/ps_base/images/pu-logo-stacked.svg" alt="Princeton University"> </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div> 
+  </div><span id="ps-current-username" data-username=""></span>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/211","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ckeditorheight":{"offset":1,"line_height":1.5,"unit":"em","disable_autogrow":false},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"all_documents_new_window":false,"select2_simple":{"selector":".node-form select:not(.disable-select2,[name$=\u0027[actions][bundle]\u0027],.ui-timepicker-select,[name*=\u0027field_ps_timeline_feature_items\u0027]),.select2-form select,#drupal-off-canvas select[multiple]"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":true,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":[]}},"ajax":[],"user":{"uid":0,"permissionsHash":"6ed0068260e551870d35d70e24b62179d1b158b121c3db1f5f1194c72b6b03a5"}}</script>
+  <script src="/sites/g/files/toruqf1106/files/js/js_0uJsYhS6LAY81dKNnVpUQogwwRt0UD1OSiU1ipftBuo.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"427707476","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":669,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

@@ -1,0 +1,216 @@
+<!doctype html><!--[if IEMobile 7]><html class="iem7"  lang="en" dir="ltr"><![endif]--><!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7"  lang="en" dir="ltr"><![endif]--><!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8"  lang="en" dir="ltr"><![endif]--><!--[if IE 8]><html class="lt-ie9"  lang="en" dir="ltr"><![endif]--><!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
+<html lang="en" dir="ltr">
+ <!--<![endif]-->
+ <head>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"465812596"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="description" content="Students with disabilities attending college are entitled to the same rights, privileges, and opportunities as all students at that institution. Individuals with disabilities are protected by Section 504 of the Rehabilitation Act of 1973 and The Americans with Disabilities Act of 1990 as amended, as well as the New Jersey Law Against Discrimination. Students entering the">
+  <link rel="shortcut icon" href="https://ods.princeton.edu/sites/all/themes/custom/hepcat/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Students' Rights and Responsibilities | Office of Disability Services</title>
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="cleartype" content="on">
+  <link type="text/css" rel="stylesheet" href="https://ods.princeton.edu/sites/ods/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://ods.princeton.edu/sites/ods/files/css/css_pajjxXTGCz4IMC7PdWGx7BeoNB7i1o70CX8HcrDAhGU.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://ods.princeton.edu/sites/ods/files/css/css_-RExgnUx58QMaOhrb7ktC1-m-FQ5Gc9WmeBZ0zJS1W4.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://ods.princeton.edu/sites/ods/files/css/css_FRPyWpWH6UkzlUamhHq5E27f09HuCF_6yZ52ITgL3R4.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://ods.princeton.edu/sites/ods/files/css/css_4teSlMqbXMYY1kbZAqdxgDO8k4BCPVCxeFaUcMsS40Y.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://ods.princeton.edu/sites/ods/files/css/css_bK0YLEg5Ek7_AtiL21Esgagmu3NiZ8mPFGVUAAJ7iPI.css" media="all">
+  <script src="https://ods.princeton.edu/sites/ods/files/js/js_XexEZhbTmj1BHeajKr2rPfyR8Y68f4rm0Nv3Vj5_dSI.js"></script>
+  <script src="https://ods.princeton.edu/sites/ods/files/js/js_OPRAUPXKKiZqVZvj3RjKTPRArvSQ6LH00cbrDyLoEOc.js"></script>
+  <script src="https://ods.princeton.edu/sites/ods/files/js/js_ke9Ko-k9i4w41iqKQRYoMmmDPx4HysIr-wRj8K03qkg.js"></script>
+  <script src="https://ods.princeton.edu/sites/ods/files/js/js_VwY3IEbkhZGTtDUEfvXTfOEjSGNVU1_g9z1uveZznrU.js"></script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-53634508-2", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <script src="https://ods.princeton.edu/sites/ods/files/js/js_wFuAAJhy8-QQ81XEiXFgW_dalhFSbJTcBWCIJEKqUWg.js"></script>
+  <script src="https://ods.princeton.edu/sites/ods/files/js/js_kQrC-DvMaMmI-WJpEPyd3MvCdVB7osoO0xY27Zq3a44.js"></script>
+  <script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"hepcat","theme_token":"5JIgbOXKBkkDsHqsVJ-b01GmdcE92ayE4SJeNCLFXMk","js":{"sites\/all\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets.js":1,"sites\/all\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets-spotlight.js":1,"sites\/all\/modules\/custom\/pwds_core\/js\/webform-accessibility.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.tabs.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.accordion.min.js":1,"sites\/all\/modules\/custom\/select2_simple\/select2_simple.js":1,"sites\/all\/modules\/panopoly\/panopoly_images\/panopoly-images.js":1,"sites\/all\/modules\/panopoly\/panopoly_admin\/panopoly-admin.js":1,"sites\/all\/modules\/panopoly\/panopoly_magic\/panopoly-magic.js":1,"sites\/all\/modules\/panopoly\/panopoly_theme\/js\/panopoly-accordion.js":1,"sites\/all\/libraries\/jquery.imagesloaded\/jquery.imagesloaded.min.js":1,"sites\/all\/modules\/custom\/pwds_core\/js\/pwds_core.js":1,"sites\/all\/libraries\/select2\/dist\/js\/select2.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/contrib\/saveguard\/saveguard.js":1,"sites\/all\/modules\/contrib\/extlink\/js\/extlink.js":1,"sites\/all\/themes\/custom\/hepcat\/js\/script.js":1,"sites\/all\/themes\/custom\/pwds_base\/js\/jquery.meanmenu.min.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"sites\/all\/modules\/contrib\/calendar\/css\/calendar_multiday.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/contrib\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/office_hours\/office_hours.css":1,"sites\/all\/modules\/panopoly\/panopoly_admin\/panopoly-admin.css":1,"sites\/all\/modules\/panopoly\/panopoly_admin\/panopoly-admin-navbar.css":1,"sites\/all\/modules\/panopoly\/panopoly_core\/css\/panopoly-dropbutton.css":1,"sites\/all\/modules\/panopoly\/panopoly_magic\/css\/panopoly-magic.css":1,"sites\/all\/modules\/panopoly\/panopoly_magic\/css\/panopoly-modal.css":1,"sites\/all\/modules\/panopoly\/panopoly_theme\/css\/panopoly-featured.css":1,"sites\/all\/modules\/panopoly\/panopoly_theme\/css\/panopoly-accordian.css":1,"sites\/all\/modules\/panopoly\/panopoly_theme\/css\/panopoly-layouts.css":1,"sites\/all\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets.css":1,"sites\/all\/modules\/panopoly\/panopoly_widgets\/panopoly-widgets-spotlight.css":1,"sites\/all\/modules\/custom\/apps\/pwds_timeline\/style\/timeline.css":1,"sites\/all\/modules\/contrib\/radix_layouts\/radix_layouts.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/extlink\/css\/extlink.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/libraries\/select2\/dist\/css\/select2.css":1,"sites\/all\/modules\/custom\/select2_simple\/select2_simple.css":1,"sites\/all\/modules\/contrib\/biblio\/biblio.css":1,"sites\/all\/modules\/custom\/apps\/pwds_publications\/css\/pwds_publications.css":1,"sites\/all\/themes\/custom\/hepcat\/system.menus.css":1,"sites\/all\/themes\/custom\/hepcat\/system.messages.css":1,"sites\/all\/themes\/custom\/hepcat\/system.theme.css":1,"sites\/all\/themes\/custom\/pwds_base\/css\/pwds_base_styles.css":1,"sites\/all\/themes\/custom\/hepcat\/css\/styles.css":1,"sites\/all\/modules\/panopoly\/panopoly_images\/panopoly-images.css":1,"public:\/\/css_injector\/css_injector_1.css":1,"public:\/\/css_injector\/css_injector_6.css":1,"public:\/\/css_injector\/css_injector_11.css":1,"public:\/\/css_injector\/css_injector_16.css":1,"public:\/\/css_injector\/css_injector_21.css":1}},"CToolsModal":{"modalSize":{"type":"scale","width":".9","height":".9","addWidth":0,"addHeight":0,"contentRight":25,"contentBottom":75},"modalOptions":{"opacity":".55","background-color":"#FFF"},"animationSpeed":"fast","modalTheme":"CToolsModalDialog","throbberTheme":"CToolsModalThrobber"},"panopoly_magic":{"pane_add_preview_mode":"automatic"},"select2_simple":{"selector":"select:not(.office-hours-block select,[name*=\u0027day\u0027],[name*=\u0027year\u0027],[name*=\u0027month\u0027],[name*=\u0027hour\u0027],[name*=\u0027minute\u0027],.name-generational,[name*=\u0027submit_limit\u0027],[name*=\u0027submit_interval\u0027],#matrix-options select), #biblio-search-form [name*=\u0027year\u0027]"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"currentPath":"node\/91","currentPathIsAdmin":false,"saveguard":{"msg":null},"urlIsAjaxTrusted":{"\/search\/node":true},"extlink":{"extTarget":"_blank","extClass":"ext","extLabel":"(link is external)","extImgClass":true,"extIconPlacement":"append","extSubdomains":0,"extExclude":"","extInclude":"","extCssExclude":"#social-links-menu,.pager,.page-admin,.twitter-status","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site.","mailtoClass":0,"mailtoLabel":"(link sends e-mail)","extUseFontAwesome":false}});</script>
+ </head>
+ <body class="html not-front not-logged-in page-node page-node- page-node-91 node-type-basic-page region-content section-rights-responsibilities page-panels flavor2">
+  <div id="skip-link"><a href="#main-content" class="element-invisible element-focusable">Jump to main content</a>
+  </div>
+  <div id="page" class="horizontal-main-menu one-sidebar sidebar-first">
+   <div id="mobile"></div>
+   <header class="header" id="header" role="banner">
+    <div class="header__user-zone clearfix" id="user-zone">
+     <div class="content_container"><a href="http://www.princeton.edu/" title="Princeton University" rel="home" class="princeton_logo" id="logo"> <img src="/sites/all/themes/custom/hepcat/images/pu_logo.png" alt="Princeton University" class="header__logo-image"> </a>
+     </div>
+    </div>
+    <div class="content_container">
+     <div class="header__name-and-slogan" id="name-and-slogan">
+      <h1 class="header__site-name" id="site-name"><a href="/" title="Home page" class="header__site-link" rel="home"><span>Office of Disability Services</span></a></h1>
+     </div>
+     <div class="search-container"><a class="element-invisible" id="main-search-form" name="main-search-form" tabindex="-1"></a>
+      <h2 class="element-invisible">Search form</h2>
+      <form class="search-form" action="/search/node" method="post" id="search-form" accept-charset="UTF-8">
+       <div>
+        <div class="container-inline form-wrapper" id="edit-basic">
+         <div class="form-item form-type-textfield form-item-keys"><label class="element-invisible" for="edit-keys">Search </label>
+          <input placeholder="Search…" type="text" id="edit-keys" name="keys" value="" size="" maxlength="255" class="form-text">
+         </div>
+         <input type="submit" id="edit-submit" name="op" value="Search" class="form-submit">
+        </div>
+        <input type="hidden" name="form_build_id" value="form-Vzc4KqHWWXcmZ0RpyPW724wDfKTDalQttiGwPiMaK1U">
+        <input type="hidden" name="form_id" value="search_form">
+       </div>
+      </form><span class="icon" aria-hidden="true"><span class="icon-target"></span></span>
+     </div>
+    </div>
+   </header>
+   <div id="main">
+    <div id="navigation">
+     <nav id="main-menu" role="navigation"><a class="element-invisible" id="main-navigation-menu" name="main-navigation-menu" tabindex="-1"></a>
+      <h2 class="element-invisible">Main menu</h2>
+      <ul class="menu">
+       <li class="menu__item is-leaf first leaf"><a href="/" class="menu__link">Home</a></li>
+       <li class="menu__item is-expanded expanded"><a href="/about-ods" class="menu__link">About ODS</a>
+        <ul class="menu">
+         <li class="menu__item is-leaf first leaf"><a href="/about-ods/ad-hoc-advisory-committee" class="menu__link">Ad Hoc Advisory Committee</a></li>
+         <li class="menu__item is-leaf leaf"><a href="/news" class="menu__link">News</a></li>
+         <li class="menu__item is-leaf last leaf"><a href="/events" class="menu__link">Events</a></li>
+        </ul></li>
+       <li class="menu__item is-expanded expanded"><a href="/student-services" class="menu__link">Student Services</a>
+        <ul class="menu">
+         <li class="menu__item is-leaf first leaf"><a href="/student-services/registration-and-self-identification" class="menu__link">Registration and Self-Identification</a></li>
+         <li class="menu__item is-leaf leaf"><a href="/student-services/student-services-process" class="menu__link">Student Services Process</a></li>
+         <li class="menu__item is-expanded expanded"><a href="/student-services/documentation-requirements" class="menu__link">Documentation Requirements</a>
+          <ul class="menu">
+           <li class="menu__item is-leaf first leaf"><a href="/student-services/documentation-requirements/learning-disabilitiesadhd" class="menu__link">Learning Disabilities/ADHD</a></li>
+           <li class="menu__item is-leaf leaf"><a href="/student-services/documentation-requirements/physicalsensory-disabilities" class="menu__link">Physical/Sensory Disabilities</a></li>
+           <li class="menu__item is-leaf leaf"><a href="/student-services/documentation-requirements/psychological-disabilities" class="menu__link">Psychological Disabilities</a></li>
+           <li class="menu__item is-leaf last leaf"><a href="/student-services/documentation-requirements/temporary-disabilities" class="menu__link">Temporary Disabilities</a></li>
+          </ul></li>
+         <li class="menu__item is-expanded expanded"><a href="/student-services/prospective-students" class="menu__link">Prospective Students</a>
+          <ul class="menu">
+           <li class="menu__item is-leaf first leaf"><a href="/student-services/prospective-students/pre-matriculation-services" class="menu__link">Pre-Matriculation Services</a></li>
+           <li class="menu__item is-leaf last leaf"><a href="/student-services/prospective-students/initial-determination" class="menu__link">Initial Determination</a></li>
+          </ul></li>
+         <li class="menu__item is-leaf last leaf"><a href="/student-services/forms" class="menu__link">Forms</a></li>
+        </ul></li>
+       <li class="menu__item is-expanded is-active-trail expanded active-trail"><a href="/rights-responsibilities" class="menu__link is-active-trail active-trail">Rights &amp; Responsibilities</a>
+        <ul class="menu">
+         <li class="menu__item is-leaf first leaf"><a href="/rights-responsibilities/ods-rights-responsibilities" class="menu__link">ODS Rights &amp; Responsibilities</a></li>
+         <li class="menu__item is-leaf is-active-trail leaf active-trail"><a href="/rights-responsibilities/students-rights-and-responsibilities" class="menu__link is-active-trail active-trail active">Students' Rights and Responsibilities</a></li>
+         <li class="menu__item is-leaf leaf"><a href="/rights-responsibilities/process-resolving-issues" class="menu__link">Process for Resolving Issues</a></li>
+         <li class="menu__item is-leaf last leaf"><a href="/rights-responsibilities/confidentiality" class="menu__link">Confidentiality</a></li>
+        </ul></li>
+       <li class="menu__item is-leaf leaf"><a href="/accessability" class="menu__link">AccessAbility Center</a></li>
+       <li class="menu__item is-leaf leaf"><a href="/faculty" class="menu__link">Faculty</a></li>
+       <li class="menu__item is-expanded last expanded"><a href="/accommodate" class="menu__link">ACCOMMODATE</a>
+        <ul class="menu">
+         <li class="menu__item is-leaf first leaf"><a href="/accommodate/faculty" class="menu__link">Faculty</a></li>
+         <li class="menu__item is-leaf leaf"><a href="/accommodate/student-resource-assistants" class="menu__link">Student Resource Assistants</a></li>
+         <li class="menu__item is-leaf last leaf"><a href="/accommodate/students" class="menu__link">Students</a></li>
+        </ul></li>
+      </ul> 
+     </nav>
+    </div>
+    <div class="content_container">
+     <nav class="breadcrumb" role="navigation">
+      <span aria-label="You are here"></span>
+      <ol>
+       <li><a href="/">Home</a> › </li>
+       <li><a href="/rights-responsibilities">Rights &amp; Responsibilities</a> › </li>
+       <li>Students' Rights and Responsibilities</li>
+      </ol>
+     </nav>
+     <aside class="sidebars">
+      <section class="region region-sidebar-first column sidebar">
+       <nav id="main-menu-level-2-plus" role="navigation"><a class="element-invisible" id="main-navigation-submenu" name="main-navigation-submenu" tabindex="-1"></a>
+        <h2 class="element-invisible">Main menu: sub-menu items</h2>
+        <ul class="menu">
+         <li class="menu__item is-leaf first leaf"><a href="/rights-responsibilities/ods-rights-responsibilities" class="menu__link">ODS Rights &amp; Responsibilities</a></li>
+         <li class="menu__item is-leaf is-active-trail leaf active-trail"><a href="/rights-responsibilities/students-rights-and-responsibilities" class="menu__link is-active-trail active-trail active">Students' Rights and Responsibilities</a></li>
+         <li class="menu__item is-leaf leaf"><a href="/rights-responsibilities/process-resolving-issues" class="menu__link">Process for Resolving Issues</a></li>
+         <li class="menu__item is-leaf last leaf"><a href="/rights-responsibilities/confidentiality" class="menu__link">Confidentiality</a></li>
+        </ul> 
+       </nav>
+      </section>
+     </aside>
+     <div id="content" class="column" role="main"><a id="main-content" name="main-content" tabindex="-1"></a>
+      <h1 class="page__title title" id="page-title"> Students' Rights and Responsibilities </h1>
+      <div class="panel-display boxton clearfix radix-boxton" id="page-page">
+       <div class="container-fluid">
+        <div class="row">
+         <div class="col-md-12 radix-layouts-content panel-panel">
+          <div class="panel-panel-inner">
+           <div class="panel-pane pane-entity-view pane-node">
+            <div class="panelizer-view-mode node node-full node-basic-page node-91 page-default">
+             <div class="panel-display boxton clearfix radix-boxton">
+              <div class="container-fluid">
+               <div class="row">
+                <div class="col-md-12 radix-layouts-content panel-panel">
+                 <div class="panel-panel-inner">
+                  <div class="panel-pane pane-entity-view pane-node">
+                   <article class="node-91 node node-basic-page view-mode-full clearfix">
+                    <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+                     <div class="field-items">
+                      <div class="field-item even">
+                       <p>Students with disabilities attending college are entitled to the same rights, privileges, and opportunities as all students at that institution. Individuals with disabilities are protected by Section 504 of the Rehabilitation Act of 1973 and The Americans with Disabilities Act of 1990 as amended, as well as the New Jersey Law Against Discrimination.&nbsp;Students entering the post-secondary setting should be aware that they are now responsible for identification, advocacy, planning, decision making, transitioning, and accommodation implementation. Therefore, it is important for students to understand both their rights and responsibilities relating to their disability in the academic setting.&nbsp;For more information on responsibilities in transitioning to post secondary institutions, visit the <a href="http://www.ed.gov/about/offices/list/ocr/transition.html." target="_blank">Department of Education website</a>.</p>
+                       <h2>Student Responsibilities:</h2>
+                       <p>Students who are self-identifying with the intent of requesting accommodations have a responsibility to:</p>
+                       <ul>
+                        <li>Follow all procedures for registration with the Office of Disability Services (see&nbsp;<strong><a href="/student-services">Student Services</a></strong>&nbsp;for procedures) including submission of appropriate professional documentation, identifying the disability and detailing the functional limitations caused by the condition.</li>
+                        <li>Read and respond to all correspondence from the Office of Disability Services.</li>
+                        <li>Self-identify in a timely manner, meeting deadlines and allowing reasonable time for review of documentation and implementation arrangements prior to the need for accommodations.&nbsp;</li>
+                        <li>Follow University procedures when receiving accommodations including any procedures which require interaction with professors or staff.</li>
+                        <li>Complete a course roster form every semester in order to provide notification of approved accommodations to instructors.</li>
+                        <li>Communicate with instructors at least two weeks prior to implementation in order to make arrangements for accommodations.</li>
+                        <li>Notify the Office of Disability Services if the approved accommodations are not working or are no longer needed.&nbsp;</li>
+                        <li>Follow proper procedures when filing a complaint (see&nbsp;<a href="/rights-responsibilities/process-resolving-issues"><strong>Resolving Issues</strong></a>).</li>
+                       </ul>
+                       <h2>Student Rights:</h2>
+                       <ul>
+                        <li>The right&nbsp;<i>not</i>&nbsp;to self-identify if accommodations are not being requested.</li>
+                        <li>The right to equal access to courses, facilities, university-sponsored courses, programs and activities.&nbsp;If accommodations are required to ensure equal access, the student must register with ODS to determine eligibility and appropriate accommodations.&nbsp;</li>
+                        <li>The right to be protected from discrimination.</li>
+                        <li>The right to make decisions regarding the release of personal disability information (see&nbsp;<a href="/rights-responsibilities/confidentiality"><strong>Confidentiality</strong></a>).</li>
+                        <li>The right to challenge decisions or submit a complaint through our Resolving Issues process.</li>
+                       </ul>
+                      </div>
+                     </div>
+                    </div> 
+                   </article>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div><!-- /.boxton -->
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- /.boxton -->
+     </div>
+    </div>
+   </div>
+   <footer class="footer" id="footer" role="banner">
+    <div class="footer__wrapper">
+     <div class="footer__left" id="footer-left">
+      <nav class="footer__footer-menu" id="footer-menu" role="navigation">
+       <h2 class="element-invisible">Secondary menu</h2>
+       <ul class="links inline clearfix">
+        <li class="menu-12181 first"><a href="/about-ods#ODS">Contact &amp; Directions</a></li>
+        <li class="menu-9486"><a href="http://www.princeton.edu/pub/">Publications</a></li>
+        <li class="menu-9491 last"><a href="http://www.princeton.edu/main/academics/policies/">Policies</a></li>
+       </ul> 
+      </nav>
+     </div>
+     <div class="footer__right" id="footer-right">
+      <p>Princeton, New Jersey 08544 USA - Operator: (609) 258-3000</p>
+      <div class="copyright">
+       © 2022 The Trustees of Princeton University
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script src="https://ods.princeton.edu/sites/ods/files/js/js_QdWJHA3T5DsVd76yfPmVWenMTPzhqH-VrI7kPMnuKT0.js"></script>
+  <script src="/sites/all/themes/custom/pwds_base/js/menu-help.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"465812596","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTkRYVlE7XQVYWFZdQT5aVlVRO0YNU05uSFIGUQ==","queueTime":0,"applicationTime":216,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

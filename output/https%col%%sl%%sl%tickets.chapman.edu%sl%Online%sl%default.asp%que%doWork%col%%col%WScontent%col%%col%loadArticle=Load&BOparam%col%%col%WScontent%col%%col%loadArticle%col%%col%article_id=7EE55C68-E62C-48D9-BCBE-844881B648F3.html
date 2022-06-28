@@ -1,0 +1,1967 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en"> 
+ <head> 
+  <title>Parking</title> 
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="Imagetoolbar" content="no"> 
+  <link rel="shortcut icon" href="/content/Images/chapman_favicon.ico?_7.48.0"> 
+  <link rel="apple-touch-icon" href="/content/Images/branding/home-screen-icon.png?_7.48.0"> <!-- inclusion of bootstrap specific CSS --> <!-- http://twitter.github.com for documentation on bootstrap --> 
+  <link rel="Stylesheet" href="/lib/bootstrap/css/bootstrap.min.css?_7.48.0"> <!-- end of bootstrap specific CSS --> <!-- include the font awesome css for font icons--> 
+  <link rel="Stylesheet" href="/lib/fontawesome-free/css/all.min.css"> 
+  <link rel="stylesheet" href="../../content/images/branding/global.css?_=7.48.0" type="text/css"> <!--[if lt IE 9]>
+    <link rel="stylesheet" href="../../content/images/branding/global_IE.css?_7.48.0" type="text/css">
+<![endif]--> 
+  <script src="/lib/jquery/jquery.min.js?_=7.48.0" type="text/javascript"></script> 
+  <script language="Javascript">
+	
+</script> 
+  <link rel="stylesheet" href="/content/Files/CSS/cu_branding_2022-05-26.css?_=7.48.0" type="text/css"> 
+  <script type="text/javascript">
+
+</script> 
+  <script type="text/javascript">
+  // Check whether cookies are enabled.
+	document.cookie = "TestCookie=1";
+	var testCookie = document.cookie;
+
+	// Try to retrieve the value we just set.
+	if (testCookie.indexOf("TestCookie=1") == -1)
+	{
+		
+		    document.location = "error.asp?nocookie=";
+		
+    }
+	else
+		document.cookie = "TestCookie=;expires=Thu, 01-Jan-1970 00:00:00 GMT";
+</script> 
+  <script type="text/javascript">
+
+function setRSVPButtons(response, eventCode)
+{
+                var url = '/' + eventCode + '/invited?user=' + response.authResponse.userID + '&access_token=' + response.authResponse.accessToken;
+                 FB.api(url, 'get',
+                 function (response) {
+                    if (!response || response.error) {
+                      new showAlertPopup("Error occurred:" + response.error.message, "", "", "", "", "");
+                    }
+                    else
+                    {
+                        if (response.data[0].rsvp_status == "attending")
+                        {
+                            var buttons = document.getElementsByName("attendingButton" + eventCode);
+                            for (var x = 0; x < buttons.length; x++)
+                            {
+                                buttons.item(x).disabled = true;
+                                buttons.item(x).style.display = "inline";
+                            }
+                            buttons = document.getElementsByName("maybeButton" + eventCode);
+                            for (var x = 0; x < buttons.length; x++)
+                            {
+                                buttons.item(x).style.display = "inline";
+                            }
+                        }
+                        else if (response.data[0].rsvp_status == "unsure")
+                        {
+                            var buttons = document.getElementsByName("attendingButton" + eventCode);
+                            for (var x = 0; x < buttons.length; x++)
+                            {
+                                buttons.item(x).style.display = "inline";
+                            }
+                            buttons = document.getElementsByName("maybeButton" + eventCode);
+                            for (var x = 0; x < buttons.length; x++)
+                            {
+                                buttons.item(x).disabled = true;
+                                buttons.item(x).style.display = "inline";
+                            }
+                        }
+                        else
+                        {
+                            var buttons = document.getElementsByName("attendingButton" + eventCode);
+                            for (var x = 0; x < buttons.length; x++)
+                            {
+                                buttons.item(x).style.display = "inline";
+                            }
+                            buttons = document.getElementsByName("maybeButton" + eventCode);
+                            for (var x = 0; x < buttons.length; x++)
+                            {
+                                buttons.item(x).style.display = "inline";
+                            }
+                        }
+                    }
+                });
+}
+function setRSVPButtonsLogin(eventCode)
+{
+        FB.getLoginStatus(function (response) {
+            if (response.status == 'connected') {
+                setRSVPButtons(response, eventCode);
+            }
+            else {
+                FB.login(function (response) {
+                    if (response.authResponse) {
+                        setRSVPButtons(response, eventCode);
+                    } else {
+                    }
+                }, { scope: 'rsvp_event,email,user_groups,publish_stream' });
+            }
+        });
+        return true;
+}
+
+function rsvpToFBEvent(status, response, eventCode)
+{
+
+                var url = '/' + eventCode + '/' + status + '?access_token=' + response.authResponse.accessToken;
+
+                 FB.api(url, 'post',
+                 function (response) {
+                    if (!response || response.error) {
+                      new showAlertPopup("Error occurred:" + response.error.message, "", "", "", "", "");
+                    }
+                    else
+                    {
+                      gaTrackEvent('Facebook', 'RSVP to Event Success');
+
+                        if (status == "attending")
+                        {
+                            var buttons = document.getElementsByName("attendingButton" + eventCode);
+                            for (var x = 0; x < buttons.length; x++)
+                            {
+                                buttons.item(x).disabled = true;
+                            }
+                            buttons = document.getElementsByName("maybeButton" + eventCode);
+                            for (var x = 0; x < buttons.length; x++)
+                            {
+                                buttons.item(x).disabled = false;
+                            }
+                        }
+                        else if (status == "maybe")
+                        {
+                            var buttons = document.getElementsByName("maybeButton" + eventCode);
+                            for (var x = 0; x < buttons.length; x++)
+                            {
+                                buttons.item(x).disabled = true;
+                            }
+                            buttons = document.getElementsByName("attendingButton" + eventCode);
+                            for (var x = 0; x < buttons.length; x++)
+                            {
+                                buttons.item(x).disabled = false;
+                            }
+                        }
+                    }
+                 });
+}
+
+function rsvpToFBEventLogin(status, eventCode) {
+
+        FB.getLoginStatus(function (response) {
+            if (response.status == 'connected') {
+                rsvpToFBEvent(status, response, eventCode);
+            }
+            else {
+                FB.login(function (response) {
+                    if (response.authResponse) {
+                        rsvpToFBEvent(status, response, eventCode);
+                    } else {
+                    }
+                }, { scope: 'rsvp_event,email,user_groups,publish_stream' });
+            }
+        });
+        return true;
+}
+</script> 
+  <script type="text/javascript" src="../Common/browser_detect.js?_=7.48.0"></script> 
+  <script type="text/javascript">
+  var genericConfirmationMessage = "Are you sure?";
+  var offerExpired = "Your order has expired.";
+  var admissionsExpired = "An offer on one of your tickets has expired.";
+  var alertHeaderText = "Attention";
+  var termsHeaderText = "Terms and Conditions";
+  var helpHeaderText = "Help";
+  var sectionHeaderText = "More Information";
+
+  var okayButtonText = "OK";
+  var cancelButtonText = "Cancel";
+  var acceptButtonText = "Accept";
+  var declineButtonText = "Decline";
+  var closeButtonText = "Close";
+
+  var sTokenName = 'sToken';
+  var sToken = '1,cb2a6877,62aaa4ea,1073D3BA-35BF-4693-8423-42BC3969251A,Ko+XQa8zt0CU7aCJ6xuJ0CsGkN8=';
+</script> 
+  <script type="text/javascript" src="../Common/online-jscript.js?_=7.48.0"></script> 
+  <script type="text/javascript" src="../Common/online-navigation-jscript.js?_=7.48.0"></script> 
+  <script type="text/javascript" src="../Common/Widgets/widgetParent.js?_=7.48.0"></script> 
+  <script type="text/javascript">
+/*
+
+*/
+function displayMessage(onClickEvent)
+{
+
+}
+
+function tsOrderChanged( url )
+{
+  new showConfirmPopup( '', 'The current order has unsaved changes that may be lost. Continue anyway?', function () { document.location = url }, '' );
+}
+
+// Used for drop-down menu in IE 6
+<!--//--><![CDATA[//><!--
+function startList() {
+	if (document.all&&document.getElementById) {
+		navRoot = document.getElementById("menuTop");
+		for (i=0; i<navRoot.childNodes.length; i++) {
+			node = navRoot.childNodes[i];
+			if (node.id=="menuTopItem") {
+				node.onmouseover=function() {
+					this.className+=" over";
+				}
+
+                node.onfocus=function(){
+                    this.className+=" over";
+                }
+
+				node.onmouseout=function() {
+					this.className=this.className.replace(" over", "");
+				}
+
+                node.onblur=function() {
+					this.className=this.className.replace(" over", "");
+				}
+			}
+		}
+	}
+}
+//--><!]]>
+
+var plusApi_loaded = false;
+var twitterApi_loaded = false;
+var fbApi_loaded = false;
+
+</script> 
+  <noscript> 
+   <meta http-equiv="refresh" content="0; URL=error.asp"> 
+  </noscript> 
+  <script type="text/javascript">
+var longMonthsOfYear = new Array();
+longMonthsOfYear[ 0 ] = "January";
+longMonthsOfYear[ 1 ] = "February";
+longMonthsOfYear[ 2 ] = "March";
+longMonthsOfYear[ 3 ] = "April";
+longMonthsOfYear[ 4 ] = "May";
+longMonthsOfYear[ 5 ] = "June";
+longMonthsOfYear[ 6 ] = "July";
+longMonthsOfYear[ 7 ] = "August";
+longMonthsOfYear[ 8 ] = "September";
+longMonthsOfYear[ 9 ] = "October";
+longMonthsOfYear[ 10 ] = "November";
+longMonthsOfYear[ 11 ] = "December";
+
+</script> 
+  <script type="text/javascript" src="../Common/Widgets/articleWidgets.js?_=7.48.0"></script> 
+  <script type="text/javascript" src="../Common/Widgets/TabularSearchResultsWidget.js?_=7.48.0"></script> 
+  <script type="text/javascript" src="../Common/Widgets/SearchFilterWidget.js?_=7.48.0"></script> 
+  <script type="text/javascript" src="../Common/Widgets/LoginWidget.js?_=7.48.0"></script> 
+  <script type="text/javascript" src="../Common/Widgets/VideoWidget.js?_=7.48.0"></script> 
+  <script type="text/javascript" src="../Common/Widgets/Tk3DDVWidget.js?_=7.48.0"></script> 
+  <script type="text/javascript" src="../Common/Widgets/CalendarWidget.js?_=7.48.0"></script> 
+  <script type="text/javascript" src="../Common/Widgets/twitterWidgets.js?_=7.48.0"></script> 
+  <script type="text/javascript" src="../Common/Widgets/googlePlusOneWidget.js?_=7.48.0"></script> 
+  <script type="text/javascript" src="../Common/Widgets/googleMapsWidget.js?_=7.48.0"></script> 
+  <script type="text/javascript" src="../Common/Widgets/facebookSocialWidgets.js?_=7.48.0"></script> 
+  <script type="text/javascript" src="../Common/Widgets/facebookEvent.js?_=7.48.0"></script> 
+  <script type="text/javascript" src="../Common/Widgets/instagramFeedWebWidget.js?_=7.48.0"></script> 
+  <script type="text/javascript">
+function loadLocalPage()
+{
+
+}
+
+var monthsOfYear = new Array();
+monthsOfYear[ 0 ] = "Jan";
+monthsOfYear[ 1 ] = "Feb";
+monthsOfYear[ 2 ] = "Mar";
+monthsOfYear[ 3 ] = "Apr";
+monthsOfYear[ 4 ] = "May";
+monthsOfYear[ 5 ] = "Jun";
+monthsOfYear[ 6 ] = "Jul";
+monthsOfYear[ 7 ] = "Aug";
+monthsOfYear[ 8 ] = "Sep";
+monthsOfYear[ 9 ] = "Oct";
+monthsOfYear[ 10 ] = "Nov";
+monthsOfYear[ 11 ] = "Dec";
+var longMonthsOfYear = new Array();
+longMonthsOfYear[ 0 ] = "January";
+longMonthsOfYear[ 1 ] = "February";
+longMonthsOfYear[ 2 ] = "March";
+longMonthsOfYear[ 3 ] = "April";
+longMonthsOfYear[ 4 ] = "May";
+longMonthsOfYear[ 5 ] = "June";
+longMonthsOfYear[ 6 ] = "July";
+longMonthsOfYear[ 7 ] = "August";
+longMonthsOfYear[ 8 ] = "September";
+longMonthsOfYear[ 9 ] = "October";
+longMonthsOfYear[ 10 ] = "November";
+longMonthsOfYear[ 11 ] = "December";
+var daysOfWeek = new Array();
+daysOfWeek[ 0 ] = "Sun";
+daysOfWeek[ 1 ] = "Mon";
+daysOfWeek[ 2 ] = "Tue";
+daysOfWeek[ 3 ] = "Wed";
+daysOfWeek[ 4 ] = "Thu";
+daysOfWeek[ 5 ] = "Fri";
+daysOfWeek[ 6 ] = "Sat";
+var longDaysOfWeek = new Array();
+longDaysOfWeek[ 0 ] = "Sunday";
+longDaysOfWeek[ 1 ] = "Monday";
+longDaysOfWeek[ 2 ] = "Tuesday";
+longDaysOfWeek[ 3 ] = "Wednesday";
+longDaysOfWeek[ 4 ] = "Thursday";
+longDaysOfWeek[ 5 ] = "Friday";
+longDaysOfWeek[ 6 ] = "Saturday";
+var timeIndicator = new Array();
+timeIndicator[ 0 ] = "AM";
+timeIndicator[ 1 ] = "PM";
+var articleContext = {  searchHeaders : [ "Id", "Object Type", "Type", "Category", "Name", "Description", "Short Description", "Start Date", "Start Date time", "Start Date date", "Start Date month", "Start Date year", "End Date", "On Sale Date", "Sales Status", "Availability", "Available Number", "Keywords", "Additional Info", "Group", "Image 1", "Image 2", "thumbnail", "Data 1", "Data 2", "Data 3", "Data 4", "Data 5", "Data 6", "Data 7", "Data 8", "Data 9", "Data 10", "Data 11", "Data 12", "Data 13", "Data 14", "Data 15", "Data 16", "filter1", "filter2", "filter3", "filter4", "filter_parent1", "filter_child2", "filter_parent2", "filter_child1", "multifilter1", "multifilter2", "Organization Short Description", "Sales Type", "Options", "Street", "City", "Province / State", "Postal Code", "Country", "Longitude", "Latitude", "Venue ID", "Venue Name", "Venue Description", "Venue Short Description", "Venue Group", "Venue Data 1", "Venue Data 2", "Venue Data 3", "Venue Data 4", "Venue Data 5", "Venue Data 6", "Venue Data 7", "Venue Data 8", "Venue Data 9", "Venue Data 10", "Venue Data 11", "Venue Data 12", "Venue Type", "Series Name", "Minimum Price", "Maximum Price", "Upsell Article", "Add-on Article", "email", "e_address1", "e_address2", "e_address3", "customer_id", "tracking_code", "twitter_search_term", "external_reference_code", "access", "Venue Organization Id", "Meta Description", "" ],
+  searchNames : [ "id", "object_type", "type", "category", "name", "description", "short_description", "start_date", "start_date_time", "start_date_date", "start_date_month", "start_date_year", "end_date", "on_sale_date", "sales_status", "availability_status", "availability_num", "keywords", "additional_info", "group", "image1", "image2", "thumbnail", "data1", "data2", "data3", "data4", "data5", "data6", "data7", "data8", "data9", "data10", "data11", "data12", "data13", "data14", "data15", "data16", "filter1", "filter2", "filter3", "filter4", "filter_parent1", "filter_child2", "filter_parent2", "filter_child1", "multifilter1", "multifilter2", "organization_short_description", "sales_type", "options", "street", "city", "state", "zip", "country", "longitude", "latitude", "venue_id", "venue_name", "venue_description", "venue_short_description", "venue_group", "venue_data1", "venue_data2", "venue_data3", "venue_data4", "venue_data5", "venue_data6", "venue_data7", "venue_data8", "venue_data9", "venue_data10", "venue_data11", "venue_data12", "venue_type", "series_name", "min_price", "max_price", "upsell_article_id", "addon_article_id", "email", "e_address1", "e_address2", "e_address3", "customer_id", "tracking_code", "twitter_search_term", "external_reference_code", "access", "organization_id", "meta_description", "" ],
+  searchResults : [ 
+    [ "04DE45C2-2399-4527-85FB-DEE758BF84A5", "P", "", "", "MUSC2021NameASeat", "Chapman University invites you to become part of the vibrant story and history of Marybelle and Sebastian P. Musco&nbsp;Center for the Arts by taking your place in the spotlight and naming a seat in this extraordinary venue.<br />\n<br />\nFrom the map below, select an available seat that you\'d like to sponsor.<br />\n<br />\nAdd it to your order and check out as normal.", "Musco Name a Seat", "", "", "", "", "", "", "", "S", "E", "656", "", "default.asp?doWork::WScontent::loadArticle=Load&BOparam::WScontent::loadArticle::article_id=E753B1C1-9AF6-4987-9790-F8A612ED0E05&BOparam::WScontent::loadArticle::context_id=04DE45C2-2399-4527-85FB-DEE758BF84A5", "", "/content/Images/musco/2021/name-a-seat-thumb.jpg", "", "", "", "", "", "", "", "", "", "20210608", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], ["2"], "415 North Glassell Street\nOrange, CA 92866", "", "", "", "", "", "", "A9A78344-7839-4D73-B91F-5ACCBAE46261", "Musco Center for the Arts", "Reserved + GA section for overselling", "Musco Center for the Arts", "", "", "", "", "", "", "", "", "", "", "", "", "", "reserved", "Musco Events 2021-22", "$500.00", "$5,000.00", "", "", "", "", "", "", "", "", "", "", "Public", "", "", "" ],
+    [ "DA00B07E-1CF4-404F-8B39-B4ED797D2D48", "B", "normal", "MuscoPackages2022-23", "Musco 2022-23 Pick 3", "No double discounts. A $3 per ticket service fee is applicable to tickets over $25.", "Buy 3 and Save 15%", "", "", "", "", "", "", "", "S", "", "", "", "default.asp?doWork::WScontent::loadArticle=Load&BOparam::WScontent::loadArticle::article_id=2F46F24A-8E9A-4727-AAB8-CFD267FA4BBA&BOparam::WScontent::loadArticle::context_id=DA00B07E-1CF4-404F-8B39-B4ED797D2D48", "", "/content/Images/musco/1819/elements/Buy3.15.jpg", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], ["1","5"], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "06FD81AC-5637-4716-A692-587936F5D661", "B", "normal", "MuscoPackages2022-23", "Musco 2022-23 Pick 4", "No double discounts. A $3 per ticket service fee is applicable to tickets over $25.", "Buy 4 and Save 20%", "", "", "", "", "", "", "", "S", "", "", "", "default.asp?doWork::WScontent::loadArticle=Load&BOparam::WScontent::loadArticle::article_id=2F46F24A-8E9A-4727-AAB8-CFD267FA4BBA&BOparam::WScontent::loadArticle::context_id=DA00B07E-1CF4-404F-8B39-B4ED797D2D48", "", "/content/Images/musco/1819/elements/Buy4.20.jpg", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], ["1","5"], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "055AB868-CB75-493D-8571-7AB28AD245CE", "B", "normal", "MuscoPackages2022-23", "Musco 2022-23 Pick 5+", "No double discounts. A $3 per ticket service fee is applicable to tickets over $25.", "Buy 5 and Save 25%", "", "", "", "", "", "", "", "S", "", "", "", "default.asp?doWork::WScontent::loadArticle=Load&BOparam::WScontent::loadArticle::article_id=2F46F24A-8E9A-4727-AAB8-CFD267FA4BBA&BOparam::WScontent::loadArticle::context_id=DA00B07E-1CF4-404F-8B39-B4ED797D2D48", "", "/content/Images/musco/1819/elements/Buy5.25.jpg", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], ["1","5"], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "E9ABB123-4264-49DE-8386-10E13C22B3B2", "B", "normal", "StaffSummitWeek2022", "Staff Summit 2022", "Please select the events you would like to attend below. One ticket per staff per event.", "Staff Summit Week 2022: Celebrating Impact", "", "", "", "", "", "", "", "S", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], ["1","5"], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "48FD3CBA-121E-4FF3-9384-9A75DCD06634", "S", "PurchaseAndReload", "", "Chapman Ticketing Gift Card", "Give the gift of Chapman events with a reloadable gift card.", "Chapman Ticketing Gift Card", "", "", "", "", "", "", "", "S", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], [], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "79F38CE3-1AD0-4CB5-B876-00A3CC4D6B69", "G", "1", "", "CoPA Add-on Online Gift", "Donations to the College of Performing Arts support production costs, master classes, scholarships and traveling funds for our music, theatre and dance students.", "", "", "", "", "", "", "", "", "S", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], [], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "$25.00", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "42C32686-CB21-45A0-889C-702DFAFC4006", "G", "1", "", "Chapman Celebrates Add-on Gift", "Your donation benefits the Chapman Scholarship Fund helping students achieve their true potential.", "", "", "", "", "", "", "", "", "S", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], [], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "$25.00", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "AA837A25-FCE4-4AE0-97EE-81D132F49E21", "G", "", "", "LGBTQIA+ Staff & Faculty Forum Individual Gift", "LGBTQIA+ Staff & Faculty Forum Individual Gift", "", "", "", "", "", "", "", "", "S", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], [], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "$0.00", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "9E08A88F-D0E3-42A2-A920-A5D264C22149", "G", "1", "", "Athletics Add-on Online Gift", "Chapman student-athletes are some of the best and brightest in NCAA Division III. And thanks to the generosity of donors like you, they are able to compete and practice in some of the finest and most state-of-the-art facilities in Division III.", "", "", "", "", "", "", "", "", "S", "", "", "", "", "", "/content/Images/athletics/19-20/Athletics-logo.png", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], [], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "$25.00", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "DB23C3AC-A968-4037-825A-AB7C827F057A", "G", "1", "", "DPT Intro to Pain Science Add-On Gift", "Donations to the Physical Therapy Studies Fund provide support for student research and travel to events and conferences.", "", "", "", "", "", "", "", "", "S", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], [], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "$25.00", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "6DCD3643-E76E-4CE2-8551-B8F09B346667", "G", "1", "", "Don Perkins Memorial Hall of Fame Fund Add-on Online Gift", "Chapman’s Hall of Fame is sustained solely from your gifts – there is no annual working budget for the banquet or bronze plaques. Please give generously to safeguard this time-honored Chapman tradition. The legacy of sports excellence depends on it!", "", "", "", "", "", "", "", "", "S", "", "", "", "", "", "/content/Images/athletics/19-20/Athletics-logo.png", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], [], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "$25.00", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "2D781C67-8663-45AA-960A-C69F33CBE2B9", "G", "1", "", "Chapman Add-on Online Gift", "Please consider making a gift to Chapman University. Thank you for your generosity.", "", "", "", "", "", "", "", "", "S", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], [], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "$25.00", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "27AF9338-E98D-49FA-A0D1-CA020157FE0B", "G", "1", "", "Musco Add-on Online Gift", "Ticket sales alone do not cover the cost of bringing Musco Center’s mission to life. We rely on the generosity of donors and members, like yourself, to enable transformative art experiences to a university environment and the surrounding community.", "", "", "", "", "", "", "", "", "S", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], [], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "$25.00", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "2FE4292A-FFDF-43D5-9662-D55D5E2AE6B0", "G", "1", "", "David Currey Director of Athletics Endowed Fund Add-on Online Gift", "This event is offered complimentary of Chapman Athletics. We ask that you please consider honoring Dave’s service to Chapman and all of the student-athletes over the last three decades with a gift to the David Currey Director of Athletics Endowed Fund.", "", "", "", "", "", "", "", "", "S", "", "", "", "", "", "/content/Images/athletics/19-20/Athletics-logo.png", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], [], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "$25.00", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "638E3A87-2355-493A-A9A1-D60460840013", "G", "1", "", "Mimosa Brunch Add-on Online Gift", "Giving Day is April 26th. Join us in support of our students by making your gift now!", "", "", "", "", "", "", "", "", "S", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], [], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "$5.00", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "7B066931-CB4B-41BC-9C45-D77FFA34FCB4", "G", "", "", "Chapman Individual Gift", "Chapman Fund", "", "", "", "", "", "", "", "", "S", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], [], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "$0.00", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "8DE749FB-8903-408D-8C94-DA680745690D", "G", "1", "", "Italian Studies Add-On Online Gift", "Do you appreciate events like the Italian Perspective series? Help Chapman’s Italian Studies program continue to thrive and explore new ways to pursue the teaching of Italian language and culture in the 21st century.", "", "", "", "", "", "", "", "", "S", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], [], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "$25.00", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "94F180E7-9DBC-46F3-AF80-E6119EC1781B", "G", "1", "", "PILF Benefit Add-on Online Gift", "Benefit ticket sales alone don\'t cover the cost of all public interest scholarships for our students. We rely on the generosity of donors and alumni, like yourself, to enable transformative experiences for our students working in the public interest field.", "", "", "", "", "", "", "", "", "S", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], [], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "$25.00", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+    [ "6D156FD9-EECA-41D9-BE45-F04158CFFC9D", "G", "1", "", "DPT Spring Formal Add-On Gift", "Your generous donation to help underwrite the cost of the Spring Formal and enable Chapman DPT students who need financial assistance to attend is much appreciated.", "", "", "", "", "", "", "", "", "S", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", [], [], "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "$25.00", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ]
+  ],
+  searchFilters : [ 
+    { name : "object_type_filter", label : "Type Filter", className : "objectTypeFilterList", clearFilterLabel : "Clear Type Filter", selectedValue : "", values : [  ]  },
+    { name : "month_filter", label : "Month Filter", className : "monthFilterList", clearFilterLabel : "Clear Month Filter", selectedValue : "", values : [  ]  },
+    { name : "city_filter", label : "City Filter", className : "cityFilterList", clearFilterLabel : "Clear City Filter", selectedValue : "", values : [  ]  },
+    { name : "venue_filter", label : "Venue Filter", className : "venueFilterList", clearFilterLabel : "Clear Venue Filter", selectedValue : "", values : [  ]  },
+    { name : "category_filter", label : "Category Filter", className : "categoryFilterList", clearFilterLabel : "Clear Category Filter", selectedValue : "", values : [  ]  },
+    { name : "organization_short_description_filter", label : "Organization Filter", className : "organizationShortDescriptionFilterList", clearFilterLabel : "Clear Organization Filter", selectedValue : "", values : [  ]  },
+    { name : "filter1", label : "Filter 1", className : "customFilterList", clearFilterLabel : "Clear Filter", selectedValue : "", values : [  ]  },
+    { name : "filter2", label : "Filter 2", className : "customFilterList", clearFilterLabel : "Clear Filter", selectedValue : "", values : [  ]  },
+    { name : "filter3", label : "Filter 3", className : "customFilterList", clearFilterLabel : "Clear Filter", selectedValue : "", values : [  ]  },
+    { name : "filter4", label : "Filter 4", className : "customFilterList", clearFilterLabel : "Clear Filter", selectedValue : "", values : [  ]  },
+    { name : "filter_parent1", label : "Filter Parent 1", className : "customFilterParentList", clearFilterLabel : "Clear Filter", selectedValue : "", values : [  ]  },
+    { name : "filter_parent2", label : "Filter Parent 2", className : "customFilterParentList", clearFilterLabel : "Clear Filter", selectedValue : "", values : [  ]  },
+    { name : "multifilter1", label : "Multi Filter 1", className : "customFilterList", clearFilterLabel : "Clear Filter", selectedValue : "", values : [  ]  },
+    { name : "multifilter2", label : "Multi Filter 2", className : "customFilterList", clearFilterLabel : "Clear Filter", selectedValue : "", values : [  ]  }
+  ],
+  searchCalendarFilters : [ 
+    { name : "calendar_days", label : "Calendar Days", className : "dayFilterList", clearFilterLabel : "Clear Day Filter", selectedValue : "", values : [ ["2022-06-19T00:00:00.000", "1"],["2022-06-22T00:00:00.000", "1"],["2022-06-23T00:00:00.000", "1"],["2022-06-25T00:00:00.000", "1"],["2022-12-22T00:00:00.000", "1"],["2023-02-16T00:00:00.000", "1"],["2023-02-23T00:00:00.000", "1"],["2023-03-01T00:00:00.000", "1"],["2023-03-16T00:00:00.000", "1"],["2022-07-07T00:00:00.000", "1"],["2022-07-09T00:00:00.000", "1"],["2023-03-19T00:00:00.000", "1"],["2023-04-02T00:00:00.000", "1"],["2022-08-12T00:00:00.000", "1"],["2022-08-13T00:00:00.000", "1"],["2023-04-29T00:00:00.000", "1"],["2022-08-24T00:00:00.000", "1"],["2022-08-25T00:00:00.000", "1"],["2022-09-03T00:00:00.000", "1"],["2022-09-14T00:00:00.000", "1"],["2022-09-17T00:00:00.000", "1"],["2022-09-24T00:00:00.000", "1"],["2022-09-29T00:00:00.000", "1"],["2022-09-30T00:00:00.000", "1"],["2022-10-01T00:00:00.000", "1"],["2022-10-05T00:00:00.000", "1"],["2022-10-14T00:00:00.000", "1"],["2022-10-15T00:00:00.000", "1"],["2022-10-20T00:00:00.000", "1"],["2022-10-28T00:00:00.000", "1"],["2022-11-02T00:00:00.000", "1"],["2022-11-05T00:00:00.000", "1"],["2022-06-30T00:00:00.000", "2"],["2022-07-15T00:00:00.000", "2"],["2022-07-29T00:00:00.000", "2"],["2022-08-23T00:00:00.000", "2"],["2022-06-28T00:00:00.000", "3"],["2022-07-01T00:00:00.000", "3"],["2022-06-27T00:00:00.000", "4"],["2022-06-29T00:00:00.000", "5"] ]  },
+  ],
+  searchLabels: { performances: "Events", date: "Date", unavailable_message: "You must login first to purchase these tickets.", sold_out_message: "Sold Out", on_sale_message: "On sale", to_be_determined_message: "TBD", next: "»", previous: "«", next_month: "Next month", previous_month: "Previous month", avail_excellent: "Excellent", avail_good: "Good", avail_limited: "Limited", avail_sold_out: "Sold Out", no_results_message: "We\'re sorry, there are no events matching your search.", promo_item: "This item is available with a promocode", buy_seats_message: "Reserve Now", buy_bundle_message: "Reserve Now", buy_item_message: "Buy", pageNext: "Next", pagePrev: "Previous", buy_gift_message: "Donate", buy_storedvalueitem_message: "Buy", upsell_seats_message: "Upgrade", upsell_bundle_message: "Upgrade", upsell_item_message: "Upgrade", upsell_gift_message: "Upgrade", upsell_storedvalueitem_message: "Upgrade", upsell_popup_title: "Interested in Upgrading?", addon_seats_message: "Select", addon_bundle_message: "Select", addon_item_message: "Select", addon_gift_message: "Select", addon_storedvalueitem_message: "Select", exchange_seats_message: "Select", exchange_bundle_message: "Select", exchange_item_message: "Select", exchange_gift_message: "Select", exchange_storedvalueitem_message: "Select", describe_seats_message: "%action, %name, %datetime", describe_bundle_message: "%action, %name", describe_item_message: "%action, %name", describe_gift_message: "%action, %name", describe_storedvalueitem_message: "%action, %name", describe_article_message: "%action, %name", see_events_for_date: "See events for %m %d", select_your_time: "Please select your time", view_article_message: "More Info", price_title: "Price", pagination: "Pagination", availability_title: "Availability", active_promo_codes: "Active promotions:", promo_code_item_title: "This item is available with a promocode", has_promo_code: "false", brand_path: "../../content/images/branding/" }, 
+  searchSUMO: { availability_access: "true", mapSelect_access: "true" }, 
+  pagination: { current_page: "1", page_size: "20", total_pages: "16" },
+  loginLabels: { pageTarget: "maintainAccount.asp", loginBoxClass: "login-required", forgotPassword: "true", formLoginName: "", accountLogin: "true" }, 
+  contextId: "", 
+  articleId: "7EE55C68-E62C-48D9-BCBE-844881B648F3", 
+  articleSearchId: "", 
+  salesType: "P",
+  sToken: "1,cb2a6877,62aaa4ea,1073D3BA-35BF-4693-8423-42BC3969251A,Ko+XQa8zt0CU7aCJ6xuJ0CsGkN8="};
+
+createSearchMapping(articleContext);
+
+tsAddReadyEvent(function() {
+    setCalendarWidgetDisplayMonth();
+    drawWidgets(articleContext);
+    insertToken(articleContext);
+});
+
+function setCalendarWidgetDisplayMonth()
+{
+    // If a date has been selected from the calendar widget, we will receive a 'search_from' parameter.
+    // Pass this back to the widget so that it redisplays the month that was previously visible
+    
+}
+
+</script> 
+  <script type="text/javascript">
+    function doGAClicks(selectedItem) {
+        //do nothing
+    };
+
+    function gaTrackEvent(category, action) {
+        //do nothing
+    };
+</script> 
+ </head> 
+ <body lang="en" onload="startList();loadLocalPage(); displayMessage(&quot;&quot;); displayOnOfferTimeout();" onunload="closeChildren()"> 
+  <div id="spinner" class="spinner"></div> 
+  <script>    
+    var spinnerDelayTimeout;
+    
+    var showSpinner = function(){};
+    var spinnerElement = document.querySelector('body')
+
+
+
+    var spinnerDelay = 3;
+    
+
+    function stopSpinner() {
+        spinnerElement.classList.remove('show-spinner');
+        cancelSpinnerTimeouts();
+        expandSpinner();
+    }
+
+    function startSpinner() {
+        expandSpinner();
+        spinnerElement.classList.add('show-spinner');
+    }
+    
+    
+    function cancelSpinnerTimeouts() {
+        clearTimeout(spinnerDelayTimeout);
+    }
+    
+    function expandSpinner() {
+        spinnerElement.classList.remove('minimize-spinner');
+    }
+    
+    function minimizeSpinner() {
+        spinnerElement.classList.add('minimize-spinner');
+    }
+    
+    // stop spinner if a JS error occurred
+    window.addEventListener('error', stopSpinner);
+    
+    // Mimimize spinner if clicked
+    spinnerElement.addEventListener('click', minimizeSpinner);
+
+    // Shows the spinner if page takes long to load
+    // pass true to allow spinner to show even with a popup open
+    (showSpinner = function() {
+        var overridePopupCheck = arguments[0] ? arguments[0] : false;
+        if (overridePopupCheck || !document.querySelector("#popupDiv")) {
+            spinnerDelayTimeout = setTimeout(startSpinner, spinnerDelay*1000);
+        }
+        return true;
+    })();
+
+
+
+</script> 
+  <script type="text/javascript">
+
+function testValue(value, pattern)
+{
+  if(!value || !pattern)
+    return false;
+
+  if(pattern.constructor === RegExp)
+    return pattern.test(value.toString());
+
+  return value.toString() == pattern.toString();
+}
+
+function isGTM()
+{
+	return true;
+}
+
+function getSessionObject()
+{
+	return {av: {session: {language: "EN", 
+role: "Internet", 
+referrer: null, 
+user_id: undefined, 
+promo_codes: []}}};
+}
+
+function getErrorObject()
+{
+	
+	return null;
+	
+}
+
+function getPageObject()
+{
+	return {av: {page: { page_script: "/Online/default.asp", 
+ search: { total_records: null, 
+ total_pages: null, 
+ page_size: null, 
+ current_page: null, 
+ criteria: { search_from :null, 
+ search_to :null, 
+ search_criteria :null, 
+ category_filter :null, 
+ city_filter :null, 
+ venue_filter :null, 
+ month_filter :null, 
+ object_type_filter :null}}, 
+ articles: [{article_name: "Chapman Article Parking & Directions", article_title: "Parking", article_type: "2", article_id: "7EE55C68-E62C-48D9-BCBE-844881B648F3"},
+{article_name: "", article_title: "default header", article_type: "1", article_id: "F8103D8C-7EA0-4B4B-A37E-9DE398B9313D"},
+{article_name: "", article_title: "default footer", article_type: "1", article_id: "5D09622E-A899-411D-B525-B2F262B34B63"}],
+
+          articleExists: function (article_type, article_title)    
+          {
+            if (article_type == null && article_title == null)
+            {
+              if(this.articles.length)
+                return true;
+            }
+            else if (article_type == null)
+            {
+              for(var i = 0; i < this.articles.length; i++) {
+                  if(testValue(this.articles[i].article_title, article_title))
+                    return true;
+              }
+            }
+            else if (article_title == null)
+            {
+              for(var i = 0; i < this.articles.length; i++) {
+                if (testValue(this.articles[i].article_type, article_type))
+                  return true;
+              }
+            }
+            else
+            {
+              for(var i = 0; i < this.articles.length; i++) {
+                if (testValue(this.articles[i].article_title, article_title) && testValue(this.articles[i].article_type, article_type))
+                  return true;
+              }
+            }
+    
+            return false;
+          }
+	}}};
+}
+
+
+function getOrderEventObject()
+{
+	return {event: {av : {event: {order: { action: ""}}}, toString: function() {return "av.event.order-" + this.av.event.order.action}}};
+}
+
+function getCartEventObject()
+{
+	return {event: {av : {event: {cart: { action: ""}}}, toString: function() {return "av.event.cart-" + this.av.event.cart.action}}};
+}
+
+function admissionExists(object, product_name)
+{
+	var ids = new Array();
+	for (var i = 0; i < object.performances.length; i++)
+	{
+		if (testValue(object.performances[i].name, product_name) ||    
+			testValue(object.performances[i].description, product_name) ||
+			testValue(object.performances[i].short_description, product_name))
+		{
+			ids.push(object.performances[i].performance_id);
+		}
+	}
+	if (ids.length > 0)
+	{
+		for (var i = 0; i < object.order_admissions.length; i++)
+		{
+			if (ids.indexOf(object.order_admissions[i].performance_id) != -1)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+function bundleExists(object, product_name)
+{
+	var ids = new Array();
+	for (var i = 0; i < object.bundles.length; i++)
+	{
+		if (testValue(object.bundles[i].name, product_name) ||    
+			testValue(object.bundles[i].description, product_name) ||
+			testValue(object.bundles[i].short_description, product_name))
+		{
+			ids.push(object.bundles[i].bundle_id);
+		}
+	}
+	if (ids.length > 0)
+	{
+		for (var i = 0; i < object.order_bundle.length; i++)
+		{
+			if (ids.indexOf(object.order_bundle[i].bundle_id) != -1)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+function miscItemExists(object, product_name)
+{
+	var ids = new Array();
+	for (var i = 0; i < object.misc_items.length; i++)
+	{
+		if (testValue(object.misc_items[i].name, product_name) ||    
+			testValue(object.misc_items[i].description, product_name) ||
+			testValue(object.misc_items[i].short_description, product_name))
+		{
+			ids.push(object.misc_items[i].miscellaneous_item_id);
+		}
+	}
+	if (ids.length > 0)
+	{
+		for (var i = 0; i < object.order_misc_items.length; i++)
+		{
+			if (ids.indexOf(object.order_misc_items[i].item_id) != -1)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+function giftExists(object, product_name)
+{
+	var ids = new Array();
+	for (var i = 0; i < object.gifts.length; i++)
+	{
+		if (testValue(object.gifts[i].name, product_name) ||    
+			testValue(object.gifts[i].description, product_name) ||
+			testValue(object.gifts[i].short_description, product_name))
+		{
+			ids.push(object.gifts[i].gift_id);
+		}
+	}
+	if (ids.length > 0)
+	{
+		for (var i = 0; i < object.order_gifts.length; i++)
+		{
+			if (ids.indexOf(object.order_gifts[i].gift_id) != -1)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+function storeValueExists(object, product_name)
+{
+	var ids = new Array();
+	for (var i = 0; i < object.stored_values.length; i++)
+	{
+		if (testValue(object.stored_values[i].name, product_name) ||    
+			testValue(object.stored_values[i].description, product_name) ||
+			testValue(object.stored_values[i].short_description, product_name))
+		{
+			ids.push(object.stored_values[i].stored_value_id);
+		}
+	}
+	if (ids.length > 0)
+	{
+		for (var i = 0; i < object.order_stored_values.length; i++)
+		{
+			if (ids.indexOf(object.order_stored_values[i].stored_value_id) != -1)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+function productExists(object, product_type, product_name)
+{
+	var result = false;
+	if (product_name == null && product_type == null)
+	{
+		if (object.order_admissions.length || object.order_bundle.length || object.order_misc_items.length ||
+		object.order_gifts.length || object.order_stored_values.length)
+			result = true;
+	}
+	else if (product_name == null)
+	{
+		if (testValue(product_type, "admission") && object.order_admissions.length)
+			result = true;
+		if (testValue(product_type, "bundle") && object.order_bundle.length)
+			result = true;
+		if (testValue(product_type, "miscellaneous_item") && object.order_misc_items.length)
+			result = true;
+		if (testValue(product_type, "gift") && object.order_gifts.length)
+			result = true;
+		if (testValue(product_type, "stored_value") && object.order_stored_values.length)
+			result = true;
+	}
+	else if (product_type == null)
+	{
+		if (object.order_admissions.length)
+		{
+			result = admissionExists(object, product_name);
+		}
+		if (object.order_bundle.length)
+		{
+			result = bundleExists(object, product_name);
+		}
+		if (object.order_misc_items.length)
+		{
+			result = miscItemExists(object, product_name);
+		}
+		if (object.order_gifts.length)
+		{
+			result = giftExists(object, product_name);
+		}
+		if (object.order_stored_values.length)
+		{
+			result = storeValueExists(object, product_name);
+		}
+	}
+	else
+	{
+		if (testValue(product_type, "admission") && object.order_admissions.length)
+		{
+			result = admissionExists(object, product_name);
+		}
+		if (testValue(product_type, "bundle") && object.bundles.length)
+		{
+			result = bundleExists(object, product_name);
+		}
+		if (testValue(product_type, "miscellaneous_item") && object.misc_items.length)
+		{
+			result = miscItemExists(object, product_name);
+		}
+		if (testValue(product_type, "gift") && object.gifts.length)
+		{
+			result = giftExists(object, product_name);
+		}
+		if (testValue(product_type, "stored_value") && object.stored_values.length)
+		{
+			result = storeValueExists(object, product_name);
+		}
+	}
+	return result;
+}
+
+function admissionValue(object, product_name)
+{
+	var id = new Array();
+	var result = 0;
+	for (var i = 0; i < object.performances.length; i++)
+	{
+		if (testValue(object.performances[i].name, product_name) ||    
+			testValue(object.performances[i].description, product_name) ||
+			testValue(object.performances[i].short_description, product_name))
+		{
+			id.push(object.performances[i].performance_id);
+		}
+	}
+	if (id.length > 0)
+	{
+		for (var i = 0; i < object.order_admissions.length; i++)
+		{
+			if (id.indexOf(object.order_admissions[i].performance_id) != -1)
+			{
+				result += object.order_admissions[i].amount.amount;
+			}
+		}
+	}
+	return result;
+}
+
+function bundleValue(object, product_name)
+{
+	var id = new Array();
+	var result = 0;
+	for (var i = 0; i < object.bundles.length; i++)
+	{
+		if (testValue(object.bundles[i].name, product_name) ||    
+			testValue(object.bundles[i].description, product_name) ||
+			testValue(object.bundles[i].short_description, product_name))
+		{
+			id.push(object.bundles[i].bundle_id);
+		}
+	}
+	if (id.length > 0)
+	{
+		for (var i = 0; i < object.order_bundle_admissions.length; i++)
+		{
+			if (id.indexOf(object.order_bundle_admissions[i].bundle_id) != -1)
+			{
+				result += object.order_bundle_admissions[i].amount.amount;
+			}
+		}
+	}
+	return result;
+}
+
+function miscItemValue(object, product_name)
+{
+	var id = new Array();
+	var result = 0;
+	for (var i = 0; i < object.misc_items.length; i++)
+	{
+		if (testValue(object.misc_items[i].name, product_name) ||    
+			testValue(object.misc_items[i].description, product_name) ||
+			testValue(object.misc_items[i].short_description, product_name))
+		{
+			id.push(object.misc_items[i].miscellaneous_item_id);
+		}
+	}
+	if (id.length > 0)
+	{
+		for (var i = 0; i < object.order_misc_items.length; i++)
+		{
+			if (id.indexOf(object.order_misc_items[i].item_id) != -1)
+			{
+				result += object.order_misc_items[i].amount.amount;
+			}
+		}
+	}
+	return result;
+}
+
+function giftValue(object, product_name)
+{
+	var id = new Array();
+	var result = 0;
+	for (var i = 0; i < object.gifts.length; i++)
+	{
+		if (testValue(object.gifts[i].name, product_name) ||    
+			testValue(object.gifts[i].description, product_name) ||
+			testValue(object.gifts[i].short_description, product_name))
+		{
+			id.push(object.gifts[i].gift_id);
+		}
+	}
+	if (id.length > 0)
+	{
+		for (var i = 0; i < object.order_gifts.length; i++)
+		{
+			if (id.indexOf(object.order_gifts[i].gift_id) != -1)
+			{
+				result += object.order_gifts[i].pledge_amount.amount;
+			}
+		}
+	}
+	return result;
+}
+
+function storedValueValue(object, product_name)
+{
+	var id = new Array();
+	var result = 0;
+	for (var i = 0; i < object.stored_values.length; i++)
+	{
+		if (testValue(object.stored_values[i].name, product_name) ||    
+			testValue(object.stored_values[i].description, product_name) ||
+			testValue(object.stored_values[i].short_description, product_name))
+		{
+			id.push(object.stored_values[i].stored_value_id);
+		}
+	}
+	if (id.length > 0)
+	{
+		for (var i = 0; i < object.order_stored_values.length; i++)
+		{
+			if (id.indexOf(object.order_stored_values[i].stored_value_id) != -1)
+			{
+				result += object.order_stored_values[i].amount.amount;
+			}
+		}
+	}
+	return result;
+}
+
+function productValue(object, product_type, product_name)
+{
+	var result = 0;
+	if (product_name == null && product_type == null)
+	{
+		if (object.order_admissions.length)
+		{
+			for (var i = 0; i < object.order_admissions.length; i++)
+			{
+				result += object.order_admissions[i].amount.amount;
+			}
+		}
+		if (object.order_bundle_admissions.length)
+		{
+			for (var i = 0; i < object.order_bundle_admissions.length; i++)
+			{
+				result += object.order_bundle_admissions[i].amount.amount;
+			}
+		}
+		if (object.order_misc_items.length)
+		{
+			for (var i = 0; i < object.order_misc_items.length; i++)
+			{
+				result += object.order_misc_items[i].amount.amount;
+			}
+		}
+		if (object.order_gifts.length)
+		{
+			for (var i = 0; i < object.order_gifts.length; i++)
+			{
+				result += object.order_gifts[i].pledge_amount.amount;
+			}
+		}
+		if (object.order_stored_values.length)
+		{
+			for (var i = 0; i < object.order_stored_values.length; i++)
+			{
+				result += object.order_stored_values[i].amount.amount;
+			}
+		}
+	}
+	else if (product_name == null)
+	{
+		if (testValue(product_type, "admission") && object.order_admissions.length)
+		{
+			for (var i = 0; i < object.order_admissions.length; i++)
+			{
+				result += object.order_admissions[i].amount.amount;
+			}
+		}
+		if (testValue(product_type, "bundle") && object.order_bundle_admissions.length)
+		{
+			for (var i = 0; i < object.order_bundle_admissions.length; i++)
+			{
+				result += object.order_bundle_admissions[i].amount.amount;
+			}
+		}
+		if (testValue(product_type, "miscellaneous_item") && object.order_misc_items.length)
+		{
+			for (var i = 0; i < object.order_misc_items.length; i++)
+			{
+				result += object.order_misc_items[i].amount.amount;
+			}
+		}
+		if (testValue(product_type, "gift") && object.order_gifts.length)
+		{
+			for (var i = 0; i < object.order_gifts.length; i++)
+			{
+				result += object.order_gifts[i].pledge_amount.amount;
+			}
+		}
+		if (testValue(product_type, "stored_value") && object.order_stored_values.length)
+		{
+			for (var i = 0; i < object.order_stored_values.length; i++)
+			{
+				result += object.order_stored_values[i].amount.amount;
+			}
+		}
+	}
+	else if (product_type == null)
+	{
+		if (object.order_admissions.length)
+		{
+			result += admissionValue(object, product_name);
+		}
+		if (object.order_bundle_admissions.length)
+		{
+			result += bundleValue(object, product_name);
+		}
+		if (object.order_misc_items.length)
+		{
+			result += miscItemValue(object, product_name);
+		}
+		if (object.order_gifts.length)
+		{
+			result += giftValue(object, product_name);
+		}
+		if (object.order_stored_values.length)
+		{
+			result += storedValueValue(object, product_name);
+		}
+	}
+	else
+	{
+		if (testValue(product_type, "admission") && object.order_admissions.length)
+		{
+			result += admissionValue(object, product_name);
+		}
+		else if (testValue(product_type, "bundle") && object.bundles.length)
+		{
+			result += bundleValue(object, product_name);
+		}
+		else if (testValue(product_type, "miscellaneous_item") && object.misc_items.length)
+		{
+			result += miscItemValue(object, product_name);
+		}
+		else if (testValue(product_type, "gift") && object.gifts.length)
+		{
+			result += giftValue(object, product_name);
+		}
+		else if (testValue(product_type, "stored_value") && object.stored_values.length)
+		{
+			result += storedValueValue(object, product_name);
+		}
+	}
+	return result;
+}
+
+function admissionCount(object, product_name)
+{
+	var id = new Array();
+	var result = 0;
+	for (var i = 0; i < object.performances.length; i++)
+	{
+		if (testValue(object.performances[i].name, product_name) ||    
+			testValue(object.performances[i].description, product_name) ||
+			testValue(object.performances[i].short_description, product_name))
+		{
+			id.push(object.performances[i].performance_id);
+		}
+	}
+	if (id.length > 0)
+	{
+		for (var i = 0; i < object.order_admissions.length; i++)
+		{
+			if (id.indexOf(object.order_admissions[i].performance_id) != -1)
+			{
+				result ++;
+			}
+		}
+	}
+	return result;
+}
+
+function bundleCount(object, product_name)
+{
+	var id = new Array();
+	var result = 0;
+	for (var i = 0; i < object.bundles.length; i++)
+	{
+		if (testValue(object.bundles[i].name, product_name) ||    
+			testValue(object.bundles[i].description, product_name) ||
+			testValue(object.bundles[i].short_description, product_name))
+		{
+			id.push(object.bundles[i].bundle_id);
+		}
+	}
+	if (id.length > 0 && object.order_bundle_admissions.length)
+	{
+		for (var i = 0; i < object.order_bundle_admissions.length; i++)
+		{
+			if (id.indexOf(object.order_bundle_admissions[i].bundle_id) != -1)
+			{
+				result ++;
+			}
+		}
+	}
+	return result;
+}
+
+function miscItemCount(object, product_name)
+{
+	var id = new Array();
+	var result = 0;
+	for (var i = 0; i < object.misc_items.length; i++)
+	{
+		if (testValue(object.misc_items[i].name, product_name) ||    
+			testValue(object.misc_items[i].description, product_name) ||
+			testValue(object.misc_items[i].short_description, product_name))
+		{
+			id.push(object.misc_items[i].miscellaneous_item_id);
+		}
+	}
+	if (id.length > 0 && object.order_misc_items.length)
+	{
+		for (var i = 0; i < object.order_misc_items.length; i++)
+		{
+			if (id.indexOf(object.order_misc_items[i].item_id) != -1)
+			{
+				result += parseFloat(object.order_misc_items[i].quantity);
+			}
+		}
+	}
+	return result;
+}
+
+function giftCount(object, product_name)
+{
+	var id = new Array();
+	var result = 0;
+	for (var i = 0; i < object.gifts.length; i++)
+	{
+		if (testValue(object.gifts[i].name, product_name) ||    
+			testValue(object.gifts[i].description, product_name) ||
+			testValue(object.gifts[i].short_description, product_name))
+		{
+			id.push(object.gifts[i].gift_id);
+		}
+	}
+	if (id.length > 0)
+	{
+		for (var i = 0; i < object.order_gifts.length; i++)
+		{
+			if (id.indexOf(object.order_gifts[i].gift_id) != -1)
+			{
+				result ++;
+			}
+		}
+	}
+	return result;
+}
+
+function storedValueCount(object, product_name)
+{
+	var id = new Array();
+	var result = 0;
+	for (var i = 0; i < object.stored_values.length; i++)
+	{
+		if (testValue(object.stored_values[i].name, product_name) ||    
+			testValue(object.stored_values[i].description, product_name) ||
+			testValue(object.stored_values[i].short_description, product_name))
+		{
+			id.push(object.stored_values[i].stored_value_id);
+		}
+	}
+	if (id.length > 0)
+	{
+		for (var i = 0; i < object.order_stored_values.length; i++)
+		{
+			if (id.indexOf(object.order_stored_values[i].stored_value_id) != -1)
+			{
+				result ++;
+			}
+		}
+	}
+	return result;
+}
+
+function productCount(object, product_type, product_name)
+{
+	var result = 0;
+	if (product_name == null && product_type == null)
+	{
+		if (object.order_admissions.length)
+		{
+			result += object.order_admissions.length;
+		}
+		if (object.order_bundle_admissions.length)
+		{
+			result += object.order_bundle_admissions.length;
+		}
+		if (object.order_misc_items.length)
+		{
+			for (var i = 0; i < object.order_misc_items.length; i++)
+				result += parseFloat(object.order_misc_items[i].quantity);
+		}
+		if (object.order_gifts.length)
+		{
+			result += object.order_gifts.length;
+		}
+		if (object.order_stored_values.length)
+		{
+			result += object.order_stored_values.length;
+		}
+	}
+	else if (product_name == null)
+	{
+		if (testValue(product_type, "admission") && object.order_admissions.length)
+		{
+			result += object.order_admissions.length;
+		}
+		if (testValue(product_type, "bundle") && object.order_bundle_admissions.length)
+		{
+			result += object.order_bundle_admissions.length;
+		}
+		if (testValue(product_type, "miscellaneous_item") && object.order_misc_items.length)
+		{
+			for (var i = 0; i < object.order_misc_items.length; i++)
+				result += parseFloat(object.order_misc_items[i].quantity);
+		}
+		if (testValue(product_type, "gift") && object.order_gifts.length)
+		{
+			result += object.order_gifts.length;
+		}
+		if (testValue(product_type, "stored_value") && object.order_stored_values.length)
+		{
+			result += object.order_stored_values.length;
+		}
+	}
+	else if (product_type == null)
+	{
+		if (object.order_admissions.length)
+		{
+			result += admissionCount(object, product_name);
+		}
+		if (object.order_bundle_admissions.length)
+		{
+			result += bundleCount(object, product_name);
+		}
+		if (object.order_misc_items.length)
+		{
+			result += miscItemCount(object, product_name);
+		}
+		if (object.order_gifts.length)
+		{
+			result += giftCount(object, product_name);
+		}
+		if (object.stored_values.length)
+		{
+			result += storedValueCount(object, product_name);
+		}
+	}
+	else
+	{
+		if (testValue(product_type, "admission") && object.order_admissions.length)
+		{
+			result += admissionCount(object, product_name);
+		}
+		if (testValue(product_type, "bundle") && object.order_bundle_admissions.length)
+		{
+			result += bundleCount(object, product_name);
+		}
+		if (testValue(product_type, "miscellaneous_item") && object.order_misc_items.length)
+		{
+			result += miscItemCount(object, product_name);
+		}
+		if (testValue(product_type, "gift") && object.order_gifts.length)
+		{
+			result += giftCount(object, product_name);
+		}
+		if (testValue(product_type, "stored_value") && object.order_stored_values.length)
+		{
+			result += storedValueCount(object, product_name);
+		}
+	}
+	return result;
+}
+
+function getPerformance(object, performance_id)
+{
+	var result = null;
+    
+	if (performance_id != null && object.performances.length)
+	{
+		for (var i = 0; i < object.performances.length; i++)
+		{
+			if (testValue(object.performances[i].performance_id, performance_id))
+			{
+				result = object.performances[i];
+				break;
+			}
+		}    
+	}
+    
+	return result;
+}
+
+function getBundle(object, bundle_id)
+{
+	var result = null;
+    
+	if (bundle_id != null && object.bundles.length)
+	{
+		for (var i = 0; i < object.bundles.length; i++)
+		{
+			if (testValue(object.bundles[i].bundle_id, bundle_id))
+			{
+				result = object.bundles[i];
+				break;
+			}
+		}    
+	}
+    
+	return result;
+}
+
+function getMiscItem(object, miscitem_id)
+{
+	var result = null;
+    
+	if (miscitem_id != null && object.misc_items.length)
+	{
+		for (var i = 0; i < object.misc_items.length; i++)
+		{
+			if (testValue(object.misc_items[i].miscellaneous_item_id, miscitem_id))
+			{
+				result = object.misc_items[i];
+				break;
+			}
+		}    
+	}
+    
+	return result;
+}
+
+function getGift(object, gift_id)
+{
+	var result = null;
+    
+	if (gift_id != null && object.gifts.length)
+	{
+		for (var i = 0; i < object.gifts.length; i++)
+		{
+			if (testValue(object.gifts[i].gift_id, gift_id))
+			{
+				result = object.gifts[i];
+				break;
+			}
+		}    
+	}
+    
+	return result;
+}
+
+function getStoredValue(object, storedvalue_id)
+{
+	var result = null;
+    
+	if (storedvalue_id != null && object.stored_values.length)
+	{
+		for (var i = 0; i < object.stored_values.length; i++)
+		{
+			if (testValue(object.stored_values[i].stored_value_id, storedvalue_id))
+			{
+				result = object.stored_values[i];
+				break;
+			}
+		}    
+	}
+    
+	return result;
+}
+
+function createGAAdmissions(object, transactionProducts)
+{
+	if( object.order_admissions.length > 0 )
+	{
+		var admissionList = new Array();
+        var admissionPTList = new Array();
+		for (var i = 0; i < object.order_admissions.length; i++)
+		{
+            var perfID = object.order_admissions[i].performance_id;
+			if( admissionList[ perfID ] == undefined )
+            {
+              admissionList[ perfID ] = new Array();
+            }
+            admissionList[ perfID ].push( object.order_admissions[i] );
+
+            if( admissionPTList[ perfID ] == undefined )
+            {
+              admissionPTList[ perfID ] = new Array();
+            }
+            var curPTList = admissionPTList[ perfID ];
+            var admPTID = object.order_admissions[i].price_type;
+            if (curPTList[ admPTID ] == undefined )
+            {
+              curPTList[ admPTID ] = new Array();
+            }
+            curPTList[ admPTID ].push( object.order_admissions[i] );
+		}
+		for( var guid in admissionList )
+		{
+			var admNode = admissionList[ guid ][ 0 ];
+            var perfID = admNode.performance_id;
+			var perfNode;
+			for (var i = 0; i < object.performances.length; i++)
+			{
+				if (perfID == object.performances[i].performance_id)
+				{
+					perfNode = object.performances[i];
+					break;
+				}
+			}    
+            var perfName = perfNode.name;
+            var perfDesc = perfNode.short_description;
+            if (perfDesc == "" || perfDesc == null) {
+               perfDesc = perfName;
+            }
+            var seriesName = perfNode.series_name;
+
+            var curPTList = admissionPTList[ perfID ];
+			for ( var guid in curPTList )
+			{
+				seatNode = curPTList[ guid ][ 0 ];
+                var admAmount = seatNode.amount.amount;
+                var priceTypeLabel = seatNode.price_type;
+                var priceZoneLabel = seatNode.price_zone;
+
+				var admissions = { "sku": perfName + " Admission " + priceTypeLabel + "-" + priceZoneLabel,
+				"name": perfDesc + " Admission",    
+				"category": seriesName + " Admission",
+				"price": admAmount,
+				"quantity": curPTList[ guid ].length
+				};
+    
+				transactionProducts.push(admissions);
+			}
+		}
+	}
+}
+
+function createGABundles(object, transactionProducts)
+{
+	// roll up bundles by id and price
+	// object.order_bundle - data about the bundle on the order: amount, total
+	// object.bundles - data about the bundle item: name & description
+
+	if( object.bundles.length > 0 )
+	{
+		var bundleList = {};
+		for (var i = 0; i < object.order_bundle.length; i++)
+		{
+			var bundleID = object.order_bundle[i].bundle_id;
+			var bundleAmount = object.order_bundle[i].amount.amount;
+    
+			if( bundleList[ bundleID ] == undefined )
+			{
+				bundleList[ bundleID ] = {};
+			}
+			if( bundleList[ bundleID ][ bundleAmount ] == undefined )
+			{
+				bundleList[ bundleID ][ bundleAmount ] = 0;
+			}
+			bundleList[ bundleID ][ bundleAmount ]++;
+		}
+    
+		for (var i = 0; i < object.bundles.length; i++)
+		{
+			var bundleID = object.bundles[i].bundle_id;
+			var sku = object.bundles[i].name;
+			var name = object.bundles[i].description;
+    
+			for(var amount in bundleList[bundleID])
+			{
+				transactionProducts.push(
+				{
+					"sku": sku,
+					"name": name,    
+					"price": amount,
+					"quantity": bundleList[bundleID][amount]
+				});
+			}
+		}
+	}
+}
+
+function createGAMiscItems(object, transactionProducts)
+{
+	if( object.misc_items.length > 0 && object.order_misc_items.length > 0)
+	{
+		var itemList = new Array();
+		var itemAmountList = new Array();
+		for (var i = 0; i < object.order_misc_items.length; i++)
+		{
+			var itemID = object.order_misc_items[i].item_id;
+			if( itemList[ itemID ] == undefined )
+            {
+              itemList[ itemID ] = new Array();
+            }
+            itemList[ itemID ].push( object.order_misc_items[i] );
+			if( itemAmountList[ itemID ] == undefined )
+              itemAmountList[ itemID ] = parseFloat(object.order_misc_items[i].amount.amount);
+		}
+		for (var i = 0; i < object.misc_items.length; i++)
+		{
+			var miscItems = { "sku": object.misc_items[i].name,
+			"name": object.misc_items[i].description,    
+			"category": object.misc_items[i].category,    
+			"price": itemAmountList[object.misc_items[i].miscellaneous_item_id],
+			"quantity": itemList[object.misc_items[i].miscellaneous_item_id].length
+			};
+    
+			transactionProducts.push(miscItems);
+		}
+	}
+}
+
+function createGAGifts(object, transactionProducts)
+{
+	if( object.gifts.length > 0 && object.order_gifts.length > 0)
+	{
+		var giftList = new Array();
+		for (var i = 0; i < object.gifts.length; i++)
+		{
+			var giftID = object.gifts[i].gift_id;
+			if( giftList[ giftID ] == undefined )
+            {
+              giftList[ giftID ] = new Array();
+            }
+            giftList[ giftID ] = object.gifts[i].name;
+		}
+		for (var i = 0; i < object.order_gifts.length; i++)
+		{
+			var gifts = { "sku": giftList[object.order_gifts[i].gift_id],
+			"name": object.order_gifts[i].appeal_id,    
+			"category": object.order_gifts[i].fund,    
+			"price": object.order_gifts[i].pledge_paid_amount.amount,
+			"quantity": 1
+			};
+    
+			transactionProducts.push(gifts);
+		}
+	}
+}
+
+function createGAStoredValueItems(object, transactionProducts)
+{
+	if( object.stored_values.length > 0 )
+	{
+		var storedValueNameList = new Array();
+        var storedValueTypeList = new Array();
+        var storedValueDescList = new Array();
+		for (var i = 0; i < object.stored_values.length; i++)
+		{
+			var certID = object.stored_values[i].stored_value_id;
+			if( storedValueNameList[ certID ] == undefined )
+            {
+              storedValueNameList[ certID ] = new Array();
+              storedValueTypeList[ certID ] = new Array();
+              storedValueDescList[ certID ] = new Array();
+            }
+            storedValueNameList[ certID ] = object.stored_values[i].name;
+            storedValueDescList[ certID ] = object.stored_values[i].description;
+            storedValueTypeList[ certID ] = object.stored_values[i].type;
+		}
+		for (var i = 0; i < object.order_stored_values.length; i++)
+		{
+			var storedValueItems = { "sku": storedValueNameList[object.order_stored_values[i].stored_value_id],
+			"name": storedValueDescList[object.order_stored_values[i].stored_value_id],    
+			"category": storedValueTypeList[object.order_stored_values[i].stored_value_id],    
+			"price": parseFloat(object.order_stored_values[i].amount.amount),
+			"quantity": 1
+			};
+    
+			transactionProducts.push(storedValueItems);
+		}
+	}
+}
+
+function createGATransaction(object)
+{
+	var output;
+	var transactionProducts = new Array;
+    
+	createGAAdmissions(object, transactionProducts);
+	createGABundles(object, transactionProducts);
+	createGAMiscItems(object, transactionProducts);
+	createGAGifts(object, transactionProducts);
+	createGAStoredValueItems(object, transactionProducts);
+    
+	output = { "transactionId": object.order_number.toString(),
+				"transactionAffiliation": object.affiliation == null ? "" : object.affiliation.toString(),    
+				"transactionTotal": object.grand_total.amount,
+				"transactionTax": object.total_tax.amount,
+				"transactionShipping": object.delivery_charges.amount,
+				"transactionCity": object.customer_city == null ? "" : object.customer_city.toString(),
+				"transactionState": object.customer_state == null ? "" : object.customer_state.toString(),
+				"transactionCountry": object.customer_country == null ? "" : object.customer_country.toString(),
+				"transactionProducts": transactionProducts
+			};
+    
+	return output;
+}
+
+
+</script> 
+  <script type="text/javascript">
+		var dataLayer = new Array();
+		dataLayer.push(getSessionObject());
+		dataLayer.push(getPageObject());
+		var av_error = getErrorObject();
+		if (av_error != null)
+			dataLayer.push(av_error);
+		
+	</script> <!-- Google Tag Manager --> 
+  <noscript>
+   <iframe src="//www.googletagmanager.com/ns.html?id=GTM-T7XCQQD" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-T7XCQQD');</script> <!-- End Google Tag Manager --> 
+  <div role="banner" id="header"> <!-- customer/order information --> 
+   <div class="customer-options" id="customer-utilities"> <!--ORDER DETAILS BOX--> 
+    <div id="orderInfo"> <!-- This is the same information that displays in the grey navigation bar at the top, showing and formatted for the mobile view, when that bar is hidden. --> <!-- The order of the html elements is different between the two display cases, so we have some duplication of some of the elements.  --> 
+     <div id="customer-order-info"> 
+      <div class="hide-when-window-large"> 
+       <div class="form-group"> <span class="greeting-message">Order for</span> <span class="greeting-name">Guest</span> 
+       </div> 
+      </div> 
+      <div class="customer-greeting"> 
+      </div> 
+      <div class="customer-order shopping-cart-details order-message "> <span id="orderInfoEmptyMessage">Your shopping cart is empty.</span> 
+      </div> 
+      <div class="customer-buttons"> 
+       <div class="cart-callout"> <button title="Cart" onclick="submitNewForm(&quot;shoppingCart.asp?sToken=1,cb2a6877,62aaa4ea,1073D3BA-35BF-4693-8423-42BC3969251A,Ko+XQa8zt0CU7aCJ6xuJ0CsGkN8=&quot;)" id="orderInfoCartLink" class="shopping-cart-link btn btn-secondary"> Cart </button> 
+       </div> 
+      </div> 
+     </div> 
+    </div> <!-- This is the grey navigation bar at the top. Does not show when in mobile view. --> 
+    <div id="orderInfoSecondBar" class="hide-when-window-small"> 
+     <div class="form-group"> <span class="greeting-message">Order for</span> <span class="greeting-name">Guest</span> 
+     </div> 
+    </div> 
+    <div class="menuContainer utility-nav"> 
+     <ul id="utility-menu" class="nav"> 
+      <li class="utility-menu-item" id="utility-menu-item-login"> <a href="login.asp" title="Login" class="menu_item"> Login </a> </li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div class="header-content container"> <a href="default.asp" shape="rect" xmlns="http://www.w3.org/1999/xhtml" xmlns:av="http://www.audienceview.com/xml/email/"><img alt="" src="/content/Images/branding/master-brand-on-white220x51.jpg" style="width: 220px;"> </a> 
+   </div> <button type="button" class="menu-toggle menu-button btn btn-secondary"> <span class="fas fa-align-justify"></span> </button> <button type="button" class="menu-toggle sidebar-button btn btn-secondary"> <span class="fas fa-shopping-cart"></span> </button> 
+  </div> 
+  <div class="content-wrapper"> 
+   <div aria-label="Main" role="navigation" id="menu"> 
+    <div class="menuContainer main-nav"> 
+     <ul id="menuTop" class="nav clearfix"> 
+      <li class="menuTopItem  has-sub-menu clearfix dropdown" id="menuTopItem0"> <a href="javascript:void(0);" class="menu_item empty-link-dropdown-toggle" data-toggle="dropdown"> <span class="menu-label">Event Categories</span> <span class="fas fa-chevron-down"></span> <span class="fas fa-chevron-up"></span> </a> 
+       <div class="menuSub dropdown-menu"> <a class="menuSubItem dropdown-item btn" href="javascript:void(0);" onclick="sTokenLink(&quot;default.asp?doWork::WScontent::loadArticle=Load&amp;BOparam::WScontent::loadArticle::article_id=64C39D67-4069-46E6-B3B1-060BB7601A7A&amp;menu_id=FD275C5F-EEF2-4DF5-8384-449CED98A9D0&quot;, &quot;sToken&quot;, &quot;1,cb2a6877,62aaa4ea,1073D3BA-35BF-4693-8423-42BC3969251A,Ko+XQa8zt0CU7aCJ6xuJ0CsGkN8=&quot;)"> All Events </a> <a class="menuSubItem dropdown-item btn" href="javascript:void(0);" onclick="sTokenLink(&quot;default.asp?doWork::WScontent::loadArticle=Load&amp;BOparam::WScontent::loadArticle::article_id=DAB5F2E9-8EEC-4E23-B330-2AC655F4123B&amp;menu_id=FD275C5F-EEF2-4DF5-8384-449CED98A9D0&quot;, &quot;sToken&quot;, &quot;1,cb2a6877,62aaa4ea,1073D3BA-35BF-4693-8423-42BC3969251A,Ko+XQa8zt0CU7aCJ6xuJ0CsGkN8=&quot;)"> Alumni Events </a> <a class="menuSubItem dropdown-item btn" href="javascript:void(0);" onclick="sTokenLink(&quot;default.asp?doWork::WScontent::loadArticle=Load&amp;BOparam::WScontent::loadArticle::article_id=D364B425-0DDC-4960-AC9A-F2975C565B65&amp;menu_id=FD275C5F-EEF2-4DF5-8384-449CED98A9D0&quot;, &quot;sToken&quot;, &quot;1,cb2a6877,62aaa4ea,1073D3BA-35BF-4693-8423-42BC3969251A,Ko+XQa8zt0CU7aCJ6xuJ0CsGkN8=&quot;)"> Athletics </a> <a class="menuSubItem dropdown-item btn" href="javascript:void(0);" onclick="sTokenLink(&quot;default.asp?doWork::WScontent::loadArticle=Load&amp;BOparam::WScontent::loadArticle::article_id=D7C77D98-A674-48B0-9300-79CB7E696DA0&amp;menu_id=FD275C5F-EEF2-4DF5-8384-449CED98A9D0&quot;, &quot;sToken&quot;, &quot;1,cb2a6877,62aaa4ea,1073D3BA-35BF-4693-8423-42BC3969251A,Ko+XQa8zt0CU7aCJ6xuJ0CsGkN8=&quot;)"> College of Performing Arts </a> <a class="menuSubItem dropdown-item btn" href="javascript:void(0);" onclick="sTokenLink(&quot;default.asp?doWork::WScontent::loadArticle=Load&amp;BOparam::WScontent::loadArticle::article_id=714472F4-6837-41E9-B1BF-A59344D23123&amp;menu_id=FD275C5F-EEF2-4DF5-8384-449CED98A9D0&quot;, &quot;sToken&quot;, &quot;1,cb2a6877,62aaa4ea,1073D3BA-35BF-4693-8423-42BC3969251A,Ko+XQa8zt0CU7aCJ6xuJ0CsGkN8=&quot;)"> Musco Center for the Arts </a> <a class="menuSubItem dropdown-item btn" href="javascript:void(0);" onclick="sTokenLink(&quot;default.asp?doWork::WScontent::loadArticle=Load&amp;BOparam::WScontent::loadArticle::article_id=5B98B530-C0F2-46A7-ABCE-D99C4BDB0986&amp;menu_id=FD275C5F-EEF2-4DF5-8384-449CED98A9D0&quot;, &quot;sToken&quot;, &quot;1,cb2a6877,62aaa4ea,1073D3BA-35BF-4693-8423-42BC3969251A,Ko+XQa8zt0CU7aCJ6xuJ0CsGkN8=&quot;)"> Student Events </a> 
+       </div> </li> 
+      <li class="menuTopItem " id="menuTopItem1"> <a class="menu_item menu-link" href="javascript:void(0);" onclick="sTokenLink(&quot;default.asp?doWork::WScontent::loadArticle=Load&amp;BOparam::WScontent::loadArticle::article_id=D4F41F43-2D55-4774-9081-7286956F5B3D&amp;menu_id=3CD3099C-E1FA-45ED-8066-9C7856768BBA&quot;, &quot;sToken&quot;, &quot;1,cb2a6877,62aaa4ea,1073D3BA-35BF-4693-8423-42BC3969251A,Ko+XQa8zt0CU7aCJ6xuJ0CsGkN8=&quot;)"> <span class="menu-label">Make a Donation</span> </a> </li> 
+      <li class="menuTopItem " id="menuTopItem2"> <a class="menu_item menu-link" href="javascript:void(0);" onclick="sTokenLink(&quot;maintainAccount.asp?menu_id=103BABFA-AB3A-407C-AFD8-71067DA567B8&quot;, &quot;sToken&quot;, &quot;1,cb2a6877,62aaa4ea,1073D3BA-35BF-4693-8423-42BC3969251A,Ko+XQa8zt0CU7aCJ6xuJ0CsGkN8=&quot;)"> <span class="menu-label">Login/Manage Account</span> </a> </li> 
+      <li class="menuTopItem" id="menuTopItem-help"> <button class="menu_item menu-link btn btn-link btn-link-text" type="button" onclick="new showInformationPopup( 'Help', 'loadArticle.asp?BOparam::WScontent::loadArticle::article_id=F8103D8C-7EA0-4B4B-A37E-9DE398B93107')">Help</button> </li> 
+     </ul> 
+    </div> 
+   </div> <!-- CONTENT START --> 
+   <div id="content"> 
+    <div class="container"> 
+     <div class="bodyDetails" id="default"> 
+      <div id="searchBox" class="search-box"> 
+       <form role="search" id="searchItems" action="default.asp" method="post" class="form-inline"> 
+        <input type="hidden" name="sToken" value="1,cb2a6877,62aaa4ea,1073D3BA-35BF-4693-8423-42BC3969251A,Ko+XQa8zt0CU7aCJ6xuJ0CsGkN8=" class="form-inline"> 
+        <input type="hidden" name="BOset::WScontent::SearchCriteria::venue_filter" value=""> 
+        <input type="hidden" name="BOset::WScontent::SearchCriteria::city_filter" value=""> 
+        <input type="hidden" name="BOset::WScontent::SearchCriteria::month_filter" value=""> 
+        <input type="hidden" name="BOset::WScontent::SearchCriteria::object_type_filter" value=""> 
+        <input type="hidden" name="BOset::WScontent::SearchCriteria::category_filter" value=""> 
+        <input type="hidden" name="BOset::WScontent::SearchCriteria::search_from" value=""> 
+        <input type="hidden" name="BOset::WScontent::SearchCriteria::search_to" value=""> 
+        <input type="hidden" name="doWork::WScontent::search" value="1"> 
+        <input type="hidden" name="BOparam::WScontent::search::article_search_id" value="EE8716B4-0827-4B0D-9ACB-038A148DF966"> 
+        <ul class="list-unstyled"> 
+         <li class="item-search-keyword"> <span id="keyword-item-search" class="searchBoxLabel field-label">Search Events</span> <input type="text" name="BOset::WScontent::SearchCriteria::search_criteria" class=" form-control" aria-labelledby="keyword-item-search" value="" title="Search Criteria" id="BOset::WScontent::SearchCriteria::search_criteria" class="form-control"> </li> 
+         <li class="item-search-start-date"> <span id="event-dates-search" class="searchBoxLabel field-label">Event Dates</span> <span id="event-dates-from" class="visually-hidden">from</span> 
+          <div class="input-group">
+           <input type="text" name="BOset::WScontent::SearchCriteria::search_from" class=" form-control" aria-labelledby="event-dates-search event-dates-from" value="" title="Search From" id="BOset::WScontent::SearchCriteria::search_from::0" class="form-control">
+           <div class="input-group-append">
+            <button type="button" class="btn-unstyled calIcon" title="Show date picker" onclick="tsOpenCalendar( event, &quot;BOset::WScontent::SearchCriteria::search_from::0&quot;, &quot;0&quot;, &quot;false&quot;, &quot;sToken&quot;, &quot;1,cb2a6877,62aaa4ea,1073D3BA-35BF-4693-8423-42BC3969251A,Ko+XQa8zt0CU7aCJ6xuJ0CsGkN8=&quot;);" id="cal::BOset::WScontent::SearchCriteria::search_from::0"></button>
+           </div>
+          </div> </li> 
+         <li class="item-search-end-date"> <span id="event-dates-to" class="searchBoxLabel field-label">to</span> 
+          <div class="input-group">
+           <input type="text" name="BOset::WScontent::SearchCriteria::search_to" class=" form-control" aria-labelledby="event-dates-to" value="" title="Search To" id="BOset::WScontent::SearchCriteria::search_to::0" class="form-control">
+           <div class="input-group-append">
+            <button type="button" class="btn-unstyled calIcon" title="Show date picker" onclick="tsOpenCalendar( event, &quot;BOset::WScontent::SearchCriteria::search_to::0&quot;, &quot;0&quot;, &quot;false&quot;, &quot;sToken&quot;, &quot;1,cb2a6877,62aaa4ea,1073D3BA-35BF-4693-8423-42BC3969251A,Ko+XQa8zt0CU7aCJ6xuJ0CsGkN8=&quot;);" id="cal::BOset::WScontent::SearchCriteria::search_to::0"></button>
+           </div>
+          </div> </li> 
+         <li class="item-search-submit"> <input type="submit" class="btn btn-secondary" value="Go" name="Go" onclick="doGAClicks('Search')"> </li> 
+        </ul> 
+       </form> 
+      </div> 
+      <div class="articles  has-secondary-features"> <!-- top scrolling features included --> 
+       <div class="article-body-container"> 
+        <div role="main" class="article-container main-article-body"> 
+         <div class="row" xmlns="http://www.w3.org/1999/xhtml" xmlns:av="http://www.audienceview.com/xml/email/">
+          &nbsp;
+         </div> 
+         <div class="row" xmlns="http://www.w3.org/1999/xhtml" xmlns:av="http://www.audienceview.com/xml/email/"> 
+          <div class="col-sm-12 col-md-8"> 
+           <h1 style="font-weight:lighter;">Parking&nbsp;</h1> &nbsp; 
+           <h4>Register your Vehicle for Free Parking</h4> 
+           <p>Free parking is available for all ticketed events on campus that take place after 4 p.m. and on weekends, subject to availability.&nbsp;To take advantage of this offer, you must <a href="http://chapman.nupark.com/events" shape="rect">register</a> your vehicle's license plate in advance of your event.<br clear="none"> <br clear="none"> Click <a href="https://www.chapman.edu/campus-services/parking-services/visitor-parking.aspx" shape="rect">here </a>for more parking information.&nbsp;</p> 
+           <p>Visitng the <strong>Hilbert Museum</strong>?&nbsp;Click&nbsp;<a href="https://www.hilbertmuseum.com/parking" target="_blank" shape="rect">here</a> for information on museum parking.</p> 
+           <p>Primary parking for Chapman events is available&nbsp;in the&nbsp;<strong>Barrera Parking Structure</strong>&nbsp;behind the Fowler School of Law at the corner of Sycamore and Lemon Street. Parking is also available in the&nbsp;<strong>Anderson Parking Structure</strong>&nbsp;under the Chapman&nbsp;football stadium. Enter the underground structure off Walnut Avenue on the&nbsp;north edge of the campus.</p> 
+           <p><strong>Handicapped parking</strong>&nbsp;available in both parking structures.<br clear="none"> <br clear="none"> The streets adjacent to campus are reserved for Orange resident-only permit parking. The affected blocks are marked with red and white signs. It is likely that you will be ticketed by the City of Orange if you park in one of these areas.&nbsp;</p> 
+           <p><a href="https://www.chapman.edu/about/_files/maps-and-directions/current-maps/all-parking-map.pdf" shape="rect">Visitors Parking Map&nbsp;(PDF)</a> <br clear="none"> &nbsp;</p> 
+           <h1 style="font-weight:lighter;">Directions</h1> 
+           <p>Chapman University, Orange campus,&nbsp;is nestled in the heart of Southern California. The campus is located in the historic district of Old Towne Orange, one of the oldest residential communities in Orange County.</p> 
+           <p><a href="http://maps.google.com/maps/ms?msid=210918239919338312467.0004bb63a5eada2f6aee3&amp;msa=0" shape="rect">Use Google Driving Directions</a> </p> 
+           <h3><br clear="none"> From the North</h3> 
+           <ul> 
+            <li>Take&nbsp;<strong>5 Freeway SOUTH</strong> </li> 
+            <li>Exit onto&nbsp;<strong>22 Freeway EAST</strong>, Orange</li> 
+            <li>Take&nbsp;<strong>22 Freeway EAST</strong>&nbsp;to&nbsp;<strong>Glassell St. Exit</strong> </li> 
+            <li>Exit on&nbsp;<strong>Glassell St.</strong>, turn&nbsp;<strong>NORTH</strong>&nbsp;(left off the freeway exit ramp)</li> 
+            <li>Take&nbsp;<strong>Glassell St. NORTH</strong>&nbsp;to&nbsp;<strong>traffic circle</strong> </li> 
+            <li>Exit the&nbsp;<strong>second</strong>&nbsp;exit of the&nbsp;<strong>traffic circle</strong>&nbsp;(<strong>Glassell St. NORTH</strong>)</li> 
+            <li>Take&nbsp;<strong>Glassell St. NORTH</strong>&nbsp;to&nbsp;<strong>One&nbsp;University Drive&nbsp;</strong> </li> 
+            <li>Turn right on<strong>&nbsp;Walnut Ave.&nbsp;</strong>for&nbsp;campus&nbsp;parking in the<strong>&nbsp;</strong> <strong>Anderson Underground Parking Structure</strong> </li> 
+            <li>Refer to the&nbsp;<strong>campus map</strong>&nbsp;for building directions and other parking locations</li> 
+           </ul> 
+           <h3>From Los Angeles International Airport (LAX) and West Los Angeles</h3> 
+           <ul> 
+            <li>Take&nbsp;<strong>405 Freeway SOUTH</strong> </li> 
+            <li>Exit onto&nbsp;<strong>22 Freeway EAST</strong> </li> 
+            <li>Take&nbsp;<strong>22 Freeway EAST</strong>&nbsp;to&nbsp;<strong>Glassell St. Exit</strong> </li> 
+            <li>Exit on&nbsp;<strong>Glassell St.</strong>, turn&nbsp;<strong>NORTH</strong>&nbsp;(left off the freeway exit ramp)</li> 
+            <li>Take&nbsp;<strong>Glassell St. NORTH</strong>&nbsp;to&nbsp;<strong>traffic circle</strong> </li> 
+            <li>Exit the&nbsp;<strong>second</strong>&nbsp;exit of the&nbsp;<strong>traffic circle</strong>&nbsp;(<strong>Glassell St. NORTH</strong>)</li> 
+            <li>Take&nbsp;<strong>Glassell St. NORTH</strong>&nbsp;to<strong>&nbsp;One&nbsp;University Drive</strong> </li> 
+            <li>Turn right&nbsp;on&nbsp;<strong>Walnut Ave.</strong>&nbsp;for&nbsp;campus&nbsp;parking&nbsp;in the<strong><strong>&nbsp;Anderson Underground Parking Structure</strong> </strong> </li> 
+            <li>Refer to the&nbsp;<a href="https://www.chapman.edu/about/_files/maps-and-directions/current-maps/campus-map.pdf" shape="rect"><strong>campus map</strong> </a>&nbsp;for building directions and other parking locations</li> 
+           </ul> 
+           <h3>From John Wayne/Orange County&nbsp;Airport (SNA)</h3> 
+           <ul> 
+            <li>Exit airport, turn left on&nbsp;<strong>MacArthur Blvd.</strong> </li> 
+            <li>Take the&nbsp;<strong>405 Freeway NORTH</strong>&nbsp;(stay to the right)</li> 
+            <li>Exit onto&nbsp;<strong>55 NORTH</strong>&nbsp;to&nbsp;<strong>Chapman Avenue Orange</strong> </li> 
+            <li>Turn&nbsp;<strong>WEST</strong>&nbsp;on&nbsp;<strong>Chapman</strong>&nbsp;<strong>Avenue</strong>&nbsp;(right off freeway exit ramp)</li> 
+            <li>Take&nbsp;<strong>Chapman Avenue West</strong>&nbsp;to&nbsp;<strong>traffic</strong>&nbsp;<strong>circle</strong>&nbsp;(<strong>Glassell St.</strong>)</li> 
+            <li>Exit the&nbsp;<strong>first exit</strong>&nbsp;of the&nbsp;<strong>traffic circle</strong>&nbsp;(<strong>Glassell St. NORTH</strong>)</li> 
+            <li>Take&nbsp;<strong>Glassell St. NORTH</strong>&nbsp;to&nbsp;<strong>One&nbsp;University Drive</strong> </li> 
+            <li>Turn right&nbsp;on<strong>&nbsp;<strong><strong>Walnut Ave.</strong> </strong>&nbsp;</strong>for&nbsp;campus&nbsp;parking&nbsp;in the<strong><strong><strong>&nbsp;Anderson Underground Parking Structure</strong> </strong> </strong> </li> 
+            <li>Refer to the&nbsp;<strong><a href="https://www.chapman.edu/about/_files/maps-and-directions/current-maps/campus-map.pdf" target="_blank" shape="rect">campus map</a> </strong>&nbsp;for building directions and other parking locations</li> 
+           </ul> 
+           <h3>From the South</h3> 
+           <ul> 
+            <li>Take&nbsp;<strong>5 Freeway NORTH</strong>&nbsp;</li> 
+            <li>Exit onto&nbsp;<strong>55 Freeway NORTH</strong> </li> 
+            <li>Take&nbsp;<strong>55 Freeway NORTH</strong>&nbsp;to&nbsp;<strong>Chapman Avenue Orange</strong> </li> 
+            <li>Turn&nbsp;<strong>WEST</strong>&nbsp;on&nbsp;<strong>Chapman Avenue</strong>&nbsp;(right off the freeway exit ramp)</li> 
+            <li>Take&nbsp;<strong>Chapman Avenue WEST</strong>&nbsp;to&nbsp;<strong>traffic circle</strong>&nbsp;(<strong>Glassell St.</strong>)</li> 
+            <li>Exit the&nbsp;<strong>first exit</strong>&nbsp;of the&nbsp;<strong>traffic circle</strong>&nbsp;(<strong>Glassell St. NORTH</strong>)</li> 
+            <li>Take&nbsp;<strong>Glassell St. NORTH</strong>&nbsp;to&nbsp;<strong>One&nbsp;University Drive</strong> </li> 
+            <li>Turn right&nbsp;on&nbsp;<strong><strong><strong>Walnut Ave.</strong> </strong>&nbsp;</strong>for&nbsp;campus&nbsp;parking&nbsp;in the&nbsp;<strong><strong><strong><strong>Anderson Underground Parking Structure</strong> </strong> </strong> </strong> </li> 
+            <li>Refer to the&nbsp;<strong><a href="https://www.chapman.edu/about/_files/maps-and-directions/current-maps/campus-map.pdf" target="_blank" shape="rect">campus map</a> </strong>&nbsp;for building directions and other parking locations</li> 
+           </ul> 
+           <h3>From the East</h3> 
+           <ul> 
+            <li>Take&nbsp;<strong>15 Freeway SOUTH</strong> </li> 
+            <li>Exit onto&nbsp;<strong>91 Freeway WEST</strong>&nbsp;(Beach Cities)</li> 
+            <li>Take&nbsp;<strong>91 Freeway WEST</strong>&nbsp;to&nbsp;<strong>55 Freeway SOUTH</strong> </li> 
+            <li>Exit onto&nbsp;<strong>55 Freeway SOUTH</strong>&nbsp;(left lane exit)</li> 
+            <li>Take&nbsp;<strong>55 Freeway SOUTH</strong>&nbsp;to&nbsp;<strong>Chapman Avenue</strong> </li> 
+            <li>Exit onto&nbsp;<strong>Chapman Avenue</strong> </li> 
+            <li>Turn&nbsp;<strong>WEST</strong>&nbsp;on&nbsp;<strong>Chapman Avenue</strong>&nbsp;(right off the freeway exit ramp)</li> 
+            <li>Take&nbsp;<strong>Chapman Avenue WEST</strong>&nbsp;to&nbsp;<strong>traffic circle</strong>&nbsp;(<strong>Glassell St.</strong>)</li> 
+            <li>Exit the&nbsp;<strong>first exit</strong>&nbsp;of the&nbsp;<strong>traffic circle</strong>&nbsp;(<strong>Glassell St. NORTH</strong>)</li> 
+            <li>Take&nbsp;<strong>Glassell St. NORTH</strong>&nbsp;to&nbsp;<strong>One&nbsp;University Drive</strong> </li> 
+            <li>Turn right&nbsp;on&nbsp;<strong><strong><strong>Walnut Ave.</strong> </strong>&nbsp;</strong>for&nbsp;campus&nbsp;parking&nbsp;in the<strong>&nbsp;Anderson Underground Parking Structure</strong> </li> 
+            <li>Refer to the&nbsp;<strong><a href="https://www.chapman.edu/about/_files/maps-and-directions/current-maps/campus-map.pdf" target="_blank" shape="rect">campus map</a> </strong>&nbsp;for building directions and other parking locations</li> 
+           </ul> 
+           <p><br clear="none"> <strong>Questions</strong> <br clear="none"> Call Parking Services at (714) 997-6560 or email at&nbsp;<a href="mailto:transportation@chapman.edu" shape="rect">transportation@chapman.edu</a> <br clear="none"> &nbsp;</p> 
+           <p><strong>More info at&nbsp;</strong> <a href="https://www.chapman.edu/about/maps-directions/index.aspx" shape="rect">https://www.chapman.edu/about/maps-directions/index.aspx</a> <br clear="none"> &nbsp;</p> 
+          </div> 
+         </div> 
+        </div> 
+        <div role="complementary" aria-label="Secondary" class="article-container secondary-linked-features"> 
+         <div id="promoCodeBox" class="promotional-code-input"> 
+          <form role="form" aria-labelledby="promocode-title" method="POST" action="/Online/default.asp"> 
+           <input type="hidden" name="sToken" value="1,cb2a6877,62aaa4ea,1073D3BA-35BF-4693-8423-42BC3969251A,Ko+XQa8zt0CU7aCJ6xuJ0CsGkN8="> 
+           <input type="hidden" name="BOparam::WScontent::loadArticle::article_id" value="7EE55C68-E62C-48D9-BCBE-844881B648F3"> 
+           <h4 id="promocode-title"> <span class="fas fa-tag promotag"></span> Promotional Code</h4> 
+           <ul class="list-unstyled"> 
+            <li class="promotional-code-message"> If you have a promotion, please enter the Access Code here: </li> 
+            <li> 
+             <div class="input-group"> 
+              <input id="promoCodeBoxInput" type="text" class="form-control" name="BOparam::WScontent::loadArticle::promocode_access_code" title="If you have a promotion, please enter the Access Code here:"> <span class="input-group-append"> <input type="submit" class="btn btn-secondary" name="doWork::WScontent::loadArticle" value="Go" onclick="doGAClicks('Apply')"> </span> 
+             </div> </li> 
+           </ul> 
+          </form> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div><!--\\ .bodyDetails --> 
+   </div><!--\\ .container --> 
+  </div><!--\\ #content --> 
+  <div role="contentinfo" id="footer"> 
+   <div class="footer-content container"> 
+    <div class="row" xmlns="http://www.w3.org/1999/xhtml" xmlns:av="http://www.audienceview.com/xml/email/"> 
+     <div class="col-lg-4" style="padding-bottom:20px;"> 
+      <div class="address">
+       <span class="addr-name">Orange Campus</span> 
+       <br clear="none"> One University Drive
+       <br clear="none"> Orange, CA 92866
+      </div> 
+     </div> 
+     <div class="col-lg-4"> 
+      <div class="address">
+       <span class="addr-name">Rinker Health Science Campus</span> 
+       <br clear="none"> 9401 Jeronimo Road
+       <br clear="none"> Irvine, CA 92618
+      </div> 
+     </div> 
+    </div> 
+    <div class="row" xmlns="http://www.w3.org/1999/xhtml" xmlns:av="http://www.audienceview.com/xml/email/"> 
+     <div class="col-lg-8"> 
+      <ul class="list-inline"> 
+       <li><a class="footer_text" href="default.asp?BOparam::WScontent::loadArticle::article_id=19BFE0DD-B1B8-4042-B249-42A04662171E" shape="rect">Terms and Conditions</a> </li> 
+       <li><a class="footer_text" href="default.asp?BOparam::WScontent::loadArticle::article_id=D1D2067D-493A-4F5C-8961-A15B38197BF2" shape="rect">Privacy Policy</a> </li> 
+       <li><a class="footer_text" href="default.asp?BOparam::WScontent::loadArticle::article_id=446BE6E4-CF8E-40E7-ACA1-48CDCB77C83B" shape="rect">Accessibility Information</a> </li> 
+      </ul> 
+     </div> 
+     <div class="col-lg-4"> 
+      <p class="small"><a href="https://www.chapman.edu/" target="_blank" title="Visit chapman.edu for more information" shape="rect">Chapman University</a> © 2021</p> 
+     </div> 
+    </div> 
+   </div> 
+  </div><!--\\ .content-wrapper --> 
+  <div id="fade" class="black_overlay"></div> 
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+    }
+</script> 
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> <!-- inclusion of bootstrap.js --> <!-- http://twitter.github.com for documentation on bootstrap --> 
+  <script src="/lib/bootstrap/js/bootstrap.bundle.min.js?_=7.48.0" type="text/javascript"></script> <!-- end of bootstrap.js --> <!-- Font Awesome for icons --> 
+  <script src="/lib/fontawesome-free/js/all.min.js"></script> <!-- contains bootstrap specific function declarations --> 
+  <script src="bootstrap-functions.js?_=7.48.0" type="text/javascript"></script> <!-- Logout Handler --> 
+  <script>
+$(document).ready(function() {
+    var body = $("body");
+    
+    body
+    .on("logged-out", function(e) {
+        var targetPage = "default.asp?doWork::WScontent::loadArticle=Load&BOparam::WScontent::loadArticle::article_id=7EE55C68-E62C-48D9-BCBE-844881B648F3";
+        window.location.assign("login.asp?targetPage="+encodeURIComponent(targetPage));
+    });
+    
+    // on pressing Enter key on an anchor trigger click
+    $("a").keypress(function(e){
+      if(e.keyCode == 13){
+        $(this).trigger("click");
+      }
+    });
+    
+    // When page is loaded make sure the Page Load Spinner is not shown
+    if (spinnerDelayTimeout) {
+        cancelSpinnerTimeouts();
+    }
+    
+    body.removeClass("show-spinner");
+    
+    // Show spinner when form submitted or link clicked
+    var onSubmit;
+    $("form").each(
+      //Trigger the spinner after any other onsubmit functions for the form
+      function(index)
+      {
+        onSubmit = $(this).attr("onsubmit");
+        if ( onSubmit && onSubmit != "" ) {
+          onSubmit = onSubmit.trim();
+          // if the submit is "returning", we need to && showSpinner otherwise it won't be called
+          var returnIndex = onSubmit.indexOf("return");
+          if ( returnIndex != -1 ) {
+            // remove any trailing semi-colons
+            if ( onSubmit.indexOf(";") == onSubmit.length-1 )
+              onSubmit = onSubmit.substr(0, onSubmit.length-1);
+
+            // wrap the return in () in case it contains ||
+            // (add 6 to strip the original "return")
+            onSubmit = onSubmit.substr(0, returnIndex) + "return (" + onSubmit.substr(returnIndex + 6) + ")";
+
+            // and then append the call to the spinner
+            onSubmit += " && showSpinner()";
+          }
+          else {
+            onSubmit += ";showSpinner()";
+          }
+        }
+        else {
+          onSubmit = "showSpinner()";
+        }
+        $(this).attr("onsubmit", onSubmit);
+      }
+    );
+
+    // attach an event listener to each <a> tag to show the spinner if needed
+    // only do this if the <a> tag has an "href" attribute, so we don't show
+    // the spinner if staying on the page.  If navigating away from the page
+    // via an onClick, we are assuming the onClick handles the display of the spinner
+    // (or submits the form with jQuery, so the spinner attached to the form.submit
+    // is fired)
+    $("a").click(function(e) {
+      var href = $(this).attr("href") || "";
+      var target = $(this).attr("target") || "";
+
+      if ((target == "" || /^(_self|_top|_parent)/.test(href)) && href != "" && !/^(#|javascript:|mailto:|file:)/.test(href))
+        showSpinner();
+    });
+});
+</script> <!-- CONTENT END -->  
+  <script>
+  $(function(){
+
+    // "Continue Shopping" and "Look for other events" buttons to redirect back to Brochure page user came from
+    $("a[name=continue-shopping], a[name=continueShopping], input[name=startOver], a[name=error-StartOver], input[name=error-StartOver]").on("click", function(e) {
+      var returnTo = getCookie('returnTo');
+      if(returnTo){
+        e.preventDefault();
+        deleteCookie('returnTo');
+        window.location.href = returnTo;
+      }
+    })
+
+    // "New Order" button to redirect to EIF home page
+    $("input.new-order,input[name=cancel-order]").on("click", function(e){
+         var returnTo = getCookie('returnTo');
+          if(returnTo){
+            e.preventDefault();
+            $("#popupDiv_okayButton").on("click", function(e){
+               $.ajax({
+                 url: 'clearOrder.asp',
+                 complete: function() {
+                    deleteCookie('returnTo');
+                    window.location.href = returnTo;    
+                 }
+                });
+    
+             });
+          }
+    })
+  });
+
+//adding the returnTo to the cookie
+  var returnTo = "";
+
+  if (returnTo) {
+      var reffA = document.createElement('a');
+      reffA.href = returnTo;
+
+    if(reffA.host != window.location.host) {
+      setCookie("returnTo", returnTo, 1);
+    }
+  }
+
+  /*
+    *****************************************************
+    Cookie methods
+    *****************************************************
+  */
+  function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      var expires = "expires="+d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+  function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      return "";
+  }
+
+  function deleteCookie(cname) {
+      setCookie(cname, "", -1);
+  }
+</script>
+ </body>
+</html>

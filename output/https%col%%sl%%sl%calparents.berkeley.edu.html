@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="en-US"> 
+ <head> 
+  <meta charset="UTF-8"><!-- [if IE]> <meta http-equiv="X-UA-Compatible" content="IE=Edge"/> <! [endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="pingback" href="https://calparents.berkeley.edu/xmlrpc.php">
+  <title>Cal Parents &amp; Families</title> <!--[if lt IE 9]><script src="https://calparents.berkeley.edu/wp-content/themes/alienship/js/html5shiv.js" type="text/javascript"></script><![endif]--> 
+  <script type="text/javascript" src="//use.typekit.net/qoo3bxy.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"> 
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700"> 
+  <link rel="dns-prefetch" href="//s.w.org">
+  <link rel="dns-prefetch" href="//v0.wordpress.com">
+  <link rel="alternate" type="application/rss+xml" title="Cal Parents &amp; Families » Feed" href="https://calparents.berkeley.edu/feed/">
+  <link rel="alternate" type="application/rss+xml" title="Cal Parents &amp; Families » Comments Feed" href="https://calparents.berkeley.edu/comments/feed/"><!-- This site uses the Google Analytics by MonsterInsights plugin v8.6.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+  <script src="//www.googletagmanager.com/gtag/js?id=UA-1506086-34" data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '8.6.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-1506086-34',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						if ( document.cookie.indexOf( disableStrs[ index ] + '=true' ) > -1 ) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						document.cookie = disableStrs[ index ] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if ( mi_track_user ) {
+					function __gtagDataLayer() {
+						dataLayer.push( arguments );
+					}
+
+					function __gtagTracker( type, name, parameters ) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply( null, arguments );
+							return;
+						}
+
+						if ( type === 'event' ) {
+							
+															parameters.send_to = monsterinsights_frontend.ua;
+								__gtagDataLayer( type, name, parameters );
+													} else {
+							__gtagDataLayer.apply( null, arguments );
+						}
+					}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+											} );
+															__gtagTracker( 'config', 'UA-1506086-34', {"forceSSL":"true"} );
+										window.gtag = __gtagTracker;											(function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+																				if ( ! ( ! args.hasOwnProperty(arg) || ! gaMap.hasOwnProperty(arg) ) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						})();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script><!-- / Google Analytics by MonsterInsights -->
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/calparents.berkeley.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.6.8"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+  <link rel="stylesheet" id="wp-block-library-css" href="https://calparents.berkeley.edu/wp-includes/css/dist/block-library/style.min.css?ver=5.6.8" type="text/css" media="all">
+  <style id="wp-block-library-inline-css" type="text/css">
+.has-text-align-justify{text-align:justify;}
+</style>
+  <link rel="stylesheet" id="contact-form-7-css" href="https://calparents.berkeley.edu/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.3.2" type="text/css" media="all">
+  <link rel="stylesheet" id="dashicons-css" href="https://calparents.berkeley.edu/wp-includes/css/dashicons.min.css?ver=5.6.8" type="text/css" media="all">
+  <link rel="stylesheet" id="pbsandwich-css" href="https://calparents.berkeley.edu/wp-content/plugins/page-builder-sandwich/css/frontend.css?ver=1.1.1" type="text/css" media="all">
+  <link rel="stylesheet" id="parent-style-css" href="https://calparents.berkeley.edu/wp-content/themes/alienship/style.css?ver=5.6.8" type="text/css" media="all">
+  <link rel="stylesheet" id="bootstrap-css" href="https://calparents.berkeley.edu/wp-content/themes/berkeley_brand/css/bootstrap.min.css?ver=1.0" type="text/css" media="all">
+  <link rel="stylesheet" id="alienship-style-css" href="https://calparents.berkeley.edu/wp-content/themes/berkeley_brand/style.css?ver=1.0" type="text/css" media="all">
+  <link rel="stylesheet" id="jetpack_css-css" href="https://calparents.berkeley.edu/wp-content/plugins/jetpack/css/jetpack.css?ver=9.4.2" type="text/css" media="all">
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" id="jquery-core-js"></script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.6.0" id="monsterinsights-frontend-script-js"></script>
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id="monsterinsights-frontend-script-js-extra">/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"https:\/\/calparents.berkeley.edu","hash_tracking":"false","ua":"UA-1506086-34","v4_id":""};/* ]]> */
+</script>
+  <link rel="https://api.w.org/" href="https://calparents.berkeley.edu/wp-json/">
+  <link rel="alternate" type="application/json" href="https://calparents.berkeley.edu/wp-json/wp/v2/pages/11">
+  <link rel="canonical" href="https://calparents.berkeley.edu/">
+  <link rel="alternate" type="application/json+oembed" href="https://calparents.berkeley.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcalparents.berkeley.edu%2F">
+  <link rel="alternate" type="text/xml+oembed" href="https://calparents.berkeley.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcalparents.berkeley.edu%2F&amp;format=xml">
+  <style type="text/css" id="wp-custom-css">
+				#universal-footer ul.footer-links {list-style-type: none; padding: 0; margin: 0 }
+
+#universal-footer ul.footer-links > li > a {
+color: #FFF;
+display-type: block;
+font-weight: bold;
+font-size: 14px;
+	margin-top: 6px;
+}
+
+#universal-footer ul.footer-links > li > a::hover { text-decoration: underline; }
+#universal-footer ul.footer-links > li > a::focus { text-decoration: underline; }			</style>
+  <style type="text/css">/** Mega Menu CSS: disabled **/</style><!--<script src="/wp-content/themes/alienship/js/bootstrap.min.js"></script>--> 
+ </head> 
+ <body class="home page-template page-template-templates page-template-page-hero-text-box page-template-templatespage-hero-text-box-php page page-id-11 mega-menu-main layout-2c-r"> <!--[if lt IE 9]><p class="browsehappy alert alert-danger">You are using an outdated browser. Please <a class="alert-link" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]--> <a class="sr-only sr-only-focusable skip-to-content" href="#content">Skip to main content</a> <!--<div id="page" class="container hfeed site">--> 
+  <header id="site-header" class="light nav-right"> <!-- Main menu -->
+   <div class="navbar navbar-default navbar-static-top yamm" role="navigation">
+    <div class="container"><a href="http://berkeley.edu" class="home-link">UC Berkeley</a> 
+     <div class="navbar-header one-line">
+      <h1><span class="b-wordmark" aria-hidden="true"></span><span class="dept-title one-line">Cal Parents &amp; Families</span></h1> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+     </div>
+     <div class="collapse navbar-collapse navbar-ex2-collapse" id="main-nav">
+      <div id="tools-nav">
+       <div class="container">
+        <form class="navbar-form navbar-right" role="search" id="navbar-search" action="/search" method="get">
+         <div class="form-group">
+          <input type="search" class="form-control" name="q" title="search term" placeholder="Search Berkeley Web" aria-label="search term">
+         </div><button type="submit" class="btn btn-default" aria-label="search" value="Search" role="button"><span class="entypo search"></span></button>
+        </form>
+       </div>
+      </div>
+      <nav id="primary-nav" role="navigation">
+       <div id="mega-menu-wrap-main" class="mega-menu-wrap">
+        <div class="mega-menu-toggle">
+         <div class="mega-toggle-blocks-left"></div>
+         <div class="mega-toggle-blocks-center"></div>
+         <div class="mega-toggle-blocks-right">
+          <div class="mega-toggle-block mega-menu-toggle-animated-block mega-toggle-block-0" id="mega-toggle-block-0">
+           <button aria-label="Toggle Menu" class="mega-toggle-animated mega-toggle-animated-slider" type="button" aria-expanded="false"><span class="mega-toggle-animated-box"> <span class="mega-toggle-animated-inner"></span> </span></button>
+          </div>
+         </div>
+        </div>
+        <ul id="mega-menu-main" class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-event="click" data-effect="slide" data-effect-speed="200" data-effect-mobile="disabled" data-effect-speed-mobile="0" data-mobile-force-width="false" data-second-click="close" data-document-click="collapse" data-vertical-behaviour="accordion" data-breakpoint="768" data-unbind="true" data-mobile-state="collapse_all" data-hover-intent-timeout="300" data-hover-intent-interval="100">
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-disable-link mega-menu-item-9" id="mega-menu-item-9"><a class="dropdown-toggle mega-menu-link" tabindex="0" aria-haspopup="true" aria-expanded="false" role="button" data-target="#" data-toggle="dropdown">Visit<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-8 mega-menu-item-widget_sp_image-7" id="mega-menu-item-widget_sp_image-7"><h4 class="mega-block-title">CampanileView468</h4><img width="468" height="312" alt="CampanileView468" class="attachment-full" style="max-width: 100%;" srcset="https://calparents.berkeley.edu/wp-content/uploads/2016/03/CampanileView468.jpg 468w, https://calparents.berkeley.edu/wp-content/uploads/2016/03/CampanileView468-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://calparents.berkeley.edu/wp-content/uploads/2016/03/CampanileView468.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_text mega-menu-columns-2-of-8 mega-menu-item-text-7" id="mega-menu-item-text-7"> 
+            <div class="textwidget">
+             Ready to see Berkeley for yourself? Find information about campus tours and highlights, planning your day and traveling to campus.
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-8 mega-menu-item-nav_menu-2" id="mega-menu-item-nav_menu-2"><h4 class="mega-block-title">Visit submenu 1</h4>
+            <div class="menu-submenu1-visit-container">
+             <ul id="menu-submenu1-visit" class="menu">
+              <li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a href="http://visit.berkeley.edu/">Visitor Services</a></li>
+              <li id="menu-item-91" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-91"><a href="http://visit.berkeley.edu/directions-parking/">Directions &amp; parking</a></li>
+              <li id="menu-item-92" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-92"><a href="http://www.berkeley.edu/map">Campus map</a></li>
+             </ul>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-8 mega-menu-item-nav_menu-13" id="mega-menu-item-nav_menu-13">
+            <div class="menu-submenu-visit2-container">
+             <ul id="menu-submenu-visit2" class="menu">
+              <li id="menu-item-93" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-93"><a href="http://visit.berkeley.edu/campus-tourscampanile-tour/">Visiting the Campanile</a></li>
+              <li id="menu-item-94" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-94"><a href="http://www.berkeley.edu/research/museumscollections">Campus museums</a></li>
+              <li id="menu-item-95" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-95"><a href="http://visit.berkeley.edu/lodging-and-dining/">Lodging &amp; dining</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-disable-link mega-menu-item-5" id="mega-menu-item-5"><a class="dropdown-toggle mega-menu-link" tabindex="0" aria-haspopup="true" aria-expanded="false" role="button" data-target="#" data-toggle="dropdown">Academics<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-5" id="mega-menu-item-widget_sp_image-5"><h4 class="mega-block-title">Academics468</h4><img width="468" height="312" alt="Academics468" class="attachment-full" style="max-width: 100%;" srcset="https://calparents.berkeley.edu/wp-content/uploads/2016/02/Academics468.jpg 468w, https://calparents.berkeley.edu/wp-content/uploads/2016/02/Academics468-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://calparents.berkeley.edu/wp-content/uploads/2016/02/Academics468.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_text mega-menu-columns-2-of-6 mega-menu-item-text-5" id="mega-menu-item-text-5"> 
+            <div class="textwidget">
+             At Berkeley, the greatest minds come together to address the world’s most pertinent challenges. Explore academic departments, interdisciplinary research units and academic resources to help your student.
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-7" id="mega-menu-item-nav_menu-7">
+            <div class="menu-submenu-academics-container">
+             <ul id="menu-submenu-academics" class="menu">
+              <li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48"><a href="http://www.berkeley.edu/academics/schools-colleges">Schools &amp; colleges</a></li>
+              <li id="menu-item-49" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49"><a href="http://www.berkeley.edu/atoz/dept">Departments &amp; programs</a></li>
+              <li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50"><a href="http://www.berkeley.edu/academics/advising-tutoring">Advising &amp; tutoring</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-disable-link mega-menu-item-30" id="mega-menu-item-30"><a class="dropdown-toggle mega-menu-link" tabindex="0" aria-haspopup="true" aria-expanded="false" role="button" data-target="#" data-toggle="dropdown">Finances<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-3" id="mega-menu-item-widget_sp_image-3"><h4 class="mega-block-title">FinAid468</h4><img width="468" height="312" alt="FinAid468" class="attachment-full" style="max-width: 100%;" srcset="https://calparents.berkeley.edu/wp-content/uploads/2016/02/FinAid468.jpg 468w, https://calparents.berkeley.edu/wp-content/uploads/2016/02/FinAid468-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://calparents.berkeley.edu/wp-content/uploads/2016/02/FinAid468.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_text mega-menu-columns-2-of-6 mega-menu-item-text-3" id="mega-menu-item-text-3"> 
+            <div class="textwidget">
+             Find the facts, forms and resources you need to estimate and apply for aid from our financial aid and scholarships office.
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-5" id="mega-menu-item-nav_menu-5">
+            <div class="menu-submenu-finances-container">
+             <ul id="menu-submenu-finances" class="menu">
+              <li id="menu-item-42" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42"><a href="http://financialaid.berkeley.edu/cost-attendance">Cost of attendance</a></li>
+              <li id="menu-item-41" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41"><a href="http://financialaid.berkeley.edu/estimate-your-financial-aid">Estimate financial aid</a></li>
+              <li id="menu-item-40" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40"><a href="http://financialaid.berkeley.edu/apply-aid">Apply for aid</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-disable-link mega-menu-item-6" id="mega-menu-item-6"><a class="dropdown-toggle mega-menu-link" tabindex="0" aria-haspopup="true" aria-expanded="false" role="button" data-target="#" data-toggle="dropdown">Campus life<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-8 mega-menu-item-widget_sp_image-4" id="mega-menu-item-widget_sp_image-4"><h4 class="mega-block-title">CampusLife468</h4><img width="468" height="312" alt="CampusLife468" class="attachment-full" style="max-width: 100%;" srcset="https://calparents.berkeley.edu/wp-content/uploads/2016/02/CampusLife468.jpg 468w, https://calparents.berkeley.edu/wp-content/uploads/2016/02/CampusLife468-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://calparents.berkeley.edu/wp-content/uploads/2016/02/CampusLife468.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_text mega-menu-columns-2-of-8 mega-menu-item-text-4" id="mega-menu-item-text-4"> 
+            <div class="textwidget">
+             Our students come from different places and backgrounds, but together they create a diverse and kinetic community. Explore campus services to help your student feel at home at Berkeley.
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-8 mega-menu-item-nav_menu-6" id="mega-menu-item-nav_menu-6">
+            <div class="menu-submenu-campus-life-container">
+             <ul id="menu-submenu-campus-life" class="menu">
+              <li id="menu-item-45" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45"><a href="http://www.berkeley.edu/campus-life/health-safety">Health &amp; safety</a></li>
+              <li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="http://www.berkeley.edu/campus-life/housing-dining">Housing &amp; dining</a></li>
+              <li id="menu-item-53" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53"><a href="http://diversity.berkeley.edu/">Equity &amp; inclusion</a></li>
+             </ul>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-8 mega-menu-item-nav_menu-14" id="mega-menu-item-nav_menu-14">
+            <div class="menu-submenu-campus-life2-container">
+             <ul id="menu-submenu-campus-life2" class="menu">
+              <li id="menu-item-96" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-96"><a href="http://www.berkeley.edu/campus-life/events-attractions">Events &amp; attractions</a></li>
+              <li id="menu-item-97" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-97"><a href="http://www.berkeley.edu/campus-life/student-organizations">Student organizations</a></li>
+              <li id="menu-item-98" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-98"><a href="http://www.calbears.com/">Cal athletics</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-disable-link mega-menu-item-25" id="mega-menu-item-25"><a class="dropdown-toggle mega-menu-link" tabindex="0" aria-haspopup="true" aria-expanded="false" role="button" data-target="#" data-toggle="dropdown">Get Involved<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-2" id="mega-menu-item-widget_sp_image-2"><h4 class="mega-block-title">StudentsSather_1200_Zhukova</h4><img width="468" height="312" alt="StudentsSather_1200_Zhukova" class="attachment-full" style="max-width: 100%;" srcset="https://calparents.berkeley.edu/wp-content/uploads/2016/02/admissions_mega.jpg 468w, https://calparents.berkeley.edu/wp-content/uploads/2016/02/admissions_mega-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://calparents.berkeley.edu/wp-content/uploads/2016/02/admissions_mega.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_text mega-menu-columns-2-of-6 mega-menu-item-text-2" id="mega-menu-item-text-2"> 
+            <div class="textwidget">
+             Ready to get involved? Find out about opportunities to become an advocate and representative of the campus community.
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-4" id="mega-menu-item-nav_menu-4">
+            <div class="menu-submenu-get-involved-container">
+             <ul id="menu-submenu-get-involved" class="menu">
+              <li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a href="/ambassadors/">Cal Parents &amp; Families ambassadors</a></li>
+              <li id="menu-item-56" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-56"><a href="/cal-parents-board/">Cal Parents &amp; Families board</a></li>
+              <li id="menu-item-255" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-255"><a href="https://calparents.berkeley.edu/update/">Update Parent Info</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-disable-link mega-menu-item-26" id="mega-menu-item-26"><a class="dropdown-toggle mega-menu-link" tabindex="0" aria-haspopup="true" aria-expanded="false" role="button" data-target="#" data-toggle="dropdown">Give<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-6" id="mega-menu-item-widget_sp_image-6"><img width="468" height="312" class="attachment-full" style="max-width: 100%;" srcset="https://calparents.berkeley.edu/wp-content/uploads/2016/03/OskiParents468.jpg 468w, https://calparents.berkeley.edu/wp-content/uploads/2016/03/OskiParents468-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://calparents.berkeley.edu/wp-content/uploads/2016/03/OskiParents468.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_text mega-menu-columns-2-of-6 mega-menu-item-text-6" id="mega-menu-item-text-6"> 
+            <div class="textwidget">
+             When you give to Berkeley, you help support the entire campus community. Choose a particular program to support or make an unrestricted gift.
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-8" id="mega-menu-item-nav_menu-8">
+            <div class="menu-submenu-give-container">
+             <ul id="menu-submenu-give" class="menu">
+              <li id="menu-item-61" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61"><a href="https://give.berkeley.edu/fund/FX0120000">Give now</a></li>
+              <li id="menu-item-58" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58"><a href="/annual-giving/">Annual giving</a></li>
+              <li id="menu-item-59" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59"><a href="/leadership-giving/">Leadership giving</a></li>
+              <li id="menu-item-60" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-60"><a href="/campus-recognition-programs/">Recognition programs</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-menu-item-1134" id="mega-menu-item-1134"><a class="dropdown-toggle mega-menu-link" href="https://calparents.berkeley.edu/letter-home/" aria-haspopup="true" aria-expanded="false" tabindex="0" data-target="#" data-toggle="dropdown">Letter Home<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-10" id="mega-menu-item-widget_sp_image-10"><img width="468" height="312" alt="Sproul Plaza" class="attachment-full" style="max-width: 100%;" srcset="https://calparents.berkeley.edu/wp-content/uploads/2015/11/SproulPlaza468.jpg 468w, https://calparents.berkeley.edu/wp-content/uploads/2015/11/SproulPlaza468-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://calparents.berkeley.edu/wp-content/uploads/2015/11/SproulPlaza468.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_text mega-menu-columns-2-of-6 mega-menu-item-text-10" id="mega-menu-item-text-10"> 
+            <div class="textwidget">
+             <p>Letter Home is a newsletter for parents and families of Cal students</p>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-17" id="mega-menu-item-nav_menu-17">
+            <div class="menu-submenu-letterhome-container">
+             <ul id="menu-submenu-letterhome" class="menu">
+              <li id="menu-item-1130" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1130"><a href="https://calparents.berkeley.edu/letter-home/">Letter Home</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-disable-link mega-menu-item-638" id="mega-menu-item-638"><a class="dropdown-toggle mega-menu-link" tabindex="0" aria-haspopup="true" aria-expanded="false" role="button" data-target="#" data-toggle="dropdown">Get started<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-9" id="mega-menu-item-widget_sp_image-9"><h4 class="mega-block-title">cp-get-started</h4><img width="468" height="312" alt="cp-get-started" class="attachment-full" style="max-width: 100%;" srcset="https://calparents.berkeley.edu/wp-content/uploads/2017/05/cp-get-started.jpg 468w, https://calparents.berkeley.edu/wp-content/uploads/2017/05/cp-get-started-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://calparents.berkeley.edu/wp-content/uploads/2017/05/cp-get-started.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_text mega-menu-columns-2-of-6 mega-menu-item-text-9" id="mega-menu-item-text-9"> 
+            <div class="textwidget">
+             <p>Welcome new Cal Parents! Your family’s Berkeley experience has just begun. Your student is now responsible for all of their tasks and deadlines, however, to give parents peace of mind, we are offering parents an insight into their new responsibilities. The links on the right provide you with an understanding of what and when students take care of their assigned tasks. Go Bears!</p>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-15" id="mega-menu-item-nav_menu-15">
+            <div class="menu-submenu-get-started-container">
+             <ul id="menu-submenu-get-started" class="menu">
+              <li id="menu-item-634" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-634"><a href="http://orientation.berkeley.edu/before-you-arrive/getting-started">Getting started</a></li>
+              <li id="menu-item-635" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-635"><a href="http://orientation.berkeley.edu/before-you-arrive/golden-bear-advising">Golden Bear advising</a></li>
+              <li id="menu-item-636" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-636"><a href="http://orientation.berkeley.edu/before-you-arrive/golden-bear-prep">Golden Bear prep</a></li>
+              <li id="menu-item-656" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-656"><a href="http://orientation.berkeley.edu/parents-supporters">Golden Bear Orientation for Parents and Supporters</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+        </ul>
+       </div> 
+      </nav><!-- #site-navigation -->
+     </div>
+    </div>
+   </div><!-- End Main menu -->
+  </header><!-- #masthead --> 
+  <div id="content" class="site-content" role="main"> <!-- Text Box Hero --> 
+   <section class="homepage-hero homepage-hero-split berkeley-blue"> 
+    <div class="container-fluid no-padding"> 
+     <div class="cards"> 
+      <div class="row no-gutter"> 
+       <div class="col-sm-8"> 
+        <div class="card fullBlock"> 
+         <div class="card-color" style="background-image:URL('https://calparents.berkeley.edu/wp-content/uploads/2021/10/Parents_weekend1.jpg');"></div> <span class="credit">Keegan Houser</span> 
+        </div> 
+       </div> 
+       <div class="col-md-4"> 
+        <div class="caption"> 
+         <div class="caption-inner"> 
+          <h2>Welcome, Cal Parents &amp; Families</h2> 
+          <div class="caption-body"> 
+           <p></p> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </section> 
+   <div class="container"> 
+    <div class="row"> 
+     <div class="container">
+      <article role="article" id="post-11" class="post-11 page type-page status-publish has-post-thumbnail hentry">
+       <div class="entry-content">
+        <table class="pbsandwich_column" style="width: 100%; height: auto; border: none;" border="0"> 
+         <tbody class="row"> 
+          <tr> 
+           <td class="col-sm-12" style="width: 100%;" data-wp-columnselect="1">UC Berkeley is a community like no other. It’s energized by a daily flood of new ideas, and enriched by a diverse student body. It’s enlivened by art, culture, sports and by the best minds anywhere. Your student helps make Berkeley what it is — the world’s premier public university. And we’re here to help you discover all that Berkeley has to offer.</td> 
+          </tr> 
+         </tbody> 
+        </table> 
+       </div><!-- .entry-content -->
+      </article><!-- #post-11 -->
+     </div><!-- /container -->
+    </div><!-- #content -->
+    <div id="hero-widgets-container" class="widget widget-area container" role="complementary">
+     <div class="container">
+      <div class="herowidgets-sidebar-row row">
+       <aside id="herowidgets-sidebar-1" class="sidebar widget col-sm-12">
+        <div class="col-sm-4">
+         <div class="block events">
+          <h3 class="block-header">Important dates</h3>
+          <ul class="media-list">
+           <li class="media">
+            <div class="media-left">
+             <div class="date">
+              <span class="month">Jun</span><span class="day">21</span>
+             </div>
+            </div>
+            <div class="media-body">
+             <h3><a href="https://events.berkeley.edu/index.php/calendar/sn/calparents.html?event_ID=146382&amp;date=2022-06-21">Summer Session C - 8-Week Session Begins</a></h3>
+            </div></li>
+           <li class="media">
+            <div class="media-left">
+             <div class="date">
+              <span class="month">Jul</span><span class="day">01</span>
+             </div>
+            </div>
+            <div class="media-body">
+             <h3><a href="https://events.berkeley.edu/index.php/calendar/sn/calparents.html?event_ID=146383&amp;date=2022-07-01">Summer Session A - 1st Six-Week Session Ends</a></h3>
+            </div></li>
+           <li class="media">
+            <div class="media-left">
+             <div class="date">
+              <span class="month">Jul</span><span class="day">04</span>
+             </div>
+            </div>
+            <div class="media-body">
+             <h3><a href="https://events.berkeley.edu/index.php/calendar/sn/calparents.html?event_ID=146385&amp;date=2022-07-04">Academic and Administrative Holiday</a></h3>
+            </div></li>
+          </ul>
+          <div class="more-link">
+           <a href="https://events.berkeley.edu/index.php/calendar/sn/calparents.html">More events</a>
+          </div>
+         </div>
+        </div>
+        <div class="col-sm-4">
+         <div class="block promo  solid-background web-medalist ">
+          <a href="https://orientation.berkeley.edu/new-students/golden-bear-experience/getting-started/">
+           <div class="thumbnail">
+            <div class="promo-image">
+             <img src="https://calparents.berkeley.edu/wp-content/uploads/2021/02/Briggs-1-1.jpg" alt="">
+            </div>
+            <div class="caption"> 
+             <div class="caption-inner"> 
+              <h3>New Golden Bears</h3> 
+              <p>Start Here</p> 
+             </div> 
+            </div> 
+           </div></a>
+         </div>
+        </div>
+        <div class="widget_text col-sm-4">
+         <div class="textwidget custom-html-widget">
+          <h3 class="block-header">Messages from campus</h3> 
+          <ul class="display-posts-listing">
+           <li class="listing-item"><a class="title" href="https://news.berkeley.edu/2022/05/14/in-rollicking-ceremony-uc-berkeley-graduates-cap-a-challenging-college-education/#new_tab">In rollicking ceremony, UC Berkeley graduates cap a challenging college education</a> <span class="date">(5/17/2022)</span></li>
+           <li class="listing-item"><a class="title" href="https://news.berkeley.edu/2022/05/09/in-times-of-crisis-2022-university-medal-finalists-summoned-resilience-hope/?utm_source=Berkeleyan&amp;utm_campaign=12fa3094b5-berkeleyan&amp;utm_medium=email&amp;utm_term=0_99ee3800d7-12fa3094b5-388658833#new_tab">In times of crisis, 2022 University Medal finalists summoned resilience, hope</a> <span class="date">(5/10/2022)</span></li>
+           <li class="listing-item"><a class="title" href="https://news.berkeley.edu/2022/05/09/east-coast-grit-meets-west-coast-utopianism-in-top-graduating-senior/?fbclid=IwAR3YruJn9_0M-XpSk-j_zqhTA-wCg0NP8fmUlkKsZMetCW62oDYzO-XcrQU#new_tab">In top graduating senior, East Coast grit meets Berkeley utopianism</a> <span class="date">(5/9/2022)</span></li>
+          </ul> 
+          <p><a href="/campus-messages/">Read more &gt;</a></p>
+         </div>
+        </div> 
+       </aside>
+      </div><!-- .row -->
+     </div><!-- .container -->
+     <div class="container">
+      <div class="herowidgets-sidebar-row row">
+       <aside id="herowidgets-sidebar-2" class="sidebar widget col-sm-12">
+        <div class="col-sm-4">
+         <div class="block promo  solid-background web-medalist ">
+          <a href="https://peoplesparkhousing.berkeley.edu/">
+           <div class="thumbnail">
+            <div class="promo-image">
+             <img src="https://calparents.berkeley.edu/wp-content/uploads/2021/10/ucb-pp_view-01_900x600.jpeg" alt="">
+            </div>
+            <div class="caption"> 
+             <div class="caption-inner"> 
+              <h3>People's Park Housing</h3> 
+              <p>A Renewed People's Park</p> 
+             </div> 
+            </div> 
+           </div></a>
+         </div>
+        </div>
+        <div class="col-sm-4">
+         <div class="block video"> <a href="#" class="thumbnail video-thumbnail video-modal-trigger" title="Play Discover the Cal Parents &amp; Families program Video" data-toggle="modal" data-target="#videoModal-621" accesskey="v"> 
+           <div class="caption"> 
+            <h3>Discover the Cal Parents &amp; Families program</h3> 
+           </div> 
+           <div class="video-thumbnail-image"> 
+            <img src="https://calparents.berkeley.edu/wp-content/uploads/2017/04/IMG_0816.jpg" alt=""> 
+            <div class="video-thumbnail-overlay"> 
+             <div class="play-btn"></div><span class="screen-reader">Play Discover the Cal Parents &amp; Families program Video</span> 
+            </div> 
+           </div></a> 
+         </div> 
+         <div id="videoModal-621" class="modal" tabindex="-1" role="dialog" aria-labelledby="videoModal-621" aria-hidden="true"> 
+          <div class="modal-dialog modal-lg"> 
+           <div class="modal-content"> 
+            <div class="modal-header"> <span class="screen-reader">Press ESC to close video dialog</span> <button type="button" class="close" data-dismiss="modal" aria-label="close">×</button> 
+             <h4 class="modal-title">Discover the Cal Parents &amp; Families program</h4> 
+            </div> 
+            <div id="video-container-621"> 
+             <div class="modal-body"> 
+              <div class="embed-container"> <iframe class="youtube" id="6YfdV5X642g" title="YouTube video player" allowfullscreen width="720" height="1280" src="https://www.youtube.com/embed/6YfdV5X642g?autoplay=0&amp;controls=2&amp;modestbranding=1&amp;showinfo=0&amp;ohide=1&amp;disablekb=1&amp;enablejsapi=1&amp;wmode=transparent&amp;origin=https://calparents.berkeley.edu" name="6YfdV5X642g"></iframe> 
+              </div> 
+             </div> 
+             <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+              <div class="pull-left"> <button name="Share https://youtu.be/6YfdV5X642g on Twitter" type="button" class="btn btn-default sharetwitter" aria-label="Twitter share"><span class="entypo-social twitter"></span></button> <button name="Share https://youtu.be/6YfdV5X642g on Facebook" type="button" class="btn btn-default sharefacebook" aria-label="Facebook share"><span class="entypo-social facebook"></span></button> <button name="Share https://youtu.be/6YfdV5X642g via Email" type="button" class="btn btn-default shareemail" aria-label="Email share"><span class="entypo mail"></span></button> 
+              </div> 
+             </div> 
+            </div> 
+            <div id="tellafriend-621" style="display:none;padding:20px;"> 
+             <div class="body"> 
+              <p>To share this video via email, copy and paste the message and URL below into your favorite email client and send.</p> 
+              <pre>Check out this video I saw on https://calparents.berkeley.edu:<br><br>Discover the Cal Parents &amp; Families program<br><br></pre> 
+             </div> 
+             <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="close" aria-hidden="true">Close</button> 
+             </div> 
+            </div> 
+           </div><!-- /.modal-content --> 
+          </div><!-- /.modal-dialog --> 
+         </div>
+        </div>
+        <div class="col-sm-4">
+         <div class="block promo  solid-background web-lap-lane ">
+          <a href="https://news.berkeley.edu/">
+           <div class="thumbnail">
+            <div class="promo-image">
+             <img src="https://calparents.berkeley.edu/wp-content/uploads/2017/03/wheeler-poppies-468.jpg" alt="">
+            </div>
+            <div class="caption"> 
+             <div class="caption-inner"> 
+              <h3>Berkeley News</h3> 
+              <p>Latest news from campus</p> 
+             </div> 
+            </div> 
+           </div></a>
+         </div>
+        </div> 
+       </aside>
+      </div><!-- .row -->
+     </div><!-- .container -->
+     <div class="container">
+      <div class="herowidgets-sidebar-row row">
+       <aside id="herowidgets-sidebar-3" class="sidebar widget col-sm-12">
+        <div class="col-sm-4">
+         <div class="block promo  solid-background wellman-tile ">
+          <a href="https://studentbilling.berkeley.edu/payments-and-refunds">
+           <div class="thumbnail">
+            <div class="promo-image">
+             <img src="https://calparents.berkeley.edu/wp-content/uploads/2016/02/FinAid468.jpg" alt="">
+            </div>
+            <div class="caption"> 
+             <div class="caption-inner"> 
+              <h3>How to Pay Your Student's Bill</h3> 
+              <p>Payment Options</p> 
+             </div> 
+            </div> 
+           </div></a>
+         </div>
+        </div>
+        <div class="col-sm-4">
+         <div class="block promo  solid-background web-lap-lane ">
+          <a href="https://calparents.berkeley.edu/about-us/resource-guide-for-cal-parents/">
+           <div class="thumbnail">
+            <div class="promo-image">
+             <img src="https://calparents.berkeley.edu/wp-content/uploads/2018/09/UC-Berkeley-Homecoming-2016_1001-56.jpg" alt="">
+            </div>
+            <div class="caption"> 
+             <div class="caption-inner"> 
+              <h3>Resource Guide For Cal Parents &amp; Families</h3> 
+              <p>A resource guide to help guide your student (English, Spanish and Chinese)</p> 
+             </div> 
+            </div> 
+           </div></a>
+         </div>
+        </div>
+        <div class="col-sm-4">
+         <div class="block video"> <a href="#" class="thumbnail video-thumbnail video-modal-trigger" title="Play Cal Central – Delegate Access for Finances and Enrollment Video" data-toggle="modal" data-target="#videoModal-1381" accesskey="v"> 
+           <div class="caption"> 
+            <h3>Cal Central – Delegate Access for Finances and Enrollment</h3> 
+           </div> 
+           <div class="video-thumbnail-image"> 
+            <img src="https://calparents.berkeley.edu/wp-content/uploads/2018/08/jump750.jpg" alt=""> 
+            <div class="video-thumbnail-overlay"> 
+             <div class="play-btn"></div><span class="screen-reader">Play Cal Central – Delegate Access for Finances and Enrollment Video</span> 
+            </div> 
+           </div></a> 
+         </div> 
+         <div id="videoModal-1381" class="modal" tabindex="-1" role="dialog" aria-labelledby="videoModal-1381" aria-hidden="true"> 
+          <div class="modal-dialog modal-lg"> 
+           <div class="modal-content"> 
+            <div class="modal-header"> <span class="screen-reader">Press ESC to close video dialog</span> <button type="button" class="close" data-dismiss="modal" aria-label="close">×</button> 
+             <h4 class="modal-title">Cal Central – Delegate Access for Finances and Enrollment</h4> 
+            </div> 
+            <div id="video-container-1381"> 
+             <div class="modal-body"> 
+              <div class="embed-container"> <iframe class="youtube" id="3Iz1NT9QKjI" title="YouTube video player" allowfullscreen width="720" height="1280" src="https://www.youtube.com/embed/3Iz1NT9QKjI?autoplay=0&amp;controls=2&amp;modestbranding=1&amp;showinfo=0&amp;ohide=1&amp;disablekb=1&amp;enablejsapi=1&amp;wmode=transparent&amp;origin=https://calparents.berkeley.edu" name="3Iz1NT9QKjI"></iframe> 
+              </div> 
+             </div> 
+             <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+              <div class="pull-left"> <button name="Share https://youtu.be/3Iz1NT9QKjI on Twitter" type="button" class="btn btn-default sharetwitter" aria-label="Twitter share"><span class="entypo-social twitter"></span></button> <button name="Share https://youtu.be/3Iz1NT9QKjI on Facebook" type="button" class="btn btn-default sharefacebook" aria-label="Facebook share"><span class="entypo-social facebook"></span></button> <button name="Share https://youtu.be/3Iz1NT9QKjI via Email" type="button" class="btn btn-default shareemail" aria-label="Email share"><span class="entypo mail"></span></button> 
+              </div> 
+             </div> 
+            </div> 
+            <div id="tellafriend-1381" style="display:none;padding:20px;"> 
+             <div class="body"> 
+              <p>To share this video via email, copy and paste the message and URL below into your favorite email client and send.</p> 
+              <pre>Check out this video I saw on https://calparents.berkeley.edu:<br><br>Cal Central – Delegate Access for Finances and Enrollment<br><br></pre> 
+             </div> 
+             <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="close" aria-hidden="true">Close</button> 
+             </div> 
+            </div> 
+           </div><!-- /.modal-content --> 
+          </div><!-- /.modal-dialog --> 
+         </div>
+        </div> 
+       </aside>
+      </div><!-- .row -->
+     </div><!-- .container -->
+    </div>
+   </div><!-- #content --> 
+  </div><!-- row --> <!-- #container --> 
+  <footer id="dept-footer"> 
+   <div class="container">
+    <div class="footer-sidebar-row row"> 
+     <section id="footer-sidebar-1" class="sidebar widget col-sm-3 widget_nav_menu">
+      <h3 class="widget-title">Browse</h3>
+      <div class="menu-footer-menu-container">
+       <ul id="menu-footer-menu" class="menu">
+        <li id="menu-item-70" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-70"><a href="http://news.berkeley.edu/">Berkeley news</a></li>
+        <li id="menu-item-71" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-71"><a href="http://events.berkeley.edu">Campus events calendar</a></li>
+       </ul>
+      </div> 
+     </section>
+     <section id="footer-sidebar-2" class="sidebar widget col-sm-3 widget_nav_menu">
+      <h3 class="widget-title">Follow us</h3>
+      <div class="menu-footer-2-container">
+       <ul id="menu-footer-2" class="menu">
+        <li id="menu-item-76" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-76"><a href="https://www.facebook.com/calparentsberkeley/?fref=ts">Cal Parents &amp; Families on Facebook</a></li>
+       </ul>
+      </div> 
+     </section>
+     <section id="footer-sidebar-3" class="sidebar widget col-sm-3 widget_nav_menu">
+      <h3 class="widget-title">Resources</h3>
+      <div class="menu-footer-3-container">
+       <ul id="menu-footer-3" class="menu">
+        <li id="menu-item-77" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-77"><a href="http://www.berkeley.edu/directory">Campus directory</a></li>
+        <li id="menu-item-78" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-78"><a href="http://www.berkeley.edu/map">Campus map</a></li>
+       </ul>
+      </div> 
+     </section>
+     <section id="footer-sidebar-4" class="sidebar widget col-sm-3 widget_nav_menu">
+      <h3 class="widget-title">About us</h3>
+      <div class="menu-footer-4-container">
+       <ul id="menu-footer-4" class="menu">
+        <li id="menu-item-1129" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1129"><a href="https://calparents.berkeley.edu/about-us/">Cal Parents &amp; Families staff</a></li>
+       </ul>
+      </div> 
+     </section>
+    </div><!-- .row -->
+   </div><!-- .container -->
+  </footer> <!-- </div>#page --> 
+  <footer id="universal-footer"> 
+   <div class="container"> 
+    <div class="row"> 
+     <div class="col-sm-4 col-md-3"> 
+      <div class="block logo"> <a href="http://berkeley.edu" target="_blank"><img alt="University of California Berkeley" src="/wp-content/themes/berkeley_brand/img/logo-ucberkeley-white.png"></a> 
+      </div> 
+     </div> 
+     <div class="col-sm-8 col-md-9"> 
+      <div class="copyright">
+        Copyright © 2022 UC Regents; all rights reserved 
+       <ul class="footer-links"> 
+        <li><a href="https://dac.berkeley.edu/web-accessibility">Accessibility</a></li> 
+        <li><a href="https://ophd.berkeley.edu/policies-and-procedures/nondiscrimination-policy-statement">Nondiscrimination</a></li> 
+        <li><a href="https://www.berkeley.edu/privacy_policy">Privacy</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <link rel="stylesheet" id="pbsandwich-frontend-css" href="https://calparents.berkeley.edu/wp-content/plugins/page-builder-sandwich/css/frontend.css?ver=5.6.8" type="text/css" media="all">
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-content/plugins/orbisius-simple-notice/assets/jquery.cookie.min.js?ver=1.0" id="simple_notice-js"></script>
+  <script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/calparents.berkeley.edu\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.3.2" id="contact-form-7-js"></script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-content/themes/berkeley_brand/js/globalize.min.js" id="globalize-js-js"></script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-content/themes/berkeley_brand/js/imagesloaded.pkgd.min.js" id="imagesloaded-js-js"></script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-content/themes/berkeley_brand/js/jquery.ba-throttle-debounce.min.js" id="debounce-js-js"></script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-content/themes/berkeley_brand/js/modernizr.custom.js" id="modernizr-js-js"></script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-content/themes/berkeley_brand/js/owl.carousel.min.js" id="owl-js-js"></script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-content/themes/berkeley_brand/js/components.js" id="component-js-js"></script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-includes/js/hoverIntent.min.js?ver=1.8.1" id="hoverIntent-js"></script>
+  <script type="text/javascript" id="megamenu-js-extra">
+/* <![CDATA[ */
+var megamenu = {"timeout":"300","interval":"100"};
+/* ]]> */
+</script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=2.9.2" id="megamenu-js"></script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-content/themes/berkeley_brand/js/maxmegamenu.js" id="megamenu-new-js"></script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-content/themes/alienship/js/bootstrap.min.js?ver=3.1.1" id="bootstrap.js-js"></script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-content/themes/alienship/js/alienship-helper.js?ver=1.0.0" id="alienship-helper.js-js"></script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-content/plugins/page-links-to/dist/new-tab.js?ver=3.3.5" id="page-links-to-js"></script>
+  <script type="text/javascript" src="https://calparents.berkeley.edu/wp-includes/js/wp-embed.min.js?ver=5.6.8" id="wp-embed-js"></script><!-- orbisius_simple_notice : Orbisius Simple Notice | https://orbisius.com/products/wordpress-plugins/orbisius-simple-notice/ --> 
+  <style>
+.orbisius_simple_notice_container .orbisius_simple_notice {
+    color:#ffffff;
+background:none repeat scroll 0 0 #c4820e;
+margin:0;
+padding:4px 0;
+text-align:center;
+width:100%;
+z-index:1000;
+font-family:arial
+}
+
+.orbisius_simple_notice_container a {
+    text-decoration:underline;
+}
+
+
+
+.orbisius_simple_notice_powered_by_container {
+    float:left;
+    text-decoration:none;
+}
+
+.orbisius_simple_notice_dismiss_container {
+    float:right;
+    margin-right:3px;
+    padding:0px 2px;
+}
+
+.orbisius_simple_notice_dismiss_container a {
+    text-decoration:none;
+    display:inline-block;
+}
+
+.orbisius_simple_notice_powered_by_container .little_info {
+    text-decoration:none;
+    display:block-inline;
+    padding:0px 3px;
+}
+</style> 
+  <script>
+    jQuery(document).ready(function ($) {
+        var msg_id = jQuery('#orbisius_simple_notice').data('msg_id');
+
+        if (!jQuery('body').hasClass('wp-admin')) { // public area only
+            var orb_simp_ntc_dismiss_hash = jQuery.cookie('orb_simp_ntc_dismiss') || '';
+
+            /* if the cookie exists and matches the msg_id that means the user has dismissed the message already. So don't show it for another day. */
+            if (orb_simp_ntc_dismiss_hash == msg_id) {
+                jQuery('#orbisius_simple_notice_container').hide();
+            }
+        }
+
+        // The user has clicked on the X sign
+        jQuery('#orbisius_simple_notice_container .dismiss_message').on('click', function() {
+            jQuery('#orbisius_simple_notice_container').slideUp('slow');
+
+            // for WP admin show the message.
+            if (jQuery('body').hasClass('wp-admin')) {
+                setTimeout(function () {
+                    jQuery('#orbisius_simple_notice_container').slideDown('slow');
+                }, 2000);
+            } else {
+                // this will be empty for new messages or expired cookies
+                var orb_simp_ntc_dismiss_hash = jQuery.cookie('orb_simp_ntc_dismiss') || '';
+
+                if (orb_simp_ntc_dismiss_hash == '') {
+                    jQuery.cookie('orb_simp_ntc_dismiss', msg_id, { expires: 2 } );
+                }
+            }
+        });
+    });
+</script>
+  <script>
+    jQuery(document).ready(function ($) {
+        jQuery('#orbisius_simple_notice_container').prependTo('body'); // .css('postion', '')
+    });
+</script> 
+  <div id="orbisius_simple_notice_container" class="orbisius_simple_notice_container"> 
+   <div id="orbisius_simple_notice" class="orbisius_simple_notice" data-msg_id="orb_ntc_e31107fb5028b9a93c2ec3afeb8db11c"> <strong style="color: #ffffff;">Notice</strong> - The latest updates on the evolving COVID-19 policies and resources for the campus community.&nbsp; <a href="https://news.berkeley.edu/coronavirus/">View Details.</a> 
+    <div class="orbisius_simple_notice_dismiss_container">
+     <a title="Click to close/dismiss message." href="javascript:void(0);" class="dismiss_message">[X] Close</a>
+    </div>
+   </div> <!-- /orbisius_simple_notice --> 
+  </div> <!-- /orbisius_simple_notice_container --> <!-- /orbisius_simple_notice -->  
+ </body>
+</html>

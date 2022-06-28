@@ -1,0 +1,53 @@
+<!doctype html>
+<html> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+  <title>UCANR Web Logon</title> 
+  <link rel="stylesheet" type="text/css" href="/idp/css/main.css"> 
+  <script type="text/javascript">
+    function blockSpecialChar(e) {
+      var k;
+      document.all ? k = e.keyCode : k = e.which;
+      if (k == 64) {
+        document.getElementById("insert").innerHTML = "To log in, system requires using your username and not your email address.";
+        document.getElementById("insert").style.color = "red";
+      }
+      return (k != 64);
+    }
+
+    //needed to prevent zooming on iOS - see: https://stackoverflow.com/questions/4389932/how-do-you-disable-viewport-zooming-on-mobile-safari
+    document.addEventListener('gesturestart', function (e) {
+      e.preventDefault();
+    });
+  </script> 
+ </head> 
+ <body onload="document.forms[0].username.focus();"> 
+  <div class="wrapper login"> 
+   <div class="container"> 
+    <img class="logo" src="/idp/images/uc_anr.png" alt="University of California Division of Agraculture and Natural Resources"> 
+    <div class="content"> 
+     <form action="/idp/profile/SAML2/Redirect/SSO;jsessionid=073A6303BB86D3EF1A70A3B5D3358070?execution=e1s1" method="post"> 
+      <p id="insert"></p> 
+      <div class="form-element-wrapper"> <label for="username">Username</label> 
+       <input class="form-element form-field" id="username" name="j_username" type="text" value="" onkeypress="return blockSpecialChar(event)"> 
+      </div> 
+      <div class="form-element-wrapper"> <label for="password">Password</label> 
+       <input class="form-element form-field" id="password" name="j_password" type="password" value=""> 
+      </div> 
+      <ul class="list list-help"> 
+       <li class="list-help-item"><a href="https://ucanr.edu/portal/login/universalforgotpass.cfm"><span class="item-marker">›</span> Forgot your password?</a></li> 
+      </ul> 
+      <div class="form-element-wrapper"> <button class="form-element form-button btn-block" type="submit" name="_eventId_proceed" onclick="this.childNodes[0].nodeValue='Logging in, please wait...'">SIGN ON</button> 
+      </div> 
+     </form> 
+    </div> 
+   </div> 
+   <ul class="footer"> 
+    <li><a href="http://ucanr.edu/Copyright/">© 2020 Regents of the University of California</a></li> 
+    <li><a href="http://ucanr.edu/sites/anrstaff/Diversity/Affirmative_Action/Resources/Policy-related_downloads/">Nondiscrimination Statement</a></li> 
+    <li><a href="http://ucanr.edu/Accessibility/">Accessibility</a></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

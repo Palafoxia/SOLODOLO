@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta property="og:url" content="http://maps.usc.edu/?id=1928">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="University of Southern California">
+  <meta property="og:description" content="Visit University of Southern California's Interactive Campus Map">
+  <meta property="og:image" content="https://myatlascms.com/assets/1928/usc_monogram_white_210x76.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title></title>
+  <meta name="description" content="Visit our interactive map">
+  <link rel="manifest" href="inc/manifest/?id=1928">
+  <link id="apple-favicon" rel="apple-touch-icon" href="assets/icons/favicons/c3d.png">
+  <link rel="shortcut icon" id="favicon" href="assets/icons/favicons/c3d.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" as="font">
+  <link rel="preload stylesheet" href="css/shared.css" as="style" type="text/css">
+  <link rel="preload stylesheet" href="css/app.css" as="style" type="text/css">
+  <link rel="preload stylesheet" href="css/thirdparty.css" as="style" type="text/css">
+  <link rel="preload stylesheet" href="libcss/atlas-font.css" as="style" type="text/css">
+  <noscript>
+   Your browser does not support or is blocking javascript, this application requires javascript to function
+  </noscript>
+  <script type="text/javascript" src="https://cdn.levelaccess.net/accessjs/YW1wMTI1MDM/access.js" async></script>
+ </head>
+ <body id="body">
+  <div id="skeleton-wrapper">
+   <div class="skeleton-header"></div>
+   <div class="skeleton-sidebar">
+    <div class="skeleton-sidebar-header"></div>
+    <div class="skeleton-tools"></div>
+    <div class="category-skeleton"></div>
+   </div>
+  </div>
+  <div id="atlas"></div>
+  <script src="libjs/isMobile.min.js"></script>
+  <script type="text/javascript" async>
+      if (window.navigator.standalone === true) {
+        document.body.classList.add("standalone")
+        console.log("standalone");
+      }
+      if (isMobile.any && window.innerWidth < 1366 && window.innerHeight < 1024) {
+        document.body.classList.add("mobile")
+      } else {
+        document.body.classList.add("desktop")
+      }
+      if (isMobile.phone) {
+        document.body.classList.add("phone")
+      }
+      if (isMobile.tablet && window.innerWidth < 1366 && window.innerHeight < 1024) {
+        document.body.classList.add("tablet")
+      }
+      if (document.body.classList.contains('desktop')) {
+        window.addEventListener("orientationchange", function() {
+          var blnHolder = document.querySelector('#bln-holder')
+          var blnModal = document.querySelector('.bln-modal');
+          if (blnHolder && blnHolder.classList) {
+            blnHolder.classList.remove('minimized');
+          }
+          if (blnModal && blnModal.classList) {
+            blnModal.classList.remove('minimized');
+          }
+        });
+      }
+    </script>
+  <script src="js/libs.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/runtime.js"></script>
+  <script src="krpano/tour.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+      // Check that service workers are registered
+      if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('serviceWorker.js');
+        });
+      }
+    </script>
+ </body>
+</html>

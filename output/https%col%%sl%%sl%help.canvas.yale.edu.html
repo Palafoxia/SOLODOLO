@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Canvas @ Yale</title>
+  <meta name="description">
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="84Z+g9hu6Rh7aNbHMgmeswLkldalb/0E5FyLK4f1d1boxzLBlTm9Xjz/DxDcxdHs5xdJ0gTCF4Qn07xbkKNlUw==">
+  <link rel="stylesheet" media="screen" href="//assets.screensteps.com/assets/themes/fonts/helvetica-8681273d10a12b4f5502c278efb511b207828996eb6fb7d99fa7abb4cea05b50.css">
+  <link rel="stylesheet" href="//assets.screensteps.com/assets/fontawesome-9b64f06a98b9479593e125f4c10f2698fa8bb635ef3cf3616282a9e41d175c16.css">
+  <link rel="stylesheet" href="//assets.screensteps.com/assets/themes/cappa-c6d37cf5455532d31650bb73ff882d9cbb7974db08d1465a58652c7726c79aba.css">
+  <style type="text/css" media="all">
+  /* headings */
+  h1,
+  h1.toc-heading,
+  h2.toc-heading {
+    color: #;
+  }
+
+  h2.toc-subheading,
+  h3.toc-subheading,
+  h4.toc-subheading,
+  h5.toc-subheading,
+  h6.toc-subheading {
+    color: #;
+  }
+
+  .screensteps-training-site [data-count-bubble]::after {
+    background-color: #;
+  }
+
+  .screensteps-article-content h2 {
+    color: #;
+  }
+
+  .screensteps-article-content h3,
+  .screensteps-article-content h4,
+  .screensteps-article-content h5,
+  .screensteps-article-content h6 {
+    color: #;
+  }
+
+  .screensteps-sidebar h3 {
+    color: #;
+  }
+
+  .sidebar-subheading {
+    color: #;
+  }
+
+  .comments-heading {
+    color: #;
+  }
+
+  /* base/_buttons */
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"],
+  button,
+  .screensteps-bg-action-color,
+  .screensteps-courses .screensteps-progress-bar::before,
+  .screensteps-courses .screensteps-courses-menu a:hover,
+  .screensteps-courses .screensteps-courses-menu .step-active a::before,
+  .screensteps-training-site .asset-item__progress-bar {
+    background-color: #3061a7;
+  }
+
+  input[type="button"]:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover,
+  button:hover,
+  button.screensteps-bg-action-color:hover,
+  a.screensteps-bg-action-color:hover {
+    background-color: #3061a7;
+  }
+
+  /* base/_forms */
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="text"]:focus,
+  input[type="url"]:focus,
+  input[type="color"]:focus,
+  input[type="date"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="week"]:focus,
+  select[multiple=multiple]:focus,
+  textarea:focus {
+    border-color: #3061a7;
+  }
+
+
+  .screensteps-training-site .screensteps-main-search .search-field:not(:placeholder-shown) {
+    box-shadow: 0 0 0 2px #00356b;
+  }
+
+  /* base/_typography */
+  body {
+    background-color: #00356b;
+    color: #;
+  }
+
+  a {
+    color: #3061a7;
+  }
+
+
+
+  /* _screensteps-container */
+  .screensteps-container a:visited {
+    color: #3061a7;
+  }
+ .screensteps-container a:active,
+ .screensteps-container a:focus,
+ .screensteps-container a:hover {
+    color: #3061a7;
+  }
+
+  /* _screensteps-manual-contents */
+  .screensteps-manual-contents h2 a {
+    color: #3061a7;
+  }
+  /* _screensteps-foldable-sections */
+  .screensteps-main-content .embedded-chapter-article > * {
+    color: #3061a7;
+  }
+
+  /* screensteps-header */
+  .screensteps-branding h1,
+  .screensteps-header .screensteps-branding a,
+  .screensteps-training-site .screensteps-profile-subnav-toggle {
+    color: #ffffff;
+  }
+
+  .screensteps-header .screensteps-branding a:hover {
+    color: #d2d3d6;
+  }
+
+  /* meta data text */
+  .chapter-count,
+  .screensteps-comment-count,
+  .screensteps-lesson-details,
+  .nested-chapter-lessons .here a:after,
+  .screensteps-single-comment time {
+    color: #;
+  }
+
+  /* course tiles */
+  .screensteps-training-site .screensteps-group .asset-list--course a {
+    background-color: #;
+    color: #;
+  }
+
+  .screensteps-training-site .asset-item__progress-bar {
+    background-color: #;
+  }
+
+  .screensteps-training-site .screensteps-group .asset-list--course a:hover {
+    background-color: #;
+  }
+</style>
+  <link href="https://media.screensteps.com/favicons/images/000/013/048/original/favicon.ico" rel="icon">
+  <script src="//assets.screensteps.com/assets/application-10a945f50e929cc1e58184ca87f005bd032ee7fe9b1c7368b855e66a5234fab0.js"></script>
+  <script src="//assets.screensteps.com/assets/theme-cae9a1f80906ea92fdc68e13e7545d814402a7aeafd20bbca6accffffa49bbea.js"></script><!--[if lt IE 9]>
+<script src="//assets.screensteps.com/assets/vendor/html5shiv.min-6169624d10bc8403d59c9ace86ab0189063017bfb2139ee074a199cbbdc176b2.js"></script>
+<![endif]-->
+  <style media="">body {
+  color: black;
+}
+.site-manual .chapter-contents { display: none; }
+
+.site-toc .screensteps-container {
+  background: rgba(76, 175, 80, 0.0);
+}
+
+.site-toc .screensteps-container-wrapper {
+  background-image: url(http://canvas.yale.edu/sites/default/files/images/Street-Hall-clock-blue-with-grad.jpg);
+  background-size: cover;
+  height: 90vh;
+  padding-top: 0em;
+}
+/* Hide icons */
+.site-toc .large li a:before {
+  display: none;
+}
+/* Style the list */
+.site-toc ul.asset-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  overflow: hidden;
+  max-width: 81.25em;
+  margin: 0 auto 6em;
+}
+/* Float the list items side by side */
+.site-toc ul.asset-list li {
+  min-height: 0;
+  float: left;
+  }
+/* Style the links inside the list items */
+.site-toc ul.asset-list li a {
+  display: inline-block;
+  width: auto;
+  color: black;
+  text-align: center;
+  text-deco ration: none;
+  transition: 0.3s;
+  font-size: 17px;
+  border-radius: 3px;
+}
+.site-toc a.fa-graduation-cap, .site-toc a.fa-book, .site-toc a.fa-magic, .site-toc a.fa-group  {
+  padding: 14px 16px;
+  background-color: white;
+}
+/* Change background color of links on hover */
+.site-toc a.fa-graduation-cap:hover, .site-toc a.fa-book:hover, .site-toc a.fa-magic:hover, .site-toc a.fa-group:hover {
+  /*background-color: #111;*/
+  background-color: #ddd;
+}
+
+.site-toc .large li {
+  padding: 0em;
+  margin-bottom: 0em;
+}
+.site-toc .large li a {
+  padding-left: 1em
+}
+
+.site-toc .fa-book:before, .site-toc .fa-graduation-cap:before, .site-toc .fa-group:before, .site-toc .fa-magic:before {
+  display: none;
+}
+
+.screensteps-header {
+  height: 50px;
+  padding: 2em 1.5em 2em;
+}
+
+.site-toc h1 {
+  color: white;
+  margin: 25vh 0 0 0;
+  font-size: 3em;
+}
+.site-toc .screensteps-main-search {
+  margin: 8vh 0 1em;
+}
+
+.screensteps-article-content h4 {
+  font-size: 1em;
+  color: #808987;
+}
+
+.screensteps-article-content h5 {
+  font-size: .8em;
+  color: #808987;
+}
+
+.screensteps-article-content h6 {
+  font-size: .6em;
+  color: #808987;
+}
+
+.screensteps-article-content step child-step step-depth-3 div{
+  margin-left: 50px;
+}
+
+
+@media screen and (max-width: 686px) {
+  .site-toc h1 {
+    margin: 0vh 0 0 0;
+  }
+  .site-toc ul.asset-list {
+    margin: 0 auto 0em;
+  }
+  .site-toc .screensteps-main-search {
+    margin: 1em 0 0 0;
+  }
+  .site-toc ul.asset-list li {
+    margin-left: 0;
+  }
+  .site-toc .small li {
+  margin-bottom: .5em;
+  padding-left: 1em;
+  }
+  .site-toc a.fa-graduation-cap, .site-toc a.fa-book, .site-toc a.fa-magic, .site-toc a.fa-group {
+    padding: 9px;
+  }
+  .screensteps-external-nav li:last-child {
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+  }
+}
+
+#footer-text {
+  color: white;
+  padding: 0 1.5em 1em;
+  font-weight: bold
+}
+#footer-area {
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  margin-top: -55px;
+}
+
+/* Additions for foldable chapters - added 11/23/2020*/
+
+<style>
+
+div.step.screensteps-section.foldable-step.step-depth-1 {
+	padding-left: 10px;
+}
+
+div.step.screensteps-section.foldable-step.step-depth-2 {
+	padding-left: 20px;
+}
+
+div.step.screensteps-section.foldable-step.step-depth-3 {
+	padding-left: 30px;
+}
+
+div.step.screensteps-section.foldable-step.step-depth-4 {
+	padding-left: 40px;
+}
+
+div.step.screensteps-section.foldable-step.step-depth-4 {
+	padding-left: 50px;
+}
+
+div.step.screensteps-section.foldable-step.step-depth-4 {
+	padding-left: 60px;
+}
+
+div.step.screensteps-section.foldable-step.step-depth-4 {
+	padding-left: 70px;
+}
+
+div.step.screensteps-section.foldable-step.step-depth-4 {
+	padding-left: 80px;
+}
+
+div.step.screensteps-section.foldable-step div.nested-article{
+	border-left: thin dashed #cccccc;
+	padding-left: 10px;
+}
+
+div.step.screensteps-section.foldable-step.step-depth-1 a.embedded-chapter-article {
+	background-color: #A8A8A8;
+	color: black;
+	width: 100%;
+	border-radius: 10px;
+	border: thin solid #dddddd;
+	padding: 3px;
+	margin-bottom: 5px;
+}
+
+div.step.screensteps-section.child-step.foldable-step.step-depth-2 a.embedded-chapter-article {
+	background-color: #CCCCCC;
+	color: black;
+	width: 100%;
+	border-radius: 10px;
+	border: thin solid #dddddd;
+	padding: 3px;
+	margin-bottom: 5px;
+}
+
+div.step.screensteps-section.child-step.foldable-step.step-depth-3 a.embedded-chapter-article {
+	background-color: #EEEEEE;
+	color: black;
+	width: 100%;
+	border-radius: 10px;
+	border: thin solid #dddddd;
+	padding: 3px;
+	margin-bottom: 5px;
+
+}
+
+div.step.screensteps-section.child-step.foldable-step.step-depth-4 a.embedded-chapter-article {
+	background-color: #EEEEEE;
+	color: black;
+	width: 100%;
+	border-radius: 10px;
+	border: thin solid #dddddd;
+	padding: 3px;
+	margin-bottom: 5px;
+
+}
+
+div.step.screensteps-section.child-step.foldable-step.step-depth-5 a.embedded-chapter-article {
+	background-color: #FFFFFF;
+	color: black;
+	width: 100%;
+	border-radius: 10px;
+	border: thin solid #dddddd;
+	padding: 3px;
+	margin-bottom: 5px;
+
+}
+
+div.step.screensteps-section.child-step.foldable-step.step-depth-6 a.embedded-chapter-article {
+	background-color: #FFFFFF;
+	color: black;
+	width: 100%;
+	border-radius: 10px;
+	border: thin solid #000000;
+	padding: 3px;
+	margin-bottom: 5px;
+
+}
+
+div.step.screensteps-section.child-step.foldable-step.step-depth-7 a.embedded-chapter-article {
+	background-color: #FFFFFF;
+	color: black;
+	width: 100%;
+	border-radius: 10px;
+	border: thin solid #cccccc;
+	padding: 3px;
+	margin-bottom: 5px;
+
+}
+
+div.step.screensteps-section.child-step.foldable-step.step-depth-8 a.embedded-chapter-article {
+	background-color: #FFFFFF;
+	color: black;
+	width: 100%;
+	border-radius: 10px;
+	border: thin solid #eeeeee;
+	padding: 3px;
+	margin-bottom: 5px;
+
+}
+
+.screensteps-main-content .embedded-chapter-article > * {
+	color: black;
+}
+
+a.embedded-chapter-article.expanded {
+	font-style: italic;
+}
+
+a.embedded-chapter-article.expanded.active-article {
+	font-weight: bold;
+}
+</style>
+  <script>$(document).ready(function() {
+  $('.site-manual .chapter-title').click(function(e) {
+    e.preventDefault();
+    $(e.target).parents('.chapter').find('.chapter-contents').slideToggle();
+  });
+  if($('body').is('.site-toc')){
+    var newParent = document.querySelector('div.screensteps-container-wrapper');
+    var oldParent = document.querySelector('div.screensteps-group');
+
+    while (oldParent.childNodes.length > 0) {
+        newParent.insertBefore(oldParent.childNodes[0], newParent.childNodes[0]);
+    }
+
+    var title = document.querySelector("h1");
+    title.innerHTML = title.innerHTML.replace("Canvas @ Yale Help Site", "What can we help you with?");
+  }
+  // Accessibility Footer
+  	var x = document.createElement("FOOTER");
+	x.setAttribute("id", "footer-area");
+	document.body.appendChild(x);
+	var y = document.createElement("P");
+	y.innerHTML = "<a id=\"footer-text\" href=\"https://accessibility.yale.edu\" target=\"_blank\">Accessibility Information</a>";
+	document.getElementById("footer-area").appendChild(y);
+});
+</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-70239401-2', 'auto');
+  ga('send', 'pageview');
+
+</script><!-- Calendly badge widget begin --
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+<script type="text/javascript">Calendly.initBadgeWidget({ url: 'https://calendly.com/canvas-at-yale?hide_landing_page_details=1', text: 'Need a consult?', color: '#00a2ff', textColor: '#ffffff', branding: false });</script>
+!-- Calendly badge widget end -->
+  <script>
+//<![CDATA[
+    !function(name,path,ctx){
+      var latest,prev=name!=='Keen'&&window.Keen?window.Keen:false;ctx[name]=ctx[name]||{ready:function(fn){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onerror=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;latest=w.Keen;if(prev){w.Keen=prev}else{try{delete w.Keen}catch(e){w.Keen=void 0}}ctx[name]=latest;ctx[name].ready(fn)};s.async=1;s.src=path;h.parentNode.insertBefore(s,h)}}
+    }('KeenAsync','https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.1.3.min.js',this);
+
+    KeenAsync.ready(function(){
+      // Configure a client instance
+      var client = new KeenAsync({
+        projectId: '591daac30935ce40a59fb7ab',
+        writeKey: 'C89A9A1A8DB4C585F119F8F81ABB9621940DBBADDA5C72C2B87B1BD3464890D23FD250B0FFA4A1056DCB210616545B7B6C9DDF2054167B5219A3DD81E8DF90A321BE0C1B35BA19F2E3E85730FB96C1F93F8C66D8CD449FE6EFE43D98453632D1'
+      });
+
+      // Record an event
+      client.recordEvent('pageviews', {
+        title: document.title,
+        ip_address: "${keen.ip}",
+        user_agent: "${keen.user_agent}",
+        user_id: null,
+        user_public_id: null,
+        account_id: "3fe21eaa3c",
+        account_billing_type: "admin_and_extended_users",
+        site_id: 14617,
+        manual_id: null,
+        article_id: null,
+        article_type_id: null,
+        course_id: null,
+        source_id: 1
+      });
+    });
+
+//]]>
+</script>
+ </head>
+ <body class="helvetica-body helvetica-header site-toc  no-focus-outline" data-base-path="/" data-content-template="2015" data-generating-pdf-text="Generating PDF...">
+  <header class="screensteps-header" role="banner"><a class="skip-navigation--link" href="#screensteps-main-content" id="skip-navigation"> Skip to main content </a>
+   <div class="screensteps-branding">
+    <div class="logo-wrapper"><span class="company-logo"> <a href="/" title="Canvas @ Yale"> <img alt="Poorvu Center" class="screensteps-site-logo" src="https://media.screensteps.com/logos/5593/Canvas-at-Yale.jpg"> </a> </span>
+    </div>
+    <ul class="screensteps-external-nav" role="navigation">
+     <li><a href="mailto:canvas@yale.edu">Email Canvas @ Yale Support: canvas@yale.edu</a></li>
+    </ul>
+    <ul class="screensteps-profile-nav" role="navigation">
+    </ul>
+   </div>
+  </header>
+  <div class="screensteps-container-wrapper">
+   <main class="screensteps-container">
+    <div class="screensteps-site-title-wrapper">
+     <h1 class="screensteps-site-title toc-heading">Canvas @ Yale Help Site</h1>
+    </div>
+    <div class="screensteps-main-search" role="search">
+     <form id="screensteps-search-form" action="/searches" accept-charset="UTF-8" method="get">
+      <div class="screensteps-search-form"><label for="text">Search term</label>
+       <input type="text" name="text" id="text" class="search-field" title="Enter a keyword or topic to search">
+       <input type="submit" name="commit" value="Search" class="search-submit" data-disable-with="Search">
+      </div>
+     </form>
+    </div>
+    <div class="screensteps-content-wrapper site-index no-breadcrumb no-sidebar">
+     <div class="screensteps-main-content" id="screensteps-main-content" role="main">
+      <div class="screensteps-inner-content">
+       <div class="screensteps-group">
+        <header>
+         <h2 class="toc-subheading" id=""></h2>
+        </header>
+        <ul class="asset-list small">
+         <li><a class="fa-book" href="/m/58022">General Information</a></li>
+         <li><a class="fa-graduation-cap" href="/m/55452">Instructor Guides</a></li>
+         <li><a class="fa-magic" href="/m/57488">Administrator Guides</a></li>
+         <li><a class="fa-group" href="/m/62761">Student Guides</a></li>
+         <li><a class="fa-book" href="/m/94363">Accessibility in Canvas</a></li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </main>
+  </div>
+  <div aria-labelledby="modal-label" class="screensteps-modal" id="screensteps-modal" role="dialog"><span id="modal-label"> Inline referenced article </span>
+   <div class="screensteps-modal__box"><a class="screensteps-modal__close" href="#"> × </a><span class="screensteps-loading-wrapper"> <span class="screensteps-loading"></span> </span>
+    <div class="screensteps-modal__content screensteps-article-content"></div>
+   </div>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+  <title>ANR Blogs Login</title> 
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"> 
+  <link rel="stylesheet" href="/universal/Directory/common/resources/css/jquery-ui.min.css" type="text/css"> 
+  <link rel="stylesheet" href="/universal/Directory/common/resources/css/jquery-ui.theme.min.css" type="text/css"> 
+  <link rel="stylesheet" href="/universal/Directory/common/resources/css/bootstrap.min.css" type="text/css"> 
+  <link rel="stylesheet" href="/universal/Directory/common/resources/css/defaultLayout.css" type="text/css"> 
+  <link rel="icon" href="https://ucanr.edu/blogs/blogcore/favicon.ico" type="image/x-icon"> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet" type="text/css"> 
+  <script type="text/javascript" src="/universal/Directory/common/resources/js/jquery-1.11.1.min.js"></script> 
+  <script type="text/javascript" src="/universal/Directory/common/resources/js/jquery-ui.min.js"></script> 
+  <script type="text/javascript" src="/universal/Directory/common/resources/js/bootstrap.min.js"></script> 
+  <style>
+	<!--
+		.navbar
+		{
+			background: #dbe2f5;
+			background: -moz-linear-gradient(top,  #dbe2f5 0%, #ffffff 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dbe2f5), color-stop(100%,#ffffff));
+			background: -webkit-linear-gradient(top,  #dbe2f5 0%,#ffffff 100%);
+			background: -o-linear-gradient(top,  #dbe2f5 0%,#ffffff 100%);
+			background: -ms-linear-gradient(top,  #dbe2f5 0%,#ffffff 100%);
+			background: linear-gradient(to bottom,  #dbe2f5 0%,#ffffff 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbe2f5', endColorstr='#ffffff',GradientType=0 );
+
+		}
+		
+		.navbar-brand
+		{
+			font-family: Times New Roman, serif; 
+			font-size: 2.5em; 
+			color: black !important;
+		}
+		
+		#footer
+		{
+			background-color: #345573;
+			color: white;
+		}
+		
+		#footer a
+		{
+			color: white;
+		}
+		
+		.footer_ucop
+		{
+			color: white;
+			text-shadow:0 1px 0 black;
+		}
+	//-->
+	</style> 
+  <script type="text/javascript">
+	$(function() {
+		var e = $("#ANRLoginEmail");
+		var email = e.attr("value").trim();
+		if (email.length < 1) {
+			e.focus();
+		} else {
+			$("#ANRLoginPassword").focus();
+		}
+
+		$("#screen").attr("value", screen.width+'x'+screen.height);
+
+		if (parent != window) parent.window.location = "https://ucanr.edu/portal/login/universallogin.cfm?appname=blogs";
+	});
+</script> 
+ </head> 
+ <body> 
+  <div id="wrap"> 
+   <div class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+    <div class="container"> 
+     <div class="navbar-header navbar-logo"> <a class="navbar-brand" href="index.cfm">ANR Blogs Login</a> 
+      <div class="navbar-header-group">
+        Serving Agriculture and Natural Resource needs in California 
+      </div> 
+     </div> 
+     <div class="navbar-collapse collapse" id="this-data-target"> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="main-content" class="container"> 
+    <div class="main-container"> 
+     <h1>Access Options</h1> 
+     <script type="text/javascript">
+			$(function(){
+				$(".toggle-link").click(function(event) {
+					event.preventDefault();
+					var e = $(this);
+					var c = e.data('cookie');
+					var state = e.data('state');
+					if (state == 'show') state = 'hide';
+					else state = 'show'
+					e.parent().next('.panel-body').slideToggle();
+					e.children('.toggle-message').toggle();
+					document.cookie= c + "=" + state + "; expires=6/20/2022 20:33:37";
+				});
+			});
+		</script> 
+     <div class="row"> 
+      <div class="col-sm-7"> 
+       <h2>Log in with ANR Account</h2> 
+       <div class="alert alert-info">
+         Enter your email address or username and password to continue.
+        <br> If you don't know your password, or if you are a new user, click the "Forgot Password" button below. 
+       </div> 
+       <form action=" https://ucanr.edu/portal/login/index.cfm" method="post" class="form-horizontal"> 
+        <input name="antiForgeryToken" type="hidden" value=" 4EDC2E4A448F4F3B245E550F5903524241C2310F42C6307942A5572338FB29B23F293F3A485446283C5729444C55502523273C484A213F482159555A4D4A545D274249493E35285C51324B5E280A3D455B31214E4942514859384C3D442B41492A20333649565F55492E334C2F5A32515D263C463028200A" autocomplete="off"> 
+        <input type="hidden" id="screen" name="screen" value="" autocomplete="off"> 
+        <input type="hidden" id="temp_id" name="temp_id" value="11211510" autocomplete="off"> 
+        <div class="form-group"> <label class="login control-label col-sm-3" for="ANRLoginEmail">Email Address or Username</label> 
+         <div class="col-sm-6"> 
+          <input type="text" name="ANRLoginEmail" id="ANRLoginEmail" class="form-control" value="" required placeholder="Enter your username or E-mail Address"> 
+         </div> 
+        </div> 
+        <div class="form-group"> <label class="login control-label col-sm-3" for="ANRLoginPassword">Password</label> 
+         <div class="col-sm-6"> 
+          <input type="password" name="ANRLoginPassword" id="ANRLoginPassword" class="form-control" placeholder="Enter Password"> 
+         </div> 
+        </div> 
+        <div class="form-group"> 
+         <div class="col-sm-offset-3 col-sm-9"> 
+          <input name="ANRLoginSubmit" type="submit" value="Login" class="btn btn-primary"> <a href=" https://ucanr.edu/portal/login/UniversalForgotPass.cfm" class="btn btn-info">Forgot Password?</a> 
+         </div> 
+        </div> 
+       </form> 
+      </div> 
+      <div class="col-sm-5"> 
+       <h2>UCANR Single Sign On</h2> 
+       <div> <a href="https://ucanr.edu/Shibboleth.sso/Login?target=https://ucanr.edu/portal/login/&amp;entityID=https://ucanridp.ucanr.edu/idp/shibboleth" class="btn btn-info">SSO Login (UCANR Staff only)</a> 
+       </div> 
+       <br> 
+       <h2>Log in with UC Trust</h2> 
+       <div class="alert alert-danger alert-message" role="alert">
+         UCANR Staff: please use the <em>UCANR Single Sign On</em> above instead of your campus account. 
+       </div> 
+       <ul style="margin-left:20px; list-style:disc; font-weight:bold"> 
+        <li><a href="https://ucanr.edu/Shibboleth.sso/Login?target=https://ucanr.edu/portal/login/&amp;entityID=urn:mace:incommon:ucdavis.edu">UC Davis</a></li> 
+        <li><a href="https://wayf.incommonfederation.org/DS/WAYF?shire=https://ucanr.edu/Shibboleth.sso/SAML/POST&amp;target=https://ucanr.edu/portal/login/&amp;providerId=https://shib.ucanr.org/shibboleth&amp;action=selection&amp;origin=urn:mace:incommon:ucop.edu&amp;cache=none">UC Office of the President</a></li> 
+        <li><a href="https://ucanr.edu/Shibboleth.sso/Login?target=https://ucanr.edu/portal/login/&amp;entityID=urn:mace:incommon:ucr.edu">UC Riverside</a></li> 
+        <li><a href="https://ucanr.edu/Shibboleth.sso/Login?target=https://ucanr.edu/portal/login&amp;entityID=urn:mace:incommon:berkeley.edu">UC Berkeley</a></li> 
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div id="push"></div> 
+  </div> <!-- Closing wrap div - the start tag is in the header.cfm --> 
+  <div id="footer"> 
+   <div class="container"> 
+    <div class="footer_uc"> 
+     <div class="footer_ucop">
+      University
+      <br>of
+      <br>California
+     </div> 
+     <div class="footer_ucanr">
+      <a href="http://ucanr.edu">Division of Agriculture<br>and<br>Natural Resources</a>
+     </div> 
+     <div style="clear:both"></div> 
+    </div> 
+    <div class="footerlinks"> <a href="http://ucanr.edu/Copyright/">© 2014 Regents of the University of California</a> <a href="http://ucanr.edu/sites/anrstaff/Diversity/Affirmative_Action/Resources/Policy-related_downloads/">Nondiscrimination Statement</a> <a href="http://ucanr.edu/Accessibility/" style="border-right:0;">Accessibility</a> 
+    </div> 
+    <div style="clear:both"></div> 
+   </div> 
+  </div>  
+ </body>
+</html>

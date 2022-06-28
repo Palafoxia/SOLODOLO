@@ -1,0 +1,1312 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"427707476"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-45257297-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <link rel="canonical" href="https://careerdevelopment.princeton.edu/exploring-options/career-chats">
+  <meta name="description" content="This program is open to all undergraduate and graduate students enrolled at Princeton. Career Chats provide an opportunity to network in a low-pressure environment, and are a good match for students interested in learning about: How alumni navigated their Princeton experience&nbsp; What working in a particular job or field is really like Tips to prep...">
+  <meta name="thumbnail" content="https://careerdevelopment.princeton.edu/sites/g/files/toruqf1041/files/styles/freeform_750w/public/pages/untitled_design_12.png?itok=FdbYbKny">
+  <meta property="og:site_name" content="Center for Career Development">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://careerdevelopment.princeton.edu/exploring-options/career-chats">
+  <meta property="og:title" content="Career Chats">
+  <meta property="og:description" content="This program is open to all undergraduate and graduate students enrolled at Princeton. Career Chats provide an opportunity to network in a low-pressure environment, and are a good match for students interested in learning about: How alumni navigated their Princeton experience&nbsp; What working in a particular job or field is really like Tips to prep...">
+  <meta property="og:image" content="https://careerdevelopment.princeton.edu/sites/g/files/toruqf1041/files/styles/freeform_750w/public/pages/untitled_design_12.png?itok=FdbYbKny">
+  <meta property="og:image:alt" content="12 headshots of alumni participating in career chats">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:widgets:csp" content="on">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/profiles/ps/themes/ps_tiger/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Career Chats | Center for Career Development</title>
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1041/files/css/css_yFE6U0TUuo1NIZQWnOvqNBn9y4DYc2-hlFAMjwpts_g.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1041/files/css/css_Q4OZthse4FZ4YGpeIRm9z4N-LDGpmXIJ7vdHmAJs9r0.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/xxx7asp.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/bok5fgz.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1041/files/css/css_gM78K4b2rsqMgmbYe5Riw-iemht2C9cr1yRKHujfUiE.css">
+ </head>
+ <body class="not-front section-exploring-options page-node-900 content-type-ps-basic-page flavor1 fontset1 menu1 with-alt-pu-logo full-width-search-box layout-block-padding-medium">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="page page-container"> 
+    <header role="banner" class="header region region-header" id="header">
+     <h1 class="sr-only sr-site-name">Center for Career Development</h1>
+     <div class="skip-links"><a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to content</a><a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to search</a>
+     </div>
+     <div class="header-container container">
+      <div class="princeton-branding">
+       <div class="container"><a href="http://www.princeton.edu" class="alt-pu-logo" title="Princeton University"> <img src="/profiles/ps/themes/ps_base/images/pu-shield.svg" alt="Princeton University" class="pu-shield"> </a>
+       </div>
+      </div>
+      <div class="site-branding">
+       <div class="container">
+        <div class="row"><a href="/" title="Home" rel="home" class="site-logo"> <img src="/sites/g/files/toruqf1041/files/logo_animation_2.gif" alt="Home" typeof="foaf:Image"> </a>
+        </div>
+       </div>
+      </div>
+      <nav aria-label="site" class="main-menu">
+       <h2 class="sr-only">Main Menu</h2>
+       <div class="container navbar-expand-lg"><button class="toggle-mobile-menu unbutton" type="button" data-toggle="collapse" data-target="#menu-container" aria-controls="menu-container" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-mobile-menu-icon"> <span class="toggle-mobile-menu-title">Menu</span> <i class="fa fa-bars" aria-hidden="true"></i> </span> </button>
+        <div id="menu-container" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item expanded"><a href="/how-we-help" data-drupal-link-system-path="node/796">How We Help</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/how-we-help/learning-outcomes" data-drupal-link-system-path="node/805">Learning Outcomes</a></li>
+            <li class="submenu-item expanded"><a href="/people" data-drupal-link-system-path="node/911">Meet the Team</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/people" data-drupal-link-system-path="node/911">Staff</a></li>
+              <li class="submenu-item"><a href="/how-we-help/meet-team/pcas" data-drupal-link-system-path="node/853">PCAs</a></li>
+              <li class="submenu-item"><a href="/how-we-help/meet-team/student-workers" data-drupal-link-system-path="node/854">Student Workers</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/how-we-help/contact-us" data-drupal-link-system-path="node/852">Contact Us</a></li>
+            <li class="submenu-item"><a href="/how-we-help/vision-mission-diversity-statement" data-drupal-link-system-path="node/856">Vision, Mission &amp; Diversity Statement</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/advising-programs" data-drupal-link-system-path="node/797">Advising &amp; Programs</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/advising-programs/make-appointment" data-drupal-link-system-path="node/807">Make an Appointment</a></li>
+            <li class="submenu-item"><a href="/advising-programs/advising/drop-in-hours" data-drupal-link-system-path="node/843">Drop-in Advising</a></li>
+            <li class="submenu-item"><a href="/pca" data-drupal-link-system-path="node/827">Peer Career Advisers</a></li>
+            <li class="submenu-item"><a href="/advising-programs/workshops-events" data-drupal-link-system-path="node/808">Workshops &amp; Events</a></li>
+            <li class="submenu-item expanded"><a href="/advising-programs/summer-programs" data-drupal-link-system-path="node/809">Summer Programs</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/artsatwork" data-drupal-link-system-path="node/864">Arts at Work</a></li>
+              <li class="submenu-item"><a href="/piw" data-drupal-link-system-path="node/1816">Princeton in Washington</a></li>
+             </ul></li>
+           </ul></li>
+          <li class="nav-item expanded active"><a href="/exploring-careers" data-drupal-link-system-path="node/798">Exploring Options</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/exploring-options/career-assessments" data-drupal-link-system-path="node/860">Assessments</a></li>
+            <li class="submenu-item"><a href="/exploring-options/career-compass" data-drupal-link-system-path="node/874">Career Compass</a></li>
+            <li class="submenu-item expanded"><a href="/exploring-options/graduate-law-and-medical-school" data-drupal-link-system-path="node/903">Graduate, Law &amp; Medical School</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/exploring-options/graduate-law-and-medical-school/graduate-school" data-drupal-link-system-path="node/904">Graduate School</a></li>
+              <li class="submenu-item"><a href="/exploring-options/graduate-law-medical-school/law-school" data-drupal-link-system-path="node/905">Law School</a></li>
+             </ul></li>
+            <li class="submenu-item active"><a href="/exploring-options/career-chats" data-drupal-link-system-path="node/900" class="is-active">Career Chats</a></li>
+            <li class="submenu-item expanded"><a href="/exploring-options/princeternship" data-drupal-link-system-path="node/812">Princeternship</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/exploring-options/princeternship/princeternship-faqs" data-drupal-link-system-path="node/844">Princeternship FAQs</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/exploring-options/meet-employers" data-drupal-link-system-path="node/896">Meet Employers</a></li>
+            <li class="submenu-item"><a href="/exploring-options/site-visits-city-treks" data-drupal-link-system-path="node/857">Site Visits &amp; City Treks</a></li>
+            <li class="submenu-item expanded"><a href="/exploring-options/nextsteps" data-drupal-link-system-path="node/810">Next Steps &amp; Stats</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/exploring-options/next-steps/first-destination" data-drupal-link-system-path="node/877">First-Destination Data</a></li>
+             </ul></li>
+           </ul></li>
+          <li class="nav-item"><a href="/guides" data-drupal-link-system-path="node/799">Guides</a></li>
+          <li class="nav-item expanded"><a href="/internships-jobs" data-drupal-link-system-path="node/800">Internships &amp; Jobs</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/summerfunding" data-drupal-link-system-path="node/890">Summer Funding</a></li>
+            <li class="submenu-item expanded"><a href="/internships-jobs/handshake" data-drupal-link-system-path="node/814">Handshake</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/internships-jobs/handshake/handshake-search-tips" data-drupal-link-system-path="node/863">Handshake Search Tips</a></li>
+             </ul></li>
+            <li class="submenu-item expanded"><a href="/internships-jobs/research-networking-tools" data-drupal-link-system-path="node/845">Career Research, Networking &amp; Posting Resources</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/internships-jobs/career-research-networking-posting-resources/careershift-search-tips" data-drupal-link-system-path="node/878">CareerShift Search Tips</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/internships-jobs/princeton-internships" data-drupal-link-system-path="node/815">Princeton Internships</a></li>
+            <li class="submenu-item"><a href="/internships-jobs/princeton-post-grad-fellowships" data-drupal-link-system-path="node/847">Princeton Post-grad Fellowships</a></li>
+            <li class="submenu-item"><a href="/postings" data-drupal-link-system-path="node/902">Postings of the Week</a></li>
+            <li class="submenu-item"><a href="/internships-jobs/recruiting-timelines" data-drupal-link-system-path="node/876">Recruiting Timelines</a></li>
+            <li class="submenu-item expanded"><a href="/internships-jobs/campus-recruiting" data-drupal-link-system-path="node/816">Campus Recruiting</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item expanded"><a href="/internships-jobs/campus-recruiting/preparing-tips" data-drupal-link-system-path="node/817">Preparing &amp; Tips</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+               <ul class="submenu collapse" role="list">
+                <li class="submenu-item"><a href="/internships-jobs/campus-recruiting/preparing-tips/top-five-tips-prepare-virtual-fall-recruiting" data-drupal-link-system-path="node/870">Top Five Tips to Prepare for Virtual Fall Recruiting</a></li>
+               </ul></li>
+              <li class="submenu-item"><a href="/internships-jobs/campus-recruiting/recruiting-calendar" data-drupal-link-system-path="node/818">Recruiting Calendar</a></li>
+              <li class="submenu-item"><a href="/communitystandards" data-drupal-link-system-path="node/846">Community Standards for Recruiting</a></li>
+              <li class="submenu-item"><a href="/internships-jobs/campus-recruiting/FAQs" data-drupal-link-system-path="node/819">FAQs</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/interviewroom" data-drupal-link-system-path="node/899">Reserve a Virtual Interview Room</a></li>
+            <li class="submenu-item"><a href="/internships-jobs/employer-diversity-rotational-programs" data-drupal-link-system-path="node/867">Employer Rotational Programs</a></li>
+           </ul></li>
+         </ul>
+         <div class="utility-menu">
+          <ul class="nav navbar-nav utility-nav">
+           <li class="nav-item"><a href="/graduate-students" data-drupal-link-system-path="node/824">Graduate Students</a></li>
+           <li class="nav-item"><a href="/alumni" data-drupal-link-system-path="node/801">Alumni</a></li>
+           <li class="nav-item"><a href="/employers" data-drupal-link-system-path="node/802">Employers</a></li>
+           <li class="nav-item"><a href="/facultystaff" data-drupal-link-system-path="node/803">Faculty/Staff</a></li>
+           <li class="nav-item"><a href="/families" data-drupal-link-system-path="node/804">Families</a></li>
+           <li class="nav-item"><a href="/caslogin" class="ps-login-logout-link" data-drupal-link-system-path="caslogin">Log in</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </nav>
+      <div class="search-bar" id="search-bar">
+       <div class="container navbar-expand-lg" role="search">
+        <h2 class="sr-only">Search</h2><button class="toggle-searchbar unbutton" type="button" data-toggle="collapse" data-target="#search-bar-container" aria-controls="search-bar-container" aria-expanded="false" aria-label="Toggle search"> <span class="toggle-search-icon"> <i class="fas fa-search" aria-hidden="true"></i> </span> </button>
+        <div id="search-bar-container" class="collapse navbar-collapse">
+         <div class="search-block-form contextual-region block block-search container-inline" id="block-searchform">
+          <form action="/search" method="get" id="search-block-form" accept-charset="UTF-8">
+           <div id="search-toggled" class="form-group js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label"><label for="edit-search-keys" class="visually-hidden">Search</label>
+            <input placeholder="Search" type="search" id="edit-search-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control">
+           </div>
+           <div data-drupal-selector="edit-search-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-search-actions">
+            <input type="submit" id="edit-search-submit" value="Submit" class="button js-form-submit form-submit btn btn-primary">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="breadcrumb region region-breadcrumb" id="breadcrumb">
+     <div class="container">
+      <nav role="navigation" aria-label="breadcrumb">
+       <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> Career Chats </li>
+       </ol>
+      </nav>
+     </div>
+    </div>
+    <div class="highlighted" id="highlighted">
+     <div class="container">
+      <div class="region region-highlighted">
+       <div data-drupal-messages-fallback class="hidden"></div>
+      </div>
+     </div>
+    </div>
+    <div id="main" class="main-container">
+     <div class="container">
+      <div class="row">
+       <div class="sidebar-first section order-first col-sm-4 col-md-3 col-lg-2">
+        <nav class="main-sidebar-menu" aria-label="section">
+         <h2 class="sr-only">Section Menu</h2>
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item"><a href="/exploring-options/career-assessments" data-drupal-link-system-path="node/860">Assessments</a></li>
+          <li class="nav-item"><a href="/exploring-options/career-compass" data-drupal-link-system-path="node/874">Career Compass</a></li>
+          <li class="nav-item collapsed"><a href="/exploring-options/graduate-law-and-medical-school" data-drupal-link-system-path="node/903">Graduate, Law &amp; Medical School</a></li>
+          <li class="nav-item active"><a href="/exploring-options/career-chats" data-drupal-link-system-path="node/900" class="is-active">Career Chats</a></li>
+          <li class="nav-item collapsed"><a href="/exploring-options/princeternship" data-drupal-link-system-path="node/812">Princeternship</a></li>
+          <li class="nav-item"><a href="/exploring-options/meet-employers" data-drupal-link-system-path="node/896">Meet Employers</a></li>
+          <li class="nav-item"><a href="/exploring-options/site-visits-city-treks" data-drupal-link-system-path="node/857">Site Visits &amp; City Treks</a></li>
+          <li class="nav-item collapsed"><a href="/exploring-options/nextsteps" data-drupal-link-system-path="node/810">Next Steps &amp; Stats</a></li>
+         </ul>
+        </nav><a id="main-content" class="sr-only skip-link"></a>
+        <nav aria-label="On this page" class="jump-link-menu-vertical jump-link-menu">
+         <h2 class="jump-link-title"> On this page </h2>
+        </nav>
+       </div>
+       <main class="main main-content col-sm-12 col-lg-10 order-last">
+        <div class="region region-content">
+         <div id="block-ps-tiger-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+          <h1 class="page-title"> Career Chats </h1>
+         </div>
+         <div id="block-ps-tiger-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+          <article role="article" about="/exploring-options/career-chats" class="node node--type-ps-basic-page node--view-mode-full">
+           <div class="node__content">
+            <div class="constrained-bkg-constrained-content layout layout--twocol-75-25">
+             <div class="layout-inner-container">
+              <div class="layout__region layout__region--first layout__region--wide layout__region--75">
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p>This program is open to all undergraduate and graduate students enrolled at Princeton. Career Chats provide an opportunity to network in a low-pressure environment, and are a good match for students interested in learning about:</p>
+                 <ul>
+                  <li>How alumni navigated their Princeton experience&nbsp;</li>
+                  <li>What working in a particular job or field is really like</li>
+                  <li>Tips to prepare for and land internships and jobs</li>
+                 </ul>
+                 <p>Alumni have 30-minute time slots available on a first-come, first-served basis. Alumni participating in Career Chats are listed below by industry. In order to participate, you must&nbsp;<a href="https://forms.gle/hfkhNnxGk4ogdG1x9" target="_blank">fill out a form</a>&nbsp;indicating which alumni you would like to speak with and a&nbsp;member of the Center for Career Development team will follow up to connect you and the alum contact so you can begin your conversation.</p>
+                </div>
+               </div>
+              </div>
+              <div class="layout__region layout__region--second layout__region--quarters layout__region--narrow">
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-component-uuid="4ca21205-6f56-4a26-9ca9-01f51762033c" data-et="node" data-ei="900" data-evd="node.ps_basic_page.default" data-block-plugin-id="ps_people_list" class="block-content-list block block-ps-people block-ps-people-list">
+                <div data-ajax="on" class="exposed-filters-0 content-list content-list-grid grid-cols-4">
+                 <h2 class="content-list-title">Arts</h2>
+                 <div class="content-list-items" role="list">
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://www.linkedin.com/in/jason-gold-404b233/"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Compass%20Placeholder.png?itok=w4uTKx7R" width="563" height="750" alt="Image of Princeton Shield used as a Placeholder" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://www.linkedin.com/in/jason-gold-404b233/">Jason Gold '81</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Senior Architect, Richard H Lewis Architect
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Jason is interested in speaking to students about careers in architecture and his experience navigating underrepresented career opportunities within Princeton.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/alex-volckhausen"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/image%20%281%29.png?h=07951ce9&amp;itok=GrlnaaF6" width="239" height="319" alt="Alex Volckhausen '93" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/alex-volckhausen">Alex Volckhausen '93</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Freelance Stage Manager
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Alex is interested in speaking with students on topics related to the intersections of careers and identities, including: LGBTQIA.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/tula-b-strong"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/image%20%282%29.png?itok=uEdJJwI0" width="240" height="320" alt="Tula B. Strong '15" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/tula-b-strong">Tula B. Strong '15</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Performing Arts Professional and Choreographer
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Tula is interested in speaking with students on topics related to the intersections of careers and identities, including: Black and/or first-generation students, and careers in entrepreneurship, and performing arts.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/joanna-wendel"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/image%20%283%29.png?itok=mzEnFj_b" width="240" height="320" alt="Joanna Wendel '19" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/joanna-wendel">Joanna Wendel '19</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Development Associate, Boston Youth Symphony Orchestras
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Joanna is interested in speaking with students about careers in nonprofit organizations and performing arts.</p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-component-uuid="f8a4f74c-0da8-4134-a0f5-2304b5d5f928" data-et="node" data-ei="900" data-evd="node.ps_basic_page.default" data-block-plugin-id="ps_people_list" class="block-content-list block block-ps-people block-ps-people-list">
+                <div data-ajax="on" class="exposed-filters-0 content-list content-list-grid grid-cols-4">
+                 <h2 class="content-list-title">Biotech &amp; Pharmaceuticals</h2>
+                 <div class="content-list-items" role="list">
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/exploring-options/career-chats/maximillian-yeh-91" hreflang="en"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Compass%20Placeholder.png?itok=w4uTKx7R" width="563" height="750" alt="Image of Princeton Shield used as a Placeholder" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/exploring-options/career-chats/maximillian-yeh-91" hreflang="en">Maximillian Yeh '91</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Vice President, Evonik
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Maximillian is interested in speaking to students about careers in chemical engineering.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/atray-dixit"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/image%20%284%29.png?itok=GU9iwizd" width="240" height="320" alt="Atray Dixit '12" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/atray-dixit">Atray Dixit '12</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     CEO and Co-Founder, Coral Genomics
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Atray is interested in speaking with students about biotechnology, entrepreneurship, healthcare, engineering, and social impact.</p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-component-uuid="625d90f4-a171-4dd9-a830-a5ebb6e85e2d" data-et="node" data-ei="900" data-evd="node.ps_basic_page.default" data-block-plugin-id="ps_people_list" class="block-content-list block block-ps-people block-ps-people-list">
+                <div data-ajax="on" class="exposed-filters-0 content-list content-list-grid grid-cols-4">
+                 <h2 class="content-list-title">Business/Consulting</h2>
+                 <div class="content-list-items" role="list">
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/antonio-tony-rodriguez-0"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/tony_rodriguez.png?itok=w8ZXp4mQ" width="563" height="750" alt="Antonio (Tony) Rodriguez '79" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/antonio-tony-rodriguez-0">Antonio (Tony) Rodriguez '79</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Retired, former Chief Operating Officer, Warner Brothers
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Tony is interested in speaking with students on topics related to the intersections of careers and identities, including: first-generation and/or international students, and careers in business, consulting, finance, media and entertainment, and nonprofit organizations. Tony is also interested in speaking about navigating international career opportunities.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/hans-hageman"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Hans_garden_2020.jpeg?h=6f5072f5&amp;itok=5ZZT6ntR" width="379" height="506" alt="Hans Hageman '80" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/hans-hageman">Hans Hageman '80</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Executive Director, Hudson Valley Seed
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Hans is interested in speaking with students on topics related to the intersections of careers and identities, including: Asian and Asian American, Black, first-generation, international, LatinX, LGBTQIA, women, and/or veteran students, and careers in business, communications, consulting, education, entrepreneurship, non-profit, social impact, and sustainability.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/marisa-femenia"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/marisa_femenia.jpeg?itok=aoyMXR4N" width="563" height="750" alt="Marisa Femenia '01" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/marisa-femenia">Marisa Femenia '01</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Executive Vice President, Bain Capital
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Marisa is interested in speaking with students on topics related to the intersections of careers and identities, including: Asian and Asian American, Black, first-generation, international, LatinX, LGBTQIA, and/or veteran students, and consulting.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/carlo-frem"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/carlo%20frem.jpeg?h=dab58993&amp;itok=H0xCgE2g" width="532" height="710" alt="Carlo Frem '12" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/carlo-frem">Carlo Frem '12</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     EU Head of Social Media and Editorial Content, Amazon Prime Video
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Carlo is interested in speaking with students on topics related to the intersections of careers and identities, including: international and/or LGBTQIA veteran students, and careers in business, media and entertainment, technology, and visual and performing arts.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/dana-schmitt"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/dana%20schmitt.jpeg?h=893ae88c&amp;itok=Mtl8u9rr" width="297" height="396" alt="Dana Schmitt ‘12" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/dana-schmitt">Dana Schmitt ‘12</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Perfumer, Givaudan
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Dana is interested in speaking with students on topics related to the intersections of careers and identities, including: women-identifying students, and careers in business, healthcare and science.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/shane-blackman"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/shane_blackman.jpeg?itok=r_mD2eTT" width="467" height="622" alt="Shane Blackman *14" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/shane-blackman">Shane Blackman *14</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Director of Product, Noom, Inc.
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Shane is interested in speaking with students on topics related to the intersections of careers and identities, including: graduate students, careers in technology, and startups.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/aaron-katz"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/aaron_katz.jpeg?itok=UBP4FI0f" width="563" height="750" alt="Aaron Katz '16" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/aaron-katz">Aaron Katz '16</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Product Manager, Thule
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Aaron is interested in speaking with students on topics related to the intersections of careers and identities, including: international students, and careers in entrepreneurship, sustainability, engineering, and design.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/lexi-quirk"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/lexi_quirk.jpeg?itok=LdSVQztS" width="514" height="685" alt="Lexi Quirk '18" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/lexi-quirk">Lexi Quirk '18</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Associate, 645 Ventures
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Lexi is interested in speaking with students about careers in entrepreneurship, technology, business, consulting and communications.</p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-component-uuid="907e12d5-fce9-4cbb-a0c9-6ca3cabc53ff" data-et="node" data-ei="900" data-evd="node.ps_basic_page.default" data-block-plugin-id="ps_people_list" class="block-content-list block block-ps-people block-ps-people-list">
+                <div data-ajax="on" class="exposed-filters-0 content-list content-list-grid grid-cols-4">
+                 <h2 class="content-list-title">Education</h2>
+                 <div class="content-list-items" role="list">
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="http://www.anntashislater.com/"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Screen%20Shot%202022-02-16%20at%2012.08.00%20AM.png?itok=zecXe_zm" width="368" height="491" alt="Ann Tashi Slater" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="http://www.anntashislater.com/">Ann Tashi Slater '84</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Self-Employed Author &amp; Professor of American Literature
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Ms. Slater is interested in speaking to students about how to develop as a writer.&nbsp;</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/david-escoffery"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/dave_escoffery.jpeg?h=9b88c61d&amp;itok=mDvHtHOS" width="360" height="480" alt="Dave Escoffery '95" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/david-escoffery">Dave Escoffery '95</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Director, Graduate and Professional Education, Educational Testing Service (ETS)
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Dave is interested in speaking with students about careers in education and seeking alternative academic careers for graduate students.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/william-wong"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/will_wong.jpeg?h=162aff92&amp;itok=m32REYfV" width="524" height="699" alt="William Wong '02" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/william-wong">William Wong '02</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Account Executive, ABM Building Solutions, LLC
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>William is interested in speaking with students on topics related to the intersections of careers and identities, including: Asian and Asian American students, and careers in advocacy and activism, business, consulting, education, and entrepreneurship.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/anna-kamen"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/anna_kamen.jpeg?itok=MC93NWdd" width="563" height="750" alt="Anna Kamen '15" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/anna-kamen">Anna Kamen '15</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     MPP and MBA student, Harvard Kennedy School and MIT Sloan
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Anna is interested in speaking with students (with a special interest for grad students) about careers in education, healthcare, consulting, social impact and government.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/eduardo-lerro"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/eduardo_lerro.jpeg?h=bfda4182&amp;itok=1_Er0QgU" width="524" height="699" alt="Eduardo Lerro *17" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/eduardo-lerro">Eduardo Lerro *17</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Teacher, NYC Department of Education
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Eduardo is interested in speaking with students on topics related to the intersections of careers and identities, including: LGBTQIA, and careers in education, advocacy and activism, government and public service, nonprofit organizations and social impact.</p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-component-uuid="c284ca09-645e-4e99-9be5-3a6b30418908" data-et="node" data-ei="900" data-evd="node.ps_basic_page.default" data-block-plugin-id="ps_people_list" class="block-content-list block block-ps-people block-ps-people-list">
+                <div data-ajax="on" class="exposed-filters-0 content-list content-list-grid grid-cols-4">
+                 <h2 class="content-list-title">Sustainability</h2>
+                 <div class="content-list-items" role="list">
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/william-atkinson"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/william_atkinson.jpeg?itok=3qnFObZP" width="563" height="750" alt="William Atkinson '18" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/william-atkinson">William Atkinson '18</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Research Assistant, Massachusetts Institute of Technology
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>William is interested in speaking with students about careers in sustainability, communications, government, public service, healthcare and science, nonprofit organizations, and research-to-policy topic areas.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/sonia-howlett"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/sonia_howlett.jpeg?itok=loUrG8jj" width="563" height="750" alt="Sonia Howlett '18" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/sonia-howlett">Sonia Howlett '18</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Agricultural Water Quality Specialist, Vermont Agency of Agriculture
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Sonia is interested in speaking with students about careers in sustainability and government.</p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-component-uuid="685c145a-4720-427b-b1ec-2f0f1126c6ba" data-et="node" data-ei="900" data-evd="node.ps_basic_page.default" data-block-plugin-id="ps_people_list" class="block-content-list block block-ps-people block-ps-people-list">
+                <div data-ajax="on" class="exposed-filters-0 content-list content-list-grid grid-cols-4">
+                 <h2 class="content-list-title">Entrepreneurship</h2>
+                 <div class="content-list-items" role="list">
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/exploring-options/career-chats/amy-nguyen-chyung-98" hreflang="en"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Compass%20Placeholder.png?itok=w4uTKx7R" width="563" height="750" alt="Image of Princeton Shield used as a Placeholder" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/exploring-options/career-chats/amy-nguyen-chyung-98" hreflang="en">Amy Nguyen-Chyung *98</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Limited Partner, Next Wave Impact
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Dr. Nguyen-Chyung is interested in speaking with students about entrepreneurship, strategy, and business school academia.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/eli-halliwell"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Eli%20Halliwell.jpeg?itok=pbI7EtJJ" width="563" height="750" alt="Eli Halliwell '93" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/eli-halliwell">Eli Halliwell '93</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     CEO, Hairstory
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Eli is interested in speaking with students about careers in entrepreneurship, business, and finance.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/john-haller"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/John%20Haller.jpeg?itok=UyoPweUl" width="300" height="400" alt="John Haller ‘97" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/john-haller">John Haller ‘97</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Co-Founder and CTO, beatBread
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>John is interested in speaking with students about careers in consulting, engineering, entrepreneurship, media and entertainment, and technology.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://www.linkedin.com/in/chrischaney/"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/chris%20chaney.jpeg?itok=-vKiQNlY" width="300" height="400" alt="Chris Chaney '07" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://www.linkedin.com/in/chrischaney/">Chris Chaney '07</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Founder and Managing Partner, C4+
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Chris is interested in speaking with students about entrepreneurship, gaming, esports, technology, finance, and consulting.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/isabel-wilkinson-schor"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Isabel%20Wilkinson%20Schor%20%2708.jpeg?h=92e2e434&amp;itok=nOcAO77h" width="538" height="718" alt="Isabel Wilkinson Schor '08" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/isabel-wilkinson-schor">Isabel Wilkinson Schor '08</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Founder, Attersee
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Isabel is interested in speaking with students about careers in entrepreneurship, architecture and design, business, media and entertainment, and visual, performance, and fine art.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/sankalp-gosain"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Compass%20Placeholder.png?itok=w4uTKx7R" width="563" height="750" alt="Image of Princeton Shield used as a Placeholder" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/sankalp-gosain">Sankalp Gosain '11</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     General Manager &amp; COO, Moonpod
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Sankalp is interested in speaking with students about careers in entrepreneurship, business, and social impact.</p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-component-uuid="ad284e3f-1022-4fa4-926d-d1bdc4cef771" data-et="node" data-ei="900" data-evd="node.ps_basic_page.default" data-block-plugin-id="ps_people_list" class="block-content-list block block-ps-people block-ps-people-list">
+                <div data-ajax="on" class="exposed-filters-0 content-list content-list-grid grid-cols-4">
+                 <h2 class="content-list-title">Finance</h2>
+                 <div class="content-list-items" role="list">
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/yung-lim"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/yung_lim.jpeg?itok=FFYwOMBn" width="563" height="750" alt="Yung Lim '87" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/yung-lim">Yung Lim '87</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Managing Partner, RDG Funds LLC
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Yung is interested in speaking with students on topics related to the intersections of careers and identities, including: Black, first-generation, international, LatinX, LGBTQIA, and/or veteran students, and careers in finance, entrepreneurship, and nonprofit organizations.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/kin-chung"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/kin_chung.jpeg?itok=nTO6Yuvp" width="563" height="750" alt="Kin Chung *97" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/kin-chung">Kin Chung *97</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Vice President of Credit Innovation, MPOWER Financing
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Kin is interested in speaking with students on topics related to the intersections of careers and identities, including: Asian and Asian American, first-generation, and/or international students, and careers in finance and business.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/david-fritz"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/david_fritz.jpeg?itok=ZYYhRF4G" width="563" height="750" alt="David Fritz '12" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/david-fritz">David Fritz '12</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Investment Officer, The World Bank Group
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>David is interested in speaking with students on topics related to the intersections of careers and identities, including: international students, and careers in finance, investment banking, startups, government and public service.</p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-component-uuid="a3b5583d-b3df-4275-ab34-935fcdf6ab99" data-et="node" data-ei="900" data-evd="node.ps_basic_page.default" data-block-plugin-id="ps_people_list" class="block-content-list block block-ps-people block-ps-people-list">
+                <div data-ajax="on" class="exposed-filters-0 content-list content-list-grid grid-cols-4">
+                 <h2 class="content-list-title">Health &amp; Human Services</h2>
+                 <div class="content-list-items" role="list">
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/suzanne-morrison"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/suzanne_morrison.jpeg?itok=NTT3mlpC" width="103" height="137" alt="Suzanne Morrison '89" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/suzanne-morrison">Suzanne Morrison '89</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Software Trainer, Massachusetts General Hospital
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Suzanne is interested in speaking with students on topics related to the intersections of careers and identities, including: LGBTQIA, and careers in medicine, technology, and education.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/elena-martinez"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/elena_martinez.jpeg?itok=Mmrr0d49" width="210" height="280" alt="Elena Martinez '11" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/elena-martinez">Elena Martinez '11</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Ph.D. Candidate, Tufts University Friedman School of Nutrition Science and Policy
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Elena is interested in speaking with students on topics related to the intersections of careers and identities, including: LatinX students, and careers in government, sustainability, nonprofit organizations, social impact, public service, healthcare, and research.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/rebecca-dresner"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/rebecca_dresner.jpeg?itok=dc8-YpfM" width="428" height="571" alt="Rebecca Dresner '14" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/rebecca-dresner">Rebecca Dresner '14</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Orthodontist, UConn Health
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Rebecca is interested in speaking with students about careers in medicine and dentistry.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/briana-christophers"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Briana%20Christophers%20%2717.jpeg?h=5d75a8ad&amp;itok=GpmnS43w" width="495" height="660" alt="Briana Christophers '17" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/briana-christophers">Briana Christophers '17</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     M.D.-Ph.D. Student, Weill Cornell Medicine
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Briana is interested in speaking with students on topics related to the intersections of careers and identities, including: LatinX and/or first-generation students, and careers in medicine, advocacy and activism, and social impact.</p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-component-uuid="a554fce9-e3d5-4948-bb69-077c0fbdab9f" data-et="node" data-ei="900" data-evd="node.ps_basic_page.default" data-block-plugin-id="ps_people_list" class="block-content-list block block-ps-people block-ps-people-list">
+                <div data-ajax="on" class="exposed-filters-0 content-list content-list-grid grid-cols-4">
+                 <h2 class="content-list-title">Government/Policy</h2>
+                 <div class="content-list-items" role="list">
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/jackie-cremos"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/jackie_cremos.jpeg?itok=FTHym1uw" width="375" height="500" alt="Jackie Cremos '14" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/jackie-cremos">Jackie Cremos '14</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Financial Institution Policy Analyst, Federal Reserve Board of Governors
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Jackie is interested in speaking with students on topics related to the intersections of careers and identities, including: first-generation and/or international students, and careers in finance, technology, and government.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/rebecca-kahn"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/rebecca_kahn.jpeg?h=cf2a59e6&amp;itok=uN43xq5M" width="505" height="673" alt="Rebecca Kahn '18" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/rebecca-kahn">Rebecca Kahn '18</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Policy Advisor, U.S. Senate
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Rebecca is interested in speaking with students interested in careers in government and public service.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/keeley-walsh"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/keeley_walsh.jpeg?itok=VeFcyqfN" width="449" height="599" alt="Keeley Walsh '19" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/keeley-walsh">Keeley Walsh '19</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Program Assistant, Defense Security Cooperation Agency
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Keeley is interested in speaking with students interested in careers in government and public service.</p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-component-uuid="0ce46f05-2c70-4cf7-97c5-935cc9e661c4" data-et="node" data-ei="900" data-evd="node.ps_basic_page.default" data-block-plugin-id="ps_people_list" class="block-content-list block block-ps-people block-ps-people-list">
+                <div data-ajax="on" class="exposed-filters-0 content-list content-list-grid grid-cols-4">
+                 <h2 class="content-list-title">Law</h2>
+                 <div class="content-list-items" role="list">
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/richard-rick-ober-jr"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/ober%20%281%29.jpeg?itok=TOx5uy-0" width="445" height="593" alt="Richard Ober, Jr. '65" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/richard-rick-ober-jr">Richard Ober, Jr. '65</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Legal Analyst, Electoral Innovation Lab / Princeton Gerrymandering Project
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Richard is interested in speaking with students about careers in consulting, finance, business, and nonprofit organizations.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/george-bustin"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/george_bustin.jpeg?itok=2cYc4BEK" width="519" height="692" alt="George Bustin '70" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/george-bustin">George Bustin '70</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Senior Counsel, Cleary Gottlieb Steen &amp; Hamilton LLC
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>George is interested in speaking with students on topics related to the intersections of careers and identities, including: Black, first-generation, and/or international students and careers in law, international law, and international relations.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/ronald-levine"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Ronald%20Levine.jpeg?h=6a6ecd1a&amp;itok=v1gY1cnc" width="408" height="545" alt="Ronald Levine '74" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/ronald-levine">Ronald J. Levine '74</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     General Counsel, Herrick, Feinstein LLP
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Ron is interested in speaking with students on topics related to the intersections of careers and identities, including: Asian and Asian-America, Black, first-generation, international, Latinx, LGBTQIA, women, and/or veteran students and careers in law and advocacy and activism.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/leslie-margolis"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Compass%20Placeholder.png?itok=w4uTKx7R" width="563" height="750" alt="Image of Princeton Shield used as a Placeholder" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/leslie-margolis">Leslie Margolis '82</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Managing Attorney, Disability Rights Maryland
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Leslie is interested in speaking with students about careers in law, advocacy and activism, education, social impact, and nonprofit organizations.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/laurie-blank"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/laurie_blank.jpeg?itok=BDHNXAag" width="563" height="750" alt="Laurie Blank '93" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/laurie-blank">Laurie Blank '93</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Clinical Professor of Law, Emory University School of Law
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Laurie is interested in speaking with students about careers in law (international and national security), transitional justice, government, public service, and education.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/dina-brewer"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/dina_brewer.png?h=fcb41d39&amp;itok=V54Rc3l4" width="507" height="676" alt="Dina Brewer '88" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/dina-brewer">Dina Brewer '88</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Managing Partner, Princeton Law Partners, LLC
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Dina is interested in speaking with students about careers in law (corporate and criminal), finance, private equity, business, startups, entrepreneurship, and nonprofit organizations.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/kristin-vassallo"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/kristin_vassallo.jpeg?itok=v-yLpNaZ" width="395" height="527" alt="Kristin Vassallo '97" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/kristin-vassallo">Kristin Vassallo '97</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Deputy Chief, U.S. Attorney’s Office for the District of New Jersey
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Kristin is interested in speaking with students about careers in law, government, public and service.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://www.linkedin.com/in/ashley-oliver-kappel/"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Ashley%20Kappel_1.jpeg?h=89ad67bb&amp;itok=dbf55NZ6" width="206" height="275" alt="Ashley Kappel '99" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://www.linkedin.com/in/ashley-oliver-kappel/">Ashley L. Oliver Kappel ‘99</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Attorney, Kappel Law LLC
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Ashley is interested in speaking with students about careers in law.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/john-duffy"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/john_duffy.jpeg?itok=HlWJmnIV" width="563" height="750" alt="John Duffy '05" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/john-duffy">John Duffy '05</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Vice President - Associate General Counsel, Corporate and Real Estate, Tiffany &amp; Co.
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>John is interested in speaking with students about careers in law, business, real estate.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/jillian-hewitt"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/hewitt-jillian-1%20%281%29.jpeg?itok=aPV2EOdi" width="563" height="750" alt="Jillian Hewitt '11" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/jillian-hewitt">Jillian Hewitt '11</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Attorney, Susman Godfrey LLP
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Jillian is interested in speaking with students about careers in law and working in a trial-focused litigation boutique.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/shannon-togawa-mercer"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/shannon_mercer.png?h=15531bc7&amp;itok=T3N0LS9H" width="331" height="442" alt="Shannon Togawa Mercer '11" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/shannon-togawa-mercer">Shannon Togawa Mercer '11</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Associate, WilmerHale LLP
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Shannon is interested in speaking with students on topics related to the intersections of careers and identities, including: Asian and Asian American and/or international students, and careers in law, startups, technology, business, national security, corporate law, and cybersecurity.</p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-component-uuid="ff378298-c677-4308-a0fc-2ea9246b33db" data-et="node" data-ei="900" data-evd="node.ps_basic_page.default" data-block-plugin-id="ps_people_list" class="block-content-list block block-ps-people block-ps-people-list">
+                <div data-ajax="on" class="exposed-filters-0 content-list content-list-grid grid-cols-4">
+                 <h2 class="content-list-title">Media/Communications</h2>
+                 <div class="content-list-items" role="list">
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/exploring-options/career-chats/barbara-eckman-76" hreflang="en"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Compass%20Placeholder.png?itok=w4uTKx7R" width="563" height="750" alt="Image of Princeton Shield used as a Placeholder" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/exploring-options/career-chats/barbara-eckman-76" hreflang="en">Barbara Eckman '76</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Senior Principal Software Architect, Comcast NBCUniversal
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Ms. Eckman is interested in inspiring hope during this uncertain time, and speaking to students about women in STEM fields. She is also happy to discuss technological challenges in Big Data, and share how an AB in a humanistic discipline can prepare you for success in a STEM career.&nbsp;</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/kimberly-ho-schoelen"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/kimberly_ho_schoelen.jpeg?h=0f20a9c4&amp;itok=7wm7FKJv" width="562" height="750" alt="Kimberly Ho Schoelen '81" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/kimberly-ho-schoelen">Kimberly Ho Schoelen '81</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Principal Consultant, Kimberly Ho Schoelen Marketing Programs &amp; Communications Consulting
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Kimberly is interested in speaking with students on topics related to the intersections of careers and identities, including: Asian and Asian American, and/or first-generation students, and careers in manufacturing, professional services, technology, nonprofit organizations, business, entrepreneurship, communications, and consulting.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/avery-miller"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/avery_miller_0.png?itok=FeE0CYsl" width="285" height="380" alt="Avery Miller, ‘90" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/avery-miller">Avery Miller ‘90</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Senior Editorial Producer, CBS News Face the Nation
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Avery is interested in speaking with students on topics related to the intersections of careers and identities, including: Asian and Asian American, Black, first-generation, international, Latinx, LGBTQIA, women, and/or veteran students, and careers in media and entertainment.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/william-davis"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Brad%20%28William%29%20Davis%2C%20%E2%80%9890.jpeg?h=62428b77&amp;itok=aJN7g6Di" width="543" height="725" alt="Brad (William) Davis, ‘90" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/william-davis">Brad (William) Davis, ‘90</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Producer, NBC News
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Brad is interested in speaking with students on topics related to the intersections of careers and identities, including: LGBTQIA students, and careers in communications, law, media, and entertainment.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/exploring-options/career-chats/rebecca-chatman-94" hreflang="en"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Compass%20Placeholder.png?itok=w4uTKx7R" width="563" height="750" alt="Image of Princeton Shield used as a Placeholder" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/exploring-options/career-chats/rebecca-chatman-94" hreflang="en">Rebecca Chatman '94</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Vice President and Coordinating Producer, NBC Olympics, NBC Universal
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Ms. Chatman is interested in speaking with students about their potential career paths within media and communications.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/brian-rokus"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/brian_rokus.jpeg?h=688e28cb&amp;itok=HSFfC6RP" width="552" height="737" alt="Brian Rokus '99" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/brian-rokus">Brian Rokus '99</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Supervising Producer, CNN
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Brian is interested in speaking with students about careers in communications and media.</p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-component-uuid="477fafd3-12b0-4d41-bd3d-ef194b6a1e4c" data-et="node" data-ei="900" data-evd="node.ps_basic_page.default" data-block-plugin-id="ps_people_list" class="block-content-list block block-ps-people block-ps-people-list">
+                <div data-ajax="on" class="exposed-filters-0 content-list content-list-grid grid-cols-4">
+                 <h2 class="content-list-title">Nonprofit &amp; Social Impact</h2>
+                 <div class="content-list-items" role="list">
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/donald-burnes"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/donald_burnes.jpeg?itok=r7he1Ozh" width="149" height="198" alt="Donald Burnes '63" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/donald-burnes">Donald Burnes '63</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Founder, Burnes Institute for Poverty Research
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Donald is interested in speaking with students on topics related to the intersections of careers and identities, including: Black, first-generation, international, Latinx, LGBTQIA, and/or veteran students, and careers in education, advocacy and activism, social impact, nonprofit organizations, consulting, healthcare, government, and public service.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/jenny-korn"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Compass%20Placeholder.png?itok=w4uTKx7R" width="563" height="750" alt="Image of Princeton Shield used as a Placeholder" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/jenny-korn">Jenny Korn '96</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Research Affiliate and Founding Coordinator of the Race+Tech+Media Working Group, Harvard
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Jenny is interested in speaking with students about careers in academic research with a focus on topics related to the intersection of race, gender, interviewing, activism, and email management.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/emily-liao-master"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/emily_liao_master.jpeg?itok=wCAsnFPd" width="563" height="750" alt="Emily Liao Master '01" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/emily-liao-master">Emily Liao Master '01</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Executive Director, Friends of the Israel Antiquities Authority
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Emily is interested in speaking with students on topics related to the intersections of careers and identities, including: Asian and Asian American, and/or international students, and careers in the nonprofit sector, social impact, consulting, media, and visual arts.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/hannah-rosenthal"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/hannah_rosenthal.jpeg?h=f991cc67&amp;itok=cPxSUvy9" width="375" height="500" alt="Hannah Rosenthal '15" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/hannah-rosenthal">Hannah Rosenthal '15</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Graduate Support Counselor, Loyola Academy of St. Louis
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Hannah is interested in speaking with students about careers in K-12 Education, social justice, advocacy and activism, and nonprofit organizations.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/andres-parrado"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/andres_parrado.jpeg?itok=DIdNd_Dn" width="450" height="600" alt="Andres Parrado '15" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/andres-parrado">Andres Parrado '15</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Data Associate, GiveDirectly
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Andres is interested in speaking with students on topics related to the intersections of careers and identities, including: first-generation, and/or Latinx students, and careers in advocacy and activism, social impact, nonprofit organizations, consulting, government, and public service.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/paloma-aguas"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Paloma%20Aguas%20%2718.jpeg?h=fa9a5b1e&amp;itok=va9gfTpk" width="553" height="737" alt="Paloma Aguas '18" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/paloma-aguas">Paloma Aguas '18</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Communications Associate, ACLU of New Jersey
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Paloma is interested in speaking with students on topics related to the intersections of careers and identities, including: Latinx and/or LGBTQIA students, and careers in advocacy and activism, communications, social impact, nonprofit organizations, government, and public service.</p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-component-uuid="9bce6424-db1f-4e7f-a6ae-da3be697de68" data-et="node" data-ei="900" data-evd="node.ps_basic_page.default" data-block-plugin-id="ps_people_list" class="block-content-list block block-ps-people block-ps-people-list">
+                <div data-ajax="on" class="exposed-filters-0 content-list content-list-grid grid-cols-4">
+                 <h2 class="content-list-title">Tech</h2>
+                 <div class="content-list-items" role="list">
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/peter-woolford"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Compass%20Placeholder.png?itok=w4uTKx7R" width="563" height="750" alt="Image of Princeton Shield used as a Placeholder" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/peter-woolford">Peter Woolford '83</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Talent Partner and Market Manager, Kforce Inc.
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Peter is interested in speaking with students about careers in business, technology, startups, and entrepreneurship.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/noemi-de-la-puente"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/noemi_de_la_puente-2.jpeg?itok=FLbJlhHE" width="563" height="750" alt="Noemi de la Puente '86" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/noemi-de-la-puente">Noemi de la Puente '86</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Principal Engineer, Trenton Water Works
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Noemi is interested in speaking with students about careers in engineering, government, public service, media, and performing arts.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/santhosh-balasubramanian"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/santhosh_balasubramanian.jpeg?itok=wMmsOiV-" width="563" height="750" alt="Santhosh Balasubramanian '13" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/santhosh-balasubramanian">Santhosh Balasubramanian '13</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Head of product, Notable Labs
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Santhosh is interested in speaking with students on topics related to the intersections of careers and identities, including: Asian and Asian American students, and careers in business, education, engineering, entrepreneurship, government, public service, healthcare, nonprofit organizations, and technology.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/nusrat-ahmed"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/Nusrat%20Ahmed%20%2717.jpeg?h=57ba161c&amp;itok=l0FCcHIL" width="506" height="675" alt="Nusrat Ahmed '17" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/nusrat-ahmed">Nusrat Ahmed '17</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Learning Designer, CAIS
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Nusrat is interested in speaking with students on topics related to the intersections of careers and identities, including: Asian and Asian American, Black, first-generation, international, Latinx, LBGTQIA, veteran, and/or woman-identifying students, and careers in advocacy and activism, business, education, entrepreneurship, finance, social impact, and technology.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/rachel-marek"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/rachel_marek.jpeg?itok=qH_JUb3h" width="563" height="750" alt="Rachel Marek '17" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/rachel-marek">Rachel Marek '17</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Project Engineer, McNamara Salvia
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Rachel is interested in speaking with students about careers in civil and environmental engineering.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/clare-jeong"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/clare_jeong.jpeg?itok=bgVAS2LF" width="366" height="488" alt="Clare Jeong '18" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/clare-jeong">Clare Jeong '18</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Talent Development - Senior Analyst, Xandr
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Clare is interested in speaking with students about careers in business, communications, sustainability, and technology.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/pranaya-anshu"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/pranaya_anshu.png?itok=xHUP9pNZ" width="563" height="750" alt="Pranaya Anshu '19" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/pranaya-anshu">Pranaya Anshu '19</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Product Marketing Manager, Amazon Web Services
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Pranaya is interested in speaking with students on topics related to the intersections of careers and identities, including: Asian and Asian American students, and careers in business, consulting, entrepreneurship, and technology.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x4" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="https://careercompass.princeton.edu/alumni-profiles/nathan-mytelka"><img src="/sites/g/files/toruqf1041/files/styles/3x4_750w_1000h/public/2022-02/nathan_mytelka.jpeg?itok=QXdZVCrG" width="563" height="750" alt="Nathan Mytelka '19" loading="lazy" typeof="foaf:Image" class="image-style-_x4-750w-1000h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="https://careercompass.princeton.edu/alumni-profiles/nathan-mytelka">Nathan Mytelka '19</a></span>
+                    <div class="field field--name-field-ps-people-position field--type-string field--label-hidden field__item">
+                     Software Engineer, Microsoft
+                    </div>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Nathan is interested in speaking with students about careers in technology, education, and engineering.</p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div class="block-outline-color-orange block-ps-text block block-layout-builder block-inline-blockps-text" data-block-plugin-id="inline_block:ps_text">
+                <h2 class="block-heading">Resources and tips</h2>
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p>&nbsp;</p>
+                 <p>Prior to conducting an informational interview, it is beneficial to review alumni biographies and prepare questions in advance. We have created some helpful resources that will help guide your conversations with alumni. Review our resource on&nbsp;<a href="https://careerdevelopment.princeton.edu/node/885">informational interviews</a>&nbsp;prior to your Zoom or phone conversation.</p>
+                 <p>In order to build a lasting connection and to show appreciation for the alum’s time, we encourage you to send a thank you email within 24 hours of your Career Chat. You can find an example in our&nbsp;<a href="https://careerdevelopment.princeton.edu/node/882">Five-Step Networking Guide</a>. We also hope for all students to connect with their alumnus/a within 48 hours of the connection email.</p>
+                 <p>Be sure to:&nbsp;</p>
+                 <ul>
+                  <li>Follow-up with the alum in a timely manner (48 hours) after we connect you</li>
+                  <li>Set up a time to talk over Zoom or conduct a phone call rather than exchanging emails</li>
+                  <li>Dress in professional attire</li>
+                  <li>Research the alum's background prior to the Career Chat</li>
+                  <li>Ask thoughtful questions about their work, education and skills&nbsp;</li>
+                  <li>Take notes about potential leads, next steps and advice&nbsp;</li>
+                  <li>Send a thank you note after the discussion</li>
+                 </ul>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </main>
+      </div>
+      <nav class="back-to-top sr-only sr-only-focusable" aria-label="Back to top">
+       <button>
+        <div class="full-name sr-only">
+         Back to 
+        </div>
+        <div class="short-name">
+         Top
+        </div></button>
+      </nav>
+     </div>
+    </div>
+    <footer role="contentinfo" class="footer region region-footer" id="footer">
+     <h2 class="sr-only">Footer</h2>
+     <div class="container">
+      <div class="constrained-bkg-constrained-content layout layout--threecol-33-34-33">
+       <div class="layout-inner-container">
+        <div class="layout__region layout__region--first layout__region--thirds layout__region--narrow">
+         <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+          <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+           <p>Center for Career Development<br> 36 University Place, Suite 200<br> Princeton, NJ 08544<br> General: <a href="mailto:careerdevelopment@princeton.edu">careerdevelopment@princeton.edu</a><br> Recruiting: <a href="mailto:recruit@princeton.edu">recruit@princeton.edu</a><br> (609) 258-3325</p>
+           <p><a href="https://www.princeton.edu/privacy-notice">Privacy Notice</a><br><a href="/node/842">Disclaimer</a></p>
+          </div>
+         </div>
+        </div>
+        <div class="layout__region layout__region--second layout__region--thirds layout__region--narrow">
+         <nav role="navigation" aria-labelledby="-menu" data-block-plugin-id="menu_block:footer" class="block block-menu navigation menu--footer">
+          <h2 class="visually-hidden" id="-menu">Footer menu</h2>
+          <ul class="nav">
+           <li class="nav-item"><a href="https://princeton.joinhandshake.com/appointments/new?utm_source=Our%20website&amp;utm_medium=web&amp;utm_campaign=website">Make an appointment</a></li>
+           <li class="nav-item"><a href="http://princeton.joinhandshake.com?utm_source=Website&amp;utm_medium=Our%20website&amp;utm_campaign=Ourwebsite">Handshake</a></li>
+          </ul>
+         </nav>
+        </div>
+        <div class="layout__region layout__region--third layout__region--thirds layout__region--narrow">
+         <div data-block-plugin-id="inline_block:ps_social_links" class="block-ps-social-links block block-layout-builder block-inline-blockps-social-links">
+          <ul class="ps-social-links--platforms platforms vertical">
+           <li><a href="http://www.facebook.com/princetoncareer" title="Facebook"> <span class="fab fa-facebook fa-2x" aria-hidden="true"></span> <span class="social-link-label">Facebook</span> </a></li>
+           <li><a href="http://twitter.com/princetoncareer" title="Twitter"> <span class="fab fa-twitter fa-2x" aria-hidden="true"></span> <span class="social-link-label">Twitter</span> </a></li>
+           <li><a href="http://www.youtube.com/profile?user=princetoncampuslife" title="YouTube"> <span class="fab fa-youtube fa-2x" aria-hidden="true"></span> <span class="social-link-label">YouTube</span> </a></li>
+           <li><a href="https://www.instagram.com/princetoncareer/" title="Instagram"> <span class="fab fa-instagram fa-2x" aria-hidden="true"></span> <span class="social-link-label">Instagram</span> </a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="subfooter">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-4">
+         <div class="subfooter-links">
+          <ul class="list-unstyled">
+           <li><a href="https://accessibility.princeton.edu/resources/accessibility-help" target="_blank">Accessibility</a></li>
+          </ul>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <p class="copyright-text"> © 2022 The Trustees of Princeton University </p>
+        </div>
+        <div class="col-md-4 text-sm-left text-md-right copyright"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"><img src="/profiles/ps/themes/ps_base/images/pu-logo-stacked.svg" alt="Princeton University"> </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div> 
+  </div><span id="ps-current-username" data-username=""></span>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/900","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ckeditorheight":{"offset":1,"line_height":1.5,"unit":"em","disable_autogrow":false},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"all_documents_new_window":false,"select2_simple":{"selector":".node-form select:not(.disable-select2,[name$=\u0027[actions][bundle]\u0027],.ui-timepicker-select,[name*=\u0027field_ps_timeline_feature_items\u0027]),.select2-form select,#drupal-off-canvas select[multiple]"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":true,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":[]}},"ajax":[],"user":{"uid":0,"permissionsHash":"21eaabc759fba88b5ad6235b54ded5aaa4cb601853cfdebe272fb6fb8fba4576"}}</script>
+  <script src="/sites/g/files/toruqf1041/files/js/js_J50wJZhPa1Bp6vsxyxSVje4np3wJZu8T24DVlpY3XtY.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"427707476","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":5004,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

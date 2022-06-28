@@ -1,0 +1,650 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Sign up to receive Cal Futures online! - CalFutures</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link type="text/css" rel="stylesheet" media="all" href="/lib/css/default.css">
+  <link type="text/css" rel="stylesheet" media="all" href="/lib/css/layout.css">
+  <link type="text/css" rel="stylesheet" media="all" href="/lib/css/style.css">
+  <script type="text/javascript" src="https://calfutures.berkeley.edu/lib/js/jquery-2.2.2.min.js"></script>
+  <script type="text/javascript">
+        "use strict";
+        var captchaContainer = null;
+        var loadCaptcha = function() {
+            captchaContainer = grecaptcha.render('captcha_container', {
+                'sitekey' : '6LexcF4UAAAAAEVYPcOJ0rpRju033qGUPmL7-2UC'
+             });
+        };
+
+        function returnedHash(){
+            console.log("returned hash");
+        }
+
+
+
+        $(document).ready(function() {
+
+
+            $("#submit").click(function(evt) {
+                evt.preventDefault();
+                evt.stopPropagation();
+                processForm();
+            });
+
+
+
+            function processForm(){
+                var email1 = $("#edit-submitted-email-address");
+                var email2 = $("#edit-second-email-address");
+                $("form input").removeClass("error");
+
+                var email1Value = email1.val();
+                var email2Value = email2.val();
+
+                // console.log("email1: " + email1Value);
+                // console.log("email2: " + email2Value);
+
+                if (email1Value === email2Value) {
+
+                    var formData = $("#signup").serialize();
+                    console.log("FormData" , formData);
+                    console.log("ajax sent");
+                    $.ajax({
+                        method: "POST",
+                        url: "signup.php",
+                        data: formData,
+                        dataType: "html",
+                        success: function(data) {
+
+                            $("#msg").html(data).show();
+                            $("#msg div").slideDown("slow").delay(4000).slideUp("slow");
+                            // if success, clear form boxes
+                            if (data.search("messages") != -1){
+                                $("form input[type=text]").val("");
+                            }
+                        }
+                    });
+
+
+                } else {
+                    $("#msg").html("<div class=\"error\">Please check that your emails match.</div>").show();
+                    $("#msg div").slideDown("slow").delay(4000).slideUp("slow");
+                    email1.addClass("error");
+                    email2.addClass("error");
+                }
+
+
+            } // processForm
+
+
+            $("a[rel='issuu']").click(function(e){
+                e.preventDefault();
+                var $this = $(this);
+                var url = $this.attr("href");
+                
+                //console.log(url);
+                window.open(url, '', 'resizable=yes,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;
+
+            });
+            
+        });
+
+    </script>
+  <script src="https://www.google.com/recaptcha/api.js?onload=loadCaptcha&amp;render=explicit" async defer></script>
+ </head>
+ <body class="front not-logged-in page-node node-type-webform one-sidebar sidebar-right">
+  <div id="skip">
+   <a href="#content">Skip to Content</a> <a href="#navigation">Skip to Navigation</a>
+  </div>
+  <div id="page" class="light-shadow">
+   <div id="logo-title"></div><!-- /logo-title -->
+   <div id="header"></div><!-- /header -->
+   <div id="main" class="clearfix">
+    <div id="content">
+     <div id="content-inner" class="inner column center">
+      <div id="content-header">
+       <h1 class="title">Sign up to receive Cal Futures online!</h1>
+      </div><!-- /#content-header -->
+      <div id="content-area">
+       <div class="view-calfutures-archives">
+        <div class="view-content">
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2022
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Spring%202022%20Cal%20Futures.pdf"><img class="cf-img-thumb" alt="Spring 2022 Cal Futures" src="/lib/images/2022-spring-thumb.jpg" width="200" height="259"></a> </p><p class="rtecenter"> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Spring%202022%20Cal%20Futures.pdf">Download PDF</a> </p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>A Capital Idea</h3><p>Welcome to the Spring 2022 issue of Cal Futures! As we all continue to ride the wave of both national and international events, we are leaning into the importance of the work we do to ensure a bright future for UC Berkeley — and we remain as optimistic and busy as ever.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2021
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Fall%202021%20Cal%20Futures.pdf"><img class="cf-img-thumb" alt="Fall 2021 Cal Futures" src="/lib/images/2021-fall-thumb.jpg" width="200" height="259"></a> </p><p class="rtecenter"> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Fall%202021%20Cal%20Futures.pdf">Download PDF</a> </p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Honoring Family and Resilience</h3><p>Welcome to the Fall 2021 issue of Cal Futures! I hope you and your loved ones are well as we all continue to navigate the uncharted territory of the ongoing pandemic. Here at Berkeley, we are fortunate that the excitement of a new school year is in the air. Students have returned to campus, and in-person instruction — albeit with face masks — has resumed. We anticipate a vibrant fall semester, including more <a href="https://campusconversations.berkeley.edu/">Campus Conversations</a>, a series of talks with Berkeley leaders that address current issues.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2021
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Spring%202021%20Cal%20Futures.pdf"><img class="cf-img-thumb" alt="Spring 2021 Cal Futures" src="/lib/images/2021-spring-thumb.jpg" width="200" height="259"></a> </p><p class="rtecenter"> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Spring%202021%20Cal%20Futures.pdf">Download PDF</a> </p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>The Language of Generosity</h3><p>Welcome to the spring 2021 issue of Cal Futures. America made history this year not only in vaccine doses distributed but also in the makeup of our country’s new administration. In January, Kamala Harris became the first woman, the first Black American, and the first Indian American to be sworn in as vice president. The daughter of Cal alumni, she spent her early years in Berkeley. Our pride runs deep — and it doesn’t end with her.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2020
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/2020%20Fall%20Cal%20Futures.pdf"><img class="cf-img-thumb" alt="Fall 2020 Cal Futures" src="/lib/images/2020-fall-thumb.jpg" width="200" height="259"></a> </p><p class="rtecenter"> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/2020%20Fall%20Cal%20Futures.pdf">Download PDF</a> </p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>The Language of Generosity</h3><p>Welcome to the fall issue of Cal Futures. I hope you are staying safe and in good health. The semester is underway, yet Sproul Plaza and Memorial Glade remain quiet. Around 30 percent of the students who normally live in the residence halls have returned to campus but all instruction is currently taking place online. Throughout this crisis, campus leadership has focused on the students’ needs and experience. In addition to providing access to technology for students, the campus is offering workshops on remote learning, virtual student communities, and peer-to-peer support groups. Efforts are also underway to prepare for hybrid instruction as public health restrictions are lifted.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2020
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/2020%20Spring%20Cal%20Futures.pdf"><img class="cf-img-thumb" alt="Spring 2020 Cal Futures" src="/lib/images/2020-spring-thumb.jpg" width="200" height="259"></a> </p><p class="rtecenter"> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/2020%20Spring%20Cal%20Futures.pdf">Download PDF</a> </p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>An Eye Toward The Future</h3><p>Welcome to the spring issue of Cal Futures. As we shelter in place during this uncertain time, I am sending my warmest wishes to you and your loved ones for your health and well-being. While the Berkeley community may be working remotely right now, the university continues to actively leverage its scientific and academic expertise to help address the challenges associated with this moment in time. From innovations in testing to guidance on economic policy, UC Berkeley is providing critical leadership to California, the United States, and the world. To learn more, I encourage you to watch the weekly live “Berkeley Campus Conversations: COVID 19” video town halls. You can find upcoming talks and archives by visiting the <a href="https://www.berkeley.edu/">Berkeley website</a>.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2019
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/2019%20Fall%20Cal%20Futures%20Final.pdf"><img class="cf-img-thumb" alt="Fall 2019 Cal Futures" src="/lib/images/2019-fall-thumb.jpg" width="200" height="259"></a> </p><p class="rtecenter"> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/2019%20Fall%20Cal%20Futures%20Final.pdf">Download PDF</a> </p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Good Chemistry</h3><p>Greetings, and welcome to the fall issue of Cal Futures! As Kevin Crilly begins his well-earned retirement, I am serving as the Office of Gift Planning’s interim executive director. I have worked with many of you during my more than 14 years here, serving as deputy director for many of those. I and the whole OGP team look forward to continuing to assist you with your gift planning needs.</p><p>This record-breaking fundraising year was made possible by donors like Mike and Ruth Cheng, whose story is highlighted in this issue. They established a charitable remainder trust (CRT), funded with appreciated securities, to eventually benefit various campus units. You, too, might be interested in receiving income and enjoying tax benefits while supporting Berkeley.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2019
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Cal%20Futures%20Spring%202019_FINAL.pdf"><img class="cf-img-thumb" alt="Spring 2019 Cal Futures" src="/lib/images/2019-spring-thumb.jpg" width="200" height="259"></a> </p><p class="rtecenter"> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Cal%20Futures%20Spring%202019_FINAL.pdf">Download PDF</a> </p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Nourishing Future Nutrition Leaders</h3><p>Welcome to Cal Futures Spring 2019! We hope you’ve enjoyed UC Berkeley’s 150th anniversary celebrations this past year. The revelry will wrap up this spring with events including a Chancellor's Welcome and Berkeley 150 Retrospective on Cal Day, April 13.</p><p>The brilliance of Berkeley’s first 150 years was made possible by the stalwart support of generations of donors — beginning with its first planned gift in 1872! The university’s achievements and those of its students will continue to depend on our donors, including people like Cal alumna Marion Nestle. Her recent beneficiary designation gift, highlighted in this issue, will help ensure Berkeley’s success — particularly its students — in the years to come. We hope you’ll find inspiration in Marion’s Cal story, too.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2018
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/fall%2018%20cal%20futures" rel="issuu"><img class="cf-img-thumb" alt="Fall 2018 Cal Futures" src="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/fall%2018%20cal%20futures%20thumb" width="200" height="259"></a> </p><p class="rtecenter"> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/fall%2018%20cal%20futures">Download PDF</a> <!-- <a href="https://issuu.com/shawnm/docs/spring_2017_cal_futures" rel="issuu">Read online</a></p></td> --> </p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Doing the Math</h3><p> Welcome to the fall 2018 edition of Cal Futures! Our 150th birthday celebration continues (it takes a while to blow out that many candles), and we want to thank our generous alumni and friends who, with their charitable gifts, will light the candles for the next generation of Cal faculty and students.</p><p>Professor Hisashi and Mrs. Masae Kobayashi, whose giving story is highlighted in this issue, have recently done that and more. To honor his late brother — Shoshichi Kobayashi — Hisashi and Masae established an endowed fellowship in Shoshichi’s name through a charitable gift annuity, qualified distributions from his IRA, and a bequest in their estate plan. This generous combined gift will ensure generations of bright minds will flourish at Cal. </p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2018
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal Futures/Spring%202018%20Cal%20Futures.pdf" rel="issuu"><img class="cf-img-thumb" alt="Spring 2018 Cal Futures" src="https://planyourlegacy.berkeley.edu/sites/default/files/Cal Futures/Cal%20Futures%20Spring%202018%20Thumb" width="200" height="259"></a> </p><p class="rtecenter"> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal Futures/Spring%202018%20Cal%20Futures.pdf">Download PDF</a> <!-- <a href="https://issuu.com/shawnm/docs/spring_2017_cal_futures" rel="issuu">Read online</a></p></td> --> </p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Stewarding Traditions</h3><p>As we celebrate our 150th birthday, it’s a time to reflect on the profound impact philanthropy has had on making UC Berkeley the most distinguished public university in the world.</p><p>In this issue, we highlight ways that you, too, can play a role in supporting Berkeley’s extraordinary legacy. Gifts made through your will or living (revocable) trust, or via retirement plan beneficiary designations, are powerful ways to provide institutional support while also ensuring that you maintain financial security. Cal alums Nad and Linda Perlmaul, whose giving story is highlighted in this issue, did just that by making a gift through their estate plan.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2017
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Fall%202017%20Cal%20Futures%20Newsletter.pdf" rel="issuu"><img class="cf-img-thumb" alt="Fall 2017 Cal Futures" src="/lib/images/2017_Cal_Futures_Fall.jpg" title="Read online"></a> </p><p class="rtecenter"> <a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Fall%202017%20Cal%20Futures%20Newsletter.pdf">Download PDF</a> <!--                                   <a href="https://issuu.com/shawnm/docs/spring_2017_cal_futures" rel="issuu">Read online</a></p></td>--> </p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Welcome to the redesigned&nbsp;<em>Cal Futures</em>!</h3><p>This issue highlights a gift planning option that allows Cal donors to support the university while also enjoying financial benefits <a href="https://planyourlegacy.berkeley.edu/gift-types/ages-65-plus/charitable-remainder-unitrust">charitable remainder trusts</a>&nbsp;(CRTs). </p><p>Take donor Emily Risberg, profiled in this issue. Her CRT demonstrates this flexible gift’s benefits in action. The income generated from her trust will not only support Cal women’s field hockey well into the future, but it will also provide Emily with income now — along with valuable tax benefits.&nbsp;<a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Fall%202017%20Cal%20Futures%20Newsletter.pdf">Download this issue</a> to read more. </p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2017
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="https://issuu.com/shawnm/docs/spring_2017_cal_futures" rel="issuu"><img class="cf-img-thumb" alt="Fall 2017 Cal Futures" src="/lib/images/2017_Cal_Futures_Spring.jpg" title="Read online"></a></p><p class="rtecenter"><a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Spring%202017%20Cal%20Futures.pdf">Download PDF</a></p><p class="rtecenter"><a href="https://issuu.com/shawnm/docs/spring_2017_cal_futures" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>A 360-degree view</h3><p>There’s at least one reason planned gifts are popular: they offer flexibility and often tangible tax benefits. Yet many donors are motivated to make planned gifts for reasons that are harder to quantify — that are tied to our experiences and who we are, or who we hope future generations will become. </p><p>For Don Alves ’61, M.B.A. ’64 and Beth Sordi M.B.A. ’07, contemplating where to direct their IRA contributions was an invitation to reflect on both the past and future. </p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2016
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="https://issuu.com/shawnm/docs/cal_futures_fall_2016" rel="issuu"><img class="cf-img-thumb" alt="Fall 2016 Cal Futures" src="/lib/images/calfutures_thumb_fall_2016.jpg" title="Read online"></a></p><p class="rtecenter"><a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Cal_Futures_Fall_2016.pdf">Download PDF</a></p><p class="rtecenter"><a href="https://issuu.com/shawnm/docs/cal_futures_fall_2016" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>A deeply personal investment</h3><p>R. J. “Rocky” Gutiérrez Ph.D. ’77 and Holly Brownscombe both made gifts that are deeply personal. Although Rocky was told he’d never succeed in college, he received a Ph.D. and is an expert on the spotted owl. He and his wife established a charitable gift annuity that will support traditionally underrepresented graduate students who share an affinity for the Museum of Vertebrate Zoology.<br> &nbsp;<br> While Holly didn’t attend Berkeley, she grew up here and still lives nearby. Her deferred charitable gift annuity will support the Campanile — for her a symbol of beauty, history, and her family’s love of bells. </p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2016
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="https://issuu.com/shawnm/docs/spring_2016_cal_futures" rel="issuu"><img class="cf-img-thumb" alt="Spring 2016 Cal Futures" src="/lib/images/CF_SP_16_Thumb.jpg" title="Read online"></a></p><p class="rtecenter"><a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Spring_2016_Cal_Futures.pdf">Download PDF</a></p><p class="rtecenter"><a href="https://issuu.com/shawnm/docs/spring_2016_cal_futures" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Common ground — an appreciation for Berkeley</h3><p>Though they came from very different backgrounds, Don Lee ’51 and Harold Burns ’50 have much in common. Both are military veterans, both pursued careers related to the built environment (civil engineering for Don, architecture for Harold), and both avidly support their alma mater, UC Berkeley.<br> &nbsp;<br> Even the ways in which they’ve honored their academic home are similar: Don and Harold both established named, endowed scholarships in their respective areas of study at Cal, enabling future generations of students to build their knowledge, experience, and skills — as they strive to build a better world. </p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2015
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/fall_2015_cal_futures_web" rel="issuu"><img class="cf-img-thumb" alt="Fall 2015 Cal Futures" src="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/fall_2015_cal_futures_thumb.jpg" title="Read online"></a></p><p class="rtecenter"><a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Fall_2015_Cal_Futures_web.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/fall_2015_cal_futures_web" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Lifetimes of meaning — legacies for the future</h3><p><span>Garth Taylor '71 and Sharon Sandeen '80, LL.M. '02 had experiences of Cal that couldn't be more different. Yet they share common ground: each had an "Aha!" moment upon realizing the important role theycould play to ensure that Berkeley thrives into the future.</span></p><p> This shared sense of opportunity has inspired each of them to take action: Garth and Sharon have made bequest committments to Berkeley that acknowledge their personal Cal stories, while empowering future generations of students to continue to make our world a better place.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2015
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/cal_futures_spring_2015" rel="issuu"><img alt="Fall 2014 Cal Futures" src="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Cal_Futures_Spring_2015_thumb.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2015_Cal_Futures_Spring.pdf" rel="issuu">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/cal_futures_spring_2015" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>A Berkeley way of being — a giving state of mind</h3><p>For Audrey Yee and Robert and Susan Crawford, a Cal education meant many things: the reinforcement of existing traditions and the birth of new ones, the forging of lasting relationships, the opening of minds, and the simultaneous focusing and broadening of the opportunities of a lifetime.</p><p>Family roots and long-standing Berkeley ties wind their way through these stories. Our featured alumni have California histories reaching back generations, but their stories also remind us that as much as Berkeley is a place, it is a state of mind — one that alumni bring with them into the world, and that they fuel with their own curiosities, passions, and successes.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2014
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2014_cal_futures_fall/0" rel="issuu"><img alt="Fall 2014 Cal Futures" src="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Cal_Futures_Fall_2014_thumb.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2014_Cal_Futures_Fall.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2014_cal_futures_fall/0" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Cal women forge their own paths — alumnae honor ties that last a lifetime</h3><p>Berkeley’s alumni community numbers in the hundreds of thousands, and each alum carries a Berkeley story out into the world. Individually vibrant, these stories strike a common chord around the ways that a Berkeley education continues to make a difference year after year.</p><p>This issue of <em>Cal Futures</em> shares the stories of Professor Ling-Lie Chau Ph.D. '66 and Kathryn Conway '61, two women looking back on the doors opened by their time at Berkeley — and giving back to make such opportunites possible for students today and tomorrow. Each woman challenged the boundaries of the time through hard work and a passion for intellectual exploration, paving the way for adventurous learners of all stripes.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2014
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/cal_futures_spring_2014" rel="issuu"><img alt="" src="/lib/images/sp%202014%20thumb.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="https://planyourlegacy.berkeley.edu/sites/default/files/Cal%20Futures/Cal_Futures_Spring_2014.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/cal_futures_spring_2014" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Springing forward to support Berkeley — bequests sow benefits for the campus and donors alike</h3><p>Spring is a time when our thoughts often turn to plans for the future. For many alums of all ages, it is also a great time to create a bequest in a will or trust that<br> will benefit Berkeley. This issue of Cal Futures shares how Iris Fluellen B.A. ’75, C. Sing. ’78 and Louise ’70 and Gene Sander have chosen to give back to Berkeley — and describes the peace of mind resulting from their wonderful planned gifts. As you will see, they are establishing scholarships that pass along the dream of a Berkeley education to tomorrow’s students.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2013
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2013_cal_futures_fall?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/2013_Cal_Futures_Fall_small.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2013_Cal_Futures_Fall.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2013_cal_futures_fall?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Continuing the Berkeley legacy — gifts that span generations to serve others</h3><p>This issue of <em>Cal Futures</em> illustrates Berkeley’s enduring reach across time — through generations of families, including two whose career paths focused on public health and service to others.</p><p>Kathleen Miller Ph.D. ’77, the late daughter of Arlene Miller, came to Berkeley to earn a doctorate in immunology so she could help people suffering from neglected diseases.</p><p>Marilyn Barkin ’69, M.P.H. ’89 returned to Berkeley for an advanced degree so that she could be an advocate for patients. The planned gifts made by Arlene and Marilyn will assist eligible students in forging paths to serve the wider community. Another planned gift from the estates of two alumni who graduated more than 100 years ago was just received and is now benefitting student programs, both old and new.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2013
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/cal_futures_spring_2013?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthumb_2013_Cal_Futures_Spring.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2013_Cal_Futures_Spring.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/cal_futures_spring_2013?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Connected through Cal — Giving thanks by giving back</h3><p> For almost a half million alumni, the UC Berkeley experience means a world-class education — and much more. Over the decades, Berkeley graduates have credited the campus with countless contributions that transformed their lives and shaped their futures.</p><p>In this issue of Cal Futures, we share the inspiring stories of two couples who attended Berkeley in the years surrounding World War II. Though they followed distinct paths to and from campus, Alice ’42 and the late James W. “Walt” ’41 Nelson, Jr. and Witold ’51, M.Arch. ’52 and Norma ’51 Willer share a connection — they met their cherished spouses and lifelong partners at Berkeley.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2012
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/cal_futures_fall_2012/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthumb_Cal%20Futures%20Fall%202012_thumb.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2012_Cal_Futures_Fall.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/cal_futures_fall_2012/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Returning the favor of a Cal education<br> Coming forward to give back</h3><p> UC Berkeley is turning challenge into opportunity. In spite of unprecedented state funding cuts, the University has enabled higher enrollment for California residents and non-residents alike, maintained its world-class faculty, and expanded its course offerings.</p><p>U.S. News &amp; World Report has just ranked Berkeley as the top public university in the nation — again. “Private philanthropy has helped us maintain our public character,” said Chancellor Robert Birgeneau, who will step down at the close of 2012, after eight years of promoting “access and excellence” at Berkeley. “We have been able to keep our doors wide open — and that’s only possible because of philanthropy.”</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2012
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/calfutures_spring_2012/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2012_Cal_Futures_Spring-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2012_Cal_Futures_Spring.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/calfutures_spring_2012/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Bright Students, Stellar Faculty - Cal's Circle of Excellence</h3><p> Nobel laureate Y.T. Lee once expressed a sentiment shared by many of his colleagues when he said, "I first came to Berkeley in 1962 to pursue my graduate studies because Berkeley had the best professors in the world. I returned in 1974 as a professor because we have the best students."</p><p> Indeed, it is this synergy among creative, passionate, intelligent scholars that defines UC Berkeley's excellence across disciplines. What fuels this synergy is the generosity of people like Helen '22 and Andrew Neumann and Emma '28 and Derrick Henry '27 Lehmer. The Neumanns established a fellowship that enables graduate students like Rosa Guzman M.A. '12 to enter careers of service as teachers. The Lehmers funded a fellowship for graduate students who delve deeply into the mathematical field of number theory.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2011
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2011_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2011_Cal_Futures_Fall_Page_1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2011_Cal_Futures_Fall.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2011_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Celebrating ways we connect with Cal</h3><p> Cal’s alumni and friends enable the University to fulfill its mission of excellence in research, teaching, and public service and its commitment to educating students from all backgrounds and talents.</p><p> In these times of diminished state funding, Berkeley’s supporters — whether they attended Cal or not — recognize the value of this institution to California and far beyond. They give to core academic needs, including scholarships for undergraduates who might be the first in their families to attend college, fellowships for promising graduate students, and endowed chairs for remarkable faculty members who cultivate the next generation of scholars.</p><p> Our donors also fuel the many programs that enliven this leading public university: a world-class library system; the art and culture of Cal Performances, the Berkeley Art Museum/Pacific Film Archive, and the Phoebe Hearst Museum of Anthropology; nature and abundance at the Botanical Garden; Berkeley spirit through intercollegiate and intramural athletics; groundbreaking research from the biosciences to the social sciences — and so much more.</p><p> In this issue of Cal Futures, we share two stories of donors who give to what moves them most and, in so doing, support Cal’s incredible bounty of people and programs.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2011
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2011_cal_futures_spring/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2011_Cal_Futures_Spring-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2011_Cal_Futures_Spring.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2011_cal_futures_spring/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Believing in Cal’s students Building the dream</h3><p> The stories of our Berkeley alumni can summon the boom of the cannon, the smell of freshly cut grass on Memorial Glade, the sight of the sun setting behind the Golden Gate — the familiar elements of&nbsp; the Cal experience. In this issue of Cal Futures, we are pleased to share two of these evocative stories about alumni who invested their energy and talents at Berkeley, achieved success, and continued to give back. Robert O. Briggs ’51 led the Cal Band for nearly a quarter of a century, wielding his baton with an understated grace and&nbsp; connecting with students like few others.</p><p> Awtar Singh Ph.D. ’66 was an up-and-coming engineer from India who found his calling and his home in California. Using their retirement plans, both Briggs and Singh supported their alma mater and the generations of students who will share and cultivate Cal’s spirit.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2010
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2010_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2010_Cal_Futures_Fall-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2010_Cal_Futures_Fall.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2010_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Our Berkeley Faculty: Educating, Inspiring, Innovating</h3><p> “Brilliant faculty exert a powerful gravitational force. They inspire young minds, influence their trajectories, and catapult thought to places no one could have imagined. Our stellar faculty are at the center of Berkeley’s far-reaching universe.”</p><p> — Chancellor Robert J. Birgeneau</p><p><br> UC Berkeley’s faculty is a force of more than 2,000 men and women charged with taking on the most significant questions of our times — with pen or microscope, persistent study or spectacular revelation. They are called to be exceptional thinkers, researchers, teachers, and mentors.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Winter 2010
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2010_cal_futures_spring/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2011_Cal_Futures_Winter-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2010_Cal_Futures_Winter.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2010_cal_futures_spring/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Investing in the Future: Our Cal Students</h3><p> For those who remember when UC Berkeley was practically free and rent near campus was affordable, it’s hard to fathom that a Cal education with living expenses will cost about $31,000 next fall. The economy and rising college fees are putting new stresses on students who are forced to cobble together grants, loans,&nbsp; scholarships, and part-time jobs to make ends meet.</p><p> More than 70 percent of our undergraduates receive some form of financial aid and halfway through this academic year, hundreds of additional students made urgent appeals for support. One third of our undergraduates come from families making less than $45,000 per year — a number that is up 11 percent this year as 900&nbsp; additional families dropped into that low-income bracket.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2009
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2009_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2009_Cal_Futures_Fall-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2009_Cal_Futures_Fall.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2009_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>A Message from Chancellor Robert J. Birgeneau</h3><p> As I mark my fifth anniversary as Chancellor of UC Berkeley this fall, I am extremely gratified by the opportunity to serve this great&nbsp; university and its generations of loyal alumni. It is true that I have been fortunate in my career to teach at many remarkable&nbsp; universities including Oxford, MIT, Yale, and Toronto, but as I have&nbsp; said on more than one occasion: My only regret is that I did not come here sooner!</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2009
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2009_cal_futures_spring_20110307_201531/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2009_Cal_Futures_Spring-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2009_Cal_Futures_Spring.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2009_cal_futures_spring_20110307_201531/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Deep connections to Cal giving back and staying involved</h3><p> In this issue of Cal Futures, we share two unique and compelling stories of people whose love of Berkeley runs deep and is born of&nbsp; layered connections to the campus. Here is the story of a young&nbsp; Chinese student, the oldest son of the oldest son, who arrived in Berkeley with high expectations and a pressure to succeed, just as his uncles and aunts had succeeded at Cal in the decades before. And then the story of a man who came to Berkeley as a young,&nbsp; innovative professor, who made his mark as a sociologist in the field of architecture over two decades, and continued to give back to the University as a beloved vice chancellor.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2008
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2008_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2008_Cal_Futures_Fall-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2008_Cal_Futures_Fall.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2008_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Differing gifts, a common goal</h3><p> Planned gifts play an important role in keeping a Berkeley education accessible to talented students, enabling cutting-edge research, and supporting the University’s all-around excellence. In this issue of Cal Futures, we share with you three stories illustrating how very different types of planned gifts are directly benefiting and furthering&nbsp; the work of a Cal undergraduate, senior professor, and graduate&nbsp; student. We are delighted to introduce you not only to these three exceptional individuals, but also to the equally exceptional donors&nbsp; whose generosity has made these success stories possible.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2008
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2008_cal_futures_spring/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2008_Cal_Futures_Spring-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2008_Cal_Futures_Spring.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2008_cal_futures_spring/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Partners in Life and Philanthropy</h3><p> UC Berkeley is a dynamic institution that thrives from the support of steadfast friends and alumni. This type of support can take many&nbsp; forms, including lasting gifts made in wills and living trusts to benefit the University. These bequests not only play a vital role in the ongoing excellence of Berkeley, they are celebrations of the works and lives of the people who have made them. In this issue of Cal Futures, we share the stories of two such remarkable couples who, though they made their marks in different fields, were equally passionate about the search for knowledge, truth, and understanding.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2007
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2007_cal_futures_fall_20110307_201514/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2007_Cal_Futures_Fall-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2007_Cal_Futures_Fall.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2007_cal_futures_fall_20110307_201514/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Different Lives, a Love for Cal Five women’s paths to philanthropy</h3><p> This issue of Cal Futures tells the stories of five extraordinary women linked by a deep love for Cal and an equally deep&nbsp; commitment to support the University and its mission. They are, at the same time, a vivid illustration of the wonderful diversity of our Cal family — in background, experience, talents, and interests. It is this infinite variety that is one of our University’s greatest strengths.</p><p> We hope you will enjoy their stories, and find in them new reasons to stay involved with the University and take pride in your Cal family.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2007
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2007_cal_futures_spring/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2007_Cal_Futures_Spring-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2007_Cal_Futures_Spring.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2007_cal_futures_spring/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Investing in the Future of Berkeley</h3><p> Planned gifts play an important role in keeping a Berkeley education accessible to talented students, enabling cutting-edge research, and in other ways supporting the University’s all-around excellence. In this issue of Cal Futures, we share with you three stories illustrating how different types of planned gifts are directly benefiting and furthering the work of a Cal undergraduate, graduate student, and senior professor. We are delighted to be able to introduce you not only to these three exceptional individuals, but also to the equally exceptional donors whose generosity has made these success stories possible.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2006
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2006_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2006_Cal_Futures_Fall-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2006_Cal_Futures_Fall.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2006_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Year-End Tax Planning: Life Income Gifts</h3><p> For many of us, the end of the year is a time of celebration with family and friends. It is also a time to finalize annual tax planning — especially determining your charitable gifts, which are among the most flexible and effective of your taxsaving options.</p><p> For those of you who are considering supporting UC Berkeley with a year-end life income gift, the Office of Gift Planning has prepared this brief introduction.</p><p> Below, you will find descriptions of the two most popular life income gifts — charitable gift annuities and charitable remainder unitrusts — and learn how both you and Cal can benefit from these arrangements.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2006
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2006_cal_futures_spring/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2006_Cal_Futures_Spring-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2006_Cal_Futures_Spring.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2006_cal_futures_spring/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Spring Forward: Review Your Estate Plan Now</h3><p> The coming of warmer weather, longer days, and tax time creates an ideal opportunity for an important activity — reviewing and possibly modifying your estate plan to make sure it most effectively serves your philanthropic, financial, and personal goals. For those of you who have not yet made an estate plan, spring is also an excellent time for beginning this crucial task.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2005
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2005_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2005_Cal_Futures_Fall-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2005_Cal_Futures_Fall.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2005_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Charitable Remainder Unitrusts: A Gift to Cal, Lifetime Income for You</h3><p> Many alumni and friends of UC Berkeley want to financially support the University in its mission of teaching, research, and public service — but are unsure if making a substantial gift to Cal would still allow them to achieve their personal financial goals. If you are in this group, ask yourself the following questions:</p>
+              <ul>
+               <li> Are you ready to sell your residence or vacation home, but dread paying the large capital gains tax that would be due at the time of the sale?</li>
+               <li> Is your real estate investment partnership terminating, or do you want to sell other investment property and cannot find a suitable “1031 exchange”?</li>
+               <li> Do you want to receive additional income from assets that currently produce too little income?</li>
+              </ul></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2004
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2004_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2004_Cal_Futures_Fall-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2004_Cal_Futures_Fall.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2004_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Charitable Gift Annuities: Support Cal and Support Yourself</h3><p> The charitable gift annuity is one of Cal’s most popular gift plans — and for good reason. With interest rates near an all-time low, many people are dissatisfied with the returns they are receiving on fixed income investments such as certificates of deposit and corporate<br> bonds. The gift annuity provides an attractive alternative, with payment rates ranging from 5.5 percent to 11.3 percent, depending upon the number and age of the annuitants. Because the payments for gift annuities are fixed, they are not vulnerable to stock market fluctuations or changes in the economy, which appeals to those who<br> prefer a fixed sum for life.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Spring 2004
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2004_cal_futures_spring/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2004_Cal_Futures_Spring-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2004_Cal_Futures_Spring.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2004_cal_futures_spring/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Leave a Personal Legacyat Cal through Your Estate</h3><p> From Cal’s earliest years, the support of alumni and friends has played an indispensable role in promoting the University’s growth and continued excellence — in teaching, research, and public service. Today, this philanthropic tradition remains strong, with Cal receiving nearly$164 million in private gifts in 2002–03</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+         <div>
+          <div class="views-field-title">
+           <em>Cal Futures</em> Fall 2003
+          </div>
+          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+           <tbody>
+            <tr>
+             <td style="vertical-align: top;"><p><a href="http://issuu.com/shawnm/docs/2003_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu"><img alt="" src="/lib/images/cfthmb_2003_Cal_Futures_Fall-1.jpg" class="cf-img-thumb" title="Read online"></a></p><p class="rtecenter"><a href="/lib/documents/2003_Cal_Futures_Fall.pdf">Download PDF</a></p><p class="rtecenter"><a href="http://issuu.com/shawnm/docs/2003_cal_futures_fall/?mode=embed&amp;layout=http%3A%2F%2Fskin.issuu.com%2Fv%2Flight%2Flayout.xml&amp;showFlipBtn=true" rel="issuu">Read online</a></p></td>
+             <td class="cf-txt" style="vertical-align: top;"><h3>Art and Social Conscience</h3><p> Growing up in Tennessee in the 1930s, Frank Hamilton spent his childhood in a world of social divisions — and divisiveness. But the view he developed was a very different one, distilled from the examples of quiet, everyday heroism he observed in his family and community.</p></td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+        </div> <!-- /.view-content -->
+       </div> <!-- /.view-calfutures-archives -->
+      </div> <!-- /#content-area -->
+     </div> <!-- /#content-inner -->
+     <div id="sidebar-second" class="column sidebar second">
+      <div id="sidebar-second-inner" class="inner">
+       <div id="block-block-3" class="block block-block block-right block-id-29 clearfix odd">
+        <div class="block-inner">
+         <div class="content">
+          <p><a href="/"><img alt="Receive CalFutures electronically image" src="/lib/images/site_images/cal-futures-go-green_flat.png" style="width: 200px; height: 200px;"></a></p>
+         </div>
+        </div><!-- /block-inner -->
+       </div><!-- /block -->
+       <div id="block-block-2" class="block block-block block-right block-id-28 clearfix even">
+        <div class="block-inner">
+         <div class="content">
+          <h3><em>Cal Futures</em> Archive</h3>
+          <p><a href="/archives">View past issues of<em> Cal Futures</em></a></p>
+         </div>
+        </div><!-- /block-inner -->
+       </div><!-- /block -->
+       <div id="block-block-4" class="block block-block block-right block-id-30 clearfix odd">
+        <div class="block-inner">
+         <div class="content">
+          <p><a href="https://planyourlegacy.berkeley.edu/"><img alt="" src="/lib/images/site_images/OOGP.gif"></a></p>
+          <p>Visit the Office of Gift Planning's website where you can answer Three Quick Questions to find which type of planned gift may be right for you.</p>
+          <p class="rtecenter"><a href="https://planyourlegacy.berkeley.edu/three-quick-questions" rel="issuu"><img alt="" src="/lib/images/Quiz.jpg" style="width: 250px; height: 182px;"></a></p>
+          <p>More:<br> <a href="https://planyourlegacy.berkeley.edu/">https://planyourlegacy.berkeley.edu/</a><br></p>
+         </div>
+        </div><!-- /block-inner -->
+       </div><!-- /block -->
+      </div> <!-- /.sidebar-second-inner -->
+     </div><!-- /#sidebar-second -->
+    </div> <!-- /#content -->
+   </div> <!-- /#main -->
+   <footer>
+    <div class="ucop" style="font-size: .85rem; padding-bottom: 1.5rem; text-align: center;"><a target="_blank" href="https://dac.berkeley.edu/web-accessibility">Accessibility</a> | <a target="_blank" href="https://ophd.berkeley.edu/policies-and-procedures/nondiscrimination-policy-statement">Nondiscrimination</a> | <a target="_blank" href="https://security.berkeley.edu/policy/privacy-statement-uc-berkeley-websites">Privacy</a>
+    </div>
+   </footer>
+  </div><!-- /page -->
+  <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2480601-45', 'auto');
+  ga('send', 'pageview');
+
+</script>
+ </body>
+</html>

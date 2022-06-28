@@ -1,0 +1,985 @@
+<!doctype html><!--[if IEMobile 7]><html class="iem7"  lang="en" dir="ltr"><![endif]--><!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7"  lang="en" dir="ltr"><![endif]--><!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8"  lang="en" dir="ltr"><![endif]--><!--[if IE 8]><html class="lt-ie9"  lang="en" dir="ltr"><![endif]--><!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile# video: http://ogp.me/ns/video# product: http://ogp.me/ns/product# content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+ <!--<![endif]-->
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"eb60764641",applicationID:"374286"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <link rel="shortcut icon" href="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/favicon.ico" type="image/gif">
+  <meta name="generator" content="Drupal 7 (https://www.drupal.org)">
+  <link rel="canonical" href="https://www.econ.berkeley.edu/">
+  <link rel="shortlink" href="https://www.econ.berkeley.edu/">
+  <meta property="og:site_name" content="Department of Economics">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.econ.berkeley.edu/">
+  <meta property="og:title" content="Department of Economics">
+  <meta property="og:description" content="University of California, Berkeley">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.econ.berkeley.edu/">
+  <meta name="twitter:title" content="Department of Economics">
+  <meta name="twitter:description" content="University of California, Berkeley">
+  <title>Department of Economics | University of California, Berkeley</title>
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="cleartype" content="on">
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="/sites/all/themes/econ_2015/favicon.ico?v=2">
+  <style>
+@import url("https://www.econ.berkeley.edu/modules/system/system.base.css?rcx8ns");
+</style>
+  <style>
+@import url("https://www.econ.berkeley.edu/sites/all/modules/views_slideshow/views_slideshow.css?rcx8ns");
+</style>
+  <style>
+@import url("https://www.econ.berkeley.edu/modules/book/book.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/calendar/css/calendar_multiday.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/modules/comment/comment.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/date/date_api/date.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/date/date_popup/themes/datepicker.1.7.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/date/date_repeat_field/date_repeat_field.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/modules/field/theme/field.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/modules/node/node.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/office_hours/office_hours.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/modules/search/search.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/modules/user/user.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/extlink/extlink.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/views/css/views.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/media/modules/media_wysiwyg/css/media_wysiwyg.base.css?rcx8ns");
+</style>
+  <style>
+@import url("https://www.econ.berkeley.edu/sites/all/modules/ctools/css/ctools.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/ldap/ldap_servers/ldap_servers.admin.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/panels/css/panels.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/biblio/biblio.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/themes/econ_2015/panels-layouts/twocol_bricks_bootstrap/twocol_bricks_bootstrap.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/views_slideshow/contrib/views_slideshow_cycle/views_slideshow_cycle.css?rcx8ns");
+</style>
+  <style>
+@import url("https://www.econ.berkeley.edu/sites/all/themes/econ_2015/css/styles.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/vendor/select2/select2.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/themes/econ_2015/css/additional_styles.css?rcx8ns");
+</style>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/jquery_update/replace/jquery/1.8/jquery.min.js?v=1.8.3"></script>
+  <script src="https://www.econ.berkeley.edu/misc/jquery-extend-3.4.0.js?v=1.8.3"></script>
+  <script src="https://www.econ.berkeley.edu/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.8.3"></script>
+  <script src="https://www.econ.berkeley.edu/misc/jquery.once.js?v=1.2"></script>
+  <script src="https://www.econ.berkeley.edu/misc/drupal.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/jquery_update/replace/ui/external/jquery.cookie.js?v=67fb34f6a866c40d0570"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/jquery_update/replace/misc/jquery.form.min.js?v=2.69"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/views_slideshow/js/views_slideshow.js?v=1.0"></script>
+  <script src="https://www.econ.berkeley.edu/misc/ajax.js?v=7.90"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/jquery_update/js/jquery_update.js?v=0.0.1"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/spamspan/spamspan.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/extlink/extlink.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/views/js/base.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/misc/progress.js?v=7.90"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/views/js/ajax_view.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/libraries/json2/json2.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/libraries/jquery.cycle/jquery.cycle.all.min.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/views_slideshow/contrib/views_slideshow_cycle/js/views_slideshow_cycle.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/misc/form.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/misc/collapse.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/google_analytics/googleanalytics.js?rcx8ns"></script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-32626458-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/vendor/waypoints.min.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/vendor/jquery.touchSwipe.min.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/vendor/matchHeight/jquery.matchHeight-min.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/vendor/select2/select2.min.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/vendor/ScrollToFixed/jquery-scrolltofixed-min.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/vendor/jquery.expander.min.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/affix.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/alert.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/button.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/carousel.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/collapse.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/dropdown.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/modal.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/tooltip.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/popover.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/scrollspy.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/tab.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/transition.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/script.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/mobile-menu.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/views_slideshow_swipe.js?rcx8ns"></script>
+  <script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"econ_2015","theme_token":"75O-JDn3hMAO7aAZ0k7KQJ3vTHHQ-IXVm7ig-tkKmU4","jquery_version":"1.8","js":{"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.8\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"sites\/all\/modules\/views_slideshow\/js\/views_slideshow.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/spamspan\/spamspan.js":1,"sites\/all\/modules\/extlink\/extlink.js":1,"sites\/all\/modules\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/views\/js\/ajax_view.js":1,"sites\/all\/libraries\/json2\/json2.js":1,"sites\/all\/libraries\/jquery.cycle\/jquery.cycle.all.min.js":1,"sites\/all\/modules\/views_slideshow\/contrib\/views_slideshow_cycle\/js\/views_slideshow_cycle.js":1,"misc\/form.js":1,"misc\/collapse.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/themes\/econ_2015\/js\/vendor\/waypoints.min.js":1,"sites\/all\/themes\/econ_2015\/js\/vendor\/jquery.touchSwipe.min.js":1,"sites\/all\/themes\/econ_2015\/js\/vendor\/matchHeight\/jquery.matchHeight-min.js":1,"sites\/all\/themes\/econ_2015\/js\/vendor\/select2\/select2.min.js":1,"sites\/all\/themes\/econ_2015\/js\/vendor\/ScrollToFixed\/jquery-scrolltofixed-min.js":1,"sites\/all\/themes\/econ_2015\/js\/vendor\/jquery.expander.min.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/affix.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/alert.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/button.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/carousel.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/collapse.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/dropdown.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/modal.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/tooltip.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/popover.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/scrollspy.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/tab.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/transition.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap.js":1,"sites\/all\/themes\/econ_2015\/js\/script.js":1,"sites\/all\/themes\/econ_2015\/js\/mobile-menu.js":1,"sites\/all\/themes\/econ_2015\/js\/views_slideshow_swipe.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/views_slideshow\/views_slideshow.css":1,"modules\/book\/book.css":1,"sites\/all\/modules\/calendar\/css\/calendar_multiday.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/office_hours\/office_hours.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/extlink\/extlink.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/media\/modules\/media_wysiwyg\/css\/media_wysiwyg.base.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/biblio\/biblio.css":1,"sites\/all\/themes\/econ_2015\/panels-layouts\/twocol_bricks_bootstrap\/twocol_bricks_bootstrap.css":1,"sites\/all\/modules\/views_slideshow\/contrib\/views_slideshow_cycle\/views_slideshow_cycle.css":1,"sites\/all\/themes\/econ_2015\/system.menus.css":1,"sites\/all\/themes\/econ_2015\/system.messages.css":1,"sites\/all\/themes\/econ_2015\/system.theme.css":1,"sites\/all\/themes\/econ_2015\/css\/styles.css":1,"sites\/all\/themes\/econ_2015\/css\/wysiwyg.css":1,"sites\/all\/themes\/econ_2015\/js\/vendor\/select2\/select2.css":1,"sites\/all\/themes\/econ_2015\/css\/additional_styles.css":1}},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:3b0ba5291efbac3a13783df1f8689456":{"view_name":"news_and_announcements","view_display_id":"block","view_args":"","view_path":"home","view_base_path":"news","view_dom_id":"3b0ba5291efbac3a13783df1f8689456","pager_element":0},"views_dom_id:4a1ebd97796bb77662dd85467205383f":{"view_name":"news_and_announcements","view_display_id":"block_2","view_args":"","view_path":"home","view_base_path":"research-teaching","view_dom_id":"4a1ebd97796bb77662dd85467205383f","pager_element":0},"views_dom_id:fc61b5f0230e30560d89afd642e3e2d0":{"view_name":"events_calendar","view_display_id":"block_4","view_args":"","view_path":"home","view_base_path":"calendar-node-field-event-time\/month","view_dom_id":"fc61b5f0230e30560d89afd642e3e2d0","pager_element":0}}},"urlIsAjaxTrusted":{"\/views\/ajax":true,"\/":true},"viewsSlideshow":{"publications-block_1":{"methods":{"goToSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"nextSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"pause":["viewsSlideshowControls","viewsSlideshowCycle"],"play":["viewsSlideshowControls","viewsSlideshowCycle"],"previousSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"transitionBegin":["viewsSlideshowPager","viewsSlideshowSlideCounter"],"transitionEnd":[]},"paused":0},"_homepage_slideshow-panel_pane_1":{"methods":{"goToSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"nextSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"pause":["viewsSlideshowControls","viewsSlideshowCycle"],"play":["viewsSlideshowControls","viewsSlideshowCycle"],"previousSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"transitionBegin":["viewsSlideshowPager","viewsSlideshowSlideCounter"],"transitionEnd":[]},"paused":0}},"viewsSlideshowPager":{"publications-block_1":{"bottom":{"type":"viewsSlideshowPagerFields"}},"_homepage_slideshow-panel_pane_1":{"top":{"type":"viewsSlideshowPagerFields"}}},"viewsSlideshowPagerFields":{"publications-block_1":{"bottom":{"activatePauseOnHover":0}},"_homepage_slideshow-panel_pane_1":{"top":{"activatePauseOnHover":0}}},"viewsSlideshowCycle":{"#views_slideshow_cycle_main_publications-block_1":{"num_divs":12,"id_prefix":"#views_slideshow_cycle_main_","div_prefix":"#views_slideshow_cycle_div_","vss_id":"publications-block_1","effect":"fade","transition_advanced":1,"timeout":4000,"speed":700,"delay":0,"sync":1,"random":1,"pause":0,"pause_on_click":0,"play_on_hover":0,"action_advanced":1,"start_paused":0,"remember_slide":0,"remember_slide_days":1,"pause_in_middle":0,"pause_when_hidden":0,"pause_when_hidden_type":"full","amount_allowed_visible":"","nowrap":0,"fixed_height":1,"items_per_slide":1,"wait_for_image_load":1,"wait_for_image_load_timeout":1000,"cleartype":0,"cleartypenobg":0,"advanced_options":"{}"},"#views_slideshow_cycle_main__homepage_slideshow-panel_pane_1":{"num_divs":3,"id_prefix":"#views_slideshow_cycle_main_","div_prefix":"#views_slideshow_cycle_div_","vss_id":"_homepage_slideshow-panel_pane_1","effect":"fade","transition_advanced":1,"timeout":10000,"speed":700,"delay":0,"sync":1,"random":0,"pause":1,"pause_on_click":1,"play_on_hover":0,"action_advanced":1,"start_paused":0,"remember_slide":0,"remember_slide_days":1,"pause_in_middle":0,"pause_when_hidden":0,"pause_when_hidden_type":"full","amount_allowed_visible":"","nowrap":0,"fixed_height":1,"items_per_slide":1,"wait_for_image_load":1,"wait_for_image_load_timeout":10000,"cleartype":0,"cleartypenobg":0,"advanced_options":"{\u0022after\u0022:\u0022afterSlideCallback(currSlideElement, nextSlideElement, options, forwardFlag)\u0022,\u0022before\u0022:\u0022beforeSlideCallback(currSlideElement, nextSlideElement, options, forwardFlag)\u0022}","advanced_options_choices":0,"advanced_options_entry":""}},"extlink":{"extTarget":"_blank","extClass":"ext","extLabel":"(link is external)","extImgClass":0,"extSubdomains":1,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends e-mail)"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"}});</script><!--[if lt IE 9]>
+    <script src="/sites/all/themes/zen/js/html5-respond.js"></script>
+    <![endif]-->
+ </head>
+ <body class="html front not-logged-in no-sidebars page-home page-panels">
+  <p id="skip-link"><a href="#main-menu" class="element-invisible element-focusable">Jump to navigation</a></p>
+  <div class="region region-top-notification">
+   <div id="block-block-140" class="block block-block first last odd">
+    <div class="block-content">
+     <div class="emergency-notification">
+      <p align="center" style="background-color:#C4820E; padding: 10px; width: 100% "><a style="color: #ffffff; font-size: 16px; " target="_BLANK" href="https://coronavirus.berkeley.edu/"><strong>⚠ &nbsp; </strong>Notice – Updates on UC Berkeley's COVID-19 resources and support</a></p>
+     </div> 
+    </div>
+   </div>
+  </div>
+  <div id="page-wrap" class="top-notification-active">
+   <header class="header" id="header" role="banner">
+    <div class="header-wrapper-bg container">
+     <div class="region region-before-header">
+      <div id="block-menu-menu-social-media-menu" class="block block-menu first odd" role="navigation">
+       <div class="block-content">
+        <ul class="menu">
+         <li class="menu__item is-leaf first leaf"><a href="https://www.facebook.com/Department-of-Economics-University-of-California-Berkeley-955970441116468" class="menu__link facebook" target="_blank">Facebook</a></li>
+         <li class="menu__item is-leaf leaf"><a href="https://twitter.com/berkeleyecon" class="menu__link twitter" target="_blank">Twtitter</a></li>
+         <li class="menu__item is-leaf leaf"><a href="https://www.instagram.com/cal_econadvising/" class="menu__link instagram" target="_blank">Instagram</a></li>
+         <li class="menu__item is-leaf last leaf"><a href="https://www.linkedin.com/groups/2043330/" class="menu__link linkedin" target="_blank">Linkedin</a></li>
+        </ul> 
+       </div>
+      </div>
+      <div id="block-search-form" class="block block-search last even" role="search">
+       <div class="block-content">
+        <form action="/" method="post" id="search-block-form" accept-charset="UTF-8">
+         <div>
+          <div class="container-inline">
+           <h2 class="element-invisible">Search form</h2>
+           <div class="form-item form-type-textfield form-item-search-block-form"><label class="element-invisible" for="edit-search-block-form--2">Search </label>
+            <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+           </div>
+           <div class="form-actions form-wrapper" id="edit-actions">
+            <input type="submit" id="edit-submit" name="op" value="Search" class="form-submit">
+           </div>
+           <input type="hidden" name="form_build_id" value="form-fO5Z6e_4DICbCk-SgBD9HL6N8KMDEusgjZBaxDltebI">
+           <input type="hidden" name="form_id" value="search_block_form">
+          </div>
+         </div>
+        </form> 
+       </div>
+      </div>
+     </div>
+     <div class="header-wrapper-fixed"><a href="/" title="Home" rel="home" class="header--logo" id="logo"><img src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/logo.png" alt="Home" class="header--logo-image"></a>
+     </div>
+     <div class="header-wrapper-nav">
+      <div id="navigation">
+       <div class="header__region region region-header">
+        <div id="block-menu-block-2" class="block block-menu-block first last odd" role="navigation">
+         <div class="block-content">
+          <div class="menu-block-wrapper menu-block-2 menu-name-main-menu parent-mlid-0 menu-level-1">
+           <ul class="menu">
+            <li class="menu__item is-expanded first expanded menu-mlid-1225"><a href="/about-us" class="menu__link">About</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-1226"><a href="/about-us" title="" class="menu__link">About Us</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-9899"><a href="/women-history" class="menu__link">History of Women Faculty in Economics</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-1227"><a href="/about-us/chairs-and-managers" class="menu__link">Chairs &amp; Managers</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-1646"><a href="/about-us/staff" class="menu__link">Staff</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-1229"><a href="/about-us/research-centers" class="menu__link">Research Centers</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-5158"><a href="/newsletter-old" class="menu__link">E-newsletter Signup</a></li>
+              <li class="menu__item is-leaf is-parent last leaf has-children menu-mlid-1175"><a href="/resources" class="menu__link">Resources</a></li>
+             </ul></li>
+            <li class="menu__item is-expanded expanded menu-mlid-7793"><a href="/news" class="menu__link">News</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-7794"><a href="/events" class="menu__link">Events</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-7804"><a href="/stories-interviews" class="menu__link">Newsroom </a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-7795"><a href="/newsletter" class="menu__link">Newsletter</a></li>
+              <li class="menu__item is-leaf last leaf menu-mlid-5051"><a href="/publications" class="menu__link">Publications</a></li>
+             </ul></li>
+            <li class="menu__item is-expanded expanded menu-mlid-5052"><a href="/faculty" title="List of Faculty" class="menu__link">Faculty</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-3177"><a href="/faculty" title="" class="menu__link">Faculty Profiles</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-3221"><a href="/faculty/emeritus" title="List of Emeritus Faculty" class="menu__link">Emeritus</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-3061"><a href="/faculty/visiting-and-affiliates" title="Visiting Faculty &amp; Affiliates 2011-2012" class="menu__link">Affiliates</a></li>
+              <li class="menu__item is-leaf last leaf menu-mlid-9530"><a href="/faculty/in-memoriam" title="List of Faculty In Memoriam" class="menu__link">In Memoriam</a></li>
+             </ul></li>
+            <li class="menu__item is-expanded expanded menu-mlid-763"><a href="/grad" class="menu__link">Graduate</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-664"><a href="/grad" class="menu__link">Graduate Program</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-665"><a href="/grad/admissions" class="menu__link">Admissions</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-2322"><a href="/grad/current" title="Current Graduate Students" class="menu__link">Current Students</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-3580"><a href="/grad/profiles" title="Economics Graduate Student Profiles" class="menu__link">Graduate Profiles</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-667"><a href="/grad/employment" class="menu__link">Employment</a></li>
+              <li class="menu__item is-leaf last leaf menu-mlid-7472"><a href="/grad/job-market-candidates" class="menu__link">2021-2022 Ph.D. Job Market Candidates</a></li>
+             </ul></li>
+            <li class="menu__item is-expanded expanded menu-mlid-1166"><a href="/undergrad" class="menu__link">Undergraduate</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-1167"><a href="/undergrad" class="menu__link">Undergraduate Program</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-9528"><a href="https://www.econ.berkeley.edu/undergrad/home/advising" class="menu__link">Advising</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-8769"><a href="https://www.econ.berkeley.edu/content/course-enrollment" class="menu__link">Course Enrollment</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-1169"><a href="/undergrad/prospective" class="menu__link">Prospective Majors</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-1168"><a href="/undergrad/current" class="menu__link">Current Majors</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-9898"><a href="https://www.econ.berkeley.edu/content/economics-undergraduate-student-organizations#" class="menu__link">Student Organizations</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-9529"><a href="https://www.econ.berkeley.edu/commencement" class="menu__link">Commencement</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-9527"><a href="https://www.econ.berkeley.edu/undergrad/home/tutoring" class="menu__link">Tutoring</a></li>
+              <li class="menu__item is-leaf last leaf menu-mlid-3062"><a href="/faq" class="menu__link">FAQ</a></li>
+             </ul></li>
+            <li class="menu__item is-expanded expanded menu-mlid-1170"><a href="/courses" class="menu__link">Courses</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-1171"><a href="/courses" title="" class="menu__link">Course List</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-1172"><a href="/events/seminars" class="menu__link">Seminars</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-1173"><a href="http://events.berkeley.edu/index.php/calendar/sn/econ/type/week.html" title="" class="menu__link">This Week's Seminars</a></li>
+              <li class="menu__item is-leaf last leaf menu-mlid-3405"><a href="/courses/seminars/next-week" title="Next Week's Seminars" class="menu__link">Next Week's Seminars</a></li>
+             </ul></li>
+            <li class="menu__item is-expanded expanded menu-mlid-7801"><a href="/give/why-give" class="menu__link">Give</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-7803"><a href="/give/charter-hill-society" class="menu__link">Charter Hill Society for Economics</a></li>
+              <li class="menu__item is-leaf last leaf menu-mlid-7831"><a href="/content/give-today" class="menu__link">Give today</a></li>
+             </ul></li>
+            <li class="menu__item is-leaf leaf menu-mlid-8914"><a href="/content/climate-equity-diversity-and-inclusion" class="menu__link">Climate</a></li>
+            <li class="menu__item is-expanded last expanded menu-mlid-7796"><a href="/alumni" class="menu__link">Alumni</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-7797"><a href="/alumni/network" class="menu__link">Network</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-3060"><a href="/alumni/home" class="menu__link">Submit a note</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-7798"><a href="/alumni/events" class="menu__link">Events</a></li>
+              <li class="menu__item is-leaf last leaf menu-mlid-7799"><a href="/alumni-notes" class="menu__link">Alumni Notes</a></li>
+             </ul></li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </header>
+   <div id="page">
+    <div id="contextualheader">
+    </div>
+    <div id="main">
+     <div id="main-wrapper">
+      <div id="content" class="column" role="main"><a id="main-content"></a>
+       <div class="panel-display panel-2col-bricks-bootstrap clearfix" id="homepage">
+        <div class="panel-panel panel-col-top">
+         <div class="inside">
+          <div class="panel-pane pane-views-panes pane-homepage-slideshow-panel-pane-1">
+           <div class="narrow">
+            <div class="top"></div> 
+            <div class="view view--homepage-slideshow view-id-_homepage_slideshow view-display-id-panel_pane_1 view-dom-id-08192e8a53d5bf4456adcc278907559d">
+             <div class="view-content">
+              <div class="skin-default">
+               <div class="views-slideshow-controls-top clearfix">
+                <div id="widget_pager_top__homepage_slideshow-panel_pane_1" class="views-slideshow-pager-fields widget_pager widget_pager_top views_slideshow_pager_field">
+                 <div id="views_slideshow_pager_field_item_top__homepage_slideshow-panel_pane_1_0" class="views-slideshow-pager-field-item views_slideshow_pager_field_item views-row-odd views-row-first" aria-controls="views_slideshow_cycle_div__homepage_slideshow-panel_pane_1_0">
+                  <div class="views-field-counter">
+                   <div class="views-content-counter"><a href="#slideshow-0">1</a> 
+                   </div>
+                  </div>
+                 </div>
+                 <div id="views_slideshow_pager_field_item_top__homepage_slideshow-panel_pane_1_1" class="views-slideshow-pager-field-item views_slideshow_pager_field_item views-row-even" aria-controls="views_slideshow_cycle_div__homepage_slideshow-panel_pane_1_1">
+                  <div class="views-field-counter">
+                   <div class="views-content-counter"><a href="#slideshow-1">2</a> 
+                   </div>
+                  </div>
+                 </div>
+                 <div id="views_slideshow_pager_field_item_top__homepage_slideshow-panel_pane_1_2" class="views-slideshow-pager-field-item views_slideshow_pager_field_item views-row-odd" aria-controls="views_slideshow_cycle_div__homepage_slideshow-panel_pane_1_2">
+                  <div class="views-field-counter">
+                   <div class="views-content-counter"><a href="#slideshow-2">3</a> 
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div id="views_slideshow_cycle_main__homepage_slideshow-panel_pane_1" class="views_slideshow_cycle_main views_slideshow_main">
+                <div id="views_slideshow_cycle_teaser_section__homepage_slideshow-panel_pane_1" class="views-slideshow-cycle-main-frame views_slideshow_cycle_teaser_section">
+                 <div id="views_slideshow_cycle_div__homepage_slideshow-panel_pane_1_0" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-1 views-row-odd" aria-labelledby="views_slideshow_pager_field_item_bottom__homepage_slideshow-panel_pane_1_0">
+                  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd views-row-first">
+                   <div class="views-field views-field-field-slide-image"> 
+                    <div class="field-content">
+                     <img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/Gourinchas%20%281%29.png" width="3360" height="840" alt="">
+                    </div> 
+                   </div> 
+                   <div class="views-field views-field-field-tr-slide-overlay"> 
+                    <div class="field-content"></div> 
+                   </div> 
+                   <div class="slide-overlay-content views-fieldset" data-module="views_fieldsets">
+                    <div class="slide-overlay-text-wrapper views-fieldset" data-module="views_fieldsets">
+                     <div class="slide-overlay-text views-fieldset" data-module="views_fieldsets">
+                      <div class="views-field views-field-field-title"></div> 
+                      <div class="views-field views-field-field-description"></div> 
+                     </div>
+                     <div class="views-field views-field-field-link">
+                      <div class="field-content"></div>
+                     </div> 
+                    </div>
+                   </div>
+                   <div class="views-field views-field-field-title-link"> 
+                    <div class="field-content">
+                     <a target="_BLANK" href="https://news.berkeley.edu/2022/01/10/berkeley-economist-pierre-olivier-gourinchas-named-to-high-level-imf-post/ "></a>
+                    </div> 
+                   </div>
+                  </div>
+                 </div>
+                 <div id="views_slideshow_cycle_div__homepage_slideshow-panel_pane_1_1" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-2 views_slideshow_cycle_hidden views-row-even" aria-labelledby="views_slideshow_pager_field_item_bottom__homepage_slideshow-panel_pane_1_1">
+                  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd">
+                   <div class="views-field views-field-field-slide-image"> 
+                    <div class="field-content">
+                     <img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/David%20Card%20Nobel%20Prize%20Copy%20%282%29.png" width="3360" height="840" alt="">
+                    </div> 
+                   </div> 
+                   <div class="views-field views-field-field-tr-slide-overlay"> 
+                    <div class="field-content"></div> 
+                   </div> 
+                   <div class="slide-overlay-content views-fieldset" data-module="views_fieldsets">
+                    <div class="slide-overlay-text-wrapper views-fieldset" data-module="views_fieldsets">
+                     <div class="slide-overlay-text views-fieldset" data-module="views_fieldsets">
+                      <div class="views-field views-field-field-title"></div> 
+                      <div class="views-field views-field-field-description"></div> 
+                     </div>
+                     <div class="views-field views-field-field-link">
+                      <div class="field-content"></div>
+                     </div> 
+                    </div>
+                   </div>
+                   <div class="views-field views-field-field-title-link"> 
+                    <div class="field-content">
+                     <a target="_BLANK" href="https://news.berkeley.edu/2021/10/11/watch-uc-berkeley-economist-david-cards-nobel-prize-press-conference/ "></a>
+                    </div> 
+                   </div>
+                  </div>
+                 </div>
+                 <div id="views_slideshow_cycle_div__homepage_slideshow-panel_pane_1_2" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-3 views_slideshow_cycle_hidden views-row-odd" aria-labelledby="views_slideshow_pager_field_item_bottom__homepage_slideshow-panel_pane_1_2">
+                  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd">
+                   <div class="views-field views-field-field-slide-image"> 
+                    <div class="field-content">
+                     <img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/Steinsson%20AAAS%20%283%29.png" width="1800" height="400" alt="">
+                    </div> 
+                   </div> 
+                   <div class="views-field views-field-field-tr-slide-overlay"> 
+                    <div class="field-content"></div> 
+                   </div> 
+                   <div class="slide-overlay-content views-fieldset" data-module="views_fieldsets">
+                    <div class="slide-overlay-text-wrapper views-fieldset" data-module="views_fieldsets">
+                     <div class="slide-overlay-text views-fieldset" data-module="views_fieldsets">
+                      <div class="views-field views-field-field-title"></div> 
+                      <div class="views-field views-field-field-description"></div> 
+                     </div>
+                     <div class="views-field views-field-field-link">
+                      <div class="field-content"></div>
+                     </div> 
+                    </div>
+                   </div>
+                   <div class="views-field views-field-field-title-link"> 
+                    <div class="field-content">
+                     <a target="_BLANK" href="https://news.berkeley.edu/story_jump/nine-faculty-members-elected-to-american-academy-of-arts-and-sciences/ "></a>
+                    </div> 
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="bottom"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="center-wrapper container">
+         <div class="panel-panel panel-col-first col-md-16">
+          <div class="inside">
+           <div class="panel-pane pane-views pane-news-and-announcements bg-lower height-lower">
+            <div class="narrow">
+             <div class="top"></div> 
+             <h2 class="pane-title">News and Announcements</h2>
+             <div class="view view-news-and-announcements view-id-news_and_announcements view-display-id-block view-dom-id-3b0ba5291efbac3a13783df1f8689456">
+              <div class="view-content">
+               <div class="views-row views-row-1 views-row-odd views-row-first clearfix news-row contextual-links-region">
+                <div class="views-row-container views-fieldset" data-module="views_fieldsets">
+                 <div class="views-field views-field-field-related-image">
+                  <a href="https://voxeu.org/content/blueprint-reconstruction-ukraine?utm_source=hootsuite&amp;utm_medium=&amp;utm_term=&amp;utm_content=&amp;utm_campaign="><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_news/public/images/news_or_announcement/AwardYuriy.jpeg?itok=ntnNHlEB" width="315" height="180" alt=""></a>
+                 </div> 
+                 <div class="body-news views-fieldset" data-module="views_fieldsets">
+                  <div class="views-field views-field-field-content">
+                   <div class="field-content">
+                    <p>The Centre for Economic Policy Research (CEPR) awards the Paris Symposium prize to&nbsp;Quantedge Presidential Professor of Economics&nbsp;<strong>Yuriy Gorodnichenko</strong> for Rapid Response to a policy Issue: "Prof. Gorodnichenko has been the driving force behind the recent 'Blueprint for the Reconstruction of Ukraine' book." Read the <a href="https://voxeu.org/content/blueprint-reconstruction-ukraine?utm_source=hootsuite&amp;utm_medium=&amp;utm_term=&amp;utm_content=&amp;utm_campaign=">piece</a> co-authored, among others, by Berkeley Economics&nbsp;George C. Pardee &amp; Helen N. Pardee Chair and Distinguished Professor of Economics and Political Science.</p>
+                   </div>
+                  </div> 
+                 </div>
+                </div>
+                <div class="views-field views-field-contextual-links"> <span class="field-content"></span> 
+                </div> 
+               </div>
+               <div class="views-row views-row-2 views-row-even clearfix news-row contextual-links-region">
+                <div class="views-row-container views-fieldset" data-module="views_fieldsets">
+                 <div class="views-field views-field-field-related-image">
+                  <a href="https://voxeu.org/article/figuring-out-efficient-unemployment?utm_source=hootsuite&amp;utm_medium=&amp;utm_term=&amp;utm_content=&amp;utm_campaign="><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_news/public/images/news_or_announcement/employment.jpeg?itok=2dRrUJRa" width="315" height="180" alt=""></a>
+                 </div> 
+                 <div class="body-news views-fieldset" data-module="views_fieldsets">
+                  <div class="views-field views-field-field-content">
+                   <div class="field-content">
+                    <p>In a new column, Pascal Michaillat and Emmanuel Saez&nbsp; propose a simple rule to assess whether the economy, or more precisely the labor market, is too tight or too slack: are there more job openings than there are unemployed? <a href="https://voxeu.org/article/figuring-out-efficient-unemployment?utm_source=hootsuite&amp;utm_medium=&amp;utm_term=&amp;utm_content=&amp;utm_campaign=">Read more</a></p>
+                   </div>
+                  </div> 
+                 </div>
+                </div>
+                <div class="views-field views-field-contextual-links"> <span class="field-content"></span> 
+                </div> 
+               </div>
+               <div class="views-row views-row-3 views-row-odd clearfix news-row contextual-links-region">
+                <div class="views-row-container views-fieldset" data-module="views_fieldsets">
+                 <div class="views-field views-field-field-related-image">
+                  <a href="https://realtimeinequality.org/"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_news/public/images/news_or_announcement/REaltime%20Inequality.PNG?itok=0Qugfq2J" width="315" height="180" alt=""></a>
+                 </div> 
+                 <div class="body-news views-fieldset" data-module="views_fieldsets">
+                  <div class="views-field views-field-field-content">
+                   <div class="field-content">
+                    <p>Director of the James M. and Cathleen D. Stone Center on Wealth and Income Inequality Gabriel Zucman&nbsp;and Professor Emmanuel Saez launch <a href="https://realtimeinequality.org">Realtime Equality</a>, a new website that provides real-time decompositions of GDP growth by social group. The underlying paper is available <a href="https://gabriel-zucman.eu/files/BSZ2022.pdf">here</a>.</p>
+                   </div>
+                  </div> 
+                 </div>
+                </div>
+                <div class="views-field views-field-contextual-links"> <span class="field-content"></span> 
+                </div> 
+               </div>
+               <div class="views-row views-row-4 views-row-even clearfix news-row contextual-links-region">
+                <div class="views-row-container views-fieldset" data-module="views_fieldsets">
+                 <div class="views-field views-field-field-related-image">
+                  <a href="https://ls.berkeley.edu/news/historical-confirmation-berkeley-economics-alumna-lisa-cook-becomes-first-black-woman-serve"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_news/public/images/news_or_announcement/Lisa%20Cook_0.jpg?itok=u62lhLNG" width="315" height="180" alt=""></a>
+                 </div> 
+                 <div class="body-news views-fieldset" data-module="views_fieldsets">
+                  <div class="views-field views-field-field-content">
+                   <div class="field-content">
+                    <p>Berkeley Economics PhD alumna Lisa Cook, an economics professor known for her work on racial and gender inequality, won U.S. Senate confirmation to serve on the Federal Reserve Board, making her the first Black woman to serve on the Fed board. <a href="https://ls.berkeley.edu/news/historical-confirmation-berkeley-economics-alumna-lisa-cook-becomes-first-black-woman-serve">Read more</a></p>
+                   </div>
+                  </div> 
+                 </div>
+                </div>
+                <div class="views-field views-field-contextual-links"> <span class="field-content"></span> 
+                </div> 
+               </div>
+               <div class="views-row views-row-5 views-row-odd clearfix news-row contextual-links-region">
+                <div class="views-row-container views-fieldset" data-module="views_fieldsets">
+                 <div class="views-field views-field-field-related-image">
+                  <a href="https://www.project-syndicate.org/onpoint/ukraine-debt-deferment-restructuring-by-anna-gelpern-et-al-2022-04"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_news/public/images/news_or_announcement/Ukraine%20debt.jpg?itok=lBJz-2QK" width="315" height="180" alt=""></a>
+                 </div> 
+                 <div class="body-news views-fieldset" data-module="views_fieldsets">
+                  <div class="views-field views-field-field-content">
+                   <div class="field-content">
+                    <p>"Life or Debt in Ukraine", an article by Berkeley Economics faculty members co-authors Maury Obstfeld and Yuriy Gorodnichenko, argues that Ukraine's official creditors should take the lead in deferring repayments and laying the groundwork for a debt-restructuring deal. <a href="https://www.project-syndicate.org/onpoint/ukraine-debt-deferment-restructuring-by-anna-gelpern-et-al-2022-04">Read the article</a></p>
+                   </div>
+                  </div> 
+                 </div>
+                </div>
+                <div class="views-field views-field-contextual-links"> <span class="field-content"></span> 
+                </div> 
+               </div>
+               <div class="views-row views-row-6 views-row-even views-row-last clearfix news-row contextual-links-region">
+                <div class="views-row-container views-fieldset" data-module="views_fieldsets">
+                 <div class="views-field views-field-field-related-image">
+                  <a href="https://www.t20indonesia.org/tf2/"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_news/public/images/news_or_announcement/T20%20Woroch.PNG?itok=HyhAN3uc" width="315" height="180" alt=""></a>
+                 </div> 
+                 <div class="body-news views-fieldset" data-module="views_fieldsets">
+                  <div class="views-field views-field-field-content">
+                   <div class="field-content">
+                    <p>Professor Glenn Woroch serves as co-chair of the T2, a Think Tank task force that is convened for the G20 countries. <a href="https://www.t20indonesia.org/tf2/">Read more</a>&nbsp;</p>
+                   </div>
+                  </div> 
+                 </div>
+                </div>
+                <div class="views-field views-field-contextual-links"> <span class="field-content"></span> 
+                </div> 
+               </div>
+              </div>
+              <div class="more-link"><a href="/news"> View more </a>
+              </div>
+             </div>
+             <div class="bottom"></div>
+            </div>
+           </div>
+           <div class="panel-pane pane-views pane-news-and-announcements">
+            <div class="narrow">
+             <div class="top"></div> 
+             <h2 class="pane-title">Research and Teaching</h2>
+             <div class="view view-news-and-announcements view-id-news_and_announcements view-display-id-block_2 view-display-id-block view-dom-id-4a1ebd97796bb77662dd85467205383f">
+              <div class="view-content">
+               <div class="views-row views-row-1 views-row-odd views-row-first clearfix news-row contextual-links-region">
+                <div class="views-row-container views-fieldset" data-module="views_fieldsets">
+                 <div class="views-field views-field-field-related-image">
+                  <a href="https://academic.oup.com/qje/article-abstract/136/1/169/5905427?redirectedFrom=fulltext"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_news/public/images/news_or_announcement/Quarterly%20Cover.png?itok=TQxb4Sh-" width="315" height="180" alt=""></a>
+                 </div> 
+                 <div class="body-news views-fieldset" data-module="views_fieldsets">
+                  <div class="views-field views-field-field-content">
+                   <div class="field-content">
+                    <p>A new article by by Ellora Derenoncourt, Claire Montialoux, published in the&nbsp;The Quarterly Journal of Economics, February 202.&nbsp;Minimum Wages and Racial Inequality. The earnings difference between white and black workers fell dramatically in the United States in the late 1960s and early 1970s. This article shows that the expansion of the minimum wage played a critical role in this decline. <a href="https://academic.oup.com/qje/article-abstract/136/1/169/5905427?redirectedFrom=fulltext">Read more</a></p>
+                   </div>
+                  </div> 
+                 </div>
+                </div>
+                <div class="views-field views-field-contextual-links"> <span class="field-content"></span> 
+                </div> 
+               </div>
+               <div class="views-row views-row-2 views-row-even clearfix news-row contextual-links-region">
+                <div class="views-row-container views-fieldset" data-module="views_fieldsets">
+                 <div class="views-field views-field-field-related-image">
+                  <a href="http://gabriel-zucman.eu/files/CSZ2020.pdf"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_news/public/images/news_or_announcement/Corporate%20Tax.png?itok=yuohXhhw" width="315" height="180" alt=""></a>
+                 </div> 
+                 <div class="body-news views-fieldset" data-module="views_fieldsets">
+                  <div class="views-field views-field-field-content">
+                   <div class="field-content">
+                    <p>New paper by Kimberly Clausing, Emmanuel Saez, and Gabriel Zucman: Ending corporate tax avoidance and tax competition: a plan to collect the tax deficit of multinationals. <a href="http://gabriel-zucman.eu/files/CSZ2020.pdf">Read the paper</a></p>
+                   </div>
+                  </div> 
+                 </div>
+                </div>
+                <div class="views-field views-field-contextual-links"> <span class="field-content"></span> 
+                </div> 
+               </div>
+               <div class="views-row views-row-3 views-row-odd clearfix news-row contextual-links-region">
+                <div class="views-row-container views-fieldset" data-module="views_fieldsets">
+                 <div class="views-field views-field-field-related-image">
+                  <a href="https://www.nber.org/papers/w24634"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_news/public/images/news_or_announcement/EmmanuelSaez022-Edit_0.jpg?itok=yINECzqJ" width="315" height="180" alt=""></a>
+                 </div> 
+                 <div class="body-news views-fieldset" data-module="views_fieldsets">
+                  <div class="views-field views-field-field-content">
+                   <div class="field-content">
+                    <p>A new paper by Isabel Z. Martinez, Emmanuel Saez, and Michael Siegenthaler estimates intertemporal labor supply responses to two-year long income tax holidays staggered across Swiss cantons. <a href="https://www.nber.org/papers/w24634">Read more</a></p>
+                   </div>
+                  </div> 
+                 </div>
+                </div>
+                <div class="views-field views-field-contextual-links"> <span class="field-content"></span> 
+                </div> 
+               </div>
+               <div class="views-row views-row-4 views-row-even clearfix news-row contextual-links-region">
+                <div class="views-row-container views-fieldset" data-module="views_fieldsets">
+                 <div class="views-field views-field-field-related-image">
+                  <a href="https://www.cambridge.org/core/books/promoting-global-monetary-and-financial-stability/F14EAAC17A0D7130A9983BBF12C2C305"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_news/public/images/news_or_announcement/promoting%20book%20Eichengreen.jpg?itok=P7Y3Jcgh" width="315" height="180" alt=""></a>
+                 </div> 
+                 <div class="body-news views-fieldset" data-module="views_fieldsets">
+                  <div class="views-field views-field-field-content">
+                   <div class="field-content">
+                    <p>Through analysis of the Band for International Settlements (BIS) Annual Economic Reports, Professor Barry Eichengreen traces the BIS’s views on exchange rates, capital flows and financial cycles in a new book. <a href="https://www.cambridge.org/core/books/promoting-global-monetary-and-financial-stability/F14EAAC17A0D7130A9983BBF12C2C305">Read more</a></p>
+                   </div>
+                  </div> 
+                 </div>
+                </div>
+                <div class="views-field views-field-contextual-links"> <span class="field-content"></span> 
+                </div> 
+               </div>
+               <div class="views-row views-row-5 views-row-odd clearfix news-row contextual-links-region">
+                <div class="views-row-container views-fieldset" data-module="views_fieldsets">
+                 <div class="views-field views-field-field-related-image">
+                  <a href="https://voxdev.org/topic/finance/alleviating-financial-strain-drive-productivity-evidence-india"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_news/public/images/news_or_announcement/India%20research.PNG?itok=CzH2rALd" width="315" height="180" alt=""></a>
+                 </div> 
+                 <div class="body-news views-fieldset" data-module="views_fieldsets">
+                  <div class="views-field views-field-field-content">
+                   <div class="field-content">
+                    <p>An innovative experiment in rural India targeted alleviating financial stress on short-term workers and fascinatingly, found a substantial increase in productivity for workers who have their financial strain eased by receiving part of their salary mid-way through their contract. By Berkeley Economics Professor Supreet Kaur. <a href="https://voxdev.org/topic/finance/alleviating-financial-strain-drive-productivity-evidence-india">Read more</a></p>
+                   </div>
+                  </div> 
+                 </div>
+                </div>
+                <div class="views-field views-field-contextual-links"> <span class="field-content"></span> 
+                </div> 
+               </div>
+               <div class="views-row views-row-6 views-row-even views-row-last clearfix news-row contextual-links-region">
+                <div class="views-row-container views-fieldset" data-module="views_fieldsets">
+                 <div class="views-field views-field-field-related-image">
+                  <a href="https://news.berkeley.edu/story_jump/american-academy-of-arts-sciences-2019/"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_news/public/images/news_or_announcement/AAASFrame750.jpg?itok=3fctMBgX" width="315" height="180" alt=""></a>
+                 </div> 
+                 <div class="body-news views-fieldset" data-module="views_fieldsets">
+                  <div class="views-field views-field-field-content">
+                   <div class="field-content">
+                    <p>We're proud to share that Berkeley Economics professors Emi Nakamura and Chris Shannon were elected to join The American Academy of Arts and Sciences,&nbsp;which recognizes the outstanding achievements of individuals in academia, the arts, business, government,and public affairs. Congratulations! <a href="https://news.berkeley.edu/story_jump/american-academy-of-arts-sciences-2019/">To learn more about their work and of all UC Berkeley faculty members elected, read more</a>.</p>
+                   </div>
+                  </div> 
+                 </div>
+                </div>
+                <div class="views-field views-field-contextual-links"> <span class="field-content"></span> 
+                </div> 
+               </div>
+              </div>
+              <div class="more-link"><a href="/research-teaching"> View more </a>
+              </div>
+             </div>
+             <div class="bottom"></div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="panel-panel panel-col-last col-md-8">
+          <div class="inside">
+           <div class="panel-pane pane-views pane-featured-content">
+            <div class="narrow">
+             <div class="top"></div> 
+             <h2 class="pane-title">FEATURED ARTICLE</h2>
+             <div class="view view--featured-content view-id-_featured_content view-display-id-default view-dom-id-ea916237d09944432edc5c2f0fcb357a">
+              <div class="view-content">
+               <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+                <div class="views-field views-field-field-related-image"> 
+                 <div class="field-content">
+                  <a href="/content/mathilde-mu%C3%B1oz-joins-berkeley-economics"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_news/public/Interview%20Mathilde%20Munoz_0.png?itok=ofEcedfj" width="315" height="180" alt=""></a>
+                 </div> 
+                </div> 
+                <div class="bottom views-fieldset" data-module="views_fieldsets">
+                 <div class="views-field views-field-title">
+                  <span class="field-content"><a href="/content/mathilde-mu%C3%B1oz-joins-berkeley-economics">Mathilde Muñoz joins Berkeley Economics </a></span>
+                 </div> 
+                 <div class="views-field views-field-field-content">
+                  <div class="field-content">
+                   Mathilde Muñoz will join Berkeley’s Economics Department as an Assistant Professor in 2023, after spending the 2022-2023 academic year as a Post-Doctoral fellow at The James M. and Cathleen D. Stone Center on Wealth and Income Inequality at UC Berkeley. In this interview, PhD student Cristóbal Otero welcomes Dr. Muñoz to the department with an interview about her work.
+                  </div>
+                 </div> 
+                </div>
+               </div>
+              </div>
+              <div class="view-footer">
+               <div class="more-link"><a href="/stories-interviews">View newsroom </a>
+               </div> 
+              </div>
+             </div>
+             <div class="bottom"></div>
+            </div>
+           </div>
+           <div class="panel-pane pane-views pane-events-calendar bg-lower height-lower">
+            <div class="narrow">
+             <div class="top"></div> 
+             <h2 class="pane-title">Upcoming Events</h2>
+             <div class="view view-events-calendar view-id-events_calendar view-display-id-block_4 view-dom-id-fc61b5f0230e30560d89afd642e3e2d0">
+              <div class="view-empty">
+               <p>There are no events scheduled for the next 30 days.</p>
+              </div>
+             </div>
+             <div class="bottom"></div>
+            </div>
+           </div>
+           <div class="panel-pane pane-block pane-block-136 pane-block">
+            <div class="narrow">
+             <div class="top"></div> 
+             <div class="more-link">
+              <a href="/events">More events</a>
+             </div>
+             <div class="bottom"></div>
+            </div>
+           </div>
+           <div class="panel-pane pane-views pane-publications bg-lower">
+            <div class="narrow">
+             <div class="top"></div> 
+             <h2 class="pane-title">Books</h2>
+             <div class="view view-publications view-id-publications view-display-id-block_1 view-dom-id-7f716180395195ff80416fd77216d574">
+              <div class="view-content">
+               <div class="skin-default">
+                <div id="views_slideshow_cycle_main_publications-block_1" class="views_slideshow_cycle_main views_slideshow_main">
+                 <div id="views_slideshow_cycle_teaser_section_publications-block_1" class="views-slideshow-cycle-main-frame views_slideshow_cycle_teaser_section">
+                  <div id="views_slideshow_cycle_div_publications-block_1_0" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-1 views-row-odd" aria-labelledby="views_slideshow_pager_field_item_bottom_publications-block_1_0">
+                   <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd views-row-first pub-row">
+                    <div class="views-field views-field-field-biblio-associated-image"> 
+                     <div class="field-content pub-image">
+                      <a href="/biblio/economics-corporate-governance"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_publications/public/biblio/images/economics_of_corporate.jpg?itok=iXzm7kbm" width="146" height="213" alt=""></a>
+                     </div> 
+                    </div> 
+                    <div class="publication-body views-fieldset" data-module="views_fieldsets">
+                     <div class="views-field views-field-view-node">
+                      <a href="/biblio/economics-corporate-governance">Show</a>
+                     </div> 
+                     <h4 class="views-field views-field-biblio-short-title"><a href="https://www.econ.berkeley.edu/biblio/economics-corporate-governance">The Economics of Corporate Governance</a></h4> 
+                     <div class="views-field views-field-body"></div> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_cycle_div_publications-block_1_1" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-2 views_slideshow_cycle_hidden views-row-even" aria-labelledby="views_slideshow_pager_field_item_bottom_publications-block_1_1">
+                   <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd pub-row">
+                    <div class="views-field views-field-field-biblio-associated-image"> 
+                     <div class="field-content pub-image">
+                      <a href="/content/hidden-wealth-nations-scourge-tax-havens"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_publications/public/biblio/images/hidden_wealth_of_nations.jpg?itok=u-l_4vj8" width="146" height="213" alt=""></a>
+                     </div> 
+                    </div> 
+                    <div class="publication-body views-fieldset" data-module="views_fieldsets">
+                     <div class="views-field views-field-view-node">
+                      <a href="/content/hidden-wealth-nations-scourge-tax-havens">Show</a>
+                     </div> 
+                     <h4 class="views-field views-field-biblio-short-title"><a href="https://www.econ.berkeley.edu/content/hidden-wealth-nations-scourge-tax-havens">The Hidden Wealth of Nations</a></h4> 
+                     <div class="views-field views-field-body"></div> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_cycle_div_publications-block_1_2" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-3 views_slideshow_cycle_hidden views-row-odd" aria-labelledby="views_slideshow_pager_field_item_bottom_publications-block_1_2">
+                   <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd pub-row">
+                    <div class="views-field views-field-field-biblio-associated-image"> 
+                     <div class="field-content pub-image">
+                      <a href="/content/global-economic-crisis-impacts-transmission-and-recovery"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_publications/public/biblio/images/obstfeld.gif?itok=BNLkhTcx" width="146" height="213" alt=""></a>
+                     </div> 
+                    </div> 
+                    <div class="publication-body views-fieldset" data-module="views_fieldsets">
+                     <div class="views-field views-field-view-node">
+                      <a href="/content/global-economic-crisis-impacts-transmission-and-recovery">Show</a>
+                     </div> 
+                     <h4 class="views-field views-field-biblio-short-title"><a href="https://www.econ.berkeley.edu/content/global-economic-crisis-impacts-transmission-and-recovery">Global Economic Crisis</a></h4> 
+                     <div class="views-field views-field-body"></div> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_cycle_div_publications-block_1_3" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-4 views_slideshow_cycle_hidden views-row-even" aria-labelledby="views_slideshow_pager_field_item_bottom_publications-block_1_3">
+                   <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd pub-row">
+                    <div class="views-field views-field-field-biblio-associated-image"> 
+                     <div class="field-content pub-image">
+                      <a href="/content/animal-spirits-how-human-psychology-drives-economy-and-why-it-matters-global-capitalism-new"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_publications/public/biblio/images/Animal%20Spirits.jpg?itok=bPWMK_u8" width="146" height="213" alt=""></a>
+                     </div> 
+                    </div> 
+                    <div class="publication-body views-fieldset" data-module="views_fieldsets">
+                     <div class="views-field views-field-view-node">
+                      <a href="/content/animal-spirits-how-human-psychology-drives-economy-and-why-it-matters-global-capitalism-new">Show</a>
+                     </div> 
+                     <h4 class="views-field views-field-biblio-short-title"><a href="https://www.econ.berkeley.edu/content/animal-spirits-how-human-psychology-drives-economy-and-why-it-matters-global-capitalism-new">Animal Spirits</a></h4> 
+                     <div class="views-field views-field-body"></div> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_cycle_div_publications-block_1_4" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-5 views_slideshow_cycle_hidden views-row-odd" aria-labelledby="views_slideshow_pager_field_item_bottom_publications-block_1_4">
+                   <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd pub-row">
+                    <div class="views-field views-field-field-biblio-associated-image"> 
+                     <div class="field-content pub-image">
+                      <a href="/content/contemporary-capitalism-and-its-crises"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_publications/public/biblio/images/contemporary-capitalism.jpg?itok=BYleJxQ2" width="146" height="213" alt=""></a>
+                     </div> 
+                    </div> 
+                    <div class="publication-body views-fieldset" data-module="views_fieldsets">
+                     <div class="views-field views-field-view-node">
+                      <a href="/content/contemporary-capitalism-and-its-crises">Show</a>
+                     </div> 
+                     <h4 class="views-field views-field-biblio-short-title"><a href="https://www.econ.berkeley.edu/content/contemporary-capitalism-and-its-crises">Contemp. Capitalism and its Crises</a></h4> 
+                     <div class="views-field views-field-body"></div> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_cycle_div_publications-block_1_5" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-6 views_slideshow_cycle_hidden views-row-even" aria-labelledby="views_slideshow_pager_field_item_bottom_publications-block_1_5">
+                   <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd pub-row">
+                    <div class="views-field views-field-field-biblio-associated-image"> 
+                     <div class="field-content pub-image">
+                      <a href="/content/identity-economics"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_publications/public/biblio/images/Akerlof.gif?itok=5g8DPrQg" width="146" height="213" alt=""></a>
+                     </div> 
+                    </div> 
+                    <div class="publication-body views-fieldset" data-module="views_fieldsets">
+                     <div class="views-field views-field-view-node">
+                      <a href="/content/identity-economics">Show</a>
+                     </div> 
+                     <h4 class="views-field views-field-biblio-short-title"><a href="https://www.econ.berkeley.edu/content/identity-economics">Identity Economics</a></h4> 
+                     <div class="views-field views-field-body"></div> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_cycle_div_publications-block_1_6" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-7 views_slideshow_cycle_hidden views-row-odd" aria-labelledby="views_slideshow_pager_field_item_bottom_publications-block_1_6">
+                   <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd pub-row">
+                    <div class="views-field views-field-field-biblio-associated-image"> 
+                     <div class="field-content pub-image">
+                      <a href="/biblio/coping-climate-crisis-mitigation-policies-and-global-coordination"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_publications/public/biblio/images/9780231187565.jpg?itok=RaA_agm5" width="146" height="213" alt=""></a>
+                     </div> 
+                    </div> 
+                    <div class="publication-body views-fieldset" data-module="views_fieldsets">
+                     <div class="views-field views-field-view-node">
+                      <a href="/biblio/coping-climate-crisis-mitigation-policies-and-global-coordination">Show</a>
+                     </div> 
+                     <h4 class="views-field views-field-biblio-short-title"><a href="https://www.econ.berkeley.edu/biblio/coping-climate-crisis-mitigation-policies-and-global-coordination">Coping with the Climate Crisis: Mitigation Policies and Global Coordination</a></h4> 
+                     <div class="views-field views-field-body"></div> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_cycle_div_publications-block_1_7" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-8 views_slideshow_cycle_hidden views-row-even" aria-labelledby="views_slideshow_pager_field_item_bottom_publications-block_1_7">
+                   <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd pub-row">
+                    <div class="views-field views-field-field-biblio-associated-image"> 
+                     <div class="field-content pub-image">
+                      <a href="/content/buddhist-economics-enlightened-approach-dismal-science"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_publications/public/biblio/images/buddhist_economics.jpg?itok=uBmqr8XJ" width="146" height="213" alt=""></a>
+                     </div> 
+                    </div> 
+                    <div class="publication-body views-fieldset" data-module="views_fieldsets">
+                     <div class="views-field views-field-view-node">
+                      <a href="/content/buddhist-economics-enlightened-approach-dismal-science">Show</a>
+                     </div> 
+                     <h4 class="views-field views-field-biblio-short-title"><a href="https://www.econ.berkeley.edu/content/buddhist-economics-enlightened-approach-dismal-science">Buddhist Economics</a></h4> 
+                     <div class="views-field views-field-body"></div> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_cycle_div_publications-block_1_8" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-9 views_slideshow_cycle_hidden views-row-odd" aria-labelledby="views_slideshow_pager_field_item_bottom_publications-block_1_8">
+                   <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd pub-row">
+                    <div class="views-field views-field-field-biblio-associated-image"> 
+                     <div class="field-content pub-image">
+                      <a href="/biblio/populist-temptation-economic-grievance-and-political-reaction-modern-era"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_publications/public/biblio/images/Populist_tempation.jpg?itok=IAhJfpGj" width="146" height="213" alt=""></a>
+                     </div> 
+                    </div> 
+                    <div class="publication-body views-fieldset" data-module="views_fieldsets">
+                     <div class="views-field views-field-view-node">
+                      <a href="/biblio/populist-temptation-economic-grievance-and-political-reaction-modern-era">Show</a>
+                     </div> 
+                     <h4 class="views-field views-field-biblio-short-title"><a href="https://www.econ.berkeley.edu/biblio/populist-temptation-economic-grievance-and-political-reaction-modern-era">The Populist Temptation: Economic Grievance and Political Reaction in the Modern Era</a></h4> 
+                     <div class="views-field views-field-body"></div> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_cycle_div_publications-block_1_9" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-10 views_slideshow_cycle_hidden views-row-even" aria-labelledby="views_slideshow_pager_field_item_bottom_publications-block_1_9">
+                   <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd pub-row">
+                    <div class="views-field views-field-field-biblio-associated-image"> 
+                     <div class="field-content pub-image">
+                      <a href="/biblio/innovation-matters-competition-policy-high-technology-economy"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_publications/public/biblio/images/Innovation%20Matters_jpg.jpg?itok=l48Tkf8W" width="146" height="213" alt=""></a>
+                     </div> 
+                    </div> 
+                    <div class="publication-body views-fieldset" data-module="views_fieldsets">
+                     <div class="views-field views-field-view-node">
+                      <a href="/biblio/innovation-matters-competition-policy-high-technology-economy">Show</a>
+                     </div> 
+                     <h4 class="views-field views-field-biblio-short-title"><a href="https://www.econ.berkeley.edu/biblio/innovation-matters-competition-policy-high-technology-economy">Innovation Matters: Competition Policy for the High-Technology Economy</a></h4> 
+                     <div class="views-field views-field-body"></div> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_cycle_div_publications-block_1_10" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-11 views_slideshow_cycle_hidden views-row-odd" aria-labelledby="views_slideshow_pager_field_item_bottom_publications-block_1_10">
+                   <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd pub-row">
+                    <div class="views-field views-field-field-biblio-associated-image"> 
+                     <div class="field-content pub-image">
+                      <a href="/biblio/meeting-globalizations-challenges-policies-make-trade-work-all"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_publications/public/biblio/images/9780691188935_0.png?itok=jroDVg4s" width="146" height="213" alt=""></a>
+                     </div> 
+                    </div> 
+                    <div class="publication-body views-fieldset" data-module="views_fieldsets">
+                     <div class="views-field views-field-view-node">
+                      <a href="/biblio/meeting-globalizations-challenges-policies-make-trade-work-all">Show</a>
+                     </div> 
+                     <h4 class="views-field views-field-biblio-short-title"><a href="https://www.econ.berkeley.edu/biblio/meeting-globalizations-challenges-policies-make-trade-work-all">Meeting Globalization's Challenges: Policies to Make Trade Work for All</a></h4> 
+                     <div class="views-field views-field-body"></div> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_cycle_div_publications-block_1_11" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-12 views_slideshow_cycle_hidden views-row-even" aria-labelledby="views_slideshow_pager_field_item_bottom_publications-block_1_11">
+                   <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-odd pub-row">
+                    <div class="views-field views-field-field-biblio-associated-image"> 
+                     <div class="field-content pub-image">
+                      <a href="/content/hall-mirrors-great-depression-great-recession-and-uses-and-misuses-history"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/homepage_publications/public/biblio/images/Eichengreen_Hall_comps_3B__2_-2.jpg?itok=gmzbkzwt" width="146" height="213" alt=""></a>
+                     </div> 
+                    </div> 
+                    <div class="publication-body views-fieldset" data-module="views_fieldsets">
+                     <div class="views-field views-field-view-node">
+                      <a href="/content/hall-mirrors-great-depression-great-recession-and-uses-and-misuses-history">Show</a>
+                     </div> 
+                     <h4 class="views-field views-field-biblio-short-title"><a href="https://www.econ.berkeley.edu/content/hall-mirrors-great-depression-great-recession-and-uses-and-misuses-history">Hall of Mirrors</a></h4> 
+                     <div class="views-field views-field-body"></div> 
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+                <div class="views-slideshow-controls-bottom clearfix">
+                 <div id="widget_pager_bottom_publications-block_1" class="views-slideshow-pager-fields widget_pager widget_pager_bottom views_slideshow_pager_field">
+                  <div id="views_slideshow_pager_field_item_bottom_publications-block_1_0" class="views-slideshow-pager-field-item views_slideshow_pager_field_item views-row-odd views-row-first" aria-controls="views_slideshow_cycle_div_publications-block_1_0">
+                   <div class="views-field-field-biblio-associated-image">
+                    <div class="views-content-field-biblio-associated-image"><a href="#slideshow-0"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/thumbnail_homepage_alt/public/biblio/images/economics_of_corporate.jpg?itok=XetXoaZD" width="106" height="158" alt=""></a> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_pager_field_item_bottom_publications-block_1_1" class="views-slideshow-pager-field-item views_slideshow_pager_field_item views-row-even" aria-controls="views_slideshow_cycle_div_publications-block_1_1">
+                   <div class="views-field-field-biblio-associated-image">
+                    <div class="views-content-field-biblio-associated-image"><a href="#slideshow-1"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/thumbnail_homepage_alt/public/biblio/images/hidden_wealth_of_nations.jpg?itok=VPIAHyo0" width="106" height="158" alt=""></a> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_pager_field_item_bottom_publications-block_1_2" class="views-slideshow-pager-field-item views_slideshow_pager_field_item views-row-odd" aria-controls="views_slideshow_cycle_div_publications-block_1_2">
+                   <div class="views-field-field-biblio-associated-image">
+                    <div class="views-content-field-biblio-associated-image"><a href="#slideshow-2"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/thumbnail_homepage_alt/public/biblio/images/obstfeld.gif?itok=VDfnaxU2" width="106" height="158" alt=""></a> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_pager_field_item_bottom_publications-block_1_3" class="views-slideshow-pager-field-item views_slideshow_pager_field_item views-row-even" aria-controls="views_slideshow_cycle_div_publications-block_1_3">
+                   <div class="views-field-field-biblio-associated-image">
+                    <div class="views-content-field-biblio-associated-image"><a href="#slideshow-3"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/thumbnail_homepage_alt/public/biblio/images/Animal%20Spirits.jpg?itok=aRsaEaxX" width="106" height="158" alt=""></a> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_pager_field_item_bottom_publications-block_1_4" class="views-slideshow-pager-field-item views_slideshow_pager_field_item views-row-odd" aria-controls="views_slideshow_cycle_div_publications-block_1_4">
+                   <div class="views-field-field-biblio-associated-image">
+                    <div class="views-content-field-biblio-associated-image"><a href="#slideshow-4"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/thumbnail_homepage_alt/public/biblio/images/contemporary-capitalism.jpg?itok=TtJ1wEil" width="106" height="158" alt=""></a> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_pager_field_item_bottom_publications-block_1_5" class="views-slideshow-pager-field-item views_slideshow_pager_field_item views-row-even" aria-controls="views_slideshow_cycle_div_publications-block_1_5">
+                   <div class="views-field-field-biblio-associated-image">
+                    <div class="views-content-field-biblio-associated-image"><a href="#slideshow-5"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/thumbnail_homepage_alt/public/biblio/images/Akerlof.gif?itok=AILkxbi0" width="106" height="158" alt=""></a> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_pager_field_item_bottom_publications-block_1_6" class="views-slideshow-pager-field-item views_slideshow_pager_field_item views-row-odd" aria-controls="views_slideshow_cycle_div_publications-block_1_6">
+                   <div class="views-field-field-biblio-associated-image">
+                    <div class="views-content-field-biblio-associated-image"><a href="#slideshow-6"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/thumbnail_homepage_alt/public/biblio/images/9780231187565.jpg?itok=EghDHMA9" width="106" height="158" alt=""></a> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_pager_field_item_bottom_publications-block_1_7" class="views-slideshow-pager-field-item views_slideshow_pager_field_item views-row-even" aria-controls="views_slideshow_cycle_div_publications-block_1_7">
+                   <div class="views-field-field-biblio-associated-image">
+                    <div class="views-content-field-biblio-associated-image"><a href="#slideshow-7"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/thumbnail_homepage_alt/public/biblio/images/buddhist_economics.jpg?itok=UMwYzZaY" width="106" height="158" alt=""></a> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_pager_field_item_bottom_publications-block_1_8" class="views-slideshow-pager-field-item views_slideshow_pager_field_item views-row-odd" aria-controls="views_slideshow_cycle_div_publications-block_1_8">
+                   <div class="views-field-field-biblio-associated-image">
+                    <div class="views-content-field-biblio-associated-image"><a href="#slideshow-8"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/thumbnail_homepage_alt/public/biblio/images/Populist_tempation.jpg?itok=Q27tiQwH" width="106" height="158" alt=""></a> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_pager_field_item_bottom_publications-block_1_9" class="views-slideshow-pager-field-item views_slideshow_pager_field_item views-row-even" aria-controls="views_slideshow_cycle_div_publications-block_1_9">
+                   <div class="views-field-field-biblio-associated-image">
+                    <div class="views-content-field-biblio-associated-image"><a href="#slideshow-9"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/thumbnail_homepage_alt/public/biblio/images/Innovation%20Matters_jpg.jpg?itok=rObymmNv" width="106" height="158" alt=""></a> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_pager_field_item_bottom_publications-block_1_10" class="views-slideshow-pager-field-item views_slideshow_pager_field_item views-row-odd" aria-controls="views_slideshow_cycle_div_publications-block_1_10">
+                   <div class="views-field-field-biblio-associated-image">
+                    <div class="views-content-field-biblio-associated-image"><a href="#slideshow-10"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/thumbnail_homepage_alt/public/biblio/images/9780691188935_0.png?itok=54LFwMOu" width="106" height="158" alt=""></a> 
+                    </div>
+                   </div>
+                  </div>
+                  <div id="views_slideshow_pager_field_item_bottom_publications-block_1_11" class="views-slideshow-pager-field-item views_slideshow_pager_field_item views-row-even views-row-last" aria-controls="views_slideshow_cycle_div_publications-block_1_11">
+                   <div class="views-field-field-biblio-associated-image">
+                    <div class="views-content-field-biblio-associated-image"><a href="#slideshow-11"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/thumbnail_homepage_alt/public/biblio/images/Eichengreen_Hall_comps_3B__2_-2.jpg?itok=-YiCGFHm" width="106" height="158" alt=""></a> 
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="more-link"><a href="/publications"> More publications </a>
+              </div>
+             </div>
+             <div class="bottom"></div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="panel-panel panel-col-middle">
+         <div class="inside"></div>
+        </div>
+        <div class="center-wrapper container">
+         <div class="panel-panel panel-col-first col-md-16">
+          <div class="inside"></div>
+         </div>
+         <div class="panel-panel panel-col-last col-md-8">
+          <div class="inside"></div>
+         </div>
+        </div>
+        <div class="panel-panel panel-col-bottom">
+         <div class="inside"></div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <footer id="footer" class="region region-footer">
+     <div class="container">
+      <div id="block-block-132" class="block block-block first odd">
+       <div class="block-content">
+        <p>© Copyright 2015 UC Regents.<br> University of California, Berkeley | College of Letters &amp; Science</p>
+       </div>
+      </div>
+      <div id="block-block-1" class="block block-block last even">
+       <div class="block-content">
+        <div class="footer-info">
+         <div class="address">
+          530 Evans Hall #3880, Berkeley, California 94720-3880
+          <br>Tel: (510) 642-0822 / Fax: (510) 642-6615 / E-mail: <a href="mailto:econdept@berkeley.edu">econdept@berkeley.edu</a>
+         </div>
+         <div class="site-info">
+          UCB Privacy Statement | Disclaimer
+          <br>For website updates, please contact <a href="mailto:web@econ.berkeley.edu">web@econ.berkeley.edu</a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div> 
+    </footer>
+   </div>
+  </div>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"eb60764641","applicationID":"374286","transactionName":"Z1cGYkBVV0JRUkxaCV4dMURbGxZYXlVdS0hAWhQ=","queueTime":0,"applicationTime":12,"atts":"SxAFFAhPREw=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

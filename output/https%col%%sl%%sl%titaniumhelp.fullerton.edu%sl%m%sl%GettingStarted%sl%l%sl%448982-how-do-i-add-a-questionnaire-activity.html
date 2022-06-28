@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Create a Questionnaire activity</title>
+  <meta content="Learn how to add a Questionnaire activity to your course." name="description">
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="qefW++E1Qay4BUj9REl814bCl80mcC4FWN4HHfFj5IdzqpxnUebkXeN9Jk39eSuahqVnMaCbkAbJKkUl83P48w==">
+  <link rel="stylesheet" media="screen" href="//assets.screensteps.com/assets/themes/fonts/droid-sans-364ed37cb1e97162731b415aa927f66498ed63a95cbeba694ddee60dd372c14f.css">
+  <link rel="stylesheet" media="screen" href="//assets.screensteps.com/assets/themes/fonts/helvetica-8681273d10a12b4f5502c278efb511b207828996eb6fb7d99fa7abb4cea05b50.css">
+  <link rel="stylesheet" href="//assets.screensteps.com/assets/fontawesome-9b64f06a98b9479593e125f4c10f2698fa8bb635ef3cf3616282a9e41d175c16.css">
+  <link rel="stylesheet" href="//assets.screensteps.com/assets/themes/beta-81e062362d5992fe4be88d9a87c19324121ab8af770754d04248da99e5a2d8a9.css">
+  <style type="text/css" media="all">
+  /* headings */
+  h1,
+  h1.toc-heading,
+  h2.toc-heading {
+    color: #;
+  }
+
+  h2.toc-subheading,
+  h3.toc-subheading,
+  h4.toc-subheading,
+  h5.toc-subheading,
+  h6.toc-subheading {
+    color: #070807;
+  }
+
+  .screensteps-training-site [data-count-bubble]::after {
+    background-color: #070807;
+  }
+
+  .screensteps-article-content h2 {
+    color: #;
+  }
+
+  .screensteps-article-content h3,
+  .screensteps-article-content h4,
+  .screensteps-article-content h5,
+  .screensteps-article-content h6 {
+    color: #;
+  }
+
+  .screensteps-sidebar h3 {
+    color: #1a191a;
+  }
+
+  .sidebar-subheading {
+    color: #4a4848;
+  }
+
+  .comments-heading {
+    color: #;
+  }
+
+  /* base/_buttons */
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"],
+  button,
+  .screensteps-bg-action-color,
+  .screensteps-courses .screensteps-progress-bar::before,
+  .screensteps-courses .screensteps-courses-menu a:hover,
+  .screensteps-courses .screensteps-courses-menu .step-active a::before,
+  .screensteps-training-site .asset-item__progress-bar {
+    background-color: #1a191a;
+  }
+
+  input[type="button"]:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover,
+  button:hover,
+  button.screensteps-bg-action-color:hover,
+  a.screensteps-bg-action-color:hover {
+    background-color: #8a4500;
+  }
+
+  /* base/_forms */
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="text"]:focus,
+  input[type="url"]:focus,
+  input[type="color"]:focus,
+  input[type="date"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="week"]:focus,
+  select[multiple=multiple]:focus,
+  textarea:focus {
+    border-color: #1a191a;
+  }
+
+
+  .screensteps-training-site .screensteps-main-search .search-field:not(:placeholder-shown) {
+    box-shadow: 0 0 0 2px #ffffff;
+  }
+
+  /* base/_typography */
+  body {
+    background-color: #ffffff;
+    color: #;
+  }
+
+  a {
+    color: #1a191a;
+  }
+
+
+
+  /* _screensteps-container */
+  .screensteps-container a:visited {
+    color: #004071;
+  }
+ .screensteps-container a:active,
+ .screensteps-container a:focus,
+ .screensteps-container a:hover {
+    color: #8a4500;
+  }
+
+  /* _screensteps-manual-contents */
+  .screensteps-manual-contents h2 a {
+    color: #1a191a;
+  }
+  /* _screensteps-foldable-sections */
+  .screensteps-main-content .embedded-chapter-article > * {
+    color: #1a191a;
+  }
+
+  /* screensteps-header */
+  .screensteps-branding h1,
+  .screensteps-header .screensteps-branding a,
+  .screensteps-training-site .screensteps-profile-subnav-toggle {
+    color: #004071;
+  }
+
+  .screensteps-header .screensteps-branding a:hover {
+    color: #004071;
+  }
+
+  /* meta data text */
+  .chapter-count,
+  .screensteps-comment-count,
+  .screensteps-lesson-details,
+  .nested-chapter-lessons .here a:after,
+  .screensteps-single-comment time {
+    color: #;
+  }
+
+  /* course tiles */
+  .screensteps-training-site .screensteps-group .asset-list--course a {
+    background-color: #;
+    color: #;
+  }
+
+  .screensteps-training-site .asset-item__progress-bar {
+    background-color: #;
+  }
+
+  .screensteps-training-site .screensteps-group .asset-list--course a:hover {
+    background-color: #;
+  }
+</style>
+  <link rel="icon">
+  <script src="//assets.screensteps.com/assets/application-10a945f50e929cc1e58184ca87f005bd032ee7fe9b1c7368b855e66a5234fab0.js"></script>
+  <script src="//assets.screensteps.com/assets/theme-cae9a1f80906ea92fdc68e13e7545d814402a7aeafd20bbca6accffffa49bbea.js"></script><!--[if lt IE 9]>
+<script src="//assets.screensteps.com/assets/vendor/html5shiv.min-6169624d10bc8403d59c9ace86ab0189063017bfb2139ee074a199cbbdc176b2.js"></script>
+<![endif]-->
+  <style media="">/* ScreenSupport Adjustments */
+.asset-list .divider h4 {
+  color: #4d4d4d;
+}
+
+.screensteps-modal .screensteps-modal__close,.screensteps-modal .screensteps-modal__close:visited {
+    color: #0e4d6f;
+  background-color:#ffffff;
+}
+/* 10.5.2018 trying to fix color contrast for View in Admin Portal link */
+.screensteps-admin-navigation {
+   background-color: #0B579D;
+}
+.screensteps-admin-navigation a:hover {
+   color: #fff;
+}
+
+
+/* trying to fix the color contrast */
+.screensteps-modal {
+color: #0e4d6f;
+background-color:#ffffff;
+}
+
+
+
+/* adjust the wrapper text color */ 
+.screensteps-article .screensteps-textblock.screensteps-wrapper--alert {
+  color: #8d0c0c;
+}
+.screensteps-article .screensteps-textblock.screensteps-wrapper--introduction {
+  color: #0e4d6f;
+}
+
+.screensteps-article .screensteps-textblock.screensteps-wrapper--tip {
+  color: #32531e;
+}
+
+.screensteps-article .screensteps-textblock.screensteps-wrapper--info {
+ color: #0e4d6f;
+}
+
+.screensteps-article .screensteps-textblock.screensteps-wrapper--warning {
+  color: #6a4300;
+}
+
+/* adjust the body text */
+.screensteps-article { color: #4d4d4d; }
+
+body { color: #4d4d4d; }
+
+/* link text color */
+.screensteps-article a {
+ color: #0e4d6f;
+
+}
+
+.screensteps-article a:visited {
+ color: #0e4d6f;
+}
+
+/* background and border */
+.screensteps-article .screensteps-steps .image {
+ background-color: transparent;
+ border: none;
+}
+
+/* attached file color */
+.screensteps-article .screensteps-wrapper--attachment a
+{ color:#0e4d6f;  
+}
+
+/* adjust color of h3 */
+.screensteps-description h3, .screensteps-steps h3
+{color:#4d4d4d;
+}
+
+/* adjust color of h2 */
+.screensteps-description h2, .screensteps-steps h2
+{color:#4d4d4d;
+}
+
+/* to adjust the color of the text in the search bar*/
+.screensteps-main-search .input-prompt {
+  color: #0057a8;
+}
+
+/* to adjust the color of the number of articles in each chapter */
+.chapter-count {
+   color: #004071;
+}
+
+/* to allow videos from our server to play in screensteps*/
+.video-responsive{ overflow:hidden; padding-bottom:56.25%; position:relative; height:0; } .video-responsive video { left:0; top:0; height: auto; width: 100%; position:absolute; }
+
+</style>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71326781-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <noscript>
+    Javascript should be enabled on this page in order to run Google Analytics. 
+  </noscript>
+  <script>
+//<![CDATA[
+    !function(name,path,ctx){
+      var latest,prev=name!=='Keen'&&window.Keen?window.Keen:false;ctx[name]=ctx[name]||{ready:function(fn){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onerror=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;latest=w.Keen;if(prev){w.Keen=prev}else{try{delete w.Keen}catch(e){w.Keen=void 0}}ctx[name]=latest;ctx[name].ready(fn)};s.async=1;s.src=path;h.parentNode.insertBefore(s,h)}}
+    }('KeenAsync','https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.1.3.min.js',this);
+
+    KeenAsync.ready(function(){
+      // Configure a client instance
+      var client = new KeenAsync({
+        projectId: '591daac30935ce40a59fb7ab',
+        writeKey: 'C89A9A1A8DB4C585F119F8F81ABB9621940DBBADDA5C72C2B87B1BD3464890D23FD250B0FFA4A1056DCB210616545B7B6C9DDF2054167B5219A3DD81E8DF90A321BE0C1B35BA19F2E3E85730FB96C1F93F8C66D8CD449FE6EFE43D98453632D1'
+      });
+
+      // Record an event
+      client.recordEvent('pageviews', {
+        title: document.title,
+        ip_address: "${keen.ip}",
+        user_agent: "${keen.user_agent}",
+        user_id: null,
+        user_public_id: null,
+        account_id: "7061f6cd01",
+        account_billing_type: "admin_users",
+        site_id: 12929,
+        manual_id: 48508,
+        article_id: 448982,
+        article_type_id: 0,
+        course_id: null,
+        source_id: 1
+      });
+    });
+
+//]]>
+</script>
+ </head>
+ <body class="helvetica-body droid-sans-header site-article  no-focus-outline" data-base-path="/" data-content-template="2015" data-generating-pdf-text="Creating PDF...">
+  <header class="screensteps-header" role="banner"><a class="skip-navigation--link" href="#screensteps-main-content" id="skip-navigation"> Skip to main content </a>
+   <div class="screensteps-branding">
+    <div class="logo-wrapper"><span class="company-logo"> <a href="/" title="TITANium Resource Center"> <img alt="Cal State Fullerton" class="screensteps-site-logo" src="https://media.screensteps.com/logos/7688/OET_Logo-05.jpg"> </a> </span>
+     <h1 class="company-name">California State University Fullerton</h1>
+    </div>
+    <ul class="screensteps-external-nav" role="navigation">
+     <li><a href="https://canvashelp.fullerton.edu">Switch to Canvas Resource Center</a></li>
+    </ul>
+    <ul class="screensteps-profile-nav" role="navigation">
+    </ul>
+   </div>
+  </header>
+  <div class="screensteps-container-wrapper">
+   <main class="screensteps-container">
+    <div class="screensteps-site-title-wrapper">
+     <h1 class="screensteps-site-title toc-heading">TITANium Resource Center</h1>
+     <div class="screensteps-site-description">
+      <p>Welcome to the TITANium Resource Center where you may find self-help guides on a wide range of topics regarding teaching and learning using TITANium (Moodle). Begin by typing in a keyword and clicking on Search.</p>
+      <p>Canvas guides are available at the <a href="https://canvashelp.fullerton.edu">Canvas Resource Center.</a></p>
+     </div>
+    </div>
+    <div class="screensteps-main-search" role="search">
+     <form id="screensteps-search-form" action="/searches" accept-charset="UTF-8" method="get">
+      <div class="screensteps-search-form"><label for="text">Search term</label>
+       <input type="text" name="text" id="text" class="search-field" title="Enter a keyword or topic to search">
+       <input type="submit" name="commit" value="Search" class="search-submit" data-disable-with="Search">
+      </div>
+     </form>
+    </div>
+    <div class="screensteps-content-wrapper manual-lesson lesson left-sidebar">
+     <div class="screensteps-main-content" role="main">
+      <header class="screensteps-title">
+       <div id="screensteps-breadcrumb" aria-label="breadcrumb" aria-level="3">
+        <a href="/">TITANium Resource Center</a><span class="manual-group-breadcrumb"><a href="/#BEGINHere">BEGIN HERE</a></span><a href="/m/GettingStarted">Getting Started with TITANium</a> <span class="chapter-breadcrumb"><a href="/m/GettingStarted/c/147263">Adding Activities to my course</a></span>How do I add a Questionnaire activity?
+       </div>
+      </header>
+      <div id="screensteps-main-content">
+       <div class="screensteps-article" data-screensteps-article>
+        <div class="screensteps-article-content " data-article-id="448982" data-workflow="false">
+         <h1 class="lesson">How do I add a Questionnaire activity?</h1>
+         <div class="screensteps-steps" data-role="steps-container">
+          <div class="instructions screensteps-textblock screensteps-wrapper--introduction screensteps-wrapper">
+           <p>You will learn how to add a <strong>Questionnaire</strong> activity to your course in TITANium. The <strong>Questionnaire</strong> activity module can be used in much the same way as the <a href="../../GettingStarted/l/448979-how-do-i-add-a-feedback-activity" data-internal-link-id="448979" data-internal-link="article" data-internal-manual-id="48508" target="">Feedback activity</a> module to collect student input through a survey of questions. </p>
+           <p>However, the <strong>Questionnaire</strong> activity module can also report a grade to the gradebook and can allow students to view the responses and collect the data generated by the questionnaire.</p>
+           <p>Follow these steps to create a workshop breakout session instructor evaluation questionnaire.</p>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="d6255cda-a342-4415-9c8f-525250af500d" id="">
+           <h2 id="enter-your-course"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 1. Enter your course." href="#enter-your-course">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 1. Enter your course. </h2>
+           <div class="image clearfix">
+            <img alt="course main page" data-srcset="https://media.screensteps.com/image_assets/assets/001/360/983/original/fdf1fba7-7c5a-42fc-871c-c79d0eb3cfee.png 758w" data-src="https://media.screensteps.com/image_assets/assets/001/360/983/original/fdf1fba7-7c5a-42fc-871c-c79d0eb3cfee.png" class="lazyload lazypreload" style="max-width:758px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/983/original/fdf1fba7-7c5a-42fc-871c-c79d0eb3cfee.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="147acdc0-3ff5-4df2-9656-c3aa6e34455e" id="">
+           <h2 id="turn-editing-on"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 2. Turn editing on." href="#turn-editing-on">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 2. Turn editing on. </h2>
+           <div class="instructions screensteps-textblock ">
+            <p>Click the <strong>Turn editing on</strong> link within the <strong>ADMINISTRATION</strong> block or click on the <strong>Turn editing on</strong> button at the top right-corner of the course main page.</p>
+           </div>
+           <div class="image clearfix">
+            <img alt="Turn editing on link is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/972/original/e84f44e5-4e6d-4479-8ecd-918dfb0fb8fd.png 756w" data-src="https://media.screensteps.com/image_assets/assets/001/360/972/original/e84f44e5-4e6d-4479-8ecd-918dfb0fb8fd.png" class="lazyload lazypreload" style="max-width:756px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/972/original/e84f44e5-4e6d-4479-8ecd-918dfb0fb8fd.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="df501144-fb36-4b1d-97cd-2e94b3e2d9b6" id="">
+           <h2 id="view-course-with-editing-turned-on"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 3. View course with editing turned on." href="#view-course-with-editing-turned-on">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 3. View course with editing turned on. </h2>
+           <div class="image clearfix">
+            <img alt="course main page with editing turned on." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/992/original/d2c1b5f5-61fa-488e-9aab-32cf395be048.png 751w" data-src="https://media.screensteps.com/image_assets/assets/001/360/992/original/d2c1b5f5-61fa-488e-9aab-32cf395be048.png" class="lazyload lazypreload" style="max-width:751px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/992/original/d2c1b5f5-61fa-488e-9aab-32cf395be048.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="277f57b4-250c-45c6-8388-8e2decab04a6" id="">
+           <h2 id="click-on-add-resource-or-activity"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 4. Click on Add resource or activity." href="#click-on-add-resource-or-activity">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 4. Click on Add resource or activity. </h2>
+           <div class="image clearfix">
+            <img alt="Add resource or activity link is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/361/007/original/f7f3c490-dca5-4473-96a9-75dcfd76f649.png 774w" data-src="https://media.screensteps.com/image_assets/assets/001/361/007/original/f7f3c490-dca5-4473-96a9-75dcfd76f649.png" class="lazyload lazypreload" style="max-width:774px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/361/007/original/f7f3c490-dca5-4473-96a9-75dcfd76f649.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="91c05d03-e67d-45fc-9d76-fb32a79899a8" id="">
+           <h2 id="select-questionnaire"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 5. Select Questionnaire." href="#select-questionnaire">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 5. Select Questionnaire. </h2>
+           <div class="image clearfix">
+            <img alt="Questionnaire radio button is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/361/005/original/eb7a54f7-16e1-4ad0-a60a-39a2bf1a1cb8.png 401w" data-src="https://media.screensteps.com/image_assets/assets/001/361/005/original/eb7a54f7-16e1-4ad0-a60a-39a2bf1a1cb8.png" class="lazyload lazypreload" style="max-width:401px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/361/005/original/eb7a54f7-16e1-4ad0-a60a-39a2bf1a1cb8.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="99de6d1b-9085-44ce-9162-db597048a2c7" id="">
+           <h2 id="click-on-add"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 6. Click on Add." href="#click-on-add">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 6. Click on Add. </h2>
+           <div class="image clearfix">
+            <img alt="Add button is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/974/original/bf80fe58-3e92-4399-87eb-131445241b12.png 401w" data-src="https://media.screensteps.com/image_assets/assets/001/360/974/original/bf80fe58-3e92-4399-87eb-131445241b12.png" class="lazyload lazypreload" style="max-width:401px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/974/original/bf80fe58-3e92-4399-87eb-131445241b12.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="93819410-d0ef-4264-ae5a-340ed10a3241" id="">
+           <h2 id="type-a-name-and-a-description"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 7. Type a Name and a Description." href="#type-a-name-and-a-description">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 7. Type a Name and a Description. </h2>
+           <div class="image clearfix">
+            <img alt="Name and a Description fields are selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/994/original/19a7b07b-bf0e-4d30-824b-cdcf6f447298.png 510w" data-src="https://media.screensteps.com/image_assets/assets/001/360/994/original/19a7b07b-bf0e-4d30-824b-cdcf6f447298.png" class="lazyload lazypreload" style="max-width:510px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/994/original/19a7b07b-bf0e-4d30-824b-cdcf6f447298.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="25d93a8d-35a6-42ad-a9fe-0f597a520b22" id="">
+           <h2 id="configure-the-response-options-for-this-activity"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 8. Configure the Response options for this activity." href="#configure-the-response-options-for-this-activity">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 8. Configure the Response options for this activity. </h2>
+           <div class="step step-depth-2 child-step" data-step-uuid="f2e5b2bc-c993-499d-8755-ef6a818f9894" id="">
+            <h3 id="select-respond-once"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 8.1. Select respond once." href="#select-respond-once">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 8.1. Select respond once. </h3>
+            <div class="image clearfix">
+             <img alt="Type is set to respond once." data-srcset="https://media.screensteps.com/image_assets/assets/001/361/001/original/b2ff9dd1-a250-4322-9028-0e1b4a9d804c.png 517w" data-src="https://media.screensteps.com/image_assets/assets/001/361/001/original/b2ff9dd1-a250-4322-9028-0e1b4a9d804c.png" class="lazyload lazypreload" style="max-width:517px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/361/001/original/b2ff9dd1-a250-4322-9028-0e1b4a9d804c.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="00895081-b6e5-483a-8f6c-f12bf3193fd3" id="">
+            <h3 id="select-anonymous-for-respondent-type"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 8.2. Select anonymous for Respondent Type." href="#select-anonymous-for-respondent-type">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 8.2. Select anonymous for Respondent Type. </h3>
+            <div class="image clearfix">
+             <img alt="Respondent Type is set to Anonymous." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/990/original/1db9173d-1cb0-4424-b50a-a0aae91f2790.png 516w" data-src="https://media.screensteps.com/image_assets/assets/001/360/990/original/1db9173d-1cb0-4424-b50a-a0aae91f2790.png" class="lazyload lazypreload" style="max-width:516px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/990/original/1db9173d-1cb0-4424-b50a-a0aae91f2790.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="ee7e3ce5-ade1-4050-aaf8-54eb5399b39e" id="">
+            <h3 id="select-after-the-questionnaire-is-closed"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 8.3. Select After the questionnaire is closed." href="#select-after-the-questionnaire-is-closed">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 8.3. Select After the questionnaire is closed. </h3>
+            <div class="image clearfix">
+             <img alt="After the questionnaire is closed is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/982/original/33be7750-f653-4384-88fc-e02f9a890c90.png 516w" data-src="https://media.screensteps.com/image_assets/assets/001/360/982/original/33be7750-f653-4384-88fc-e02f9a890c90.png" class="lazyload lazypreload" style="max-width:516px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/982/original/33be7750-f653-4384-88fc-e02f9a890c90.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="530a4528-c404-4683-ba84-e6fe5b69a276" id="">
+            <h3 id="select-no-for-save-resume-answers"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 8.4. Select No for Save Resume answers." href="#select-no-for-save-resume-answers">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 8.4. Select No for Save Resume answers. </h3>
+            <div class="image clearfix">
+             <img alt=" Save Resume answers is set to No." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/998/original/786c6a4b-f09c-4f35-aefd-f50e87f32043.png 516w" data-src="https://media.screensteps.com/image_assets/assets/001/360/998/original/786c6a4b-f09c-4f35-aefd-f50e87f32043.png" class="lazyload lazypreload" style="max-width:516px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/998/original/786c6a4b-f09c-4f35-aefd-f50e87f32043.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="d1728b18-8798-4c58-a1da-d21904f419a9" id="">
+            <h3 id="select-yes-for-allow-branching-questions"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 8.5. Select Yes for Allow branching questions." href="#select-yes-for-allow-branching-questions">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 8.5. Select Yes for Allow branching questions. </h3>
+            <div class="image clearfix">
+             <img alt="Allow branching questions is set to Yes." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/975/original/15d88cfb-1181-46d9-8dd5-4d3a28842088.png 517w" data-src="https://media.screensteps.com/image_assets/assets/001/360/975/original/15d88cfb-1181-46d9-8dd5-4d3a28842088.png" class="lazyload lazypreload" style="max-width:517px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/975/original/15d88cfb-1181-46d9-8dd5-4d3a28842088.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="75a0f8e1-83f5-43c0-8486-d7070a658591" id="">
+            <h3 id="select-auto-number-pages-and-questions"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 8.6. Select Auto number pages and questions." href="#select-auto-number-pages-and-questions">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 8.6. Select Auto number pages and questions. </h3>
+            <div class="image clearfix">
+             <img alt="Auto number pages and questions is set." data-srcset="https://media.screensteps.com/image_assets/assets/001/361/010/original/a79c99de-0e9e-449f-91ca-c2f4f6113805.png 516w" data-src="https://media.screensteps.com/image_assets/assets/001/361/010/original/a79c99de-0e9e-449f-91ca-c2f4f6113805.png" class="lazyload lazypreload" style="max-width:516px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/361/010/original/a79c99de-0e9e-449f-91ca-c2f4f6113805.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="05068e05-adbf-402c-88ff-e554128bc3c1" id="">
+            <h3 id="select-no-grade-for-submission-grade"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 8.7. Select No grade for Submission grade." href="#select-no-grade-for-submission-grade">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 8.7. Select No grade for Submission grade. </h3>
+            <div class="image clearfix">
+             <img alt="Submission grade is set to No grade." data-srcset="https://media.screensteps.com/image_assets/assets/001/361/000/original/77e528b9-cead-40ff-86f0-5c3846b46a83.png 515w" data-src="https://media.screensteps.com/image_assets/assets/001/361/000/original/77e528b9-cead-40ff-86f0-5c3846b46a83.png" class="lazyload lazypreload" style="max-width:515px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/361/000/original/77e528b9-cead-40ff-86f0-5c3846b46a83.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="f3936163-c84e-4bf4-af97-76636a97ade7" id="">
+            <h3 id="click-on-save-and-display"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 8.8. Click on Save and display." href="#click-on-save-and-display">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 8.8. Click on Save and display. </h3>
+            <div class="image clearfix">
+             <img alt="Save and display button is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/977/original/32d4c866-2710-4b14-a869-31bebe7536f5.png 498w" data-src="https://media.screensteps.com/image_assets/assets/001/360/977/original/32d4c866-2710-4b14-a869-31bebe7536f5.png" class="lazyload lazypreload" style="max-width:498px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/977/original/32d4c866-2710-4b14-a869-31bebe7536f5.png">
+            </div>
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="486761ae-a59d-4d2e-a92f-fccf94f1aec3" id="">
+           <h2 id="configure-the-advanced-settings"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 9. Configure the Advanced settings." href="#configure-the-advanced-settings">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 9. Configure the Advanced settings. </h2>
+           <div class="step step-depth-2 child-step" data-step-uuid="d489186b-c5cc-4c03-b695-97c2c9919fca" id="">
+            <h3 id="click-on-advanced-settings"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 9.1. Click on Advanced settings." href="#click-on-advanced-settings">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 9.1. Click on Advanced settings. </h3>
+            <div class="image clearfix">
+             <img alt="Advanced settings link is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/970/original/8a7cdd9a-5dea-418e-bf2b-4f5014710157.png 626w" data-src="https://media.screensteps.com/image_assets/assets/001/360/970/original/8a7cdd9a-5dea-418e-bf2b-4f5014710157.png" class="lazyload lazypreload" style="max-width:626px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/970/original/8a7cdd9a-5dea-418e-bf2b-4f5014710157.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="0d19a798-824d-4f54-95c7-b36abe7d83a4" id="">
+            <h3 id="type-a-title"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 9.2. Type a Title." href="#type-a-title">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 9.2. Type a Title. </h3>
+            <div class="image clearfix">
+             <img alt="Title field has text of 'Evaluation form'." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/978/original/e9e5bb10-0c49-46cf-a0e6-4f037df8e046.png 507w" data-src="https://media.screensteps.com/image_assets/assets/001/360/978/original/e9e5bb10-0c49-46cf-a0e6-4f037df8e046.png" class="lazyload lazypreload" style="max-width:507px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/978/original/e9e5bb10-0c49-46cf-a0e6-4f037df8e046.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="5212a5a7-decc-4964-8da7-19f9f7a6ff52" id="">
+            <h3 id="type-additional-info"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 9.3. Type Additional Info." href="#type-additional-info">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 9.3. Type Additional Info. </h3>
+            <div class="image clearfix">
+             <img alt="Additional Info field." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/971/original/0050313c-452c-4654-8266-a2e9a862cfc0.png 503w" data-src="https://media.screensteps.com/image_assets/assets/001/360/971/original/0050313c-452c-4654-8266-a2e9a862cfc0.png" class="lazyload lazypreload" style="max-width:503px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/971/original/0050313c-452c-4654-8266-a2e9a862cfc0.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="186898cd-3baa-4e19-8b35-0246cea24851" id="">
+            <h3 id="type-body-text"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 9.4. Type Body text." href="#type-body-text">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 9.4. Type Body text. </h3>
+            <div class="image clearfix">
+             <img alt="Body text field is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/997/original/24c26791-807f-493b-bf17-68c635b3958d.png 501w" data-src="https://media.screensteps.com/image_assets/assets/001/360/997/original/24c26791-807f-493b-bf17-68c635b3958d.png" class="lazyload lazypreload" style="max-width:501px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/997/original/24c26791-807f-493b-bf17-68c635b3958d.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="5ed1e494-092b-4f2e-9daa-b0f3761d2637" id="">
+            <h3 id="click-on-save-and-display_1"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 9.5. Click on Save and display." href="#click-on-save-and-display_1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 9.5. Click on Save and display. </h3>
+            <div class="image clearfix">
+             <img alt="Save and display button is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/976/original/83181fdd-15eb-4559-b9af-a8fa90cb0d7c.png 491w" data-src="https://media.screensteps.com/image_assets/assets/001/360/976/original/83181fdd-15eb-4559-b9af-a8fa90cb0d7c.png" class="lazyload lazypreload" style="max-width:491px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/976/original/83181fdd-15eb-4559-b9af-a8fa90cb0d7c.png">
+            </div>
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="8a93ce36-3314-41f4-b032-5db41bff0f06" id="">
+           <h2 id="configure-the-questions"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10. Configure the questions." href="#configure-the-questions">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 10. Configure the questions. </h2>
+           <div class="step step-depth-2 child-step" data-step-uuid="7f64f2ae-83eb-4833-98fc-33f927e4e94f" id="">
+            <h3 id="click-on-questions"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.1. Click on Questions." href="#click-on-questions">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 10.1. Click on Questions. </h3>
+            <div class="image clearfix">
+             <img alt="Questions link is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/979/original/baa6cc64-3ce5-4228-936c-54d5575cafd9.png 626w" data-src="https://media.screensteps.com/image_assets/assets/001/360/979/original/baa6cc64-3ce5-4228-936c-54d5575cafd9.png" class="lazyload lazypreload" style="max-width:626px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/979/original/baa6cc64-3ce5-4228-936c-54d5575cafd9.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="32d02a1a-1717-4db3-9069-ca28549d75f3" id="">
+            <h3 id="use-the-drop-down-menu-to-add-questions"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.2. Use the drop down menu to add questions." href="#use-the-drop-down-menu-to-add-questions">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 10.2. Use the drop down menu to add questions. </h3>
+            <div class="image clearfix">
+             <img alt="Check Boxes is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/981/original/bdf4ccfa-1ecf-4321-b9c9-de1fa039445b.png 508w" data-src="https://media.screensteps.com/image_assets/assets/001/360/981/original/bdf4ccfa-1ecf-4321-b9c9-de1fa039445b.png" class="lazyload lazypreload" style="max-width:508px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/981/original/bdf4ccfa-1ecf-4321-b9c9-de1fa039445b.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="4ebc707d-9ab2-4019-a210-3ab12c873d84" id="">
+            <h3 id="select-the-type-of-question-to-add"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.3. Select the type of question to add." href="#select-the-type-of-question-to-add">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 10.3. Select the type of question to add. </h3>
+            <div class="image clearfix">
+             <img alt="Rate is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/361/004/original/4b8a9b8f-713b-46da-98e8-d5cc0a9b8e2e.png 511w" data-src="https://media.screensteps.com/image_assets/assets/001/361/004/original/4b8a9b8f-713b-46da-98e8-d5cc0a9b8e2e.png" class="lazyload lazypreload" style="max-width:511px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/361/004/original/4b8a9b8f-713b-46da-98e8-d5cc0a9b8e2e.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="94619c1d-e70d-40d0-b186-2d545f2140da" id="">
+            <h3 id="click-on-add-selected-question-type"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.4. Click on Add selected question type." href="#click-on-add-selected-question-type">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 10.4. Click on Add selected question type. </h3>
+            <div class="image clearfix">
+             <img alt="Add selected question type button is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/988/original/b892b601-05c4-4848-853c-d4bc52a2fdd6.png 511w" data-src="https://media.screensteps.com/image_assets/assets/001/360/988/original/b892b601-05c4-4848-853c-d4bc52a2fdd6.png" class="lazyload lazypreload" style="max-width:511px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/988/original/b892b601-05c4-4848-853c-d4bc52a2fdd6.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="f23cba88-ebff-455e-8319-dd96adf3b42d" id="">
+            <h3 id="type-a-question-name"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.5. Type a Question name." href="#type-a-question-name">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 10.5. Type a Question name. </h3>
+            <div class="image clearfix">
+             <img alt="Question name field is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/361/006/original/5af163a0-9366-4213-a47e-b0787c97cdc5.png 507w" data-src="https://media.screensteps.com/image_assets/assets/001/361/006/original/5af163a0-9366-4213-a47e-b0787c97cdc5.png" class="lazyload lazypreload" style="max-width:507px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/361/006/original/5af163a0-9366-4213-a47e-b0787c97cdc5.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="067270f9-43e1-48fe-bea3-48302b709ac8" id="">
+            <h3 id="select-yes-for-response-is-required"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.6. Select Yes for Response is required." href="#select-yes-for-response-is-required">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 10.6. Select Yes for Response is required. </h3>
+            <div class="image clearfix">
+             <img alt="Response is required is set to Yes." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/980/original/f7c2e677-522c-4607-ac3c-f51645ce7c74.png 500w" data-src="https://media.screensteps.com/image_assets/assets/001/360/980/original/f7c2e677-522c-4607-ac3c-f51645ce7c74.png" class="lazyload lazypreload" style="max-width:500px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/980/original/f7c2e677-522c-4607-ac3c-f51645ce7c74.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="cbc5d55e-cc3b-4927-a20f-ff6bf1c368a8" id="">
+            <h3 id="type-4-for-number-of-scale-items"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.7. Type 4 for Number of scale items." href="#type-4-for-number-of-scale-items">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 10.7. Type 4 for Number of scale items. </h3>
+            <div class="image clearfix">
+             <img alt="Nb of scale items is set to 4." data-srcset="https://media.screensteps.com/image_assets/assets/001/361/009/original/a12f5982-d702-40fe-a8ec-a195596356bb.png 500w" data-src="https://media.screensteps.com/image_assets/assets/001/361/009/original/a12f5982-d702-40fe-a8ec-a195596356bb.png" class="lazyload lazypreload" style="max-width:500px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/361/009/original/a12f5982-d702-40fe-a8ec-a195596356bb.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="e47e3bdd-844e-434b-b42b-011694fa032d" id="">
+            <h3 id="select-na-column"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.8. Select NA column." href="#select-na-column">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 10.8. Select NA column. </h3>
+            <div class="image clearfix">
+             <img alt="Type of rate scale is set to N/A column." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/991/original/2e51c547-af22-499a-95a8-91961ceb6bad.png 500w" data-src="https://media.screensteps.com/image_assets/assets/001/360/991/original/2e51c547-af22-499a-95a8-91961ceb6bad.png" class="lazyload lazypreload" style="max-width:500px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/991/original/2e51c547-af22-499a-95a8-91961ceb6bad.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="defa0008-9036-4599-88ad-2a004688df4d" id="">
+            <h3 id="type-the-question-text"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.9. Type the Question text." href="#type-the-question-text">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 10.9. Type the Question text. </h3>
+            <div class="image clearfix">
+             <img alt="Question text is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/985/original/e915d373-99f4-4bdd-a062-1a1ee90a818a.png 500w" data-src="https://media.screensteps.com/image_assets/assets/001/360/985/original/e915d373-99f4-4bdd-a062-1a1ee90a818a.png" class="lazyload lazypreload" style="max-width:500px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/985/original/e915d373-99f4-4bdd-a062-1a1ee90a818a.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="f00d85f8-41e1-45ba-b9e6-2a268673fffc" id="">
+            <h3 id="type-the-possible-answers"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.10. Type the Possible answers." href="#type-the-possible-answers">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 10.10. Type the Possible answers. </h3>
+            <div class="image clearfix">
+             <img alt="Possible answers field is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/995/original/499a4102-94de-4413-af58-94711f863e44.png 599w" data-src="https://media.screensteps.com/image_assets/assets/001/360/995/original/499a4102-94de-4413-af58-94711f863e44.png" class="lazyload lazypreload" style="max-width:599px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/995/original/499a4102-94de-4413-af58-94711f863e44.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="07ace3ff-ce7d-44f7-a0e6-77515d605d5c" id="">
+            <h3 id="click-on-save-changes"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.11. Click on Save changes." href="#click-on-save-changes">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 10.11. Click on Save changes. </h3>
+            <div class="image clearfix">
+             <img alt="Save changes button is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/999/original/3caee47f-a0ca-4666-80d1-934f8c7108b9.png 491w" data-src="https://media.screensteps.com/image_assets/assets/001/360/999/original/3caee47f-a0ca-4666-80d1-934f8c7108b9.png" class="lazyload lazypreload" style="max-width:491px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/999/original/3caee47f-a0ca-4666-80d1-934f8c7108b9.png">
+            </div>
+           </div>
+           <div class="step step-depth-2 child-step" data-step-uuid="cb3364ff-9463-4012-96b6-b4108459d470" id="">
+            <h3 id="you-have-made-your-first-question"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10.12. You have made your first question." href="#you-have-made-your-first-question">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+               <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+              </svg> </a> 10.12. You have made your first question. </h3>
+            <div class="image clearfix">
+             <img alt="the first question is complete." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/986/original/2960fd97-e551-4f8a-87f7-509fc3200ef3.png 557w" data-src="https://media.screensteps.com/image_assets/assets/001/360/986/original/2960fd97-e551-4f8a-87f7-509fc3200ef3.png" class="lazyload lazypreload" style="max-width:557px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/986/original/2960fd97-e551-4f8a-87f7-509fc3200ef3.png">
+            </div>
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="508b005c-e44e-4ba9-a443-968d9bd11d48" id="">
+           <h2 id="click-on-preview"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 11. Click on Preview." href="#click-on-preview">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 11. Click on Preview. </h2>
+           <div class="image clearfix">
+            <img alt="Preview link is selected." data-srcset="https://media.screensteps.com/image_assets/assets/001/360/989/original/9b96984d-bd9d-495c-9dc4-429727060fa9.png 590w" data-src="https://media.screensteps.com/image_assets/assets/001/360/989/original/9b96984d-bd9d-495c-9dc4-429727060fa9.png" class="lazyload lazypreload" style="max-width:590px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/360/989/original/9b96984d-bd9d-495c-9dc4-429727060fa9.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="9c8bb9f6-084c-4adc-98f2-87bccd5966c9" id="">
+           <h2 id="preview-your-questionnaire"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 12. Preview your questionnaire." href="#preview-your-questionnaire">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> 12. Preview your questionnaire. </h2>
+           <div class="image clearfix">
+            <img alt="Preview of the questionnaire." data-srcset="https://media.screensteps.com/image_assets/assets/001/361/002/original/2bb7059e-e65b-445a-9fed-4777adf32cca.png 564w" data-src="https://media.screensteps.com/image_assets/assets/001/361/002/original/2bb7059e-e65b-445a-9fed-4777adf32cca.png" class="lazyload lazypreload" style="max-width:564px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/001/361/002/original/2bb7059e-e65b-445a-9fed-4777adf32cca.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="9d9046a4-13d7-480c-a59c-bb893491f1f1" id="">
+           <h2 id="article-summary"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for Article Summary" href="#article-summary">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> Article Summary </h2>
+           <div class="instructions screensteps-textblock ">
+            <p>You have now learned how to create a Questionnaire activity for use in your course in TITANium.</p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="screensteps-next-prev-navigation" data-role="next-previous-nav">
+         <ul>
+          <li class="previous"><strong>Prev:</strong><a href="/m/GettingStarted/l/448981-how-do-i-add-the-lesson-activity">How do I add the Lesson activity?</a></li>
+          <li class="next"><strong>Next:</strong><a href="/m/GettingStarted/l/448983-how-do-i-add-a-quiz">How do I add a Quiz?</a></li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div aria-label="sidebar" class="screensteps-sidebar" role="complementary">
+      <div class="screensteps-sidebar-widget" id="lesson-sidebar-info">
+       <h3>Last Updated</h3>
+       <p>Mar 03, 2018</p>
+       <ul class="icon-links">
+       </ul>
+      </div>
+      <div class="screensteps-sidebar-widget" id="other-assets">
+       <h3>Self-Help Guides</h3>
+       <ul class="asset-list with-divider">
+        <li class="divider"><h4 class="sidebar-subheading">BEGIN HERE</h4></li>
+        <li class="manual"><a href="/m/GettingStarted">Getting Started with TITANium</a></li>
+        <li class="manual"><a href="/m/96200">What's new in TITANium 2020-2021?</a></li>
+        <li class="manual"><a href="/m/StudentSelf-HelpGuide">Student Self-Help Guide</a></li>
+        <li class="divider"><h4 class="sidebar-subheading">ADDITIONAL GUIDES</h4></li>
+        <li class="manual"><a href="/m/FAQ">Frequently Asked Questions</a></li>
+        <li class="manual"><a href="/m/Gradebook">Grades - Gradebook Settings in Depth</a></li>
+        <li class="manual"><a href="/m/Respondus">Respondus</a></li>
+        <li class="manual"><a href="/m/ScantronandParScore">Scantron and ParScore</a></li>
+        <li class="divider"><h4 class="sidebar-subheading">Add-Ons for TITANium</h4></li>
+        <li class="manual"><a href="/m/100683">Dropbox in TITANium</a></li>
+        <li class="manual"><a href="/m/100682">Flipgrid in TITANium</a></li>
+        <li class="manual"><a href="/m/100671">Google Docs and Drive in TITANium</a></li>
+        <li class="manual"><a href="/m/100672">H5P in TITANium</a></li>
+        <li class="manual"><a href="/m/iClicker">iClicker in Titanium</a></li>
+        <li class="manual"><a href="/m/100669">ShareStream in TITANium</a></li>
+        <li class="manual"><a href="/m/Turnitin_in_TITANium">Turnitin in TITANium</a></li>
+        <li class="manual"><a href="/m/100673">VoiceThread in TITANium</a></li>
+        <li class="manual"><a href="/m/100674">YouTube in TITANium</a></li>
+        <li class="manual"><a href="/m/100675">Zoom in TITANium</a></li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <script>
+//<![CDATA[
+  jQuery(document).ready(function(jQuery) {
+    var lesson_id = 448982;
+    var current_article_sidebar_text = '(Current Article)';
+    var section_id = 147263;
+    var expansion = 'one';
+    switch(expansion) {
+      case 'none':
+        jQuery('ul.nested-chapter-lessons').hide();
+        break;
+      case 'all':
+        jQuery('ul.nested-chapter-lessons').show();
+        jQuery('li.chapter-list-item a.toggle-lessons').addClass('open');
+        break;
+      case 'one':
+        jQuery('ul.nested-chapter-lessons').hide();
+        jQuery('li.chapter-list-item[data-section-id="' + section_id + '"] ul.nested-chapter-lessons').show();
+        jQuery('li.chapter-list-item[data-section-id="' + section_id + '"] a.toggle-lessons').addClass('open');
+        break;
+    }
+    jQuery('li.chapter-list-item[data-section-id="' + section_id + '"]').addClass('here');
+    jQuery('li[data-lesson-id="' + lesson_id + '"]').addClass('here');
+    jQuery('li[data-lesson-id="' + lesson_id + '"] a').attr('data-current-article-text', current_article_sidebar_text);
+  });
+
+//]]>
+</script>
+    <noscript>
+     Enable javascript to expand/contract chapters
+    </noscript>
+   </main>
+  </div>
+  <div aria-labelledby="modal-label" class="screensteps-modal" id="screensteps-modal" role="dialog"><span id="modal-label"> Inline referenced article </span>
+   <div class="screensteps-modal__box"><a class="screensteps-modal__close" href="#"> × </a><span class="screensteps-loading-wrapper"> <span class="screensteps-loading"></span> </span>
+    <div class="screensteps-modal__content screensteps-article-content"></div>
+   </div>
+  </div>
+ </body>
+</html>

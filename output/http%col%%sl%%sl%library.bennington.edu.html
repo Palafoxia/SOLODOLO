@@ -1,0 +1,312 @@
+<!-- 
+  Author: Hoanh An <hoanhan@bennington.edu>
+  Date created: 07/12/2017
+  Date launched: 12/28/2017
+  Latest update: 02/18/2018
+  Version: 1.0.0
+  Status: On-Going
+--><!doctype html>
+<html lang="en">
+ <head>
+  <link rel="stylesheet" type="text/css" href="/scripts/ProStyles.css">
+  <link rel="stylesheet" type="text/css" href="/screens/style.css">
+  <script type="text/javascript" src="/scripts/elcontent.js">
+</script>
+  <script type="text/javascript" src="/scripts/common.js">
+</script>
+  <script type="text/javascript" src="/scripts/features.js">
+</script>
+  <script type="text/javascript" src="/scripts/webbridge.js">
+</script>
+  <title> Crossett Library </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="icon" type="image/png" href="/screens/BClibrary.jpg"><!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"><!-- Custom Stylesheet -->
+  <link href="/screens/style.css" rel="stylesheet"><!-- Google Feed API -->
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script><!-- Load Header -->
+  <script>
+    $(document).ready(function(){
+      $('#header').load('/screens/header.html');
+      $('#footer').load('/screens/footer.html');
+    });
+    </script>
+ </head>
+ <body>
+  <header>
+   <div id="header"></div>
+  </header><!-- SEARCH */-->
+  <section> 
+   <div id="search-background">
+    <div id="banner-search-container" class="container">
+     <div id="searchBox-wrapper" class="container"><!-- SEARCHBOX --><!-- EBSCO Search Box Begins -->
+      <style type="text/css">
+  .ebsco-single-search *,.ebsco-single-search *::before,.ebsco-single-search *::after{box-sizing:border-box;font:inherit;margin:0}
+  .ebsco-single-search input,.ebsco-single-search button,.ebsco-single-search select{margin:0}
+  .eb-search-container{display:flex;flex-flow:row wrap;line-height:1.5}
+  .eb-search-container>*{flex:1 100%;padding:12px}
+  .eb-search-container__title{font-weight:400;font-size:1.5em;letter-spacing:-.05em;text-align:center}
+  .eb-search__box>*{flex:1 100%;line-height:normal}
+  .eb-search__box{border-radius:.25em;display:flex;flex-wrap:wrap;font-size:1.25em}
+  .eb-search__input-bquery{background:#fff;border:1px solid #8d5c3ee6;border-bottom-color:transparent;border-radius:.25em .25em 0 0;padding:.75em}
+  .eb-search__input-bquery:focus{color:#333}
+  .eb-search__submit-button{-webkit-appearance:button;background:#8d5c3ee6;border:1px solid #8d5c3ee6;border-radius:0 0 .25em .25em;box-shadow:0 2px 4px 0 rgba(0,0,0,.20);color:#FFFFFF;cursor:pointer;overflow:visible;padding:.5em 1.25em;text-align:center;white-space:nowrap}
+  .eb-search__submit-text{display:inline-flex;overflow:hidden}
+  .eb-filter-container{padding-bottom:0}
+  .eb-search__label{align-items:center;display:inline-flex;white-space:nowrap;width:100%}
+  .eb-search__input{height:1.1em}
+  .eb-search__span{padding:0 .5em}
+  .eb-adv-search{padding-right:1em;text-align:right;white-space:nowrap}
+  a.eb-adv-search__link{text-decoration-skip-ink:auto}
+  .eb-sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(1px,1px,1px,1px)}
+  .eb-search-container__has-select .eb-search__search-prefix{background-color:#fff;border-radius:.25em 0 0 .25em;margin-bottom:.75em;position:relative}
+  .eb-search-container__has-select .eb-search__search-prefix:after,.eb-search__search-prefix:before{bottom:0;content:"";pointer-events:none;position:absolute;top:0}
+  .eb-search-container__has-select .eb-search__search-prefix:before{right:0;width:1.75em}
+  .eb-search-container__has-select .eb-search__search-prefix:after{border-bottom:2px solid #000;border-right:2px solid #000;height:.5em;margin:auto;right:.75em;transform-origin:center right;transform:rotate(45deg);width:.5em;z-index:2}
+  .eb-search-container__has-select .eb-search__select{-webkit-appearance:none;appearance:none;background:#fff;border:1px solid #8d5c3ee6;border-radius:.25em;box-shadow:none;color:#000;height:100%;padding:.5em 1.75em .5em .75em;width:100%}
+  .eb-search-container__has-select .eb-search__select:focus{color:#000}
+  .eb-search-container__has-select .eb-search__select::-ms-expand{display:none}
+  html[dir="rtl"] .eb-search__select {padding: .5em .75em .5em 1.75em}
+  html[dir="rtl"] .eb-search__search-prefix:before{left:0;right:inherit}
+  html[dir="rtl"] .eb-search__search-prefix:after{left:.75em;right:inherit}
+  @media only screen and (min-width: 768px) {
+    .eb-search-container{padding:.75em}
+    .eb-search__box{flex-wrap:nowrap;height:2.8em;box-shadow:0 2px 4px 0 rgba(0,0,0,.20)}
+    .eb-search__input-bquery{border-bottom-color:#8d5c3ee6;border-radius:.25em 0 0 .25em;border-right-color:transparent;width:100%}
+    .eb-search__submit-button{border-radius:0 .25em .25em 0;box-shadow:none;flex:0 0 auto}
+    .eb-filter-container{flex:1;padding-left:1em;padding-bottom:.75em}
+    .eb-search__label{width:auto}
+    .eb-search-container__has-limiter .eb-adv-search{flex:0 0 auto}
+    .eb-search-container__has-select .eb-search__search-prefix{flex:1 0 auto;margin-bottom:0}
+    .eb-search-container__has-select .eb-search__select{flex:0 0 auto;border-radius:0}
+    .eb-search-container__has-select .eb-search__search-prefix:nth-of-type(1) .eb-search__select{border-radius:.25em 0 0 .25em}
+    .eb-search-container__has-select .eb-search__input-bquery{border-left-color: transparent;border-radius:0}
+    .eb-search-container__has-select-two .eb-search__search-prefix:nth-of-type(1) > .eb-search__select{border-right-color: transparent}
+    html[dir="rtl"] .eb-search__input-bquery{border-radius:0 .25em .25em 0;border-left-color:transparent;border-right-color:inherit}
+    html[dir="rtl"] .eb-search__submit-button{border-radius:.25em 0 0 .25em;border-left-color:inherit;border-right-color:transparent}
+    html[dir="rtl"] .eb-search__select{border-radius:0 .25em .25em 0;border-right-color:inherit}
+    html[dir="rtl"] .eb-search-container__has-select .eb-search__input-bquery{border-radius:0;border-right-color:transparent}
+    html[dir="rtl"] .eb-search-container__has-select .eb-search__search-prefix:nth-of-type(1) .eb-search__select{border-radius:0 .25em .25em 0}
+    html[dir="rtl"] .eb-search-container__has-select-two .eb-search__search-prefix:nth-of-type(1) > .eb-search__select{border-left-color: transparent;border-right-color: inherit}
+    html[dir="rtl"] .eb-search-container__has-select-two .eb-search__search-prefix:nth-of-type(2) > .eb-search__select{border-radius: 0}
+  }
+</style>
+      <form action="https://searchbox.ebsco.com/search/" target="_self" class="ebsco-single-search">
+       <input name="schemaId" value="search" type="hidden">
+       <input name="custid" value="s8481073" type="hidden">
+       <input name="groupid" value="main" type="hidden">
+       <input name="profid" value="eds" type="hidden">
+       <input name="authtype" value="ip" type="hidden">
+       <input name="proxy" value="https://0-{targetURLDomain}.library.bennington.edu/{targetURLRemainder}" type="hidden">
+       <input name="scope" value="site" type="hidden">
+       <input name="site" value="eds-live" type="hidden">
+       <input name="direct" value="true" type="hidden">
+       <div class="eb-search-container eb-search-container__has-limiter">
+        <div class="eb-search">
+         <div class="eb-search__box"><label class="eb-sr-only" for="eb-sbb-search-input">Search articles, books, journals &amp; more</label>
+          <input class="eb-search__input-bquery" id="eb-sbb-search-input" name="bquery" type="text" placeholder="Search articles, books, journals &amp; more"><button class="eb-search__submit-button" type="submit"> 
+           <div class="eb-search__submit-text">
+            Search
+           </div> </button>
+         </div>
+        </div>
+        <div class="eb-filter-container"><label class="eb-search__label" style="display:none" for="fullText"> <input class="eb-search__input" id="fullText" name="limiter-ft" value="Y" type="checkbox" checked> <span class="eb-search__span">Full text</span> </label>
+        </div>
+       </div>
+      </form><!-- EBSCO Search Box Ends -->
+      <p><a href="https://library.bennington.edu/search/Y?SEARCH="><span style="background:#8d5c3ee6; color:#FFFFFF; border-radius:.25em; font-size:17.5px; padding:.75em; margin-left:1.5em; width:90px">Catalog</span></a><a href="https://0-search-ebscohost-com.library.bennington.edu/login.aspx?authtype=ip,uid&amp;profile=pfi"><span style="background:#8d5c3ee6; color:#FFFFFF; border-radius:.25em; font-size:17.5px; padding:.75em; margin-left:1.5em; width:90px">Journals</span></a><a href="http://libraryguides.bennington.edu/az.php"><span style="background:#8d5c3ee6; color:#FFFFFF; border-radius:.25em; font-size:17.5px; padding:.75em; margin-left:1.5em; width:90px">Databases</span></a><a href="https://library.bennington.edu/search/r"><span style="background:#8d5c3ee6; color:#FFFFFF; border-radius:.25em; font-size:17.5px; padding:.75em; margin-left:1.5em; width:90px">Reserves</span></a><a href="https://crossettlibrary.dspacedirect.org/"><span style="background:#8d5c3ee6; color:#FFFFFF; border-radius:.25em; font-size:17.5px; padding:.75em; margin-left:1.5em; width:90px">Archives</span></a></p>
+     </div>
+    </div>
+   </div>
+  </section><!-- ALERT -->
+  <section>
+   <div id="alert-container" class="container">
+    <div class="row"><!-- NOTIFICATION -->
+     <div class="col-sm-12 col-md-6">
+      <br><a data-toggle="collapse" href="#notifications-table" aria-expanded="false" aria-controls="notifications-table"> <strong>Announcements</strong> <span class="badge badge-default"> 2 </span> <!--Put number of announcements here--> </a>
+      <div class="collapse show" id="notifications-table">
+       <div class="card card-block">
+        <div class="alert" role="alert">
+         <table class="table table-hover table-borderless">
+          <tbody>
+           <tr>
+            <td><strong><span class="glyphicon glyphicon-bell"></span></strong></td>
+            <td><p><strong>Juneteenth</strong></p><p> In recognition of Juneteenth, the library will have slightly altered hours the following day, Monday, June 20th. On Monday, 6/20, the library will open at 12pm and close at the usually scheduled 11:30pm. We will resume our normal hours, 9am - 11:30pm, on Tuesday, 6/21. </p></td>
+           </tr> 
+           <tr>
+            <td><strong><span class="glyphicon glyphicon-bell"></span></strong></td>
+            <td><p><strong>Summer Hours</strong></p><p> Crossett will be open during the summer: </p>
+             <ul style="color:#777">
+              <li>Monday - Thursday, 9am - 11:30pm</li>
+              <li>Friday, 9am - 11pm</li>
+              <li>Saturday and Sunday, 12pm - 11pm</li>
+             </ul> <p>The 24-hour room is available when Crossett Library is closed. </p></td>
+           </tr> <!--                     <tr>
+                        <td><strong><span class="glyphicon glyphicon-bell"></span></strong></td>
+                        <td>
+                          <p><strong>Crossett Spring Term Hours</strong></p>
+                          
+                    	<p>	Crossett Library is open: </p>
+                    	<ul style="color:#777">
+                    		<li>Sunday - Wednesday, 8am - Midnight</li>
+                    		<li>Thursday - Saturday, 8am - 10pm</li>
+                    	</ul>                    	
+                <p>The 24-hour room is available when Crossett Library is closed. </p>
+                        </td>
+                    </tr>  
+                    --><!-- <tr>
+                        <td><strong><span class="glyphicon glyphicon-bell"></span></strong></td>
+                        <td>
+                          <p><strong>Headline</strong></p>
+                          <p>
+                          Text of announcement
+                          </p>
+                        </td>
+                    </tr>    --> 
+          </tbody>
+         </table>
+        </div>
+       </div> 
+      </div>
+     </div><!-- RSS FEED --><!--      	  <div class="col-sm-12 col-md-6">
+      	  	<div id="rss-feed">
+              <br>
+      		  	<a>
+      		  		<strong>Newly Added</strong>
+      			  </a>
+              <div class="pre-scrollable" class="card card-block">
+                <div class="alert" role="alert">
+                  <table class="table table-striped table-borderless">
+                    <tbody id="rss-feed-content">
+                    </tbody>
+                  </table>
+                </div> 
+              </div>
+      	  	</div>
+      	  </div>
+      	</div>
+      </div>
+    </section>-->
+     <div class="col-sm-12 col-md-6">
+      <br><a data-toggle="collapse" href="#notifications-table" aria-expanded="false" aria-controls="notifications-table"> <strong>Quick Links</strong> </a>
+      <div class="collapse show" id="notifications-table">
+       <div class="card card-block">
+        <div class="alert" role="alert">
+         <table class="table table-hover table-borderless">
+          <tbody>
+           <tr>
+            <td><p><strong>Here is a list of quick links to assist in your learning.</strong></p><p> </p>
+             <ul>
+              <li><a href="http://libraryguides.bennington.edu/az.php">Databases</a></li>
+              <li><a href="https://0-search-ebscohost-com.library.bennington.edu/login.aspx?authtype=ip,uid&amp;profile=pfi">Journal Search</a></li>
+              <li><a href="https://0-search-ebscohost-com.library.bennington.edu/login.aspx?authtype=ip,uid&amp;profile=ehost&amp;defaultdb=nlebk">E-books</a></li>
+              <li><a href="https://2977.account.worldcat.org/profile">Interlibrary Loan</a></li>
+              <li><a href="http://libraryguides.bennington.edu/">Research Guides</a></li>
+              <li><a href="https://libraryguides.bennington.edu/research/home">Research Resources at Crossett</a></li>
+              <li><a href="https://libraryguides.bennington.edu/RemoteTeachingLearning">Remote Learning and Teaching Resource Guide</a><!--<li><a href="https://bennington.mywconline.com/">Peer Tutoring</a>--></li>
+             </ul><p></p></td>
+           </tr> 
+          </tbody>
+         </table>
+        </div>
+       </div>
+      </div>
+     </div> 
+    </div>
+   </div>
+  </section><!-- SOCIAL MEDIA */-->
+  <section>
+   <div id="footer-container">
+    <div class="container">
+     <br>
+     <div id="social-icon-wrapper" class="container" align="center"><a href="http://librarianreadseverything.tumblr.com"><img title="Librarian Reads Everything" src="/screens/img/librarianreadseverything.png" alt="Librarian Reads Everything Tumblr"></a><a href="http://crossettlibrary.tumblr.com"><img title="Crossett-copia" src="/screens/img/tumblr.png" alt="Crossett Library Tumblr"></a><a href="https://www.facebook.com/CrossettLibrary"><img title="Facebook" src="/screens/img/facebook.png" alt="Crossett Library Facebook"></a><a href="https://www.instagram.com/crossettlibrarybennington/"><img title="Instagram" src="/screens/img/instagram.png" alt="Crossett Library Instagram"></a>
+     </div>
+    </div>
+   </div>
+  </section><!-- CUSTOM JAVASCRIPT */-->
+  <script type="text/javascript">
+      // XML RSS FEED
+      $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "https://library.bennington.edu/feeds/newmaterials.xml",
+            dataType: "xml",
+            success: xmlParser
+           });
+      });
+
+      function xmlParser(xml) {
+        $(xml).find("item").each(function () {
+            $("#rss-feed-content").append(
+              '<tr><td><strong><span class="glyphicon glyphicon-bookmark"></span></strong></td><td><a style="font-size: 14px; color: #0c2b0fe6;" href="' + 
+              $(this).find("link").text() + 
+              '">' + 
+              $(this).find("title").text() +
+              '</a></td></tr>');
+         });
+      }
+
+      // SEARCHBOX
+      $(document).ready(function(e){
+        $('.search-panel .dropdown-menu').find('a').click(function(e) {
+          e.preventDefault();
+          var param = $(this).attr("href").replace("#","");
+          var concept = $(this).text();
+          $('.search-panel span#search_concept').text(concept);
+          $('.input-group #search_param').val(param);
+
+          switch (param) {
+            case "catalog":
+              $("#catalog").show();
+              $("#ebscohostCustomSearchBox").hide();
+              $("#eco-journals").hide();
+              $("#search-reserve").hide();
+              $("#search-archive").hide();
+              break;
+            case "journals":
+              $("#eco-journals").show();
+              $("#ebscohostCustomSearchBox").hide();
+              $("#catalog").hide();
+              $("#search-reserve").hide();
+              $("#search-archive").hide();
+              break;
+            case "reserves":
+              $("#search-reserve").show();
+              $("#ebscohostCustomSearchBox").hide();
+              $("#catalog").hide();
+              $("#eco-journals").hide();
+              $("#search-archive").hide();
+              break;
+            case "archive":
+              $("#search-archive").show();
+              $("#ebscohostCustomSearchBox").hide();
+              $("#catalog").hide();
+              $("#eco-journals").hide();
+              $("#search-reserve").hide();
+              break;
+            default:
+              $("#ebscohostCustomSearchBox").show();
+              $("#catalog").hide();
+              $("#eco-journals").hide();
+              $("#search-reserve").hide();
+              $("#search-archive").hide();
+          };
+        });
+      });
+    </script>
+  <footer>
+   <div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+   </div>
+   <div id="footer"></div>
+  </footer><span style="font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; visibility: visible; font-size: 85%; text-align: center; display: block; ">WebPAC PRO © Innovative Interfaces, Inc.</span><!--this is customized <screens/mainmenu.html>-->
+ </body>
+</html>

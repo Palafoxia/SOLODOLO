@@ -1,0 +1,1641 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"427707476"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-146344386-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});
+ga('puwdsTracker.set', 'anonymizeIp', true);ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <link rel="canonical" href="https://oip.princeton.edu/our-programs/study-abroad/getting-started/advice-department-and-certificate">
+  <meta name="description" content="Whether you have declared your concentration or are still thinking about your potential options, this section will help you as you plan how study abroad might fit into your academic program.&nbsp;">
+  <meta property="og:site_name" content="Office of International Programs">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://oip.princeton.edu/our-programs/study-abroad/getting-started/advice-department-and-certificate">
+  <meta property="og:title" content="Advice by Department and Certificate">
+  <meta property="og:description" content="Whether you have declared your concentration or are still thinking about your potential options, this section will help you as you plan how study abroad might fit into your academic program.&nbsp;">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:widgets:csp" content="on">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/sites/g/files/toruqf131/themes/site/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Advice by Department and Certificate | Office of International Programs</title>
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf131/files/css/css_3POADIQgI0bQscKAJJxdasRAZBPJQsuq_6WSYOSTrhg.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf131/files/css/css_SG3i_WXmDdI3ei_XafA4k2u9ziqtHtj_2niuOL2XqnM.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/cdy2nbv.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/cer7rbs.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf131/files/css/css_bIfMTNPCHe7qhbN8EyeaibqTWjVtuszH8oYtHruBQWc.css">
+ </head>
+ <body class="not-front section-our-programs page-node-351 content-type-ps-basic-page flavor1 full-width menu6 layout-block-padding-none path-node path-our-programs-study-abroad-getting-started-advice-department-and-certificate">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="page page-container has-primary-menu-aux"> 
+    <header role="banner" class="header" id="header">
+     <h1 class="sr-only">Office of International Programs</h1><a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen: </span>Skip to content</a><a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen: </span>Skip to search</a>
+     <div class="header-container container">
+      <div class="princeton-branding">
+       <div class="container"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"> <img src="/profiles/ps/themes/ps_base/images/pu-logo.svg" alt="Princeton University"> </a>
+       </div>
+      </div>
+      <div class="site-branding">
+       <div class="container">
+        <div class="row"><a href="/" title="Home" rel="home" class="site-logo"> <img src="/sites/g/files/toruqf131/themes/site/logo.svg" alt="Home" typeof="foaf:Image"> </a>
+        </div>
+       </div>
+      </div>
+      <nav aria-label="site" class="main-menu">
+       <h2 class="sr-only">Main Menu</h2>
+       <div class="container navbar-expand-lg"><button class="toggle-mobile-menu unbutton" type="button" data-toggle="collapse" data-target="#menu-container" aria-controls="menu-container" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-mobile-menu-icon"> <span class="toggle-mobile-menu-title">Menu</span> <i class="fa fa-bars" aria-hidden="true"></i> </span> </button>
+        <div id="menu-container" class="collapse navbar-collapse">
+         <div class="nav-wrapper">
+          <ul class="nav navbar-nav main">
+           <li class="nav-item expanded"><a href="/who-we-are" data-drupal-link-system-path="node/36">Who We Are</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+            <ul class="submenu collapse">
+             <li class="submenu-item"><a href="/who-we-are/facts-and-figures" data-drupal-link-system-path="node/106">Facts and Figures</a></li>
+             <li class="submenu-item"><a href="/who-we-are/staff" data-drupal-link-system-path="node/111">Staff</a></li>
+            </ul></li>
+           <li class="nav-item expanded active"><a href="/our-programs" data-drupal-link-system-path="node/46">Our Programs</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+            <ul class="submenu collapse">
+             <li class="submenu-item expanded"><a href="/our-programs/fellowship-advising" data-drupal-link-system-path="node/71">Fellowship Advising</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+              <ul class="submenu collapse">
+               <li class="submenu-item"><a href="/our-programs/fellowship-advising/search-fellowships" data-drupal-link-system-path="node/116">Search Fellowships</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/fellowship-advising/meet-your-advisers" data-drupal-link-system-path="node/121">Meet Your Advisers</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/meet-your-advisers/pre-advising-form" data-drupal-link-system-path="node/4621">Pre-advising Form</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/fellowship-advising/preparing-your-application" data-drupal-link-system-path="node/131">Preparing Your Application</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/preparing-your-application/general-advice" data-drupal-link-system-path="node/136">General Advice</a></li>
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/preparing-your-application/application-faqs" data-drupal-link-system-path="node/141">Application FAQs</a></li>
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/preparing-your-application/resources" data-drupal-link-system-path="node/146">Resources</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/fellowship-advising/connect" data-drupal-link-system-path="node/151">Connect</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/connect/past-fellowship-recipients" data-drupal-link-system-path="node/156">Past Fellowship Recipients</a></li>
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/connect/fellowships-mentoring-program" data-drupal-link-system-path="node/4591">Fellowships Mentoring Program</a></li>
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/connect/news" data-drupal-link-system-path="node/3321">In the News</a></li>
+                </ul></li>
+              </ul></li>
+             <li class="submenu-item expanded"><a href="/our-programs/international-internships" data-drupal-link-system-path="node/66">International Internships</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+              <ul class="submenu collapse">
+               <li class="submenu-item expanded"><a href="/our-programs/international-internships/about-iip" data-drupal-link-system-path="node/171">About IIP</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/international-internships/about-iip/iip-numbers" data-drupal-link-system-path="node/181">IIP by the Numbers</a></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/international-internships/search-internships" data-drupal-link-system-path="node/186">Search Internships</a></li>
+               <li class="submenu-item"><a href="/our-programs/international-internships/create-your-own" data-drupal-link-system-path="node/191">Create Your Own</a></li>
+               <li class="submenu-item"><a href="/our-programs/international-internships/meet-iip-team" data-drupal-link-system-path="node/206">Meet the IIP Team</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/international-internships/how-apply" data-drupal-link-system-path="node/211">How to Apply</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/international-internships/how-apply/iip-application-timeline" data-drupal-link-system-path="node/216">IIP Application Timeline</a></li>
+                 <li class="submenu-item"><a href="/our-programs/international-internships/how-apply/iip-terms-and-conditions" data-drupal-link-system-path="node/3866">IIP Terms and Conditions</a></li>
+                 <li class="submenu-item"><a href="/our-programs/international-internships/how-apply/application-faqs" data-drupal-link-system-path="node/221">Application FAQs</a></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/international-internships/financial-matters" data-drupal-link-system-path="node/226">Financial Matters</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/international-internships/student-stories" data-drupal-link-system-path="node/231">Student Stories</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/international-internships/student-stories/iip-2021-poster-winners" data-drupal-link-system-path="node/7496">IIP 2021 Poster Winners</a></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/international-internships/returning-home" data-drupal-link-system-path="node/236">Returning Home</a></li>
+              </ul></li>
+             <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year" data-drupal-link-system-path="node/41">Novogratz Bridge Year</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+              <ul class="submenu collapse">
+               <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year/about-bridge-year" data-drupal-link-system-path="node/241">About Bridge Year</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/about-bridge-year/mission-values-vision" data-drupal-link-system-path="node/7556">Mission, Values, Vision</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/about-bridge-year/why-bridge-year" data-drupal-link-system-path="node/251">Why Bridge Year?</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/about-bridge-year/faqs" data-drupal-link-system-path="node/256">FAQs</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/about-bridge-year/news" data-drupal-link-system-path="node/261">In the News</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/about-bridge-year/support-bridge-year" data-drupal-link-system-path="node/266">Support for Bridge Year</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year/explore-locations" data-drupal-link-system-path="node/271">Explore Locations</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/explore-locations/bolivia" data-drupal-link-system-path="node/276">Bolivia</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/explore-locations/china" data-drupal-link-system-path="node/281">China</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/explore-locations/india" data-drupal-link-system-path="node/286">India</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/explore-locations/indonesia" data-drupal-link-system-path="node/291">Indonesia</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/explore-locations/senegal" data-drupal-link-system-path="node/296">Senegal</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year/meet-our-volunteers" data-drupal-link-system-path="node/306">Meet Our Volunteers</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/meet-our-volunteers/returned-volunteers" data-drupal-link-system-path="node/311">Returned Volunteers</a></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/reflections-and-connections" data-drupal-link-system-path="node/316">Reflections and Connections</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year/voices" data-drupal-link-system-path="node/7516">Voices</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/voices/past-events" data-drupal-link-system-path="node/7591">Past Events</a></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/how-apply" data-drupal-link-system-path="node/301">How to Apply</a></li>
+               <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/information-families" data-drupal-link-system-path="node/531">Information for Families</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year/contact-us" data-drupal-link-system-path="node/331">Contact Us</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/contact-us/admission-ambassadors" data-drupal-link-system-path="node/6936">Admission Ambassadors</a></li>
+                </ul></li>
+              </ul></li>
+             <li class="submenu-item expanded active"><a href="/our-programs/study-abroad" data-drupal-link-system-path="node/61">Study Abroad</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+              <ul class="submenu collapse">
+               <li class="submenu-item expanded active"><a href="/our-programs/study-abroad/getting-started" data-drupal-link-system-path="node/336">Getting Started</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/why-go-abroad" data-drupal-link-system-path="node/341">Why Go Abroad?</a></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/types-programs" data-drupal-link-system-path="node/346">Types of Programs</a></li>
+                 <li class="submenu-item active"><a href="/our-programs/study-abroad/getting-started/advice-department-and-certificate" data-drupal-link-system-path="node/351" class="is-active">Advice by Department and Certificate</a></li>
+                 <li class="submenu-item expanded"><a href="/our-programs/study-abroad/getting-started/study-abroad-requirements" data-drupal-link-system-path="node/356">Study Abroad Requirements</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                  <ul class="submenu collapse">
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/study-abroad-requirements/academic-year-policies" data-drupal-link-system-path="node/361">Academic Year Policies</a></li>
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/study-abroad-requirements/summer-policies" data-drupal-link-system-path="node/366">Summer Policies</a></li>
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/study-abroad-requirements/policies-faqs" data-drupal-link-system-path="node/371">Policies FAQs</a></li>
+                  </ul></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/study-abroad/meet-your-advisers" data-drupal-link-system-path="node/386">Meet Your Advisers</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/explore-programs" data-drupal-link-system-path="node/391">Explore Programs</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/explore-programs/explore-programs-faqs" data-drupal-link-system-path="node/396">Explore Programs FAQs</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/financial-matters" data-drupal-link-system-path="node/401">Financial Matters</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/financial-matters/academic-year" data-drupal-link-system-path="node/586">Academic Year</a></li>
+                 <li class="submenu-item expanded"><a href="/our-programs/study-abroad/financial-matters/summer" data-drupal-link-system-path="node/596">Summer</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                  <ul class="submenu collapse">
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/financial-matters/summer/deans-fund" data-drupal-link-system-path="node/601">Dean's Fund</a></li>
+                  </ul></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/how-apply" data-drupal-link-system-path="node/406">How to Apply</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item expanded"><a href="/our-programs/study-abroad/how-apply/academic-year" data-drupal-link-system-path="node/411">Academic Year</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                  <ul class="submenu collapse">
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/how-apply/academic-year/petition" data-drupal-link-system-path="node/426">Petition</a></li>
+                  </ul></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/how-apply/summer" data-drupal-link-system-path="node/416">Summer</a></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/how-apply/application-faqs" data-drupal-link-system-path="node/421">Application FAQs</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/returning-home" data-drupal-link-system-path="node/431">Returning Home</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/returning-home/re-entry" data-drupal-link-system-path="node/436">Re-entry</a></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/returning-home/practical-matters" data-drupal-link-system-path="node/441">Practical Matters</a></li>
+                 <li class="submenu-item expanded"><a href="/our-programs/study-abroad/returning-home/whats-next" data-drupal-link-system-path="node/446">What's Next?</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                  <ul class="submenu collapse">
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/returning-home/whats-next/become-global-ambassador" data-drupal-link-system-path="node/451">Become a Global Ambassador</a></li>
+                  </ul></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/connect" data-drupal-link-system-path="node/461">Connect</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/connect/contact-us" data-drupal-link-system-path="node/466">Contact Us</a></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/connect/events" data-drupal-link-system-path="node/476">Events</a></li>
+                </ul></li>
+              </ul></li>
+            </ul></li>
+           <li class="nav-item expanded"><a href="/our-students" data-drupal-link-system-path="node/51">Our Students</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+            <ul class="submenu collapse">
+             <li class="submenu-item expanded"><a href="/our-students/international-eye-photo-contest" data-drupal-link-system-path="node/496">International Eye Photo Contest</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+              <ul class="submenu collapse">
+               <li class="submenu-item"><a href="/our-students/international-eye-photo-contest/previous-winners" data-drupal-link-system-path="node/4616">Previous Winners</a></li>
+               <li class="submenu-item"><a href="/our-students/international-eye-photo-contest/years-winners" data-drupal-link-system-path="node/6186">This Year's Winners</a></li>
+              </ul></li>
+             <li class="submenu-item"><a href="/our-students/resources" data-drupal-link-system-path="node/501">Resources</a></li>
+            </ul></li>
+           <li class="nav-item"><a href="/contact-us" data-drupal-link-system-path="node/56">Contact Us</a></li>
+          </ul>
+         </div> 
+         <div class="main-submenu">
+          <div class="nav-wrapper">
+           <ul class="nav navbar-nav main">
+            <li class="nav-item collapsed"><a href="/our-programs/fellowship-advising" data-drupal-link-system-path="node/71">Fellowship Advising</a></li>
+            <li class="nav-item collapsed"><a href="/our-programs/international-internships" data-drupal-link-system-path="node/66">International Internships</a></li>
+            <li class="nav-item collapsed"><a href="/our-programs/novogratz-bridge-year" data-drupal-link-system-path="node/41">Novogratz Bridge Year</a></li>
+            <li class="nav-item collapsed active"><a href="/our-programs/study-abroad" data-drupal-link-system-path="node/61">Study Abroad</a></li>
+           </ul>
+          </div> 
+         </div>
+         <div class="utility-menu">
+          <ul class="nav navbar-nav utility-nav">
+           <li class="nav-item"><a href="/events" data-drupal-link-system-path="node/86">Events</a></li>
+           <li class="nav-item"><a href="/news" data-drupal-link-system-path="node/81">News</a></li>
+           <li class="nav-item"><a href="https://gps.princeton.edu/">My GPS</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </nav>
+      <div class="search-bar" id="search-bar">
+       <div class="container navbar-expand-lg" role="search">
+        <h2 class="sr-only">Search</h2><button class="toggle-searchbar unbutton" type="button" data-toggle="collapse" data-target="#search-bar-container" aria-controls="search-bar-container" aria-expanded="false" aria-label="Toggle search"> <span class="toggle-search-icon"> <i class="fas fa-search" aria-hidden="true"></i> </span> </button>
+        <div id="search-bar-container" class="collapse navbar-collapse">
+         <div class="search-block-form contextual-region block block-search container-inline" id="block-searchform">
+          <form action="/search" method="get" id="search-block-form" accept-charset="UTF-8">
+           <div id="search-toggled" class="form-group js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label"><label for="edit-search-keys" class="visually-hidden">Search</label>
+            <input placeholder="Search" type="search" id="edit-search-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control">
+           </div>
+           <div data-drupal-selector="edit-search-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-search-actions">
+            <input type="submit" id="edit-search-submit" value="Submit" class="button js-form-submit form-submit btn btn-primary">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="breadcrumb" id="breadcrumb">
+     <div class="container">
+      <nav role="navigation" aria-label="breadcrumb">
+       <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/our-programs">Our Programs</a></li>
+        <li class="breadcrumb-item"><a href="/our-programs/study-abroad">Study Abroad Program</a></li>
+        <li class="breadcrumb-item"><a href="/our-programs/study-abroad/getting-started">Getting Started</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> Advice by Department and Certificate </li>
+       </ol>
+      </nav>
+     </div>
+    </div>
+    <div class="highlighted" id="highlighted">
+     <div class="container">
+      <div class="region region-highlighted">
+       <div data-drupal-messages-fallback class="hidden"></div>
+      </div>
+     </div>
+    </div>
+    <div class="oip-standard">
+     <div class="oip-standard-container">
+      <div class="oip-cat-title-container oip-category-study-abroad">
+       <span>Study Abroad</span>
+      </div>
+      <div class="oip-cat-title-container oip-category-bridge-year">
+       <span>Bridge Year</span>
+      </div>
+      <div class="oip-cat-title-container oip-category-fellowships">
+       <span>Fellowships</span>
+      </div>
+      <div class="oip-cat-title-container oip-category-internships">
+       <span>International Internships</span>
+      </div>
+      <h1>Advice by Department and Certificate</h1>
+     </div>
+    </div>
+    <div id="main" class="main-container">
+     <div class="container">
+      <div class="row">
+       <div class="sidebar-first section order-first col-sm-4 col-md-3 col-lg-2">
+        <nav class="main-sidebar-menu" aria-label="section">
+         <h2 class="sr-only">Section Menu</h2>
+         <div class="nav-wrapper">
+          <ul class="nav navbar-nav main">
+           <li class="nav-item expanded active"><a href="/our-programs/study-abroad/getting-started" data-drupal-link-system-path="node/336">Getting Started</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+            <ul class="submenu collapse">
+             <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/why-go-abroad" data-drupal-link-system-path="node/341">Why Go Abroad?</a></li>
+             <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/types-programs" data-drupal-link-system-path="node/346">Types of Programs</a></li>
+             <li class="submenu-item active"><a href="/our-programs/study-abroad/getting-started/advice-department-and-certificate" data-drupal-link-system-path="node/351" class="is-active">Advice by Department and Certificate</a></li>
+             <li class="submenu-item collapsed"><a href="/our-programs/study-abroad/getting-started/study-abroad-requirements" data-drupal-link-system-path="node/356">Study Abroad Requirements</a></li>
+            </ul></li>
+           <li class="nav-item"><a href="/our-programs/study-abroad/meet-your-advisers" data-drupal-link-system-path="node/386">Meet Your Advisers</a></li>
+           <li class="nav-item collapsed"><a href="/our-programs/study-abroad/explore-programs" data-drupal-link-system-path="node/391">Explore Programs</a></li>
+           <li class="nav-item collapsed"><a href="/our-programs/study-abroad/financial-matters" data-drupal-link-system-path="node/401">Financial Matters</a></li>
+           <li class="nav-item collapsed"><a href="/our-programs/study-abroad/how-apply" data-drupal-link-system-path="node/406">How to Apply</a></li>
+           <li class="nav-item collapsed"><a href="/our-programs/study-abroad/returning-home" data-drupal-link-system-path="node/431">Returning Home</a></li>
+           <li class="nav-item collapsed"><a href="/our-programs/study-abroad/connect" data-drupal-link-system-path="node/461">Connect</a></li>
+          </ul>
+         </div> 
+        </nav><a id="main-content" class="sr-only skip-link"></a>
+        <div class="region region-sidebar-first">
+         <div id="block-informationforstudyabroad" data-block-plugin-id="block_content:cbd1fa65-7382-4f85-9d9a-9f9b31e5c422" class="block-ps-text block block-block-content block-block-contentcbd1fa65-7382-4f85-9d9a-9f9b31e5c422">
+          <h2 class="block-heading">Information For</h2>
+          <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+           <p><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="927f14dd-6d30-4dd3-8ff0-9b550809ef59" href="/our-programs/study-abroad/families">Families</a></p>
+           <p><a href="/node/541">Faculty</a></p>
+           <p><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="f1378fe0-d982-4f3b-8342-7b99a05dcafc" href="/our-programs/study-abroad/exchange-students">Exchange Students</a></p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <main class="main main-content col-sm-12 col-lg-10 order-last">
+        <div class="region region-content">
+         <div id="block-oip-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+          <h1 class="page-title"> Advice by Department and Certificate </h1>
+         </div>
+         <div id="block-oip-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+          <article role="article" about="/our-programs/study-abroad/getting-started/advice-department-and-certificate" class="node node--type-ps-basic-page node--view-mode-full">
+           <div class="node__content">
+            <div class="constrained-bkg-constrained-content layout layout--twocol-75-25">
+             <div class="layout-inner-container">
+              <div class="layout__region layout__region--first layout__region--wide layout__region--75">
+               <div data-block-plugin-id="ps_node_view" class="block block-ps-core block-ps-node-view">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p>Click on the links below to find out how particular departments build study abroad into their curricula. We've also included information for students who are pre-med.</p>
+                 <p>Here you'll find information about where students have studied in the past, recommendations for how to plan your academic program, contact information for the departmental representative, and, in most cases, contact information for peer advisers who can give you advice based on their own experience.</p>
+                 <p>You can search for all study abroad options by visiting the <a href="https://gps.princeton.edu/" target="_blank">Global Programs System</a>. The Office of International Programs encourages all students interested in studying abroad to <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="8817b8c6-b2e9-4578-8700-717f5e65bf71" href="/our-programs/study-abroad/meet-your-advisers">make an appointment</a> with a study abroad adviser to discuss options.</p>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_501" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn" role="button" aria-controls="acc-panel" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> African American Studies 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel" role="region" aria-labelledby="acc-btn">
+                      <h3>Overview</h3>
+                      <p>The African American Studies department strongly encourages all AAS concentrators to study abroad for one semester.</p>
+                      <p>The best times for AAS majors to study abroad are sophomore and junior spring. Early concentration is open to spring semester sophomores who have completed the prerequisite for entry into the department by the end of the fall semester of sophomore year. It allows students to make an early start on independent work and is especially useful for students planning to study abroad junior year.</p>
+                      <p>Students planning to spend abroad a semester should seek advice from the Departmental Representative.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>AAS majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>SOAS University of London</li>
+                       <li>Institut d'Etudes Politiques in Menton and Paris, France</li>
+                       <li>University of Cape Town, South Africa</li>
+                       <li>University of Manchester, England</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2nt4FwM">African American Studies Program Options</a></p>
+                      <h3>AAS Director of Undergraduate Studies</h3>
+                      <p><a href="mailto: murakawa@princeton.edu">Naomi Murakawa</a><br> 8-6274</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--2" role="button" aria-controls="acc-panel--2" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> African Studies 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--2" role="region" aria-labelledby="acc-btn--2">
+                      <h3>Overview</h3>
+                      <p>The <a href="http://piirs.princeton.edu/afs">Program in African Studies</a> strongly encourages concentrators to study in Africa.</p>
+                      <p>The Ecology and Evolutionary Biology Department (in collaboration with the School of Engineering, the Program in African Studies, and Kenyan institutions) offers a spring semester in Kenya for juniors. Through the <a href="https://eeb.princeton.edu/undergraduate/semester-field-program">Tropical Biology Program in Kenya</a>, Princeton faculty and Kenyan scholars teach a sequence of four courses that involve total immersion in the tropics.</p>
+                      <p>Princeton also has an affiliation with the <a href="http://gps.princeton.edu/index.cfm?FuseAction=Programs.ViewProgram&amp;Program_ID=10172">University of Cape Town</a> to enable undergraduate study in South Africa for a semester or a year. Students are also welcome to study at other African universities, including Rhodes University, where a summer course is offered. In addition, the Program in African Studies offers <a href="http://www.princeton.edu/daressalaam/">Princeton in Dar es Salaam</a> during the summer (an intermediate Swahili language-based program).</p>
+                      <p>Students interested in working in Africa for either a year after graduation or during a summer can apply to Princeton in Africa for internships. <a href="http://www.princetoninafrica.org/">Princeton in Africa</a>, an independent support organization of the University, was established in 2000 and seeks to encourage American/African collaboration, to provide effective assistance to the world's most underserved continent, and to create a constituency committed to the emergence of Africa as a full partner in the developed world.</p>
+                      <p>AFS and HMEI sponsor first and second year students to undertake <a href="http://www.princeton.edu/pei/undergrads/internships/opportunities/#development">internships in Africa on Sustainable Development</a> to experience firsthand issues associated with conservation and improving human livelihoods.</p>
+                      <h3>AFS Program Manager</h3>
+                      <p><a href="mailto: twaldron@princeton.edu">Timothy Waldron</a><br> 8-9400</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--3" role="button" aria-controls="acc-panel--3" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Anthropology 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--3" role="region" aria-labelledby="acc-btn--3">
+                      <h3>Overview</h3>
+                      <p>With its emphasis on the comparative study of culture and society, the Department of Anthropology strongly encourages students to participate in both formal study abroad programs and independent or sponsored international research projects.</p>
+                      <p>Anthropology majors (or prospective majors) planning to study abroad are encouraged to consult early with a departmental representative. In order to accommodate study abroad, the Department is flexible about the scheduling of core courses. That said, since ANT 301, the spring course on field methods, is strongly recommended for fieldwork (and normally required for senior thesis fieldwork funded by the Anthropology Department), students who develop an interest in anthropology early in their matriculation and anticipate field research as part of their independent work are encouraged to take ANT 301 during the sophomore year if they plan to study abroad in their junior year spring, the term during which ANT 301 is offered. The Anthropology Department encourages students to do field research as part of their independent work, but fieldwork (whether abroad or in the U.S.) is not required.</p>
+                      <p>Please see the <a href="http://anthropology.princeton.edu/undergraduate-program/majoring-anthropology">requirements for the major</a> for more information.</p>
+                      <p><strong>Junior Paper:</strong><br> Anthropology majors write one Junior Paper, due in the spring term. Normally, this is a paper based on library research. During the fall semester, students meet with their advisers to develop a topic, compile a bibliography and formulate a research question or questions for further research and analysis. In the spring, students continue to work with their advisers to complete the literature review project. If a student is abroad, advising for the JP in either semester can be conducted via e-mail.</p>
+                      <p><strong>Field research:</strong><br> Although some anthropology majors utilize their study abroad experiences in the classroom and library as the basis for their senior year independent work, others choose to design and undertake an independent field research project outside of their “abroad” classroom. Such projects are not part of an established study abroad program, but may involve extensions of the student’s stay overseas in the same location or nearby. Fieldwork projects are planned independently by students with their advisers.</p>
+                      <p>You can find additional information on the <a href="http://anthropology.princeton.edu/undergraduate-program/majoring-anthropology">Anthropology Department's website</a>.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>Anthropology majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Academic Programs Abroad</li>
+                       <li>Danish Institute for Study Abroad (DIS) - Copenhagen</li>
+                       <li>Goldsmiths, &nbsp;University of London</li>
+                       <li>IES Abroad Granada - Study in Granada</li>
+                       <li>SOAS University of London</li>
+                       <li>University College London (UCL)</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2KI1kD0">Anthropology Program Options</a></p>
+                      <h3>ANT Director of Undergraduate Studies</h3>
+                      <p>Professor Julia Elyachar<br><a href="mailto:elyachar@princeton.edu" target="_blank">elyachar@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--4" role="button" aria-controls="acc-panel--4" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Architecture 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--4" role="region" aria-labelledby="acc-btn--4">
+                      <h3>Overview</h3>
+                      <p>Architecture concentrators normally complete study abroad during the spring semester of the junior year.&nbsp; Students interested in study abroad should attend a meeting with the Departmental Representative and Program Coordinator early in the fall to begin planning.&nbsp; Students must be in good academic standing with adequate degree progress to be approved for study abroad.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>Architecture majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Danish Institute for Study Abroad (DIS)</li>
+                       <li>Center for University Programs Abroad (CUPA), Paris, France</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2OrEIJr">Architecture Program Options</a></p>
+                      <h3>ARC Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:mgndlsns@princeton.edu">Prof. Mario Gandelsonas</a><br> 8-8221</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--5" role="button" aria-controls="acc-panel--5" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Art &amp; Archaeology 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--5" role="region" aria-labelledby="acc-btn--5">
+                      <h3>Overview</h3>
+                      <p>The Department of Art and Archaeology strongly encourages study abroad, as foreign study can greatly enrich any student’s program in the major. Normally two pre-approved courses per semester can count toward departmental requirements. Students can study abroad in either or both semesters of the junior year or the fall of senior year. Students complete independent work abroad under the supervision of a departmental faculty member while they are away.</p>
+                      <p>Many students choose to study in non-English speaking countries, thereby strengthening their ability to pursue research for the senior thesis and preparing them for possible graduate work in the field.</p>
+                      <p>Students contemplating studying abroad should speak with their departmental representative as early as possible and should plan to take courses in the language of the country in which they wish to study.</p>
+                      <p>For more information,&nbsp;<a href="https://artandarchaeology.princeton.edu/about-us/undergraduate/study-abroad" target="_blank">visit the Art &amp; Archaeology department's website</a>.</p>
+                      <h3>Suggested Programs</h3>
+                      <ul class="oip-ul--colored">
+                       <li>Center for University Programs Abroad (CUPA)</li>
+                       <li>Syracuse University in Florence,&nbsp; Italy</li>
+                       <li>University College London (UCL)</li>
+                       <li>University of Cambridge,&nbsp; Pembroke College</li>
+                       <li>University of Hong Kong (HKU)</li>
+                       <li>University of Melbourne</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2vUUeFT">Art &amp; Archaeology Program Options</a></p>
+                      <p>Many other options exist, depending upon a student’s interest. For instance, students interested in Roman art could study in Rome with the Trinity College Program. Those with an interest in Greece should consider College Year in Athens and the Arcadia Center for Hellenic, Balkan, and Mediterranean Studies in Athens. Students interested in medieval studies might look into the University of St. Andrews in Scotland or University of Oxford.</p>
+                      <p>In addition, students interested in archaeology may choose to participate in overseas archaeological excavations undertaken by departmental faculty. For further information,&nbsp;<a href="mailto:nta@princeton.edu" target="_self">contact Professor Nathan Arrington</a>.</p>
+                      <h3>ART Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:nta@princeton.edu" target="_self">Nathan Arrington</a><br> 8-1322</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--6" role="button" aria-controls="acc-panel--6" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Astrophysical Sciences 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--6" role="region" aria-labelledby="acc-btn--6">
+                      <h3>Overview</h3>
+                      <p>For Astrophysical Science concentrators interested in a semester abroad, the department is supportive and helps in recommending places that excel in Astronomy. Some astrophysics students have studied in the UK (Cambridge, Oxford, London), Germany, Chile, and in other countries. The department helps interested students with proper course selection as well as with independent research project selection.</p>
+                      <p>Although most concentrators prefer to spend their academic semesters at Princeton to benefit from all the exciting opportunities the Astrophysical Sciences Department offers, students often do summer research internships in the states or abroad--in addition to doing internships here at Princeton.</p>
+                      <p>The Astrophysical Sciences Departmental Representative is always available to consult with interested students regarding the possibilities and best options for study or internships abroad.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>AST majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>University College London, England</li>
+                       <li>Math in Moscow, Independent University of Moscow</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2IfOnlK">Astrophysical Sciences Program Options</a></p>
+                      <h3>AST Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:%20neta@astro.Princeton.EDU" target="_blank">Neta Bahcall</a><br> 8-6065</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--7" role="button" aria-controls="acc-panel--7" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Chemical and Biological Engineering 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--7" role="region" aria-labelledby="acc-btn--7">
+                      <h3>Overview</h3>
+                      <p>Engineering students can obtain international experience through participation in the University's Study Abroad Program or through summer internships and language study abroad. Interested students should begin planning early by meeting with the associate dean for undergraduate affairs to discuss suitable programs at foreign universities.</p>
+                      <p>Generally, it is best to study abroad in the spring of sophomore year due to the sequential nature of the required core courses for the chemical and biological engineering major.</p>
+                      <p>Take a look at Study Abroad for Engineering Students: Frequently Asked Questions, a very useful handout put together by Peter Bogucki, Associate Dean for Undergraduate Affairs, Engineering and Applied Science.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>CBE majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>University of Melbourne</li>
+                       <li>University College Dublin</li>
+                       <li>University of Cantabria, Exchange in Engineering</li>
+                       <li>University of Hong Kong (HKU), Exchange in Engineering</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2M98INd">Chemical and Biological Engineering Program Options</a></p>
+                      <h3>CBE Director of Undergraduate Studies</h3>
+                      <p>Professor Mark Brynildsen<br><a href="mailto:brynild@princeton.edu">mbrynild@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--8" role="button" aria-controls="acc-panel--8" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Chemistry 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--8" role="region" aria-labelledby="acc-btn--8">
+                      <h3>Overview</h3>
+                      <p>The Chemistry Department encourages students interested in studying abroad to consider opportunities either prior to entering the department (sophomore year) or during the spring semester of their junior year.</p>
+                      <p>Chemistry majors interested in the study abroad program are required to meet with Dr. Robert L’Esperance, the Chemistry Department’s Director of Undergraduate Studies, well in advance to plan coursework and independent work for all semesters remaining until graduation.</p>
+                      <p>For juniors choosing to study overseas during the spring semester, it is imperative that the following be in place prior to departure:</p>
+                      <ol>
+                       <li>Satisfactory completion of the Chemistry Department’s experimental lab course requirement.</li>
+                       <li>Satisfactory completion of the Fall Junior Independent Work program.</li>
+                       <li>Preapproval by the Chemistry Department as to how the Spring Junior Independent Work project will be completed at the overseas institution. Arrangements must be finalized with the faculty member at the foreign institution who will mentor the laboratory research project. The spring Junior Independent Work will culminate in a formal written paper, as per department requirements for all chemistry concentrators.</li>
+                       <li>Prearrangement of a thesis research project with a member of our faculty. This project will be started upon returning to the Princeton campus.</li>
+                       <li>Pre-approval of a chemistry course taken at the foreign institution that will count towards the eight required departmentals, should the student elect such a plan.</li>
+                      </ol>
+                      <p>Early concentrators may have the leeway to study abroad for either the fall or the spring semester, depending upon the coursework and Independent Work satisfactorily completed by the end of the term prior to departure.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>CHM majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>IES Abroad Salamanca - Study in Salamanca</li>
+                       <li>King's College London (KCL)</li>
+                       <li>University College London (UCL)</li>
+                       <li>University of Edinburgh</li>
+                       <li>University of Melbourne</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2Myipkp">Chemistry Program Options</a></p>
+                      <h3>CHM Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:rpl@Princeton.EDU" target="_blank">Robert L'Esperance</a><br> 8-1307</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--9" role="button" aria-controls="acc-panel--9" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Civil &amp; Environmental Engineering 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--9" role="region" aria-labelledby="acc-btn--9">
+                      <h3>Overview</h3>
+                      <p>Engineering students are encouraged to obtain international experience through participation in the University's Study Abroad Program or through summer internships and language study abroad. Interested students should begin planning early by meeting with the associate dean for undergraduate affairs to discuss suitable programs at foreign universities.</p>
+                      <p>Study abroad can be used to enhance and diversify the educational experience. For many CEE students, study abroad has served as a valuable option for junior independent work and in providing research material for the senior thesis.</p>
+                      <p>Courses taken during foreign study may be pre-approved for credit as departmentals by the department representative. Students considering study abroad should consult with the departmental representative as early as possible.</p>
+                      <p>Take a look at&nbsp;<a href="http://www.princeton.edu/oip/sap/programs/departments/cee/" target="_self">Study Abroad for Engineering Students: Frequently Asked Question<strong>s</strong></a>, a very useful handout put together by Peter Bogucki, Associate Dean for Undergraduate Affairs, Engineering and Applied Science.</p>
+                      <h3>Special Engineering Programs:</h3>
+                      <p><strong>University of Oxford Exchange:</strong>&nbsp; The School of Engineering offers the opportunity to participate in the Oxford Engineering Exchange Program. The program enables CEE students to spend their junior year in Oxford.</p>
+                      <h3>Other Suggested Programs:</h3>
+                      <p>CEE majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>CentraleSupelec, Engineering Exchange</li>
+                       <li>Danish Institute for Study Abroad (DIS) - Copenhagen</li>
+                       <li>Princeton Field Semester in Kenya</li>
+                       <li>University of Cantabria,&nbsp; Exchange in Engineering</li>
+                       <li>University of Melbourne</li>
+                       <li>University of Oxford,&nbsp; Oxford-Princeton Engineering Exchange</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2OTvNRQ">Civil &amp; Environmental Engineering Program Options</a></p>
+                      <h3>CEE Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:bglisic@exchange.Princeton.EDU" target="_self">Professor Branko Glisic</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--10" role="button" aria-controls="acc-panel--10" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Classics 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--10" role="region" aria-labelledby="acc-btn--10">
+                      <h3>Overview</h3>
+                      <p>In the belief that travel and study in the Mediterranean are an important part of classical education, the department strongly encourages its students to participate in one of the many programs available.</p>
+                      <p>The Classics Department provides<a href="http://www.princeton.edu/classics/undergraduate/study-abroad/" target="_blank">&nbsp;information about study abroad for classics majors</a>&nbsp;on its departmental website.</p>
+                      <h3>Highlighted Programs</h3>
+                      <p>Many departmental students spend one term of junior year at the<strong>&nbsp;Intercollegiate Center for Classical Studies in Rome.</strong>&nbsp;The center offers instruction in classical languages, presents lectures on ancient literature and history, and sponsors a series of trips to important museums and archaeological sites. Instruction is in English by American faculty members, and the curriculum is integrated with the Princeton undergraduate program.</p>
+                      <p>Equally valuable is the summer program at the&nbsp;<a href="http://www.ascsa.edu.gr/" target="_blank">American School of Classical Studies in Athens</a>. The department has some funds to help meet the expenses of such summer study, and additional assistance may be available through the Program in Hellenic Studies.<br><br> Students who would benefit from intensive work in the languages may apply for financial assistance to study at a Greek or Latin institute.</p>
+                      <h3>Other Suggested Programs</h3>
+                      <p>CLA majors can study abroad through a variety of programs. Below are some more suggestions from OIP's study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Hebrew University of Jerusalem</li>
+                       <li>Intercollegiate Center for Classical Studies</li>
+                       <li>Trinity College, Rome Campus</li>
+                       <li>University of Cambridge,&nbsp; Pembroke College</li>
+                       <li>University of Edinburgh</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2KFd09v">Classics Program Options</a></p>
+                      <h3>CLA Director of Undergraduate Studies</h3>
+                      <p>Joshua Billings<br><a href="mailto:jhbillings@princeton.edu" target="_blank">jhbillings@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--11" role="button" aria-controls="acc-panel--11" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Comparative Literature 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--11" role="region" aria-labelledby="acc-btn--11">
+                      <h3>Overview</h3>
+                      <p>The Department of Comparative Literature strongly encourages its students to undertake a semester and/or a summer (or more) abroad, in order to gain fluency in their primary foreign language, learn a second foreign language, or pursue further study in the literatures and cultures of these languages.</p>
+                      <p>Most students choose to study abroad for a single term during the junior year; but a year abroad is also possible. Two courses per semester abroad may be used to fulfill departmental requirements.</p>
+                      <p>There are numerous opportunities for summer study abroad, some partially supported by University funds. A summer abroad can increase fluency or be an effective way to satisfy the departmental requirement of developing reading knowledge in a second foreign language. For more information about available programs, students should consult the director of undergraduate studies in comparative literature and also in the individual language and literature departments. Some departmental funding is available for summer language study for concentrators.</p>
+                      <h3>Special Programs</h3>
+                      <p>Students can spend the fall of junior year with the&nbsp;<strong>Princeton English Program at University College London (UCL)</strong>, the oldest and largest of the constituent colleges of the University of London. This program is a result of the combined efforts of Princeton and UCL faculty members and offers a rigorous, exciting, and rewarding program of study at a top-ranked institution in one of the world’s great capital cities. Students take three UCL courses and&nbsp;the Junior Seminar in Critical Writing (ENG 300, a Princeton course taught by a Princeton professor exclusively for Princeton students). The seminar culminates in the writing of the Junior Paper.</p>
+                      <h3>Other Suggested Programs</h3>
+                      <p>COM majors can study abroad through a variety of programs. Below are some suggestions from OIP's study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Center for University Programs Abroad (CUPA)</li>
+                       <li>IFSA-Butler Argentine Universities Program</li>
+                       <li>Kyoto Consortium for Japanese Studies (KCJS)</li>
+                       <li>Princeton English Program, University College London</li>
+                       <li>University of Tokyo</li>
+                       <li>Yonsei University</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2OYlpIw">Comparative Literature Program Options</a></p>
+                      <h3>COM Director of Undergraduate Studies</h3>
+                      <p>Wendy Belcher<br><a href="mailto:wbelcher@princeton.edu">wbelcher@princeton.edu</a></p>
+                      <p><em>&nbsp;&nbsp;</em></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--12" role="button" aria-controls="acc-panel--12" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Computer Science 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--12" role="region" aria-labelledby="acc-btn--12">
+                      <h3>Overview</h3>
+                      <p>Become a citizen of the world! Computer Science majors are allowed and encouraged to study abroad for a semester or a even a whole year.</p>
+                      <p>If you plan to study abroad, it's best to start planning early. &nbsp;Some upper-level computer science courses are only offered during either the fall or the spring, so going abroad during one of these semesters effectively means you cannot take the course during that calendar year. &nbsp;In general, both OIP and the Computer Science Department try to be as flexible as possible in approving your curriculum, but it never hurts to get things figured out early.</p>
+                      <p>Once you have decided on a study abroad program or university, bring your course information to&nbsp;<a href="mailto:bwk@princeton.edu" target="_self">Brian Kernighan, COS Dept Rep for Study Abroad</a>&nbsp;to see if there are any courses that could substitute for one of your CS departmentals. If independent work is involved (e.g., for AB juniors), you will need to find a faculty advisor here, either as the direct advisor or as someone to assess work done for someone at the far end. You can take a year abroad as well, but this is more complicated, mainly because you have to find more technical courses that can count as departmentals. In any case, if you plan to study abroad, start planning early.</p>
+                      <p>You can find more information about study abroad at the Office of International Programs or the&nbsp;<a href="http://ugrad.cs.princeton.edu/index.html" target="_blank">Computer Science undergraduate webpage</a>. Questions may also be directed to&nbsp;<a href="mailto:ckenny@princeton.edu" target="_self">Colleen Kenny-McGinley</a>&nbsp;(8-1746), the COS undergraduate coordinator.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>COS majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Danish Institute for Study Abroad (DIS) – Copenhagen</li>
+                       <li>ETH Zurich</li>
+                       <li>University College London (UCL)</li>
+                       <li>University of Edinburgh</li>
+                       <li>University of Melbourne</li>
+                       <li>University of Oxford, Worcester College</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2nsU6JK">Computer Science Program Options</a></p>
+                      <h3>COS Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:bwk@princeton.edu" target="_self">Brian Kernighan</a><br> 8-2089 (COS dept rep for study abroad)</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--13" role="button" aria-controls="acc-panel--13" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Contemporary European Politics &amp; Society 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--13" role="region" aria-labelledby="acc-btn--13">
+                      <h3>Overview</h3>
+                      <p><a href="http://gps.princeton.edu/index.cfm?Program_Type_ID=1&amp;Program_Name=&amp;pt=%7F&amp;pi=%7F&amp;pc=%7F&amp;pr=Europe%7F&amp;FuseAction=Programs.SearchResults&amp;SimpleSearch=1" target="_blank">Studying abroad at a European university</a>&nbsp;is very strongly encouraged by the program. Living overseas is a critical part of gaining a perspective on a foreign society and in developing language fluency.<br><br> The Contemporary European Politics &amp; Society Program allows students to count up to two of the courses that they take at a European university toward their course requirement, if those courses pertain to modern European politics, economics, sociology, or 20th century history.</p>
+                      <h3>EPS Director</h3>
+                      <p><a href="mailto:borneman@princeton.edu" target="_self">John Borneman</a><br> 8-7368</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--14" role="button" aria-controls="acc-panel--14" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> East Asian Studies 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--14" role="region" aria-labelledby="acc-btn--14">
+                      <h3>Overview</h3>
+                      <p>The Program and Department of East Asian Studies encourages its students to study abroad and maintains <a href="http://www.princeton.edu/eas/undergraduate/internships/">a list of recommended study abroad programs on their website</a>.</p>
+                      <p>Students should make an appointment with the EAS departmental representative as soon as they start thinking about study abroad so that an academic program can be worked out that most suits the student.</p>
+                      <p><strong>Departmental credit:</strong></p>
+                      <ul class="oip-ul--colored">
+                       <li>For students going abroad for a semester, EAS will count up to two courses toward departmentals (one of which must be a cognate).</li>
+                       <li>For students going abroad for a year, EAS will count up to four courses toward departmentals (two of which must be a cognate).</li>
+                      </ul>
+                      <p>EAS will count content courses that are equivalent to EAS courses at Princeton. Exceptions will be made based on the discretion of the departmental representative.</p>
+                      <h3>Highlighted programs</h3>
+                      <p>EAS offers varied opportunities for overseas study in East Asia. Majors, certificate students, and non-majors are encouraged to take advantage of intensive summer or year-long language study and/or internships. The programs hosted by EAS are the intensive Chinese and Japanese programs in Beijing, China and Ishikawa, Japan (<a href="http://www.princeton.edu/pib">Princeton in Beijing</a> and <a href="https://pii.princeton.edu/">Princeton in Ishikawa</a>). Upon graduation, students will normally find themselves prepared to begin graduate work at a higher level because of such foreign language experience and training. The department also encourages students to participate in extended internships or study programs in East Asia.</p>
+                      <p>Scholarship aid is available to majors and non-majors for both summer and year-long programs. Students should contact the EAS Program Manager for these funding opportunities.</p>
+                      <p><em>Intervening Year Abroad</em><br> For a student whose career plans make it appropriate, EAS will encourage a year of intensive study at an approved center in Asia, usually Beijing, Kyoto, or Tokyo. To be eligible for consideration, a student completes two years' study of Chinese or Japanese by the end of junior year and must be nominated for scholarship assistance by the program committee. Upon returning to Princeton, the student makes use of Chinese or Japanese materials studied for the preparation of the senior thesis.</p>
+                      <h3>Other Suggested Programs</h3>
+                      <p>EAS majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>3 Campus East Asian Studies Program</li>
+                       <li>Chinese University of Hong Kong (CUHK)</li>
+                       <li>Kyoto Consortium for Japanese Studies (KCJS)</li>
+                       <li>National University of Singapore (NUS)</li>
+                       <li>Tsinghua University</li>
+                       <li>University of Tokyo</li>
+                       <li>Yonsei University</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2MA20fD">East Asian Studies Program Options</a></p>
+                      <h3>EAS Director of Undergraduate Studies</h3>
+                      <p>Amy Borovoy<br><a href="mailto:aborovoy@princeton.edu" target="_blank">aborovoy@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--15" role="button" aria-controls="acc-panel--15" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Ecology &amp; Evolutionary Biology 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--15" role="region" aria-labelledby="acc-btn--15">
+                      <h3>Overview</h3>
+                      <p>EEB closely integrates field, lab, and theoretical approaches. There are ample opportunities to take lab and theory courses on campus. We strongly encourage all students to take at least one intensive field course abroad, either in one of our three programs or at a foreign university.</p>
+                      <h3>Highlighted programs:</h3>
+                      <p><a href="https://eeb.princeton.edu/undergraduate/semester-field-program" target="_blank">Semester in the Field: Panama</a><br> The Department of Ecology and Evolutionary Biology offers a spring term in Panama in conjunction with the Smithsonian Tropical Research Institute. Students take four intensive three-week courses in sequence, which can include tropical ecology and conservation, coral reef biology, anthropology, and tropical biology. Prerequisite: EEB 321.</p>
+                      <p><a href="https://eeb.princeton.edu/undergraduate/semester-field-program" target="_blank">Semester in the Field: Kenya</a><br> The Department of Ecology and Evolutionary Biology, Civil and Environmental Engineering and Program in African Studies offers a four-course program, taken in three-week segments at Princeton's Mpala Research Centre in Central Kenya and at other sites within Kenya. The courses are taught in collaboration with scientists in Kenya, Columbia University faculty and Princeton faculty. The courses delve into conservation in Africa, natural history of mammals, sustainablility and field ecohydrology.</p>
+                      <h3>Other Suggested Programs</h3>
+                      <p>EEB majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Princeton Field Semester in Kenya</li>
+                       <li>Princeton Tropical Biology Program in Panama</li>
+                       <li>University of Melbourne</li>
+                       <li>University of Oxford, Hertford College</li>
+                       <li>University of Sydney</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2vVZDg0">Ecology &amp; Evolutionary Biology Program Options</a></p>
+                      <p>Check out&nbsp;<a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=IM5-CPRSuf4" target="_blank">Sabina Hlavaty's video</a>&nbsp;about her experience at James Cook University.</p>
+                      <h3>EEB Director of Undergraduate Studies</h3>
+                      <p>Jonathan Levine<br><a href="mailto:levinej@princeton.edu" target="_blank">levinej@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--16" role="button" aria-controls="acc-panel--16" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Economics 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--16" role="region" aria-labelledby="acc-btn--16">
+                      <h3>Overview</h3>
+                      <p>Because of globalization, the number of students in U.S. colleges and universities who go abroad to study economics is increasing. The Princeton economics department encourages students to study abroad. However, because the study of economics is sequential (courses must be completed in a particular order), students need to plan well ahead and carefully to spend a semester or year abroad.</p>
+                      <p>The best times for economics majors to study abroad are Sophomore Spring and Junior Spring. See details in the Department's document linked to above.</p>
+                      <p>Because the Economics Department only rarely permits core courses to be taken abroad, and because core courses may not be postponed to senior year, potential economics concentrators planning to study abroad must complete the appropriate core courses in their sophomore year. It is almost never feasible to spend a semester abroad in the senior year.</p>
+                      <p>The Economics Department provides extensive information about&nbsp;<a href="http://economics.princeton.edu/undergraduate-program/study-abroad" target="_blank">preparation for study abroad for potential economics majors&nbsp;</a>on its departmental website. If you are interested in or planning to concentrate in economics, you should read this document carefully.</p>
+                      <h3>Highlighted Programs</h3>
+                      <p><a href="http://gps.princeton.edu/index.cfm?FuseAction=Programs.ViewProgram&amp;Program_ID=10248" target="_blank">Princeton’s exchange with Bocconi University</a>&nbsp;in Milan, Italy, gives Princeton students concentrating or planning on concentrating in Economics the opportunity to study at one of the foremost economics and finance universities in Europe. Previous study of Italian is desirable, but not required. Bocconi offers a wide range of courses in English (more than 90 each semester), and an intensive crash course in Italian for three weeks before the beginning of each semester.</p>
+                      <h3>Other Suggested Programs</h3>
+                      <p>ECO majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Bocconi University</li>
+                       <li>University College London (UCL)</li>
+                       <li>University of Cambridge, Pembroke College</li>
+                       <li>University of Edinburgh</li>
+                       <li>University of Oxford, Hertford College</li>
+                       <li>University of Oxford, Worcester College</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2Mf5w1W">Economics Program Options</a></p>
+                      <h3>ECO Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:smita@princeton.edu" target="_self">Smita Brunnermeier</a><br> 8-5016</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--17" role="button" aria-controls="acc-panel--17" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Electrical and Computer Engineering 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--17" role="region" aria-labelledby="acc-btn--17">
+                      <h3>Overview</h3>
+                      <p>Engineering students are encouraged to obtain international experience through participation in the University's Study Abroad Program or through summer internships and language study abroad. Interested students should begin planning early by meeting with the associate dean for undergraduate affairs to discuss suitable programs at foreign universities.</p>
+                      <p>Take a look at&nbsp;<a href="http://www.princeton.edu/oip/sap/programs/departments/StudyAbroad_Engineering.pdf" target="_blank"><strong>Study Abroad for Engineering Students: Frequently Asked Questions (.pdf)</strong></a>, a very useful handout put together by Peter Bogucki, Associate Dean for Undergraduate Affairs, Engineering and Applied Science.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>ECE majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>University of Cantabria,&nbsp; Exchange in Engineering</li>
+                       <li>University of Edinburgh</li>
+                       <li>University of Hong Kong (HKU), Exchange in Engineering</li>
+                       <li>University of Oxford, Oxford-Princeton Engineering Exchange</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2MfPgxO">Electrical and Computer Engineering Program Options</a></p>
+                      <h3>ECE Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:sturm@princeton.edu" target="_self">James Sturm</a><br> 8-5610</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--18" role="button" aria-controls="acc-panel--18" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> English 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--18" role="region" aria-labelledby="acc-btn--18">
+                      <p>The department encourages students to consider studying abroad for a semester or a year. Courses abroad may, with approval, receive both departmental and distribution credit.</p>
+                      <p>Students considering study abroad should consult the departmental representative at an early stage.</p>
+                      <h3>Special ENG programs:</h3>
+                      <p>English majors have the opportunity to&nbsp;<strong>spend the fall of junior year in a special program at University College London (UCL)</strong>, the oldest and largest of the constituent colleges of the University of London. This program is a result of the combined efforts of Princeton and UCL faculty members and offers a rigorous, exciting, and rewarding program of study at a top-ranked institution in one of the world’s great capital cities. Students take three UCL courses and&nbsp;the Junior Seminar in Critical Writing (ENG 300, a Princeton course taught by a Princeton professor exclusively for Princeton students). The seminar culminates in the writing of the Junior Paper.</p>
+                      <h3>Other Suggested Programs:</h3>
+                      <p>ENG majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Princeton English Program, University College London</li>
+                       <li>SOAS University of London</li>
+                       <li>University of Oxford, Hertford College</li>
+                       <li>Undergraduate Program in Central European Studies at Charles University (UPCES)</li>
+                       <li>University of Oxford, Worcester College</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2MaYrjA">English Program Options</a></p>
+                      <h3>ENG Director of Undergraduate Studies</h3>
+                      <p>Susana Draper<br><a href="mailto:sdraper@princeton.edu" target="_blank">sdraper@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--19" role="button" aria-controls="acc-panel--19" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Finance 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--19" role="region" aria-labelledby="acc-btn--19">
+                      <p><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>In the past, several students have studied abroad for a semester or a year while successfully completing the undergraduate certificate in finance (UCF). This requires planning ahead, including taking additional courses in your sophomore year.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+                      <p><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>You should consult with the UCF program representative about courses you wish to take for UCF credit. We approve courses taken elsewhere only if they are of comparable standards and taken at institutions of comparable quality.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+                      <p><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>You may use&nbsp;one course&nbsp;taken during your study abroad to replace&nbsp;one elective course&nbsp;and only with permission from the UCF program representative.&nbsp; The official study abroad forms must be completed before you travel.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+                      <p><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>Finance certificate students may be interested in the&nbsp;<a href="http://gps.princeton.edu/index.cfm?FuseAction=Programs.ViewProgram&amp;Program_ID=10248" target="_self">Economics Exchange Program with Universitá Bocconi in Milan, Italy.</a>&nbsp;The Exchange gives Princeton students the opportunity to study at one of the foremost economics and finance universities in Europe. Previous study of Italian is desirable, but not required. Bocconi offers a wide range of courses in English (more than 90 each semester), and an intensive crash course in Italian for three weeks before the beginning of each semester.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+                      <h3>Academic Administrator</h3>
+                      <p><a href="mailto:mheaney@princeton.edu" target="_self">Melanie Heaney-Scott</a><br> 8-0940</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--20" role="button" aria-controls="acc-panel--20" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> French &amp; Italian 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--20" role="region" aria-labelledby="acc-btn--20">
+                      <p>The department strongly encourages its concentrators and certificate students to spend as much time as they can in any country, including those in Africa, where the language(s) they study is/are widely spoken. There are several ways of doing this within the four-year undergraduate degree: by study abroad for one or two semesters, by summer study abroad, and by obtaining summer work or an internship abroad.</p>
+                      <p>Both semesters are equally good times for going abroad. The main challenge students face is completing their Junior independent work ("JP"); some students prefer to go in the fall because the first JP is shorter and therefore may be more approachable to do while away from the adviser. However, French and Italian universities' fall semesters can seem short to American students because of the way the schedule is distributed (from mid-October through early February, with a recess in December). The spring semester resembles more that of Princeton's and many students elect to go then.</p>
+                      <p>Although the Department of French and Italian does not require students to have taken specific courses before going abroad, it encourages students to consider an advanced language and style course (FRE 307, ITA 307).</p>
+                      <p>Courses taken abroad in approved programs may fulfill departmental requirements up to a limit of two courses per semester. Course credit in French and Italian can also be obtained through approved summer study abroad.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>FIT majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Academic Programs Abroad</li>
+                       <li>Berlin Consortium for German Studies</li>
+                       <li>Center for University Programs Abroad (CUPA)</li>
+                       <li>Institut d'Etudes Politiques (Sciences Po), Paris</li>
+                       <li>Royal College of Music (RCM)</li>
+                       <li>Wellesley-in-Aix</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2OrPqPY">French &amp; Italian Program Options</a></p>
+                      <h3>Summer Programs</h3>
+                      <p>FIT has a&nbsp;<a href="http://www.princeton.edu/fit/programs-abroad/aix-en-provence/" target="_blank">special relationship with the Institut International de Langue IS Aix-en-Provence</a>, which offers intensive four-week language courses in French at various levels. The department has established a similar&nbsp;<a href="http://www.princeton.edu/fit/programs-abroad/macerata/" target="_blank">relationship with the University of Macerata</a>, offering intensive language courses in Italian. The department is able to provide financial support to a small number of students in each of these courses each year.<br><br> FIT also maintains ties with the&nbsp;<a href="http://www.brynmawr.edu/avignon/" target="_blank">Bryn Mawr College summer programs held in Avignon</a>, in French language, literature, art, and civilization (including social, political, and economic institutions). See the departmental representative if you are interested in one of these programs.</p>
+                      <h3>FIT Director of Undergraduate Studies</h3>
+                      <p>Christy Wampole<br><a href="mailto:cwampole@princeton.edu" target="_blank">cwampole@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--21" role="button" aria-controls="acc-panel--21" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Geosciences 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--21" role="region" aria-labelledby="acc-btn--21">
+                      <p>Destinations for study abroad span the world and are open to students in all majors. Princeton accepts credit from more than 100 programs and/or universities in over 40 countries.</p>
+                      <h3>Suggested Programs:</h3>
+                      <p>GEO majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Middlebury School in China: Hangzhou</li>
+                       <li>IFSA-Butler University of Otago</li>
+                       <li>University of Edinburgh</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2vA2PP0">Geosciences Program Options</a></p>
+                      <h3>GEO Director of Undergraduate Studies</h3>
+                      <p>Adam Maloof<br><a href="mailto:maloof@princeton.edu" target="_blank">maloof@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--22" role="button" aria-controls="acc-panel--22" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> German 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--22" role="region" aria-labelledby="acc-btn--22">
+                      <p>German majors are encouraged to study abroad during their time at Princeton. Students should contact the departmental representative as early as possible to discuss options.</p>
+                      <h3>Suggested Programs:</h3>
+                      <ul class="oip-ul--colored">
+                       <li>Through the Berlin Consortium for German Studies, of which Princeton University is a member, Princeton undergraduates are eligible to spend either one semester or an entire academic year studying abroad at the Freie Universität Berlin for full Princeton academic credit. Students will pay normal Princeton tuition, and those on financial aid will continue to receive aid during their study abroad.</li>
+                       <li>The Department of German also sponsors a <a href="http://www.princeton.edu/german/undergraduate/pim/">summer program in Munich</a> and a longstanding <a href="http://www.princeton.edu/german/undergraduate/summer/">Summer Work Program</a>.</li>
+                      </ul>
+                      <h3>GER Director of Undergraduate Studies</h3>
+                      <p>Johannes Wankhammer<br><a href="mailto:jw54@princeton.edu" target="_blank">jw54@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--23" role="button" aria-controls="acc-panel--23" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Program on Global Health and Health Policy 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--23" role="region" aria-labelledby="acc-btn--23">
+                      <p>Students intending to enroll in the GHP program are encouraged to study abroad, but they will need to plan their prerequisites and requirements in advance in order to complete the GHP program of study. The Program on Global Health and Health Policy has information on its website about&nbsp;<a href="http://globalhealth.princeton.edu/undergraduate/apply-certificate-program/course-planning" target="_self">how to fit study abroad into a GHP certificate.</a></p>
+                      <h3>GHP Co-Directors</h3>
+                      <p>Andrea Graham<br><a href="mailto:algraham@princeton.edu" target="_blank">algraham@princeton.edu </a></p>
+                      <p>Gilbert Collins<br><a href="mailto:gcollins@princeton.edu">gcollins@princeton.edu</a></p>
+                      <p>C. Jessica Metcalf<br><a href="mailto:cmetcalf@princeton.edu" target="_blank">cmetcalf@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--24" role="button" aria-controls="acc-panel--24" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Program in Hellenic Studies 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--24" role="region" aria-labelledby="acc-btn--24">
+                      <p>Summer study, research, internships, or semester study opportunities in Greece are strongly recommended for all Program concentrators.</p>
+                      <p>Under the auspices of the Study Abroad Program, students may complement their academic work in Hellenic studies by enrolling in one or two terms at selected institutions in Greece or England. The Princeton-Oxford Exchange Program provides additional opportunities for students in Hellenic studies.</p>
+                      <p>The Program in Hellenic Studies has&nbsp;<a href="http://www.princeton.edu/hellenic/study-abroad/study-in-greece/" target="_blank">information about studying abroad on its website</a>&nbsp;containing contact information for selected programs and institutions. Interested students may also visit the Program office to read reports written by former participants for many of the summer study programs and courses abroad</p>
+                      <p>The Program in Hellenic Studies offers a limited number of&nbsp;&nbsp;<a href="http://www.princeton.edu/hellenic/study-abroad/undergraduate-students/" target="_blank">Stanley J. Seeger Fellowships</a>&nbsp;for Princeton undergraduate students whose work would benefit from summer travel for study and/or research in Greece, Cyprus, or other Mediterranean countries relevant to the study of Classical, Byzantine, or Modern Greece. Undergraduate students from all Princeton departments are welcome to apply.</p>
+                      <h3>HLS Director</h3>
+                      <p>Dimitri Gondicas (Center Director)<br><a href="mailto:gondicas@princeton.edu" target="_blank">gondicas@princeton.edu</a></p>
+                      <h3>HLS Undergraduate Contact</h3>
+                      <p>Chris Twiname<br><a href="mailto:ctwiname@princeton.edu" target="_blank">ctwiname@princeton.edu</a><br> &nbsp;</p>
+                      <p>&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--25" role="button" aria-controls="acc-panel--25" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> History 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--25" role="region" aria-labelledby="acc-btn--25">
+                      <p>Students in the History Department are encouraged to participate in those programs for foreign study approved by the University.</p>
+                      <p><strong>The History Department has the following policies related to Study Abroad:</strong></p>
+                      <ol>
+                       <li>Sophomores intending to major in History may count one history course taken abroad toward the requirement to enter the department. The course cannot be used to substitute for the 200-level prerequisite</li>
+                       <li>Juniors majoring in the department may receive credit for up to four courses in history taken while abroad for either a full year or semester. The usual credit is 2 courses for one semester abroad and 4 courses for 2 semesters. These courses will require the prior approval of the Departmental Representative. To secure that approval students will be expected to produce some evidence of the work load and the material covered by the courses.</li>
+                       <li>Sophomores intending to go abroad in their junior year must take History 400, the junior seminar in which students write their first Junior Paper, in the spring semester before they depart. Having written their first junior paper in the spring of their sophomore year, these students will thereby be prepared to write the second while abroad or in the resident semester of their junior year (if they elect to spend only one semester abroad). Students who meet the requirements of junior independent work while at Princeton will still be expected to undertake a full course load while abroad. Moreover, study abroad should include some research work. In particular, the department encourages students to take seminars that include a research component.</li>
+                       <li>Recognizing the many difficulties of doing research without Princeton’s institutional and intellectual resources as a base, the Department will try to be flexible regarding the deadlines of submission of independent work conducted abroad. (Students must make arrangements for extension of deadlines&nbsp; with the Department Representative.)</li>
+                      </ol>
+                      <h3>Suggested Programs</h3>
+                      <p>HIS majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Boston University Madrid University Studies Program</li>
+                       <li>SOAS University of London</li>
+                       <li>Undergraduate Program in Central European Studies at Charles University (UPCES)</li>
+                       <li>University College London (UCL)</li>
+                       <li>University of Oxford, Worcester College</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2MiN9ZZ">History Program Options</a></p>
+                      <h3>HIS Director of Undergraduate Studies</h3>
+                      <p>Janet Chen<br><a href="mailto:jychen@princeton.edu" target="_blank">jychen@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--26" role="button" aria-controls="acc-panel--26" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Program in Humanistic Studies 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--26" role="region" aria-labelledby="acc-btn--26">
+                      <p>The&nbsp;<a href="https://humstudies.princeton.edu/" target="_blank">Certificate in Humanistic Studies</a>&nbsp;encourages reflection on meaningful connections along five major trajectories: 1) Bridges within the humanities and arts; 2) Bridges between the humanities and related social sciences; 3) Intercultural studies; 4) Bridges between the humanities and the sciences; 5) Digital approaches to the humanities.</p>
+                      <p>Studying abroad may enrich any one of these five trajectories. The intercultural studies trajectory recommends studying abroad specifically: "Students might illuminate their study of western culture with comparative approaches to other areas of the world, for example, or study one or more regions through different methodologies. In this pursuit, they might benefit from participating in global seminars or other opportunities for study abroad."</p>
+                      <h3>HUM Directors</h3>
+                      <p>Kathleen Crown (executive director)<br><a href="mailto:kcrown@princeton.edu" target="_blank">kcrown@princeton.edu</a></p>
+                      <p>Esther Schor (chair)<br><a href="mailto:eschor@princeton.edu" target="_blank">eschor@princeton.edu</a><br> &nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--27" role="button" aria-controls="acc-panel--27" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Program in Judaic Studies 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--27" role="region" aria-labelledby="acc-btn--27">
+                      <p>The Program in Judaic Studies encourages students to consider studying in Israel, either for a semester or for a summer. Princeton University approves courses at&nbsp;<a href="http://gps.princeton.edu/index.cfm?FuseAction=Programs.ViewProgram&amp;Program_ID=10201" target="_blank">Tel Aviv University</a>,&nbsp;<a href="http://gps.princeton.edu/index.cfm?FuseAction=Programs.ViewProgram&amp;Program_ID=10200" target="_blank">Hebrew University of Jerusalem</a>, and the&nbsp;<a href="http://gps.princeton.edu/index.cfm?FuseAction=Programs.ViewProgram&amp;Program_ID=10202" target="_blank">University of Haifa</a>, providing an excellent opportunity to improve one’s knowledge of Hebrew as well as to pursue a wide variety of topics of interest.</p>
+                      <p>There are other study abroad programs and a number of intensive summer language programs in Hebrew and Yiddish in Israel, Oxford, and elsewhere.</p>
+                      <p>Courses taken abroad, other than elementary language, may count for up to two of the program’s course requirements with the approval of the Director.</p>
+                      <p>The Program has&nbsp;<a href="http://www.princeton.edu/judaic/funding/undergraduate-funding/" target="_blank">various funds available</a>&nbsp;to undergraduate students for support of summer work and/or study relating to Judaic Studies.</p>
+                      <h3>JDS Director</h3>
+                      <p><a href="mailto:himmelfa@princeton.edu" target="_self">Martha Himmelfarb</a><br> 8-4486</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--28" role="button" aria-controls="acc-panel--28" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Program in Language and Culture 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--28" role="region" aria-labelledby="acc-btn--28">
+                      <p>Although not required, it is strongly recommended that students spend some time in the country whose language and culture they are studying. This can be done through an approved study abroad program or through a summer program of work and/or study. The area studies programs in East Asian, Latin American, Near Eastern, and Russian and Eurasian studies may be important resources in providing guidance, and students who are earning language certificates in these areas are urged to consult with the director of the relevant program in planning their course of study or work abroad.</p>
+                      <h3>Undergraduate Contacts</h3>
+                      <p>Contact the departmental representative in the appropriate language department</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--29" role="button" aria-controls="acc-panel--29" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Program in Latin American Studies 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--29" role="region" aria-labelledby="acc-btn--29">
+                      <p>The Program in Latin American Studies (PLAS) promotes student research in Latin America and organizes a wide range of related on-campus public programming.</p>
+                      <p>Students earning a certificate in Latin American Studies are strongly encouraged to spend a semester in Latin America. Up to two courses taken abroad may be counted toward the LAS certificate.</p>
+                      <p>PLAS provides generous research support for undergraduate students in the form of travel and research grants.</p>
+                      <p>Freshmen and sophomores are encouraged to apply for summer support via the <a href="https://plas.princeton.edu/funding/undergraduate/paul-e-sigmund-scholars">Sigmund Scholars program</a>, while juniors are invited to submit proposals for senior thesis research funding during the summer between junior and senior year.</p>
+                      <h3>LAS Director</h3>
+                      <p><a href="mailto:gnouzeil@princeton.edu" target="_self">Maria Gabriela Nouzeilles</a><br> 8-8176</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--30" role="button" aria-controls="acc-panel--30" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Mathematics 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--30" role="region" aria-labelledby="acc-btn--30">
+                      <p>Each year, a few mathematics majors choose to spend a semester or a year studying mathematics at universities abroad. It is recommended that students consider studying abroad at some time during their junior year, as it is usually possible to make arrangements for junior independent work while abroad. It is somewhat harder to make arrangements for senior thesis supervision, or final examinations at the end of the senior year.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>MAT majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Budapest Semesters in Mathematics</li>
+                       <li>ETH Zurich</li>
+                       <li>Math in Moscow, Independent University, Russia</li>
+                       <li>University of Oxford, Worcester College</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2Mn1jJP">Mathematics Program Options</a></p>
+                      <h3>MAT Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:kollar@math.princeton.edu" target="_self">Janos Kollar</a><br> 8-4185</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--31" role="button" aria-controls="acc-panel--31" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Mechanical &amp; Aerospace Engineering 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--31" role="region" aria-labelledby="acc-btn--31">
+                      <p>Engineering students are encouraged to obtain international experience through participation in the University's Study Abroad Program or through summer internships and language study abroad. Interested students should begin planning early by meeting with the associate dean for undergraduate affairs to discuss suitable programs at foreign universities.</p>
+                      <p>Generally, the junior year, particularly the spring semester, is the easiest time to plan to go abroad in MAE.</p>
+                      <p>Take a look at&nbsp;<a href="http://www.princeton.edu/oip/sap/programs/departments/engineeringfaqs/" target="_self">Study Abroad for Engineering Students: Frequently Asked Questions</a>, a very useful handout put together by Peter Bogucki, Associate Dean for Undergraduate Affairs, Engineering and Applied Science.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>MAE majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>University of Canterbury</li>
+                       <li>University of Cape Town (UCT)</li>
+                       <li>University of Edinburgh</li>
+                       <li>University of Oxford, Oxford-Princeton Engineering Exchange</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2MABenp">Mechanical &amp; Aerospace Engineering Program Options</a></p>
+                      <h3>MAE Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:%20mlittman@Princeton.EDU" target="_blank">Michael G. Littman</a><br> 8-5198</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--32" role="button" aria-controls="acc-panel--32" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Molecular Biology 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--32" role="region" aria-labelledby="acc-btn--32">
+                      <p>Students concentrating in molecular biology may spend part of the junior year abroad, provided that at least one core departmental course has been taken in the sophomore year and suitable arrangements are made to complete the independent work. Study abroad is most easily arranged for the fall semester.</p>
+                      <p>Students interested in studying abroad should consult with the MOL Study Abroad Adviser, Professor Fred Hughson, and a study abroad adviser as early as possible, preferably during the first year.</p>
+                      <p>The Department of Molecular Biology provides <a href="https://molbio.princeton.edu/undergraduate/major/study-abroad">information about study abroad as a molecular biology majo</a>r on its website.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>MOL majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>ETH Zurich</li>
+                       <li>IES Abroad Granada - Study in Granada</li>
+                       <li>King's College London (KCL)</li>
+                       <li>University of Auckland</li>
+                       <li>University of Oxford, Oxford-Princeton Biochemistry Exchange</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2B0Thli">Molecular Biology Program Options</a></p>
+                      <h3>MOL Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:hughson@princeton.edu" target="_self">Fred Hughson</a><br> 8-4982</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--33" role="button" aria-controls="acc-panel--33" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Music 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--33" role="region" aria-labelledby="acc-btn--33">
+                      <p>Destinations for study abroad span the world and are open to students in all majors. Music majors are encouraged to consider studying abroad during their time at Princeton.</p>
+                      <h3>Special MUS Program:</h3>
+                      <p><a href="http://www.princeton.edu/music/undergraduate-program/royal-college-of-music/" target="_blank">Princeton University and the Royal College of Music, London</a>, have initiated a unique collaboration by which exceptionally talented students may qualify for a five-year, double-degree program (Bachelor of Arts from Princeton and Master of Music from the Royal College of Music) that includes study in London for the fall term of the junior year.</p>
+                      <h3>Other Suggested Programs:</h3>
+                      <p>MUS majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>University of Oxford, Hertford College</li>
+                       <li>Royal College of Music (RCM)</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2KIJUWM">Music Program Options</a></p>
+                      <h3>MUS Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:gsteingo@princeton.edu" target="_self">Gavin Steingo</a><br> 8-4254</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--34" role="button" aria-controls="acc-panel--34" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Near Eastern Studies 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--34" role="region" aria-labelledby="acc-btn--34">
+                      <p>Study abroad is very much encouraged, and a number of study abroad programs are available in the Middle East. Princeton students concentrating in Arabic have participated in programs in Morocco, Syria, Jordan, and Egypt. The majority study at the American University in Cairo because of its fine reputation in Arabic teaching, either for a semester or a full year, with a select group of teachers and tutors.&nbsp;<strong>Note: Study in Syria and Egypt is currently not permitted as these countries are on the U.S. State Department Warning List.</strong></p>
+                      <p>The department also makes every effort to facilitate student participation in any of a number of excellent summer intensive language study programs in the U.S. and the Middle East. The Program in Near Eastern Studies may be able to offer limited support for students who wish to take advantage of such intensive study opportunities.</p>
+                      <p>The best times for study abroad are during sophomore spring semester through senior fall semester.</p>
+                      <h3>Highlighted Programs</h3>
+                      <p>Students wishing to develop their knowledge of Hebrew further are able to benefit from various programs in Israel during the summer or during a semester (or year) in one of the Israeli universities, such as the Hebrew University, or Tel Aviv University.</p>
+                      <h3>Other Suggested Programs</h3>
+                      <p>NES majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>AMIDEAST Area &amp; Arabic Language Studies in Jordan (Semester/Academic Year)</li>
+                       <li>AMIDEAST Area &amp; Arabic Language Studies in Morocco (Semester/Academic Year)</li>
+                       <li>CET Intensive Arabic Language in Jordan</li>
+                       <li>SOAS University of London</li>
+                       <li>University of Cambridge, Pembroke College</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2OW8o2e">Near Eastern Studies Program Options</a></p>
+                      <h3>NES Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:eve.krakowski@princeton.edu" target="_self">Eve Krakowski</a><br> 8-7252</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--35" role="button" aria-controls="acc-panel--35" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Neuroscience 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--35" role="region" aria-labelledby="acc-btn--35">
+                      <p>Studying abroad is a wonderful opportunity for neuroscience concentrators. NEU courses taken abroad may be used to fulfill your concentration elective requirements. NEU majors planning to spend abroad a semester should seek advice from the Departmental Representative, as well as make an appointment with a study abroad adviser.</p>
+                      <h3>Suggested Programs:</h3>
+                      <p>NEU majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Danish Institute for Study Abroad (DIS) - Copenhagen</li>
+                       <li>Queen Mary University of London</li>
+                       <li>University College London (UCL)</li>
+                       <li>University of St. Andrews</li>
+                       <li>University of Bristol</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2vX0uNt">Neuroscience Program Options</a></p>
+                      <p>Students can also use this<span>&nbsp;</span><a href="https://pni.princeton.edu/sites/default/files/basic-page/files/Neuroscience%20study%20abroad%20opportunities.pdf" target="_blank">list of selected courses for NEU students</a><span>&nbsp;</span>as a starting point. Please note that these are just samples and courses may not be offered every year.</p>
+                      <h3>NEU Director of Undergraduate Studies</h3>
+                      <p>Elizabeth Gould<br><a href="mailto:goulde@princeton.edu">goulde@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--36" role="button" aria-controls="acc-panel--36" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Operations Research &amp; Financial Engineering 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--36" role="region" aria-labelledby="acc-btn--36">
+                      <p>Engineering students are encouraged to obtain international experience through participation in the University's Study Abroad Program or through summer internships and language study abroad. Interested students should begin planning early by meeting with the associate dean for undergraduate affairs to discuss suitable programs at foreign universities.</p>
+                      <p>Take a look at&nbsp;<a href="http://www.princeton.edu/oip/sap/programs/departments/engineeringfaqs/" target="_self">Study Abroad for Engineering Students: Frequently Asked Questions</a>, a very useful handout put together by Peter Bogucki, Associate Dean for Undergraduate Affairs, Engineering and Applied Science.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>ORFE majors can study abroad through a variety of programs. Below are some suggestions from OIP's study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Aquincum Institute of Technology (AIT Budapest)</li>
+                       <li>King's College London (KCL)</li>
+                       <li>University College London (UCL)</li>
+                       <li>University of Cantabria, Exchange in Engineering</li>
+                       <li>University of Cape Town (UCT)</li>
+                       <li>University of Edinburgh</li>
+                       <li>University of Hong Kong (HKU)</li>
+                       <li>University of Oxford,&nbsp; Worcester College</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2ntveSo">Operations Research &amp; Financial Engineering Program Options</a></p>
+                      <h3>ORFE Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:alaink@Princeton.EDU" target="_blank">Alain Kornhauser</a><br> 8-4657</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--37" role="button" aria-controls="acc-panel--37" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Philosophy 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--37" role="region" aria-labelledby="acc-btn--37">
+                      <p>Each year some junior philosophy concentrators spend one or both semesters on foreign study. The department has generally been flexible in allowing, within the limits of University regulations, departmental credit for work done abroad. If the student is planning to be away for only one semester and has a choice, the department recommends choosing spring so as not to miss the fall junior seminars here.</p>
+                      <p>All students planning to study abroad, and especially those planning to be away for the entire junior year, are advised to apply to the department for early concentrator status, which is open to spring semester sophomores who have completed the prerequisite for entering the department by the end of the fall semester sophomore year, and allows the student to make an early start on independent work.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>PHI majors can study abroad through a variety of programs. Below are some suggestions from OIP's study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>University College London (UCL)</li>
+                       <li>University of Oxford, Hertford College</li>
+                       <li>University of Oxford, St. Edmund Hall</li>
+                       <li>University of Oxford, Worcester College</li>
+                       <li>University of St. Andrews</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2OZyrFO">Philosophy Program Options</a></p>
+                      <h3>PHI Director of Undergraduate Studies</h3>
+                      <p>Professor John Burgess&nbsp; &nbsp;<br><a href="mailto:jburgess@princeton.edu" target="_blank">jburgess@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--38" role="button" aria-controls="acc-panel--38" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Physics 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--38" role="region" aria-labelledby="acc-btn--38">
+                      <p>Studying abroad is compatible with majoring in physics, but students need to plan carefully in order to be able to spend a semester or year abroad. The Physics Department provides&nbsp;<a href="https://phy.princeton.edu/courses/undergraduate/study-abroad" target="_blank">information about studying abroad as a physics major</a>&nbsp;on its website.</p>
+                      <p>If you are interested in majoring in physics and spending a year/semester abroad, talk to the physics departmental representative as soon as you get to Princeton as a freshman.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>PHY majors can study abroad through a variety of programs. Below are some suggestions from OIP's study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Center for University Programs Abroad (CUPA)</li>
+                       <li>Math in Moscow (at Independent University of Moscow)</li>
+                       <li>University of Oxford; England</li>
+                       <li>University of St. Andrews</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2OqVN5Z">Physics Program Options</a></p>
+                      <h3>PHY Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:wcjones@Princeton.EDU">William Jones</a><br> 8-4413</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--39" role="button" aria-controls="acc-panel--39" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Politics 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--39" role="region" aria-labelledby="acc-btn--39">
+                      <p>The Politics Department encourages students to consider studying abroad for one semester or even for a full year. If, under a program approved in advance by the dean of the college, a concentrator in politics studies abroad for the equivalent of an academic year at Princeton, the department is willing to credit as departmentals as many as four courses in political science or related fields when they are taken at a foreign university. Normally the department is willing to substitute no more than one cognate and one departmental or two cognates for concentrators studying abroad for one semester.</p>
+                      <p><em>Professor Lynn White shared the following information about studying abroad as a politics major:</em></p>
+                      <p>"If you decide to study abroad, you will optimize your education. If you plan a senior thesis about international relations or the politics of a foreign country, this is a splendid opportunity to gather materials, languages, insights. If your main interest is in the United States, you can learn a tremendous lot abroad, by comparing foreign democratic systems with ours or by going to a non-democratic country and perceiving the extent to which many power networks everywhere (including in democratic countries, including America) are very authoritative.&nbsp;</p>
+                      <p>. . . Your education will be better and happier, if you realize that not quite all truth is located in New Jersey. Your Princeton friends will still be on campus when you return -- and I promise that they will later be green with envy unless they go for study abroad too. . . . Study abroad can be the best part of your education to become a citizen of the world. This experience has focused the academic and later careers of many alums, and it can do the same for you."</p>
+                      <p><a href="http://www.princeton.edu/politics/undergraduate/learning/study-abroad/" target="_blank">Additional information about studying abroad as a politics concentrator</a>&nbsp;is available on the Politics Department website.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>POL majors can study abroad through a variety of programs. Below are some more suggestions from OIP's study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Boston University Madrid University Studies Program</li>
+                       <li>CIEE Liberal Arts Program in Santiago, Chile</li>
+                       <li>IES Abroad Granada - Study in Granada</li>
+                       <li>IFSA-Butler University of Melbourne</li>
+                       <li>Institut d'Etudes Politiques (Sciences Po), Paris</li>
+                       <li>SOAS University of London</li>
+                       <li>Undergraduate Program in Central European Studies at Charles University (UPCES)</li>
+                       <li>University of Oxford,&nbsp; Worcester College</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2M6xnCl">Politics Program Options</a></p>
+                      <h3>POL Director of Undergraduate Studies</h3>
+                      <p>Markus Prior<br><a href="mailto:mpriorl@Princeton.EDU" target="_blank">mpriorl@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_931" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--40" role="button" aria-controls="acc-panel--40" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Princeton School of Public and International Affairs 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--40" role="region" aria-labelledby="acc-btn--40">
+                      <p>Although not a requirement, study abroad has become a regular part of the SPIA program. Study abroad during junior year is limited to those universities at which task forces may be offered.</p>
+                      <h3>SPIA Study Abroad Programs:</h3>
+                      <p>In 2022-23, task forces are being offered at the following locations.</p>
+                      <p><strong>Spring 2023</strong></p>
+                      <ul class="oip-ul--colored">
+                       <li><a href="https://gps.princeton.edu/index.cfm?FuseAction=Programs.ViewProgramAngular&amp;id=11635">University of Cambridge, Pembroke</a></li>
+                       <li><a href="https://gps.princeton.edu/index.cfm?FuseAction=Programs.ViewProgramAngular&amp;id=11460" target="_blank">University of Cape Town, South Africa</a></li>
+                      </ul>
+                      <h3>SPIA Director of Undergraduate Studies</h3>
+                      <p>Monica Ruscil<br><a href="mailto:mgruscil@princeton.edu">mgruscil@princeton.edu</a></p>
+                      <p>Paul Lipton<br><a href="mailto:paul.lipton@princeton.edu">paul.lipton@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--41" role="button" aria-controls="acc-panel--41" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Psychology 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--41" role="region" aria-labelledby="acc-btn--41">
+                      <p>The Department of Psychology strongly encourages students to study abroad. Students can study abroad in either semester of the junior year or during the fall of the senior year.</p>
+                      <p>Students considering study abroad are urged to discuss their plans with the departmental representative early in the planning stages to lay out course work, obtain approvals, and set up independent work assignments. Two pre-approved courses per semester abroad can count toward the departmental course requirements.</p>
+                      <p>Those juniors who study abroad in their fall semester will be exempt from the junior orientation and APA style workshops, but will be required to write one fall junior paper under the supervision of a departmental faculty member. Juniors who study abroad in the spring semester will write the required spring junior paper under the supervision of a departmental faculty member, though it is also possible for the junior to collaborate with a faculty member abroad to perform research towards completing independent work. Seniors who choose to study abroad during the fall term must be sure to&nbsp;<a href="mailto:rosemari@Princeton.EDU" target="_self">consult the department’s Human Subjects Administrator, RoseMarie Stevenson</a>, prior to departure if they intend to perform research involving human subjects while abroad.</p>
+                      <h3>Highlighted Programs</h3>
+                      <p><strong>University of Queensland, Brisbane, Australia</strong><br> A special University of Queensland Psychology-Princeton University Study Abroad Intensive Research Program, available in the spring. This study abroad program includes placement in research labs for junior independent work.</p>
+                      <h3>Other Suggested Programs</h3>
+                      <p>PSY majors can study abroad through a variety of programs. Below are some more suggestions from OIP's study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Center for University Programs Abroad (CUPA)</li>
+                       <li>Danish Institute for Study Abroad (DIS) - Stockholm</li>
+                       <li>IFSA-Butler University of Sydney</li>
+                       <li>King's College London (KCL)</li>
+                       <li>University College London (UCL)</li>
+                       <li>University of Manchester</li>
+                       <li>University of Queensland</li>
+                       <li>University of Sydney</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2M6R2St">Psychology Program Options</a></p>
+                      <h3>PSY Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:graziano@Princeton.EDU" target="_blank">Michael Graziano</a><br> 8-7555</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--42" role="button" aria-controls="acc-panel--42" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Quantitative and Computational Biology 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--42" role="region" aria-labelledby="acc-btn--42">
+                      <p>Students pursuing a certificate in Quantitative and Computational Biology or participating in the Integrated Science curriculum may be particularly interested in Princeton's exchange program with ETH Zurich in Switzerland.</p>
+                      <p>Princeton's exchange allows students to spend a semester engaging in a combination of research and course work in&nbsp;<a href="http://www.biol.ethz.ch/index_EN" target="_blank">ETH's Department of Biology.</a>&nbsp;ETH Zurich is one of the world's leading institutions in science and technology. The Department of Biology is one of ETH Zurich's largest departments and includes six institutes and ten independent chairs. The member institutes and professorships are engaged in a wide-ranging program of basic and applied research. The research areas encompass topics in biochemistry, biophysics, molecular and cellular biology, microbiology, neurobiology, systems biology and plant sciences on the basic research side and topics in biomechanics and sports physiology on the applied side.</p>
+                      <p>For more information about Princeton's exchange with ETH Zurich, visit the&nbsp;<a href="http://gps.princeton.edu/index.cfm?FuseAction=Programs.ViewProgram&amp;Program_ID=10276" target="_blank">ETH Zurich page</a>&nbsp;on the OIP website.</p>
+                      <h3>QCB Director</h3>
+                      <p>Joshua Rabinowitz<br><a href="mailto:joshr@princeton.edu">joshr@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--43" role="button" aria-controls="acc-panel--43" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Religion 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--43" role="region" aria-labelledby="acc-btn--43">
+                      <p>The Department of Religion welcomes study abroad for departmental majors in their junior year. Those juniors who study abroad in their fall semester will be exempt from the colloquium, but will be required to write a fall junior paper under the supervision of a religion department faculty member. Juniors who study abroad in the spring semester will write the required spring junior paper under the supervision of a religion department faculty member. Normally, students are expected to have junior year independent work completed before the start of their senior year.</p>
+                      <p>Normally, two courses taken abroad may be counted as departmentals but cannot be used to fulfill departmental area requirements. All students must consult the Departmental Representative before leaving for their study abroad program and those who intend to receive departmental credit for courses taken abroad will need prior approval.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>Religion majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Carleton-Antioch Global Engagement Program: Buddhist Studies in India</li>
+                       <li>SOAS University of London</li>
+                       <li>Trinity College, Rome Campus</li>
+                       <li>University College Dublin</li>
+                       <li>University of Cambridge,&nbsp; Pembroke College</li>
+                       <li>University of Cape Town (UCT)</li>
+                       <li>University of Queensland</li>
+                       <li>University of St. Andrews</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2Oo1r98">Religion Program Options</a></p>
+                      <h3>REL Director of Undergraduate Studies</h3>
+                      <p>Seth Perry<br><a href="mailto:sethp@princeton.edu" target="_blank">sethp@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--44" role="button" aria-controls="acc-panel--44" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Program in Russian, East European &amp; Eurasian Studies 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--44" role="region" aria-labelledby="acc-btn--44">
+                      <p>Students pursuing the Russian, East European and Eurasian Studies certificate are expected to combine classwork with study abroad for a semester, year, or summer to sharpen their language skills, conduct independent research, and, in general, gain a better appreciation of at least one country and culture in Eurasia. Summer internships abroad, partly subsidized by the program or the University, are also highly encouraged.</p>
+                      <p>The Program in Russian, East European and Eurasian Studies, with the Slavic Languages and Literatures Department, runs a highly acclaimed language program called&nbsp;<a href="http://slavic.princeton.edu/princeton-st-petersburg" target="_blank">Princeton in Petersburg</a>&nbsp;at the Nevsky Institute of Language and Culture. This program is designed to enable students who complete first-year Russian on the Princeton campus to take second-year Russian over the summer and return to the campus to master third-year Russian by the end of the second calendar year. This facilitates use of the Russian language in junior and senior independent work.</p>
+                      <p>The program also supports the study of third- and fourth-year Russian abroad over a summer,&nbsp; thanks to the generosity of the Monty Raiser '92 Fund. The fund was established in 1993 in memory of R. Montgomery Raiser III, a Princeton student who had a strong interest in Russian affairs.</p>
+                      <h3>Director</h3>
+                      <p>Ekaterina Pravilova<br><a href="mailto:kprav@princeton.edu" target="_blank">kprav@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--45" role="button" aria-controls="acc-panel--45" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Slavic Languages &amp; Literatures 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--45" role="region" aria-labelledby="acc-btn--45">
+                      <p>The Department of Slavic Languages &amp; Literatures provides&nbsp;<a href="http://slavic.princeton.edu/undergraduate-program/study-abroad" target="_blank">information about study abroad as a Slavic Languages and Literature concentrator</a>&nbsp;on its departmental website.</p>
+                      <p>For students who begin Russian at Princeton, the department has organized a&nbsp;<a href="http://slavic.princeton.edu/princeton-st-petersburg" target="_blank">second-year course (RUS 105R-107R) for credit in St. Petersburg</a>&nbsp;that may be taken the summer immediately following the completion of RUS 102. This course is taught by Princeton faculty as well as the instructors of the Derzhavin Institute. More advanced students are urged to spend either a semester or summer in Russia.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>SLA majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Jagiellonian University, Krakow, Poland</li>
+                       <li>Bard-Smolny Study Abroad Program, St. Petersburg, Russia*</li>
+                       <li>Middlebury School in Russia, Irkutsk, Moscow, and Yaroslavl, Russia*</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2XLxxAP">Slavic Languages &amp; Literatures Program Options</a></p>
+                      <h3>SLA Director of Undergraduate Studies</h3>
+                      <p><a href="mailto:kreischl@princeton.edu" target="_self">Katherine Hill Reischl</a><br> 8-4509</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--46" role="button" aria-controls="acc-panel--46" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Sociology 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--46" role="region" aria-labelledby="acc-btn--46">
+                      <p>Sociology at Princeton encompasses scholarship at the crossroads of global and international sociology. The department believes that study abroad adds a valuable dimension to the experience in Sociology as well as a possible basis for independent work in the junior and senior year. The department encourages its students to take advantage of the many fine programs in other countries that exist for Princeton students. We make every effort to accommodate these students for advising on independent work and permit them to take required courses out of sequence, either before or after the period of foreign study. Normally, as many as two courses taken during a semester or year abroad count as departmental requirements. Such courses will need pre-approval from the departmental representative.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>SOC majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Center for University Programs Abroad (CUPA)</li>
+                       <li>King's College London (KCL)</li>
+                       <li>Queen's University Belfast (QUB)</li>
+                       <li>SOAS University of London</li>
+                       <li>University of Edinburgh</li>
+                       <li>University of Hong Kong (HKU)</li>
+                       <li>Wellesley-in-Aix</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2vymvCV">Sociology Program Options</a></p>
+                      <h3>SOC Director of Undergraduate Studies</h3>
+                      <p>Timothy Nelson<br><a href="mailto:tjnelson@princeton.edu">tjnelson@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--47" role="button" aria-controls="acc-panel--47" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> South Asian Studies 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--47" role="region" aria-labelledby="acc-btn--47">
+                      <p>The South Asian Studies Program encourages students to take advantage of intensive summer language programs and of the numerous opportunities to study abroad or travel in South Asia, including a semester or year abroad.</p>
+                      <p>The Office of International Programs lists&nbsp;<a href="http://gps.princeton.edu/index.cfm?FuseAction=Programs.SearchResults&amp;Program_Name=&amp;Program_Type_ID=1&amp;pi=%7F&amp;pc=India%7F&amp;pr=%7F&amp;pt=%7F&amp;Partner_ID=ANY&amp;p_10000=%7F&amp;p_10000_t=MULTI&amp;p_10001=%7F&amp;p_10001_t=MULTI&amp;p_10002=%7F&amp;p_10002_t=MULTI&amp;p_10003=&amp;p_10003_t=YESNO&amp;p_10004=%7F&amp;p_10004_t=MULTI&amp;p_10005=%7F&amp;p_10005_t=MULTI&amp;p_10006=%7F&amp;p_10006_t=MULTI&amp;p_10007=%7F&amp;p_10007_t=MULTI&amp;p_10008=%7F&amp;p_10008_t=MULTI&amp;p_10009=%7F&amp;p_10009_t=MULTI&amp;p_10010=Study+Abroad+OIP%7F&amp;p_10010_t=SELCT&amp;p_10012=%7F&amp;p_10012_t=SELCT&amp;p_10013=%7F&amp;p_10013_t=SELCT&amp;Sort=Program_Name&amp;Order=asc&amp;pp=10000%2C10001%2C10002%2C10003%2C10004%2C10005%2C10006%2C10007%2C10008%2C10009%2C10010%2C10012%2C10013" target="_blank">approved programs for study abroad in India</a>&nbsp;during the academic year on the Global Programs System (GPS) website.</p>
+                      <h3>SAS Program Manager</h3>
+                      <p><a href="mailto:same@princeton.edu" target="_blank">Sam Evans</a><br> 8-2635</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--48" role="button" aria-controls="acc-panel--48" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Spanish &amp; Portuguese 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--48" role="region" aria-labelledby="acc-btn--48">
+                      <p>The Department strongly encourages its concentrators to spend as much time as they can in any country where their language(s) of concentration is (are) spoken. There are many ways of doing this within the four-year undergraduate degree: through study abroad for one or two semesters; through summer study abroad; and through a summer internship abroad.</p>
+                      <p><strong>Course information:&nbsp;</strong><br> Approved courses taken abroad in one semester will normally count for up to two departmental courses. Students must complete the program abroad to the standards required by the foreign institution.</p>
+                      <p>Grades awarded by foreign institutions for courses that are recognized in lieu of Princeton courses are not included in the consideration of Departmental Honors.</p>
+                      <p>Students who study abroad are not exempted from independent work requirements. A departmental faculty member will serve as JP adviser while the student is abroad. The student and the adviser will keep in touch through e-mail, Skype, or any other mutually convenient method of communication.</p>
+                      <p><strong>Junior Semester/Junior Year Abroad:</strong><br> Students planning to spend abroad a semester or their whole junior year should seek advice from the Departmental Representative and from relevant faculty in choosing a suitable program of study.</p>
+                      <h3>Suggested Programs</h3>
+                      <p>SPO majors can study abroad through a variety of programs. Below are some suggestions from your study abroad advisers:</p>
+                      <ul class="oip-ul--colored">
+                       <li>Brown in Brazil: Consortium for Advanced Studies Abroad (CASA) -&nbsp; Pontificia Universidade Catolica</li>
+                       <li>Brown in Cuba: Consortium for Advanced Studies Abroad (CASA) - University of Havana</li>
+                       <li>CIEE Language and Culture Program in Lisbon,&nbsp; Portugal</li>
+                       <li>IES Abroad Granada - Study in Granada</li>
+                       <li>IES Abroad Salamanca - Study in Salamanca</li>
+                       <li>IFSA-Butler University of Otago</li>
+                      </ul>
+                      <p class="btn"><a href="https://bit.ly/2vFJA6P">Spanish &amp; Portuguese Program Options</a></p>
+                      <h3>Summer Programs</h3>
+                      <p>All students interested in languages are encouraged to study abroad during the summer through&nbsp;<a href="http://spo.princeton.edu/study-abroad/princeton-spain" target="_blank">Princeton in Spain</a>,&nbsp;<a href="http://spo.princeton.edu/study-abroad/princeton-argentina" target="_blank">Princeton in Argentina</a>,&nbsp;<a href="http://spo.princeton.edu/study-abroad/princeton-brazil" target="_blank">Princeton in Brazil</a>,&nbsp;<a href="http://spo.princeton.edu/study-abroad/princeton-portugal" target="_blank">Princeton in Portugal</a>, or one of the other programs recommended by the department and the Office of International Programs. The Department of Spanish and Portuguese offers a limited number of scholarships for summer programs abroad in Spanish- and Portuguese-speaking countries.</p>
+                      <h3>SPO Director of Undergraduate Studies</h3>
+                      <p>Javier Guerrero<br><a href="mailto:jg17@princeton.edu" target="_blank">jg17@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--49" role="button" aria-controls="acc-panel--49" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Program in Theater 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--49" role="region" aria-labelledby="acc-btn--49">
+                      <p>In recent years, undergraduates pursuing a certificate in theater have studied at:</p>
+                      <ul class="oip-ul--colored">
+                       <li>London Academy of Music and Dramatic Arts (LAMDA), England</li>
+                      </ul>
+                      <h3>THR Director</h3>
+                      <p><a href="mailto:janecox@princeton.edu" target="_self">Jane Cox</a><br> 8-7294</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--50" role="button" aria-controls="acc-panel--50" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Translation and Intercultural Communication 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--50" role="region" aria-labelledby="acc-btn--50">
+                      <p>Students wishing to achieve a certificate in Translation and Intercultural Communication will spend a year, semester, or six weeks of the summer in a Princeton-approved course of study or internship program in an area where the chosen non-English language of proficiency is spoken.</p>
+                      <h3>TRA Director</h3>
+                      <p>Karen Emmerich<br><a href="mailto:karene@princeton.edu">karene@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--51" role="button" aria-controls="acc-panel--51" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Program in Urban Studies 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--51" role="region" aria-labelledby="acc-btn--51">
+                      <p>Offered through the Woodrow Wilson School's Policy Research Institute for the Region, the Urban Studies Program encourages students with appropriate background and training to study and conceptualize cities in a comparative, international perspective.</p>
+                      <h3>URB Undergraduate Contact</h3>
+                      <p>Kirby Richards<br><a href="mailto:kirbymr@princeton.edu">kirbymr@princeton.edu</a></p>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="layout__region layout__region--second layout__region--quarters layout__region--narrow">
+               <div class="oip-sidebar-block-right block-ps-text block block-layout-builder block-inline-blockps-text" data-block-plugin-id="inline_block:ps_text">
+                <h2 class="block-heading">Additional Advice </h2>
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <ul class="oip-ul--colored">
+                  <li><a href="https://oip.princeton.edu/document/4961" target="_blank">Advice for Pre-Health Students</a></li>
+                  <li><a href="https://oip.princeton.edu/document/4966" target="_blank">Advice for Engineering Students</a></li>
+                  <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="bd2c6566-fe4f-45fa-8dcf-c54a64bf4b8e" href="/our-programs/study-abroad/connect/meet-global-ambassadors">Meet the Global Ambassadors</a></li>
+                 </ul>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+              </div>
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </main>
+      </div>
+     </div>
+    </div>
+    <footer role="contentinfo" class="footer" id="footer">
+     <h2 class="sr-only">Footer</h2>
+     <div class="container">
+      <div class="region region-footer">
+       <div class="constrained-bkg-constrained-content layout layout--fourcol-25-25-25-25">
+        <div class="layout-inner-container">
+         <div class="layout__region layout__region--first layout__region--quarters layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+           <h2 class="block-heading">Office of International Programs</h2>
+           <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+            <p>Louis A. Simpson International Building<br> Phone: 609-258-5524<br> Fax: 609-258-1019<br><a href="mailto:oip@princeton.edu">oip@princeton.edu</a><br><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="1b481262-917a-4c03-b87e-25cb01c2005c" href="/who-we-are/staff">Make an Appointment</a></p>
+            <p>A unit of the <a href="https://odoc.princeton.edu/">Office of the Dean of the College</a></p>
+           </div>
+          </div>
+         </div>
+         <div class="layout__region layout__region--second layout__region--quarters layout__region--narrow">
+          <div class=" oip-text--right block-ps-text block block-layout-builder block-inline-blockps-text" data-block-plugin-id="inline_block:ps_text">
+           <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+            <a href="https://www.google.com/maps/place/Louis+A.+Simpson+International+Building/@40.3492662,-74.6571376,17z/data=!3m1!4b1!4m5!3m4!1s0x89c3e6c3abdf7765:0x499a19706e75ade!8m2!3d40.3492621!4d-74.6549436" target="_blank">
+             <figure class="align-right media--type-image media--view-mode-ps-small-freeform figure">
+              <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2019-08/oip-map.png?itok=co00jap0" width="220" height="161" alt="the Louis A Simpson building is on Washington Road in Princeton NJ" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+             </figure></a>
+            <p>&nbsp;</p>
+           </div>
+          </div>
+         </div>
+         <div class="layout__region layout__region--third layout__region--quarters layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+           <h2 class="block-heading">Visit Us</h2>
+           <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+            <p>Office Hours Monday-Friday:<br> Academic Year: 9 a.m. - 5 p.m.<br> Summer: 8:30 a.m.- 4:30 p.m.</p>
+           </div>
+          </div>
+         </div>
+         <div class="layout__region layout__region--fourth layout__region--quarters layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_social_links" class="block-ps-social-links block block-layout-builder block-inline-blockps-social-links">
+           <h2 class="block-heading">Follow Us</h2>
+           <ul class="ps-social-links--platforms platforms vertical">
+            <li><a href="https://www.facebook.com/princetonoip" title="PrincetonOIP"> <span class="fab fa-facebook fa-2x" aria-hidden="true"></span> <span class="social-link-label">PrincetonOIP</span> </a></li>
+            <li><a href="https://www.facebook.com/PrincetonBridgeYear/" title="PrincetonBridgeYear"> <span class="fab fa-facebook fa-2x" aria-hidden="true"></span> <span class="social-link-label">PrincetonBridgeYear</span> </a></li>
+            <li><a href="https://www.instagram.com/princetonoip" title="PrincetonOIP"> <span class="fab fa-instagram fa-2x" aria-hidden="true"></span> <span class="social-link-label">PrincetonOIP</span> </a></li>
+            <li><a href="https://www.instagram.com/novogratzbridgeyear" title="novogratzbridgeyear"> <span class="fab fa-instagram fa-2x" aria-hidden="true"></span> <span class="social-link-label">novogratzbridgeyear</span> </a></li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="constrained-bkg-constrained-content layout layout--threecol-33-34-33">
+        <div class="layout-inner-container">
+         <div class="layout__region layout__region--first layout__region--thirds layout__region--narrow">
+         </div>
+         <div class="layout__region layout__region--second layout__region--thirds layout__region--narrow">
+         </div>
+         <div class="layout__region layout__region--third layout__region--thirds layout__region--narrow">
+         </div>
+        </div>
+       </div>
+       <div class="constrained-bkg-constrained-content layout layout--onecol">
+        <div class="layout-container">
+         <div class="layout__region layout__region--content">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="subfooter">
+      <div class="container">
+       <div class="row">
+        <div class="subfooter-links">
+         <ul class="list-unstyled">
+          <li><a href="https://accessibility.princeton.edu/resources/accessibility-help" target="_blank">Accessibility</a></li>
+         </ul>
+        </div>
+        <div class="col-sm  copyright">
+         <p class="copyright-text"> © 2022 The Trustees of Princeton University </p>
+        </div>
+        <div class="col-sm text-sm-left text-md-right"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"> <img src="/sites/g/files/toruqf131/themes/site/images/pu-logo-stacked-white.svg" alt="Princeton University"></a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div> 
+  </div><span id="ps-current-username" data-username=""></span>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/351","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ckeditorheight":{"offset":1,"line_height":1.5,"unit":"em","disable_autogrow":null},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"all_documents_new_window":false,"select2_simple":{"selector":".node-form select:not(.disable-select2,[name$=\u0027[actions][bundle]\u0027],.ui-timepicker-select,[name*=\u0027field_ps_timeline_feature_items\u0027]),.select2-form select,#drupal-off-canvas select[multiple]"},"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"ps_accordion":{"#ps_accordionfield_ps_accordion_block_content_931":[],"#ps_accordionfield_ps_accordion_block_content_501":[]},"ajax":[],"user":{"uid":0,"permissionsHash":"0c65cb7d0b17e8592025a2efca2514eeec9f615686e6ff301c9d2e3f04e0c6bb"}}</script>
+  <script src="/sites/g/files/toruqf131/files/js/js_AoSO46PgswOgaapAIctWGkAmZJb1HH7RtySo3zNrvg0.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"427707476","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":1026,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

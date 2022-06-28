@@ -1,0 +1,585 @@
+<!doctype html><!-- saved from url=(0046)http://paoc.devsign-consulting.com/level2.html -->
+<html>
+ <head>
+  <script id="tinyhippos-injected">if (window.top.ripple) {
+	window.top.ripple("bootstrap").inject(window, document);
+}</script>
+  <script src="/js/jquery/jquery-1.11.3.min.js"></script>
+  <script src="/js/bootstrap/bootstrap-3.3.5.js"></script>
+  <script src="/js/bootstrap/transition.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="/styles/site.min.css" rel="stylesheet">
+  <script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-80741113-2', 'auto');
+		ga('send', 'pageview');
+	</script>
+ </head>
+ <body>
+  <nav class="navbar navbar-default navbar-static-top">
+   <div class="container">
+    <div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <ul class="nav navbar-nav navbar-right">
+      <li><a href="/about/contact-and-directions">Contact</a></li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <div id="search-box">
+   <div id="search-box-inner">
+   </div>
+  </div>
+  <div class="row bg-photo-stripe" style="margin:0;">
+   <div class="main container">
+    <div class="row header-group">
+     <div class="col-sm-4"><a href="/" class="header-paoclogo"> </a>
+     </div>
+     <div class="col-sm-8">
+      <nav class="navbar navbar-default header"> 
+       <div class="container-fluid"> 
+        <ul class="nav navbar-nav"> 
+         <li><a href="/about">about</a></li> 
+         <li><a href="/research">research</a></li> 
+         <li><a href="/education">education</a></li> 
+         <li class="leaf"><a href="/about/news" title="">news</a></li> 
+         <li><a href="/people/?type=Faculty%20and%20Investigators">people</a></li> 
+         <li><a href="/events">events</a></li> 
+         <li><a href="/about/apply">apply</a></li> 
+        </ul> 
+       </div> 
+      </nav> 
+     </div>
+     <div class="search-bar">
+      <form method="GET" action="/search">
+       <input class="form-control" size="20" placeholder="Search" name="query" id="query"><button type="submit" style="display:none;"></button>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="container">
+   <div class="row bg-photo-stripe content">
+    <div class="container people">
+     <div class="row bg-photo-stripe">
+      <div class="col-sm-3 curve-top-right">
+       <div class="main-col left-menu">
+        <h3>By Role</h3>
+        <div class="row home-col-top"></div>
+        <ul class="people-menu">
+         <li class="active-menu-item"><a href="/people/?type=Faculty and Investigators">Faculty and Investigators</a></li>
+         <li class=""><a href="/people/?type=Researchers">Researchers</a></li>
+         <li class=""><a href="/people/?type=Postdocs">Postdocs</a></li>
+         <li class=""><a href="/people/?type=Students">Students</a></li>
+         <li class=""><a href="/people/?type=Visitors">Visitors</a></li>
+         <li class=""><a href="/people/?type=Support">Support</a></li>
+        </ul>
+        <div class="after-list active">
+         <a href="/people/">All People</a>
+        </div>
+        <h3>By Research Areas</h3>
+        <div class="row home-col-top"></div>
+        <ul class="people-menu">
+         <li class=""><a href="/people/?research=Atmosphere">Atmosphere</a></li>
+         <li class=""><a href="/people/?research=Ocean">Ocean</a></li>
+         <li class=""><a href="/people/?research=Climate">Climate</a></li>
+         <li class="active-menu-item"><a href="/people/">All Research Areas</a></li>
+        </ul>
+       </div>
+      </div>
+      <div class="col-sm-9 curve-top-left">
+       <div class="main-col">
+        <h1>Faculty and Investigators</h1><span class="rolodex"> <a href="?">All</a> <a href="?lastname=A">A</a> <a href="?lastname=B">B</a> <a href="?lastname=C">C</a> <a href="?lastname=D">D</a> <a href="?lastname=E">E</a> <a href="?lastname=F">F</a> <a href="?lastname=G">G</a> <a href="?lastname=H">H</a> <a href="?lastname=I">I</a> <a href="?lastname=J">J</a> <a href="?lastname=K">K</a> <a href="?lastname=L">L</a> <a href="?lastname=M">M</a> <a href="?lastname=N">N</a> <a href="?lastname=O">O</a> <a href="?lastname=P">P</a> <a href="?lastname=Q">Q</a> <a href="?lastname=R">R</a> <a href="?lastname=S">S</a> <a href="?lastname=T">T</a> <a href="?lastname=U">U</a> <a href="?lastname=V">V</a> <a href="?lastname=W">W</a> <a href="?lastname=X">X</a> <a href="?lastname=Y">Y</a> <a href="?lastname=Z">Z</a> </span>
+        <div class="persons grid">
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/babbin" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/Ccek_P5UsAEB9Sf.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/babbin">Andrew Babbin</a></span>
+          </div>
+          <div class="title"><span class="field-content">Cecil and Ida Green Career Development Professor</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:babbin@mit.edu" class="spamspan">babbin@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 2181</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/eaboyle" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/boyle2.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/eaboyle">Edward A. Boyle</a></span>
+          </div>
+          <div class="title"><span class="field-content">Professor of Ocean Geochemistry, Director of the MIT/WHOI Joint Program</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:eaboyle@mit.edu" class="spamspan">eaboyle@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 3388</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/twcronin" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/Tim_AkakaFalls_1.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/twcronin">Timothy Cronin</a></span>
+          </div>
+          <div class="title"><span class="field-content"> Kerr-Mcgee Career Development Assistant Professor</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:twcronin@mit.edu" class="spamspan">twcronin@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">774-238-8460</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/stephdut" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/steph3_1.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/stephdut">Stephanie Dutkiewicz</a></span>
+          </div>
+          <div class="title"><span class="field-content">Senior Research Scientist</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:stephd@mit.edu" class="spamspan">stephd@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 8039</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/kokey" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/Kerry_2008.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/kokey">Kerry A. Emanuel</a></span>
+          </div>
+          <div class="title"><span class="field-content">Cecil &amp; Ida Green Professor of Atmospheric Science</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:mylastname@mit.edu" class="spamspan">mylastname@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 2462</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/darae" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/Dara-Entekhabi_1.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/darae">Dara Entekhabi</a></span>
+          </div>
+          <div class="title"><span class="field-content">Bacardi and Stockholm Water Foundations Professor</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:darae@mit.edu" class="spamspan">darae@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 9698</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/raffaele" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/IMG_1369_0.JPG')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/raffaele">Raffaele Ferrari</a></span>
+          </div>
+          <div class="title"><span class="field-content">Cecil &amp; Ida Green Professor of Oceanography, Chair of the Program in Atmospheres, Oceans and Climate</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:raffaele@MIT.EDU" class="spamspan">raffaele@MIT.EDU</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 1291</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/amfiore" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('https://eapsweb.mit.edu/sites/default/files/Fiore-sq_0.png')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/amfiore">Arlene Fiore</a></span>
+          </div>
+          <div class="title"><span class="field-content">Peter H. Stone and Paola Malanotte Stone Professor of Earth, Atmospheric and Planetary Sciences</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:amfiore@mit.edu" class="spamspan">amfiore@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content"></span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/grflierl" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/147_0.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/grflierl">Glenn R. Flierl</a></span>
+          </div>
+          <div class="title"><span class="field-content">Professor of Oceanography</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:glenn@lake.mit.edu" class="spamspan">glenn@lake.mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 4692</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/mick" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/mick_follows02_0.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/mick">Michael Follows</a></span>
+          </div>
+          <div class="title"><span class="field-content">Professor</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:mick@mit.edu" class="spamspan">mick@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253-5939</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/heald" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/Heald2011_small_0.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/heald">Colette Heald</a></span>
+          </div>
+          <div class="title"><span class="field-content">Professor</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:heald@mit.edu" class="spamspan">heald@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 324 5666</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/cnh" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/Screen Shot 2013-10-21 at 3.17.58 PM_0.png')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/cnh">Christopher N. Hill</a></span>
+          </div>
+          <div class="title"><span class="field-content">Principal Research Engineer</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:cnh@mit.edu" class="spamspan">cnh@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 6430</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/illari" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/Screen Shot 2014-08-12 at 1.13.43 PM.png')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/illari">Lodovica Illari</a></span>
+          </div>
+          <div class="title"><span class="field-content">Senior Lecturer</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:illari@mit.edu" class="spamspan">illari@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 2286</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/rlindzen" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/richard-lindzen_0.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/rlindzen">Richard S. Lindzen</a></span>
+          </div>
+          <div class="title"><span class="field-content">Professor Emeritus</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:rlindzen@mit.edu" class="spamspan">rlindzen@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 2432</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/jmarsh" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/marshall_small_0.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/jmarsh">John Marshall</a></span>
+          </div>
+          <div class="title"><span class="field-content">Professor of Oceanography</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:jmarsh@mit.edu" class="spamspan">jmarsh@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 9615</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/davidmcg" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/Unknown_1.jpeg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/davidmcg">David McGee</a></span>
+          </div>
+          <div class="title"><span class="field-content">Associate Professor</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:davidmcg@mit.edu" class="spamspan">davidmcg@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 324 3545</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/minchew" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/Minchew_0.png')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/minchew">Brent Minchew</a></span>
+          </div>
+          <div class="title"><span class="field-content">Cecil and Ida Green CD Professor</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:minchew@mit.edu" class="spamspan">minchew@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617-324-3704</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/pog" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/DSC_0122a_0.JPG')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/pog">Paul O'Gorman</a></span>
+          </div>
+          <div class="title"><span class="field-content">Professor</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:pog@mit.edu" class="spamspan">pog@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 452 3382</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/plumb" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/plumb2_0.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/plumb">R. Alan Plumb</a></span>
+          </div>
+          <div class="title"><span class="field-content">Professor Emeritus</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:plumb@mit.edu" class="spamspan">plumb@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 6281</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/rprinn" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/prinn082_2.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/rprinn">Ronald G. Prinn</a></span>
+          </div>
+          <div class="title"><span class="field-content">TEPCO Professor of Atmospheric Science</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:rprinn@mit.edu" class="spamspan">rprinn@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 2452</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/ravela" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/gsdn315_Sai-Ravela_0.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/ravela">Srinivas (Sai) Ravela</a></span>
+          </div>
+          <div class="title"><span class="field-content">Principal Research Scientist</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:ravela@mit.edu" class="spamspan">ravela@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 0997</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/rizzoli" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/rizzoli_1.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/rizzoli">Paola Malanotte Rizzoli</a></span>
+          </div>
+          <div class="title"><span class="field-content">Professor of Physical Oceanography</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:rizzoli@mit.edu" class="spamspan">rizzoli@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 2451</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/dhr" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/china_pt.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/dhr">Daniel Rothman</a></span>
+          </div>
+          <div class="title"><span class="field-content">Professor of Geophysics</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:dhr@mit.edu" class="spamspan">dhr@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 7861</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/casch" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/adamschlosser_1.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/casch">C. Adam Schlosser</a></span>
+          </div>
+          <div class="title"><span class="field-content">Senior Research Scientist</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:casch@mit.edu" class="spamspan">casch@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 3983</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/seager" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/SeagerPhoto_0.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/seager">Sara Seager</a></span>
+          </div>
+          <div class="title"><span class="field-content">Class of 1941 Professor of Planetary Sciences</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:profseager@mit.edu" class="spamspan">profseager@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 6775</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/selin" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/noelleeckley2_0.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/selin">Noelle Eckley Selin</a></span>
+          </div>
+          <div class="title"><span class="field-content">Associate Professor</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:selin@mit.edu" class="spamspan">selin@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 324 2592</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/solos" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/115_solomon2-500_0.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/solos">Susan Solomon</a></span>
+          </div>
+          <div class="title"><span class="field-content">Lee and Geraldine Martin Professor of Environmental Studies</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:solos@mit.edu" class="spamspan">solos@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content"></span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/phstone" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/Chien, Peter and Ron.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/phstone">Peter H. Stone</a></span>
+          </div>
+          <div class="title"><span class="field-content">Professor Emeritus</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:" class="spamspan"></a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 6783</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/rsummons" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/Roger_Alvin_sml.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/rsummons">Roger Summons</a></span>
+          </div>
+          <div class="title"><span class="field-content">Schlumberger Professor of Geobiology</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:rsummons@mit.edu" class="spamspan">rsummons@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 452 2791</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/TamarinBrodsky" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('https://eapsweb.mit.edu/sites/default/files/talia_pic.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/TamarinBrodsky">Talia Tamarin-Brodsky</a></span>
+          </div>
+          <div class="title"><span class="field-content">Assistant Professor, beginning January 2022</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:" class="spamspan"></a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content"></span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/rwoosley" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/IMG_1841 3.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/rwoosley">Ryan Woosley</a></span>
+          </div>
+          <div class="title"><span class="field-content">Principal Research Scientist</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:rwoosley@mit.edu" class="spamspan">rwoosley@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617-253-1984</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/wunsch" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/carlwunsch_1.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/wunsch">Carl Wunsch</a></span>
+          </div>
+          <div class="title"><span class="field-content">Professor Emeritus of Physical Oceanography</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:cwunsch@mit.edu" class="spamspan">cwunsch@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 253 5937</span>
+          </div>
+         </div>
+         <div class="person grid-item">
+          <div class="views-field-field-person-list-image-fid"><span class="field-content"> <a href="/people/jdewit" class="imagefield imagefield-nodelink imagefield-field_person_list_image"> 
+             <div class="imagefield imagefield-field_person_list_image" style="background-image:url('/images/uploads/thumb/DeWitt_0.jpg')"></div> </a> </span>
+          </div>
+          <div class="name"><span class="field-content"><a href="/people/jdewit">Julien de Wit</a></span>
+          </div>
+          <div class="title"><span class="field-content">Assistant Professor</span>
+          </div>
+          <div class="email"><span class="field-content"><a href="mailto:jdewit@mit.edu" class="spamspan">jdewit@mit.edu</a></span>
+          </div>
+          <div class="phone"><label class="views-label-field-office-phone-value"> Phone </label><span class="field-content">617 258 0209</span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="row footer">
+   <div class="container">
+    <div class="row footer-contact">
+     <div class="col-sm-1 col-wrap"><a class="mit-logo" href="http://www.mit.edu/" alt="MIT"></a>
+     </div>
+     <div class="col-sm-3 col-wrap program-title">
+       Program in Atmospheres, Oceans and Climate 
+     </div>
+     <div class="col-sm-7 col-wrap">
+      <nav class="navbar navbar-default">
+       <div class="footer-menu"><!--
+
+								<nav class="navbar navbar-default header">
+									<div class="container-fluid">
+										<ul class="nav navbar-nav">
+						-->
+        <ul class="nav navbar-nav menu">
+         <li class="leaf first"><a href="/" title="">home</a></li>
+         <li class="leaf"><a href="/about" title="">about</a></li>
+         <li class="leaf"><a href="/research" title="">research</a></li>
+         <li class="leaf"><a href="/education" title="">education</a></li>
+         <li class="leaf"><a href="/about/news" title="">news</a></li>
+         <li class="leaf"><a href="/people" title="">people</a></li>
+         <li class="leaf"><a href="/events" title="">events</a></li>
+         <li class="leaf"><a href="/about/apply" title="">apply</a></li>
+         <li class="leaf"><a href="/about/contact-and-directions" title="">contact</a></li>
+         <li class="leaf last" target="_blank"><a href="http://accessibility.mit.edu" title="">accessiblity</a></li>
+        </ul>
+       </div>
+      </nav>
+     </div>
+     <div class="col-sm-1 col-wrap"><a class="eaps-logo" href="http://eapsweb.mit.edu/" alt="EAPS"></a>
+     </div>
+    </div>
+    <div>
+     <div class="program-contact">
+      Massachusetts Institute of Technology
+     </div>
+     <div class="program-contact">
+      77 Massachusetts Avenue | Room 54-1614 | Cambridge, MA 02139
+     </div>
+     <div class="program-contact">
+      Phone 617 . 253 . 7762
+     </div>
+     <div class="program-contact">
+      Copyright PAOC © 2010-2019
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

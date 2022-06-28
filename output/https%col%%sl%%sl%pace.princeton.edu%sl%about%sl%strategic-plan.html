@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"427707476"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-76289358-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});
+ga('puwdsTracker.set', 'anonymizeIp', true);ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <link rel="canonical" href="https://pace.princeton.edu/about/strategic-plan">
+  <meta name="description" content="Empathy, Empowerment, and Equity Our 20th anniversary in 2021&nbsp;is an occasion to celebrate the value of service to students’ learning. We are rewarded in witnessing how students learn more about themselves, their own communities, as well as communities different from their own. We are inspired by the critical questions students ask when they exam...">
+  <meta name="thumbnail" content="https://pace.princeton.edu/sites/g/files/toruqf686/files/styles/freeform_750w/public/2021-08/32822729063_01768dc464_o.jpg?itok=Ika7OwJv">
+  <meta property="og:site_name" content="Pace Center for Civic Engagement">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://pace.princeton.edu/about/strategic-plan">
+  <meta property="og:title" content="Pace Center Strategic Plan">
+  <meta property="og:description" content="Empathy, Empowerment, and Equity Our 20th anniversary in 2021&nbsp;is an occasion to celebrate the value of service to students’ learning. We are rewarded in witnessing how students learn more about themselves, their own communities, as well as communities different from their own. We are inspired by the critical questions students ask when they exam...">
+  <meta property="og:image" content="https://pace.princeton.edu/sites/g/files/toruqf686/files/styles/freeform_750w/public/2021-08/32822729063_01768dc464_o.jpg?itok=Ika7OwJv">
+  <meta property="og:image:alt" content="Two people reaching hands towards each other">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:widgets:csp" content="on">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/sites/g/files/toruqf686/themes/site/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Pace Center Strategic Plan | Pace Center for Civic Engagement</title>
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf686/files/css/css_m0u9GUsUiEwNQ2w-zFTtsS_rAeUxD502E70ilBq-X0w.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf686/files/css/css_1prhxtvxq6YtbaaqGTWaME8KYz_-Q8ljDzSry7LZZCQ.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/xxx7asp.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/bok5fgz.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf686/files/css/css_coo46XtfPHxCbLX6oESiX-vuoFEvhUGG62QeOAKHqUI.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf686/files/css/css_EqaP3TUyHqR-ud-VaHiJ7Qf6gZR7bykr10gPAFkfbuc.css">
+ </head>
+ <body class="not-front section-about page-node-16 content-type-ps-basic-page flavor2 fontset1 menu1 with-alt-pu-logo full-width-search-box layout-block-padding-medium">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="page page-container"> 
+    <header role="banner" class="header region region-header" id="header">
+     <h1 class="sr-only sr-site-name">Pace Center for Civic Engagement</h1>
+     <div class="skip-links"><a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to content</a><a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to search</a>
+     </div>
+     <div class="header-container container">
+      <div class="princeton-branding">
+       <div class="container"><a href="http://www.princeton.edu" class="alt-pu-logo" title="Princeton University"> <img src="/profiles/ps/themes/ps_base/images/pu-shield.svg" alt="Princeton University" class="pu-shield"> </a>
+       </div>
+      </div>
+      <div class="site-branding">
+       <div class="container">
+        <div class="row"><a href="/" title="Home" rel="home" class="site-logo"> <img src="/sites/g/files/toruqf686/themes/site/logo.svg" alt="Home" typeof="foaf:Image"> </a>
+        </div>
+       </div>
+      </div>
+      <nav aria-label="site" class="main-menu">
+       <h2 class="sr-only">Main Menu</h2>
+       <div class="container navbar-expand-lg"><button class="toggle-mobile-menu unbutton" type="button" data-toggle="collapse" data-target="#menu-container" aria-controls="menu-container" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-mobile-menu-icon"> <span class="toggle-mobile-menu-title">Menu</span> <i class="fa fa-bars" aria-hidden="true"></i> </span> </button>
+        <div id="menu-container" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item expanded active"><a href="/about" data-drupal-link-system-path="node/11">About</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item active"><a href="/about/strategic-plan" data-drupal-link-system-path="node/16" class="is-active">Strategic Plan</a></li>
+            <li class="submenu-item"><a href="/about/history" data-drupal-link-system-path="node/116">History</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/get-involved" data-drupal-link-system-path="node/36">Get Involved</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item expanded"><a href="/get-involved/pace-center-programs" data-drupal-link-system-path="node/41">Pace Center Programs</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/breakout-princeton" data-drupal-link-system-path="node/171">Breakout Princeton</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/civic-leadership-council" data-drupal-link-system-path="node/931">Civic Leadership Council</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/community-action" data-drupal-link-system-path="node/951">Community Action</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/community-house" data-drupal-link-system-path="node/956">Community House</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/high-meadows-fellowship-program" data-drupal-link-system-path="node/961">High Meadows Fellowship Program</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/john-c-bogle-51-fellows-civic-service" data-drupal-link-system-path="node/966">John C. Bogle '51 Fellows in Civic Service</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/princeton-advocacy-activism-student-organizations" data-drupal-link-system-path="node/971">Princeton Advocacy &amp; Activism Student Organizations</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/princeton-internships-civic-service" data-drupal-link-system-path="node/976">Princeton Internships in Civic Service</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/princeton-rise" data-drupal-link-system-path="node/986">Princeton RISE</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/projects-peace" data-drupal-link-system-path="node/991">Projects for Peace</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/service-focus" data-drupal-link-system-path="node/996">Service Focus</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/student-volunteers-council" data-drupal-link-system-path="node/1001">Student Volunteers Council</a></li>
+              <li class="submenu-item"><a href="/get-involved/pace-center-programs/trenton-arts-princeton" data-drupal-link-system-path="node/1006">Trenton Arts at Princeton</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/get-involved/voting-and-active-citizenship" data-drupal-link-system-path="node/46">Voting and Active Citizenship</a></li>
+            <li class="submenu-item"><a href="/get-involved/service-awards-and-prizes" data-drupal-link-system-path="node/51">Service Awards and Prizes</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/connect" data-drupal-link-system-path="node/66">Connect</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/connect/staff" data-drupal-link-system-path="node/71">Staff</a></li>
+            <li class="submenu-item"><a href="/connect/student-boards" data-drupal-link-system-path="node/76">Student Boards</a></li>
+            <li class="submenu-item"><a href="/connect/community-partners-residence" data-drupal-link-system-path="node/81">Community Partners in Residence</a></li>
+            <li class="submenu-item expanded"><a href="/connect/partner-pace" data-drupal-link-system-path="node/86">Partner with Pace</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/connect/partner-pace/partnership-principles" data-drupal-link-system-path="node/96">Partnership Principles</a></li>
+              <li class="submenu-item"><a href="/connect/partner-pace/recruiting-student-volunteers" data-drupal-link-system-path="node/101">Recruiting Student Volunteers</a></li>
+              <li class="submenu-item"><a href="/connect/partner-pace/co-sponsorship" data-drupal-link-system-path="node/106">Co-Sponsorship</a></li>
+              <li class="submenu-item"><a href="/connect/partner-pace/community-partners" data-drupal-link-system-path="node/111">Community Partners</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/connect/meet-trenton" data-drupal-link-system-path="node/91">Meet Trenton</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/learn" data-drupal-link-system-path="node/121">Learn</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/learn/learning-outcomes" data-drupal-link-system-path="node/136">Learning Outcomes</a></li>
+            <li class="submenu-item"><a href="/connect/partner-pace/partnership-principles" data-drupal-link-system-path="node/96">Partnership Principles</a></li>
+            <li class="submenu-item"><a href="/learn/trainings-workshops" data-drupal-link-system-path="node/156">Trainings &amp; Workshops</a></li>
+            <li class="submenu-item"><a href="/learn/courses" data-drupal-link-system-path="node/151">Courses</a></li>
+            <li class="submenu-item"><a href="/learn/field-guide-service" data-drupal-link-system-path="node/131">Field Guide to Service</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/events" data-drupal-link-system-path="node/936">Events</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/events/monthly-calendar" data-drupal-link-system-path="node/1056">Monthly Calendar</a></li>
+            <li class="submenu-item expanded"><a href="/events/month-service" data-drupal-link-system-path="node/1061">Month of Service</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/events/month-service/about-just-food" data-drupal-link-system-path="node/1996">About Just Food</a></li>
+              <li class="submenu-item"><a href="/events/month-service/community-guide" data-drupal-link-system-path="node/1991">Community Guide</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/events/summer-service-orientation" data-drupal-link-system-path="node/1066">Summer Service Orientation</a></li>
+            <li class="submenu-item"><a href="/events/involvement-fest" data-drupal-link-system-path="node/1071">Involvement Fest</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/news-media" data-drupal-link-system-path="node/941">News &amp; Media</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/news-media/news" data-drupal-link-system-path="node/1081">News</a></li>
+            <li class="submenu-item"><a href="/news-media/media" data-drupal-link-system-path="node/1086">Media</a></li>
+           </ul></li>
+         </ul>
+         <div class="utility-menu">
+          <ul class="nav navbar-nav utility-nav">
+           <li class="nav-item"><a href="/caslogin" class="ps-login-logout-link" data-drupal-link-system-path="caslogin">Log in</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </nav>
+      <div class="search-bar" id="search-bar">
+       <div class="container navbar-expand-lg" role="search">
+        <h2 class="sr-only">Search</h2><button class="toggle-searchbar unbutton" type="button" data-toggle="collapse" data-target="#search-bar-container" aria-controls="search-bar-container" aria-expanded="false" aria-label="Toggle search"> <span class="toggle-search-icon"> <i class="fas fa-search" aria-hidden="true"></i> </span> </button>
+        <div id="search-bar-container" class="collapse navbar-collapse">
+         <div class="search-block-form contextual-region block block-search container-inline" id="block-searchform">
+          <form action="/search" method="get" id="search-block-form" accept-charset="UTF-8">
+           <div id="search-toggled" class="form-group js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label"><label for="edit-search-keys" class="visually-hidden">Search</label>
+            <input placeholder="Search" type="search" id="edit-search-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control">
+           </div>
+           <div data-drupal-selector="edit-search-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-search-actions">
+            <input type="submit" id="edit-search-submit" value="Submit" class="button js-form-submit form-submit btn btn-primary">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="breadcrumb region region-breadcrumb" id="breadcrumb">
+     <div class="container">
+      <nav role="navigation" aria-label="breadcrumb">
+       <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/about">About the Pace Center</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> Pace Center Strategic Plan </li>
+       </ol>
+      </nav>
+     </div>
+    </div>
+    <div class="highlighted" id="highlighted">
+     <div class="container">
+      <div class="region region-highlighted">
+       <div data-drupal-messages-fallback class="hidden"></div>
+       <div id="block-pace-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+        <h1 class="page-title"> Pace Center Strategic Plan </h1>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="main" class="main-container">
+     <div class="container">
+      <div class="row">
+       <div class="sidebar-first section order-first col-sm-4 col-md-3 col-lg-2">
+        <nav class="main-sidebar-menu" aria-label="section">
+         <h2 class="sr-only">Section Menu</h2>
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item active"><a href="/about/strategic-plan" data-drupal-link-system-path="node/16" class="is-active">Strategic Plan</a></li>
+          <li class="nav-item"><a href="/about/history" data-drupal-link-system-path="node/116">History</a></li>
+         </ul>
+        </nav>
+       </div>
+       <main class="main main-content col-sm-12 col-lg-10 order-last"><a id="main-content" class="sr-only skip-link"></a>
+        <div class="region region-content">
+         <div id="block-pace-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+          <article role="article" about="/about/strategic-plan" class="node node--type-ps-basic-page node--view-mode-full">
+           <div class="node__content">
+            <div class="constrained-bkg-constrained-content layout layout--twocol-75-25">
+             <div class="layout-inner-container">
+              <div class="layout__region layout__region--first layout__region--wide layout__region--75">
+               <div data-block-plugin-id="ps_node_view" class="block block-ps-core block-ps-node-view">
+                <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item">
+                 <figure class="media--type-image media--view-mode-ps-content-width-16x9 figure">
+                  <img srcset="/sites/g/files/toruqf686/files/styles/16x9_750w_422h/public/2021-08/32822729063_01768dc464_o.jpg?itok=VASZ75uR 750w, /sites/g/files/toruqf686/files/styles/16x9_1440w_810h/public/2021-08/32822729063_01768dc464_o.jpg?itok=NK-ECAd9 1440w, /sites/g/files/toruqf686/files/styles/16x9_2880w_1620h/public/2021-08/32822729063_01768dc464_o.jpg?itok=tAbhO-Cm 2880w" sizes="(min-width: 1440px) 1440px, 100vw" src="/sites/g/files/toruqf686/files/styles/16x9_1440w_810h/public/2021-08/32822729063_01768dc464_o.jpg?itok=NK-ECAd9" alt="Two people reaching hands towards each other" typeof="foaf:Image">
+                 </figure>
+                </div>
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <h2>Empathy, Empowerment, and Equity</h2>
+                 <p>Our 20th anniversary in 2021&nbsp;is an occasion to celebrate the value of service to students’ learning. We are rewarded in witnessing how students learn more about themselves, their own communities, as well as communities different from their own. We are inspired by the critical questions students ask when they examine how best to respond to the needs of the world, to the needs of others, and to meet their own needs.</p>
+                 <p>Unprepared volunteers and sporadic engagement have, at times, been more of a hindrance than a help to communities; and as we approach our 20th, it is imperative that we address the harm that can be done through service. In our work together, undergraduate students, graduate students, community partners, and campus partners have taught us that the service we engage in together, when at its best, is value-driven, relationship-based, and a social responsibility. We aspire to embrace these teachings in our 2020-2025 Strategic Plan for the Pace Center.</p>
+                 <p>Since Princeton University’s Orientation program began in 2016, we have significantly expanded first-year students’ awareness of service and leadership, and, following the&nbsp;<a href="https://strategicplan.princeton.edu/" target="_blank">University’s strategic priorities</a>, we have begun a new program to connect sophomore students’ service experiences to their academic pathways. These efforts have called on us to develop&nbsp;<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="3cdb708f-ec94-4c1d-b2f9-b6d8bb06952f" href="/node/141">partnership principles</a>&nbsp;and&nbsp;<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="f6c4473e-44c5-4198-8e8f-751d585a64a2" href="/learn/learning-outcomes">student learning outcomes</a>, two frameworks that articulate our understanding of how to do service well, so that we can responsibly increase students’ engagement with communities.</p>
+                 <p>In this strategic plan, we will continue to support students’ learning from service, by supporting the role of community partners as educators, by putting more focus on the historical and social context of students’ service, by providing more opportunities in advocacy and activism, and by developing a broader reflection framework. These goals center our concern for racial injustice and foster a civic culture of engagement.</p>
+                 <p>As a part of Princeton University, we know that how we relate to one another is as important as the knowledge we hold. We aspire to use our power at Princeton to build a responsive community from understanding and acceptance rather than exclusion. We aspire to contribute to the greater good and to value the dignity of all.</p>
+                 <p>We are grateful for your support of the Pace Center and we look forward to continuing our learning with you.</p>
+                 <p>In service,&nbsp;<br> Kimberly de los Santos<br> John C. Bogle '51 and Burton G. Malkiel *64 Executive Director</p>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_526" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn" role="button" aria-controls="acc-panel" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Who We Are 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel" role="region" aria-labelledby="acc-btn">
+                      <p>Staff at the Pace Center are committed to empathy, empowering others, and equity. As a part of Princeton University, we acknowledge doing our work on land that is part of the ancient homelands of the Lenni-Lenape peoples, and we aim to find meaningful ways to honor and acknowledge their rich and complex history. One way we do this is by being a part of communities that share responsibilities of caring for the land and each other.</p>
+                      <p>We recognize that there have been and there remain many systems and structures with policies and processes that disadvantage Black and Indigenous people, as well as Latinx and Asian-Americans, and we actively work against systemic racism. Foremost, we try to do no harm; and we have an accompanying set of partnership principles to guide us. We recognize that harm can be done in the name of service, and we aim for service to be a way of recognizing and building upon community assets, of repairing damage to communities, and recognizing human dignity.</p>
+                      <p>Pace Center staff bring unique backgrounds and expertise to our roles. We are a diverse team who respects the experiences of community partners and students. We listen and learn with them, enabling service at Princeton to be student-led, community-directed, and staff-advised. And, as eager participants in Campus Life’s professional development programs, we are committed to interrogating our practices to ensure that they remain<br> best practices.</p>
+                      <p>In Service,&nbsp;</p>
+                      <p>David Brown, Lou Chen, Charlotte Collins, Kimberly de los Santos, Soeurette Germain, Sara Gruppo, Rose Holton, Maggie Hussar, Justin Kazlauskas, Gwen McNamara, Kira O'Brien, Yi-Ching Ong,&nbsp;Lydia Owens, Meg Rooney, Caroline Savage, Evan Schneider, Elsie Sheidler, and Geralyn Williams</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--2" role="button" aria-controls="acc-panel--2" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Our Commitment 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--2" role="region" aria-labelledby="acc-btn--2">
+                      <p>As a part of Campus Life at Princeton University, we commit to supporting the University’s aspiration to promote the public good and to&nbsp;<a href="https://campuslife.princeton.edu/about/campus-life-strategic-plan-2020-2025" target="_blank">Campus Life's strategic goal</a>&nbsp;to develop students for a life of meaning and service. The purpose of the Pace Center is to make service and civic engagement a central part of the Princeton student experience so that students can respond to the needs of the world in responsible ways.</p>
+                      <p>To realize this purpose, our mission is to prepare undergraduate and graduate students to serve well by making meaningful connections through learning, experience, and reflection. Helping students discover service through connecting with each other and communities that they care about creates a strong foundation for understanding what it means to be an engaged citizen. It is our vision that Princeton University students will make the world more equitable, creating access and opportunity for all people and communities to thrive.</p>
+                      <p>As such, we share our commitment with this strategic plan. We are committed to diverse groups of students and partners engaging together and learning from one another. Diversity consists of the similarities and differences in our identities and experiences and can help us respond most effectively to the needs of communities.</p>
+                      <p>Because systemic barriers for people vary based on their race, ethnicity, age, gender, sexual orientation, religion, national origin, socioeconomic background, and abilities, among other qualities, we are committed to equity.</p>
+                      <p>Our commitment to equity is fundamental to service; one of the core aims of service is to provide the support communities need to remove these barriers. Our commitment to inclusion entails actively inviting partners and students to engage with each other, finding and centering missing community voices, and supporting service opportunities and programs in which partners and students feel welcome and connected with others. Pace Center staff have a relational approach with partners and students because we believe that interacting and building trust with each other is a powerful element in learning from service. The relational approach of Pace Center staff with partners and students includes recognizing their uniqueness, valuing their needs, and showing care and appreciation.</p>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <h2 class="block-heading">Our Goals</h2>
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p>Four goals, influenced by the strategic goals put forth in the&nbsp;<a href="https://campuslife.princeton.edu/about/campus-life-strategic-plan-2020-2025" target="_blank">2020-2025 Campus Life Strategic Plan</a>, will guide our work’s direction. The student learning outcomes and our partnership principles that resulted from the implementation of our previous strategic plan will inform these goals, as will the&nbsp;<a href="https://odi.princeton.edu/training-initiatives" target="_blank">Office of Diversity and Inclusion’s framework for diversity and inclusion</a>.</p>
+                 <p>We also continue to draw from the University's strategic planning work, in particular the positive learning spiral developed by the Service and Civic Engagement Self-Study Task Force for its&nbsp;<a href="https://strategicplan.princeton.edu/sites/strategicplan/files/sace_serviceandcivicengagementfinal-report.pdf" target="_blank">2015 report</a>. This learning spiral demonstrates how service can support students in learning why to serve, how to serve and to learn from serving. Our goals in this plan aim to do the same. Cultivating equity by including community partners in planning and decision making processes undergirds all of our goals. We then aim to strengthen students’ understanding of ‘why to serve’ through enhancing awareness of the historical and contemporary structures and norms that form the context for their service. We can enhance students’ understanding of ‘how to serve’ through enhanced support for advocacy and activism. And, we can deepen learning from service through the development of a framework for reflection.</p>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_536" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--3" role="button" aria-controls="acc-panel--3" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Goal #1 Cultivate Equity by Including Community Partners in Planning and Decision-making Processes 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--3" role="region" aria-labelledby="acc-btn--3">
+                      <p>Service and civic engagement are grounded in the formation of equitable and authentic relationships, both on and off Princeton University’s campus. Partners are an integral part of what makes service meaningful at Princeton. When we connect with others we are able to better understand what our community needs. Through the co-creation of our&nbsp;<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="d87b00a3-3db9-462f-8ff1-b6c689e48377" href="/connect/partner-pace/partnership-principles">Partnership Principles</a>, we articulated the core components necessary to build effective partnerships. We also acknowledge that more work is needed in this area to ensure that our principles clearly articulate our commitment to diversity, inclusion, and anti-racism practices. Centering community perspectives, knowledge, and expertise more formally into the planning and decision making processes of the Pace Center will allow for more co-creation, transparency in communication, and increased reciprocity in our partnerships.</p>
+                      <p>Additionally, we will continue to work to ensure that our Partnership Principles are guiding service and civic engagement programs at the Pace Center and Princeton. The Pace Center has sought to highlight the expertise of community leaders by inviting partners to lead training sessions, to meet with students, to deliver public lectures, and to serve as Community Partners-in-Residence elevating voices often not heard in the classroom and modeling different ways of knowing and learning. Such interactions have enhanced student learning and enriched our relationships with partners. Our training partners and Community Partners-in-Residence, like our staff, are diverse and bring unique talents to our center. Our partners are educators and they should be recognized, honored, and celebrated in an equitable manner consistent with others at Princeton.</p>
+                      <h3>We Will Take Action By</h3>
+                      <ul>
+                       <li>Asking community partners how they want to be a part of planning and decision making processes at the Pace Center, including on service project selection committees, service award selection committees, and advisory groups</li>
+                       <li>Implementing consistent and regular surveys and the convening of community partners to evaluate reciprocity and harm, and to celebrate and honor relationships expanding upon the Community Partner-in Residence model and creating increased opportunities for partners to gather, network and learn together with staff and students</li>
+                       <li>Reviewing and improving resource allocation and compensation practices for community partners that serve as educators</li>
+                       <li>Providing Pace Center staff opportunities to participate in racial equity trainings and revising the Pace Center Partnership Principles to more clearly articulate the Pace Center’s commitment to anti-racism practices</li>
+                       <li>Sharing our Partnership Principles and equity-based practices more broadly with students, partners, and other stakeholders, including the development of specific anti-racism resources and tools to aid in implementation</li>
+                      </ul>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--4" role="button" aria-controls="acc-panel--4" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Goal #2 Strengthen Students' Understanding of the Historical and Contemporary Structures and Norms that Form the Context for Their Service 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--4" role="region" aria-labelledby="acc-btn--4">
+                      <p>Service and civic engagement offer vital avenues for students to acquire a deeper understanding of societal issues and an appreciation for the complex constellation of factors that drive these issues. These insights, however, are not an automatic outcome of service﹘indeed, if service is done without care, there is a danger that it may reinforce inequitable and oppressive societal frameworks and views.</p>
+                      <p>At the Pace Center, we have accordingly emphasized the importance of careful preparation and reflection, so that students can critically interrogate what they observe through their service. We hope that our students will recognize and internalize a vision of service that goes beyond addressing and repairing damage to communities, but also addresses root causes of damage by transforming societal systems of injustice and building community assets in sustainable ways.</p>
+                      <p>To build on our work in this area, we aim to provide additional opportunities for students to explore and grapple with the historical and contemporary structures and norms that lie at the root of societal problems. In doing so, we not only ensure that students are better prepared to respond to these problems effectively and empathetically﹘we also ensure that their life-long commitment to service is centered on an ethic of justice. As we extend our programming in this area, we will emphasize ways in which students can cultivate a lens of anti-racism in their service work﹘i.e. celebrating as well as recognizing and actively working against the structures and processes that disadvantage Black and Indigenous people, as well as Latinx and Asian- Americans. Supporting students in this especially challenging and urgent work will also equip them to better recognize and confront various hierarchies of difference and structures of injustice in the world.</p>
+                      <h3>We Will Take Action By</h3>
+                      <ul>
+                       <li>Developing a general resource bank to help students further their understanding of key societal systems and processes</li>
+                       <li>Identifying and structuring opportunities for community partners that can provide rich historical context and/or help students connect to community generated accounts of the interconnected needs and assets of the communities they serve in</li>
+                       <li>Developing a comprehensive plan for place-based community engagement in Mercer County, NJ including assessment metrics</li>
+                       <li>Strengthening connections to campus partners with relevant resources and expertise, and establishing collaborations to help students access and navigate these resources</li>
+                       <li>Developing capacity, tools and rubrics to assess student understanding of the context of their service</li>
+                      </ul>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--5" role="button" aria-controls="acc-panel--5" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Goal #3 Enhance Support of Advocacy and Activism to Better Prepare Students to Create Systemic Change 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--5" role="region" aria-labelledby="acc-btn--5">
+                      <p>The Pace Center responds to the inequities in the world in ways that contribute to the greater good. We provide many programs and events for direct service where students can engage with immediate local needs and opportunities. Even as we help students to embed this work in a deeper understanding of systems and context (see Goal #2), we also recognize that students may be moved through this work or other experiences to challenge or critique current systems.</p>
+                      <p>We can do more to support students’ and partners’ efforts to educate and mobilize people and institutions in ways that increase awareness, change attitudes, build public will, and change policies. Our first responsibility is to our local community, and we can encourage students to engage with each other to work on local issues.</p>
+                      <p>Enhancing our support of student organizations' advocacy and activism, as well as recognizing the experiences students have had in their lives, supports students' abilities to advocate for themselves and their communities. It provides students with opportunities to listen to and learn from communities. Many of the areas that students have an interest in﹘educational access and achievement, health outcomes, environmental justice, mass incarceration﹘ have racial inequities at their base. We strive to better prepare our students to deepen and translate their work in these areas to further amplify marginalized voices, and work towards meaningful systemic changes. Advocacy and activism can respond to anti-Black racism, and position students to ask questions that build upon their awareness of the fundamental systems, history and context that underlie all of these issues.</p>
+                      <h3>We Will Take Action By</h3>
+                      <ul>
+                       <li>Asking students what they need to advocate for themselves and their communities, and doing an inventory of current advocacy and activism programs at the Pace Center to determine which are most valued, and to identify any gap areas</li>
+                       <li>Expanding dialogue opportunities for students, partners, staff and stakeholders to listen to and learn from the voices of others. We will actively educate Pace Center staff, students and partners on the experiences of Black and Indigenous people at Princeton University and in the United States</li>
+                       <li>Modeling and teaching storytelling that amplify other voices and illustrates lived experiences. Through both staff and student-led efforts, we will elevate and share humanizing stories of Black and Indigenous students, community partners, and staff</li>
+                       <li>Extending our outreach to students and campus partners about the resources that the Pace Center can offer student organizations seeking support for advocacy and activism; in particular, ensuring that policies and processes for being recognized as a Pace Center student organization are transparent and accessible</li>
+                       <li>Exploring projects for community partners, students, and staff to engage in racial justice advocacy and activism</li>
+                       <li>Modeling and teaching students the power of financial choices and budget policies in shaping economic justice; in particular, we will identify and integrate diverse and local vendors in order to address racial injustice</li>
+                      </ul>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--6" role="button" aria-controls="acc-panel--6" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Goal #4 Deepen Learning from Service Through the Development of a Framework for Reflection 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--6" role="region" aria-labelledby="acc-btn--6">
+                      <p>Reflection is taking the time to think about what happened, why it matters, and what one will do next, and is essential for individuals to learn from service and civic engagement. Learning and community building are enhanced when reflection is done both individually and in community with others.&nbsp;<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="f6c4473e-44c5-4198-8e8f-751d585a64a2" href="/learn/learning-outcomes">Doing service well builds to impactful learning outcomes.</a></p>
+                      <p>Each person learns and processes information differently, yet the way we do reflection is often verbally-based. To better meet the needs of our students and partners we can expand on our current practices and develop a more inclusive framework for reflection at the Pace Center. This new framework can take into account a variety of learning styles and explore different kinds of delivery models and practices.</p>
+                      <p>It can be an opportunity to build tools like our Field Guide to Service to aid in the expanded implementation of reflection in our programming. Service at the Pace Center has evolved from supporting the activity of volunteering to include an increased focus on learning as a way for students to pursue a meaningful life.</p>
+                      <p>Students play a critical role in the service experience and have most often been the organizers, idea generators, and logistical coordinators. More recently, they have begun to serve as peer mentors and peer trainers. By formalizing a framework for reflection, we will be able to better for their roles in facilitating reflection and community building.</p>
+                      <h3>We Will Take Action By</h3>
+                      <ul>
+                       <li>Better understanding the current practices and models for reflection used at the Pace Center and determining how effective these are in supporting the diversity of students’ experiences</li>
+                       <li>Researching learning styles and best practices for teaching critical thinking skills that can enhance reflection</li>
+                       <li>Exploring delivery models for reflection with special emphasis on building relationships and strengthening communities</li>
+                       <li>Developing a comprehensive and inclusive framework for reflection based on the inventory, research and exploration completed</li>
+                       <li>Developing a learning series with related resources to increase students’ abilities to support themselves as well as communities that experience discrimination and exclusion</li>
+                       <li>Modeling and implementing the framework, including creating a train-the-trainer program to prepare student leaders for their role as facilitators of reflection</li>
+                      </ul>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <h2 class="block-heading">Our Commitment to Anti-Racism</h2>
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p>As we approach our 20th anniversary at the Pace Center for Civic Engagement, it is imperative that we acknowledge the harm that can be done through service. Unprepared students can be more of a hindrance than a help to communities. Sporadic meetings do not support relationship-building with youth, and existing structures do not create enough opportunities for communities to move forward with their own solutions.</p>
+                 <p>We recognize anti-racism as actively working against the structures and processes that disadvantage Black and Indigenous people, as well as Latinx and Asian-Americans. The Pace Center can combat systemic racism by recognizing the harm that can be done in the name of service, and by emphasizing service that not only repairs damage to communities, but also builds upon community assets. Our relational approach to service is based on our belief in equality and human dignity.</p>
+                 <p>Our strategic goals of including partners in planning and decision-making processes, providing more opportunities for students to be aware of social structures and norms, offering more resources for students’ advocacy and activism, and developing a more inclusive framework for reflection have, at their heart, our commitment to anti-racism.</p>
+                 <p>Pace Center staff are committed to our own internal work of diversity and inclusion and anti-racism. This includes acknowledging the history of our programs, to diversifying our vendors, to expanding opportunities for students to engage in racial justice, to providing resources that can support students’ inquiry of racial justice, and providing guidance for student boards and organizations.</p>
+                 <p>Many of the areas that students have an interest in﹘educational access and achievement, health outcomes, environmental justice, mass incarceration﹘have racial inequities at their base. Service can respond to anti-Black racism, and poise students to ask questions that build upon their awareness of the fundamental systems, history and context that underlie all of these issues.</p>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <h3 class="block-heading">How We Will Take Action on Anti-Racism</h3>
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_546" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--7" role="button" aria-controls="acc-panel--7" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Cultivate Equity 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--7" role="region" aria-labelledby="acc-btn--7">
+                      <ul>
+                       <li>Asking community partners how they want to be a part of planning and decision making processes at the Pace Center</li>
+                       <li>Implementing consistent and regular surveys and the convening of community partners to evaluate reciprocity and harm, and to celebrate and honor relationships</li>
+                       <li>Reviewing and improving resource allocation and compensation practices for community partners that serve as educators</li>
+                       <li>Providing Pace Center staff opportunities to participate in racial equity trainings and revising the Pace Center Partnership Principles to more clearly articulate the Pace Center's commitment to anti-racism practices</li>
+                      </ul>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--8" role="button" aria-controls="acc-panel--8" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Understand Context for Service 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--8" role="region" aria-labelledby="acc-btn--8">
+                      <ul>
+                       <li>Developing a general resource bank to help students further their understanding of key societal systems and processes</li>
+                       <li>Identifying and structuring opportunities for community partners that can provide rich historical context and/or help students connect to community generated accounts of the interconnected needs and assets of the communities they serve in</li>
+                      </ul>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--9" role="button" aria-controls="acc-panel--9" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Support Advocacy and Activism 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--9" role="region" aria-labelledby="acc-btn--9">
+                      <ul>
+                       <li>Asking students what they need to advocate for themselves and their communities, and doing an inventory of current advocacy and activism programs at the Pace Center to determine which are most valued, and to identify any gap areas</li>
+                       <li>Expanding dialogue opportunities for students, partners, staff and stakeholders to listen to and learn from the voices of others, particularly Black and Indigenous people</li>
+                       <li>Modeling and teaching storytelling that amplify Black and Indigenous voices and illustrates lived experiences</li>
+                       <li>Exploring projects for community partners, students, and staff to engage in racial justice advocacy and activism</li>
+                       <li>Modeling and teaching students the power of financial choices and budget policies in shaping economic justice; in particular, we will identify and integrate diverse and local vendors in order to address racial injustice</li>
+                      </ul>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--10" role="button" aria-controls="acc-panel--10" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Deepen Learning From Service 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--10" role="region" aria-labelledby="acc-btn--10">
+                      <ul>
+                       <li>Exploring delivery models for reflection with special emphasis on building relationships and strengthening communities</li>
+                       <li>Developing a learning series with related resources to increase students' abilities to support themselves as well as communities that experience discrimination and exclusion</li>
+                      </ul>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <h2 class="block-heading">Conclusion</h2>
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p>As a liberal arts institution, Princeton University places a high value on exploration, critical thinking, asking questions, and recognizing different ways of knowing. Equally valued at Princeton are access, diversity, and combating systemic racism. At the Pace Center, we are unwavering in our commitment to work toward a future where people connect with one another and societal institutions to build a more equitable and just world. With service broadly defined at Princeton, we are committed to being open, receptive and flexible in our response to student and community need, fortified by our values, relationships, and social responsibility. With this plan, we commit to more inclusive reflection, equitable partnerships with communities, and advocacy and activism that inspires students to be conscientious citizens. We will develop clear metrics to benchmark each goal, assume individual and collective ownership, and systematically track and report on progress. We will be transparent in holding marginalized experiences at the forefront of our internal interrogation of the impact of our practices, our relationships, and our systems. We will engage regularly with our stakeholders to ask, to listen, and to learn, constantly challenging our assumptions. The successful implementation of this five-year plan embodies our belief in creating connections for collective learning. It also embodies our commitment to our students, to our communities, and to the world. We hope that you will join us on this next journey.</p>
+                </div>
+               </div>
+              </div>
+              <div class="layout__region layout__region--second layout__region--quarters layout__region--narrow">
+               <div class="block-teal-bg block block-ps-core block-ps-related-documents" data-block-plugin-id="ps_related_documents">
+                <ul class="field--type-entity-reference-media field field--name-field-ps-related-documents field--type-entity-reference field--label-hidden field__items">
+                 <li class="field__item"><a href="/document/1546">2020-2025 Pace Center Strategic Plan</a></li>
+                </ul>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </main>
+      </div>
+     </div>
+    </div>
+    <footer role="contentinfo" class="footer region region-footer" id="footer">
+     <h2 class="sr-only">Footer</h2>
+     <div class="container">
+      <div class="region region-footer">
+       <div class="constrained-bkg-constrained-content layout layout--threecol-25-25-50">
+        <div class="layout-inner-container">
+         <div class="layout__region layout__region--first layout__region--quarters layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_image" class="block-ps-image block block-layout-builder block-inline-blockps-image">
+           <figure class="figure media--type-image media--view-mode-ps-content-width-freeform"><a href="/"> <img srcset="/sites/g/files/toruqf686/files/styles/freeform_750w/public/2021-08/logo.png?itok=JuLbNnFZ 395w" sizes="(min-width: 1440px) 1440px, 100vw" src="/sites/g/files/toruqf686/files/styles/freeform_1440w/public/2021-08/logo.png?itok=RCf922c4" alt="footer logo" typeof="foaf:Image"> </a>
+           </figure>
+          </div>
+         </div>
+         <div class="layout__region layout__region--second layout__region--quarters layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+           <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+            <p>201 Frist Campus Center<br> Princeton, NJ 08544<br> 58 Prospect Avenue, Third Floor</p>
+            <p><a href="mailto:pace@princeton.edu">pace@princeton.edu</a></p>
+            <p>609.258.7260</p>
+           </div>
+          </div>
+         </div>
+         <div class="layout__region layout__region--third layout__region--half">
+          <div data-block-plugin-id="inline_block:ps_social_links" class="block-ps-social-links block block-layout-builder block-inline-blockps-social-links">
+           <h2 class="block-heading">Follow us</h2>
+           <ul class="ps-social-links--platforms platforms vertical">
+            <li><a href="https://www.facebook.com/pacecenter" title="Facebook"> <span class="fab fa-facebook fa-2x" aria-hidden="true"></span> <span class="social-link-label">Facebook</span> </a></li>
+            <li><a href="https://www.instagram.com/pace_princeton/" title="Instagram"> <span class="fab fa-instagram fa-2x" aria-hidden="true"></span> <span class="social-link-label">Instagram</span> </a></li>
+            <li><a href="https://twitter.com/pace_princeton" title="Twitter"> <span class="fab fa-twitter fa-2x" aria-hidden="true"></span> <span class="social-link-label">Twitter</span> </a></li>
+            <li><a href="https://www.youtube.com/user/activecitizens" title="YouTube"> <span class="fab fa-youtube fa-2x" aria-hidden="true"></span> <span class="social-link-label">YouTube</span> </a></li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="subfooter">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-4">
+         <div class="subfooter-links">
+          <ul class="list-unstyled">
+           <li><a href="https://accessibility.princeton.edu/resources/accessibility-help" target="_blank">Accessibility</a></li>
+          </ul>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <p class="copyright-text"> © 2022 The Trustees of Princeton University </p>
+        </div>
+        <div class="col-md-4 text-sm-left text-md-right copyright"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"><img src="/profiles/ps/themes/ps_base/images/pu-logo-stacked.svg" alt="Princeton University"> </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div> 
+  </div><span id="ps-current-username" data-username=""></span>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/16","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ckeditorheight":{"offset":1,"line_height":1.5,"unit":"em","disable_autogrow":false},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"all_documents_new_window":false,"select2_simple":{"selector":".node-form select:not(.disable-select2,[name$=\u0027[actions][bundle]\u0027],.ui-timepicker-select,[name*=\u0027field_ps_timeline_feature_items\u0027]),.select2-form select,#drupal-off-canvas select[multiple]"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":true,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":[]}},"ps_accordion":{"#ps_accordionfield_ps_accordion_block_content_546":[],"#ps_accordionfield_ps_accordion_block_content_536":[],"#ps_accordionfield_ps_accordion_block_content_526":[]},"ajax":[],"user":{"uid":0,"permissionsHash":"c83bf1aec34c4301f429434ea0bb694329d8d44b4885283ed6e98354bb853c48"}}</script>
+  <script src="/sites/g/files/toruqf686/files/js/js_JumT6gZsabzJoScbgf-aoEP72ZgwrsY6QetvHWy6D0A.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"427707476","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":636,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

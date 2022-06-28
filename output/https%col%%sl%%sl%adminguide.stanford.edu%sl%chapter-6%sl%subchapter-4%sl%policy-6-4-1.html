@@ -1,0 +1,583 @@
+<!doctype html><!--[if lt IE 7]> <html class="ie6 ie" lang="en" dir="ltr"> <![endif]--><!--[if IE 7]>    <html class="ie7 ie" lang="en" dir="ltr"> <![endif]--><!--[if IE 8]>    <html class="ie8 ie" lang="en" dir="ltr"> <![endif]--><!--[if IE 9]>    <html class="ie9 ie" lang="en" dir="ltr"> <![endif]--><!--[if !IE]> -->
+<html lang="en" dir="ltr"> <!-- <![endif]-->
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="shortcut icon" href="https://adminguide.stanford.edu/sites/adminguide/themes/stanford_wilbur/favicon.ico" type="image/vnd.microsoft.icon">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-167x167.png" rel="apple-touch-icon" sizes="167x167">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/sites/adminguide/themes/stanford_framework/apple-touch-icon.png" rel="apple-touch-icon">
+  <meta name="description" content="This Guide Memo states requirements for identifying and authenticating users of Stanford computer systems and networks, and describes centrally-supported identification and authentication facilities.">
+  <meta name="generator" content="Drupal 7 (http://drupal.org)">
+  <link rel="canonical" href="https://adminguide.stanford.edu/chapter-6/subchapter-4/policy-6-4-1">
+  <link rel="shortlink" href="https://adminguide.stanford.edu/node/3861"><!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>6.4.1 Identification and Authentication Systems | Administrative Guide</title>
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_QnDqumlAmBiA-LkPKOOEj-wMlRQlYuHQdMmPGFs03GQ.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_n77Z-RmCw4Tz9GW54Nbcfow8RGjtfTLlRTwGth5MWaE.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_y_dL8x_4Lo3ATqAJ8TKXp2FokyqjNfCBM-br9QkKd5I.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_uf7upw_VdP9otng9XJ5w7Jm5k3qFRbNSaZmIxqulyjc.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_nGZ0EUi6HATidAf3pITrpLdyTGtTsmfVAzXLpUp2gr4.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_hFgE0FKnmBbpxcVInjwJkJvz5FteXfkSBt_TK5Fhw5c.css" media="all">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_CgsGc17bROq-YEu06g2l32A8bPsq9xyxInph7wSXwTM.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://adminguide.stanford.edu/sites/adminguide/files/css/css_VUYr5hwTON1lJZXnL2gj7OiHIIYb1nh7JvnMd3Okb18.css" media="all">
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_LzIKY2LtrqT61QtBB9c64_FZsJL6gqRfqtFq7xBebDY.js"></script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_g98Ekqvuj1mMaUqTkLdcrMmJymw4aFC5YyzBQBviahY.js"></script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_38VWQ3jjQx0wRFj7gkntZr077GgJoGn5nv3v05IeLLo.js"></script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_0qGD1CqGsDpO1yJ1qzckatKYx8lDESM0HyyA0gOUh_k.js"></script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_JBII3plGAkBIQcH8MpZqJ7Uj5btcZVHAZUjy1Gt2TyY.js"></script>
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-15197849-4", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_CGTTou4hc06TMV_FfvYg2xwA7oOiGjxsRPCILWubQHY.js"></script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_lwzJeXOXdNPAbw7ThjcrhrPFAUgW_lR49bJ8nQYUbcY.js"></script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js_injector/js_injector_1.js?rdjuly"></script>
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js_injector/js_injector_3.js?rdjuly"></script>
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"stanford_wilbur","theme_token":"fE6eTA6pF7nqPu9p-qqvC_KZBcp_Eeai1LPHxbY3Yw8","css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"modules\/book\/book.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/adminguide\/modules\/stanford\/stanford_search_api\/css\/stanford_search_api.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/adminguide\/modules\/contrib\/context_accordion\/context_accordion.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/adminguide\/modules\/contrib\/custom_pagers\/custom_pagers.css":1,"sites\/adminguide\/modules\/contrib\/print\/print_ui\/css\/print_ui.theme.css":1,"sites\/adminguide\/modules\/contrib\/field_collection\/field_collection.theme.css":1,"sites\/adminguide\/themes\/open_framework\/packages\/bootstrap-2.3.1\/css\/bootstrap.min.css":1,"sites\/adminguide\/themes\/open_framework\/packages\/bootstrap-2.3.1\/css\/bootstrap-responsive.min.css":1,"sites\/adminguide\/themes\/open_framework\/packages\/font-awesome-3.2.1\/css\/font-awesome.min.css":1,"sites\/adminguide\/themes\/open_framework\/css\/open_framework.css":1,"sites\/adminguide\/themes\/stanford_framework\/css\/stanford-framework.css":1,"sites\/adminguide\/themes\/stanford_framework\/css\/stanford_default\/stanford-default.css":1,"sites\/adminguide\/themes\/stanford_framework\/css\/ie.css":1,"sites\/adminguide\/themes\/stanford_wilbur\/css\/stanford_wilbur.css":1,"sites\/adminguide\/themes\/open_framework\/css\/open_framework_print.css":1,"public:\/\/css_injector\/css_injector_1.css":1,"public:\/\/css_injector\/css_injector_3.css":1,"public:\/\/css_injector\/css_injector_5.css":1,"public:\/\/css_injector\/css_injector_7.css":1,"public:\/\/css_injector\/css_injector_9.css":1,"public:\/\/css_injector\/css_injector_11.css":1,"public:\/\/css_injector\/css_injector_25.css":1,"public:\/\/css_injector\/css_injector_27.css":1,"public:\/\/css_injector\/css_injector_32.css":1,"public:\/\/css_injector\/css_injector_34.css":1,"public:\/\/css_injector\/css_injector_36.css":1,"public:\/\/css_injector\/css_injector_38.css":1,"public:\/\/css_injector\/css_injector_41.css":1},"js":{"sites\/adminguide\/files\/js_injector\/js_injector_5.js":1,"misc\/jquery.js":1,"sites\/adminguide\/themes\/open_framework\/js\/jquery-migrate-1.2.1.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/ui\/jquery.ui.core.min.js":1,"misc\/ui\/jquery.ui.widget.min.js":1,"misc\/ui\/jquery.ui.accordion.min.js":1,"sites\/adminguide\/modules\/contrib\/context_accordion\/context_accordion.js":1,"sites\/adminguide\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/adminguide\/modules\/stanford\/stanford_search_api\/js\/stanford_search_api.js":1,"sites\/adminguide\/modules\/contrib\/field_group\/field_group.js":1,"sites\/adminguide\/themes\/open_framework\/packages\/bootstrap-2.3.1\/js\/bootstrap.min.js":1,"sites\/adminguide\/themes\/open_framework\/js\/open_framework.js":1,"sites\/adminguide\/themes\/open_framework\/js\/jquery.placeholder.min.js":1,"sites\/adminguide\/themes\/open_framework\/js\/override.js":1,"sites\/adminguide\/themes\/stanford_framework\/js\/stanford-framework.js":1,"sites\/adminguide\/themes\/stanford_wilbur\/js\/stanford_wilbur.js":1,"sites\/adminguide\/files\/js_injector\/js_injector_1.js":1,"sites\/adminguide\/files\/js_injector\/js_injector_3.js":1}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/search\/content":true},"field_group":{"div":"default"}});
+//--><!]]>
+</script><!--[if IE 7]>
+  <link rel="stylesheet" href="/sites/adminguide/themes/open_framework/packages/font-awesome-3.2.1/css/font-awesome-ie7.min.css" />  <![endif]--><!-- IE Fix for HTML5 Tags --><!--[if lt IE 9]>
+    <script src="/sites/adminguide/themes/open_framework/js/html5shiv.js"></script>
+  <![endif]-->
+ </head>
+ <body class="html not-front not-logged-in two-sidebars page-node page-node- page-node-3861 node-type-policy-document     show-breadcrumb    style-default  header-bkg-image header-bkg-text-light">
+  <div id="wrap">
+   <a href="#main" class="element-invisible element-focusable">Skip to content</a><a href="#main-nav" class="element-invisible element-focusable">Skip to navigation</a><!-- /#skipnav --><!-- /#admin-shortcuts -->
+   <div id="global-header">
+    <div class="container">
+     <div class="row-fluid">
+      <div id="top-logo" class="span4">
+       <a href="http://www.stanford.edu"><img src="/sites/adminguide/themes/stanford_framework/images/header-stanford-logo@2x.png" alt="Stanford University"></a>
+      </div>
+     </div>
+    </div>
+   </div><!-- /#global-header -->
+   <div id="header" class="clearfix header" role="banner">
+    <div class="container">
+     <div class="row">
+      <div class="span9">
+       <div id="logo" class=" "> <a href="/" title="Home" rel="home"> <img src="https://adminguide.stanford.edu/sites/adminguide/themes/stanford_wilbur/logo.png" alt="Stanford" role="presentation"> </a>
+       </div><!-- /#logo -->
+       <div id="name-and-slogan" class="with-logo">
+        <div id="site-name" class="site-name">
+         <a href="/" title="Home" rel="home">Administrative Guide</a>
+        </div>
+       </div><!-- /#name-and-slogan --><!-- /#header-content -->
+      </div>
+     </div>
+    </div>
+   </div><!-- /#header -->
+   <div id="main-menu" class="clearfix site-main-menu">
+    <div class="container">
+     <div class="navbar">
+      <div class="navbar-inner">
+       <div id="nav-search" class="nav-search"> 
+        <div class="region region-search-box clearfix">
+         <div id="block-stanford-search-api-search-api-search-block" class="clearfix block block-stanford-search-api"> 
+          <div class="content"> 
+           <form action="/search/content" method="post" id="stanford-search-api-search-block-form" accept-charset="UTF-8">
+            <div>
+             <div class="form-item form-type-textfield form-item-keywords">
+              <input placeholder="Search this site..." class="input-medium search-query form-text" type="text" id="edit-keywords" name="keywords" value="" size="60" maxlength="128">
+             </div>
+             <input class="btn-search form-submit" alt="Search" type="image" id="edit-search" name="search" value="Search" src="https://adminguide.stanford.edu/sites/adminguide/themes/open_framework/images/searchbutton.png">
+             <input type="hidden" name="form_build_id" value="form-XIzv1asVAjcqoT5ofiv8mJOs-M9c28RsCUfb0K7CC-A">
+             <input type="hidden" name="form_id" value="stanford_search_api_search_block_form">
+            </div>
+           </form> 
+          </div>
+         </div>
+        </div><!-- /.region -->
+       </div><button aria-label="Navigation menu" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse"> <span class="hide">Navigation menu</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+       <div class="nav-collapse collapse">
+        <nav id="main-nav" role="navigation">
+         <ul class="menu nav">
+          <li class="first leaf"><a href="/stanford">Home</a></li>
+          <li class="leaf"><a href="/whats-new">What's New</a></li>
+          <li class="leaf"><a href="/chapters">Chapters</a></li>
+          <li class="leaf"><a href="/category" title="">Browse by Category</a></li>
+          <li class="last leaf"><a href="/about-guide">About the Guide</a></li>
+         </ul> <!-- /#primary-menu -->
+        </nav>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div><!-- /#main-menu -->
+   <div id="main" class="clearfix main" role="main">
+    <div id="breadcrumb">
+     <div class="container">
+      <h2 class="element-invisible">You are here</h2>
+      <div class="breadcrumb">
+       <a href="/">Home</a> » <a href="/chapter-6">Chapter 6</a> » <a href="/chapter-6/subchapter-4">Subchapter 4</a> » Policy 6.4.1
+      </div>
+     </div>
+    </div>
+    <div class="container">
+     <div id="main-content" class="row main-content">
+      <div id="sidebar-first" class="sidebar site-sidebar-first span3">
+       <div class="row-fluid">
+        <div class="region region-sidebar-first clearfix">
+         <div id="block-menu-menu-admin-guide" class="clearfix block block-menu span3 sidebar-content"> 
+          <h2>Chapters</h2>
+          <div class="content"> 
+           <ul class="menu nav">
+            <li class="first collapsed"><a href="/chapter-1">1. Guiding Policies and Principles</a></li>
+            <li class="collapsed"><a href="/chapter-2">2. Human Resources</a></li>
+            <li class="collapsed"><a href="/chapter-3">3. Financial Administration</a></li>
+            <li class="collapsed"><a href="/chapter-4">4. Giving to Stanford</a></li>
+            <li class="collapsed"><a href="/chapter-5">5. Purchasing and Payments</a></li>
+            <li class="expanded active-trail"><a href="/chapter-6" class="active-trail">6. Computing</a>
+             <ul class="menu nav">
+              <li class="first leaf"><a href="/chapter-6/subchapter-1">6.1 Privacy and Access to Electronic Information</a></li>
+              <li class="leaf"><a href="/chapter-6/subchapter-2">6.2 Computer and Network Usage</a></li>
+              <li class="leaf"><a href="/chapter-6/subchapter-3">6.3 Information Security</a></li>
+              <li class="leaf active-trail"><a href="/chapter-6/subchapter-4" title="" class="active active-trail">6.4 Identification and Authentication</a></li>
+              <li class="leaf"><a href="/chapter-6/subchapter-5">6.5 Chat Rooms and Other Forums</a></li>
+              <li class="leaf"><a href="/chapter-6/subchapter-6">6.6 Information Security Incidents</a></li>
+              <li class="leaf"><a href="/chapter-6/subchapter-7">6.7 Administrative Computing</a></li>
+              <li class="last leaf"><a href="/chapter-6/subchapter-8">6.8 Digital Accessibility</a></li>
+             </ul></li>
+            <li class="collapsed"><a href="/chapter-7">7. Health and Safety</a></li>
+            <li class="collapsed"><a href="/chapter-8">8. Services</a></li>
+            <li class="collapsed"><a href="/chapter-9">9. Organization Charts</a></li>
+            <li class="collapsed"><a href="/chapter-10">10. Student Employment and Assistantships</a></li>
+            <li class="last collapsed"><a href="/chapter-12">12. Global Activities</a></li>
+           </ul> 
+          </div>
+         </div>
+        </div><!-- /.region -->
+       </div>
+      </div><!-- /#sidebar-first -->
+      <div id="content" class="mc-content span6">
+       <div id="content-wrapper" class="content-wrapper">
+        <div id="content-head" class="row-fluid content-head">
+         <div id="highlighted" class="clearfix">
+          <div class="region region-highlighted clearfix">
+           <div id="block-custom-pagers-1" class="clearfix block block-custom-pagers"> 
+            <div class="content"> 
+             <ul class="custom-pager custom-pager-block">
+              <li class="previous"><a href="/chapter-6/subchapter-3/policy-6-3-1">‹ previous</a></li>
+              <li class="key">110 of 185</li>
+              <li class="next"><a href="/chapter-6/subchapter-5/policy-6-5-1">next ›</a></li>
+             </ul>
+            </div>
+           </div>
+          </div><!-- /.region -->
+         </div>
+         <h1 class="title" id="page-title"> 6.4.1 Identification and Authentication Systems </h1>
+        </div>
+        <div id="content-body" class="row-fluid content-body"> 
+         <div class="region region-content clearfix">
+          <div id="block-views-chapter-image-block" class="clearfix block block-views"> 
+           <div class="content"> 
+            <div class="view view-chapter-image view-id-chapter_image view-display-id-block view-dom-id-8b97be69e56b0f725f7db67529f4ffac">
+             <div class="view-content">
+              <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+               <div class="views-field views-field-field-chapter-image"> 
+                <div class="field-content">
+                 <img typeof="foaf:Image" src="https://adminguide.stanford.edu/sites/adminguide/files/styles/chapter-square/public/6-Computing_120901-074.png?itok=jJTJN0QI" width="170" height="170" alt="Two hands on a keyboard">
+                </div> 
+               </div> 
+              </div>
+             </div>
+            </div> 
+           </div>
+          </div>
+          <div id="block-system-main" class="clearfix block block-system"> 
+           <div class="content"> 
+            <div id="node-3861" class="node node-policy-document clearfix" about="/chapter-6/subchapter-4/policy-6-4-1" typeof="sioc:Item foaf:Document"><a name="anchor-3861"></a><span property="dc:title" content="6.4.1 Identification and Authentication Systems" class="rdf-meta element-hidden"></span> 
+             <div class="content">
+              <div class="field-last-updated-on-prefix">
+               Last updated on:
+              </div>
+              <div class="field field-name-field-policy-current-version field-type-datetime field-label-hidden">
+               <div class="field-items">
+                <div class="field-item even">
+                 <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2017-02-06T00:00:00-08:00">02/06/2017</span>
+                </div>
+               </div>
+              </div> 
+              <div class="field field-name-field-policy-former-number field-type-text field-label-inline clearfix">
+               <div class="field-label">
+                Formerly Known As Policy Number:&nbsp;
+               </div>
+               <div class="field-items">
+                <div class="field-item even">
+                 64
+                </div>
+               </div>
+              </div>
+              <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+               <div class="field-items">
+                <div class="field-item even" property="content:encoded">
+                 <p>This Guide Memo states requirements for identifying and authenticating users of Stanford computer systems and networks, and describes centrally-supported identification and authentication facilities.</p>
+                </div>
+               </div>
+              </div>
+              <div class="field field-name-field-policy-authority field-type-text-long field-label-above">
+               <div class="field-label">
+                Authority:&nbsp;
+               </div>
+               <div class="field-items">
+                <div class="field-item even">
+                 <p>Approved by the Vice President for Business Affairs and Chief Financial Officer.</p>
+                </div>
+               </div>
+              </div> 
+              <div id="toc">
+               <h2>Jump To:</h2>
+               <ul>
+                <li><a href="#anchor-24193">1. Identification and Authentication Policy</a></li>
+                <li><a href="#anchor-24195">2. Identification: General</a></li>
+                <li><a href="#anchor-24197">3. Identification: SUNet ID</a></li>
+                <li><a href="#anchor-24199">4. Identification: University ID</a></li>
+                <li><a href="#anchor-24201">5. Identification: Other ID</a></li>
+                <li><a href="#anchor-24203">6. Authentication: General</a></li>
+                <li><a href="#anchor-24205">7. Authentication: Kerberos</a></li>
+                <li><a href="#anchor-24207">8. Identification and Authentication: Local Systems</a></li>
+                <li><a href="#anchor-24209">9. Sources for More Information</a></li>
+               </ul>
+              </div><a name="anchor-24193"></a>
+              <div class="policy-subsection-container policy-subection-container-24193">
+               <h2 class="policy-subsection-title" id="identification-and-authentication-policy"><span class="prefix-container">1. </span>Identification and Authentication Policy</h2>
+               <div class="policy-subsection-body">
+                <p>To ensure the security and integrity of both University data and data belonging to individuals, all owners of Stanford computer systems and networks must develop and implement access control policies. This Memo does not describe possible policies nor specify how to choose one; however, systems with non-public resources to protect should have policies that base access control on user identities.</p> 
+                <p>Authentication is the secure identification of system users. The system owner is responsible for determining which authentication method to use among those that may be available for a particular system. However, system owners are strongly encouraged to rely on the authentication services provided by Stanford's central computing organization rather than using system-specific authentication methods. This service provides secure authentication and consistent campus-wide identification.</p> 
+                <p>It is University policy that all University business for which computer-based forms and actions have been released will be done using those computer-based systems; paper forms are no longer accepted. This policy applies to all aspects of qualifying transactions, including initiation, routing, processing by Schools and VP Area offices, and transmission to and processing by central administrative offices. Secure identification of the participants in all such transactions is crucial to the successful conduct of University business. The centrally-supported authentication service described in this Memo is designed to support University business requirements.</p> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div><a name="anchor-24195"></a>
+              <div class="policy-subsection-container policy-subection-container-24195">
+               <h2 class="policy-subsection-title" id="identification:-general"><span class="prefix-container">2. </span>Identification: General</h2>
+               <div class="policy-subsection-body">
+                <p><strong>a. Linked Identifiers</strong><br> Stanford maintains a set of linked records identifying all employees, students, and others who use the University's computing resources. These records correlate SUNet ID, University ID, and Stanford Identification Card records.</p> 
+                <p><strong>b. Management of Identifiers<br> (1) Uniqueness.</strong> Each identifier (University ID or SUNet ID) is unique; that is, each identifier is associated with a single person or other entity.<br> <strong>(2) One Identifier per Individual.</strong>&nbsp; An individual may have no more than one University ID number and one personal SUNet ID.<br> <strong>(3) Non-Reassignment. </strong>Once an identifier is assigned to a particular person it is always associated with that person. It is never subsequently reassigned to identify another person or entity. Alternative IDs (that is, alternative names registered along with a personal SUNet ID) may be reassigned after a waiting period.</p> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div><a name="anchor-24197"></a>
+              <div class="policy-subsection-container policy-subection-container-24197">
+               <h2 class="policy-subsection-title" id="identification:-sunet-id"><span class="prefix-container">3. </span>Identification: SUNet ID</h2>
+               <div class="policy-subsection-body">
+                <p><strong>a. Stanford University Network Identifiers</strong><br> SUNet IDs consist of alphabetic characters and digits, and are chosen by their users. Personal SUNet IDs are from three to eight characters in length. Other SUNet IDs may be up to 256 characters in length.</p> 
+                <p><strong>b. Types of SUNet IDs</strong></p> 
+                <p><strong>(1) University-eligible Personal SUNet IDs<br> a) Full (University-eligible) Personal SUNet IDs</strong> are available to:</p> 
+                <ul> 
+                 <li>Authorized, registered students, as defined by the Registrar; and</li> 
+                 <li>Regular faculty and staff, and emeritus faculty and staff, including SLAC staff, as defined in<a href="/2-2-1"> Guide Memo 2.2.1</a>:&nbsp;Definitions.</li> 
+                </ul> 
+                <p><strong>(b) Base (University-eligible)</strong><br> Personal SUNet IDs are available to:</p> 
+                <ul> 
+                 <li>Temporary and casual faculty and staff, as defined in <a href="/2-2-1">Guide Memo 2.2.1</a>:&nbsp;Definitions.</li> 
+                 <li>Recent alumni, as defined by the Registrar.</li> 
+                </ul> 
+                <p><strong>(2) Sponsored Personal SUNet IDs</strong> are available to all others, subject to the following conditions:</p> 
+                <ul> 
+                 <li>The ID is to be used by a specific, named individual requiring access to University computing resources in support of legitimate University work.</li> 
+                 <li>The ID is sponsored by a faculty member, a manager as defined by HR, or an individual who has been expressly granted the privilege to sponsor. 
+                  <ul style="list-style-type:circle;"> 
+                   <li>An ID may be sponsored at full-level by a sponsor who has requisition or financial signature authority.</li> 
+                  </ul> </li> 
+                 <li>The sponsor accepts responsibility for ensuring that the sponsored ID is used in support of work consistent with the University's mission of instruction, research, and public service, and in a manner consistent with the University's policies.</li> 
+                </ul> 
+                <p><strong>c. Establishing a SUNet ID</strong><br> SUNet IDs are established and maintained via online <a href="https://uit.stanford.edu/service/accounts/sunetids">procedures</a>. Note that employees and students must have a University ID number in order to obtain a SUNet ID.</p> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div><a name="anchor-24199"></a>
+              <div class="policy-subsection-container policy-subection-container-24199">
+               <h2 class="policy-subsection-title" id="identification:-university-id"><span class="prefix-container">4. </span>Identification: University ID</h2>
+               <div class="policy-subsection-body">
+                <p>An eight-digit University identification number is automatically assigned to regular, continuing employees by the HRMS system and to students by the PeopleSoft Student Administration system. This number appears on the printed Stanford Identification Card (see <a href="/2-4-3">Guide Memo 2.4.3</a>:&nbsp;Stanford Identification Cards).</p> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div><a name="anchor-24201"></a>
+              <div class="policy-subsection-container policy-subection-container-24201">
+               <h2 class="policy-subsection-title" id="identification:-other-id"><span class="prefix-container">5. </span>Identification: Other ID</h2>
+               <div class="policy-subsection-body">
+                <p>IDs are available to identify other kinds of entities such as groups, departments, mailing lists, roles, computer-based services, etc. For more information, submit a <a href="http://services.stanford.edu" target="_blank">help request</a>&nbsp;or phone the Stanford IT Service Desk at 650-725-4357.</p> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div><a name="anchor-24203"></a>
+              <div class="policy-subsection-container policy-subection-container-24203">
+               <h2 class="policy-subsection-title" id="authentication:-general"><span class="prefix-container">6. </span>Authentication: General</h2>
+               <div class="policy-subsection-body">
+                <p><strong>a. Authentication Methods</strong><br> Authentication methods involve presenting both a public identifier (such as a user name or identification number) and private authentication information, such as a Personal Identification Number (PIN), password, or information derived from a cryptographic key. Authentication methods currently supported by Stanford's central computing organization include:</p> 
+                <ul> 
+                 <li>Kerberos authentication, which uses SUNet IDs and passwords.</li> 
+                </ul> 
+                <p><strong>b. Eligibility for Authentication Entry</strong><br> A user must be associated with an entry in the authentication service to be able to use most centrally-supported systems and services.</p> 
+                <p><strong>(1) University ID and Regular Personal SUNet ID</strong><br> Eligibility for an entry in the authentication service begins when the individual accepts the offer of student registration or employment. Eligibility ends when a person's active association with the University ends; i.e., when an employee is no longer employed (and does not have emeritus status) or a student is no longer registered. In certain circumstances, a grace period may be allowed as a courtesy after eligibility ends. See University IT <a href="http://itservices.stanford.edu/service/accounts/closing-facstaff">procedures</a>.&nbsp;<br> <strong>(2) Sponsored SUNet ID</strong><br> A sponsored SUNet ID is sponsored for a specific period of time. The sponsor determines the length of sponsorship; sponsorship must be renewed to keep the ID valid. There is no grace period: the entry becomes invalid immediately at the end of the sponsorship period.<br> <strong>(3) Reactivation</strong><br> An entry may be reactivated if the individual subsequently rejoins the University, either via regular association or sponsorship.<br> <strong>(4) Suspension</strong><br> The use of an authentication entry may be revoked if it is used in a manner inconsistent with Stanford policies or if an individual is subject to other administrative action that denies them University privileges.</p> 
+                <p><strong>c. User Responsibilities</strong><br> <strong>(1) Official Actions</strong><br> Use of the authentication service to identify oneself to an on-line system constitutes an official identification of the user to the University, in the same way that presenting an ID Card does. Users can be held responsible for all actions taken during authenticated sessions.<br> <strong>(2) Integrity</strong><br> Regardless of the authentication method used, users must use only the authentication information that they have been authorized to use; i.e., must never identify themselves falsely as another person or entity.<br> <strong>(3) Confidentiality</strong><br> Regardless of the authentication method used, users must keep their authentication information confidential; i.e., must not knowingly or negligently make it available for use by an unauthorized person.<br> <strong>(4) Reporting Problems</strong><br> Anyone suspecting that their authentication information has been compromised should contact the Information Security Office at <a href="mailto:security@stanford.edu">security@stanford.edu</a> or by entering a <a href="http://services.stanford.edu" target="_blank">help request </a>or by phoning the Stanford IT Service Desk at 650-725-4357.<br> <strong>(5) Security Precautions</strong><br> Users are strongly encouraged to change their password regularly (at least once every three months), to limit possible abuse of passwords that may have been compromised without the user's knowledge. Passwords should be chosen so that they are not easily guessable; e.g., not be based on the user's name or birth date.<br> <strong>(6) Disciplinary Action</strong><br> Individuals who are found to have knowingly violated one of these provisions will be subject to disciplinary action. The possible disciplinary actions for violations, which can include termination of employment or student status, will depend on the facts and circumstances of each case.</p> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div><a name="anchor-24205"></a>
+              <div class="policy-subsection-container policy-subection-container-24205">
+               <h2 class="policy-subsection-title" id="authentication:-kerberos"><span class="prefix-container">7. </span>Authentication: Kerberos</h2>
+               <div class="policy-subsection-body">
+                <p>Kerberos, a sophisticated cryptographic authentication system, is the preferred authentication method for use with centrally-supported systems and services at Stanford.</p> 
+                <p><strong>a. Identifiers</strong><br> Stanford's Kerberos system uses personal SUNet IDs to name its entries for people. Other entities, such as network-based services, also have Kerberos entries.</p> 
+                <p><strong>b. Use</strong><br> Each Kerberos entry is associated with a srvtab or keytab based on a password hash maintained by the user. Kerberos software, installed on end-user computers, allows users to authenticate to network services using their SUNet ID and password.</p> 
+                <p><strong>c. Changing a Password</strong><br> Password changes may be made using standard Kerberos software or via <a href="https://uit.stanford.edu/service/accounts/sunetids" target="_blank">University IT</a>. The Kerberos system checks proposed new passwords and rejects those that are likely to be easily guessable.</p> 
+                <p><strong>d. Reissuing Passwords</strong><br> When a SUNet ID holder forgets the password associated with a Kerberos entry, or if it is compromised and no longer private, he or she should immediately try to reset it themselves at <a href="https://accounts.stanford.edu/">https://accounts.stanford.edu/</a> or contact the Stanford IT Service Desk at (650) 725-4357 for assistance in having a new password issued.</p> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div><a name="anchor-24207"></a>
+              <div class="policy-subsection-container policy-subection-container-24207">
+               <h2 class="policy-subsection-title" id="identification-and-authentication:-local-systems"><span class="prefix-container">8. </span>Identification and Authentication: Local Systems</h2>
+               <div class="policy-subsection-body">
+                <p>This section contains recommendations and requirements for systems and services that use local identification and authentication methods rather than the centrally-supported methods.</p> 
+                <p><strong>a. Use SUNet IDs</strong><br> Systems should use personal SUNet IDs to identify their users. This will be less confusing for users, and will ease future transition to centrally-supported authentication.</p> 
+                <p><strong>b. Avoid Clear-Text Passwords</strong><br> Systems may not transmit reusable passwords across the network unencrypted. Such passwords are vulnerable to capture and abuse.</p> 
+                <p><strong>c. Support Password Quality</strong><br> Systems should check proposed passwords and reject those that are likely to be easily guessable.</p> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div><a name="anchor-24209"></a>
+              <div class="policy-subsection-container policy-subection-container-24209">
+               <h2 class="policy-subsection-title" id="sources-for-more-information"><span class="prefix-container">9. </span>Sources for More Information</h2>
+               <div class="policy-subsection-body">
+                <p><strong>a. SUNet IDs</strong><br> <strong>(1) Cognizant Office</strong><br> The office responsible for implementing policy on SUNet IDs is the Office of the CIO.<br> <strong>(2) Support</strong><br> Support information is available at <a href="https://uit.stanford.edu/service/accounts/sunetids">https://uit.stanford.edu/service/accounts/sunetids</a> or submit a <a href="http://services.stanford.edu" target="_blank">help request</a>&nbsp;or phone the Stanford IT Service Desk at (650) 725-4357.</p> 
+                <p><strong>b. Kerberos</strong><br> <strong>(1) Cognizant Office</strong><br> The office responsible for implementing policy on the Kerberos authentication system is the Office of the CIO.<br> <strong>(2) Support</strong><br> Support information is available by submitting a <a href="http://services.stanford.edu" target="_blank">help request&nbsp;</a>or phone the Stanford IT Service Desk at (650) 725-4357.</p> 
+                <p><strong>c. University IDs</strong><br> <strong>(1) Cognizant Office</strong><br> The offices responsible for implementing policy on University IDs are University Human Resources (for employees) and the Registrar's Office (for students).</p> 
+               </div>
+               <p class="back-to-top"><a href="#main-content">Back to top</a></p>
+              </div> 
+             </div>
+            </div>
+           </div>
+          </div>
+         </div><!-- /.region -->
+        </div>
+       </div><!-- /#content-wrap -->
+      </div><!-- /#content -->
+      <div id="sidebar-second" class="sidebar site-sidebar-second span3">
+       <div class="row-fluid">
+        <div class="region region-sidebar-second clearfix">
+         <div id="block-print-ui-print-links" class="clearfix block block-print-ui well"> 
+          <h2>Share</h2>
+          <div class="content"> <span class="print_html"><a href="https://adminguide.stanford.edu/print/chapter-6/subchapter-4/policy-6-4-1" title="Display a printer-friendly version of this page." class="print-page" rel="nofollow">Print</a></span> 
+          </div>
+         </div>
+         <div id="block-views-policy-authority-block" class="clearfix block block-views well"> 
+          <h2>Authority</h2>
+          <div class="content"> 
+           <div class="view view-policy-authority view-id-policy_authority view-display-id-block view-dom-id-b0d87b53c15667558e50b23feca5adb5">
+            <div class="view-content">
+             <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+              <div class="views-field views-field-field-policy-authority"> 
+               <div class="field-content">
+                <p>Approved by the Vice President for Business Affairs and Chief Financial Officer.</p>
+               </div> 
+              </div> 
+             </div>
+            </div>
+           </div> 
+          </div>
+         </div>
+         <div id="block-views-related-policies-block" class="clearfix block block-views well"> 
+          <h2>Related Policies</h2>
+          <div class="content"> 
+           <div class="view view-related-policies view-id-related_policies view-display-id-block view-dom-id-2770f023d5c972cf826c25f7df2bcccb">
+            <div class="view-content">
+             <div class="views-row views-row-1 views-row-odd views-row-first">
+              <div class="views-field views-field-field-policy-related"> 
+               <div class="field-content">
+                <a href="/chapter-2/subchapter-2/policy-2-2-1">2.2.1 Definitions</a>
+               </div> 
+              </div> 
+             </div>
+             <div class="views-row views-row-2 views-row-even views-row-last">
+              <div class="views-field views-field-field-policy-related"> 
+               <div class="field-content">
+                <a href="/chapter-2/subchapter-4/policy-2-4-3">2.4.3 Stanford Identification Cards</a>
+               </div> 
+              </div> 
+             </div>
+            </div>
+           </div> 
+          </div>
+         </div>
+         <div id="block-views-tax-related-terms-block" class="clearfix block block-views well"> 
+          <h2>Related Terms</h2>
+          <div class="content"> 
+           <div class="view view-tax-related-terms view-id-tax_related_terms view-display-id-block view-dom-id-515531101fadbb025765d3055031cc19">
+            <div class="view-content">
+             <div class="views-row views-row-1 views-row-odd views-row-first">
+              <div class="views-field views-field-name"> <span class="field-content"><a href="/category/computing">Computing</a></span> 
+              </div> 
+             </div>
+             <div class="views-row views-row-2 views-row-even">
+              <div class="views-field views-field-name"> <span class="field-content"><a href="/category/id">ID</a></span> 
+              </div> 
+             </div>
+             <div class="views-row views-row-3 views-row-odd">
+              <div class="views-field views-field-name"> <span class="field-content"><a href="/category/identification">Identification</a></span> 
+              </div> 
+             </div>
+             <div class="views-row views-row-4 views-row-even">
+              <div class="views-field views-field-name"> <span class="field-content"><a href="/category/information-security">Information Security</a></span> 
+              </div> 
+             </div>
+             <div class="views-row views-row-5 views-row-odd">
+              <div class="views-field views-field-name"> <span class="field-content"><a href="/category/password">Password</a></span> 
+              </div> 
+             </div>
+             <div class="views-row views-row-6 views-row-even views-row-last">
+              <div class="views-field views-field-name"> <span class="field-content"><a href="/category/security">Security</a></span> 
+              </div> 
+             </div>
+            </div>
+           </div> 
+          </div>
+         </div>
+         <div id="block-bean-change-guidelines" class="clearfix block block-bean well"> 
+          <h2>Change Guidelines</h2>
+          <div class="content"> 
+           <div class="entity entity-bean bean-stanford-postcard clearfix" about="/block/change-guidelines" typeof="">
+            <div class="content">
+             <div id="bean-stanford-postcard-full-group-s-postcard" class="postcard group-s-postcard field-group-div">
+              <div id="bean-stanford-postcard-full-group-s-postcard-image" class="postcard group-s-postcard-image field-group-div">
+               <div class="field-collection-container clearfix">
+                <div class="field field-name-field-s-image-info field-type-field-collection field-label-hidden">
+                 <div class="field-items">
+                  <div class="field-item even">
+                   <div class="field-collection-view clearfix view-mode-stanford-4-col-header field-collection-view-final">
+                    <div class="entity entity-field-collection-item field-collection-item-field-s-image-info clearfix" about="/field-collection/field-s-image-info/17" typeof="">
+                     <div class="content">
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div id="bean-stanford-postcard-full-group-s-postcard-content" class="postcard-content group-s-postcard-content field-group-div">
+               <div class="field field-name-field-s-postcard-link field-type-link-field field-label-hidden">
+                <div class="field-items">
+                 <div class="field-item even">
+                  <a href="https://adminguide.stanford.edu/change-request-guidelines" class="more-link">Click here for guidelines on requesting a memo change</a>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div> 
+            </div>
+           </div>
+          </div>
+         </div>
+        </div><!-- /.region -->
+       </div>
+      </div><!-- /#sidebar-second -->
+     </div>
+    </div>
+   </div><!-- /#main, /#main-wrapper -->
+   <div id="push"></div><!-- /#push -->
+  </div><!-- /#wrap -->
+  <div id="footer" class="clearfix footer site-footer">
+   <div class="container">
+    <div id="footer-content" class="row-fluid footer-content"> 
+     <div class="region region-footer clearfix">
+      <div id="block-menu-menu-about" class="clearfix block block-menu span3 sidebar-content"> 
+       <h2>About</h2>
+       <div class="content"> 
+        <ul class="menu nav">
+         <li class="first leaf"><a href="/about-guide">About the Guide</a></li>
+         <li class="leaf"><a href="/whats-new">What's New</a></li>
+         <li class="leaf"><a href="/change-request-guidelines">Change Request Guidelines</a></li>
+         <li class="leaf"><a href="/frequently-asked-questions">Frequently Asked Questions</a></li>
+         <li class="leaf"><a href="/photography-credits">Photography Credits</a></li>
+         <li class="last leaf"><a href="/contact">Contact</a></li>
+        </ul> 
+       </div>
+      </div>
+      <div id="block-menu-block-1" class="clearfix block block-menu-block span3"> 
+       <h2>Chapters</h2>
+       <div class="content"> 
+        <div class="menu-block-wrapper menu-block-1 menu-name-menu-admin-guide parent-mlid-0 menu-level-1">
+         <ul class="menu nav">
+          <li class="first leaf has-children menu-mlid-4315"><a href="/chapter-1">1. Guiding Policies and Principles</a></li>
+          <li class="leaf has-children menu-mlid-4319"><a href="/chapter-2">2. Human Resources</a></li>
+          <li class="leaf has-children menu-mlid-4317"><a href="/chapter-3">3. Financial Administration</a></li>
+          <li class="leaf has-children menu-mlid-4313"><a href="/chapter-4">4. Giving to Stanford</a></li>
+          <li class="leaf has-children menu-mlid-4331"><a href="/chapter-5">5. Purchasing and Payments</a></li>
+          <li class="leaf has-children active-trail menu-mlid-4323"><a href="/chapter-6" class="active-trail">6. Computing</a></li>
+          <li class="leaf has-children menu-mlid-4327"><a href="/chapter-7">7. Health and Safety</a></li>
+          <li class="leaf has-children menu-mlid-4321"><a href="/chapter-8">8. Services</a></li>
+          <li class="leaf has-children menu-mlid-4325"><a href="/chapter-9">9. Organization Charts</a></li>
+          <li class="leaf has-children menu-mlid-4329"><a href="/chapter-10">10. Student Employment and Assistantships</a></li>
+          <li class="last leaf has-children menu-mlid-9143"><a href="/chapter-12">12. Global Activities</a></li>
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div id="block-menu-menu-navigate" class="clearfix block block-menu span3"> 
+       <h2>Actions</h2>
+       <div class="content"> 
+        <ul class="menu nav">
+         <li class="first leaf"><a href="/category" title="">Browse by Category</a></li>
+         <li class="leaf"><a href="/print-guide">Print the Guide</a></li>
+         <li class="last leaf"><a href="mailto:guide-editor@lists.stanford.edu" title="">Send Website Feedback</a></li>
+        </ul> 
+       </div>
+      </div>
+      <div id="block-menu-menu-research-policies" class="clearfix block block-menu span3"> 
+       <h2>Related Resources</h2>
+       <div class="content"> 
+        <ul class="menu nav">
+         <li class="first leaf"><a href="http://cardinalatwork.stanford.edu" title="Cardinal at Work website for employees and retirees">Cardinal at Work website</a></li>
+         <li class="leaf"><a href="http://facultyhandbook.stanford.edu/" title="">Faculty Handbook</a></li>
+         <li class="leaf"><a href="https://web.stanford.edu/group/fms/fingate/" title="">Financial Gateway</a></li>
+         <li class="leaf"><a href="http://gap.stanford.edu/" title="">Graduate Academic Policies and Procedures Handbook</a></li>
+         <li class="leaf"><a href="http://hr.stanford.edu" title="Human Resources at Stanford website">HR at Stanford</a></li>
+         <li class="leaf"><a href="http://postdocs.stanford.edu/handbook/" title="">Postdoctoral Scholar Handbook</a></li>
+         <li class="leaf"><a href="http://doresearch.stanford.edu/policies/" title="">Research Policy Handbook</a></li>
+         <li class="leaf"><a href="https://advising.stanford.edu/current-students/academic-policy" title="">Undergraduate Academic Policies</a></li>
+         <li class="leaf"><a href="https://police.stanford.edu/security-report.html" title="safety, security and fire report">Stanford Safety, Security and Fire Report</a></li>
+         <li class="last leaf"><a href="https://news.stanford.edu/today/" title="Stanford Today website">Stanford Today</a></li>
+        </ul> 
+       </div>
+      </div>
+     </div><!-- /.region -->
+    </div>
+   </div>
+  </div><!-- /#footer -->
+  <div id="global-footer" role="contentinfo">
+   <div class="container">
+    <div class="row">
+     <div id="bottom-logo" class="span2">
+      <a href="http://www.stanford.edu"><img src="/sites/adminguide/themes/stanford_framework/images/footer-stanford-logo@2x.png" alt="Stanford University"></a>
+     </div>
+     <div id="bottom-menu" class="span10">
+      <ul class="top-links clearfix">
+       <li><a href="https://www.stanford.edu">Stanford Home</a></li>
+       <li><a href="https://visit.stanford.edu/plan/">Maps &amp; Directions</a></li>
+       <li><a href="https://www.stanford.edu/search/">Search Stanford</a></li>
+       <li><a href="https://emergency.stanford.edu/">Emergency Info</a></li>
+      </ul>
+      <ul class="bottom-links clearfix">
+       <li><a href="https://www.stanford.edu/site/terms/" title="Terms of use for sites">Terms of Use</a></li>
+       <li><a href="https://www.stanford.edu/site/privacy" title="Privacy and cookie policy">Privacy</a></li>
+       <li><a href="https://uit.stanford.edu/security/copyright-infringement" title="Report alleged copyright infringement">Copyright</a></li>
+       <li><a href="https://adminguide.stanford.edu/chapter-1/subchapter-5/policy-1-5-4" title="Report alleged copyright infringement">Trademarks</a></li>
+       <li><a href="http://exploredegrees.stanford.edu/nonacademicregulations/nondiscrimination/" title="Report alleged copyright infringement">Non-Discrimination</a></li>
+       <li><a href="https://www.stanford.edu/site/accessibility/" title="Report alleged copyright infringement">Accessibility</a></li>
+      </ul>
+      <p class="vcard">© <span class="fn org">Stanford University</span>, <span class="adr"><span class="locality">Stanford</span>, <span class="region">California</span> <span class="postal-code">94305</span></span>.</p>
+     </div>
+    </div>
+   </div>
+  </div><!-- /#global-footer -->
+  <script type="text/javascript" src="https://adminguide.stanford.edu/sites/adminguide/files/js/js_AhjIbhX-HrFnR65XPtttRuwoGpWnSYB7wHDo36vIhfg.js"></script>
+ </body>
+</html>

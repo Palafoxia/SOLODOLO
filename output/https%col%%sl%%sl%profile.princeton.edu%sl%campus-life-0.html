@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"427707476"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-53634508-2", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <link rel="canonical" href="https://profile.princeton.edu/campus-life-0">
+  <meta name="description" content="Housing and Dining First- and second-year students live in one of the University’s six residential colleges: Butler, First, Forbes, Mathey, Rockefeller, or Whitman. Juniors and seniors have the option of living and/or dining in four-year residential colleges or living in other dormitories. Approximately 96% of Princeton undergraduates live on ca...">
+  <meta property="og:site_name" content="A Princeton Profile">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://profile.princeton.edu/campus-life-0">
+  <meta property="og:title" content="Campus Life">
+  <meta property="og:description" content="Housing and Dining First- and second-year students live in one of the University’s six residential colleges: Butler, First, Forbes, Mathey, Rockefeller, or Whitman. Juniors and seniors have the option of living and/or dining in four-year residential colleges or living in other dormitories. Approximately 96% of Princeton undergraduates live on ca...">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:widgets:csp" content="on">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/profiles/ps/themes/ps_tiger/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Campus Life | A Princeton Profile</title>
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf2101/files/css/css_uy03OG5gbsqyk7wuW795bEytSaPKtZNW3-S4k0Tgu3E.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf2101/files/css/css_6i6t-lzEW777OTBb93mRbgsnh6uneKFzKrqqZ_PDdL0.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/xxx7asp.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/bok5fgz.css">
+ </head>
+ <body class="not-front section-campus-life-0 page-node-65 content-type-ps-basic-page flavor1 fontset3 menu5 full-width-search-box layout-block-padding-medium">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="page page-container"> 
+    <header role="banner" class="header region region-header" id="header">
+     <h1 class="sr-only sr-site-name">A Princeton Profile</h1>
+     <div class="skip-links"><a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to content</a><a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to search</a>
+     </div>
+     <div class="header-container container">
+      <div class="princeton-branding">
+       <div class="container"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"> <img src="/profiles/ps/themes/ps_base/images/pu-logo.svg" alt="Princeton University"> </a>
+       </div>
+      </div>
+      <div class="site-branding">
+       <div class="container">
+        <div class="row">
+         <div class="site-info">
+          <div class="site-name"><a href="/" title="Home" rel="home">A Princeton Profile</a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <nav aria-label="site" class="main-menu">
+       <h2 class="sr-only">Main Menu</h2>
+       <div class="container navbar-expand-lg"><button class="toggle-mobile-menu unbutton" type="button" data-toggle="collapse" data-target="#menu-container" aria-controls="menu-container" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-mobile-menu-icon"> <span class="toggle-mobile-menu-title">Menu</span> <i class="fa fa-bars" aria-hidden="true"></i> </span> </button>
+        <div id="menu-container" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item"><a href="/home" data-drupal-link-system-path="node/64">Overview</a></li>
+          <li class="nav-item"><a href="/about-princeton-university" data-drupal-link-system-path="node/43">About Princeton University</a></li>
+          <li class="nav-item"><a href="/numbers" data-drupal-link-system-path="node/44">By the Numbers</a></li>
+          <li class="nav-item"><a href="/admission-and-costs-0" data-drupal-link-system-path="node/66">Admission and Costs</a></li>
+          <li class="nav-item"><a href="/academic-life" data-drupal-link-system-path="node/22">Academic Life</a></li>
+          <li class="nav-item"><a href="/access-and-success" data-drupal-link-system-path="node/62">Access and Success</a></li>
+          <li class="nav-item"><a href="/scholarship-and-research" data-drupal-link-system-path="node/47">Scholarship and Research</a></li>
+          <li class="nav-item active"><a href="/campus-life-0" data-drupal-link-system-path="node/65" class="is-active">Campus Life</a></li>
+          <li class="nav-item"><a href="/service-and-outreach" data-drupal-link-system-path="node/49">Service and Outreach</a></li>
+          <li class="nav-item"><a href="/internationalism" data-drupal-link-system-path="node/50">Internationalism</a></li>
+          <li class="nav-item"><a href="/sustainability" data-drupal-link-system-path="node/51">Sustainability</a></li>
+          <li class="nav-item"><a href="/campus-projects" data-drupal-link-system-path="node/61">Campus Projects</a></li>
+          <li class="nav-item"><a href="/finances" data-drupal-link-system-path="node/52">Finances</a></li>
+          <li class="nav-item"><a href="/princeton-and-beyond" data-drupal-link-system-path="node/53">Princeton and Beyond</a></li>
+          <li class="nav-item"><a href="/princeton-community" data-drupal-link-system-path="node/54">Princeton in the Community</a></li>
+          <li class="nav-item"><a href="/princeton-milestones" data-drupal-link-system-path="node/55">Princeton Milestones</a></li>
+          <li class="nav-item"><a href="/officers-university" data-drupal-link-system-path="node/56">Officers of the University</a></li>
+          <li class="nav-item"><a href="/trustees-university" data-drupal-link-system-path="node/57">Trustees of the University</a></li>
+          <li class="nav-item"><a href="/academic-calendar" data-drupal-link-system-path="node/58">Academic Calendar</a></li>
+          <li class="nav-item"><a href="/key-telephone-numbers" data-drupal-link-system-path="node/59">Key Telephone Numbers</a></li>
+          <li class="nav-item"><a href="/site-index" data-drupal-link-system-path="node/60">Site Index</a></li>
+         </ul>
+         <div class="utility-menu">
+          <ul class="nav navbar-nav utility-nav">
+           <li class="nav-item"><a href="/caslogin" class="ps-login-logout-link" data-drupal-link-system-path="caslogin">Log in</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </nav>
+      <div class="search-bar" id="search-bar">
+       <div class="container navbar-expand-lg" role="search">
+        <h2 class="sr-only">Search</h2><button class="toggle-searchbar unbutton" type="button" data-toggle="collapse" data-target="#search-bar-container" aria-controls="search-bar-container" aria-expanded="false" aria-label="Toggle search"> <span class="toggle-search-icon"> <i class="fas fa-search" aria-hidden="true"></i> </span> </button>
+        <div id="search-bar-container" class="collapse navbar-collapse">
+         <div class="search-block-form contextual-region block block-search container-inline" id="block-searchform">
+          <form action="/search" method="get" id="search-block-form" accept-charset="UTF-8">
+           <div id="search-toggled" class="form-group js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label"><label for="edit-search-keys" class="visually-hidden">Search</label>
+            <input placeholder="Search" type="search" id="edit-search-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control">
+           </div>
+           <div data-drupal-selector="edit-search-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-search-actions">
+            <input type="submit" id="edit-search-submit" value="Submit" class="button js-form-submit form-submit btn btn-primary">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="breadcrumb region region-breadcrumb" id="breadcrumb">
+     <div class="container">
+      <nav role="navigation" aria-label="breadcrumb">
+       <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> Campus Life </li>
+       </ol>
+      </nav>
+     </div>
+    </div>
+    <div class="highlighted" id="highlighted">
+     <div class="container">
+      <div class="region region-highlighted">
+       <div data-drupal-messages-fallback class="hidden"></div>
+      </div>
+     </div>
+    </div>
+    <div id="main" class="main-container">
+     <div class="container">
+      <div class="row">
+       <div class="sidebar-first section order-first col-sm-4 col-md-3 col-lg-2">
+        <nav class="main-sidebar-menu" aria-label="site">
+         <h2 class="sr-only">Main Menu</h2>
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item"><a href="/home" data-drupal-link-system-path="node/64">Overview</a></li>
+          <li class="nav-item"><a href="/about-princeton-university" data-drupal-link-system-path="node/43">About Princeton University</a></li>
+          <li class="nav-item"><a href="/numbers" data-drupal-link-system-path="node/44">By the Numbers</a></li>
+          <li class="nav-item"><a href="/admission-and-costs-0" data-drupal-link-system-path="node/66">Admission and Costs</a></li>
+          <li class="nav-item"><a href="/academic-life" data-drupal-link-system-path="node/22">Academic Life</a></li>
+          <li class="nav-item"><a href="/access-and-success" data-drupal-link-system-path="node/62">Access and Success</a></li>
+          <li class="nav-item"><a href="/scholarship-and-research" data-drupal-link-system-path="node/47">Scholarship and Research</a></li>
+          <li class="nav-item active"><a href="/campus-life-0" data-drupal-link-system-path="node/65" class="is-active">Campus Life</a></li>
+          <li class="nav-item"><a href="/service-and-outreach" data-drupal-link-system-path="node/49">Service and Outreach</a></li>
+          <li class="nav-item"><a href="/internationalism" data-drupal-link-system-path="node/50">Internationalism</a></li>
+          <li class="nav-item"><a href="/sustainability" data-drupal-link-system-path="node/51">Sustainability</a></li>
+          <li class="nav-item"><a href="/campus-projects" data-drupal-link-system-path="node/61">Campus Projects</a></li>
+          <li class="nav-item"><a href="/finances" data-drupal-link-system-path="node/52">Finances</a></li>
+          <li class="nav-item"><a href="/princeton-and-beyond" data-drupal-link-system-path="node/53">Princeton and Beyond</a></li>
+          <li class="nav-item"><a href="/princeton-community" data-drupal-link-system-path="node/54">Princeton in the Community</a></li>
+          <li class="nav-item"><a href="/princeton-milestones" data-drupal-link-system-path="node/55">Princeton Milestones</a></li>
+          <li class="nav-item"><a href="/officers-university" data-drupal-link-system-path="node/56">Officers of the University</a></li>
+          <li class="nav-item"><a href="/trustees-university" data-drupal-link-system-path="node/57">Trustees of the University</a></li>
+          <li class="nav-item"><a href="/academic-calendar" data-drupal-link-system-path="node/58">Academic Calendar</a></li>
+          <li class="nav-item"><a href="/key-telephone-numbers" data-drupal-link-system-path="node/59">Key Telephone Numbers</a></li>
+          <li class="nav-item"><a href="/site-index" data-drupal-link-system-path="node/60">Site Index</a></li>
+         </ul>
+        </nav>
+       </div>
+       <main class="main main-content col-sm-12 col-lg-10 order-last"><a id="main-content" class="sr-only skip-link"></a>
+        <div class="region region-content">
+         <div id="block-ps-tiger-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+          <h1 class="page-title"> Campus Life </h1>
+         </div>
+         <div id="block-ps-tiger-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+          <article role="article" about="/campus-life-0" class="node node--type-ps-basic-page node--view-mode-full">
+           <div class="node__content">
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-block-plugin-id="ps_node_view" class="block block-ps-core block-ps-node-view">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p><a name="comphousinganddining" id="comphousinganddining"></a></p>
+                 <h3>Housing and Dining</h3>
+                 <p>First- and second-year students live in one of the University’s six residential colleges: <a href="https://butlercollege.princeton.edu">Butler</a>, <a href="https://firstcollege.princeton.edu">First</a>, <a href="https://forbescollege.princeton.edu">Forbes</a>, <a href="https://matheycollege.princeton.edu">Mathey</a>, <a href="https://rockefellercollege.princeton.edu">Rockefeller</a>, or <a href="https://whitmancollege.princeton.edu">Whitman</a>. Juniors and seniors have the option of living and/or dining in <a href="https://admission.princeton.edu/campus-life/housing">four-year residential colleges</a> or <a href="https://hres.princeton.edu/undergraduate-housing/explore/upperclass-housing">living in other dormitories</a>.</p>
+                 <p><a name="compkosherdining" id="compkosherdining"></a></p>
+                 <p>Approximately 96% of Princeton undergraduates live on campus. Approximately 70% of juniors and seniors take their meals at one of 11 private, coed eating clubs. Some juniors and seniors cook their own meals in dormitory kitchens, dine in the residential colleges, join a cooperative or make other arrangements. Students also may dine at the Frist Campus Center or Princeton’s Center for Jewish Life, which houses the University’s kosher dining facility. Students also have halal and kosher options in the residential colleges.</p>
+                 <p><a name="compeatingclubs" id="compeatingclubs"></a></p>
+                 <h4>Eating Clubs</h4>
+                 <p>The 11 eating clubs are private, coeducational dining and social clubs that are part of a tradition that extends over 130 years. Each club has its own distinctive architecture and culture, and members often think of their club as a “home away from home.” Seven clubs have a selective membership process, while four clubs are open to any student who wants to join. In addition to meals and social events, <a href="https://admission.princeton.edu/campus-life/dining-options/eating-clubs">the clubs</a> provide a range of activities and opportunities. While the club fees, billed separately, are more expensive than other dining options, Princeton provides increased financial aid to upperclassmen, contributing toward the additional cost.</p>
+                 <p><a name="comphousingforenrolledgraduatestudents" id="comphousingforenrolledgraduatestudents"></a></p>
+                 <h4>Housing for Enrolled Graduate Students</h4>
+                 <p>Approximately 70% of regularly enrolled graduate students live in University housing. Dormitories include historic and modern rooms in the Graduate College and rooms in converted homes, known as annexes. Another dormitory living option for graduate students is to apply to be a resident graduate student in one of the undergraduate residential colleges. For students choosing apartment communities at Lakeside Apartments and other locations, there is a range of unit sizes in both high-rise and garden configurations. University residential life offers academic, athletic, social, cultural, personal-development and community-service opportunities to graduate students and their families.</p>
+                 <p>Graduate students gather for meals in Procter Hall at the Graduate College, in dining halls at the residential colleges, at Frist Campus Center, at campus cafés, and in the dining hall at the Center for Jewish Life.</p>
+                 <p><a name="compcenterscampus" id="compcenterscampus"></a></p>
+                 <h3>Campus Centers</h3>
+                 <ul>
+                  <li><a href="http://www.princeton.edu/frist/">Frist Campus Center</a> is a place where the entire campus community, as well as visitors, meet and interact, engaging in a variety of programs, events and services that enrich campus life.</li>
+                  <li><a href="https://odus.princeton.edu/odus-programs/campus-club">Campus Club</a> is a social facility for undergraduate and graduate students. The club hosts numerous student-organization activities and offers flexible spaces for casual relaxation and formal gatherings.</li>
+                  <li>The <a href="https://hillel.princeton.edu/">Center for Jewish Life</a> is a welcoming and inclusive environment where all students on campus can explore their connection to Jewish life through Shabbat and holiday celebrations, as well as social, cultural, religious and educational activities.</li>
+                  <li>The <a href="https://davisic.princeton.edu/">Kathryn W. and Shelby Cullom Davis ’30 International Center</a> provides a full array of services and programs for international students and scholars, including advising on immigration and visa matters and consulting on intercultural issues. The center also serves as a central resource on questions related to international students and scholars, and hosts intercultural programs and events.</li>
+                  <li>The <a href="http://fieldscenter.princeton.edu/">Carl A. Fields Center for Equality and Cultural Understanding</a> focuses on exploring issues of diversity, equity and cultural pluralism and also provides a variety of flexible spaces for cultural, educational and social programs by student organizations. The Center engages the campus community through University-wide programming.</li>
+                  <li>The <a href="https://www.princeton.edu/news/2021/08/24/new-gender-sexuality-resource-center-princeton-serve-women-femme-and-lgbtqia">Gender + Sexuality Resource Center</a> (GSRC) at Princeton is launching in fall 2021. Building upon the historical legacy and impactful work of Princeton’s Women*s Center and LGBT Center, the GSRC will serve women and femme-identifying students and LGBTQIA+ students, and offer gender and sexuality programming and co-curricular experiences for the University community.</li>
+                 </ul>
+                 <p><a name="compreligiousfacilities" id="compreligiousfacilities"></a></p>
+                 <h3>Religious Life</h3>
+                 <p>The Princeton community is home to many religious denominations that welcome involvement by students, faculty and staff. The <a href="https://religiouslife.princeton.edu/">Office of Religious Life</a> supports the religious traditions that flourish on Princeton’s campus and encourages interfaith dialogue and cooperation. Through its own programs and in collaboration with others, the office provides opportunities for community service, cross-cultural understanding and constructive social action. The University also supports 17 campus chaplaincies and numerous faith-based student organizations. Religious facilities at Princeton include the University Chapel and the Center for Jewish Life. The Office of Religious Life is housed in Murray-Dodge Hall, which includes the Muslim Prayer Room, the Interfaith Prayer Room and the Murray-Dodge Café.</p>
+                 <p><a name="compathletics" id="compathletics"></a></p>
+                 <h3>Athletics</h3>
+                 <p>Princeton sponsors 37 <a href="https://goprincetontigers.com/index.aspx">varsity intercollegiate teams</a> (19 for men, 18 for women), with approximately 1,000 participants—about 20% of the undergraduate population. In 2022-23, Princeton will add a 38th varsity sport with the elevation of women’s rugby to varsity status. In addition, an estimated 1,000 students participate in the University’s 38 <a href="https://campusrec.princeton.edu/sport-clubs">club teams</a>.</p>
+                 <p><strong>Varsity Sports.</strong> Princeton teams have won more Ivy League championships than any school since the formation of the league in 1956; With 503 overall Ivy titles, nearly one-quarter of all Ivy championships won have gone to Princeton teams. Since 2000, 31 of the 33 Princeton teams that compete in official Ivy League sports have won at least one league championship.</p>
+                 <p>Princeton won 12 Ivy League championships in 2018–19, and three other Princeton teams won championships in leagues outside of the Ivy League. The 12 Ivy championships marked the 10th time in 11 years, and 26th time overall, that Princeton has reached double figures in Ivy League championships, something only one other league school has ever done even once. Princeton also finished first in the Ivy League (and 30th in Division I) in the Directors’ Cup standings, which measure overall athletic success based on NCAA tournament participation and results.</p>
+                 <p><strong>Campus Recreation.</strong> Campus Recreation engages the Princeton University community in co-curricular experiences to inspire lifelong health and well-being. <a href="https://campusrec.princeton.edu/facilities-operations/locations/dillon-gym">Dillon Gymnasium</a> is the dedicate recreation space where students and members can access our fitness facilities, basketball courts, squash courts, swimming pool, and multi-purpose rooms. Over 500 teams are active in the <a href="https://campusrec.princeton.edu/intramural-sports">intramural program</a>, which schedules competition among residential colleges, eating clubs, independent groups, and faculty and staff. Students can participate in 38 active clubs in the <a href="https://campusrec.princeton.edu/sport-clubs">sport club program</a>. Princeton’s group fitness and instructional program offers a variety of strength, cardio, dance, yoga/pilates, cycling and skill development classes that are available for all undergraduate and graduate students with the presentation of their ID (Faculty/Staff have access via FlexPass purchase). Our facility and programs are led by our students, and we have over 150 student employees who assist us to provide a safe and fun environment for our campus community.</p>
+                 <p><a name="compfacilitiesathletic" id="compfacilitiesathletic"></a></p>
+                 <h4>Athletic Facilities</h4>
+                 <ul>
+                  <li>Jadwin Gymnasium provides 250,000 square feet of indoor space for intercollegiate sports and a practice area for outdoor field sports. Jadwin is the site of Pete Carril Court, the varsity basketball floor, and this past season for the first time featured a video board above center court.</li>
+                  <li>Dillon Gymnasium has facilities for recreational activities and houses the Stephens Fitness Center while also serving as the home venue for varsity wrestling and volleyball.</li>
+                  <li>DeNunzio Pool provides complete facilities for competitive swimming and diving and water polo.</li>
+                  <li>Princeton Stadium has a seating capacity of 27,800. The field was named Powers Field at Princeton Stadium beginning with the 2007–08 season. Powers Field is covered by a “bubble” each winter to enable year-round use.</li>
+                  <li>Weaver Track and Field Stadium has an eight-lane Olympic track and has hosted some of the nation’s premier college track and field events.</li>
+                  <li>The Class of 1952 Stadium is a lighted facility that accommodates approximately 4,000 spectators for both lacrosse and field hockey, with a shared grandstand and pressbox between two fields. Sherrerd Field is the home for men’s and women’s lacrosse and the interim home for men's and women’s soccer while Roberts Stadium is moved to the east side of campus. Bedford Field is the home of Princeton field hockey.</li>
+                  <li>Shea Rowing Center is home to the crew program.</li>
+                  <li>Hobey Baker Memorial Rink houses men’s and women’s hockey and ice skating.</li>
+                  <li>Clarke Field has been the home of Princeton’s baseball team for six decades and was renovated in 2016 to include new dugouts for team use.</li>
+                  <li>Princeton Softball Stadium at Strubing Field began as the temporary home of the Princeton softball team in the fall of 2019 and will be in use until its new stadium on the Lake Campus, the planned University development on the south side of Lake Carnegie, is completed.</li>
+                  <li>Temporary tennis courts have been built adjacent to Bedford Field while a new state-of-the-art racquet facility is completed on Lake Campus.</li>
+                  <li>Outdoor athletic facilities also include a cross country course in West Windsor and an 18-hole golf course with a brand-new golf performance center. The University has more than 50 acres of fields, including the Finney/Campbell FieldTurf fields, for baseball, softball, soccer, lacrosse and rugby, as well as many intramural sports.</li>
+                 </ul>
+                 <p><a name="compactivitiesstudent" id="compactivitiesstudent"></a><a name="comporganizationsstudent" id="comporganizationsstudent"></a><a name="compperformingartsspacesstudent" id="compperformingartsspacesstudent"></a></p>
+                 <h3>Student Activities</h3>
+                 <h4>Student Organizations</h4>
+                 <p>Student <a href="https://odus.princeton.edu/activities/organizations">organizations</a> are created and run by students with support from the University through the Office of the Dean of Undergraduate Students, the Pace Center for Civic Engagement, the Office of Religious Life, and Campus Recreation. Some 500 organizations make it easy for students to engage their interests outside the classroom.</p>
+                 <p><a name="compreserveofficertrainingcorps" id="compreserveofficertrainingcorps"></a></p>
+                 <h4>Reserve Officer Training Corps (ROTC)</h4>
+                 <p>Princeton students may participate in the Army, Air Force or Navy ROTC programs. The <a href="https://princetonarmyrotc.princeton.edu/">Army program</a> is hosted at Princeton and includes students from TCNJ, Rider University, and Rowan University. The Air Force and Navy programs are cross-town programs hosted at Rutgers University. Princeton ROTC celebrated its 100th anniversary on Veterans Day of 2019. Over 70 students chose to participate in the ROTC program during the 2020-21 academic year. These programs are conducted by the United States Armed Services. Participants engage in courses and activities that, if successfully completed, lead to a commission as an officer.</p>
+                 <p><a name="compdanceandtheaterstudios" id="compdanceandtheaterstudios"></a></p>
+                 <h4>Student Performing Arts Spaces</h4>
+                 <ul>
+                  <li>The programs of the Lewis Center for the Arts occur in venues throughout the Princeton campus including the <a href="https://arts.princeton.edu/about/venues-studios/">Lewis Arts complex</a> and its state-of-the-art Wallace Theater, Hearst Dance Theater, Hurley Gallery, Forum, Co-Lab, and acting and dance studios; a recently renovated film screening theater, newly opened photography darkrooms, the Lucas Gallery, Hagan Studio, art studios and a black box theater at 185 Nassau St.; the 350-seat Berlind Theatre at McCarter Theatre Center; writing seminar rooms and dance and theater studios in the New South building; galleries, studios and theater spaces in the residential colleges; and other traditional and nontraditional spaces.</li>
+                  <li>The <a href="https://www.mccarter.org/">McCarter Theatre Center</a> offers theater, music, dance, film and other events. The theater also hosts the annual show presented by student members of the Triangle Club. McCarter’s Berlind Theatre houses major productions of the Programs in Theater and Music Theater and Program in Dance.</li>
+                  <li><a href="https://www.princeton.edu/richaud">Richardson Auditorium</a> in Alexander Hall hosts musical, dramatic and other performances, most open to the public.</li>
+                  <li><a href="https://www.theatreintime.org/">Theatre Intime</a>, a student-run facility, schedules dramatic productions, dance concerts and comedy shows throughout the year at Murray-Dodge Hall.</li>
+                  <li>The <a href="http://www.princeton.edu/frist/">Frist Campus Center Film/Performance Theater</a> is a multipurpose performance space that hosts theatrical productions, musical and film events, and other performances throughout the year.</li>
+                  <li>The <a href="https://music.princeton.edu/">music department</a>’s facilities span campus. Classes, rehearsals, masterclasses, workshops and performances take place throughout the Woolworth Center for Music Studies, the Effron Music Building, Taplin Auditorium in Fine Hall, and Richardson Auditorium in Alexander Hall. Practice rooms at the Woolworth Center are available to all Princeton University students; additional facilities at the Effron Music Building are reserved for students in the Department of Music’s programs.</li>
+                 </ul>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+              </div>
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </main>
+      </div>
+     </div>
+    </div>
+    <footer role="contentinfo" class="footer region region-footer" id="footer">
+     <h2 class="sr-only">Footer</h2>
+     <div class="container">
+      <div class="constrained-bkg-constrained-content layout layout--threecol-33-34-33">
+       <div class="layout-inner-container">
+        <div class="layout__region layout__region--first layout__region--thirds layout__region--narrow">
+         <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+          <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+           <p>Published by the <a href="http://communications.princeton.edu">Office of Communications</a><br> 22 Chambers Street, Suite 201, Princeton, New Jersey 08542.<br> Michael Hotchkiss, editor.</p>
+          </div>
+         </div>
+        </div>
+        <div class="layout__region layout__region--second layout__region--thirds layout__region--narrow">
+         <nav role="navigation" aria-labelledby="-menu" data-block-plugin-id="menu_block:footer" class="block block-menu navigation menu--footer">
+          <h2 class="visually-hidden" id="-menu">Footer menu</h2>
+          <ul class="nav">
+           <li class="nav-item"><a href="https://rrr.princeton.edu/eop">Equal Opportunity Policy</a></li>
+          </ul>
+         </nav>
+        </div>
+        <div class="layout__region layout__region--third layout__region--thirds layout__region--narrow">
+         <div data-block-plugin-id="inline_block:ps_social_links" class="block-ps-social-links block block-layout-builder block-inline-blockps-social-links">
+          <ul class="ps-social-links--platforms platforms vertical">
+           <li><a href="http://www.facebook.com/PrincetonU" title="Facebook"> <span class="fab fa-facebook fa-2x" aria-hidden="true"></span> <span class="social-link-label">Facebook</span> </a></li>
+           <li><a href="http://twitter.com/princeton" title="Twitter"> <span class="fab fa-twitter fa-2x" aria-hidden="true"></span> <span class="social-link-label">Twitter</span> </a></li>
+           <li><a href="http://www.youtube.com/profile?user=princetonuniversity" title="YouTube"> <span class="fab fa-youtube fa-2x" aria-hidden="true"></span> <span class="social-link-label">YouTube</span> </a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="subfooter">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-4">
+         <div class="subfooter-links">
+          <ul class="list-unstyled">
+           <li><a href="https://accessibility.princeton.edu/resources/accessibility-help" target="_blank">Accessibility</a></li>
+          </ul>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <p class="copyright-text"> © 2022 The Trustees of Princeton University </p>
+        </div>
+        <div class="col-md-4 text-sm-left text-md-right copyright"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"><img src="/profiles/ps/themes/ps_base/images/pu-logo-stacked.svg" alt="Princeton University"> </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div> 
+  </div><span id="ps-current-username" data-username=""></span>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/65","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"all_documents_new_window":false,"select2_simple":{"selector":".node-form select:not(.disable-select2,[name$=\u0027[actions][bundle]\u0027],.ui-timepicker-select,[name*=\u0027field_ps_timeline_feature_items\u0027]),.select2-form select,#drupal-off-canvas select[multiple]"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":true,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":[]}},"ajax":[],"user":{"uid":0,"permissionsHash":"bb2d6a919a7969ee76b3397a0e4bc8cef48d4e46eaa66e7e95419962bf049448"}}</script>
+  <script src="/sites/g/files/toruqf2101/files/js/js_3jBSokaNX_cMgeJVLHunQjoQoJkV4AHdbZSIzAJJNMs.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"427707476","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":417,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

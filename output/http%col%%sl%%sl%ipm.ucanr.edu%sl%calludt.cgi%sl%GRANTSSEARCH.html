@@ -1,0 +1,250 @@
+<!---WPT*#DEFINE fundtype--><!---WPT*#DEFINE fundtype-is-research--><!---WPT*#DEFINE fundtype-is-exoticpests--><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+ <!-- InstanceBegin template="/Templates/wpt-cgi-page.dwt" codeOutsideHTMLIsLocked="false" -->
+ <head><!-- InstanceBeginEditable name="doctitle" -->
+  <title>UC IPM Funded Projects: Search Database</title>
+  <meta name="description" content="Search for information on projects funded by UC IPM since 1979.">
+  <meta name="robots" content="noindex, nofollow"><!-- InstanceEndEditable -->
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <link rel="stylesheet" href="/styles/basic-page.css" type="text/css">
+  <link rel="stylesheet" href="/styles/support-page.css" type="text/css"><!-- InstanceBeginEditable name="head" -->
+  <script language="JavaScript">
+<!-- Begin to hide script from non-javascript browsers ...
+  // Global variables -- set default values.
+  var fund="All";		// default is all.
+  var fund1="A";
+  var fromyear = "ALL";
+  var toyear = "ALL";
+  
+  // get FUNDTYPE from URL
+  var urlstring = document.URL;
+  // alert("URL = [" + urlstring + "]");
+  var pos1 = urlstring.indexOf("FUNDTYPE=");
+  if (pos1 > 0) {
+     var pos2 = urlstring.indexOf("&",pos1+1);
+     if (pos2 < 1) {
+        pos2 = urlstring.length;
+     }
+     fund = urlstring.substring(pos1+9,pos2);
+     fund1 = fund.substring(0,1);
+     // alert("FUNDTYPE = [" + fund + "]");
+     // alert("FUNDCODE = [" + fund1 + "]");
+  }
+  
+  // get FROMYEAR from URL
+  pos1 = urlstring.indexOf("FROMYEAR=");
+  if (pos1 > 0) {
+     pos2 = urlstring.indexOf("&",pos1);
+     if (pos2 < 1) {
+        pos2 = urlstring.length;
+     }
+     fromyear = urlstring.substring(pos1+9,pos2);
+  }
+
+  // get TOYEAR from URL
+  pos1 = urlstring.indexOf("TOYEAR=");
+  if (pos1 > 0) {
+     pos2 = urlstring.indexOf("&",pos1);
+     if (pos2 < 1) {
+        pos2 = urlstring.length;
+     }
+     toyear = urlstring.substring(pos1+7,pos2);
+  }  // ................................................
+  
+  function SetFund(thefund){
+  // Save updated FUNDTYPE value from SELECT list.
+		fund = thefund;
+		fund1 = fund.substring(0,1);
+        return
+  }  // ................................................
+  
+  function BuildURL(location){
+  	// Insert updated FUNDTYPE into desired URL string  
+	    // fund = document.SPECSEARCH.FUNDTYPE.options[document.SPECSEARCH.FUNDTYPE.selectedIndex].value
+        var pos = location.indexOf("X");     // find start of 'X' string in the URL.
+        theURL = location.substring(0,pos) + fund1 + "&FROMYEAR=" + fromyear + "&TOYEAR=" + toyear + location.substring(pos+1,999);
+        window.location = theURL;		// Now go to desired URL.
+        return
+   }  // ................................................ 
+
+  function SetFromYear(theyear){
+  // Save updated YEAR value from SELECT list.
+		fromyear = theyear;
+        return
+  }  // ................................................
+  
+  function SetToYear(theyear){
+  // Save updated YEAR value from SELECT list.
+		toyear = theyear;
+        return
+  }  // ................................................
+     // End script hiding.  -->
+</script><!-- InstanceEndEditable --><!-- InstanceParam name="AddResourceMenu" type="boolean" value="false" --><!-- InstanceParam name="AddResearchMenu" type="boolean" value="false" --><!-- InstanceParam name="RelatedResources" type="boolean" value="false" --><!-- InstanceParam name="AddBreadCrumbs" type="boolean" value="false" --><!-- InstanceParam name="AddPrintFriendly" type="boolean" value="false" --><!-- InstanceParam name="InsertLinktoTop" type="boolean" value="false" --><!-- InstanceParam name="ShowTemplateInfo" type="boolean" value="false" -->
+ </head>
+ <body><a name="ipmpagetop"></a>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+   <tbody>
+    <tr> 
+     <td style="background-image: url(/IMAGES/ipmheader-ext.jpg);"> <img src="/IMAGES/ipmheader.gif" usemap="#ipmheader" border="0" width="760" height="80" alt="UC IPM Online"><map name="ipmheader"> <area shape="rect" coords="8,8,52,66" alt="UC ANR home page" href="http://www.ucanr.org/"> <area shape="rect" coords="663,7,771,71" alt="UC IPM home page" href="/"> </map></td>
+    </tr>
+   </tbody>
+  </table>
+  <table cellpadding="0" cellspacing="0" border="0">
+   <tbody>
+    <tr> 
+     <td width="165" valign="top" class="leftmenu"> <p style="font-size: 1.1em; margin-top: 0.5em; margin-bottom: 0.75em;"> <a href="/index.html"><b>UC IPM Home</b></a> </p><!-- InstanceBeginEditable name="PreferredAnnouncement" --><!-- /notices/notice.cgi was activated. --><!-- InstanceEndEditable --><a href="#ipmpagecontent" style="text-decoration: none;"><img src="/IMAGES/dot_clear.gif" alt="SKIP navigation" border="0"></a>
+      <div id="navigation" style="margin-top: -1em;">
+       <ul style="margin-top: 0em;">
+        <li class="parent" style="margin-top:20px;"><a href="/index.html"><b>HOME</b></a></li>
+        <li class="parent" style="margin-top:20px;"><a href="/GENERAL/search.html"><b>SEARCH</b></a></li>
+       </ul><!--#set var="audience" value="OTHER" --><!--#if expr="$DOCUMENT_URI = /PMG\/r|PMG\/C[0-9]|selectnewpest/" --><!--#set var="audience" value="AG" --><!--#elif expr="$REQUEST_URI = /PMG\/PESTNOTE|PMG\/GARDEN|TOOLS\/TURF/" --><!--#set var="audience" value="URBAN" --><!--#endif --><!--#if expr="$audience = 'AG'" --><!-- Agriculture links --><!--#elif expr="$audience = 'URBAN'" --><!-- Urban links --><!--#else --><!-- Other links --><!--#endif -->
+       <ul style="margin-top: 0em;"><!-- include virtual="/include/onthissite.inc" -->
+        <li class="linkgroup">ON THIS SITE</li>
+        <li class="parent"><a href="/GENERAL/whatisipm.html">What is IPM?</a></li>
+        <li class="parent"><a href="/PMG/menu.homegarden.html">Home &amp; landscape pests</a></li>
+        <li class="parent"><a href="/PMG/crops-agriculture.html">Agricultural pests</a></li>
+        <li class="parent"><a href="/NATURAL/index.html">Natural environment pests</a></li>
+        <li class="parent"><a href="/EXOTIC/index.html">Exotic &amp; invasive pests</a></li>
+        <li class="parent"><a href="/PMG/weeds_intro.html">Weed gallery</a></li>
+        <li class="parent"><a href="/PMG/NE/index.html">Natural enemies gallery</a></li>
+        <li class="parent"><a href="/WEATHER/index.html">Weather, models &amp; degree-days</a></li>
+        <li class="parent"><a href="/GENERAL/pesticides.html">Pesticide information</a></li>
+        <li class="parent"><a href="/IPMPROJECT/fundedprojects.html">Research</a></li>
+        <li class="parent"><a href="/IPMPROJECT/pubsmenu.html">Publications</a></li>
+        <li class="parent"><a href="/IPMPROJECT/workshops.html">Events &amp; training </a></li>
+        <li class="parent"><a href="/GENERAL/links.html">Links</a></li>
+        <li class="parent"><a href="/PMG/glossary.html">Glossary</a></li>
+        <li class="parent"><a href="/IPMPROJECT/about.html">About us</a></li>
+        <li class="parent" style="border-right:0"><a href="/IPMPROJECT/contact.html">Contact us</a></li>
+       </ul> 
+       <br>
+       <br>
+       <div class="donate" style="text-align: center; padding: 5px; width: 80%; margin-top: 10px; margin-bottom: 10px; margin-right: 0px;"><a href="/make-a-gift/?src=<!--#echo var=&quot;DOCUMENT_URI&quot; -->" target="_blank" style="text-decoration:none; color:white;"><img src="/IMAGES/make-a-gift-button.png" alt="Make a gift button" height="100%" width="100%"></a>
+       </div>
+      </div>
+      <hr><!-- InstanceBeginEditable name="MiscLinks" --><!-- InstanceEndEditable --></td>
+     <td width="20"> <p>&nbsp;</p></td>
+     <td valign="top"><a name="ipmpagecontent"></a><!-- InstanceBeginEditable name="Content" --><h1>Research and IPM</h1><h2>Grants Programs: Projects Database</h2>
+      <table border="0" cellpadding="0" cellspacing="0" class="menuarea">
+       <tbody>
+        <tr> 
+         <td class="menubar"> | <a href="/IPMPROJECT/GRANTS/aboutresearchdb.html">About the database</a> | <a href="/IPMPROJECT/fundedprojects.html">Grants programs</a> |</td>
+        </tr>
+       </tbody>
+      </table><h3>Search for research projects on a topic</h3><p>Information on projects funded by UC IPM since 1979 is stored in this database. You may search for any combination of hosts, pests, disciplines, and principal investigators, for any range of funding year and by research program (Exotic Pests, UC IPM, or both). You'll be presented with details of all projects meeting the search criteria.</p>
+      <table border="0" cellpadding="0" cellspacing="0" class="headstrip">
+       <tbody>
+        <tr>
+         <td><h3>Simple search</h3></td>
+        </tr>
+       </tbody>
+      </table> 
+      <form action="/calludt.cgi/GRANTSLIST2" method="GET">
+       <input type="hidden" name="FUNDTYPE" value="All">
+       <table border="0" cellpadding="2" cellspacing="0">
+        <tbody>
+         <tr>
+          <th class="colleft"> Keyword </th>
+          <td><input type="text" name="TEXTKWRD" value="" size="23" maxlength="100"></td>
+          <td><input type="hidden" name="OPERKWRD" value="LIKE"><input type="submit" name="SIMPLE" value="Search Database"></td>
+         </tr>
+        </tbody>
+       </table>
+       <hr>
+      </form>
+      <table border="0" cellpadding="0" cellspacing="0" class="headstrip">
+       <tbody>
+        <tr>
+         <td><h3>Specific variable search: Set one or more search criteria</h3></td>
+        </tr>
+       </tbody>
+      </table><p>To use, type the exact word or phrase (such as "cotton" under "host" or "aphid" under "pest") in the appropriate box(es). You may also click on any of the "list" links, then click on a name to select it. You'll be returned to this screen and your selection will automatically appear in the appropriate box.</p> 
+      <form name="SPECSEARCH" action="/calludt.cgi/GRANTSLIST2" method="GET"><!--  <INPUT TYPE="hidden" NAME=FUNDTYPE value="All">  -->
+       <table border="0" cellpadding="2" cellspacing="0">
+        <tbody>
+         <tr>
+          <th class="colleft"> Host/habitat </th>
+          <td><select name="OPERSITE"> <option value="LIKE">Contains </option><option value="UNLIKE">Does not contain </option></select></td>
+          <td><input type="text" name="TEXTSITE" value="" size="23" maxlength="100"></td>
+          <td><a href="javascript:BuildURL('/calludt.cgi/GRANTSKWLIST?FUNDTYPE=X&amp;LISTCATEGORY=S')">List of hosts</a></td>
+         </tr>
+         <tr>
+          <th class="colleft"> Pest </th>
+          <td><select name="OPERPEST"> <option value="LIKE">Contains </option><option value="UNLIKE">Does not contain </option></select></td>
+          <td><input type="text" name="TEXTPEST" value="" size="23" maxlength="100"></td>
+          <td><a href="javascript:BuildURL('/calludt.cgi/GRANTSKWLIST?FUNDTYPE=X&amp;LISTCATEGORY=P')">List of pests</a></td>
+         </tr>
+         <tr>
+          <th class="colleft"> Discipline </th>
+          <td><select name="OPERDISC"> <option value="LIKE">Contains </option><option value="UNLIKE">Does not contain </option></select></td>
+          <td><input type="text" name="TEXTDISC" value="" size="23" maxlength="100"></td>
+          <td><a href="javascript:BuildURL('/calludt.cgi/GRANTSKWLIST?FUNDTYPE=X&amp;LISTCATEGORY=D')">List of disciplines</a></td>
+         </tr>
+         <tr>
+          <th class="colleft"> Year(s) funded </th>
+          <td><b>From:&nbsp;</b><select name="FROMYEAR" onchange="SetFromYear(document.SPECSEARCH.FROMYEAR.options[document.SPECSEARCH.FROMYEAR.selectedIndex].value)"> <script language="JavaScript">
+             <!-- Begin to hide script from non-javascript browsers ...
+          document.write("<option value=ALL "+((fromyear == "ALL") ? "selected " : "")+">All Years</OPTION>");
+          // i = 2009;
+          var currentTime = new Date();
+          var theyear = currentTime.getFullYear();
+          i = theyear;
+          while (i >= 1979) {
+             document.write("<option value=" + i + " " + ((fromyear ==  i ) ? "selected " : "") + ">" + i + "</OPTION>");
+             i--;
+          }
+               // End script hiding.  -->
+      </script> </select></td>
+          <td><p><b>To:&nbsp;</b> <select name="TOYEAR" onchange="SetToYear(document.SPECSEARCH.TOYEAR.options[document.SPECSEARCH.TOYEAR.selectedIndex].value)"> <script language="JavaScript">
+             <!-- Begin to hide script from non-javascript browsers ...
+          document.write("<option value=ALL "+((toyear == "ALL") ? "selected " : "")+">All Years</OPTION>");
+          // i = 2009;
+          var currentTime = new Date();
+          var theyear = currentTime.getFullYear();
+          i = theyear;
+          while (i >= 1979) {
+             document.write("<option value=" + i + " " + ((toyear ==  i ) ? "selected " : "") + ">" + i + "</OPTION>");
+             i--;
+          }
+               // End script hiding.  -->
+      </script> </select> </p></td>
+          <td>&nbsp; </td>
+          <td>&nbsp; </td>
+         </tr>
+         <tr>
+          <th class="colleft"> Principal investigator </th>
+          <td><select name="OPERPI"> <option value="LIKE">Contains </option><option value="BEGINLIKE">Begins with </option><option value="EQ">Is exactly </option><option value="UNLIKE">Does not contain </option></select></td>
+          <td><p><input type="TEXT" name="TEXTPI" value="" size="23" maxlength="100"> </p></td>
+          <td><p> <a href="javascript:BuildURL('/calludt.cgi/GRANTSKWLIST?FUNDTYPE=X&amp;LISTCATEGORY=PI')">List of principal investigators</a> </p></td>
+         </tr>
+         <tr>
+          <th class="colleft"> Research Program </th>
+          <td><select name="FUNDTYPE" onchange="SetFund(document.SPECSEARCH.FUNDTYPE.options[document.SPECSEARCH.FUNDTYPE.selectedIndex].value)"> <script>
+          document.write("<option " + ((fund1 == "A") ? "selected " : "") + "value=All>All");
+          document.write("<option " + ((fund1 == "R") ? "selected " : "") + "value=Research>IPM Research");
+          document.write("<option " + ((fund1 == "E") ? "selected " : "") + "value=Exoticpests>Exotic pests");
+        </script> </select></td>
+          <td>&nbsp; </td>
+          <td>&nbsp; </td>
+         </tr>
+        </tbody>
+       </table>
+       <p><input type="submit" name="ACTION" value="Search Database"><input type="submit" name="CLEAR" value="Clear Form"></p>
+      </form><!-- InstanceEndEditable --></td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="footertext"> 
+   <hr>
+   <p class="noskip">Statewide IPM Program, Agriculture and Natural Resources, University of California<br> All contents copyright © <!-- InstanceBeginEditable name="copyrightYear" --><!-- InstanceEndEditable --> 2022 The Regents of the University of California. All rights reserved. </p><!-- ***** FOOTER DIVISION ***** 9-10-13a ***** -->
+   <div id="ipmfooter" style="margin:1em 2em 0 2em;">
+    <p style="margin:0; line-height:130%;">For noncommercial purposes only, any Web site may link directly to this page. FOR ALL OTHER USES or more information, read <a href="/GENERAL/copyright.html">Legal Notices</a>. Unfortunately, we cannot provide individual solutions to specific pest problems. See our <a href="/">Home page</a>, or in the U.S., contact your <a href="/GENERAL/ceofficefinder.html">local Cooperative Extension office</a> for assistance.</p>
+    <p class="footerlinks" style="margin-top:0; font-size:1em;"><a href="/GENERAL/acknowledgments.html">Acknowledgements</a><a href="/ADMIN/">Staff-only pages</a><a href="/GENERAL/rssfeeds.html">Subscribe (RSS)</a><!--		<a href="https://twitter.com/ucipmurban">Follow (Twitter)</a>
+		<a href="http://www.youtube.com/UCIPM">Videos (YouTube)</a> --><a href="/IPMPROJECT/contact.html" style="border-right: 0; padding-right: 0;">Contact UC IPM</a></p>
+   </div> <!-- end of ipmfooter -->
+   <p style="font-size: 1.5em; font-weight: bold; margin:-0.5em 0 0 0;">Agriculture and Natural Resources, University of California</p>
+   <p class="footerlinks" style="margin:0;"><!--<a href="https://ucanr.edu/?copyright">&copy; <!--#config timefmt="%Y" --><!--#echo var="LAST_MODIFIED" --> Regents of the University of California--&gt; <a href="https://ucanr.edu/?copyright">© <!--#config timefmt="%Y" --><!--#echo var="LAST_MODIFIED" --> Regents of the University of California</a><a href="https://ucanr.edu/">Division of Agriculture and Natural Resources</a><a href="https://ucanr.edu/sites/anrstaff/Diversity/Affirmative_Action/Resources/Policy-related_downloads/" style="border-right:0;padding:0">Nondiscrimination Statement</a></p>
+   <p style="margin:0; padding: 0 2em 2em 2em;"><span class="footerlinks"><a href="https://ucanr.edu/?accessibilityStatement">Accessibility</a>&nbsp;&nbsp;</span><!-- <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --><script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script src="http://intercoolerjs.org/release/intercooler-1.2.3.min.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-46953310-1', 'auto');ga('require', 'displayfeatures');ga('send', 'pageview');</script> web template revised: June 15, 2022 <a href="/GENERAL/feedback.html">Contact webmaster</a>. </p>
+  </div><!-- InstanceEnd -->
+ </body>
+</html>

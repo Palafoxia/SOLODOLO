@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"427707476"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-124493623-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});
+ga('puwdsTracker.set', 'anonymizeIp', true);ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <link rel="canonical" href="https://registrar.princeton.edu/student-and-alumni-services/concentration-declaration">
+  <meta name="description" content="With two years of coursework completed, you normally declare your concentration in late spring of your sophomore year. To ensure a smooth declaration process, meet with your intended department to discuss your plans well in advance of the deadline. You can find complete concentration declaration details at the Office of the Dean of the College. ...">
+  <meta property="og:site_name" content="Office of the Registrar">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://registrar.princeton.edu/student-and-alumni-services/concentration-declaration">
+  <meta property="og:title" content="Concentration Declaration">
+  <meta property="og:description" content="With two years of coursework completed, you normally declare your concentration in late spring of your sophomore year. To ensure a smooth declaration process, meet with your intended department to discuss your plans well in advance of the deadline. You can find complete concentration declaration details at the Office of the Dean of the College. ...">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/sites/g/files/toruqf136/themes/site/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Concentration Declaration | Office of the Registrar</title>
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf136/files/css/css_ZTRhPzMgKh7NHkzoshP-f_5F2XtOQcb-nsla083_laI.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf136/files/css/css_jsbcFHcpXNGw6zJHjt2MO5Bpa_6NBVQ6iZWu4Gw6fx8.css">
+ </head>
+ <body class="not-front section-student-and-alumni-services page-node-71 content-type-ps-basic-page menu1 layout-block-padding-none preload">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="page page-container"> 
+    <header role="banner" class="header" id="header">
+     <h1 class="sr-only">Office of the Registrar</h1><a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen: </span>Skip to content</a><a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen: </span>Skip to search</a>
+     <div class="header-container container">
+      <div class="princeton-branding">
+       <div class="container"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"> <img src="/profiles/ps/themes/ps_base/images/pu-logo.svg" alt="Princeton University"> </a>
+       </div>
+      </div>
+      <div class="site-branding">
+       <div class="container">
+        <div class="row">
+         <div class="site-info">
+          <div class="site-name"><a href="/" title="Home" rel="home">Office of the Registrar</a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <nav aria-label="site" class="main-menu">
+       <h2 class="sr-only">Main Menu</h2>
+       <div class="container navbar-expand-lg"><button class="toggle-mobile-menu unbutton" type="button" data-toggle="collapse" data-target="#menu-container" aria-controls="menu-container" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-mobile-menu-icon"> <span class="toggle-mobile-menu-title">Menu</span> <i class="fa fa-bars" aria-hidden="true"></i> </span> </button>
+        <div id="menu-container" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav main">
+          <li class="nav-item expanded active"><a href="/student-and-alumni-services"> <span class="height"> <span class="width"> Student and Alumni Services </span> </span> </a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+           <ul class="submenu collapse">
+            <li class="submenu-item expanded"><a href="/student-and-alumni-services/transcript-and-verification-services"> <span class="height"> <span class="width"> Transcript and Verification Services </span> </span> </a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+             <ul class="submenu collapse">
+              <li class="submenu-item"><a href="/student-and-alumni-services/transcript-and-verification-services/calculate-your-gpa"> <span class="height"> <span class="width"> Calculate Your GPA </span> </span> </a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/student-and-alumni-services/first-year-course-selection"> <span class="height"> <span class="width"> First Year Course Selection </span> </span> </a></li>
+            <li class="submenu-item expanded"><a href="/student-and-alumni-services/course-selection"> <span class="height"> <span class="width"> Course Selection </span> </span> </a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+             <ul class="submenu collapse">
+              <li class="submenu-item"><a href="/student-and-alumni-services/course-selection/undergraduate-course-selection"> <span class="height"> <span class="width"> Undergraduate Course Selection </span> </span> </a></li>
+              <li class="submenu-item"><a href="/student-and-alumni-services/course-selection/graduate-course-selection"> <span class="height"> <span class="width"> Graduate Course Selection </span> </span> </a></li>
+              <li class="submenu-item"><a href="/student-and-alumni-services/course-selection/adding-or-dropping-courses"> <span class="height"> <span class="width"> Adding or Dropping Courses </span> </span> </a></li>
+              <li class="submenu-item"><a href="/student-and-alumni-services/course-selection/pdf-and-grade-option-selection"> <span class="height"> <span class="width"> P/D/F and Grade Option Selection </span> </span> </a></li>
+             </ul></li>
+            <li class="submenu-item active"><a href="/student-and-alumni-services/concentration-declaration"> <span class="height"> <span class="width"> Concentration Declaration </span> </span> </a></li>
+            <li class="submenu-item"><a href="/student-and-alumni-services/senior-checkout"> <span class="height"> <span class="width"> Senior Checkout </span> </span> </a></li>
+            <li class="submenu-item"><a href="/student-and-alumni-services/veterans"> <span class="height"> <span class="width"> Veterans </span> </span> </a></li>
+            <li class="submenu-item"><a href="/student-and-alumni-services/diplomas"> <span class="height"> <span class="width"> Diplomas </span> </span> </a></li>
+            <li class="submenu-item expanded"><a href="/student-and-alumni-services/policies"> <span class="height"> <span class="width"> Policies </span> </span> </a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+             <ul class="submenu collapse">
+              <li class="submenu-item"><a href="/student-and-alumni-services/policies/data-privacy"> <span class="height"> <span class="width"> Data Privacy </span> </span> </a></li>
+              <li class="submenu-item"><a href="/student-and-alumni-services/policies/name-preferences"> <span class="height"> <span class="width"> Name Preferences </span> </span> </a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/student-and-alumni-services/summer-undergraduate-internship-milestone-credit"> <span class="height"> <span class="width"> Summer Undergraduate Internship Milestone Credit </span> </span> </a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/faculty-and-department-resources"> <span class="height"> <span class="width"> Faculty and Department Resources </span> </span> </a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+           <ul class="submenu collapse">
+            <li class="submenu-item expanded"><a href="/faculty-and-department-resources/examinations-and-grading"> <span class="height"> <span class="width"> Examinations and Grading </span> </span> </a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+             <ul class="submenu collapse">
+              <li class="submenu-item"><a href="/faculty-and-department-resources/examinations-and-grading/examination-and-grading-dates"> <span class="height"> <span class="width"> Examination and Grading Dates </span> </span> </a></li>
+              <li class="submenu-item"><a href="/faculty-and-department-resources/examinations-and-grading/grading-practices"> <span class="height"> <span class="width"> Grading Practices </span> </span> </a></li>
+              <li class="submenu-item"><a href="/faculty-and-department-resources/examinations-and-grading/conduct-courses"> <span class="height"> <span class="width"> Conduct of Courses </span> </span> </a></li>
+             </ul></li>
+            <li class="submenu-item expanded"><a href="/faculty-and-department-resources/secure-resources"> <span class="height"> <span class="width"> Secure Resources </span> </span> </a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/course-offerings"> <span class="height"> <span class="width"> Course Offerings </span> </span> </a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+           <ul class="submenu collapse">
+            <li class="submenu-item"><a href="/course-offerings"> <span class="height"> <span class="width"> Search </span> </span> </a></li>
+            <li class="submenu-item"><a href="/course-offerings/new-courses"> <span class="height"> <span class="width"> New Courses </span> </span> </a></li>
+            <li class="submenu-item"><a href="/course-offerings/proces-courses"> <span class="height"> <span class="width"> Program for Community-Engaged Scholarship Courses </span> </span> </a></li>
+            <li class="submenu-item"><a href="/course-offerings/summer-programs"> <span class="height"> <span class="width"> Summer Programs </span> </span> </a></li>
+           </ul></li>
+          <li class="nav-item"><a href="/classrooms"> <span class="height"> <span class="width"> Classrooms </span> </span> </a></li>
+          <li class="nav-item"><a href="/academic-calendar-and-deadlines"> <span class="height"> <span class="width"> Academic Calendar and Deadlines </span> </span> </a></li>
+          <li class="nav-item expanded"><a href="/final-exams"> <span class="height"> <span class="width"> Final Exams </span> </span> </a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+           <ul class="submenu collapse">
+            <li class="submenu-item"><a href="/final-exams/schedule"> <span class="height"> <span class="width"> Final Exam Schedule </span> </span> </a></li>
+            <li class="submenu-item"><a href="/final-exams/policy"> <span class="height"> <span class="width"> Policy </span> </span> </a></li>
+            <li class="submenu-item"><a href="/final-exams/reschedule-request"> <span class="height"> <span class="width"> Reschedule Request </span> </span> </a></li>
+           </ul></li>
+         </ul>
+         <div class="utility-menu">
+          <ul class="nav navbar-nav utility-nav">
+           <li class="nav-item"><a href="/tigerhub" data-drupal-link-system-path="node/766">TigerHub</a></li>
+           <li class="nav-item"><a href="/about-us" data-drupal-link-system-path="node/651">About Us</a></li>
+           <li class="nav-item"><a href="/contact-us" data-drupal-link-system-path="node/271">Contact Us</a></li>
+           <li class="nav-item"><a href="/forms" data-drupal-link-system-path="node/761">Forms</a></li>
+           <li class="nav-item"><a href="/catalogs" data-drupal-link-system-path="node/756">Catalogs</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </nav>
+      <div class="search-bar" id="search-bar">
+       <div class="container navbar-expand-lg" role="search">
+        <h2 class="sr-only">Search</h2><button class="toggle-searchbar unbutton" type="button" data-toggle="collapse" data-target="#search-bar-container" aria-controls="search-bar-container" aria-expanded="false" aria-label="Toggle search"> <span class="toggle-search-icon"> <i class="fas fa-search" aria-hidden="true"></i> </span> </button>
+        <div id="search-bar-container" class="collapse navbar-collapse">
+         <div class="search-block-form contextual-region block block-search container-inline" id="block-searchform">
+          <form action="/search" method="get" id="search-block-form" accept-charset="UTF-8">
+           <div id="search-toggled" class="form-group js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label"><label for="edit-search-keys" class="visually-hidden">Search</label>
+            <input placeholder="Search" type="search" id="edit-search-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control">
+           </div>
+           <div data-drupal-selector="edit-search-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-search-actions">
+            <input type="submit" id="edit-search-submit" value="Submit" class="button js-form-submit form-submit btn btn-primary">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="breadcrumb" id="breadcrumb">
+     <div class="container">
+      <nav role="navigation" aria-label="breadcrumb">
+       <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/student-and-alumni-services">Student and Alumni Services</a></li>
+       </ol>
+      </nav>
+     </div>
+    </div>
+    <div class="highlighted" id="highlighted">
+     <div class="container">
+      <div class="region region-highlighted">
+       <div data-drupal-messages-fallback class="hidden"></div>
+       <div id="block-registrar-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+        <h1 class="page-title"> Concentration Declaration </h1>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="main" class="main-container">
+     <div class="container">
+      <div class="row">
+       <div class="sidebar-first section order-first col-sm-4 col-md-3 col-lg-2">
+        <nav class="main-sidebar-menu" aria-label="section">
+         <h2 class="sr-only">Section Menu</h2>
+         <ul class="nav navbar-nav main">
+          <li class="nav-item collapsed"><a href="/student-and-alumni-services/transcript-and-verification-services"> <span class="height"> <span class="width"> Transcript and Verification Services </span> </span> </a></li>
+          <li class="nav-item"><a href="/student-and-alumni-services/first-year-course-selection"> <span class="height"> <span class="width"> First Year Course Selection </span> </span> </a></li>
+          <li class="nav-item collapsed"><a href="/student-and-alumni-services/course-selection"> <span class="height"> <span class="width"> Course Selection </span> </span> </a></li>
+          <li class="nav-item active"><a href="/student-and-alumni-services/concentration-declaration"> <span class="height"> <span class="width"> Concentration Declaration </span> </span> </a></li>
+          <li class="nav-item"><a href="/student-and-alumni-services/senior-checkout"> <span class="height"> <span class="width"> Senior Checkout </span> </span> </a></li>
+          <li class="nav-item"><a href="/student-and-alumni-services/veterans"> <span class="height"> <span class="width"> Veterans </span> </span> </a></li>
+          <li class="nav-item"><a href="/student-and-alumni-services/diplomas"> <span class="height"> <span class="width"> Diplomas </span> </span> </a></li>
+          <li class="nav-item collapsed"><a href="/student-and-alumni-services/policies"> <span class="height"> <span class="width"> Policies </span> </span> </a></li>
+          <li class="nav-item"><a href="/student-and-alumni-services/summer-undergraduate-internship-milestone-credit"> <span class="height"> <span class="width"> Summer Undergraduate Internship Milestone Credit </span> </span> </a></li>
+         </ul>
+        </nav>
+       </div>
+       <main class="main main-content col-sm-12 col-lg-10 order-last"><a id="main-content" class="sr-only skip-link"></a>
+        <div class="region region-content">
+         <div id="block-registrar-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+          <article role="article" about="/student-and-alumni-services/concentration-declaration" class="node node--type-ps-basic-page node--promoted node--view-mode-full">
+           <div class="node__content">
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-block-plugin-id="ps_node_view" class="block block-ps-core block-ps-node-view">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p>With two years of coursework completed, you normally declare your concentration in late spring of your sophomore year. To ensure a smooth declaration process, meet with your intended department to discuss your plans well in advance of the deadline. You can find complete concentration declaration details at the <a href="https://odoc.princeton.edu/advising/choosing-major/declaring-major" target="_blank">Office of the Dean of the College</a>.</p>
+                 <h2>Declaring a Concentration</h2>
+                 <p>Every student&nbsp;declares a&nbsp;concentration (major) during specific periods in the spring semester:</p>
+                 <ul>
+                  <li>A.B.: March/April of sophomore year</li>
+                  <li>B.S.E.: April of your first year</li>
+                 </ul>
+                 <p>Students receive instructions prior to these declaration periods.&nbsp;<span><span>AB students may Indicate an intended concentration in</span></span> <strong><span><span><a href="https://phubprod.princeton.edu/psp/phubprod/?cmd=start">Tigerhub</a></span></span></strong><span><span><span><span> between&nbsp;</span></span></span></span><strong><span><span>March 24 and April 11, 2022.</span></span></strong>&nbsp;</p>
+                 <h2>A.B. Concentration Information</h2>
+                 <p>For more information, please see the “Declaring a Major” page at the <a href="https://odoc.princeton.edu/advising/choosing-major/declaring-major" target="_blank">Office of the Dean of the College</a>.</p>
+                 <ul dir="ltr">
+                  <li><a href="https://aas.princeton.edu/academics/undergraduate-program/concentration-requirements" target="_blank">African American Studies</a></li>
+                  <li><a href="https://anthropology.princeton.edu/undergraduate/majoring-anthropology" target="_blank">Anthropology</a></li>
+                  <li><a href="http://soa.princeton.edu/zone/degree/#19" target="_blank">Architecture</a></li>
+                  <li><a href="http://artandarchaeology.princeton.edu/about-us/undergraduate/overview#/about-us/undergraduate/overview" target="_blank">Art and Archaeology</a></li>
+                  <li><a href="https://web.astro.princeton.edu/academic-programs/undergraduate-program/declaring-astrophysics-major" target="_blank">Astrophysical Sciences</a></li>
+                  <li><a href="https://chemistry.princeton.edu/undergrads/new-majors" target="_blank">Chemistry</a></li>
+                  <li><a href="https://classics.princeton.edu/programs/undergraduate/overview" target="_blank">Classics</a></li>
+                  <li><a href="https://complit.princeton.edu/undergraduate-program" target="_blank">Comparative Literature</a></li>
+                  <li><a href="https://www.cs.princeton.edu/ugrad/becoming-cs-major" target="_blank">Computer Science</a></li>
+                  <li><a href="http://www.princeton.edu/eas/undergraduate/prospective-undergraduate/" target="_blank">East Asian Studies</a></li>
+                  <li><a href="https://eeb.princeton.edu/undergraduate" target="_blank">Ecology and Evolutionary Biology</a></li>
+                  <li><a href="https://economics.princeton.edu/undergraduate-program/prospective-concentrators/major-declaration-checklist/" target="_blank">Economics</a></li>
+                  <li><a href="https://english.princeton.edu/undergraduate/majoring-english" target="_blank">English</a></li>
+                  <li><a href="http://fit.princeton.edu/undergraduate/concentrating/plan-study" target="_blank">French and Italian</a></li>
+                  <li><a href="http://www.princeton.edu/geosciences/undergraduate/" target="_blank">Geosciences</a></li>
+                  <li><a href="http://german.princeton.edu/undergraduate/" target="_blank">German</a></li>
+                  <li><a href="https://history.princeton.edu/academics/undergraduate/prospective-students" target="_blank">History</a></li>
+                  <li><a href="https://www.math.princeton.edu/undergraduate/majors/declaring" target="_blank">Mathematics</a></li>
+                  <li><a href="http://molbio.princeton.edu/undergraduate/declaring-a-major" target="_blank">Molecular Biology</a></li>
+                  <li><a href="https://music.princeton.edu/majoring-music" target="_blank">Music</a></li>
+                  <li><a href="https://nes.princeton.edu/Prospective%20Students" target="_blank">Near Eastern Studies</a></li>
+                  <li><a href="http://pni.princeton.edu/education/undergraduate-concentration" target="_blank">Neuroscience</a></li>
+                  <li><a href="https://philosophy.princeton.edu/undergraduate/concentration-requirements" target="_blank">Philosophy</a></li>
+                  <li><a href="https://phy.princeton.edu/undergraduate-program" target="_blank">Physics</a></li>
+                  <li><a href="https://politics.princeton.edu/declaring-politics-your-major" target="_blank">Politics</a></li>
+                  <li><a href="https://psych.princeton.edu/how-declare" target="_blank">Psychology</a></li>
+                  <li><a href="https://spia.princeton.edu/undergraduate-program/curriculum-requirements/concentration-declaration" target="_blank">Public and International Affairs</a></li>
+                  <li><a href="https://religion.princeton.edu/undergraduate-program/class-of-2024/" target="_blank">Religion</a></li>
+                  <li><a href="http://slavic.princeton.edu/undergraduate-program" target="_blank">Slavic Languages and Literatures</a></li>
+                  <li><a href="http://www.princeton.edu/sociology/undergraduate-program/forms/" target="_blank">Sociology</a></li>
+                  <li><a href="http://spo.princeton.edu/undergraduate/concentration-new" target="_blank">Spanish and Portuguese</a></li>
+                 </ul>
+                 <h2>B.S.E. (Engineering) Concentration Process</h2>
+                 <p dir="ltr">Once you have completed the advising process outlined by the Dean and enrolled in courses for the fall semester, you may declare your concentration in the <strong><a href="https://phubprod.princeton.edu/psp/phubprod/?cmd=start" target="_blank">TigerHub</a>&nbsp;</strong>between <strong>April 25 and 29, 2022</strong>.&nbsp;For more information, please see the “Declaring a Major” page at the <a href="https://odoc.princeton.edu/advising/choosing-major/declaring-major" target="_blank">Office of the Dean of the College</a>.</p>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </main>
+      </div>
+     </div>
+    </div>
+    <footer role="contentinfo" class="footer" id="footer">
+     <h2 class="sr-only">Footer</h2>
+     <div class="container">
+      <div class="constrained-bkg-constrained-content layout layout--fourcol-25-25-25-25">
+       <div class="layout-inner-container">
+        <div class="layout__region layout__region--first layout__region--quarters layout__region--narrow">
+         <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+          <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+           <h3>Office of the Registrar</h3>
+           <p>Princeton University<br> 330 Alexander Street, 4th floor<br> Princeton, NJ 08540</p>
+          </div>
+         </div>
+        </div>
+        <div class="layout__region layout__region--second layout__region--quarters layout__region--narrow">
+         <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+          <h2 class="block-heading">Contact</h2>
+          <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+           <p>Phone: (609) 258-3361<br> Fax: (609) 258-6328<br> Email: <a href="mailto:registrar@princeton.edu">registrar@princeton.edu</a></p>
+          </div>
+         </div>
+        </div>
+        <div class="layout__region layout__region--third layout__region--quarters layout__region--narrow">
+         <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+          <h2 class="block-heading">Office Hours</h2>
+          <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+           <p>Academic Year:<br> 8:45 a.m. - 5:00 p.m.</p>
+           <p>Summer:<br> 8:30 a.m. - 4:30 p.m.</p>
+          </div>
+         </div>
+        </div>
+        <div class="layout__region layout__region--fourth layout__region--quarters layout__region--narrow">
+         <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+          <h2 class="block-heading">Quicklinks</h2>
+          <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+           <ul>
+            <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="642abeae-3826-4677-9fb1-298887afb7bd" href="/registrar-functions">Registrar Functions</a><em>&nbsp;(Registrar staff only)</em></li>
+            <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="9c6131df-e7f9-4402-9824-325f5466bbfb" href="/community-auditing">Community Auditing</a></li>
+            <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="3ddfc0ef-8411-4502-80f4-23db5e1550af" href="/enrollment">University Enrollment Statistics</a></li>
+            <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="3ddfc0ef-8411-4502-80f4-23db5e1550af" href="/enrollment#datasets">Data Sets</a></li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="constrained-bkg-constrained-content layout layout--onecol">
+       <div class="layout-container">
+        <div class="layout__region layout__region--content">
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="subfooter">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-6"><a href="http://odoc.princeton.edu" class="odoc-logo" title="Office of the Dean of the College"> <img src="/sites/g/files/toruqf136/themes/site/images/logo-odoc.svg" alt="Office of the Dean of the College"> </a>
+        </div>
+        <div class="col-md-6 text-sm-left text-md-right copyright"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"><img src="/profiles/ps/themes/ps_base/images/pu-logo-stacked.svg" alt="Princeton University"> </a>
+         <p class="copyright-text"> © 2022 The Trustees of Princeton University </p>
+         <div class="subfooter-links">
+          <ul class="list-unstyled">
+           <li><a href="https://accessibility.princeton.edu/resources/accessibility-help" target="_blank">Accessibility</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div> 
+  </div><span id="ps-current-username" data-username=""></span>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/71","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"all_documents_new_window":false,"select2_simple":{"selector":".node-form select:not(.disable-select2,[name$=\u0027[actions][bundle]\u0027],.ui-timepicker-select,[name*=\u0027field_ps_timeline_feature_items\u0027]),.select2-form select,#drupal-off-canvas select[multiple]"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"ajax":[],"user":{"uid":0,"permissionsHash":"2d05a72c75f57a7c6fd825dd9e40840ea0ff39171cf84c8939eb7d66305bc17a"}}</script>
+  <script src="/sites/g/files/toruqf136/files/js/js_3AVy6XUg4BOyaOLZ1s-dE7mym5duADYEupMAtJBxM2c.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"427707476","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":517,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

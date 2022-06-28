@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+ <head>
+  <meta charset="UTF-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-6f137388fcf878e2d61",applicationID:"884951671"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="pingback" href="https://we-are.usc.edu/wp/xmlrpc.php">
+  <link rel="shortcut icon" href="https://we-are.usc.edu/wp-content/themes/usc-gateway-2018/assets/images/favicon.ico?ver=1.0.28">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><!-- This site is optimized with the Yoast SEO plugin v19.1 - https://yoast.com/wordpress/plugins/seo/ -->
+  <title>Phases and Guidelines - 2022</title>
+  <link rel="canonical" href="https://we-are.usc.edu/phases-and-guidelines/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Phases and Guidelines - 2022">
+  <meta property="og:description" content="Guiding Principles Guiding Principles The foundation for the university’s goal of a safe campus reopening Question General Restart Answers to some of the most common questions about returning to campus Latest Updates">
+  <meta property="og:url" content="https://we-are.usc.edu/phases-and-guidelines/">
+  <meta property="og:site_name" content="2022">
+  <meta property="article:modified_time" content="2022-01-11T23:57:50+00:00">
+  <meta property="og:image" content="https://we-are.usc.edu/wp-content/uploads/2020/06/Campus_GR49897.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:label1" content="Est. reading time">
+  <meta name="twitter:data1" content="1 minute">
+  <script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://live-usc-restart.pantheonsite.io/#website","url":"https://live-usc-restart.pantheonsite.io/","name":"We are SC","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://live-usc-restart.pantheonsite.io/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://we-are.usc.edu/phases-and-guidelines/#primaryimage","url":"https://we-are.usc.edu/wp-content/uploads/2020/06/Campus_GR49897.jpg","contentUrl":"https://we-are.usc.edu/wp-content/uploads/2020/06/Campus_GR49897.jpg","width":2500,"height":1407,"caption":"A deserted USC campus Thursday at noon, March 18, 2020 due to the COVID-19 outbreak. Day four of online classes after the CDC recommending a halt of all gatherings larger than 50 for the next eight weeks forcing the USC administration to order courses be held online for the rest of the semester. (USC Photo/Gus Ruelas)"},{"@type":"WebPage","@id":"https://we-are.usc.edu/phases-and-guidelines/#webpage","url":"https://we-are.usc.edu/phases-and-guidelines/","name":"Phases and Guidelines - 2022","isPartOf":{"@id":"https://live-usc-restart.pantheonsite.io/#website"},"primaryImageOfPage":{"@id":"https://we-are.usc.edu/phases-and-guidelines/#primaryimage"},"datePublished":"2020-06-23T19:00:29+00:00","dateModified":"2022-01-11T23:57:50+00:00","breadcrumb":{"@id":"https://we-are.usc.edu/phases-and-guidelines/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://we-are.usc.edu/phases-and-guidelines/"]}]},{"@type":"BreadcrumbList","@id":"https://we-are.usc.edu/phases-and-guidelines/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://we-are.usc.edu/"},{"@type":"ListItem","position":2,"name":"Phases and Guidelines"}]}]}</script><!-- / Yoast SEO plugin. -->
+  <link rel="dns-prefetch" href="//we-are.usc.edu">
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//s.w.org"><!-- This site uses the Google Analytics by MonsterInsights plugin v8.6.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+  <script src="//www.googletagmanager.com/gtag/js?id=UA-119757394-18" data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '8.6.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-119757394-18',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						if ( document.cookie.indexOf( disableStrs[ index ] + '=true' ) > -1 ) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						document.cookie = disableStrs[ index ] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if ( mi_track_user ) {
+					function __gtagDataLayer() {
+						dataLayer.push( arguments );
+					}
+
+					function __gtagTracker( type, name, parameters ) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply( null, arguments );
+							return;
+						}
+
+						if ( type === 'event' ) {
+							
+															parameters.send_to = monsterinsights_frontend.ua;
+								__gtagDataLayer( type, name, parameters );
+													} else {
+							__gtagDataLayer.apply( null, arguments );
+						}
+					}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+											} );
+															__gtagTracker( 'config', 'UA-119757394-18', {"forceSSL":"true","link_attribution":"true"} );
+										window.gtag = __gtagTracker;											(function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+																				if ( ! ( ! args.hasOwnProperty(arg) || ! gaMap.hasOwnProperty(arg) ) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						})();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script><!-- / Google Analytics by MonsterInsights -->
+  <link rel="stylesheet" id="wp-block-library-css" href="https://we-are.usc.edu/wp-content/plugins/gutenberg/build/block-library/style.css?ver=13.4.0" type="text/css" media="all">
+  <link rel="stylesheet" id="sp-ea-font-awesome-css" href="https://we-are.usc.edu/wp-content/plugins/easy-accordion-free/public/assets/css/font-awesome.min.css?ver=2.0.21" type="text/css" media="all">
+  <link rel="stylesheet" id="sp-ea-style-css" href="https://we-are.usc.edu/wp-content/plugins/easy-accordion-free/public/assets/css/ea-style.css?ver=2.0.21" type="text/css" media="all">
+  <style id="sp-ea-style-inline-css" type="text/css">
+#sp-ea-8966 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-8966.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-8966.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-8966.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-8966.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-8966.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-8966.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-8846 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-8846.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-8846.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-8846.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-8846.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-8846.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-8846.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-7735 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-7735.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-7735.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-7735.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-7735.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-7735.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-7735.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-5800 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5800.sp-easy-accordion>.sp-ea-single {border: 1px solid #870100; }#sp-ea-5800.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #ffffff;}#sp-ea-5800.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #870100; color: #ffffff;}#sp-ea-5800.sp-easy-accordion>.sp-ea-single {background: #870100;}#sp-ea-5800.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #ffffff;font-size: 16px;}#sp-ea-5799 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5799.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5799.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444444;}#sp-ea-5799.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #ffffff; color: #444444;}#sp-ea-5799.sp-easy-accordion>.sp-ea-single {background: ##eaeaea;}#sp-ea-5799.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #444444;font-size: 16px;}#sp-ea-5797 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5797.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5797.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444444;}#sp-ea-5797.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #ffffff; color: #444444;}#sp-ea-5797.sp-easy-accordion>.sp-ea-single {background: #eaeaea;}#sp-ea-5797.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #444444;font-size: 16px;}#sp-ea-5783 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5783.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5783.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444444;}#sp-ea-5783.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #ffffff; color: #444444;}#sp-ea-5783.sp-easy-accordion>.sp-ea-single {background: #eaeaea;}#sp-ea-5783.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #444444;font-size: 16px;}#sp-ea-5775 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5775.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5775.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-5775.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-5775.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-5775.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #444;font-size: 16px;}#sp-ea-5536 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5536.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5536.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-5536.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-5536.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-5536.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-5536.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-5513 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5513.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5513.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-5513.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-5513.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-5513.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-5513.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-5045 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5045.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5045.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-5045.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-5045.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-5045.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-5045.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-3195 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-3195.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-3195.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-3195.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-3195.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-3195.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #444;font-size: 16px;}#sp-ea-1754 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-1754.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-1754.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-1754.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-1754.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-1754.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-1754.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}
+</style>
+  <style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--usc-cardinal: #990000;--wp--preset--color--cardinal-60: #880000;--wp--preset--color--cardinal-70: #6b0200;--wp--preset--color--cardinal-80: #471f13;--wp--preset--color--usc-gold: #ffcc00;--wp--preset--color--gold-60: #c79200;--wp--preset--color--base-70: #1c1c19;--wp--preset--color--base-60: #2b2a23;--wp--preset--color--base-50: #44433c;--wp--preset--color--base-40: #5e5d56;--wp--preset--color--base-30: #77766f;--wp--preset--color--base-20: #c3c2bb;--wp--preset--color--off-white: #fafafa;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--black-to-transparent: linear-gradient(176deg, rgba(84,84,84,0) 41%, rgba(0,0,0,1) 98%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 16px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 32px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 20px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+  <link rel="stylesheet" id="usc-gateway-2018-style-css" href="https://we-are.usc.edu/wp-content/themes/usc-gateway-2018/assets/css/usc-gateway-2018.css?ver=1.0.28" type="text/css" media="screen,print">
+  <script type="text/javascript" src="https://we-are.usc.edu/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.6.0" id="monsterinsights-frontend-script-js"></script>
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id="monsterinsights-frontend-script-js-extra">/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/we-are.usc.edu","hash_tracking":"false","ua":"UA-119757394-18","v4_id":""};/* ]]> */
+</script>
+  <script type="text/javascript" src="https://we-are.usc.edu/wp/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+  <script type="text/javascript" src="https://we-are.usc.edu/wp/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script><!--[if lte IE 9]>
+<script type='text/javascript' src='https://we-are.usc.edu/wp-content/themes/usc-gateway-2018/assets/js/vendor/html5shiv.min.js?ver=1.0.28' id='html5-shiv-js'></script>
+<![endif]--><!-- Google Analytics snippet added by Site Kit -->
+  <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-119757394-18" id="google_gtagjs-js" async></script>
+  <script type="text/javascript" id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["we-are.usc.edu"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "UA-119757394-18", {"anonymize_ip":true});
+</script><!-- End Google Analytics snippet added by Site Kit -->
+  <link rel="https://api.w.org/" href="https://we-are.usc.edu/wp-json/">
+  <link rel="alternate" type="application/json" href="https://we-are.usc.edu/wp-json/wp/v2/pages/81">
+  <link rel="shortlink" href="https://we-are.usc.edu/?p=81">
+  <link rel="alternate" type="application/json+oembed" href="https://we-are.usc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwe-are.usc.edu%2Fphases-and-guidelines%2F">
+  <link rel="alternate" type="text/xml+oembed" href="https://we-are.usc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwe-are.usc.edu%2Fphases-and-guidelines%2F&amp;format=xml">
+  <meta name="generator" content="Site Kit by Google 1.75.0"> 
+  <style type="text/css" id="wp-custom-css">
+			/*Restart Roadmap Phases - Homepage*/
+.phase-icon-alignment {
+	text-align: center;
+}
+.phase-column-styling {
+	border-radius: 8px;
+}
+
+.phase-column-styling p {
+	margin-right: 0 !important;
+}
+
+.phase-column-styling h3 {
+	margin: 0 0 0.25rem !important;
+}
+
+.phase-column-styling.current-phase {
+box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+}
+.phase-column-styling.current-phase a {
+	color: #ffffff;
+}
+
+.phase-column-styling.current-phase a:hover {
+	color: #FFFFFF;
+}
+
+@media (max-width: 1024px) and (min-width: 880px) {
+	
+		.phases-container .wp-block-column:not(:first-child) {
+    margin-left: 16px;
+}
+	
+}
+
+
+@media (max-width: 880px) and (min-width: 600px) {
+	
+		.phases-container .wp-block-columns {
+			flex-wrap: wrap;
+	}
+	
+	.phases-container .wp-block-column {
+    flex-basis: 100% !important;
+    flex-grow: 0;
+		margin: 0 0 1rem !important;
+}
+	
+}
+
+/*Trojan Commitment*/
+.align-svg-commitment {
+	text-align: center;
+}
+/*END Trojan Commitment*/
+
+/*Notifcation*/
+.usc-notification-bar.has-notification-bar .notification-bar {
+		background: #E0E0E0 !important;
+}
+
+.usc-notification-bar.has-notification-bar .notification-bar .notification {
+	font-size: 16px !important;
+}
+/*END Notifcation*/
+
+/*Global Accordions Styling*/
+
+h3.ea-header {
+	font-weight: 400;
+}
+
+
+#sp-ea-5799 a, #sp-ea-5799 a:hover {
+	color: #FFFFFF;
+}
+/*END Accordions Styling*/
+
+/*Phases Accordions Styling*/
+/* #sp-ea-5775.sp-easy-accordion .sp-ea-single {
+	background: #FFFFFF !important;
+	border: 0 !important;
+}
+#sp-ea-5775.sp-easy-accordion .sp-ea-single .ea-header a {
+	padding: 0 !important;
+} */
+/* #sp-ea-5783.sp-easy-accordion .sp-ea-single {
+	color: #FFFFFF !important;
+	background: #880000 !important;
+	border: 0 !important;
+}
+#sp-ea-5783.sp-easy-accordion .sp-ea-single .ea-header a {
+	color: #FFFFFF !important;
+	padding: 0 !important;
+}
+#sp-ea-5783.sp-easy-accordion .sp-ea-single .ea-header a .ea-expand-icon.fa {
+	color: #FFFFFF !important;
+} */
+/* #sp-ea-5783.sp-easy-accordion .sp-ea-single .ea-body {
+	background: none !important;
+	color: white !important;
+} */
+/*END Phases Accordions Styling*/
+
+/*Community Messages Styling*/
+
+.wp-block-latest-posts li > a {
+    color: #1f1e18;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    text-decoration: none;
+}
+.wp-block-latest-posts li > a:hover {
+    text-decoration: underline;
+}
+/*END Community Messages Styling*/
+
+/* right-aligned paragraph margin fix */
+.wp-block-group.is-style-usc-group-content-width .wp-block-columns .wp-block-column p.has-text-align-right {
+	margin: 0 0 1rem 0;
+}
+
+/*WELCOME EXPERIENCE GALLERY STYLING*/
+.page-id-7179 .blocks-gallery-item img {
+border: 1px solid #272620;
+ 
+}
+
+.usc-gateway-2018-light .site-header {
+	/* changed this from 100000 because it was covering the wp-admin bar dropdowns :) -JE */
+	z-index: 99;
+}
+
+/*DO NOT REMOVE - FACULTY FEATURE PAGE*/
+.page-id-9591 .site-navigation-wrapper {
+	display: none;
+}
+
+.bar-short-phase-1 {
+  height: 80px;
+  width: 80px;
+  background-color: #fc0008;
+  border-radius: 50%;
+border-top: 0px;
+	border-bottom: 0px;
+}
+
+.bar-short-phase-22 {
+  height: 80px;
+  width: 80px;
+  background-color: #fd670a;
+  border-radius: 50%;
+border-top: 0px;
+	border-bottom: 0px;
+}
+
+.bar-short-phase-3 {
+  height: 80px;
+  width: 80px;
+    height: 80px;
+  width: 80px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+border-top: 0px;
+	border-bottom: 0px;
+  border-radius: 50%;
+border-top: 0px;
+	border-bottom: 0px;
+}
+
+.bar-short-phase-4 {
+    height: 80px;
+  width: 80px;
+ background-color: #14a0ed!important;
+  border-radius: 50%;
+border-top: 0px;
+	border-bottom: 0px;
+    
+}
+
+
+/* FIX FOR LONG PAGE/POST TITLES */
+.post-template-default .site-content .entry-title, .single .site-content .entry-title,
+.page-template-default .site-content .entry-title {
+	white-space: unset;
+}
+		</style>
+ </head>
+ <body class="page-template page-template-page-templates page-template-tpl-full-width page-template-page-templatestpl-full-width-php page page-id-81 page-parent usc-gateway-2018-light usc-display-new-badge usc-notification-bar has-notification-bar">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-dark-grayscale">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 0.49803921568627" />
+      <fefuncg type="table" tablevalues="0 0.49803921568627" />
+      <fefuncb type="table" tablevalues="0 0.49803921568627" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-grayscale">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 1" />
+      <fefuncg type="table" tablevalues="0 1" />
+      <fefuncb type="table" tablevalues="0 1" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-purple-yellow">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.54901960784314 0.98823529411765" />
+      <fefuncg type="table" tablevalues="0 1" />
+      <fefuncb type="table" tablevalues="0.71764705882353 0.25490196078431" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-blue-red">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 1" />
+      <fefuncg type="table" tablevalues="0 0.27843137254902" />
+      <fefuncb type="table" tablevalues="0.5921568627451 0.27843137254902" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-midnight">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 0" />
+      <fefuncg type="table" tablevalues="0 0.64705882352941" />
+      <fefuncb type="table" tablevalues="0 1" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-magenta-yellow">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.78039215686275 1" />
+      <fefuncg type="table" tablevalues="0 0.94901960784314" />
+      <fefuncb type="table" tablevalues="0.35294117647059 0.47058823529412" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-purple-green">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.65098039215686 0.40392156862745" />
+      <fefuncg type="table" tablevalues="0 1" />
+      <fefuncb type="table" tablevalues="0.44705882352941 0.4" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-blue-orange">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.098039215686275 1" />
+      <fefuncg type="table" tablevalues="0 0.66274509803922" />
+      <fefuncb type="table" tablevalues="0.84705882352941 0.41960784313725" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <div class="site"> <a class="skip-link screen-reader-text" aria-label="Skip to main content" href="#main">Skip to main content</a> 
+   <header id="masthead" class="site-header" role="banner">
+    <div class="site-header-wrapper">
+     <div class="site-branding-usc"><a class="site-branding-usc-logo" href="http://www.usc.edu">University of Southern California</a>
+     </div>
+     <div class="site-branding-unique">
+      <h1 class="site-branding-title"><a href="https://we-are.usc.edu/" rel="home">2022</a></h1>
+     </div>
+     <nav id="site-navigation" class="site-navigation" role="navigation">
+      <div class="site-navigation-wrapper">
+       <h2 class="site-navigation-title screen-reader-text">Primary Menu</h2>
+       <div class="menu-main-navigation-container">
+        <ul id="menu-main-navigation" class="site-navigation-menu">
+         <li id="menu-item-9704" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9704"><a href="https://change.usc.edu/transformation/addressing-sexual-assault/">Addressing Sexual Assault</a></li>
+         <li id="menu-item-9947" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9947"><a href="https://we-are.usc.edu/addressing-antisemitism-2/">Addressing Antisemitism</a>
+          <ul class="sub-menu">
+           <li id="menu-item-9933" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9933"><a href="https://we-are.usc.edu/messages/">Messages</a></li>
+           <li id="menu-item-9932" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9932"><a href="https://we-are.usc.edu/frequently-asked-questions/">Frequently Asked Questions</a></li>
+          </ul></li>
+         <li id="menu-item-520" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-520"><a href="#">On Campus</a>
+          <ul class="sub-menu">
+           <li id="menu-item-9484" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9484"><a href="https://we-are.usc.edu/general-restart-faq/">General Restart FAQs</a></li>
+           <li id="menu-item-9483" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9483"><a href="https://we-are.usc.edu/faqs/faq-events-and-activities/">Events &amp; Activities</a></li>
+           <li id="menu-item-93" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-81 current_page_item menu-item-93"><a href="https://we-are.usc.edu/phases-and-guidelines/" aria-current="page">Phases and Guidelines</a></li>
+           <li id="menu-item-9680" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9680"><a href="https://we-are.usc.edu/travel-guidance/">Travel Guidance</a></li>
+           <li id="menu-item-6216" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6216"><a href="https://we-are.usc.edu/support-funds/">Support Funds</a></li>
+          </ul></li>
+         <li id="menu-item-6157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6157"><a href="https://we-are.usc.edu/university-messages/">University Messages</a></li>
+         <li id="menu-item-8136" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8136"><a href="https://we-are.usc.edu/quick-takes/">Quick Takes</a></li>
+         <li id="menu-item-9517" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9517"><a href="https://coronavirus.usc.edu/">COVID-19 Resource Center</a>
+          <ul class="sub-menu">
+           <li id="menu-item-9518" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9518"><a href="https://sites.google.com/usc.edu/covidnotifications-ay22/home">COVID-19 Daily Digest</a></li>
+          </ul></li>
+        </ul>
+       </div> 
+       <div class="site-menu-toggle-wrapper"><a href="javascript:void(0);" class="site-menu-toggle" aria-label="Navigation Menu" aria-expanded="false">
+         <svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+          <title id="icon_title">Menu</title><desc id="icon_desc">
+           An icon that consists of three parallel horizontal lines suggestive of a list.
+          </desc><path d="M0 0h24v24H0z" fill="none" /><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+         </svg></a>
+       </div>
+       <div class="site-search-toggle-wrapper"><a href="javascript:void(0);" class="site-search-toggle" aria-label="Search" aria-expanded="false">
+         <svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+          <title id="icon_title">Search</title><desc id="icon_desc">
+           An icon of a magnifying glass.
+          </desc><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" /><path d="M0 0h24v24H0z" fill="none" />
+         </svg></a>
+       </div>
+      </div>
+     </nav>
+    </div>
+    <div class="site-search-wrapper">
+     <div class="site-search">
+      <form role="search" method="get" class="search-form" action="https://we-are.usc.edu/"><label> <span class="screen-reader-text">Search for:</span> <input type="text" class="search-field" name="s" placeholder="Search..." title="search"> <input type="submit" class="visuallyhidden" value="Submit"> </label><a href="javascript:void(0);" class="search-icon-close">
+        <svg class="svg-icon" width="20" height="20" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+         <title id="icon_title">Close</title><desc id="icon_desc">
+          An icon of a letter X.
+         </desc><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" /><path d="M0 0h24v24H0z" fill="none" />
+        </svg><span class="screen-reader-text">Close Search</span></a>
+      </form>
+     </div>
+    </div>
+   </header><!-- #masthead -->
+   <div id="content" class="site-content">
+    <div id="primary" class="content-area">
+     <main id="main" class="site-main" role="main">
+      <article id="post-81" class="post-81 page type-page status-publish hentry">
+       <header class="entry-header">
+        <h1 class="entry-title screen-reader-text">Phases and Guidelines</h1> 
+       </header>
+       <div class="entry-content">
+        <div class="wp-block-cover alignfull has-background-dim-80 has-background-dim has-background-gradient" style="min-height:240px">
+         <span aria-hidden="true" class="wp-block-cover__gradient-background" style="background:linear-gradient(176deg,rgba(84,84,84,0) 25%,rgba(0,0,0,1) 98%)"></span>
+         <img width="2500" height="1407" class="wp-block-cover__image-background wp-image-5627" alt="" src="https://we-are.usc.edu/wp-content/uploads/2020/06/Campus_GR49897.jpg" style="object-position:67% 72%" data-object-fit="cover" data-object-position="67% 72%" srcset="https://we-are.usc.edu/wp-content/uploads/2020/06/Campus_GR49897.jpg 2500w, https://we-are.usc.edu/wp-content/uploads/2020/06/Campus_GR49897-300x169.jpg 300w, https://we-are.usc.edu/wp-content/uploads/2020/06/Campus_GR49897-1024x576.jpg 1024w, https://we-are.usc.edu/wp-content/uploads/2020/06/Campus_GR49897-768x432.jpg 768w, https://we-are.usc.edu/wp-content/uploads/2020/06/Campus_GR49897-1536x864.jpg 1536w, https://we-are.usc.edu/wp-content/uploads/2020/06/Campus_GR49897-2048x1153.jpg 2048w" sizes="(max-width: 2500px) 100vw, 2500px">
+         <div class="wp-block-cover__inner-container">
+          <div class="wp-container-2 wp-block-group is-style-usc-group-content-width">
+           <div class="wp-block-group__inner-container">
+            <h2 class="is-style-display-2"><br><br>Phases and Guidelines</h2>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
+        <div class="wp-container-3 wp-block-group is-style-usc-group-content-width">
+         <div class="wp-block-group__inner-container"></div>
+        </div>
+        <div class="wp-container-10 wp-block-group alignfull">
+         <div class="wp-block-group__inner-container">
+          <div class="wp-container-9 wp-block-group is-style-usc-group-content-width">
+           <div class="wp-block-group__inner-container">
+            <div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
+            <div class="wp-container-8 wp-block-columns">
+             <div class="wp-container-5 wp-block-column">
+              <svg width="88px" height="88px" viewbox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <title>Guiding Principles</title><g id="Project-Restart-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> 
+                <g id="Desktop-HD" transform="translate(-70.000000, -70.000000)" fill-rule="nonzero">
+                 <g id="Guiding-Principles" transform="translate(70.000000, 70.000000)">
+                  <circle id="Oval-Copy-11" fill="#E0E0DD" cx="44" cy="44" r="44"></circle>
+                  <g id="noun_User_2363139" transform="translate(19.000000, 19.000000)" fill="#000000">
+                   <g id="Group" transform="translate(16.666667, 12.500000)">
+                    <path d="M15.1909722,23.3968099 L1.08506944,23.3968099 C0.48578559,23.3968099 0,22.8979008 0,22.2826761 L0,16.8605211 C0,13.7069654 2.49869792,11.141338 5.56998698,11.141338 L10.7060547,11.141338 C13.7773438,11.141338 16.2760417,13.7069654 16.2760417,16.8605211 L16.2760417,22.2826761 C16.2760417,22.8979008 15.7901476,23.3968099 15.1909722,23.3968099 Z M2.17013889,21.1685423 L14.1059028,21.1685423 L14.1059028,16.8605211 C14.1059028,14.9356321 12.5807292,13.3696057 10.7060547,13.3696057 L5.56998698,13.3696057 C3.6953125,13.3696057 2.17013889,14.9356321 2.17013889,16.8605211 L2.17013889,21.1685423 Z" id="Shape" />
+                    <path d="M8.13802083,10.0272042 C5.44563802,10.0272042 3.25520833,7.77810233 3.25520833,5.01360212 C3.25520833,2.24910191 5.44563802,0 8.13802083,0 C10.8304036,0 13.0208333,2.24910191 13.0208333,5.01360212 C13.0208333,7.77810233 10.8304036,10.0272042 8.13802083,10.0272042 Z M8.13802083,2.22826761 C6.6422526,2.22826761 5.42534722,3.47776867 5.42534722,5.01360212 C5.42534722,6.54943557 6.6422526,7.79893663 8.13802083,7.79893663 C9.63378906,7.79893663 10.8506944,6.54943557 10.8506944,5.01360212 C10.8506944,3.47776867 9.63378906,2.22826761 8.13802083,2.22826761 Z" id="Shape" />
+                   </g>
+                   <path d="M39.5198507,21.875 C39.0488837,21.875 38.6125987,21.5714789 38.4654767,21.0981936 C37.0451755,16.5301348 33.4698469,12.9549258 28.9017764,11.5345178 C28.3193635,11.3533771 27.9939721,10.7344061 28.1751133,10.1518842 C28.3562544,9.56936225 28.9748956,9.24397173 29.5578608,9.42511242 C34.820232,11.0614534 38.9387632,15.1800845 40.5748875,20.4423318 C40.7560286,21.0248538 40.4306372,21.6438247 39.8481138,21.8250759 C39.7389873,21.8588741 39.6285354,21.875 39.5198507,21.875 Z" id="Path" />
+                   <path d="M10.4653898,21.875 C10.3582656,21.875 10.2492887,21.8589389 10.1415107,21.8250565 C9.56676699,21.6446437 9.24572131,21.0280501 9.42444328,20.4479791 C11.061057,15.1352633 15.191387,11.0130517 20.473166,9.42134915 C21.0500892,9.24731684 21.6569811,9.57855027 21.8291645,10.1607114 C22.0013478,10.7428726 21.6734366,11.355726 21.0967313,11.5295383 C16.51175,12.911346 12.9263041,16.4894591 11.5056824,21.1012053 C11.3604163,21.5726986 10.9299579,21.875 10.4653898,21.875 Z" id="Path" />
+                   <path d="M29.2294866,40.625 C28.7585196,40.625 28.3222345,40.3213692 28.1751125,39.8480851 C27.9939714,39.2656751 28.3193628,38.6465953 28.9018862,38.4654551 C33.4698465,37.045161 37.0451753,33.4698506 38.4654766,28.9019138 C38.6466177,28.3195038 39.2659217,27.9938932 39.8481138,28.1751438 C40.4306372,28.3562841 40.7560286,28.9752535 40.5748875,29.5577739 C38.9387631,34.8202289 34.8201213,38.9387391 29.5577497,40.5748551 C29.4486232,40.6088741 29.3381713,40.625 29.2294866,40.625 Z" id="Path" />
+                   <path d="M20.7853846,40.625 C20.6821835,40.625 20.5772389,40.610039 20.473166,40.5786868 C15.191387,38.986876 11.060948,34.8648891 9.42444328,29.5521793 C9.24572131,28.9719989 9.56676699,28.355406 10.1415107,28.1749934 C10.7161454,27.9943608 11.3269604,28.3186634 11.5056824,28.8987338 C12.9263041,33.5105848 16.51175,37.0886939 21.0967313,38.4705 C21.6734366,38.6443121 22.0013478,39.2570548 21.8291645,39.8392153 C21.6880395,40.3165385 21.2546387,40.625 20.7853846,40.625 Z" id="Path" />
+                   <path d="M44.7123884,5.20833333 L22.9958534,5.20833333 C22.3768061,5.20833333 21.875,4.74199714 21.875,4.1667068 C21.875,3.59141647 22.3768061,3.12508027 22.9958534,3.12508027 L42.6130299,3.12508027 C42.0723303,2.37323424 41.5734384,1.67649026 41.5096618,1.57784823 C41.1911153,1.08463806 41.3630542,0.444766888 41.8938904,0.148632465 C42.4232695,-0.146460331 43.1090076,0.0115544138 43.4287871,0.501223045 C43.5464767,0.67611214 44.8480117,2.4843758 45.6433692,3.58652083 C45.8739288,3.90598768 45.8962338,4.31753433 45.7014295,4.65689625 C45.506513,4.99636233 45.1262075,5.20833333 44.7123884,5.20833333 Z" id="Path" />
+                   <path d="M42.7074537,8.33333333 C42.5089231,8.33333333 42.308205,8.27666906 42.1306107,8.15823656 C41.6518873,7.83918752 41.5226236,7.19244398 41.8417726,6.71381835 L43.9249903,3.58895022 C44.2440351,3.11022043 44.8906659,2.98095505 45.3693893,3.30010824 C45.8481127,3.61915728 45.9773764,4.26590082 45.6582274,4.74452645 L43.5750097,7.86939458 C43.3743958,8.1705277 43.0439975,8.33333333 42.7074537,8.33333333 Z" id="Path" />
+                   <path d="M6.48856419,50 C6.10971396,50 5.74027895,49.8213613 5.52955752,49.4988742 C5.41321239,49.3257561 4.11066254,47.516141 3.31496498,46.4133726 C3.08440435,46.0940104 3.06209926,45.6823602 3.2569045,45.3429988 C3.45170973,45.0036374 3.83190499,44.7916667 4.2458381,44.7916667 L25.9624747,44.7916667 C26.5814128,44.7916667 27.0833333,45.2581063 27.0833333,45.8332917 C27.0833333,46.408477 26.5814128,46.8749167 25.9624747,46.8749167 L6.34520637,46.8749167 C6.88590859,47.6268658 7.38491486,48.3235046 7.44869172,48.4222506 C7.76712767,48.9155642 7.59496378,49.5554344 7.06412512,49.8513601 C6.88366687,49.9519811 6.68482654,50 6.48856419,50 Z" id="Path" />
+                   <path d="M5.20744016,45.8333333 C5.00890693,45.8333333 4.8081863,45.7766691 4.63058968,45.6582366 C4.1519642,45.3391875 4.0225947,44.692444 4.3417478,44.2138183 L6.42499256,41.0889502 C6.7440415,40.6102204 7.39078483,40.480955 7.86941032,40.8001082 C8.3480358,41.1192614 8.4774053,41.7659008 8.1582522,42.2445265 L6.07500744,45.3693946 C5.87439097,45.6705277 5.54398835,45.8333333 5.20744016,45.8333333 Z" id="Path" />
+                   <path d="M45.8332031,48.9583333 C45.6651865,48.9583333 45.4967532,48.9146199 45.343007,48.8264084 C45.0036405,48.6316033 44.7916667,48.2512963 44.7916667,47.8374756 L44.7916667,26.1208577 C44.7916667,25.5019201 45.2581133,25 45.8333072,25 C46.4085012,25 46.8749478,25.5019201 46.8749478,26.1208577 L46.8749478,45.7381092 C47.6269082,45.1974074 48.3235574,44.6984016 48.4223049,44.6346248 C48.91573,44.316077 49.5555057,44.4884649 49.8514358,45.019191 C50.1464284,45.548348 49.9884115,46.2340887 49.4988404,46.5537573 C49.3258239,46.6701023 47.5161818,47.9726511 46.4133969,48.76846 C46.2387138,48.8945565 46.0362188,48.9583333 45.8332031,48.9583333 Z" id="Path" />
+                   <path d="M44.7906598,48.9583333 C44.592127,48.9583333 44.3914067,48.90167 44.2138104,48.7832395 L41.0889492,46.7000296 C40.6102205,46.380986 40.4809554,45.7342535 40.8001079,45.255636 C41.1191562,44.7768102 41.7658983,44.6476512 42.2445229,44.966799 L45.3693841,47.0500089 C45.8481129,47.3690525 45.977378,48.015785 45.6582255,48.4944025 C45.4576094,48.7955305 45.1272074,48.9583333 44.7906598,48.9583333 Z" id="Path" />
+                   <path d="M4.16669358,25 C3.59139595,25 3.12505383,24.4981925 3.12505383,23.8791435 L3.12505383,4.2619125 C2.3730941,4.80261369 1.67634127,5.30161902 1.57759382,5.36539575 C1.08427323,5.68383109 0.444498098,5.51177961 0.148568245,4.98082988 C-0.146424133,4.4517856 0.0115926176,3.76604557 0.501059136,3.4462652 C0.674179663,3.33003238 2.4838204,2.02737292 3.58660441,1.23167687 C3.90586699,1.00111669 4.31752302,0.978699555 4.65699341,1.1736165 C4.99635964,1.36842137 5.20833333,1.7486159 5.20833333,2.16254822 L5.20833333,23.8791435 C5.20833333,24.4981925 4.74199122,25 4.16669358,25 Z" id="Path" />
+                   <path d="M7.29067605,5.20833333 C7.09214114,5.20833333 6.8914188,5.15166866 6.71382068,5.03323534 L3.58892696,2.94997544 C3.11029741,2.63092419 2.98092681,1.98417615 3.30008262,1.50554719 C3.61923843,1.02691823 4.2658831,0.89765195 4.74451266,1.2167032 L7.86940637,3.2999631 C8.34803592,3.61901436 8.47740652,4.26576239 8.15825071,4.74439135 C7.95763254,5.04552657 7.62722711,5.20833333 7.29067605,5.20833333 Z" id="Path" />
+                   <path d="M24.4791667,45.8333333 C20.3513515,45.8333333 16.3455288,44.6533787 12.8946955,42.420828 C9.53453526,40.2469738 6.85825588,37.1891667 5.15506944,33.5775748 C4.89706731,33.0305796 5.1314156,32.3780182 5.67841079,32.1199065 C6.22551549,31.8622329 6.87807692,32.0963622 7.13596955,32.6432479 C10.287297,39.3254594 17.0948958,43.6431624 24.4791667,43.6431624 C35.0461939,43.6431624 43.6431624,35.0461939 43.6431624,24.4791667 C43.6431624,22.2870246 43.2763088,20.1377003 42.5528953,18.0908761 C42.3513996,17.5205556 42.6502484,16.8950427 43.2205689,16.6934375 C43.7907799,16.4918323 44.4164022,16.7907906 44.6180075,17.3610016 C45.4244284,19.6428312 45.8333333,22.0377831 45.8333333,24.4791667 C45.8333333,36.2538542 36.2538542,45.8333333 24.4791667,45.8333333 Z M4.50721688,29.0001175 C3.98310897,29.0001175 3.51988782,28.6227511 3.42899573,28.0886779 C3.22728098,26.9043429 3.125,25.6901122 3.125,24.4791667 C3.125,12.7044792 12.7044792,3.125 24.4791667,3.125 C31.4425962,3.125 37.9868269,6.53520566 41.9848745,12.2471715 C42.331688,12.7426976 42.2111191,13.4254834 41.7157025,13.772297 C41.2202858,14.1190011 40.537281,13.9985417 40.1905769,13.503125 C36.6019818,8.37615385 30.7284909,5.31517094 24.4791667,5.31517094 C13.9121394,5.31517094 5.31517094,13.9121394 5.31517094,24.4791667 C5.31517094,25.5672436 5.4069391,26.6579487 5.58806624,27.7210577 C5.68958066,28.3172222 5.28866987,28.8828339 4.69239583,28.9844578 C4.63019498,28.9949706 4.56821314,29.0001175 4.50721688,29.0001175 Z" id="Shape" />
+                  </g>
+                 </g>
+                </g> 
+               </g>
+              </svg>
+              <div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+              <h4>Guiding Principles</h4>
+              <p>The foundation for the university’s goal of a safe campus reopening</p>
+              <div class="wp-container-4 wp-block-buttons is-content-justification-left">
+               <div class="wp-block-button is-style-usc-button-link">
+                <a class="wp-block-button__link" href="https://we-are.usc.edu/phases-and-guidelines/guiding-principles/">View our guiding principles</a>
+               </div>
+              </div>
+             </div>
+             <div class="wp-container-7 wp-block-column">
+              <svg width="88px" height="88px" viewbox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+               <title>Question</title><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> 
+                <g id="Question" fill-rule="nonzero">
+                 <circle id="Oval-Copy-14" fill="#E0E0DD" cx="44" cy="44" r="44"></circle>
+                 <g id="Group" transform="translate(20.500000, 22.000000)" fill="#000000">
+                  <path d="M22.5,0 C34.6968912,0 44.5,9.62849873 44.5,21.6081425 C44.5,26.1984733 43.0181347,30.7888041 40.2823834,34.4834606 L41.8782383,44 L30.8212435,41.648855 C28.1994819,42.6564885 25.3497409,43.216285 22.5,43.216285 C10.3031088,43.216285 0.5,33.5877863 0.5,21.6081425 C0.5,9.74045802 10.4170984,0 22.5,0 Z M22.5,2.79898219 C11.8989637,2.79898219 3.34974093,11.1959288 3.34974093,21.6081425 C3.34974093,32.0203562 12.0129534,40.4173028 22.5,40.4173028 C25.4637306,40.4173028 27.857513,39.8575064 30.5932642,38.7379135 L38.3445596,40.4173028 L37.2046632,33.6997455 C40.0544041,30.1170483 41.6502591,26.3104326 41.6502591,21.6081425 C41.6502591,11.307888 33.1010363,2.79898219 22.5,2.79898219 Z" id="Shape" />
+                  <path d="M15.5,16.9370629 C15.5,13.1328671 18.5333333,10 22.5,10 C26.4666667,10 29.5,13.1328671 29.5,16.9370629 C29.5,19.7342657 27.9833333,21.972028 25.4166667,23.2027972 C24.4833333,23.6503497 24.0166667,24.4335664 24.0166667,25.4405594 L24.0166667,26 L20.9833333,26 L20.9833333,25.4405594 C20.9833333,23.4265734 22.15,21.6363636 24.1333333,20.6293706 C25.65,19.8461538 26.5833333,18.6153846 26.5833333,16.9370629 C26.5833333,14.6993007 24.8333333,12.7972028 22.5,12.7972028 C20.1666667,12.7972028 18.4166667,14.6993007 18.4166667,16.9370629 L15.5,16.9370629 Z" id="Path" />
+                  <circle id="Oval" cx="22.5" cy="30" r="2"></circle>
+                 </g>
+                </g> 
+               </g>
+              </svg>
+              <div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+              <h4>General Restart </h4>
+              <p>Answers to some of the most common questions about returning to campus</p>
+              <div class="wp-container-6 wp-block-buttons is-content-justification-left">
+               <div class="wp-block-button is-style-usc-button-link">
+                <a class="wp-block-button__link" href="https://we-are.usc.edu/faqs/general-restart-faq/">See FAQs</a>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="wp-container-12 wp-block-group alignfull">
+         <div class="wp-block-group__inner-container">
+          <div class="wp-container-11 wp-block-group is-style-usc-group-content-width">
+           <div class="wp-block-group__inner-container">
+            <div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="height:48px" aria-hidden="true" class="wp-block-spacer"></div>
+        <div class="wp-container-14 wp-block-group alignfull is-style-default has-base-20-background-color has-background">
+         <div class="wp-block-group__inner-container">
+          <div class="wp-container-13 wp-block-group is-style-usc-group-content-width">
+           <div class="wp-block-group__inner-container">
+            <div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="height:48px" aria-hidden="true" class="wp-block-spacer"></div>
+        <div class="wp-container-15 wp-block-group is-style-usc-group-content-width">
+         <div class="wp-block-group__inner-container">
+          <h2 class="is-style-cardinal-bar">Latest Updates</h2>
+          <ul class="wp-block-latest-posts__list wp-block-latest-posts">
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/06/15/6-15-adding-a-paid-personal-holiday/"><span class="has-badge has-badge-new">6/15 – Adding a Paid Personal Holiday</span></a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Colleagues, Greetings. I am writing to share some good news. The University is adding a paid personal holiday for your use by the end of&nbsp;each&nbsp;calendar year. We receive many requests for additional paid holidays to commemorate meaningful events such as Juneteenth, Veterans Day, Cesar Chavez Day and others, that USC designates as non-instructional days.…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/06/06/6-6-introducing-julia-m-ritter-as-dean-of-the-usc-kaufman-school-of-dance/">6/6 – Introducing Julia M. Ritter as Dean of the USC Kaufman School of Dance</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             June 6, 2022 Dear USC Kaufman School Community, On behalf of President Folt, I am pleased to announce that we will welcome Dr. Julia M. Ritter as dean of the USC Kaufman School of Dance, effective July 1, 2022. Dr. Ritter will join us from the Mason Gross School of the Arts at Rutgers University,…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/05/20/5-20-highlights-from-an-amazing-year/">5/20- Highlights from an Amazing Year</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Greetings Trojans everywhere, As we head into the summer, I wanted to share some&nbsp;highlights from a monumental year at USC. Have a wonderful summer and Fight On! Carol L. Folt President
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/05/03/5-3-update-on-covid-19-procedures/">5/3 – Update on COVID-19 Procedures</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             May 3, 2022 To:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USC Community Fr:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sarah Van Orman, Chief Health Officer, USC Student Health &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Division Chief for College Health, Keck School of Medicine of USC RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Update on COVID-19 Procedures The following information provides updated guidance on campus procedures related to COVID-19 safety and public health notifications to our campus community. Currently,…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/05/03/5-3-usc-health-sciences-schools-update/">5/3 – USC Health Sciences Schools Update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear USC community, I am writing to share news about USC’s medical health system. As you all know, there is much to celebrate, and it was my pleasure to share this with you at&nbsp;my State of the University address at HSC. I also spoke with many of you at the installation of Dr. Carolyn Meltzer…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/keck/">Keck</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+          </ul>
+         </div>
+        </div>
+        <div style="height:36px" aria-hidden="true" class="wp-block-spacer"></div>
+        <div class="wp-block-cover alignfull has-usc-gold-background-color has-background-dim has-custom-content-position is-position-top-center" style="min-height:50px">
+         <div class="wp-block-cover__inner-container">
+          <p class="has-text-align-center has-large-font-size"></p>
+         </div>
+        </div>
+       </div><!-- .entry-content -->
+       <footer class="entry-footer">
+       </footer><!-- .entry-footer -->
+      </article><!-- #post-## -->
+     </main><!-- #main -->
+    </div><!-- #primary -->
+   </div><!-- .site-content -->
+   <footer id="colophon" class="site-footer " role="contentinfo">
+    <div class="site-footer-wrapper">
+     <div class="site-footer-columns site-info columns-2">
+      <div class="footer-column">
+       <aside id="text-3" class="widget widget_text"> 
+        <div class="textwidget">
+         <p>USC is committed to supporting the health, safety and well-being of our community.</p>
+         <ul>
+          <li>COVID-19 hotline: <a href="tel:1-213-740-6291">213-740-6291</a></li>
+          <li>Email: <a href="mailto:covid19@usc.edu">covid19@usc.edu</a></li>
+          <li>COVID-19 Resource Center: <a href="https://coronavirus.usc.edu/">coronavirus.usc.edu</a></li>
+         </ul>
+        </div>
+       </aside>
+      </div>
+      <div class="footer-column-2">
+       <aside id="text-4" class="widget widget_text"> 
+        <div class="textwidget"></div>
+       </aside>
+      </div>
+     </div> 
+    </div>
+    <div class="site-footer-strip-wrapper">
+     <div class="site-footer-strip">
+      <div class="site-footer-strip-left">
+       <div class="site-footer-credits">
+        <span class="theme-credit">University of Southern California</span><span class="site-credit">Content managed by <a class="site-credit-link" href="mailto:ucomm@usc.edu">USC Communications</a></span>
+       </div>
+       <div class="site-footer-strip-left-widgets">
+        <aside id="nav_menu-4" class="widget widget_nav_menu">
+         <div class="menu-site-footer-strip-container">
+          <ul id="menu-site-footer-strip" class="menu">
+           <li id="menu-item-30" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-30"><a href="http://usc.edu/privacy-notice">Privacy Notice</a></li>
+           <li id="menu-item-6404" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6404"><a href="https://eeotix.usc.edu/notice-of-non-discrimination/">Notice of Non-Discrimination</a></li>
+          </ul>
+         </div>
+        </aside>
+       </div>
+      </div>
+      <div class="site-footer-strip-right"></div>
+     </div>
+    </div> 
+   </footer><!-- .site-footer --><a class="notification-bar" href="https://we-are.usc.edu/phases-and-guidelines/phases">
+    <div class="notification">
+     The university is currently in Phase Five of returning to campus, based on current public health guidelines. Click to learn more.
+    </div></a>
+   <style>.wp-container-1 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-1 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-1 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-2 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-2 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-2 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-3 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-3 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-3 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-4 {display: flex;gap: 0.5em;flex-wrap: wrap;align-items: center;}.wp-container-4 > * { margin: 0; }</style>
+   <style>.wp-container-5 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-5 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-5 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-6 {display: flex;gap: 0.5em;flex-wrap: wrap;align-items: center;}.wp-container-6 > * { margin: 0; }</style>
+   <style>.wp-container-7 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-7 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-7 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-8 {display: flex;gap: 2em;flex-wrap: nowrap;align-items: center;}.wp-container-8 > * { margin: 0; }</style>
+   <style>.wp-container-9 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-9 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-9 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-10 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-10 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-10 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-11 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-11 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-11 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-12 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-12 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-12 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-13 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-13 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-13 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-14 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-14 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-14 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-15 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-15 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-15 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <link rel="stylesheet" id="usc-display-new-badge-style-css" href="https://we-are.usc.edu/wp-content/plugins/usc-display-new-badge/public/css/usc-display-new-badge.css?ver=1.0.0" type="text/css" media="all">
+   <link rel="stylesheet" id="usc-notification-bar-style-css" href="https://we-are.usc.edu/wp-content/plugins/usc-notification-bar/public/css/usc-notification-bar.css?ver=1.0" type="text/css" media="all">
+   <script type="text/javascript" src="https://we-are.usc.edu/wp-content/themes/usc-gateway-2018/assets/js/vendor/modernizr.js?ver=1.0.28" id="modernizr-js"></script>
+   <script type="text/javascript" src="https://we-are.usc.edu/wp-content/themes/usc-gateway-2018/assets/js/lib/usc-gateway-2018.min.js?ver=1.0.28" id="theme-scripts-js"></script>
+   <script async defer type="text/javascript" src="https://we-are.usc.edu/wp-content/plugins/usc-notification-bar/public/js/usc-notification-bar.js?ver=1.0" id="usc-notification-bar-scripts-js"></script>
+  </div><!-- .site -->
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-6f137388fcf878e2d61","applicationID":"884951671","transactionName":"ZwRSZxFTD0dVVhFeX15OcVAXWw5aG0EVWx1WFFxfTkUIUEBd","queueTime":0,"applicationTime":270,"atts":"S0NREVlJHEk=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

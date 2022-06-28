@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Cornell SCE</title><!-- OLD Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5703434-2"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-5703434-2');
+</script><!-- NEW GA4 Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HQ739T75G0"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HQ739T75G0');
+</script>
+  <link rel="stylesheet" type="text/css" href="/lib/css/style.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/lib/css/addon.css" media="all">
+  <link rel="stylesheet" type="text/css" href="https://use.typekit.net/dix4rzx.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" async></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.9/svg4everybody.min.js"></script>
+  <script src="https://rawgit.com/protonet/jquery.inview/master/jquery.inview.min.js"></script>
+ </head>
+ <body>
+  <map id="logolinks" name="logolinks"><area shape="circle" coords="51,51,51" href="http://www.cornell.edu" alt="Cornell home page"><area shape="rect" coords="105,0,500,103" href="/sce" alt="SCE home page"></map>
+  <header class="main-header main-header--homepage" id="main-header">
+   <div class="branding-bar panel branding-bar--full">
+    <div class="branding-bar__container panel__container panel__container--left">
+     <div class="branding-bar__positioning">
+      <div class="logo-wrapper logo-wrapper--view-small-only"><a href="https://www.cornell.edu"><img src="/img/logos/CornellCrest-reduced-white.svg" alt="Cornell University"></a>
+      </div>
+      <div class="branding-menu-button"><button class="button dropdown-trigger branding-bar__menu-trigger" type="button" value="">
+        <div class="button__content">
+         <span style="font-weight: bold;">SCE</span> 
+         <svg class="icon" role="presentation" preserveaspectratio="xMaxYMin meet">
+          <use xlink:href="/img/sprites/standard_icons.svg#design--plus" />
+         </svg>
+        </div></button>
+      </div>
+     </div>
+     <nav id="sitenav-branding" class="sitenav-branding" style="display: none" aria-label="Site list">
+      <ul>
+       <li><a href="/">Cornell SCE</a></li>
+       <li><a href="/youth">Youth Programs</a></li>
+       <li><a href="/precollege">Precollege Studies</a></li>
+       <li><a href="/courses">Courses for Credit</a></li>
+       <li><a href="/professional">Professional Studies</a></li>
+       <li><a href="/travel">Education Vacations</a></li>
+       <li><a href="/sce/lifelong">Lifelong Learners</a></li>
+       <li><a href="/sce/employee">Cornell Faculty &amp; Staff</a></li>
+       <li><a href="/ciw">Cornell in Washington</a></li>
+       <li>
+        <form method="GET" action="/sce/search">
+         <div class="search-bar search-bar--view-small">
+          <div class="search-bar__form">
+           <div class="input-group site-search">
+            <input name="q" class="input-group-field" type="text" placeholder="Search This Site" value="" aria-labelledby="searchbtn0">
+            <div class="input-group-button"><button id="searchbtn0" type="submit" class="button" value="Search">
+              <div class="button__content">
+               <svg class="icon" role="presentation" preserveaspectratio="xMaxYMin meet">
+                <use xlink:href="/img/sprites/standard_icons.svg#design--search" />
+               </svg><span class="show-for-sr">Search</span>
+              </div></button>
+            </div>
+           </div>
+          </div>
+         </div>
+        </form></li>
+      </ul>
+     </nav>
+    </div>
+   </div>
+  </header>
+  <header class="homepage-header panel panel--split panel--bleed-right">
+   <div class="panel__container panel__container--left">
+    <div class="homepage-header__content homepage-header__content-left"><!--
+    <div class="logo-wrapper"><img src="/img/logos/CornellSCE.svg" alt="Cornell SCE"></div>
+    -->
+     <div class="logo-wrapper logo-wrapper--view-small-only"><a href="/" class="main-header__product-logo"> <img src="/img/logos/no-seal/CornellSCE.svg" alt="Cornell SCE"> </a>
+     </div>
+     <div class="logo-wrapper logo-wrapper--view-medium">
+      <img src="/img/logos/CornellSCE.svg" alt="Cornell SCE" usemap="#logolinks">
+     </div>
+     <div class="homepage-header__text">
+      <h1 class="homepage-header__title"><span class="no-break">Any person</span>, <span class="no-break">any study</span>, <span class="no-break">any time</span>, <span class="no-break">any place</span></h1>
+      <div class="homepage-header__body">
+        Cornell was founded as a place where any person could find instruction in any study. Spring, summer, fall, and winter. Online, on campus, or on safari in Tanzania. No matter what you're looking for, the School of Continuing Education (SCE) can help you access a Cornell education. 
+      </div>
+     </div>
+     <div class="homepage-header__button"><a href="/sce/about" role="button" class="button button--cta">
+       <div class="button__content">
+        Who We Are 
+        <svg class="icon" role="presentation" preserveaspectratio="xMaxYMin meet">
+         <use xlink:href="/img/sprites/standard_icons.svg#design--arrow-right" />
+        </svg>
+       </div></a>
+     </div>
+    </div>
+   </div>
+   <div class="panel__container panel__container--right video-cover">
+    <style>
+      div#wrapper {
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+      }
+
+      iframe {
+          box-sizing: border-box;
+          height: 56.25vw;
+          left: 50%;
+          width: 1280px;
+          height: 720px;
+          transform: translate(-50%, -50%);
+          position: absolute;
+          top: 50%;
+          width: 177.77777778vh;
+      }
+
+      .video-thumbnail {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: black;
+          
+          opacity: 1;
+          transition: opacity 0.3s ease-out;
+
+          background-size: cover;
+          background-position: 50% 50%;
+          
+      }
+
+      .video-button-wrapper {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+      }
+
+      .video-button-wrapper .video-control {
+          position: absolute;
+          bottom: 0.5rem;
+          right: 0.5rem;
+      }
+
+      .video-control {
+          border: 0;
+          color: rgba(255, 255, 255, 0.8);
+
+          width: 2rem;
+          height: 2rem;
+
+          transition: color 0.3s ease-out;
+      }
+
+      .video-control:hover,
+      .video-control:focus,
+      .video-control:active {
+          color: #FFF;
+      }
+
+      .video-control svg {
+          width: 100%;
+          height: 100%;
+      }
+
+      .video-control.hidden {
+          display: none;
+      }
+
+      .video-thumbnail.hidden {
+          opacity: 0;
+      }
+
+      @media screen and (max-width: 800px) {
+        div#wrapper {
+            position: relative;
+            height: 270px;
+        }
+        iframe {
+            width: 100%;
+        }
+
+      }
+    </style> 
+    <div id="wrapper">
+     <div id="youTubeAuto-cPclGIi-elQ"></div>
+     <div class="video-button-wrapper"><button id="pause-cPclGIi-elQ" class="video-control" type="button" value=""> <span class="show-for-sr">Play</span>
+       <svg class="icon" role="presentation" preserveaspectratio="xMaxYMin meet">
+        <use xlink:href="/img/sprites/standard_icons.svg#design--pause" />
+       </svg> </button><button id="play-cPclGIi-elQ" class="video-control hidden" type="button" value=""> <span class="show-for-sr">Play</span>
+       <svg class="icon" role="presentation" preserveaspectratio="xMaxYMin meet">
+        <use xlink:href="/img/sprites/standard_icons.svg#design--play" />
+       </svg> </button>
+     </div>
+    </div>
+    <script>
+
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      if (firstScriptTag.getAttribute('src') !== tag.src ) {
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      }
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player( 'youTubeAuto-cPclGIi-elQ', {
+        videoId: 'cPclGIi-elQ',
+        playerVars: {
+          autoplay: 1,
+          playsinline: 1,
+          controls: 0,
+          disablekb: 1,
+          showinfo: 0,
+          wmode: 'transparent',
+          modestbranding: 1,
+          rel: 0,
+          loop: 1,
+          fs: 0,
+          cc_load_policy: 0,
+          iv_load_policy: 3, 
+          autohide: 0,
+          playlist: 'cPclGIi-elQ'
+        },
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+        });
+      }
+
+      function onPlayerReady(event) {
+        event.target.mute();
+        event.target.playVideo();
+      }
+
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING
+          && !done) {
+          $('.video-thumbnail').addClass('hidden');
+        } else if ( event.data == YT.PlayerState.STOPPED || event.data === YT.PlayerState.ENDED ) {
+          $('.video-thumbnail').removeClass('hidden');
+        }
+      }
+
+      function pauseVideo () {
+        if ( player.getPlayerState() === 1 ) {
+          player.pauseVideo();
+          $('#pause-cPclGIi-elQ').addClass('hidden');
+          $('#play-cPclGIi-elQ').removeClass('hidden');
+        }
+      }
+
+      function playVideo () {
+        if ( player.getPlayerState() === 0 || player.getPlayerState() === 2  ) {
+          player.playVideo();
+          $('#pause-cPclGIi-elQ').removeClass('hidden');
+          $('#play-cPclGIi-elQ').addClass('hidden');
+        }
+      }
+
+      $('#pause-cPclGIi-elQ').on('click', function () {
+        pauseVideo();
+      });
+      $('#play-cPclGIi-elQ').on('click', function () {
+        playVideo();
+      });
+
+  </script>
+   </div><button id="homepage-header__skip-button" class="homepage-header__skip-button button button--cta button--circle scroll-to-this"> 
+    <div class="button__content">
+     <svg class="icon" role="presentation" preserveaspectratio="xMaxYMin meet">
+      <use xlink:href="/img/sprites/standard_icons.svg#design--arrow-down" />
+     </svg><span class="show-for-sr">More content below</span>
+    </div> </button>
+  </header>
+  <div class="panel panel--gray panel--shift-contents-up">
+   <div class="panel__container shift-container">
+    <div id="audiences"></div>
+    <div class="grid-row three-columns  ">
+     <div class="three-columns__column three-columns__left">
+      <div class="card  card--program">
+       <div class="card__image"><!-- <a href='/youth' tabindex='-1'> -->
+        <div class="image-wrapper">
+         <div class="image-reservation " style="padding-bottom: 75%; background-color: #CCC;">
+          <img src="/img/site/2-hero-small.jpg" alt="Youth (Ages 4-15)" class="">
+         </div>
+        </div><!-- </a> -->
+       </div>
+       <div class="card__body">
+        <div class="card__superhead program__superhead"></div>
+        <div class="headline-group card__title program__title h3"> <a href="/youth" class="arrow head">Youth (Ages 4-15)</a> 
+        </div>
+        <div class="card__editorial program__description">
+         Check out educational opportunities at Cornell for children and teens.
+        </div>
+        <div class="card__footer program__date"></div>
+       </div> <!-- end card__body -->
+      </div> <!-- end card--program -->
+     </div>
+     <div class="three-columns__column three-columns__center">
+      <div class="card  card--program">
+       <div class="card__image"><!-- <a href='/precollege' tabindex='-1'> -->
+        <div class="image-wrapper">
+         <div class="image-reservation " style="padding-bottom: 75%; background-color: #CCC;">
+          <img src="/img/site/3-hero-small.jpg" alt="High School Students" class="">
+         </div>
+        </div><!-- </a> -->
+       </div>
+       <div class="card__body">
+        <div class="card__superhead program__superhead"></div>
+        <div class="headline-group card__title program__title h3"> <a href="/precollege" class="arrow head">High School Students</a> 
+        </div>
+        <div class="card__editorial program__description">
+         Experience college life, study with Cornell faculty, prep for college admissions, and earn credit while in high school. 
+        </div>
+        <div class="card__footer program__date"></div>
+       </div> <!-- end card__body -->
+      </div> <!-- end card--program -->
+     </div>
+     <div class="three-columns__column three-columns__right">
+      <div class="card  card--program">
+       <div class="card__image"><!-- <a href='/courses' tabindex='-1'> -->
+        <div class="image-wrapper">
+         <div class="image-reservation " style="padding-bottom: 75%; background-color: #CCC;">
+          <img src="/img/site/4-hero-small.jpg" alt="College Students" class="">
+         </div>
+        </div><!-- </a> -->
+       </div>
+       <div class="card__body">
+        <div class="card__superhead program__superhead"></div>
+        <div class="headline-group card__title program__title h3"> <a href="/courses" class="arrow head">College Students</a> 
+        </div>
+        <div class="card__editorial program__description">
+         Choose from spring, summer, fall, and winter classes; study on campus, abroad, or online; or do an internship.
+        </div>
+        <div class="card__footer program__date"></div>
+       </div> <!-- end card__body -->
+      </div> <!-- end card--program -->
+     </div>
+    </div>
+    <div class="grid-row three-columns  ">
+     <div class="three-columns__column three-columns__left">
+      <div class="card  card--program">
+       <div class="card__image"><!-- <a href='/professional' tabindex='-1'> -->
+        <div class="image-wrapper">
+         <div class="image-reservation " style="padding-bottom: 75%; background-color: #CCC;">
+          <img src="/img/site/5-hero-small.jpg" alt="Professionals &amp; Executives" class="">
+         </div>
+        </div><!-- </a> -->
+       </div>
+       <div class="card__body">
+        <div class="card__superhead program__superhead"></div>
+        <div class="headline-group card__title program__title h3"> <a href="/professional" class="arrow head">Professionals &amp; Executives</a> 
+        </div>
+        <div class="card__editorial program__description">
+         Work with Cornell experts to increase your capabilities through certificate programs and part-time study.
+        </div>
+        <div class="card__footer program__date"></div>
+       </div> <!-- end card__body -->
+      </div> <!-- end card--program -->
+     </div>
+     <div class="three-columns__column three-columns__center">
+      <div class="card  card--program">
+       <div class="card__image"><!-- <a href='/sce/lifelong' tabindex='-1'> -->
+        <div class="image-wrapper">
+         <div class="image-reservation " style="padding-bottom: 75%; background-color: #CCC;">
+          <img src="/img/site/15-hero-small.jpg" alt="Lifelong Learners" class="">
+         </div>
+        </div><!-- </a> -->
+       </div>
+       <div class="card__body">
+        <div class="card__superhead program__superhead"></div>
+        <div class="headline-group card__title program__title h3"> <a href="/sce/lifelong" class="arrow head">Lifelong Learners</a> 
+        </div>
+        <div class="card__editorial program__description">
+         Enjoy education vacations, professional development programs, and Cornell courses online or on campus.
+        </div>
+        <div class="card__footer program__date"></div>
+       </div> <!-- end card__body -->
+      </div> <!-- end card--program -->
+     </div>
+     <div class="three-columns__column three-columns__right">
+      <div class="card  card--program">
+       <div class="card__image"><!-- <a href='/sce/employee' tabindex='-1'> -->
+        <div class="image-wrapper">
+         <div class="image-reservation " style="padding-bottom: 75%; background-color: #CCC;">
+          <img src="/img/site/7-hero-small.jpg" alt="Cornell Faculty &amp; Staff" class="">
+         </div>
+        </div><!-- </a> -->
+       </div>
+       <div class="card__body">
+        <div class="card__superhead program__superhead"></div>
+        <div class="headline-group card__title program__title h3"> <a href="/sce/employee" class="arrow head">Cornell Faculty &amp; Staff</a> 
+        </div>
+        <div class="card__editorial program__description">
+         Take Cornell courses for personal and professional development. Faculty: Learn about teaching classes through SCE.
+        </div>
+        <div class="card__footer program__date"></div>
+       </div> <!-- end card__body -->
+      </div> <!-- end card--program -->
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="panel ">
+   <div class="panel__container ">
+    <div class="headline-group  h3"><span class="head">Featured Programs</span>
+    </div>
+    <div class="flex-columns flex-columns--3">
+     <div class="flex-columns__item ">
+      <div class="routing-link">
+       <div class="routing-link__image">
+        <div class="image-reservation " style="padding-bottom: 75.018754688672%; background-color: #CCC;">
+         <img src="/img/section/57-opt1.jpg" alt="" class="" role="none presentation">
+        </div>
+       </div><a href="/courses/programs/summer" class="routing-link__link arrow">Summer Session</a>
+      </div>
+     </div>
+     <div class="flex-columns__item ">
+      <div class="routing-link">
+       <div class="routing-link__image">
+        <div class="image-reservation " style="padding-bottom: 75.018754688672%; background-color: #CCC;">
+         <img src="/img/section/57-opt2.jpg" alt="" class="" role="none presentation">
+        </div>
+       </div><a href="/courses/programs/winter" class="routing-link__link arrow">Winter Session</a>
+      </div>
+     </div>
+     <div class="flex-columns__item ">
+      <div class="routing-link">
+       <div class="routing-link__image">
+        <div class="image-reservation " style="padding-bottom: 75.018754688672%; background-color: #CCC;">
+         <img src="/img/site/6-hero-small.jpg" alt="" class="" role="none presentation">
+        </div>
+       </div><a href="/travel" class="routing-link__link arrow">Education Vacations<br>with CAU</a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="panel panel--gray panel--gap-small panel--ribbon">
+   <div class="panel__container panel--ribbon__container formatted-text">
+    <h2>Announcements</h2>
+    <ul>
+     <li><a href="/sce/covid-19" class="arrow">Cornell SCE coronavirus updates</a></li>
+     <li><a href="/sce/about/diversity" class="arrow">SCE Dean's statement on racial violence</a></li>
+    </ul>
+   </div>
+  </div>
+  <div class="panel panel--gray">
+   <div class="panel__container ">
+    <div class="grid-row two-columns two-columns--asymmetrical social-media-promo ">
+     <div class="two-columns__column two-columns__left ">
+      <h2 class="headline-group "><span class="head">Follow us on social</span></h2>
+      <p>Tag your posts #cornellsce to share your experiences. </p>
+      <div class="social-links"><a href="https://www.facebook.com/CornellSCE" class="social-links__link"> 
+        <svg class="icon" title="facebook" preserveaspectratio="xMaxYMin meet">
+         <use xlink:href="/img/sprites/standard_icons.svg#social--facebook" />
+        </svg> </a><a href="https://www.instagram.com/cornell.sce/" class="social-links__link"> 
+        <svg class="icon" title="instagram" preserveaspectratio="xMaxYMin meet">
+         <use xlink:href="/img/sprites/standard_icons.svg#social--instagram" />
+        </svg> </a><a href="https://twitter.com/CornellSCE" class="social-links__link"> 
+        <svg class="icon" title="twitter" preserveaspectratio="xMaxYMin meet">
+         <use xlink:href="/img/sprites/standard_icons.svg#social--twitter" />
+        </svg> </a><a href="https://www.linkedin.com/company/cornell-sce" class="social-links__link"> 
+        <svg class="icon" title="linkedin" preserveaspectratio="xMaxYMin meet">
+         <use xlink:href="/img/sprites/standard_icons.svg#social--linkedin" />
+        </svg> </a>
+      </div>
+     </div>
+     <div class="two-columns__column two-columns__right ">
+      <div class="grid-row three-columns  ">
+       <div class="three-columns__column three-columns__left">
+        <div class="image-reservation " style="padding-bottom: 100%; background-color: #CCC;">
+         <img src="/img/site/1-social-1.jpg" alt="" class="">
+        </div>
+       </div>
+       <div class="three-columns__column three-columns__center">
+        <div class="image-reservation " style="padding-bottom: 100%; background-color: #CCC;">
+         <img src="/img/site/1-social-2.jpg" alt="" class="">
+        </div>
+       </div>
+       <div class="three-columns__column three-columns__right">
+        <div class="image-reservation " style="padding-bottom: 100%; background-color: #CCC;">
+         <img src="/img/site/1-social-3.jpg" alt="" class="">
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <footer class="site-footer">
+   <div class="footer-prefix">
+   </div>
+   <div class="logo-row">
+    <div class="logo-row__container">
+     <div class="logo-wrapper">
+      <img src="/img/logos/SCEbyline.svg" alt="Cornell University School of Continuing Education and Summer Sessions">
+     </div>
+     <div class="logo-row__nav">
+      <a href="/sce/about" class="arrow">About SCE</a><a href="/sce/support" class="arrow">Give to SCE</a><a href="/sce/contact" class="arrow">Contact us</a>
+     </div>
+    </div>
+   </div>
+   <div class="site-footer__bar">
+    <div class="site-footer__bar__container">
+     <ul>
+      <li><a href="/sce/policy">SCE Policies</a></li>
+      <li><a href="https://privacy.cornell.edu/privacy-cornell/university-privacy-statement">Privacy Notice</a></li>
+      <li><a href="/sce/policy/copyright">Copyright</a></li>
+      <li><a href="/sce/policy/land">Land Acknowledgment</a></li>
+     </ul>
+     <ul>
+      <li>Web Accessibility Help: <a href="mailto:web-accessibility@cornell.edu">web-accessibility@cornell.edu</a></li>
+      <li><a href="/sce/about/web-contact">Website feedback</a></li>
+      <li><a href="#" class="back-to-top" id="back-to-top">Back to Top 
+        <svg class="icon" role="presentation" preserveaspectratio="xMaxYMin meet">
+         <use xlink:href="/img/sprites/standard_icons.svg#design--arrow-up-end" />
+        </svg></a></li>
+     </ul>
+    </div>
+   </div>
+  </footer>
+  <script src="/lib/js/main.js" defer></script>
+  <script src="/lib/js/addon.js" defer></script>
+ </body>
+</html>

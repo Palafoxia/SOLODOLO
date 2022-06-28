@@ -1,0 +1,1232 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"465817224"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","/sites/default/files/google_analytics/analytics.js?rdeuqk","ga");ga("create", "UA-1706522-1", {"cookieDomain":"auto"});ga("require", "linkid", "linkid.js");ga("set", "anonymizeIp", true);ga("set", "dimension2", "3");ga("send", "pageview");ga('require', 'maxScrollTracker', {
+  maxScrollMetricIndex: 1,
+});</script>
+  <meta name="description" content="Through teaching and research, we educate people who will contribute to society and develop knowledge that will make a difference in the world.">
+  <meta property="fb:app_id" content="238312316239555">
+  <meta property="og:site_name" content="Princeton University">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.princeton.edu/academics/areas-of-study/humanities">
+  <meta property="og:title" content="Areas of Study">
+  <meta property="og:description" content="Through teaching and research, we educate people who will contribute to society and develop knowledge that will make a difference in the world.">
+  <meta property="og:image" content="https://www.princeton.edu//sites/default/files/images/2017/06/20060425_NassauHall_JJ_IMG_5973.jpg">
+  <meta name="google-site-verification" content="B6i7aTvWeIZCk1-Ntnn_Lkyf37sREVxxkY6p3gdHucY">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@Princeton">
+  <meta name="twitter:description" content="Through teaching and research, we educate people who will contribute to society and develop knowledge that will make a difference in the world.">
+  <meta name="twitter:title" content="Areas of Study">
+  <meta name="twitter:image:alt" content="Nassau Hall">
+  <meta name="twitter:image" content="https://www.princeton.edu//sites/default/files/images/2017/06/20060425_NassauHall_JJ_IMG_5973.jpg">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" href="/themes/custom/tony/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/themes/custom/tony/icons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/themes/custom/tony/icons/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/themes/custom/tony/icons/manifest.json">
+  <link rel="mask-icon" href="/themes/custom/tony/icons/safari-pinned-tab.svg" color="#e77500">
+  <meta name="msapplication-config" content="/themes/custom/tony/icons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="/profiles/contrib/lightning/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Areas of Study | Princeton University</title>
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_DfIk0kDE_97QqZBJr5TF4iiP6Rt7nG3gWSu-Jh5AKCY.css">
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_-znt2TQwDYX5ozJW377y85zmm1pZ-MFpYBWRJ6P5ojY.css"><!--[if lte IE 8]>
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" />
+<![endif]-->
+  <script src="/sites/default/files/js/js_vjrewt9Ub_VdOnWG7fQvzLvZnbEPsJs5UlnSApFDVF0.js"></script>
+  <meta name="google-site-verification" content="HCFMWeXbGYFnJTWfcWQmuHWebYmZPzueLOKf8RM09I4">
+  <link rel="alternate" type="application/rss+xml" title="Princeton University News" href="/feed/">
+  <link rel="alternate" type="application/rss+xml" title="Princeton Research News" href="/feed/research/">
+  <link rel="alternate" type="application/rss+xml" title="Princeton Public Events" href="/feed/events/">
+ </head>
+ <body class="path-academics nojs" data-scroll="body" data-resize="body"><a href="#main-content" id="skip-link" class="visually-hidden focusable button skip-link"> Skip to main content </a>
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div data-sticky-container class="header-sticky-container">
+    <header data-sticky data-options="marginTop:0;" data-sticky-on="small" class="clearfix page-header" style="width:100%" data-top-anchor="main:top" data-btm-anchor="main:bottom" role="banner">
+     <div class="contents">
+      <div class="block-tony-branding"><a href="/" title="Home" rel="home" class="site-logo"> <img src="/themes/custom/tony/logo.svg" alt="Princeton University"> </a>
+      </div><button aria-label="Toggle Menu" class="toggle-main-menu"> <!-- Screen readers will see "close" --> <span class="show-for-sr">Toggle subitems</span> <!-- Visual users will see the X, but not the "Close" text --> <span aria-hidden="true" class="menu-icon"></span> <span aria-hidden="true" class="close-icon"></span> </button>
+      <nav id="main-menu" class="menu-container" role="navigation">
+       <div>
+        <nav role="navigation" aria-labelledby="block-tony-main-menu-menu" id="block-tony-main-menu" data-block-plugin-id="system_menu_block:main" class="menu--main block--main-navigation">
+         <h2 class="visually-hidden" id="block-tony-main-menu-menu" aria-hidden="true">Main navigation</h2>
+         <ul class="menu main-menu vertical xmedium-horizontal" role="menubar">
+          <li class="menu-item level-0 menu-item--expanded" role="menuitem"><a href="/meet-princeton" role="menuitem" data-drupal-link-system-path="node/126">Meet Princeton</a><button class="toggleparent" type="button"> <!-- Screen readers will see "close" --> <span class="show-for-sr">Toggle sub-items</span> <!-- Visual users will see the X, but not the "Close" text --> <span aria-hidden="true" class="plusminus"></span> </button>
+           <ul class="menu vertical first-sub" role="menu">
+            <li class="menu-item level-1"><a href="/meet-princeton/service-humanity" role="menuitem" data-drupal-link-system-path="node/20346">In Service of Humanity</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/facts-figures" role="menuitem" data-drupal-link-system-path="node/54486">Facts &amp; Figures</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/history" role="menuitem" data-drupal-link-system-path="node/20176">History</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/honors-awards" role="menuitem" data-drupal-link-system-path="node/93986">Honors &amp; Awards</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/contact-us" role="menuitem" data-drupal-link-system-path="node/20181">Contact Us</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/visit-us" role="menuitem" data-drupal-link-system-path="node/20531">Visit Us</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/our-faculty" role="menuitem" data-drupal-link-system-path="node/20351">Our Faculty</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/our-students" role="menuitem" data-drupal-link-system-path="node/20356">Our Students</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/our-alumni" role="menuitem" data-drupal-link-system-path="node/20361">Our Alumni</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/our-staff" role="menuitem" data-drupal-link-system-path="node/20256">Our Staff</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/our-leadership" role="menuitem" data-drupal-link-system-path="node/172146">Our Leadership</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/academic-freedom-and-free-expression" role="menuitem" data-drupal-link-system-path="node/252886">Academic Freedom and Free Expression</a></li>
+           </ul></li>
+          <li class="menu-item level-0 menu-item--expanded menu-item--active-trail" role="menuitem"><a href="/academics" role="menuitem" data-drupal-link-system-path="node/46">Academics</a><button class="toggleparent" type="button"> <!-- Screen readers will see "close" --> <span class="show-for-sr">Toggle sub-items</span> <!-- Visual users will see the X, but not the "Close" text --> <span aria-hidden="true" class="plusminus"></span> </button>
+           <ul class="menu vertical first-sub" role="menu">
+            <li class="menu-item level-1"><a href="/academics/studying-princeton" role="menuitem" data-drupal-link-system-path="node/76">Studying at Princeton</a></li>
+            <li class="menu-item level-1"><a href="/academics/library" role="menuitem" data-drupal-link-system-path="node/20166">Library</a></li>
+            <li class="menu-item level-1"><a href="/academics/areas-of-study" role="menuitem" data-drupal-link-system-path="academics/areas-of-study">Areas of Study</a></li>
+            <li class="menu-item level-1 menu-item--active-trail"><a href="/academics/areas-of-study/humanities" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/humanities" class="is-active">Humanities</a></li>
+            <li class="menu-item level-1"><a href="/academics/areas-of-study/social-sciences" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/social-sciences">Social Sciences</a></li>
+            <li class="menu-item level-1"><a href="/academics/areas-of-study/engineering" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/engineering">Engineering</a></li>
+            <li class="menu-item level-1"><a href="/academics/areas-of-study/natural-sciences" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/natural-sciences">Natural Sciences</a></li>
+            <li class="menu-item level-1"><a href="/academics/advising" role="menuitem" data-drupal-link-system-path="node/20381">Advising</a></li>
+            <li class="menu-item level-1"><a href="https://registrar.princeton.edu/academic-calendar/" role="menuitem">Academic Calendar<span class="arrow"></span></a></li>
+            <li class="menu-item level-1"><a href="/academics/course-tools" role="menuitem" data-drupal-link-system-path="node/54066">Course Tools</a></li>
+            <li class="menu-item level-1"><a href="/academics/learning-abroad" role="menuitem" data-drupal-link-system-path="node/20161">Learning Abroad</a></li>
+            <li class="menu-item level-1"><a href="/academics/career-development" role="menuitem" data-drupal-link-system-path="node/20391">Career Development</a></li>
+            <li class="menu-item level-1"><a href="/academics/continuing-education" role="menuitem" data-drupal-link-system-path="node/20376">Continuing Education</a></li>
+            <li class="menu-item level-1"><a href="/academics/innovative-learning" role="menuitem" data-drupal-link-system-path="node/20366">Innovative Learning</a></li>
+           </ul></li>
+          <li class="menu-item level-0 menu-item--expanded" role="menuitem"><a href="/research" role="menuitem" data-drupal-link-system-path="node/51">Research</a><button class="toggleparent" type="button"> <!-- Screen readers will see "close" --> <span class="show-for-sr">Toggle sub-items</span> <!-- Visual users will see the X, but not the "Close" text --> <span aria-hidden="true" class="plusminus"></span> </button>
+           <ul class="menu vertical first-sub" role="menu">
+            <li class="menu-item level-1"><a href="/research/engineering-and-applied-science" role="menuitem" data-drupal-link-system-path="node/20396">Engineering &amp; Applied Science</a></li>
+            <li class="menu-item level-1"><a href="/research/humanities" role="menuitem" data-drupal-link-system-path="node/20401">Humanities</a></li>
+            <li class="menu-item level-1"><a href="/research/natural-sciences" role="menuitem" data-drupal-link-system-path="node/20406">Natural Sciences</a></li>
+            <li class="menu-item level-1"><a href="/research/social-sciences" role="menuitem" data-drupal-link-system-path="node/20411">Social Sciences</a></li>
+            <li class="menu-item level-1"><a href="/research/interdisciplinary-approach" role="menuitem" data-drupal-link-system-path="node/20421">Interdisciplinary Approach</a></li>
+            <li class="menu-item level-1"><a href="/research/office-dean-research" role="menuitem" data-drupal-link-system-path="node/94976">Dean for Research Office</a></li>
+            <li class="menu-item level-1"><a href="/research/external-partnerships" role="menuitem" data-drupal-link-system-path="node/20416">External Partnerships</a></li>
+            <li class="menu-item level-1"><a href="/research/facilities-labs" role="menuitem" data-drupal-link-system-path="node/21111">Facilities &amp; Labs</a></li>
+           </ul></li>
+          <li class="menu-item level-0 menu-item--expanded" role="menuitem"><a href="/one-community" role="menuitem" data-drupal-link-system-path="node/56">One Community</a><button class="toggleparent" type="button"> <!-- Screen readers will see "close" --> <span class="show-for-sr">Toggle sub-items</span> <!-- Visual users will see the X, but not the "Close" text --> <span aria-hidden="true" class="plusminus"></span> </button>
+           <ul class="menu vertical first-sub" role="menu">
+            <li class="menu-item level-1"><a href="/one-community/lifelong-connections" role="menuitem" data-drupal-link-system-path="node/20436">Lifelong Connections</a></li>
+            <li class="menu-item level-1"><a href="/one-community/student-life" role="menuitem" data-drupal-link-system-path="node/20441">Student Life</a></li>
+            <li class="menu-item level-1"><a href="/one-community/arts-culture" role="menuitem" data-drupal-link-system-path="node/20446">Arts &amp; Culture</a></li>
+            <li class="menu-item level-1"><a href="/one-community/athletics" role="menuitem" data-drupal-link-system-path="node/20451">Athletics</a></li>
+            <li class="menu-item level-1"><a href="/one-community/living-princeton-nj" role="menuitem" data-drupal-link-system-path="node/20456">Living in Princeton, N.J.</a></li>
+            <li class="menu-item level-1"><a href="/one-community/housing-dining" role="menuitem" data-drupal-link-system-path="node/20461">Housing &amp; Dining</a></li>
+            <li class="menu-item level-1"><a href="/one-community/activities-organizations" role="menuitem" data-drupal-link-system-path="node/20466">Activities &amp; Organizations</a></li>
+            <li class="menu-item level-1"><a href="/one-community/cultural-affinity-groups" role="menuitem" data-drupal-link-system-path="node/20471">Cultural &amp; Affinity Groups</a></li>
+            <li class="menu-item level-1"><a href="/one-community/health-wellness" role="menuitem" data-drupal-link-system-path="node/20476">Health &amp; Wellness</a></li>
+            <li class="menu-item level-1"><a href="/one-community/religious-life" role="menuitem" data-drupal-link-system-path="node/20481">Religious Life</a></li>
+            <li class="menu-item level-1"><a href="/one-community/serving-public-good" role="menuitem" data-drupal-link-system-path="node/20486">Serving the Public Good</a></li>
+            <li class="menu-item level-1"><a href="/one-community/families" role="menuitem" data-drupal-link-system-path="node/20491">Families</a></li>
+           </ul></li>
+          <li class="menu-item level-0 menu-item--expanded" role="menuitem"><a href="/admission-aid" role="menuitem" data-drupal-link-system-path="node/61">Admission &amp; Aid</a><button class="toggleparent" type="button"> <!-- Screen readers will see "close" --> <span class="show-for-sr">Toggle sub-items</span> <!-- Visual users will see the X, but not the "Close" text --> <span aria-hidden="true" class="plusminus"></span> </button>
+           <ul class="menu vertical first-sub" role="menu">
+            <li class="menu-item level-1"><a href="/admission-aid/affordable-all" role="menuitem" data-drupal-link-system-path="node/20496">Affordable for All</a></li>
+            <li class="menu-item level-1"><a href="https://admission.princeton.edu/cost-aid" role="menuitem">About Financial Aid<span class="arrow"></span></a></li>
+            <li class="menu-item level-1"><a href="https://finaid.princeton.edu" role="menuitem">Current Undergraduate Financial Aid<span class="arrow"></span></a></li>
+            <li class="menu-item level-1"><a href="https://admission.princeton.edu" role="menuitem">Undergraduate Admission<span class="arrow"></span></a></li>
+            <li class="menu-item level-1"><a href="/admission-aid/graduate-admission" role="menuitem" data-drupal-link-system-path="node/20501">Graduate Admission</a></li>
+            <li class="menu-item level-1"><a href="/admission-aid/international-students" role="menuitem" data-drupal-link-system-path="node/20506">For International Students</a></li>
+           </ul></li>
+         </ul>
+        </nav>
+        <nav role="navigation" aria-labelledby="block-utilitymenu-menu" id="block-utilitymenu" data-block-plugin-id="system_menu_block:menu-toolbar" class="menu--menu-toolbar">
+         <h2 class="visually-hidden" id="block-utilitymenu-menu">Utility menu</h2>
+         <ul class="menu utility-menu vertical xmedium-horizontal clearfix" role="menubar">
+          <li class="menu-item"><a href="/news" role="menuitem" data-drupal-link-system-path="news">News</a></li>
+          <li class="menu-item"><a href="/events" role="menuitem" data-drupal-link-system-path="node/20286">Events</a></li>
+          <li class="menu-item menu-item--expanded"><a href="/meet-princeton/work-princeton" role="menuitem" data-drupal-link-system-path="node/21131">Work at Princeton</a><span class="dropcarat" aria-hidden="true"></span>
+           <ul class="menu vertical is-dropdown-submenu" role="menu">
+            <li class="menu-item"><a href="/work/benefits-services" role="menuitem" data-drupal-link-system-path="node/20736">Services &amp; Resources</a></li>
+            <li class="menu-item"><a href="/work/work-life-balance" role="menuitem" data-drupal-link-system-path="node/20191">Work-Life Balance</a></li>
+           </ul></li>
+          <li class="menu-item menu-item--expanded"><a href="/links/students" role="menuitem" data-drupal-link-system-path="node/20266">Links for</a><span class="dropcarat" aria-hidden="true"></span>
+           <ul class="menu vertical is-dropdown-submenu" role="menu">
+            <li class="menu-item"><a href="/links/students" role="menuitem" data-drupal-link-system-path="node/20266">Students</a></li>
+            <li class="menu-item"><a href="/links/faculty-staff" role="menuitem" data-drupal-link-system-path="node/20186">Faculty &amp; Staff</a></li>
+           </ul></li>
+          <li class="menu-item"><a href="http://alumni.princeton.edu" role="menuitem">Alumni<span class="arrow"></span></a></li>
+          <li class="menu-item"><a href="https://alumni.princeton.edu/give" role="menuitem">Giving<span class="arrow"></span></a></li>
+         </ul>
+        </nav>
+       </div>
+      </nav>
+      <form action="/search" method="GET" id="pu-header-search" accept-charset="UTF-8">
+       <div class="js-form-item form-item js-form-type-search form-item-search js-form-item-search form-no-label">
+        <input data-drupal-selector="edit-search" autocomplete="off" aria-label="Search Sites &amp; People" type="search" id="header-search" name="search" value="" size="15" maxlength="128" class="form-search"><label for="header-search">Search Sites &amp; People</label><button class="close-button" aria-label="Close search" type="button"> <span aria-hidden="true">×</span> </button>
+       </div>
+       <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="header-edit-actions">
+        <input data-drupal-selector="header-edit-submit" type="submit" id="header-edit-submit" value="Submit search" class="button js-form-submit form-submit">
+       </div>
+      </form>
+     </div>
+    </header>
+   </div>
+   <main id="main" class="main node-" role="main"><a name="main-content" id="main-content"></a>
+    <section class="clearfix">
+     <div>
+      <div data-drupal-messages-fallback class="hidden"></div>
+      <div id="block-tony-content" data-block-plugin-id="system_main_block" class="block__wrapper">
+       <div class="views-element-container">
+        <div class="areas-of-study bordered toggle-container js-view-dom-id-de438294402c90af2de8156ab67d00d2cbba66ff0922152e9b6698f074d40f7d">
+         <div class="image-cover-container view-header">
+          <div class="field field--name-field-area-of-study-image field--type-entity-reference field--label-hidden field__item">
+           <article class="view-mode-cover-image media media-image">
+            <div class="field field--name-image field--type-image field--label-hidden field__item">
+             <img srcset="/sites/default/files/styles/third_1x_crop/public/images/2017/03/20161110_LahiriJ_DJA_045.jpg?itok=rf210OFy 640w, /sites/default/files/styles/half_1x_crop/public/images/2017/03/20161110_LahiriJ_DJA_045.jpg?itok=jmCfXGAB 960w, /sites/default/files/styles/half_16_9_1440/public/images/2017/03/20161110_LahiriJ_DJA_045.jpg?itok=9CX_KkXt 1440w, /sites/default/files/styles/1x_full_2x_half_crop/public/images/2017/03/20161110_LahiriJ_DJA_045.jpg?itok=mkgOhIaA 1920w, /sites/default/files/styles/crop_2048_ipad/public/images/2017/03/20161110_LahiriJ_DJA_045.jpg?itok=WbAPHEQt 2048w, /sites/default/files/styles/full_2x_crop/public/images/2017/03/20161110_LahiriJ_DJA_045.jpg?itok=iEMn9N6A 2880w" sizes="100vw" src="/sites/default/files/styles/1x_full_2x_half_crop/public/images/2017/03/20161110_LahiriJ_DJA_045.jpg?itok=mkgOhIaA" alt="Jhumpa Lahiri and students" typeof="foaf:Image">
+            </div>
+           </article>
+          </div>
+          <div class="image-caption-overlay">
+           <div><a href="/academics/areas-of-study" class="leftarrow"><span></span>All areas of study</a>
+            <ul class="dropdown menu" data-dropdown-menu data-disable-hover="1" data-click-open="1">
+             <li class="is-dropdown-submenu-parent"><a href="/academics/areas-of-study/humanities"><h1>Humanities</h1></a>
+              <ul class="links">
+               <li><a href="/academics/areas-of-study/humanities">Humanities</a></li>
+               <li><a href="/academics/areas-of-study/engineering">Engineering</a></li>
+               <li><a href="/academics/areas-of-study/natural-sciences">Natural Sciences</a></li>
+               <li><a href="/academics/areas-of-study/social-sciences">Social Sciences</a></li>
+              </ul></li>
+            </ul>
+            <p class="summary">Scholarship in the humanities forms and deepens us as individuals and as contributors to society. At a time when technology offers dazzling new possibilities and cultures collide in ways both exciting and dangerous, the arts and humanities provide crucial insight into what matters in life, into the character of civilization, and into the capacity — and the limits — of people's ability to understand societies different from their own.</p>
+           </div>
+          </div>
+         </div>
+         <div class="js-filters clearfix">
+          <form class="row">
+           <h2 class="columns small-12 large-4">Programs</h2>
+           <div class="columns small-7 large-4 xlarge-5 form-item"><label for="edit-keyword" class="show-for-sr">Keyword</label><textarea id="edit-keyword" placeholder="What are you looking for?"></textarea>
+           </div>
+           <div class=" form-item form-item-degree js-form-item-degree columns small-5 large-4 xlarge-3"><label for="edit-degree" class="show-for-sr">Type of Degree</label><select data-drupal-selector="edit-degree" id="edit-degree" name="degree" class="form-select"> <option value="All" selected>- Type of Degree -</option> <option value="degree">Undergraduate Degree</option> <option value="certificate">Undergraduate Certificate</option> <option value="graduate-degree">Graduate Degree</option> <option value="graduate-certificate">Graduate Certificate</option> </select>
+           </div>
+          </form>
+         </div>
+         <div id="dropfilter"></div>
+         <div class="item-list">
+          <ul class="area-accordion">
+           <li class="row small-collapse large-uncollapse accordion-item row ab undergraduate-certificate graduate-certificate"> <a href="#" class="accordion-title"><h2>African American Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>For students who wish to&nbsp;study the complex interplay between political, economic, and cultural forces shaping the historic achievements and struggles of African-descended people in the United States and their relationship to others around the world.</p><a href="/academics/area-of-study/african-american-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://aas.princeton.edu" target="_blank" rel="noopener noreferrer">Department of African American Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/department-african-american-studies" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+               <li><a href="http://ua.princeton.edu/academic-units/program-african-american-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/african-american-studies" target="_blank" rel="noopener noreferrer">Graduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>African Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The Certificate in African Studies&nbsp;provides opportunities to learn about the continent. The program offers classes in Africa's political, economic, and social history; built environments and urban&nbsp;geographies; ecology, genetic diversity, and epidemiological concerns. The program also offers classes in Africa's vibrant art scenes, past and present, where literature, music, and art have come to define a new post-colonial African cosmopolitanism.</p><a href="/academics/area-of-study/african-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://piirs.princeton.edu/afs" target="_blank" rel="noopener noreferrer">Program in African Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://piirs.princeton.edu/afs" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>American Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The program aims to give students an understanding of American society -&nbsp;its culture, its institutions, its intellectual traditions, and the relationships among its diverse people.&nbsp; We encourage study and debate about America’s place in the world and the world in America, as well as what it means to grapple with the horizons and limits of its democratic aspirations.</p><a href="/academics/area-of-study/american-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://ams.princeton.edu" target="_blank" rel="noopener noreferrer">Program in American Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-program-american-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row ab march phd"> <a href="#" class="accordion-title"><h2>Architecture</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The School of Architecture's undergraduate program&nbsp;is known for its rigorous and interdisciplinary approach to pre-professional education within the framework of a liberal arts curriculum. The master’s degree&nbsp;has both a professional and a post-professional track, emphasizing&nbsp;design expertise in the context of architectural scholarship.&nbsp;The doctoral program focuses on the history, theory, and criticism of architecture, urbanism, landscape, and building technology.</p><a href="/academics/area-of-study/architecture" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://soa.princeton.edu" target="_blank" rel="noopener noreferrer">School of Architecture</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/school-architecture" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/architecture" target="_blank" rel="noopener noreferrer">M.Arch.</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/architecture" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row ab undergraduate-certificate phd"> <a href="#" class="accordion-title"><h2>Art and Archaeology</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The Department of Art and Archaeology is devoted to the study of the visual arts and the investigation of material artifacts from a wide range of cultures and periods. Undergraduate programs of study include history of art and studio arts. An undergraduate&nbsp;certificate in archaeology is available.&nbsp;The graduate program in Art and Archaeology is designed to prepare students for teaching and research at the university level, curatorial positions in museums, and other careers in the visual arts.</p><a href="/academics/area-of-study/art-and-archaeology" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="https://artandarchaeology.princeton.edu" target="_blank" rel="noopener noreferrer">Department of Art and Archaeology</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/department-art-and-archaeology" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+               <li><a href="http://ua.princeton.edu/academic-units/program-archaeology" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/art-and-archaeology" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Asian American Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The Program in Asian American Studies, administered by the Program in American Studies, provides students with the opportunity to gain an interdisciplinary perspective on the diversity of Asian American and Pacific Islander histories, cultures, and contemporary experiences. The course of study focuses on the emergence of this pan-ethnic group in the United States, but also highlights Asian America’s transnational connections and contexts, including the dynamics of globalization, migration, imperialism, and post-coloniality.</p><a href="/academics/area-of-study/asian-american-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="https://ams.princeton.edu/undergraduate/asian-american-studies" target="_blank" rel="noopener noreferrer">Program in Asian American Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="https://ua.princeton.edu/academic-units/program-asian-american-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row ab phd"> <a href="#" class="accordion-title"><h2>Classics</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>Undergraduates can pursue three programs of study:&nbsp;Classics, which uses knowledge of Greek and Latin&nbsp;as a gateway to&nbsp;the literature, history, and culture of ancient Greece and Rome; Classical studies, which allows for the study of classical civilization and its impact; and Ancient history, which focuses on the history of the ancient world.</p>
+              <p>The graduate program offers a varied and comprehensive course of study appropriate to their developing research interests. The department offers four curricular options: literature and philology, history (Program in the Ancient World), classical philosophy, classical and Hellenic studies.</p><a href="/academics/area-of-study/classics" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://classics.princeton.edu" target="_blank" rel="noopener noreferrer">Department of Classics</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/department-classics" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/classics" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row ab phd"> <a href="#" class="accordion-title"><h2>Comparative Literature</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>Undergraduate study&nbsp;approaches literature from a broad, cross-cultural perspective. The curriculum encompasses literatures, languages, and cultures from around the world. Students motivated to understand literature in the broadest terms or&nbsp;those interested in particular examples of literary comparison&nbsp;will find an intellectual home in Comparative Literature.</p>
+              <p>The graduate program enables students with exceptional training in languages and literatures to profit from the increased awareness and understanding from the considered view of more than one literature and of the theoretical presuppositions behind literary study as a whole.&nbsp;</p><a href="/academics/area-of-study/comparative-literature" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://complit.princeton.edu/" target="_blank" rel="noopener noreferrer">Department of Comparative Literature</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/department-comparative-literature" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/comparative-literature" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Contemporary European Politics and Society</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The program encourages the interdisciplinary study of modern Europe, with a particular focus on politics, economics, and society in western and central Europe since World War I.</p><a href="/academics/area-of-study/contemporary-european-politics-and-society" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://piirs.princeton.edu/eps" target="_blank" rel="noopener noreferrer">Program in Contemporary European Politics and Society</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-contemporary-european-politics-and-society" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Creative Writing</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The program&nbsp;allows undergraduates to work with practicing writers to develop their writing skills, learn the possibilities of modern poetry, fiction, nonfiction, screenwriting, and translation,&nbsp;and gain a special access to the critical understanding of literature through their involvement in the creative process.</p><a href="/academics/area-of-study/creative-writing" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://arts.princeton.edu/academics/creative-writing/" target="_blank" rel="noopener noreferrer">Program in Creative Writing</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-creative-writing" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Dance</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The program familiarizes students with creative, performative, and analytical approaches to dance through exposure to professional choreographers, dancers, critics, and scholars. Students undertake demanding, studio-based courses with dance professionals, provides advanced courses for the pre-professional dancer and offers courses to students who have never danced. The creation of original work, both choreographic and written, is emphasized alongside rigorous technical training.</p><a href="/academics/area-of-study/dance" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://arts.princeton.edu/academics/dance/" target="_blank" rel="noopener noreferrer">Program in Dance</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-dance" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row ab undergraduate-certificate phd"> <a href="#" class="accordion-title"><h2>East Asian Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The East Asian Studies concentration (A.B.) provides undergraduates with a broad-ranging knowledge of the languages and cultures of China, Japan, and Korea. The East Asian Studies certificate provides an opportunity for students who plan to major in the humanities, social sciences, or other disciplines to simultaneously pursue the study of East Asian language and culture. The Graduate School offers doctoral (Ph.D.) training in Chinese and Japanese history and literature, Korean history, Korean cultural studies, anthropology of East Asia, and in the transnational social and cultural study of contemporary East Asia.</p><a href="/academics/area-of-study/east-asian-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://www.princeton.edu/eas/" target="_blank" rel="noopener noreferrer">Department of East Asian Studies</a></li>
+               <li><a href="http://eap.princeton.edu" target="_blank" rel="noopener noreferrer">Program in East Asian Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/department-east-asian-studies" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+               <li><a href="http://ua.princeton.edu/academic-units/program-east-asian-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/east-asian-studies" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row ab phd"> <a href="#" class="accordion-title"><h2>English</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>Undergraduate students read widely across the genres and periods of British, American&nbsp;and Anglophone literature, and explore approaches to literary study with a distinguished, internationally renowned faculty. The department's ranks include historicists and formalists, theorists and poets, and postcolonialists and feminists. Faculty teach not only poetry, prose&nbsp;and drama, but film, music, art, architecture&nbsp;and technology. The department is united by a passion for works of the imagination, and for thinking about what they mean and the difference they make in the world.</p>
+              <p>The graduate program produces well-trained and field-transforming scholars, insightful and imaginative critics, and effective and creative teachers.</p><a href="/academics/area-of-study/english" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://english.princeton.edu" target="_blank" rel="noopener noreferrer">Department of English</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/department-english" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/english" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Entrepreneurship</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The program aims&nbsp;to&nbsp;supplement undergraduates&nbsp;in their major departments with an&nbsp;understanding and practice in entrepreneurship.</p><a href="/academics/area-of-study/entrepreneurship" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://kellercenter.princeton.edu/learn/program-in-entrepreneurship" target="_blank" rel="noopener noreferrer">Program in Entrepreneurship</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-entrepreneurship" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>European Cultural Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The program deepens students' understanding of European civilization&nbsp;and strengthens their command of cultural interpretation through interdisciplinary investigation. The program focuses on&nbsp;the ways in which European societies, past and present, order reality, make sense of life&nbsp;and communicate meaning across a range of disciplines and in a wide variety of media.</p><a href="/academics/area-of-study/european-cultural-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://www.princeton.edu/ecs/" target="_blank" rel="noopener noreferrer">Program in European Cultural Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-european-cultural-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row ab phd"> <a href="#" class="accordion-title"><h2>French and Italian</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program&nbsp;gives students a grounding in the language, literature, and culture. Courses provide practical instruction in the French and Italian languages, the literatures and cultures of France and Italy in all periods,&nbsp;and literature in French written in other parts of Europe, Asia, Africa, and the Americas.</p>
+              <p>The graduate program trains students to become effective teachers and scholars of French language and literature. (The department does not offer a graduate program in Italian though it does teach graduate-level courses in Italian literature.)</p>
+              <p>&nbsp;</p><a href="/academics/area-of-study/french-and-italian" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://fit.princeton.edu" target="_blank" rel="noopener noreferrer">Department of French and Italian</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/department-french-and-italian" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/french-and-italian" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate graduate-certificate"> <a href="#" class="accordion-title"><h2>Gender and Sexuality Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate and graduate programs are dedicated to the study of gender and sexuality, as well as their intersections with race, class, ethnicity&nbsp;and disability, across cultures and global geographies both past and present.&nbsp;</p><a href="/academics/area-of-study/gender-and-sexuality-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://gss.princeton.edu" target="_blank" rel="noopener noreferrer">Program in Gender and Sexuality Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-gender-and-sexuality-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/gender-and-sexuality-studies" target="_blank" rel="noopener noreferrer">Graduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row ab phd"> <a href="#" class="accordion-title"><h2>German</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The department offers six areas of undergraduate concentration: German literature,&nbsp;German philosophy and intellectual history,&nbsp;media and aesthetics,&nbsp;Germanic linguistics,&nbsp;the study of two literatures (German and&nbsp;a second literature), and&nbsp;German culture and politics.&nbsp;</p>
+              <p>The graduate program offer students the chance to participate in an intense intellectual community and to&nbsp;work with scholars whose expertise&nbsp;encompasses the breadth of German literary tradition as well as&nbsp;contemporary interdisciplinary and theoretical approaches to the study of German culture.</p><a href="/academics/area-of-study/german" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://german.princeton.edu" target="_blank" rel="noopener noreferrer">Department of German</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/department-german" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/german" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate graduate-certificate"> <a href="#" class="accordion-title"><h2>Hellenic Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program&nbsp;is for students interested in the interdisciplinary study of the Greek world (ancient, Byzantine or modern)&nbsp;as well as the classical tradition. The program offers language courses in modern Greek and postclassical Greek, introductory courses in Byzantine and modern Greek studies, and freshman, upperclass and global seminars.</p>
+              <p>The graduate program offers a broad range of seminars in Hellenic studies that are complemented by graduate courses in several departments and programs, with opportunities for doctoral research on Byzantine or modern Greek civilization.</p><a href="/academics/area-of-study/hellenic-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="https://hellenic.princeton.edu" target="_blank" rel="noopener noreferrer">Center for Hellenic Studies</a></li>
+               <li><a href="https://hellenic.princeton.edu/study" target="_blank" rel="noopener noreferrer">Program in Hellenic Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-hellenic-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/hellenic-studies" target="_blank" rel="noopener noreferrer">Graduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row ab phd"> <a href="#" class="accordion-title"><h2>History</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program&nbsp;encourages students to gain further knowledge of the major developments in, and problems of, history,&nbsp;to do independent historical research and writing,&nbsp;and to develop an authoritative knowledge of one particular field of history.&nbsp;&nbsp;</p>
+              <p>The graduate program values an approach to scholarship grounded in the particular while retaining a sense of the whole. Students take a comprehensive a view of history with the goal of cultivating a far-reaching understanding of the past. Throughout their enrollment, students develop the necessary skills to conduct discipline-defining research.</p><a href="/academics/area-of-study/history" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://history.princeton.edu" target="_blank" rel="noopener noreferrer">Department of History</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/department-history" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/history" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Humanistic Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program offers two areas of study. Humanistic studies explore interrelated events, ideas, texts&nbsp;and artifacts of Western and Asian cultures. Journalism examines topics related to writing and the media, from creative nonfiction to relations between the media and society.</p><a href="/academics/area-of-study/humanistic-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="https://humstudies.princeton.edu" target="_blank" rel="noopener noreferrer">Program in Humanistic Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-humanistic-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row joint-degree-phd"> <a href="#" class="accordion-title"><h2>Interdisciplinary Humanities</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The Interdisciplinary Doctoral Program in the Humanities at Princeton is a home for new experiments in an ancient enterprise. The program explores the widening possibilities for humanistic study in a young millennium, reaching out to the arts and sciences&nbsp;and testing the conventions of intellectual exchange.&nbsp;The program offers a joint Ph.D. in collaboration with participating departments, and current graduate students apply to the program&nbsp;in their third year of study.</p>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://www.princeton.edu/ihum/" target="_blank" rel="noopener noreferrer">Interdisciplinary Doctoral Program in the Humanities</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/interdisciplinary-humanities-ihum" target="_blank" rel="noopener noreferrer">Joint Degree (Ph.D.)</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Jazz Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The program provides an educational forum for the study of the performance practices and rich cultural legacy of jazz. Students are exposed to&nbsp;the historical, cultural, social, theoretical, stylistic&nbsp;and creative issues that pertain to the jazz idiom.</p>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://www.princeton.edu/music/certificate-in-jazz-studi/" target="_blank" rel="noopener noreferrer">Program in Jazz Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-jazz-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Journalism</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The Program in Journalism&nbsp;empowers students to&nbsp;produce rigorous, verified&nbsp;journalism, developing a&nbsp;strong command of the literary, ethical, analytical, and&nbsp;political dimensions of&nbsp;telling a compelling story in order to have a meaningful&nbsp;impact on public policy.&nbsp;Students learn the practice of reporting and verification&nbsp;and the art of crafting&nbsp;compelling nonfiction narratives in a variety of media.</p><a href="/academics/area-of-study/journalism" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="https://journalism.princeton.edu" target="_blank" rel="noopener noreferrer">Program in Journalism</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="https://ua.princeton.edu/academic-units/program-journalism" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Judaic Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program&nbsp;provides students the opportunity to explore more than three millennia of Jewish culture, history, religion, thought, politics&nbsp;and literature from the Bible to contemporary Jewish thought and society from an interdisciplinary perspective.</p><a href="/academics/area-of-study/judaic-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://www.princeton.edu/judaic/" target="_blank" rel="noopener noreferrer">Program in Judaic Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-judaic-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Language and Culture</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The program is administered&nbsp;through individual language and literature departments to allow students in any concentration to earn a certificate in language and culture. Certificates can be earned in the departments of classics, East Asian studies, French and Italian, German, Near Eastern studies, Slavic languages and literatures, and Spanish and Portuguese languages and cultures.</p>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-language-and-culture" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate graduate-certificate"> <a href="#" class="accordion-title"><h2>Latin American Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate and graduate programs promote&nbsp;interdisciplinary study to inspire knowledge of and experience in Latin America.</p>
+              <p>&nbsp;</p><a href="/academics/area-of-study/latin-american-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://www.princeton.edu/plas/" target="_blank" rel="noopener noreferrer">Program in Latin American Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-latin-american-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/latin-american-studies" target="_blank" rel="noopener noreferrer">Graduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Latino Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program&nbsp;traverses the arts, humanities&nbsp;and social sciences, seeking to&nbsp;provide students with a broad understanding of the emergence, transformation&nbsp;and consolidation of Latinos as a pan-ethnic group&nbsp;and to appreciate the range of Hispanic imprints on American society and culture.</p><a href="/academics/area-of-study/latino-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="https://ams.princeton.edu/undergraduate/latino-studies" target="_blank" rel="noopener noreferrer">Program in Latino Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-latino-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Linguistics</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>Linguistics is the study of the distinctive properties of human language and the cognitive capacities of language users, including the rules that govern the patterns of particular languages and universal principles governing all languages. Linguists investigate the grammatical principles and processes that determine the structure of human languages, their evolution over time, and their psychological underpinnings.</p><a href="/academics/area-of-study/linguistics" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="https://linguistics.princeton.edu" target="_blank" rel="noopener noreferrer">Program in Linguistics</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-linguistics" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row graduate-certificate"> <a href="#" class="accordion-title"><h2>Media and Modernity</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The graduate program&nbsp;promotes the interdisciplinary study of the unique cultural formations that came to prominence during the last two centuries, with special attention paid to the interplay between culture and technology. The program centers on architecture, art, film, photography, literature, philosophy, music, history&nbsp;and all forms of electronic media from radio to video and information technologies.</p><a href="/academics/area-of-study/media-and-modernity" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://mediamodernity.princeton.edu" target="_blank" rel="noopener noreferrer">Program in Media and Modernity</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/media-and-modernity" target="_blank" rel="noopener noreferrer">Graduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate phd"> <a href="#" class="accordion-title"><h2>Medieval Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate and graduate programs encourages the interdisciplinary study of the Middle Ages: its art, literature (Latin and vernacular), music, religion, science, philosophy, politics&nbsp;and economic and social structures.</p><a href="/academics/area-of-study/medieval-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://medievalstudies.princeton.edu" target="_blank" rel="noopener noreferrer">Program in Medieval Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-medieval-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/medieval-studies" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row ab"> <a href="#" class="accordion-title"><h2>Music</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program&nbsp;encourages students to explore music according to their individual needs, interests, and aspirations. Students may pursue work in composition, music history, theory, analysis and interpretation, non-Western music, music technology, performance&nbsp;and improvisation.</p>
+              <p>&nbsp;</p><a href="/academics/area-of-study/music" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://www.princeton.edu/music/" target="_blank" rel="noopener noreferrer">Department of Music</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/department-music" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row phd"> <a href="#" class="accordion-title"><h2>Music Composition</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The graduate program&nbsp;offers a very open curriculum in which students are free to pursue their own individual compositional interests. At the core of the program is the student's own creative work, carried out in regular consultation with members of the&nbsp;composition faculty.</p>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://www.princeton.edu/music/" target="_blank" rel="noopener noreferrer">Department of Music</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/music-composition" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Music Performance</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program enhances the study of performance through the study of theory, composition, and music history— and vice-versa. The program can provide a foundation upon which a student may build to go on to further professional performance training at the graduate level.</p>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://www.princeton.edu/music/certificate-of-music/" target="_blank" rel="noopener noreferrer">Department of Music</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-musical-performance" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Music Theater</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>From opera to Broadway musicals to experimental music theater, the many hybrids of singing, acting, and movement are among the most historically significant, socially relevant, and artistically adventurous forms of performance. The undergraduate program&nbsp;encourages students to explore music theater as an intensely collaborative art form, as a key component of world cultures, and as an entertainment genre that shapes and is shaped by history, economics, politics, and technology.</p><a href="/academics/area-of-study/music-theater" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://arts.princeton.edu/academics/music-theater/" target="_blank" rel="noopener noreferrer">Program in Music Theater</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-music-theater-0" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row phd"> <a href="#" class="accordion-title"><h2>Musicology</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>Musicology embraces the study of history, theory&nbsp;and practice of music from many points of view. Graduate study in musicology may cover approaches such as historical and ethnographic investigation as well as music theory, hermeneutics&nbsp;and criticism.</p>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://www.princeton.edu/music/" target="_blank" rel="noopener noreferrer">Department of Music</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/musicology" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row ab undergraduate-certificate ma phd"> <a href="#" class="accordion-title"><h2>Near Eastern Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate concentration gives students competence in a Near Eastern language and a broad knowledge of the literatures, civilizations, politics&nbsp;and history of the ancient, medieval&nbsp;and modern Near East. Study is built around courses in history, literature, religion, law, anthropology, politics, economics,&nbsp;public policy and Near Eastern languages (Arabic, Hebrew, Persian&nbsp;or Turkish).</p>
+              <p>The undergraduate certificate&nbsp;provides students in any department the opportunity to study the languages, modern history&nbsp;and contemporary institutions of the Near East.</p>
+              <p>The graduate program&nbsp;has been a leader in the study of the Middle East since 1927. While traditionally the strength of the department has been in the medieval and pre-modern studies of the geographical area that includes the Arab lands, Iran, Israel&nbsp;and Turkey, greater emphasis has been given more recently to the modern Muslim world in its entirety, including the Caucasus, Central Asia, South Asia&nbsp;and Southeast Asia.</p><a href="/academics/area-of-study/near-eastern-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://www.princeton.edu/nes/" target="_blank" rel="noopener noreferrer">Department of Near Eastern Studies</a></li>
+               <li><a href="http://www.princeton.edu/nep/undergraduate-introductio/" target="_blank" rel="noopener noreferrer">Program in Near Eastern Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/department-near-eastern-studies" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+               <li><a href="http://ua.princeton.edu/academic-units/program-near-eastern-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/near-eastern-studies" target="_blank" rel="noopener noreferrer">M.A.</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/near-eastern-studies" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row ab phd"> <a href="#" class="accordion-title"><h2>Philosophy</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>Undergraduates enjoy small class sizes, have the opportunity to do independent work in close consultation with members of the twenty-strong faculty, and benefit from teaching assistants drawn from one of the world's very best graduate programs in philosophy.&nbsp;</p>
+              <p>The graduate program&nbsp;equips students for careers as philosophers and teachers of philosophy. The program provides broad general training, an opportunity for specialized research in the major areas of philosophic inquiry and experience in undergraduate teaching. Each student pursues an individual plan of study appropriate to his or her background, interests, and aims.</p><a href="/academics/area-of-study/philosophy" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://philosophy.princeton.edu" target="_blank" rel="noopener noreferrer">Department of Philosophy</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/department-philosophy" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/philosophy" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row ab phd"> <a href="#" class="accordion-title"><h2>Religion</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program&nbsp;examines religious life, the diverse forms it has taken in different cultures and historical periods, and the questions it poses for theoretical, ethical, and political reflection. Students study diverse cultures, peoples, texts and ideologies.</p>
+              <p>The graduate program offers broad training in Religious Studies and enables students to specialize in the subfields of Asian religions, Islam, religion in the Americas, religions of Mediterranean antiquity, religion and philosophy, and religion, ethics and politics.</p><a href="/academics/area-of-study/religion" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://religion.princeton.edu" target="_blank" rel="noopener noreferrer">Department of Religion</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/department-religion" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/religion" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Russian, East European and Eurasian Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program&nbsp;draws on the humanities, history&nbsp;and social sciences to&nbsp;study of Russia, Eastern Europe&nbsp;and Eurasia. Students develop&nbsp;expertise in a core language of Eurasia and a scholarly grounding in the study of the region.</p><a href="/academics/area-of-study/russian%2C-east-european-and-eurasian-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://piirs.princeton.edu/reees/" target="_blank" rel="noopener noreferrer">Program in Russian, East European and Eurasian Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-russian-east-european-and-eurasian-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row ab phd"> <a href="#" class="accordion-title"><h2>Slavic Languages and Literatures</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program&nbsp;provides a critically informed appreciation for the literature and culture of&nbsp;Russia&nbsp;and the Slavic world. Students choose a literary tradition as their object of study and develop a comprehensive knowledge of its historical trajectories, artistic trends&nbsp;and intellectual currents.&nbsp;</p>
+              <p>The&nbsp;graduate program furthers interest, knowledge&nbsp;and scholarship relating to Russia, Slavic Central Europe&nbsp;and Eurasia,&nbsp;primarily through the cultural humanities.&nbsp;Students explore new intellectual paths and approaches through a strong background in the Russian literary tradition, an introduction to major schools of theory, and the opportunity to conduct research abroad. &nbsp;</p><a href="/academics/area-of-study/slavic-languages-and-literatures" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://slavic.princeton.edu" target="_blank" rel="noopener noreferrer">Department of Slavic Languages and Literatures</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/department-slavic-languages-and-literatures" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/slavic-languages-and-literatures" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>South Asian Studies</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program&nbsp;offers students the methodological and theoretical tools to study the political, economic, social, religious, literary&nbsp;and cultural institutions of the region with particular focus on the modern history of India and Pakistan. Students take&nbsp;a four-term sequence of language instruction in Hindi, Urdu&nbsp;and Sanskrit.</p><a href="/academics/area-of-study/south-asian-studies" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://piirs.princeton.edu/sas" target="_blank" rel="noopener noreferrer">Program in South Asian Studies</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-south-asian-studies" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row ab phd"> <a href="#" class="accordion-title"><h2>Spanish and Portuguese</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program&nbsp;studies the importance and influence of the Spanish, Latin American&nbsp;and Luso-Brazilian histories, cultures&nbsp;and languages around the world from the Middle Ages to&nbsp;the present day.&nbsp;Students prepare to be&nbsp;successful global citizens, ready to face the challenges posed by an increasingly cosmopolitan and multilingual professional world.</p>
+              <p>The graduate program&nbsp;trains students to become effective teachers and scholars of Spanish and/or Portuguese language and culture. Students acquire a broad understanding of the whole field of Spanish&nbsp;and/or Luso-Brazilian studies as well as a specialized grasp of one of its subfields.</p><a href="/academics/area-of-study/spanish-and-portuguese" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://spo.princeton.edu" target="_blank" rel="noopener noreferrer">Department of Spanish and Portuguese</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/department-spanish-and-portuguese-languages" target="_blank" rel="noopener noreferrer">A.B.</a></li>
+               <li><a href="https://gradschool.princeton.edu/academics/fields-study/spanish-and-portuguese" target="_blank" rel="noopener noreferrer">Ph.D.</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Teacher Preparation</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The program combines coursework, seminars, laboratory experience, field work&nbsp;and practice teaching&nbsp;to become fully prepared and certified to teach successfully at the middle and secondary levels.&nbsp;Participants can earn certification in art, English, mathematics, music, the sciences, social studies&nbsp;and world languages.&nbsp;The program is approved by the New Jersey Department of Education and by the Council for the Accreditation of Educator Preparation (CAEP).</p><a href="/academics/area-of-study/teacher-preparation" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://teacherprep.princeton.edu" target="_blank" rel="noopener noreferrer">Program in Teacher Preparation</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-teacher-preparation" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Theater</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program allows students to work with professional artists and critics, as well as with scholars in the area of performance studies, to familiarize themselves with the nature of practical work in theater and the role theater has played and continues to play in various cultures at various times.&nbsp;</p><a href="/academics/area-of-study/theater" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://arts.princeton.edu/academics/theater/" target="_blank" rel="noopener noreferrer">Program in Theater</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-theater" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Translation and Intercultural Communication</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program seeks to develop skills in language use and in the understanding of cultural and disciplinary difference. Translation across languages allows access to issues of intercultural differences, and the program encourages its students to think about the complexity of communicating across cultures, nations&nbsp;and linguistic borders.</p><a href="/academics/area-of-study/translation-and-intercultural-communication" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://piirs.princeton.edu/ptic" target="_blank" rel="noopener noreferrer">Program in Translation and Intercultural Communication</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-translation-and-intercultural-communication" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Values and Public Life</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>The undergraduate program focuses on modes of inquiry into important ethical issues in public life. The program helps students develop competence in pursuing such inquiries generally and supports them in applying these intellectual skills to the advanced analysis of one or more related topics. Students will be equipped to bring informed discussion of values into the public sphere and to integrate a critical value perspective into their future studies and pursuits.</p>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://uchv.princeton.edu/academic-programs/values-and-public-life-certificate" target="_blank" rel="noopener noreferrer">Program in Values and Public Life</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-values-and-public-life" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+           <li class="row small-collapse large-uncollapse accordion-item row undergraduate-certificate"> <a href="#" class="accordion-title"><h2>Visual Arts</h2></a>
+            <div class="accordion-content row small-12" data-tab-content>
+             <div class="body columns small-12 large-6">
+              <p>In the undergraduate program, students&nbsp;explore visual art and media and develop their creative skills in connection with a liberal arts education. Courses are offered in painting, drawing, graphic design, media, sculpture, photography, filmmaking&nbsp;and film history and criticism. Studio courses emphasize direct, hands-on art making under the guidance of practicing visual arts professionals.</p><a href="/academics/area-of-study/visual-arts" class="button">View Courses</a>
+             </div>
+             <div class="columns small-12 large-3 linklist">
+              <h3 class="subheader">Academic Units</h3>
+              <ul>
+               <li><a href="http://arts.princeton.edu/academics/visual-arts/" target="_blank" rel="noopener noreferrer">Program in Visual Arts</a></li>
+              </ul>
+             </div>
+             <div class="columns small-12 large-3 end linklist">
+              <h3 class="subheader">Degrees &amp; Certificates</h3>
+              <ul>
+               <li><a href="http://ua.princeton.edu/academic-units/program-visual-arts" target="_blank" rel="noopener noreferrer">Undergraduate certificate</a></li>
+              </ul>
+             </div>
+            </div></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+      <nav role="navigation" aria-labelledby="block-sectionmenu-academics-menu" id="block-sectionmenu-academics" data-block-plugin-id="menu_block:main" class="menu--main block--more-in-academics section-nav-container content-tile-simple">
+       <h2 id="block-sectionmenu-academics-menu">More in Academics</h2>
+       <ul class="menu--section linklist" role="menu">
+        <li class=""><a href="/academics/studying-princeton" role="menuitem" data-drupal-link-system-path="node/76">Studying at Princeton</a></li>
+        <li class=""><a href="/academics/library" role="menuitem" data-drupal-link-system-path="node/20166">Library</a></li>
+        <li class=""><a href="/academics/areas-of-study" role="menuitem" data-drupal-link-system-path="academics/areas-of-study">Areas of Study</a></li>
+        <li class="invert"><a href="/academics/areas-of-study/humanities" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/humanities" class="is-active">Humanities</a></li>
+        <li class=""><a href="/academics/areas-of-study/social-sciences" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/social-sciences">Social Sciences</a></li>
+        <li class=""><a href="/academics/areas-of-study/engineering" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/engineering">Engineering</a></li>
+        <li class=""><a href="/academics/areas-of-study/natural-sciences" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/natural-sciences">Natural Sciences</a></li>
+        <li class=""><a href="/academics/advising" role="menuitem" data-drupal-link-system-path="node/20381">Advising</a></li>
+        <li class=""><a href="https://registrar.princeton.edu/academic-calendar/" role="menuitem">Academic Calendar</a></li>
+        <li class=""><a href="/academics/course-tools" role="menuitem" data-drupal-link-system-path="node/54066">Course Tools</a></li>
+        <li class=""><a href="/academics/learning-abroad" role="menuitem" data-drupal-link-system-path="node/20161">Learning Abroad</a></li>
+        <li class=""><a href="/academics/career-development" role="menuitem" data-drupal-link-system-path="node/20391">Career Development</a></li>
+        <li class=""><a href="/academics/continuing-education" role="menuitem" data-drupal-link-system-path="node/20376">Continuing Education</a></li>
+        <li class=""><a href="/academics/innovative-learning" role="menuitem" data-drupal-link-system-path="node/20366">Innovative Learning</a></li>
+       </ul>
+      </nav>
+     </div>
+    </section>
+   </main>
+   <footer class="page-footer">
+    <div class="row">
+     <div class="small-6 xmedium-3 columns">
+      <div>
+       <nav role="navigation" aria-labelledby="block-footergroup1-menu" id="block-footergroup1" data-block-plugin-id="system_menu_block:footer" class="menu--footer block--contact-links">
+        <h2 class="visually-hidden" id="block-footergroup1-menu" aria-hidden="true">Contact links</h2>
+        <ul class="menu vertical" role="menu">
+         <li class="menu-item"><a href="/meet-princeton/contact-us" role="menuitem" data-drupal-link-system-path="node/20181">Contact Us</a></li>
+         <li class="menu-item"><a href="https://accessibility.princeton.edu/resources/accessibility-help" role="menuitem">Accessibility</a></li>
+         <li class="menu-item"><a href="/search/people-advanced" role="menuitem" data-drupal-link-system-path="search/people-advanced">Advanced People Search</a></li>
+         <li class="menu-item"><a href="/news/media-inquiries" role="menuitem" data-drupal-link-system-path="node/20526">Media Inquiries</a></li>
+         <li class="menu-item"><a href="/feedback" role="menuitem" data-drupal-link-system-path="contact/beta_feedback">Website Feedback</a></li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+     <div class="small-6 xmedium-3 columns">
+      <div>
+       <nav role="navigation" aria-labelledby="block-footergroup2-menu" id="block-footergroup2" data-block-plugin-id="system_menu_block:footer-2" class="menu--footer-2 block--visiting-links">
+        <h2 class="visually-hidden" id="block-footergroup2-menu" aria-hidden="true">Visiting links</h2>
+        <ul class="menu vertical" role="menu">
+         <li class="menu-item"><a href="/meet-princeton/visit-us" role="menuitem" data-drupal-link-system-path="node/20531">Plan a Visit</a></li>
+         <li class="menu-item"><a href="/meet-princeton/visit-us#campus-maps" role="menuitem" data-drupal-link-system-path="node/20531">Maps &amp; Shuttles</a></li>
+         <li class="menu-item"><a href="http://www.goprincetontigers.com" role="menuitem">Varsity Athletics</a></li>
+         <li class="menu-item"><a href="http://giving.princeton.edu" role="menuitem">Giving to Princeton</a></li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+     <div class="small-6 xmedium-3 columns">
+      <div>
+       <nav role="navigation" aria-labelledby="block-footergroup3-menu" id="block-footergroup3" data-block-plugin-id="system_menu_block:footer-3" class="menu--footer-3 block--academic-links">
+        <h2 class="visually-hidden" id="block-footergroup3-menu" aria-hidden="true">Academic links</h2>
+        <ul class="menu vertical" role="menu">
+         <li class="menu-item"><a href="http://library.princeton.edu" role="menuitem">Library</a></li>
+         <li class="menu-item"><a href="https://registrar.princeton.edu/academic-calendar/" role="menuitem">Academic Calendar</a></li>
+         <li class="menu-item"><a href="/links/students" role="menuitem" data-drupal-link-system-path="node/20266">Student Links</a></li>
+         <li class="menu-item"><a href="/links/faculty-staff" role="menuitem" data-drupal-link-system-path="node/20186">Faculty &amp; Staff Links</a></li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+     <div class="small-6 xmedium-3 columns">
+      <div>
+       <nav role="navigation" aria-labelledby="block-footersocialmedia-menu" id="block-footersocialmedia" data-block-plugin-id="system_menu_block:footer-sm" class="menu--footer-sm block--footer-social-media">
+        <h2 class="visually-hidden" id="block-footersocialmedia-menu" aria-hidden="true">Footer social media</h2>
+        <ul class="menu vertical" role="menu">
+         <li class="menu-item sprite-before facebook"><a href="https://www.facebook.com/princetonu" role="menuitem">Facebook</a></li>
+         <li class="menu-item sprite-before twitter"><a href="https://twitter.com/princeton" role="menuitem">Twitter</a></li>
+         <li class="menu-item sprite-before instagram"><a href="https://www.instagram.com/princeton/" role="menuitem">Instagram</a></li>
+         <li class="menu-item sprite-before snapchat"><a href="https://www.snapchat.com/add/princetonu" role="menuitem">Snapchat</a></li>
+         <li class="menu-item sprite-before linkedin"><a href="https://www.linkedin.com/school/157313/" role="menuitem">LinkedIn</a></li>
+         <li class="menu-item sprite-before youtube"><a href="https://www.youtube.com/princeton" role="menuitem">YouTube</a></li>
+         <li class="menu-item sprite-before social-media-directory"><a href="http://socialmedia.princeton.edu/accounts" role="menuitem">Social Media Directory</a></li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+    </div>
+    <div class="midfooter row">
+     <div class="columns"><strong>Equal Opportunity and Nondiscrimination at Princeton University:</strong> Princeton University believes that commitment to principles of fairness and respect for all is favorable to the free and open exchange of ideas, and the University seeks to reach out as widely as possible in order to attract the ablest individuals as students, faculty, and staff. In applying this policy, the University is committed to nondiscrimination on the basis of personal beliefs or characteristics such as political views, religion, national or ethnic origin, race, color, sex, sexual orientation, gender identity or expression, pregnancy, age, marital or domestic partnership status, veteran status, disability, genetic information and/or other characteristics protected by applicable law in any phase of its education or employment programs or activities. In addition, pursuant to Title IX of the Education Amendments of 1972 and supporting regulations, Princeton does not discriminate on the basis of sex in the education programs or activities that it operates; this extends to admission and employment. Inquiries about the application of Title IX and its supporting regulations may be directed to the Assistant Secretary for Civil Rights, Office for Civil Rights, U.S. Department of Education or to the University's Sexual Misconduct/Title IX Coordinator. See Princeton’s full <a href="https://rrr.princeton.edu/eop">Equal Opportunity Policy and Nondiscrimination Statement</a>. 
+     </div>
+    </div>
+    <div class="subfooter row" typeof="schema: Organization">
+     <div class="subfooter-first small-6 medium-4 large-5 columns"><a href="http://www.princeton.edu"><img alt="" src="/themes/custom/tony/images/logo-white.svg"><span property="schema:name" class="show-for-sr">Princeton University</span></a>
+     </div>
+     <div class="subfooter-second small-6 medium-8 large-7 columns">
+      <div class="row">
+       <div class="small-12 medium-5 large-4 columns address">
+        <div property="schema: address" typeof="PostalAddress"><span property="addressLocality">Princeton, NJ</span><span property="schema: postalCode">08544</span>
+        </div>
+        <div>
+         Operator: <span property="telephone">(609) 258-3000</span>
+        </div>
+       </div>
+       <div class="small-12 medium-7 large-8 columns text-right">
+        <div class="copyright">
+          © 2022 The Trustees of Princeton&nbsp;University 
+        </div>
+        <div>
+         <nav role="navigation" aria-labelledby="block-subfooterlinks-menu" id="block-subfooterlinks" data-block-plugin-id="system_menu_block:subfooter-links" class="menu--subfooter-links block--subfooter-links">
+          <h2 class="visually-hidden" id="block-subfooterlinks-menu" aria-hidden="true">Subfooter links</h2>
+          <ul class="menu float-right" role="menu">
+           <li class="menu-item"><a href="/meet-princeton/copyright-infringement" role="menuitem" data-drupal-link-system-path="node/20201">Copyright Infringement</a></li>
+           <li class="menu-item"><a href="/privacy-notice" role="menuitem" data-drupal-link-system-path="node/174186">Privacy Notice</a></li>
+          </ul>
+         </nav>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div><!-- DO NOT REMOVE this comment. The UltraDNS service tests for the following string to confirm that the site is available: ultradns-test-string -->
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"academics\/areas-of-study\/humanities","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"ajax":[],"user":{"uid":0,"permissionsHash":"fdd3a7e2d99481993235bdcf7649ecbbb79b084fad1707ca75a8c53d95d3980e"}}</script>
+  <script src="/sites/default/files/js/js_f-GjoyKAlCD0seK3e1RsVlyWSVdEwjCFMKpWukMe8MA.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"465817224","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTkRYVlE7UwVVUVQ=","queueTime":0,"applicationTime":56,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

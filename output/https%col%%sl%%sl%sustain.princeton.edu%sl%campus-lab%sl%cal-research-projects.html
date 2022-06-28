@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"427707476"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-28079934-2", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});
+ga('puwdsTracker.set', 'anonymizeIp', true);ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <link rel="canonical" href="https://sustain.princeton.edu/campus-lab/cal-research-projects">
+  <meta property="og:site_name" content="Office of Sustainability">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://sustain.princeton.edu/campus-lab/cal-research-projects">
+  <meta property="og:title" content="CAL Research Projects">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:widgets:csp" content="on">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/profiles/ps/themes/ps_tiger/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>CAL Research Projects | Office of Sustainability</title>
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf176/files/css/css_FI5YKf1uWwU1PlMn_pk98xmcndAnpluymAiHMaTx3NA.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf176/files/css/css_1prhxtvxq6YtbaaqGTWaME8KYz_-Q8ljDzSry7LZZCQ.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/xxx7asp.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/bok5fgz.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf176/files/css/css_p815ZZPkh-iCLn3u0o0hly8J2ScROYKQPbs1lS8APKE.css">
+ </head>
+ <body class="not-front section-campus-lab page-node-3081 content-type-ps-basic-page flavor1 fontset3 menu1 with-alt-pu-logo layout-block-padding-none">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="page page-container"> 
+    <header role="banner" class="header region region-header" id="header">
+     <h1 class="sr-only sr-site-name">Office of Sustainability</h1>
+     <div class="skip-links"><a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to content</a><a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to search</a>
+     </div>
+     <div class="header-container container">
+      <div class="princeton-branding">
+       <div class="container"><a href="http://www.princeton.edu" class="alt-pu-logo" title="Princeton University"> <img src="/profiles/ps/themes/ps_base/images/pu-shield.svg" alt="Princeton University" class="pu-shield"> </a>
+       </div>
+      </div>
+      <div class="site-branding">
+       <div class="container">
+        <div class="row"><a href="/" title="Home" rel="home" class="site-logo"> <img src="/sites/g/files/toruqf176/files/sustainability-logo.svg" alt="Home" typeof="foaf:Image"> </a>
+        </div>
+       </div>
+      </div>
+      <nav aria-label="site" class="main-menu">
+       <h2 class="sr-only">Main Menu</h2>
+       <div class="container navbar-expand-lg"><button class="toggle-mobile-menu unbutton" type="button" data-toggle="collapse" data-target="#menu-container" aria-controls="menu-container" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-mobile-menu-icon"> <span class="toggle-mobile-menu-title">Menu</span> <i class="fa fa-bars" aria-hidden="true"></i> </span> </button>
+        <div id="menu-container" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item expanded"><a href="/sustainability-action-plan" data-drupal-link-system-path="node/6">Sustainability Action Plan</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/sustainability-action-plan/overview" data-drupal-link-system-path="node/71">Overview</a></li>
+            <li class="submenu-item"><a href="/sustainability-action-plan/ghg-emissions" data-drupal-link-system-path="node/76">GHG Emissions</a></li>
+            <li class="submenu-item"><a href="/sustainability-action-plan/water-usage" data-drupal-link-system-path="node/81">Water Usage</a></li>
+            <li class="submenu-item"><a href="/sustainability-action-plan/stormwater-management" data-drupal-link-system-path="node/86">Stormwater Management</a></li>
+            <li class="submenu-item"><a href="/sustainability-action-plan/design-develop" data-drupal-link-system-path="node/91">Design &amp; Develop</a></li>
+            <li class="submenu-item"><a href="/sustainability-action-plan/healthy-habitats" data-drupal-link-system-path="node/96">Healthy Habitats</a></li>
+            <li class="submenu-item"><a href="/sustainability-action-plan/alternative-commuting" data-drupal-link-system-path="node/101">Alternative Commuting</a></li>
+            <li class="submenu-item"><a href="/sustainability-action-plan/purchasing-waste" data-drupal-link-system-path="node/106">Purchasing &amp; Waste</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/take-action" data-drupal-link-system-path="node/16">Take Action</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/take-action/students" data-drupal-link-system-path="node/266">Students</a></li>
+            <li class="submenu-item"><a href="/take-action/faculty-staff" data-drupal-link-system-path="node/271">Faculty &amp; Staff</a></li>
+           </ul></li>
+          <li class="nav-item expanded active"><a href="/campus-lab" data-drupal-link-system-path="node/11">Campus as Lab</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item expanded"><a href="/campus-lab/cal-students" data-drupal-link-system-path="node/3156">CAL for Students</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/campus-lab/senior-theses" data-drupal-link-system-path="node/221">Senior Theses</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/campus-lab/cal-faculty" data-drupal-link-system-path="node/3176">CAL for Faculty</a></li>
+            <li class="submenu-item"><a href="/campus-lab/cal-staff" data-drupal-link-system-path="node/3246">CAL For Staff</a></li>
+            <li class="submenu-item expanded active"><a href="/campus-lab/cal-research-projects" data-drupal-link-system-path="node/3081" class="is-active">CAL Research Projects</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/campus-lab/research-questions" data-drupal-link-system-path="node/206">Research Questions</a></li>
+              <li class="submenu-item"><a href="/campus-lab/cal-research-projects/data" data-drupal-link-system-path="node/211">Data</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/campus-lab/cal-courses" data-drupal-link-system-path="node/216">CAL Courses</a></li>
+           </ul></li>
+         </ul>
+         <div class="utility-menu">
+          <ul class="nav navbar-nav utility-nav">
+           <li class="nav-item expanded"><a href="/about" data-drupal-link-system-path="node/1">About</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse-utility-menu" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+            <ul class="menu submenu collapse collapse-utility-menu">
+             <li class="submenu-item"><a href="/about/history" data-drupal-link-system-path="node/36">History</a></li>
+             <li class="submenu-item"><a href="/about/staff" data-drupal-link-system-path="node/41">Staff</a></li>
+             <li class="submenu-item expanded"><a href="/about/student-employees" data-drupal-link-system-path="node/46">Student Employees</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse-utility-menu" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+              <ul class="menu submenu collapse collapse-utility-menu">
+               <li class="submenu-item"><a href="/about/student-employees/mend" data-drupal-link-system-path="node/51">Mend</a></li>
+               <li class="submenu-item"><a href="/about/student-employees/garden-project" data-drupal-link-system-path="node/56">Garden Project</a></li>
+               <li class="submenu-item"><a href="/about/student-employees/scrap-lab" data-drupal-link-system-path="node/646">S.C.R.A.P. Lab</a></li>
+               <li class="submenu-item"><a href="/about/student-employees/ecoreps" data-drupal-link-system-path="node/61">EcoReps</a></li>
+              </ul></li>
+             <li class="submenu-item"><a href="/about/governance" data-drupal-link-system-path="node/531">Governance</a></li>
+             <li class="submenu-item"><a href="/about/task-forces" data-drupal-link-system-path="node/536">Task Forces</a></li>
+             <li class="submenu-item"><a href="/about/working-groups" data-drupal-link-system-path="node/651">Working Groups</a></li>
+             <li class="submenu-item"><a href="/about/partnerships" data-drupal-link-system-path="node/541">Partnerships</a></li>
+             <li class="submenu-item expanded"><a href="/about/environmental-justice" data-drupal-link-system-path="node/2576">Environmental Justice</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse-utility-menu" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+              <ul class="menu submenu collapse collapse-utility-menu">
+               <li class="submenu-item"><a href="/about/environmental-justice/land-acknowledgement" data-drupal-link-system-path="node/2801">Land Acknowledgement</a></li>
+              </ul></li>
+            </ul></li>
+           <li class="nav-item"><a href="/news-events" data-drupal-link-system-path="node/26">News &amp; Events</a></li>
+           <li class="nav-item expanded"><a href="/resources" data-drupal-link-system-path="node/21">Resources</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse-utility-menu" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+            <ul class="menu submenu collapse collapse-utility-menu">
+             <li class="submenu-item"><a href="/resources/campus-green-tour" data-drupal-link-system-path="node/616">Campus Green Tour</a></li>
+             <li class="submenu-item"><a href="/resources/careers" data-drupal-link-system-path="node/2601">Careers</a></li>
+             <li class="submenu-item"><a href="/resources/drink-local" data-drupal-link-system-path="node/546">Drink Local</a></li>
+             <li class="submenu-item expanded"><a href="/resources/explore-nature" data-drupal-link-system-path="node/2596">Explore Nature</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse-utility-menu" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+              <ul class="menu submenu collapse collapse-utility-menu">
+               <li class="submenu-item"><a href="/resources/explore-nature/nature-walks-henry-horn" data-drupal-link-system-path="node/621">Nature Walks with Henry Horn</a></li>
+               <li class="submenu-item"><a href="/resources/explore-nature/your-favorite-spot" data-drupal-link-system-path="node/2721">Your Favorite Spot</a></li>
+              </ul></li>
+             <li class="submenu-item"><a href="/resources/green-your-dorm" data-drupal-link-system-path="node/586">Green Your Dorm</a></li>
+             <li class="submenu-item expanded"><a href="/resources/green-your-event" data-drupal-link-system-path="node/556">Green Your Event</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse-utility-menu" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+              <ul class="menu submenu collapse collapse-utility-menu">
+               <li class="submenu-item"><a href="/resources/green-your-event/sustainable-event-guidelines" data-drupal-link-system-path="node/901">Sustainable Event Guidelines</a></li>
+               <li class="submenu-item"><a href="/resources/green-your-event/sustainable-purchasing" data-drupal-link-system-path="node/656">Sustainable Purchasing</a></li>
+              </ul></li>
+             <li class="submenu-item"><a href="/resources/green-your-office" data-drupal-link-system-path="node/591">Green Your Office</a></li>
+             <li class="submenu-item expanded"><a href="/resources/high-meadows-fund" data-drupal-link-system-path="node/566">High Meadows Fund</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse-utility-menu" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+              <ul class="menu submenu collapse collapse-utility-menu">
+               <li class="submenu-item"><a href="/resources/high-meadows-fund/high-meadows-recipients" data-drupal-link-system-path="node/626">High Meadows Recipients</a></li>
+               <li class="submenu-item"><a href="/resources/high-meadows-fund/high-meadows-application-form" data-drupal-link-system-path="node/631">High Meadows Application Form</a></li>
+               <li class="submenu-item"><a href="/resources/high-meadows-fund/high-meadows-assessment-report-form" data-drupal-link-system-path="node/636">High Meadows Assessment Report Form</a></li>
+              </ul></li>
+             <li class="submenu-item expanded"><a href="/resources/mailing-lists" data-drupal-link-system-path="node/571">Mailing Lists</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse-utility-menu" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+              <ul class="menu submenu collapse collapse-utility-menu">
+               <li class="submenu-item"><a href="/resources/mailing-lists/newsletter-archive" data-drupal-link-system-path="node/601">Newsletter Archive</a></li>
+              </ul></li>
+             <li class="submenu-item"><a href="/resources/publications" data-drupal-link-system-path="node/176">Publications</a></li>
+             <li class="submenu-item expanded"><a href="/resources/recycling" data-drupal-link-system-path="node/551">Recycling</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse-utility-menu" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+              <ul class="menu submenu collapse collapse-utility-menu">
+               <li class="submenu-item"><a href="/resources/recycling/faq-contamination-recycling" data-drupal-link-system-path="node/921">FAQ: Contamination &amp; Recycling</a></li>
+              </ul></li>
+             <li class="submenu-item expanded"><a href="/resources/sustainability-staff-ambassadors" data-drupal-link-system-path="node/581">Sustainability Staff Ambassadors</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse-utility-menu" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+              <ul class="menu submenu collapse collapse-utility-menu">
+               <li class="submenu-item"><a href="/resources/sustainability-staff-ambassadors/ambassador-alumni" data-drupal-link-system-path="node/641">Ambassador Alumni</a></li>
+              </ul></li>
+             <li class="submenu-item"><a href="/resources/sustainability-student-groups" data-drupal-link-system-path="node/576">Sustainability Student Groups</a></li>
+             <li class="submenu-item"><a href="/resources/zero-waste" data-drupal-link-system-path="node/596">Zero Waste Guide</a></li>
+            </ul></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </nav>
+      <div class="search-bar" id="search-bar">
+       <div class="container navbar-expand-lg" role="search">
+        <h2 class="sr-only">Search</h2><button class="toggle-searchbar unbutton" type="button" data-toggle="collapse" data-target="#search-bar-container" aria-controls="search-bar-container" aria-expanded="false" aria-label="Toggle search"> <span class="toggle-search-icon"> <i class="fas fa-search" aria-hidden="true"></i> </span> </button>
+        <div id="search-bar-container" class="collapse navbar-collapse">
+         <div class="search-block-form contextual-region block block-search container-inline" id="block-searchform">
+          <form action="/search" method="get" id="search-block-form" accept-charset="UTF-8">
+           <div id="search-toggled" class="form-group js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label"><label for="edit-search-keys" class="visually-hidden">Search</label>
+            <input placeholder="Search" type="search" id="edit-search-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control">
+           </div>
+           <div data-drupal-selector="edit-search-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-search-actions">
+            <input type="submit" id="edit-search-submit" value="Submit" class="button js-form-submit form-submit btn btn-primary">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="breadcrumb region region-breadcrumb" id="breadcrumb">
+     <div class="container">
+      <nav role="navigation" aria-label="breadcrumb">
+       <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/campus-lab">Campus as Lab</a></li>
+       </ol>
+      </nav>
+     </div>
+    </div>
+    <div class="highlighted" id="highlighted">
+     <div class="container">
+      <div class="region region-highlighted">
+       <div data-drupal-messages-fallback class="hidden"></div>
+      </div>
+     </div>
+    </div>
+    <div id="main" class="main-container">
+     <div class="container">
+      <div class="row">
+       <div class="sidebar-first section order-first col-sm-4 col-md-3 col-lg-2">
+        <nav class="main-sidebar-menu" aria-label="section">
+         <h2 class="sr-only">Section Menu</h2>
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item collapsed"><a href="/campus-lab/cal-students" data-drupal-link-system-path="node/3156">CAL for Students</a></li>
+          <li class="nav-item"><a href="/campus-lab/cal-faculty" data-drupal-link-system-path="node/3176">CAL for Faculty</a></li>
+          <li class="nav-item"><a href="/campus-lab/cal-staff" data-drupal-link-system-path="node/3246">CAL For Staff</a></li>
+          <li class="nav-item expanded active"><a href="/campus-lab/cal-research-projects" data-drupal-link-system-path="node/3081" class="is-active">CAL Research Projects</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/campus-lab/research-questions" data-drupal-link-system-path="node/206">Research Questions</a></li>
+            <li class="submenu-item"><a href="/campus-lab/cal-research-projects/data" data-drupal-link-system-path="node/211">Data</a></li>
+           </ul></li>
+          <li class="nav-item"><a href="/campus-lab/cal-courses" data-drupal-link-system-path="node/216">CAL Courses</a></li>
+         </ul>
+        </nav>
+       </div>
+       <main class="main main-content col-sm-12 col-lg-10 order-last"><a id="main-content" class="sr-only skip-link"></a>
+        <div class="region region-content">
+         <div id="block-ps-tiger-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+          <h1 class="page-title"> CAL Research Projects </h1>
+         </div>
+         <div id="block-ps-tiger-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+          <article role="article" about="/campus-lab/cal-research-projects" class="node node--type-ps-basic-page node--view-mode-full">
+           <div class="node__content">
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-block-plugin-id="ps_node_view" class="block block-ps-core block-ps-node-view">
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--twocol-67-33">
+             <div class="layout-inner-container">
+              <div class="layout__region layout__region--first layout__region--wide layout__region--67">
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p dir="ltr">There are numerous opportunities to pursue research projects using Princeton’s campus as a living laboratory to help solve global sustainability challenges, while also helping to advance progress toward the institution’s own ambitious Sustainability Action Plan goals.</p>
+                 <p dir="ltr">View a sample of current, on-going, and past Campus as Lab research projects below.&nbsp;</p>
+                </div>
+               </div>
+               <div data-component-uuid="36ccf565-906c-4a1a-9b16-6098cfbb0404" data-et="node" data-ei="3081" data-evd="node.ps_basic_page.default" data-block-plugin-id="ps_basic_page_list" class="block-content-list block block-ps-basic-pages block-ps-basic-page-list">
+                <div data-ajax="on" class="exposed-filters-0 content-list content-list-standard">
+                 <h2 class="content-list-title">Campus as Lab Projects</h2>
+                 <div class="content-list-items" role="list">
+                  <div class="content-list-item feature-is-16x9" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"><a href="/analyzing-structural-integrity-sustainable-concrete-alternatives" hreflang="en"><img src="/sites/g/files/toruqf176/files/styles/16x9_750w_422h/public/2021-09/Concrete2.jpg?itok=K_zFg0FA" width="750" height="422" alt="construction of steel concrete beams" loading="lazy" typeof="foaf:Image" class="image-style-_6x9-750w-422h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/analyzing-structural-integrity-sustainable-concrete-alternatives" hreflang="en">Analyzing the Structural Integrity of Sustainable Concrete Alternatives</a></span>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Professor Branko Glisic is working to monitor the structural integrity of concrete pillars and beams in a newly constructed parking structure. The goal of this project is to apply the findings of the structural research of existing concrete mixtures to newly developed concrete mixtures that do not use or emit any carbon byproducts in construction.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-16x9" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"><a href="/butler-green-roof" hreflang="en"><img src="/sites/g/files/toruqf176/files/styles/16x9_750w_422h/public/Butler%20College_3.jpg?itok=XalfE8qo" width="750" height="422" loading="lazy" typeof="foaf:Image" class="image-style-_6x9-750w-422h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/butler-green-roof" hreflang="en">Butler Green Roof</a></span>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>HMEI conducted research on energy and&nbsp;stormwater-related performance factors&nbsp;of the Butler College green roofs from installation 2009 through 2014.&nbsp;</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-16x9" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"><a href="/campus-energy-heat-map" hreflang="en"><img src="/sites/g/files/toruqf176/files/styles/16x9_750w_422h/public/Princeton%20Energy%20Heat%20Map_0.jpg?itok=IdthVD0Y" width="750" height="422" loading="lazy" typeof="foaf:Image" class="image-style-_6x9-750w-422h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/campus-energy-heat-map" hreflang="en">Campus Energy Heat Map</a></span>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>In Spring 2015, these students developed a visualization app that provides detailed and live energy information on campus buildings.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-16x9" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"><a href="/co2-sensing-project-dillon-gym" hreflang="en"><img src="/sites/g/files/toruqf176/files/styles/16x9_750w_422h/public/2021-08/co2%20sensors%20still.PNG?itok=p8R8NJs9" width="750" height="422" alt="gym and computer sensors with white text" loading="lazy" typeof="foaf:Image" class="image-style-_6x9-750w-422h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/co2-sensing-project-dillon-gym" hreflang="en">CO2 Sensing Project in Dillon Gym</a></span>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Researchers are using CO2 sensors in Dillon Gym to examine air circulation quality, which can be helpful in determining the transmission rates of airborne pollutants and illnesses like COVID-19.&nbsp;</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-16x9" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"><a href="/forest-stewardship-study" hreflang="en"><img src="/sites/g/files/toruqf176/files/styles/16x9_750w_422h/public/2021-10/forest%20stewardship%20photo.jpg?itok=bU_HrWI3" width="750" height="422" alt="two students measuring a tree" loading="lazy" typeof="foaf:Image" class="image-style-_6x9-750w-422h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/forest-stewardship-study" hreflang="en">Forest Stewardship Study</a></span>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Dr. Levine is leading a project in collaboration with Princeton Facilities’ Grounds department to study the impact of different forest management strategies.&nbsp;</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-16x9" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"><a href="/light-pollution-campus-survey" hreflang="en"><img src="/sites/g/files/toruqf176/files/styles/16x9_750w_422h/public/2021-09/light3.jpg?itok=cFdaOlLw" width="750" height="422" alt="gaspar pointing at street light in dark" loading="lazy" typeof="foaf:Image" class="image-style-_6x9-750w-422h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/light-pollution-campus-survey" hreflang="en">Light Pollution Campus Survey</a></span>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>A&nbsp;light pollution campus survey&nbsp;project was conducted using night-time aerial monitoring to identify areas on campus where lighting can be improved, for example by adding shielding and modern LED technology.&nbsp;</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-16x9" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"><a href="/princeton-vertical-farming-project" hreflang="en"><img src="/sites/g/files/toruqf176/files/styles/16x9_750w_422h/public/PVFP.png?itok=oK8cmkhu" width="623" height="350" loading="lazy" typeof="foaf:Image" class="image-style-_6x9-750w-422h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/princeton-vertical-farming-project" hreflang="en">Princeton Vertical Farming Project</a></span>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>The PVFP used a hydroponic and artificial lighting growing system to investigate the viability of feeding a rapidly growing world population with space-saving methods.&nbsp;</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-16x9" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"><a href="/princeton-wildlife-monitoring-project" hreflang="en"><img src="/sites/g/files/toruqf176/files/styles/16x9_750w_422h/public/2021-09/gaspar3.jpg?itok=u7X8YXp8" width="750" height="422" alt="Gaspar standing next to a tree" loading="lazy" typeof="foaf:Image" class="image-style-_6x9-750w-422h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/princeton-wildlife-monitoring-project" hreflang="en">Princeton Wildlife Monitoring Project</a></span>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Astrophysics Professor Gaspar Bakos&nbsp;monitors and observes wildlife in the area surrounding Princeton.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-16x9" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"><a href="/scrap-lab" hreflang="en"><img src="/sites/g/files/toruqf176/files/styles/16x9_750w_422h/public/2020-01/2H1A6186.jpg?itok=UN_OZxQv" width="750" height="422" alt="SCRAP LAB workers" loading="lazy" typeof="foaf:Image" class="image-style-_6x9-750w-422h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/scrap-lab" hreflang="en">S.C.R.A.P. Lab</a></span>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>In September 2018, the Office of Sustainability launched an on-site food scraps composting demonstration project to support the sustainability goals and research and education missions of Princeton University.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-16x9" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"><a href="/school-bus-tiny-home" hreflang="en"><img src="/sites/g/files/toruqf176/files/styles/16x9_750w_422h/public/2020-02/DSCF1577.JPG?itok=7-P_anyD" width="750" height="422" alt="Tiny bus with student" loading="lazy" typeof="foaf:Image" class="image-style-_6x9-750w-422h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/school-bus-tiny-home" hreflang="en">School Bus Tiny Home</a></span>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Students retrofitted&nbsp;an old school bus&nbsp;into a sustainable living space to address cost and energy efficiency concerns within the residential housing sector.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-16x9" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"><a href="/smart-sensing-more-efficient-and-comfortable-campus-buildings" hreflang="en"><img src="/sites/g/files/toruqf176/files/styles/16x9_750w_422h/public/2021-09/ecl_smart_photo.jpg?itok=Ch0KgG5P" width="750" height="422" alt="people setting up sensors outside a building" loading="lazy" typeof="foaf:Image" class="image-style-_6x9-750w-422h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/smart-sensing-more-efficient-and-comfortable-campus-buildings" hreflang="en">Smart Sensing for More Efficient and Comfortable Campus Buildings</a></span>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>This project uses a new technology developed by Professor Forrest Meggers and his team called the SMART sensor to detect these so-called radiant sources of heating and cooling.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-16x9" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"><a href="/solar-powered-smart-window-inserts" hreflang="en"><img src="/sites/g/files/toruqf176/files/styles/16x9_750w_422h/public/2021-08/smart%20window%20still.PNG?h=0b485ae5&amp;itok=-zGxDqEt" width="750" height="422" alt="window panel with white outline and white text &quot;smart window insert&quot;" loading="lazy" typeof="foaf:Image" class="image-style-_6x9-750w-422h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/solar-powered-smart-window-inserts" hreflang="en">Solar-Powered Smart Window Inserts</a></span>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Matthew Marquardt ’21 wrote his senior thesis on the installation of smart windows on campus, and in broader communities.&nbsp;</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-16x9" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"><a href="/sustainable-behavior-evaluations" hreflang="en"><img src="/sites/g/files/toruqf176/files/styles/16x9_750w_422h/public/2021-09/20200826_CL_QH_04126.jpg?itok=y7XeL8vY" width="750" height="422" alt="dorm building with pink flowers and bicycles" loading="lazy" typeof="foaf:Image" class="image-style-_6x9-750w-422h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/sustainable-behavior-evaluations" hreflang="en">Sustainable Behavior Evaluations</a></span>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>Behavioral evaluations of the “Do it in the Dark” residential college energy competition and the&nbsp;<a href="https://sustain.princeton.edu/lead/drinklocal">Drink Local&nbsp;</a>campaign.</p>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-16x9" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"><a href="/washington-stream-restoration" hreflang="en"><img src="/sites/g/files/toruqf176/files/styles/16x9_750w_422h/public/2020-01/Christopher%20Lillja%20Woodland%20restoration.jpg?itok=DNP9IwWG" width="750" height="422" alt="washington road stream" loading="lazy" typeof="foaf:Image" class="image-style-_6x9-750w-422h"> </a>
+                   </div>
+                   <div class="content-list-item-details"><span class="field field--name-title field--type-string field--label-hidden"><a href="/washington-stream-restoration" hreflang="en">Washington Stream Restoration</a></span>
+                    <div class="clearfix text-formatted field field--name-field-ps-summary field--type-text-long field--label-hidden field__item">
+                     <p>In 2012, the University completed a natural restoration of the stream along Washington Road to mitigate flood risks and improve the riparian habitat.</p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="layout__region layout__region--second layout__region--thirds layout__region--narrow">
+               <div class="green-outline-box block-ps-text block block-layout-builder block-inline-blockps-text" data-block-plugin-id="inline_block:ps_text">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p>Apply for Funding from&nbsp;<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="8107a511-ac63-4a14-8e61-8807d900ae01" href="/resources/high-meadows-fund">The High Meadows Foundation Sustainability Fund</a>&nbsp;for your CAL research.</p>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </main>
+      </div>
+     </div>
+    </div>
+    <footer role="contentinfo" class="footer region region-footer" id="footer">
+     <h2 class="sr-only">Footer</h2>
+     <div class="container">
+      <div class="region region-footer">
+       <div class="constrained-bkg-constrained-content layout layout--onecol">
+        <div class="layout-container">
+         <div class="layout__region layout__region--content">
+          <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="constrained-bkg-constrained-content layout layout--threecol-33-34-33">
+        <div class="layout-inner-container">
+         <div class="layout__region layout__region--first layout__region--thirds layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+           <h2 class="block-heading">CONTACT US</h2>
+           <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+            <p><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="440d1b10-2348-4339-85eb-c044bd70279d" href="/contact">Office of Sustainability</a><br> MacMillan Annex West<br> Princeton, NJ 08544<br> 609.258.6141<br><a href="mailto:sustain@princeton.edu">sustain@princeton.edu</a></p>
+           </div>
+          </div>
+         </div>
+         <div class="layout__region layout__region--second layout__region--thirds layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_social_links" class="block-ps-social-links block block-layout-builder block-inline-blockps-social-links">
+           <h2 class="block-heading">FOLLOW US</h2>
+           <ul class="ps-social-links--platforms platforms vertical">
+            <li><a href="http://instagram.com/tigersgogreen" title="Instagram"> <span class="fab fa-instagram fa-2x" aria-hidden="true"></span> <span class="social-link-label">Instagram</span> </a></li>
+            <li><a href="https://www.facebook.com/tigersgogreen" title="Facebook"> <span class="fab fa-facebook fa-2x" aria-hidden="true"></span> <span class="social-link-label">Facebook</span> </a></li>
+            <li><a href="http://www.youtube.com/user/PrincetonSECN/featured" title="YouTube"> <span class="fab fa-youtube fa-2x" aria-hidden="true"></span> <span class="social-link-label">YouTube</span> </a></li>
+            <li><a href="http://twitter.com/TigersGoGreen" title="Twitter"> <span class="fab fa-twitter fa-2x" aria-hidden="true"></span> <span class="social-link-label">Twitter</span> </a></li>
+           </ul>
+          </div>
+         </div>
+         <div class="layout__region layout__region--third layout__region--thirds layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+           <h2 class="block-heading">Stay in touch</h2>
+           <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+            <p><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="758c77a9-3810-4c99-925a-6b1f67694bef" href="/resources/mailing-lists">Join our mailing lists</a></p>
+            <p><a href="http://visitor.r20.constantcontact.com/d.jsp?llr=y5qbr8uab&amp;p=oi&amp;m=1121910309848&amp;sit=wycpdp7jb&amp;f=07021e2c-e469-439e-8791-2c6b23864223" target="_blank">Subscribe to our newsletter</a></p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="constrained-bkg-constrained-content layout layout--onecol">
+        <div class="layout-container">
+         <div class="layout__region layout__region--content">
+          <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+           <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+            <p class="text-align-center">Read our&nbsp;<a href="/about/environmental-justice/land-acknowledgement">Land Acknowledgement</a></p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="subfooter">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-4">
+         <div class="subfooter-links">
+          <ul class="list-unstyled">
+           <li><a href="https://accessibility.princeton.edu/resources/accessibility-help" target="_blank">Accessibility</a></li>
+          </ul>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <p class="copyright-text"> © 2022 The Trustees of Princeton University </p>
+        </div>
+        <div class="col-md-4 text-sm-left text-md-right copyright"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"><img src="/profiles/ps/themes/ps_base/images/pu-logo-stacked.svg" alt="Princeton University"> </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div> 
+  </div><span id="ps-current-username" data-username=""></span>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/3081","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ckeditorheight":{"offset":1,"line_height":1.5,"unit":"em","disable_autogrow":null},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"all_documents_new_window":true,"select2_simple":{"selector":".node-form select:not(.disable-select2,[name$=\u0027[actions][bundle]\u0027],.ui-timepicker-select,[name*=\u0027field_ps_timeline_feature_items\u0027]),.select2-form select,#drupal-off-canvas select[multiple]"},"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"ajax":[],"user":{"uid":0,"permissionsHash":"3551987ddc637008f3c721ed5f0b4e745860c25dd19bafce2ff9c3f6e625a211"}}</script>
+  <script src="/sites/g/files/toruqf176/files/js/js_07LpuRR7Z7ejsgFZX7aCat9VMFQEvsC0PJ_8wN8VegU.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"427707476","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":674,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

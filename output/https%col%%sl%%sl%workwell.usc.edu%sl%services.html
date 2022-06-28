@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="pingback" href="https://workwell.usc.edu/xmlrpc.php">
+  <link rel="shortcut icon" href="https://workwell.usc.edu/wp-content/themes/usc-gateway-2018/assets/images/favicon.ico?ver=1.0.28">
+  <title>Services – WorkWell Center</title>
+  <meta name="robots" content="max-image-preview:large">
+  <link rel="dns-prefetch" href="//use.fontawesome.com">
+  <link rel="dns-prefetch" href="//s.w.org"><!-- This site uses the Google Analytics by MonsterInsights plugin v8.3.2 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+  <script src="//www.googletagmanager.com/gtag/js?id=UA-196965734-10" data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '8.3.2';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-196965734-10',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						if ( document.cookie.indexOf( disableStrs[ index ] + '=true' ) > -1 ) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						document.cookie = disableStrs[ index ] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if ( mi_track_user ) {
+					function __gtagDataLayer() {
+						dataLayer.push( arguments );
+					}
+
+					function __gtagTracker( type, name, parameters ) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply( null, arguments );
+							return;
+						}
+
+						if ( type === 'event' ) {
+							
+															parameters.send_to = monsterinsights_frontend.ua;
+								__gtagDataLayer( type, name, parameters );
+													} else {
+							__gtagDataLayer.apply( null, arguments );
+						}
+					}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+											} );
+															__gtagTracker( 'config', 'UA-196965734-10', {"forceSSL":"true","link_attribution":"true"} );
+										window.gtag = __gtagTracker;											(function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+																				if ( ! ( ! args.hasOwnProperty(arg) || ! gaMap.hasOwnProperty(arg) ) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						})();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script><!-- / Google Analytics by MonsterInsights -->
+  <link rel="stylesheet" id="usc-lcs-style-css-css" href="https://workwell.usc.edu/wp-content/plugins/usc-gateway-localist-event-styles/public/css/usc-gateway-localist-custom-styles.css?ver=1.0.0" type="text/css" media="all">
+  <link rel="stylesheet" id="sb_instagram_styles-css" href="https://workwell.usc.edu/wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=2.9.9" type="text/css" media="all">
+  <link rel="stylesheet" id="wp-block-library-css" href="https://workwell.usc.edu/wp-includes/css/dist/block-library/style.min.css?ver=5.8.4" type="text/css" media="all">
+  <link rel="stylesheet" id="usc-breadcrumbs-block-style-css-css" href="https://workwell.usc.edu/wp-content/plugins/usc-breadcrumbs-block/dist/blocks.style.build.css?ver=1627428682" type="text/css" media="all">
+  <link rel="stylesheet" id="genesis-blocks-style-css-css" href="https://workwell.usc.edu/wp-content/plugins/genesis-blocks/dist/blocks.style.build.css?ver=1641327201" type="text/css" media="all">
+  <link rel="stylesheet" id="dashicons-css" href="https://workwell.usc.edu/wp-includes/css/dashicons.min.css?ver=5.8.4" type="text/css" media="all">
+  <link rel="stylesheet" id="advgb_editor_styles-css" href="https://workwell.usc.edu/wp-content/plugins/advanced-gutenberg/assets/css/editor.css?ver=2.11.2" type="text/css" media="all">
+  <link rel="stylesheet" id="usc-gateway-2018-style-css" href="https://workwell.usc.edu/wp-content/themes/usc-gateway-2018/assets/css/usc-gateway-2018.css?ver=1.0.28" type="text/css" media="screen,print">
+  <link rel="stylesheet" id="slb_core-css" href="https://workwell.usc.edu/wp-content/plugins/simple-lightbox/client/css/app.css?ver=2.8.1" type="text/css" media="all">
+  <link rel="stylesheet" id="font-awesome-official-css" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" type="text/css" media="all" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <link rel="stylesheet" id="font-awesome-official-v4shim-css" href="https://use.fontawesome.com/releases/v5.15.4/css/v4-shims.css" type="text/css" media="all" integrity="sha384-Vq76wejb3QJM4nDatBa5rUOve+9gkegsjCebvV/9fvXlGWo4HCMR4cJZjjcF6Viv" crossorigin="anonymous">
+  <style id="font-awesome-official-v4shim-inline-css" type="text/css">
+@font-face {
+font-family: "FontAwesome";
+font-display: block;
+src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.eot"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+
+@font-face {
+font-family: "FontAwesome";
+font-display: block;
+src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+@font-face {
+font-family: "FontAwesome";
+font-display: block;
+src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.eot"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+unicode-range: U+F004-F005,U+F007,U+F017,U+F022,U+F024,U+F02E,U+F03E,U+F044,U+F057-F059,U+F06E,U+F070,U+F075,U+F07B-F07C,U+F080,U+F086,U+F089,U+F094,U+F09D,U+F0A0,U+F0A4-F0A7,U+F0C5,U+F0C7-F0C8,U+F0E0,U+F0EB,U+F0F3,U+F0F8,U+F0FE,U+F111,U+F118-F11A,U+F11C,U+F133,U+F144,U+F146,U+F14A,U+F14D-F14E,U+F150-F152,U+F15B-F15C,U+F164-F165,U+F185-F186,U+F191-F192,U+F1AD,U+F1C1-F1C9,U+F1CD,U+F1D8,U+F1E3,U+F1EA,U+F1F6,U+F1F9,U+F20A,U+F247-F249,U+F24D,U+F254-F25B,U+F25D,U+F267,U+F271-F274,U+F279,U+F28B,U+F28D,U+F2B5-F2B6,U+F2B9,U+F2BB,U+F2BD,U+F2C1-F2C2,U+F2D0,U+F2D2,U+F2DC,U+F2ED,U+F328,U+F358-F35B,U+F3A5,U+F3D1,U+F410,U+F4AD;
+}
+</style>
+  <script type="text/javascript" id="monsterinsights-frontend-script-js-extra">
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/workwell.usc.edu","hash_tracking":"false","ua":"UA-196965734-10","v4_id":""};
+/* ]]> */
+</script>
+  <script type="text/javascript" src="https://workwell.usc.edu/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.3.2" id="monsterinsights-frontend-script-js"></script><!--[if lte IE 9]>
+<script type='text/javascript' src='https://workwell.usc.edu/wp-content/themes/usc-gateway-2018/assets/js/vendor/html5shiv.min.js?ver=1.0.28' id='html5-shiv-js'></script>
+<![endif]-->
+  <link rel="https://api.w.org/" href="https://workwell.usc.edu/wp-json/">
+  <link rel="alternate" type="application/json" href="https://workwell.usc.edu/wp-json/wp/v2/pages/205">
+  <link rel="canonical" href="https://workwell.usc.edu/services/">
+  <link rel="shortlink" href="https://workwell.usc.edu/?p=205">
+  <link rel="alternate" type="application/json+oembed" href="https://workwell.usc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fworkwell.usc.edu%2Fservices%2F">
+  <link rel="alternate" type="text/xml+oembed" href="https://workwell.usc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fworkwell.usc.edu%2Fservices%2F&amp;format=xml">
+  <style></style>
+  <style type="text/css">.blue-message {
+background: none repeat scroll 0 0 #3399ff;
+    color: #ffffff;
+    text-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+} 
+.green-message {
+background: none repeat scroll 0 0 #8cc14c;
+    color: #ffffff;
+    text-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+} 
+.orange-message {
+background: none repeat scroll 0 0 #faa732;
+    color: #ffffff;
+    text-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+} 
+.red-message {
+background: none repeat scroll 0 0 #da4d31;
+    color: #ffffff;
+    text-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+} 
+.grey-message {
+background: none repeat scroll 0 0 #53555c;
+    color: #ffffff;
+    text-shadow: none;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+} 
+.left-block {
+background: none repeat scroll 0 0px, radial-gradient(ellipse at center center, #ffffff 0%, #f2f2f2 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #8b8e97;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+} 
+.right-block {
+background: none repeat scroll 0 0px, radial-gradient(ellipse at center center, #ffffff 0%, #f2f2f2 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #8b8e97;
+    padding: 10px;
+    margin: 10px;
+    float: right;
+} 
+.blockquotes {
+background: none;
+    border-left: 5px solid #f1f1f1;
+    color: #8B8E97;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 22px;
+    padding-left: 15px;
+    padding: 10px;
+    width: 60%;
+    float: left;
+} 
+</style>
+  <style id="uagb-style-conditional-extension">@media (min-width: 1025px){body .uag-hide-desktop.uagb-google-map__wrap,body .uag-hide-desktop{display:none}}@media (min-width: 768px) and (max-width: 1024px){body .uag-hide-tab.uagb-google-map__wrap,body .uag-hide-tab{display:none}}@media (max-width: 767px){body .uag-hide-mob.uagb-google-map__wrap,body .uag-hide-mob{display:none}}</style>
+  <style id="uagb-style-frontend-205">.uagb-columns__wrap{position:relative}.uagb-columns__wrap .uagb-columns__inner-wrap{margin-left:auto;margin-right:auto;position:relative;z-index:2}.uagb-columns__wrap .uagb-columns__overlay{height:100%;width:100%;top:0;left:0;position:absolute}.uagb-columns__wrap .uagb-columns__video-wrap{height:100%;width:100%;top:0;left:0;position:absolute;overflow:hidden;z-index:0;-webkit-transition:opacity 1s;-o-transition:opacity 1s;transition:opacity 1s}.uagb-columns__wrap .uagb-columns__video-wrap video{max-width:100%;width:100%;height:100%;margin:0;line-height:1;border:none;display:inline-block;vertical-align:baseline;-o-object-fit:cover;object-fit:cover;background-size:cover}.uagb-columns__wrap .uagb-column__wrap{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.uagb-columns__wrap .uagb-columns__shape{overflow:hidden;position:absolute;left:0;width:100%;line-height:0;direction:ltr;z-index:1}.uagb-columns__wrap .uagb-columns__shape-top{top:-3px}.uagb-columns__wrap .uagb-columns__shape-bottom{bottom:-3px}.uagb-columns__wrap .uagb-columns__shape[data-negative="false"].uagb-columns__shape-bottom{-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}.uagb-columns__wrap .uagb-columns__shape[data-negative="true"].uagb-columns__shape-top{-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}.uagb-columns__wrap .uagb-columns__shape.uagb-columns__shape-flip svg{transform:translateX(-50%) rotateY(180deg)}.uagb-columns__wrap .uagb-columns__shape svg{display:block;width:-webkit-calc(100% + 1.3px);width:calc(100% + 1.3px);position:relative;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%)}.uagb-columns__wrap .uagb-columns__shape .uagb-columns__shape-fill{fill:#333;-webkit-transform-origin:center;-ms-transform-origin:center;transform-origin:center;-webkit-transform:rotateY(0deg);transform:rotateY(0deg)}.uagb-columns__wrap .uagb-columns__shape.uagb-columns__shape-above-content{z-index:9;pointer-events:none}.uagb-columns__valign-center .uagb-column__wrap,.uagb-columns__valign-middle .uagb-column__wrap{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}.uagb-columns__valign-top .uagb-column__wrap{-webkit-box-align:flex-start;-webkit-align-items:flex-start;-ms-flex-align:flex-start;align-items:flex-start}.uagb-columns__valign-bottom .uagb-column__wrap{-webkit-box-align:flex-end;-webkit-align-items:flex-end;-ms-flex-align:flex-end;align-items:flex-end}.uagb-columns__inner-wrap{display:flex;flex-wrap:nowrap}.uagb-columns__columns-1>.uagb-column__wrap{width:100%}.uagb-columns__columns-2>.uagb-column__wrap{width:50%}.uagb-columns__columns-3>.uagb-column__wrap{width:33.33%}.uagb-columns__columns-4>.uagb-column__wrap{width:25%}.uagb-columns__columns-5>.uagb-column__wrap{width:20%}.uagb-columns__columns-6>.uagb-column__wrap{width:16.66%}.uagb-columns__gap-nogap>.wp-block[data-type="uagb/column"] .uagb-column__inner-wrap{padding:0}.uagb-columns__gap-default>.wp-block[data-type="uagb/column"] .uagb-column__inner-wrap{padding:10px}.uagb-columns__gap-narrow>.wp-block[data-type="uagb/column"] .uagb-column__inner-wrap{padding:5px}.uagb-columns__gap-extended>.wp-block[data-type="uagb/column"] .uagb-column__inner-wrap{padding:15px}.uagb-columns__gap-wide>.wp-block[data-type="uagb/column"] .uagb-column__inner-wrap{padding:20px}.uagb-columns__gap-wider>.wp-block[data-type="uagb/column"] .uagb-column__inner-wrap{padding:30px}@media (max-width: 976px){.uagb-columns__stack-tablet>.uagb-columns__columns-1>.uagb-column__wrap,.uagb-columns__stack-tablet>.uagb-columns__columns-2>.uagb-column__wrap,.uagb-columns__stack-tablet>.uagb-columns__columns-3>.uagb-column__wrap,.uagb-columns__stack-tablet>.uagb-columns__columns-4>.uagb-column__wrap,.uagb-columns__stack-tablet>.uagb-columns__columns-5>.uagb-column__wrap,.uagb-columns__stack-tablet>.uagb-columns__columns-6>.uagb-column__wrap{width:100% !important}.uagb-columns__stack-tablet>.uagb-columns__inner-wrap{display:block}.uagb-columns__stack-tablet.uagb-columns__reverse-tablet .uagb-columns__inner-wrap{display:flex;flex-direction:column-reverse}.uagb-columns__reverse-tablet .uagb-columns__inner-wrap{display:flex;flex-direction:row-reverse}}@media (max-width: 767px){.uagb-columns__stack-mobile>.uagb-columns__columns-1>.uagb-column__wrap,.uagb-columns__stack-mobile>.uagb-columns__columns-2>.uagb-column__wrap,.uagb-columns__stack-mobile>.uagb-columns__columns-3>.uagb-column__wrap,.uagb-columns__stack-mobile>.uagb-columns__columns-4>.uagb-column__wrap,.uagb-columns__stack-mobile>.uagb-columns__columns-5>.uagb-column__wrap,.uagb-columns__stack-mobile>.uagb-columns__columns-6>.uagb-column__wrap{width:100% !important}.uagb-columns__stack-mobile>.uagb-columns__inner-wrap{display:block}.uagb-columns__stack-mobile.uagb-columns__reverse-mobile .uagb-columns__inner-wrap{display:flex;flex-direction:column-reverse}.uagb-columns__reverse-mobile .uagb-columns__inner-wrap{display:flex;flex-direction:row-reverse}}@media (min-width: 768px) and (max-width: 1024px){.wp-block-uagb-columns.uagb-columns__wrap.uagb-columns__background-image{background-attachment:scroll}}@media (max-width: 449px){.uagb-columns__wrap .uagb-column__wrap.uagb-column__background-image{background-attachment:scroll !important}}
+.uagb-column__wrap{position:relative;overflow:hidden}.uagb-column__wrap .uagb-column__inner-wrap{margin-left:auto;margin-right:auto;position:relative;z-index:2;width:100%}.uagb-column__wrap.uagb-column__align-left .uagb-column__inner-wrap{margin-left:0;margin-right:auto}.uagb-column__wrap.uagb-column__align-right .uagb-column__inner-wrap{margin-left:auto;margin-right:0}.uagb-column__wrap .uagb-column__overlay{height:100%;width:100%;top:0;left:0;position:absolute}.uagb-column__wrap .uagb-column__video-wrap{height:100%;width:100%;top:0;left:0;position:absolute;overflow:hidden;z-index:0;-webkit-transition:opacity 1s;-o-transition:opacity 1s;transition:opacity 1s}.uagb-column__wrap .uagb-column__video-wrap video{max-width:100%;width:100%;height:100%;margin:0;line-height:1;border:none;display:inline-block;vertical-align:baseline;-o-object-fit:cover;object-fit:cover;background-size:cover}.wp-block-uagb-columns>.editor-inner-blocks>.editor-block-list__layout>[data-type="uagb/column"]{display:flex;flex-direction:column;flex:1;padding-left:0;padding-right:0;margin-left:-14px;margin-right:-14px;min-width:0;word-break:break-word;overflow-wrap:break-word;flex-basis:100%}@media (max-width: 976px){.uagb-column__align-tablet-left .uagb-column__inner-wrap{margin-left:0;margin-right:auto}.uagb-column__align-tablet-right .uagb-column__inner-wrap{margin-left:auto;margin-right:0}}@media (max-width: 767px){.uagb-column__align-mobile-left .uagb-column__inner-wrap{margin-left:0;margin-right:auto}.uagb-column__align-mobile-right .uagb-column__inner-wrap{margin-left:auto;margin-right:0}}@media (max-width: 449px){.uagb-columns__wrap.uagb-columns__background-image{background-attachment:scroll !important}}
+.uagb-block-cb98f7cd.uagb-columns__wrap{padding-top: 10px;padding-bottom: 10px;padding-left: 0;padding-right: 0;}.uagb-block-cb98f7cd .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-cb98f7cd > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-cb98f7cd .uagb-column__inner-wrap{padding: 10px;}.uagb-block-cb98f7cd .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-cb98f7cd .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-cb98f7cd.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-8ff68e9d.uagb-column__wrap{width: 50%;}.wp-block-uagb-column.uagb-block-b503c6a7.uagb-column__wrap{width: 50%;}.uagb-block-486d3d8f.uagb-columns__wrap{padding-top: 10px;padding-bottom: 10px;padding-left: 0;padding-right: 0;}.uagb-block-486d3d8f .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-486d3d8f > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-486d3d8f .uagb-column__inner-wrap{padding: 10px;}.uagb-block-486d3d8f .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-486d3d8f .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-486d3d8f.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-bd5f4e04.uagb-column__wrap{width: 50%;}.wp-block-uagb-column.uagb-block-057d3af7.uagb-column__wrap{width: 50%;}.uagb-block-f91d375c.uagb-columns__wrap{padding-top: 10px;padding-bottom: 10px;padding-left: 0;padding-right: 0;}.uagb-block-f91d375c .uagb-columns__video-wrap{opacity: 0.5;}.uagb-block-f91d375c > .uagb-columns__inner-wrap{max-width: 1120px;}.uagb-block-f91d375c .uagb-column__inner-wrap{padding: 10px;}.uagb-block-f91d375c .uagb-columns__shape.uagb-columns__shape-top .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-f91d375c .uagb-columns__shape.uagb-columns__shape-bottom .uagb-columns__shape-fill{fill: rgba(51,51,51,1);}.uagb-block-f91d375c.wp-block-uagb-columns{box-shadow: 0 0    ;}.wp-block-uagb-column.uagb-block-f11f84eb.uagb-column__wrap{width: 50%;}.wp-block-uagb-column.uagb-block-98ef6e6b.uagb-column__wrap{width: 50%;}</style> 
+  <style type="text/css" id="wp-custom-css">
+			/**NEW ROYAL SLIDER ADJUSTMENTS**/
+
+/* make post title white within split screen template*/
+.rs-usc-gateway-default-template h3 {
+	color: white;
+} 
+
+
+/*SITE BRANDING ADJUSTMENTS*/
+.site-branding-usc {
+	z-index: 999;
+}
+
+.site-footer a:hover {
+	color: #ffcc00;
+}
+
+.site-footer a:active {
+	border: 2px dashed #ffcc00;
+}
+
+
+
+/*Recently Updated Posts adjustments*/
+.entry-content .rpwe-title {
+		font-size: 28px!important;
+    font-weight: 700!important;
+    line-height: 32px!important;
+}
+
+.entry-content .rpwe-block li {
+	margin-bottom: 1.5em;
+}
+
+/*ADD'L GATEWAY THEME ADJUSTMENTS*/
+
+/* Hides duplicate H1 for screen readers */
+.screen-reader-text {
+	display: none;
+}
+
+
+h1.is-style-cardinal-bar {
+	margin-top: 1em;
+	
+}
+
+/* INSERT MARGIN SPACING AT THE TOP OF EACH PAGE
+.page-template-default .site-content .entry-header:before {
+	margin-top: 2em;
+}
+*/
+
+.site-sidebar  {
+    margin-top: 4em;
+}
+
+.categories .category-single {
+	display:  none;
+}
+
+.wp-block-buttons>.wp-block-button {
+	padding: 2px
+}
+
+/* HIDDEN BREACRUMBS
+.breadcrumbs {
+	display: none;
+}
+*/
+
+.wp-block-separator {
+	opacity: 1;
+	border: none;
+}
+
+span.lw_event_item_date {
+	background-color: rgba(0,0,0)!important;
+}
+
+
+/*LOCALIST EVENTS ADJUSTMENTS*/
+.localist-widget-hl .event-details {
+	background: black!important;
+}
+
+.localist-widget-hl .event-card {
+	color: black!important;
+}
+
+.event-detail-title {
+	background-color: black!important;
+}
+
+.lw_event_list {
+	margin-left: 0px;
+}
+
+/*RESPONSIVE ADJUSTMENTS*/
+
+
+@media only screen and (max-width: 768px) {
+	.entry-content {
+		width: 100%
+	}
+}
+
+/*Ninja Tables Adjustments*/
+
+.footable .pagination>.disabled>a {
+	color: #222;
+}
+
+.footable .pagination>.active>a {
+	background-color: #990000;
+  border-color: #990000;
+}
+
+.footable .pagination>li>a {
+	color: #990000;
+}
+
+/*H1 BANNER TYPOGRAPHY*/
+h1.is-style-display-2 {
+	font-size: 3.5rem;
+	line-height: 1.2;
+}
+
+h1.is-style-display-3 {
+	font-size: 2.5rem;
+	
+}
+
+/*WordPress Icons*/
+.wp-block-image-icon {
+	width: 60%;
+	display:block;
+	margin:auto;
+}
+
+/*Team Cards*/
+.team-card {
+	margin: 20px;
+	background: #fafafa;
+}
+
+.card-text {
+	padding-left: 20px;
+}
+
+/*Meet the Team Page Styling*/
+.bio-name {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.wp-block-image {
+	margin-bottom: 0;
+}
+
+h1.is-style-cardinal-bar-2:before {
+	width: 5rem;
+	background: #900;
+	content: "";
+	display: block;
+	height: 0.5rem;
+	margin: 0 0 1.5rem;
+	position: relative;
+	top: 0;
+}
+
+@media screen and (max-width: 48em) {
+
+.full-template-padding {
+	padding: 0 1rem;
+}
+	}
+
+/* EatWell Page Styling */
+@media screen and (max-width: 48em) {
+.wp-block-buttons.mobile-register-button {
+		justify-content: center;
+	}
+}
+
+/* Guides and Tipsheets archive styling */
+span#guides,span#tipsheets {
+	flex-grow: 0;
+}
+
+		</style>
+ </head>
+ <body class="page-template page-template-page-templates page-template-tpl-full-width page-template-page-templatestpl-full-width-php page page-id-205 page-parent usc-gateway-2018-light usc-display-new-badge usc-gateway-localist-custom-styles usc-notification-bar">
+  <div class="site"> <a class="skip-link screen-reader-text" aria-label="Skip to main content" href="#main">Skip to main content</a> 
+   <header id="masthead" class="site-header" role="banner">
+    <div class="site-header-wrapper">
+     <div class="site-branding-usc"><a class="site-branding-usc-logo" href="http://www.usc.edu">University of Southern California</a>
+     </div>
+     <div class="site-branding-unique">
+      <h1 class="site-branding-title"><a href="https://workwell.usc.edu/" rel="home">WorkWell Center</a></h1>
+     </div>
+     <nav id="site-navigation" class="site-navigation" role="navigation">
+      <div class="site-navigation-wrapper">
+       <h2 class="site-navigation-title screen-reader-text">Primary Menu</h2>
+       <div class="menu-main-menu-container">
+        <ul id="menu-main-menu" class="site-navigation-menu">
+         <li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-240"><a href="https://workwell.usc.edu/">Home</a></li>
+         <li id="menu-item-204" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-204"><a href="https://workwell.usc.edu/about/">About</a>
+          <ul class="sub-menu">
+           <li id="menu-item-329" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-329"><a href="https://workwell.usc.edu/about/meet-the-team/">Meet the Team</a></li>
+          </ul></li>
+         <li id="menu-item-212" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-205 current_page_item menu-item-has-children menu-item-212"><a href="https://workwell.usc.edu/services/" aria-current="page">Services</a>
+          <ul class="sub-menu">
+           <li id="menu-item-266" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-266"><a href="https://workwell.usc.edu/services/health-and-well-being/">Health &amp; Well-being Program</a></li>
+           <li id="menu-item-269" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-269"><a href="https://workwell.usc.edu/services/counseling/">Counseling</a></li>
+           <li id="menu-item-275" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-275"><a href="https://workwell.usc.edu/services/coaching/">Coaching</a></li>
+           <li id="menu-item-274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-274"><a href="https://workwell.usc.edu/services/consulting/">Consulting</a></li>
+           <li id="menu-item-273" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-273"><a href="https://workwell.usc.edu/services/talks-and-groups/">Talks &amp; Groups</a></li>
+           <li id="menu-item-348" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-348"><a href="https://workwell.usc.edu/services/critical-incident-stress-management/">Critical Incident Stress Management</a></li>
+          </ul></li>
+         <li id="menu-item-211" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-211"><a href="https://workwell.usc.edu/events/">Events</a>
+          <ul class="sub-menu">
+           <li id="menu-item-657" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-657"><a href="https://workwell.usc.edu/events/eatwell/">EatWell Webinar Series</a></li>
+           <li id="menu-item-916" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-916"><a href="https://workwell.usc.edu/events/live-well-stress-less-challenge/">Live Well, Stress Less Challenge</a></li>
+           <li id="menu-item-328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-328"><a href="https://workwell.usc.edu/events/parent-connect/">Parent Connect</a></li>
+           <li id="menu-item-327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-327"><a href="https://workwell.usc.edu/events/thriving-thursdays/">Thriving Thursdays</a></li>
+          </ul></li>
+         <li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-210"><a href="https://workwell.usc.edu/tools-resources/">Tools &amp; Resources</a></li>
+         <li id="menu-item-209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-209"><a href="https://workwell.usc.edu/contact/">Contact</a></li>
+        </ul>
+       </div> 
+       <div class="site-menu-toggle-wrapper"><a href="javascript:void(0);" class="site-menu-toggle" aria-label="Navigation Menu" aria-expanded="false">
+         <svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+          <title id="icon_title">Menu</title><desc id="icon_desc">
+           An icon that consists of three parallel horizontal lines suggestive of a list.
+          </desc><path d="M0 0h24v24H0z" fill="none" /><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+         </svg></a>
+       </div>
+       <div class="site-search-toggle-wrapper"><a href="javascript:void(0);" class="site-search-toggle" aria-label="Search" aria-expanded="false">
+         <svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+          <title id="icon_title">Search</title><desc id="icon_desc">
+           An icon of a magnifying glass.
+          </desc><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" /><path d="M0 0h24v24H0z" fill="none" />
+         </svg></a>
+       </div>
+      </div>
+     </nav>
+    </div>
+    <div class="site-search-wrapper">
+     <div class="site-search">
+      <form role="search" method="get" class="search-form" action="https://workwell.usc.edu/"><label> <span class="screen-reader-text">Search for:</span> <input type="text" class="search-field" name="s" placeholder="Search..." title="search"> <input type="submit" class="visuallyhidden" value="Submit"> </label><a href="javascript:void(0);" class="search-icon-close">
+        <svg class="svg-icon" width="20" height="20" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+         <title id="icon_title">Close</title><desc id="icon_desc">
+          An icon of a letter X.
+         </desc><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" /><path d="M0 0h24v24H0z" fill="none" />
+        </svg><span class="screen-reader-text">Close Search</span></a>
+      </form>
+     </div>
+    </div>
+   </header><!-- #masthead -->
+   <div id="content" class="site-content">
+    <div id="primary" class="content-area">
+     <main id="main" class="site-main" role="main">
+      <article id="post-205" class="post-205 page type-page status-publish hentry">
+       <header class="entry-header">
+        <h1 class="entry-title screen-reader-text">Services</h1> 
+       </header>
+       <div class="entry-content">
+        <div class="wp-block-cover alignfull is-style-default" style="min-height:350px">
+         <img loading="lazy" width="2560" height="622" class="wp-block-cover__image-background wp-image-625" alt="" src="https://workwell.usc.edu/wp-content/uploads/2022/02/Services-banner-optimized-scaled.jpg" style="object-position:15% 52%" data-object-fit="cover" data-object-position="15% 52%" srcset="https://workwell.usc.edu/wp-content/uploads/2022/02/Services-banner-optimized-scaled.jpg 2560w, https://workwell.usc.edu/wp-content/uploads/2022/02/Services-banner-optimized-300x73.jpg 300w, https://workwell.usc.edu/wp-content/uploads/2022/02/Services-banner-optimized-1024x249.jpg 1024w, https://workwell.usc.edu/wp-content/uploads/2022/02/Services-banner-optimized-768x187.jpg 768w, https://workwell.usc.edu/wp-content/uploads/2022/02/Services-banner-optimized-1536x373.jpg 1536w, https://workwell.usc.edu/wp-content/uploads/2022/02/Services-banner-optimized-2048x498.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px">
+         <div class="wp-block-cover__inner-container">
+          <h1 class="is-style-display-2 has-black-color has-text-color">Services</h1>
+         </div>
+        </div>
+        <div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+        <div class="wp-block-group is-style-usc-group-content-width">
+         <div class="wp-block-group__inner-container">
+          <div class="wp-block-group is-style-usc-group-content-width">
+           <div class="wp-block-group__inner-container">
+            <p>The WorkWell Center services are&nbsp;confidential,&nbsp;free, and&nbsp;convenient&nbsp;for all USC faculty, staff, post-docs, retirees, and their dependents to help them thrive in all areas of work-life wellness. Your privacy is important, which is why your records – and even your identity as a client – are completely confidential and won’t be shared with anyone, including your manager or your health plan.</p>
+            <p>We know you’re busy, so we’re just a phone call or email away or available at University Park Campus, Health Sciences Campus, and through affiliate counselors in your local community. Everything can be done by phone or Zoom, and our phone line has after-hours crisis support. Reach out to us through our <a href="https://workwell.usc.edu/contact/">Contact Us</a> page. </p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
+        <div class="wp-block-group">
+         <div class="wp-block-group__inner-container">
+          <div class="wp-block-group">
+           <div class="wp-block-group__inner-container">
+            <div class="wp-block-group">
+             <div class="wp-block-group__inner-container">
+              <div class="wp-block-group is-style-usc-group-content-width">
+               <div class="wp-block-group__inner-container">
+                <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-cb98f7cd">
+                 <div class="uagb-columns__overlay"></div>
+                 <div class="uagb-columns__inner-wrap uagb-columns__columns-2">
+                  <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-8ff68e9d">
+                   <div class="uagb-column__overlay"></div>
+                   <div class="uagb-column__inner-wrap">
+                    <figure class="wp-block-image size-full">
+                     <img loading="lazy" width="1024" height="576" src="https://workwell.usc.edu/wp-content/uploads/2022/03/female-riding-bike.jpg" alt="female riding stationery bike at USC" class="wp-image-869" srcset="https://workwell.usc.edu/wp-content/uploads/2022/03/female-riding-bike.jpg 1024w, https://workwell.usc.edu/wp-content/uploads/2022/03/female-riding-bike-300x169.jpg 300w, https://workwell.usc.edu/wp-content/uploads/2022/03/female-riding-bike-768x432.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px">
+                    </figure>
+                    <h2 style="font-size:28px"><a href="https://workwell.usc.edu/services/health-and-well-being/" data-type="page" data-id="264">Health &amp; Well-being</a></h2>
+                    <p>Health promotion and education resources and programs for faculty and staff.</p>
+                   </div>
+                  </div>
+                  <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-b503c6a7">
+                   <div class="uagb-column__overlay"></div>
+                   <div class="uagb-column__inner-wrap">
+                    <figure class="wp-block-image size-full">
+                     <img loading="lazy" width="1024" height="576" src="https://workwell.usc.edu/wp-content/uploads/2022/02/2-women-in-consulting-conversation.jpg" alt="two ladies talking in the patio" class="wp-image-600" srcset="https://workwell.usc.edu/wp-content/uploads/2022/02/2-women-in-consulting-conversation.jpg 1024w, https://workwell.usc.edu/wp-content/uploads/2022/02/2-women-in-consulting-conversation-300x169.jpg 300w, https://workwell.usc.edu/wp-content/uploads/2022/02/2-women-in-consulting-conversation-768x432.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px">
+                    </figure>
+                    <h2 style="font-size:28px"><a href="https://workwell.usc.edu/services/counseling/" data-type="page" data-id="268">Counseling</a></h2>
+                    <p>Confidential, short-term, and solution-focused sessions for personal and work-related concerns.</p>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+                <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-486d3d8f">
+                 <div class="uagb-columns__overlay"></div>
+                 <div class="uagb-columns__inner-wrap uagb-columns__columns-2">
+                  <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-bd5f4e04">
+                   <div class="uagb-column__overlay"></div>
+                   <div class="uagb-column__inner-wrap">
+                    <figure class="wp-block-image size-full">
+                     <img loading="lazy" width="1024" height="576" src="https://workwell.usc.edu/wp-content/uploads/2022/02/2-execs-in-conversation.jpg" alt="two execs in conversation" class="wp-image-603" srcset="https://workwell.usc.edu/wp-content/uploads/2022/02/2-execs-in-conversation.jpg 1024w, https://workwell.usc.edu/wp-content/uploads/2022/02/2-execs-in-conversation-300x169.jpg 300w, https://workwell.usc.edu/wp-content/uploads/2022/02/2-execs-in-conversation-768x432.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px">
+                    </figure>
+                    <h2 style="font-size:28px"><a href="https://workwell.usc.edu/services/coaching/" data-type="page" data-id="270">Coaching</a></h2>
+                    <p>An individualized thought-provoking process to help leaders identify and work toward professional and/or personal goals.</p>
+                   </div>
+                  </div>
+                  <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-057d3af7">
+                   <div class="uagb-column__overlay"></div>
+                   <div class="uagb-column__inner-wrap">
+                    <figure class="wp-block-image size-full">
+                     <img loading="lazy" width="1024" height="576" src="https://workwell.usc.edu/wp-content/uploads/2022/03/consulting-revised-card.jpg" alt="Hispanic woman having a meeting on a laptop" class="wp-image-816" srcset="https://workwell.usc.edu/wp-content/uploads/2022/03/consulting-revised-card.jpg 1024w, https://workwell.usc.edu/wp-content/uploads/2022/03/consulting-revised-card-300x169.jpg 300w, https://workwell.usc.edu/wp-content/uploads/2022/03/consulting-revised-card-768x432.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px">
+                    </figure>
+                    <h2 style="font-size:28px"><a href="https://workwell.usc.edu/services/consulting/" data-type="page" data-id="271">Consulting</a></h2>
+                    <p>Strategic conversations with and assistance for leaders seeking to enhance the work environment, manage troubled employees, and improve employee and team performance.</p>
+                   </div>
+                  </div>
+                 </div>
+                </section>
+                <section class="wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-undefined uagb-columns__stack-mobile uagb-columns__valign-undefined uagb-columns__gap-10 alignundefined uagb-block-f91d375c">
+                 <div class="uagb-columns__overlay"></div>
+                 <div class="uagb-columns__inner-wrap uagb-columns__columns-2">
+                  <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-f11f84eb">
+                   <div class="uagb-column__overlay"></div>
+                   <div class="uagb-column__inner-wrap">
+                    <figure class="wp-block-image size-full">
+                     <img loading="lazy" width="1024" height="576" src="https://workwell.usc.edu/wp-content/uploads/2022/02/zooom-meeting.jpg" alt="team video meeting" class="wp-image-552" srcset="https://workwell.usc.edu/wp-content/uploads/2022/02/zooom-meeting.jpg 1024w, https://workwell.usc.edu/wp-content/uploads/2022/02/zooom-meeting-300x169.jpg 300w, https://workwell.usc.edu/wp-content/uploads/2022/02/zooom-meeting-768x432.jpg 768w" sizes="(max-width: 1024px) 100vw, 1024px">
+                    </figure>
+                    <h2 style="font-size:28px"><a href="https://workwell.usc.edu/services/talks-and-groups/" data-type="URL" data-id="https://workwell.usc.edu/services/talks-and-groups/">Talks &amp; Groups</a></h2>
+                    <p>Talks, groups, webinars, and trainings that can be specially tailored for departments on a variety of well-being topics. Past videos are available here.</p>
+                   </div>
+                  </div>
+                  <div class="wp-block-uagb-column uagb-column__wrap uagb-column__background-undefined uagb-block-98ef6e6b">
+                   <div class="uagb-column__overlay"></div>
+                   <div class="uagb-column__inner-wrap"></div>
+                  </div>
+                 </div>
+                </section>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
+        <div class="wp-block-cover alignfull has-base-20-background-color has-background-dim" style="min-height:300px">
+         <div class="wp-block-cover__inner-container">
+          <div class="wp-block-group is-style-usc-group-content-width">
+           <div class="wp-block-group__inner-container">
+            <h2 class="has-black-color has-text-color"><a href="https://workwell.usc.edu/services/critical-incident-stress-management/" data-type="page">Critical Incident Stress Management</a></h2>
+            <p class="has-black-color has-text-color">After high-impact events, interventions for individuals or groups are offered to support and enable them to return to their daily routine more quickly.</p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <p></p>
+       </div><!-- .entry-content -->
+       <footer class="entry-footer">
+       </footer><!-- .entry-footer -->
+      </article><!-- #post-## -->
+     </main><!-- #main -->
+    </div><!-- #primary -->
+   </div><!-- .site-content -->
+   <footer id="colophon" class="site-footer " role="contentinfo">
+    <div class="site-footer-wrapper">
+     <div class="site-footer-columns site-info columns-3">
+      <div class="footer-column">
+       <aside id="text-7" class="widget widget_text">
+        <h1 class="widget-title">USC WorkWell Center</h1> 
+        <div class="textwidget">
+         <p>UPC – Figueroa Building<br> 3535 S Figueroa St, Suite E202<br> Los Angeles, CA 90007</p>
+         <p>HSC – Soto 1 Building<br> 1845 N Soto St #112<br> Los Angeles, CA 90032</p>
+         <p>Human Resources, Equity, and Compliance<br> University of Southern California</p>
+         <p>Ph. 213-821-0800<br> Em. <a href="mailto:workwell@usc.edu" target="_blank" rel="noopener">workwell@usc.edu</a></p>
+        </div>
+       </aside>
+      </div>
+      <div class="footer-column-2">
+       <aside id="text-3" class="widget widget_text">
+        <h1 class="widget-title">University Links</h1> 
+        <div class="textwidget">
+         <p><a href="https://svphr.usc.edu" target="_blank" rel="noopener">University Human Resources</a></p>
+         <div class="textwidget">
+          <p><a href="https://eeotix.usc.edu/" target="_blank" rel="noopener">Office for Equity, Equal Opportunity, and Title IX</a></p>
+          <p><a href="https://report.usc.edu/" target="_blank" rel="noopener">Office of Professionalism and Ethics</a></p>
+          <p><a href="https://ooc.usc.edu/" target="_blank" rel="noopener">Office of Culture, Ethics, and Compliance</a></p>
+          <p><a href="https://ooc.usc.edu/how-to-use-help-hotline/">How to Report a Concern – Help &amp; Hotline</a></p>
+          <p><a href="https://eeotix.usc.edu/notice-of-non-discrimination/">Notice of Non-Discrimination</a></p>
+         </div>
+        </div>
+       </aside>
+      </div>
+      <div class="footer-column-3">
+       <aside id="search-11" class="widget widget_search">
+        <h1 class="widget-title">Search This Site</h1>
+        <form role="search" method="get" class="search-form" action="https://workwell.usc.edu/"><label> <span class="screen-reader-text">Search for:</span> <input type="text" class="search-field" name="s" placeholder="Search..." title="search"> <input type="submit" class="visuallyhidden" value="Submit"> </label><a href="javascript:void(0);" class="search-icon-close">
+          <svg class="svg-icon" width="20" height="20" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+           <title id="icon_title">Close</title><desc id="icon_desc">
+            An icon of a letter X.
+           </desc><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" /><path d="M0 0h24v24H0z" fill="none" />
+          </svg><span class="screen-reader-text">Close Search</span></a>
+        </form>
+       </aside>
+      </div>
+     </div> 
+    </div>
+    <div class="site-footer-strip-wrapper">
+     <div class="site-footer-strip">
+      <div class="site-footer-strip-left">
+       <div class="site-footer-credits">
+        <span class="theme-credit">University of Southern California</span>
+       </div>
+       <div class="site-footer-strip-left-widgets">
+        <aside id="text-4" class="widget widget_text"> 
+         <div class="textwidget">
+          <p>Built using the USC Gateway 2018 WordPress Theme |&nbsp;Website issues? Contact <a href="http://it.provost.usc.edu/">USC Provost IT</a></p>
+          <p>&nbsp;</p>
+         </div>
+        </aside>
+       </div>
+      </div>
+      <div class="site-footer-strip-right"></div>
+     </div>
+    </div> 
+   </footer><!-- .site-footer -->
+   <script type="text/javascript">
+		function genesisBlocksShare( url, title, w, h ){
+			var left = ( window.innerWidth / 2 )-( w / 2 );
+			var top  = ( window.innerHeight / 2 )-( h / 2 );
+			return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=600, height=600, top='+top+', left='+left);
+		}
+	</script><!-- Instagram Feed JS --> 
+   <script type="text/javascript">
+var sbiajaxurl = "https://workwell.usc.edu/wp-admin/admin-ajax.php";
+</script> 
+   <link rel="stylesheet" id="usc-display-new-badge-style-css" href="https://workwell.usc.edu/wp-content/plugins/usc-display-new-badge/public/css/usc-display-new-badge.css?ver=1.0.0" type="text/css" media="all">
+   <link rel="stylesheet" id="usc-notification-bar-style-css" href="https://workwell.usc.edu/wp-content/plugins/usc-notification-bar/public/css/usc-notification-bar.css?ver=1.0" type="text/css" media="all">
+   <script type="text/javascript" src="https://workwell.usc.edu/wp-content/plugins/genesis-blocks/dist/assets/js/dismiss.js?ver=1641327201" id="genesis-blocks-dismiss-js-js"></script>
+   <script type="text/javascript" src="https://workwell.usc.edu/wp-content/themes/usc-gateway-2018/assets/js/vendor/modernizr.js?ver=1.0.28" id="modernizr-js"></script>
+   <script type="text/javascript" src="https://workwell.usc.edu/wp-content/themes/usc-gateway-2018/assets/js/lib/usc-gateway-2018.min.js?ver=1.0.28" id="theme-scripts-js"></script>
+   <script type="text/javascript" src="https://workwell.usc.edu/wp-content/plugins/page-links-to/dist/new-tab.js?ver=3.3.6" id="page-links-to-js"></script>
+   <script type="text/javascript" src="https://workwell.usc.edu/wp-includes/js/wp-embed.min.js?ver=5.8.4" id="wp-embed-js"></script>
+   <script type="text/javascript" src="https://workwell.usc.edu/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+   <script type="text/javascript" src="https://workwell.usc.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+   <script async defer type="text/javascript" src="https://workwell.usc.edu/wp-content/plugins/usc-notification-bar/public/js/usc-notification-bar.js?ver=1.0" id="usc-notification-bar-scripts-js"></script>
+   <script type="text/javascript" id="slb_context">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB ) { {$.extend(SLB, {"context":["public","user_guest"]});} }})})(jQuery);}/* ]]> */</script>
+  </div><!-- .site -->
+ </body>
+</html>

@@ -1,0 +1,358 @@
+<!doctype html><!--[if IE 7]> <html lang="en" class="ie7"> <![endif]--><!--[if IE 8]> <html lang="en" class="ie8"> <![endif]--><!--[if IE 9]> <html lang="en" class="ie9"> <![endif]--><!--[if !IE]><!-->
+<html lang="en"><!--<![endif]-->
+ <head><!-- Meta -->
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-f1fb6de858bcc62fc8a",applicationID:"1442879367"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="57x57" href="https://www-media.stanford.edu/assets/favicon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="https://www-media.stanford.edu/assets/favicon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://www-media.stanford.edu/assets/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://www-media.stanford.edu/assets/favicon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://www-media.stanford.edu/assets/favicon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://www-media.stanford.edu/assets/favicon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://www-media.stanford.edu/assets/favicon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://www-media.stanford.edu/assets/favicon/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www-media.stanford.edu/assets/favicon/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="https://www-media.stanford.edu/assets/favicon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="https://www-media.stanford.edu/assets/favicon/favicon-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="https://www-media.stanford.edu/assets/favicon/favicon-128.png" sizes="128x128">
+  <link rel="icon" type="image/png" href="https://www-media.stanford.edu/assets/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="https://www-media.stanford.edu/assets/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="https://www-media.stanford.edu/assets/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="mask-icon" href="https://www-media.stanford.edu/assets/favicon/safari-pinned-tab.svg" color="#ffffff">
+  <meta name="application-name" content="Stanford University">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://www-media.stanford.edu/assets/favicon/mstile-144x144.png">
+  <meta name="msapplication-square70x70logo" content="https://www-media.stanford.edu/assets/favicon/mstile-70x70.png">
+  <meta name="msapplication-square150x150logo" content="https://www-media.stanford.edu/assets/favicon/mstile-150x150.png">
+  <meta name="msapplication-square310x310logo" content="https://www-media.stanford.edu/assets/favicon/mstile-310x310.png"><!-- CSS -->
+  <link rel="stylesheet" href="https://quadblog.stanford.edu/wp-content/themes/lagunita/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://quadblog.stanford.edu/wp-content/themes/lagunita/css/base.min.css?v=1.2.1" type="text/css">
+  <link rel="stylesheet" href="https://quadblog.stanford.edu/wp-content/themes/admin-blog/style.css?v=1.2.1" type="text/css"><!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--><!--[if IE 8]>
+  <link rel="stylesheet" type="text/css" href="https://quadblog.stanford.edu/wp-content/themes/lagunita/css/ie/ie8.css" />
+<![endif]--><!--[if IE 7]>
+  <link rel="stylesheet" type="text/css" href="https://quadblog.stanford.edu/wp-content/themes/lagunita/css/ie/ie7.css" />
+<![endif]--><!-- JS and jQuery --> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://quadblog.stanford.edu/wp-content/themes/lagunita/js/bootstrap.min.js"></script> <!--[if lt IE 9]>
+	<script src="https://quadblog.stanford.edu/wp-content/themes/lagunita/js/respond.js"></script>
+<![endif]--> <!-- custom JS -->
+  <script src="https://quadblog.stanford.edu/wp-content/themes/lagunita/js/base.js"></script>
+  <script src="https://quadblog.stanford.edu/wp-content/themes/lagunita/js/custom.js"></script><!-- wp_head(); -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><!-- This site is optimized with the Yoast SEO plugin v18.3 - https://yoast.com/wordpress/plugins/seo/ -->
+  <title>Advancing free speech and inclusion - Notes from the Quad</title>
+  <meta name="description" content="Like many of you, we have been following what has been going on at other campuses and in our own Stanford community around issues of speech and expression. We have been reflecting on how we at Stanford can advance both our unwavering commitment to the free expression of ideas and our equally steadfast goal of an inclusive community.">
+  <link rel="canonical" href="https://quadblog.stanford.edu/2017/11/07/advancing-free-speech-and-inclusion/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Advancing free speech and inclusion - Notes from the Quad">
+  <meta property="og:description" content="Like many of you, we have been following what has been going on at other campuses and in our own Stanford community around issues of speech and expression. We have been reflecting on how we at Stanford can advance both our unwavering commitment to the free expression of ideas and our equally steadfast goal of an inclusive community.">
+  <meta property="og:url" content="https://quadblog.stanford.edu/2017/11/07/advancing-free-speech-and-inclusion/">
+  <meta property="og:site_name" content="Notes from the Quad">
+  <meta property="article:published_time" content="2017-11-07T17:49:47+00:00">
+  <meta property="article:modified_time" content="2017-11-07T18:30:18+00:00">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:label1" content="Written by">
+  <meta name="twitter:data1" content="Marc Tessier-Lavigne">
+  <meta name="twitter:label2" content="Est. reading time">
+  <meta name="twitter:data2" content="8 minutes">
+  <script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://quadblog.stanford.edu/#website","url":"https://quadblog.stanford.edu/","name":"Notes from the Quad","description":"Thoughts and observations from Stanford leaders","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://quadblog.stanford.edu/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://quadblog.stanford.edu/2017/11/07/advancing-free-speech-and-inclusion/#webpage","url":"https://quadblog.stanford.edu/2017/11/07/advancing-free-speech-and-inclusion/","name":"Advancing free speech and inclusion - Notes from the Quad","isPartOf":{"@id":"https://quadblog.stanford.edu/#website"},"datePublished":"2017-11-07T17:49:47+00:00","dateModified":"2017-11-07T18:30:18+00:00","author":{"@id":"https://quadblog.stanford.edu/#/schema/person/e321cf89d62a5142f82b6b1d1e112b26"},"description":"Like many of you, we have been following what has been going on at other campuses and in our own Stanford community around issues of speech and expression. We have been reflecting on how we at Stanford can advance both our unwavering commitment to the free expression of ideas and our equally steadfast goal of an inclusive community.","breadcrumb":{"@id":"https://quadblog.stanford.edu/2017/11/07/advancing-free-speech-and-inclusion/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://quadblog.stanford.edu/2017/11/07/advancing-free-speech-and-inclusion/"]}]},{"@type":"BreadcrumbList","@id":"https://quadblog.stanford.edu/2017/11/07/advancing-free-speech-and-inclusion/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://quadblog.stanford.edu/"},{"@type":"ListItem","position":2,"name":"Advancing free speech and inclusion"}]},{"@type":"Person","@id":"https://quadblog.stanford.edu/#/schema/person/e321cf89d62a5142f82b6b1d1e112b26","name":"Marc Tessier-Lavigne","image":{"@type":"ImageObject","@id":"https://quadblog.stanford.edu/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/40c7da9356832a9d5b561ee04a5ed6eb?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/40c7da9356832a9d5b561ee04a5ed6eb?s=96&d=mm&r=g","caption":"Marc Tessier-Lavigne"},"description":"Pioneering neuroscientist, biotech executive and academic leader, Marc Tessier-Lavigne became Stanford University’s eleventh president in September 2016.","sameAs":["https://president.stanford.edu"],"url":"https://quadblog.stanford.edu/author/president/"}]}</script><!-- / Yoast SEO plugin. -->
+  <link rel="dns-prefetch" href="//platform-api.sharethis.com">
+  <link rel="dns-prefetch" href="//quadblog.stanford.edu">
+  <link rel="dns-prefetch" href="//s.w.org">
+  <script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/quadblog.stanford.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+  <link rel="stylesheet" id="wp-block-library-css" href="https://quadblog.stanford.edu/wp-includes/css/dist/block-library/style.min.css?ver=5.9.2" type="text/css" media="all">
+  <style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+  <link rel="stylesheet" id="share-this-share-buttons-sticky-css" href="https://quadblog.stanford.edu/wp-content/plugins/sharethis-share-buttons/css/mu-style.css?ver=1655217554" type="text/css" media="all">
+  <link rel="stylesheet" id="ppress-frontend-css" href="https://quadblog.stanford.edu/wp-content/plugins/wp-user-avatar/assets/css/frontend.min.css?ver=3.2.9" type="text/css" media="all">
+  <link rel="stylesheet" id="ppress-flatpickr-css" href="https://quadblog.stanford.edu/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.css?ver=3.2.9" type="text/css" media="all">
+  <link rel="stylesheet" id="ppress-select2-css" href="https://quadblog.stanford.edu/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.css?ver=5.9.2" type="text/css" media="all">
+  <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js?ver=1.5.6#property=59f8d835d17e8400129d94e3&amp;product=sticky-buttons" id="share-this-share-buttons-mu-js"></script>
+  <script type="text/javascript" src="https://quadblog.stanford.edu/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+  <script type="text/javascript" src="https://quadblog.stanford.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+  <script type="text/javascript" src="https://quadblog.stanford.edu/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.js?ver=5.9.2" id="ppress-flatpickr-js"></script>
+  <script type="text/javascript" src="https://quadblog.stanford.edu/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.js?ver=5.9.2" id="ppress-select2-js"></script>
+  <link rel="https://api.w.org/" href="https://quadblog.stanford.edu/wp-json/">
+  <link rel="alternate" type="application/json" href="https://quadblog.stanford.edu/wp-json/wp/v2/posts/370">
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://quadblog.stanford.edu/xmlrpc.php?rsd">
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://quadblog.stanford.edu/wp-includes/wlwmanifest.xml"> 
+  <meta name="generator" content="WordPress 5.9.2">
+  <link rel="shortlink" href="https://quadblog.stanford.edu/?p=370">
+  <link rel="alternate" type="application/json+oembed" href="https://quadblog.stanford.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fquadblog.stanford.edu%2F2017%2F11%2F07%2Fadvancing-free-speech-and-inclusion%2F">
+  <link rel="alternate" type="text/xml+oembed" href="https://quadblog.stanford.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fquadblog.stanford.edu%2F2017%2F11%2F07%2Fadvancing-free-speech-and-inclusion%2F&amp;format=xml"><!-- Google Analytics code for property id UA-1860414-53 -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-1860414-53', 'auto');
+  ga('send',   'pageview');
+</script><!-- custom CSS -->
+  <style type="text/css">
+#main-content p {
+   margin: 0 0 16px;
+}
+
+.post-attribution {
+   padding-right: 0;
+}
+.post-attribution .author-title {
+   font-size: .9em;
+}
+
+#sidebar-second .author-widget-item .author-avatar img {
+   width: 100%;
+   max-width: 300px;
+}
+</style>
+ </head>
+ <body class="post-template-default single single-post postid-370 single-format-standard site-slogan">
+  <div id="su-wrap"> <!-- used to force footer to bottom of short pages -->
+   <div id="su-content"> <!-- used to force footer to bottom of short pages --> <!--=== Top ===-->
+    <div id="top">
+     <div class="container"> <!--=== Skip links ===-->
+      <div id="skip"> <a href="#content" onclick="$('#content').focus()">Skip to content</a> 
+      </div><!-- /Skip links --> 
+     </div>
+    </div><!--/top--><!-- Brandbar snippet start -->
+    <div id="brandbar">
+     <div class="container"><a href="http://www.stanford.edu"> <img src="https://www.stanford.edu/su-identity/images/brandbar-stanford-logo@2x.png" alt="Stanford University" width="153" height="22"> </a>
+     </div> <!-- .container end -->
+    </div> <!-- #brandbar end --><!-- Brandbar snippet end --><!--=== Header ===-->
+    <div id="header" class="clearfix" role="banner">
+     <div class="container">
+      <div class="row">
+       <div class="col-md-8">
+        <div id="signature">
+         <div id="site-name"><a href="https://quadblog.stanford.edu/">Notes from the Quad</a>
+         </div>
+         <div id="site-slogan"><a href="https://quadblog.stanford.edu/">Thoughts and observations from Stanford leaders</a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div><!-- Menu -->
+    <div id="mainmenu" class="clearfix" role="navigation">
+     <div class="container">
+      <div class="navbar navbar-default"> <!-- main navigation --><button type="button" class="navbar-toggle btn-navbar" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="menu-text">Menu</span></button><!-- /nav-collapse -->
+       <div class="navbar-collapse collapse"> <!--search box-->
+        <div id="nav-search" role="search">
+         <form action="https://quadblog.stanford.edu/" method="get" id="search-form" accept-charset="UTF-8">
+          <h2 class="screen-reader">Search form</h2><label class="screen-reader" for="search-field">Search term</label>
+          <input title="Search string" class="input-medium" placeholder="Search this site…" type="search" id="search-field" name="s" value="" size="15" maxlength="128"><button id="search-btn" type="submit" name="submit" value="Search" aria-label="Search" formmethod="get"><i class="fa fa-search"></i></button>
+         </form>
+        </div>
+        <div role="navigation">
+         <div id="primary-nav" class="menu-top-nav-container">
+          <ul id="menu-top-nav" class="nav navbar-nav" aria-label="primary navigation">
+           <li id="menu-item-340" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-340"><a href="/">Home</a></li>
+           <li id="menu-item-341" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-341"><a href="https://quadblog.stanford.edu/about/">About this blog</a></li>
+          </ul>
+         </div> 
+        </div>
+       </div><!-- /nav-collapse --> 
+      </div><!-- /navbar --> 
+     </div><!-- /container --> 
+    </div><!-- /mainmenu --> <!-- main content -->
+    <div id="content" class="container" tabindex="0">
+     <div class="row"><!-- Main column -->
+      <div id="main-content" class="col-md-8" role="main">
+       <p class="postcard-date">November 7, 2017</p>
+       <h1>Advancing free speech and inclusion</h1>
+       <div class="post-meta">
+        <div class="row">
+         <div class="post-attribution col-md-5 ">
+          <div class="author-avatar">
+           <img alt="" src="https://secure.gravatar.com/avatar/40c7da9356832a9d5b561ee04a5ed6eb?s=60&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/40c7da9356832a9d5b561ee04a5ed6eb?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60" loading="lazy">
+          </div>
+          <div class="author-name">
+           <a href="https://quadblog.stanford.edu/author/president/" title="Posts by Marc Tessier-Lavigne" rel="author">Marc Tessier-Lavigne</a>
+           <br><span class="author-title">President</span>
+          </div>
+         </div>
+         <div class="post-attribution col-md-5 ">
+          <div class="author-avatar">
+           <img data-del="avatar" src="https://quadblog.stanford.edu/wp-content/uploads/sites/12/2017/09/provost-gravatar-sm.jpg" class="avatar pp-user-avatar avatar-60 photo " height="60" width="60">
+          </div>
+          <div class="author-name">
+           <a href="https://quadblog.stanford.edu/author/provost/" title="Posts by Persis Drell" rel="author">Persis Drell</a>
+           <br><span class="author-title">Provost</span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div style="margin-top: 0px; margin-bottom: 0px;" class="sharethis-inline-share-buttons"></div>
+       <p>Members of the Stanford community,</p>
+       <p>Like many of you, we have been following what has been going on at other campuses and in our own Stanford community around issues of speech and expression. We have been reflecting on how we at Stanford can advance both our unwavering commitment to the free expression of ideas and our equally steadfast goal of an inclusive community.</p>
+       <p>In Charlottesville this summer, we witnessed hate rallies targeting people of color, the Jewish community, and others. As a community, we name such speech for what it is, whether it occurs <a href="https://quadblog.stanford.edu/2017/10/31/strengthening-community-in-the-face-of-race-hatred/">on our campus</a> or off: racism, anti-Semitism, and hate. Many members of our community also have wrestled with personal, less visible instances of speech that is offensive or hurtful, or that inhibits them from expressing their own views. And many universities have wrestled with the challenges of provocative outside speakers coming to their campuses.</p>
+       <p>These issues are difficult, and we too have struggled with them. The free expression of ideas is absolutely central to the academic life of the university. At the same time, we recognize and worry about the fear or hurt that many individuals experience based on rhetoric in our country or interactions they have in our own community.</p>
+       <p>Below we share some considerations that we believe are critical as we make our way through this terrain together. We know that many of you have deep experience with these issues, and we hope to hear from you and to work in partnership with you to make progress.</p>
+       <p><strong>Freedom of inquiry and the free expression of ideas are fundamental to the mission of the university.</strong></p>
+       <p>At their core, universities are devoted to the discovery and transmission of knowledge. In both research and education, breakthroughs in understanding come not from considering a familiar, limited range of ideas, but from considering a broad range of ideas, including those we might find objectionable, and engaging in rigorous testing of them through analysis and debate. Universities also must help students prepare to function in a society where active citizenship and meaningful work require engaging with a broad diversity of individuals, ideas, and arguments.</p>
+       <p>These values are reflected in Stanford’s motto – “The wind of freedom blows” – and are embedded in the university’s Statement on Academic Freedom:</p>
+       <blockquote>
+        <p><em>“Stanford University’s central functions of teaching, learning, research and scholarship depend upon an atmosphere in which freedom of inquiry, thought, expression, publication and peaceable assembly are given the fullest protection. Expression of the widest range of viewpoints should be encouraged, free from institutional orthodoxy and from internal or external coercion.”</em></p>
+       </blockquote>
+       <p><strong>In addition to supporting the free expression of ideas, we are committed to fostering an inclusive campus culture in which all community members feel they belong.</strong></p>
+       <p>Our strength as a university derives from our diversity – including in backgrounds, religions, nationalities, races, genders, identities, ages, physical abilities, political views, and ways of thinking. We are only successful as an intellectual community when our discussion benefits from the entire range of perspectives present on our campus. This requires a constant effort to ensure that everyone feels they are full members of our community.</p>
+       <p>We believe that, rather than being in opposition, free expression and an inclusive culture are essential parts of the same whole. In a truly inclusive culture, everyone in our diverse community, from all backgrounds and perspectives, has a voice and feels empowered to participate in active debate.</p>
+       <p>As we said in an <a href="https://quadblog.stanford.edu/2017/09/25/a-new-academic-year/">email to the campus</a> at the beginning of this academic year, we have an extraordinary opportunity here at Stanford to learn from each other, to have our thinking challenged, to sharpen our arguments, and to develop better ideas from thoughtful debate. Any day here that ends without having learned something from another person, or having had one’s mind changed or one’s views enriched by another person, is a missed opportunity.</p>
+       <p><strong>We know that the reality of free expression of ideas within a diverse community can be challenging. How do we deal with speech within our community that some members may not welcome?</strong></p>
+       <p>Certain types of speech are not permitted under university policy (and, in some cases, state or federal law) – for example, threats of harm that constitute a hate crime, instances of unlawful harassment, or speech that disrupts classes or other university functions. But our commitment to free expression means that we do not otherwise restrict speech in our community, including speech that some may find objectionable. In addition, a state law in California known as the Leonard Law prevents private universities from placing restrictions on students for speech that is protected by the First Amendment; in fact, a speech code Stanford had in the early 1990s was struck down in court under this law.</p>
+       <p>A sense of mutual respect is one important thing we all can bring to our conversations with each other in our community. We can’t mandate respectful expression. But we can model it; we can encourage it. We can bring empathy and deep listening to our interactions out of a desire to learn more from one another. We know we will disagree on many things, but it’s important that those disagreements not shut down the dialogue that leads to learning. Disagreement should not threaten an academic community, it should enhance it.</p>
+       <p>Beyond fostering a culture of open exchange, as we have reflected on these issues we have come to believe there are additional steps we can take as a university.</p>
+       <p><strong>First, we believe there is more the university can do to acknowledge and support those who are negatively impacted by speech.</strong> Some members of our community can be deeply wounded and even frightened by certain types of speech. We worry about the experiences of vulnerable or silenced populations within our community – those who seek an environment where their identities are welcomed, not challenged by hate or ignorance. We cannot dismiss their concerns, and we certainly don’t want them to remain silent. Instead we must continually find ways of providing meaningful support. Our university’s places of worship, community centers, and student organizations provide some of this support. We also will continue to call out hate when we see it. And we welcome thoughts from the community on other steps the university can take.</p>
+       <p><strong>Second, we must ensure that a diversity of views is not just a possibility but also a reality at Stanford, both in the classroom and outside it. </strong>It is imperative that as a university, we avoid a culture in which people feel pressured to conform to particular views. One way to encourage that is to ensure that diverse perspectives are actively discussed at Stanford. As one new initiative, we have asked some university thought leaders, in conjunction with student leaders, to organize a series of discussions with well-known individuals who hold contrasting views on consequential subjects. The student-led <a href="http://spu.stanford.edu/">Stanford Political Union</a> provided a model last year with its <a href="https://www.stanforddaily.com/2017/05/22/new-student-group-creates-space-for-political-debate/">debate on affordable care</a>, and we hope to help expand that approach. More will be coming on this new effort as it develops.</p>
+       <p><strong>Finally, we recognize an additional challenge when we think about the prospect of visits to campus by outside speakers who may be controversial. </strong></p>
+       <p>Some outside speakers may be controversial to some because they challenge accepted notions in a reasoned way. Some may be provocative. And some may be both. Whatever the circumstance, as part of the university’s commitment to the free exchange of ideas, when organizations within our community genuinely want to hear an outside speaker, we support their efforts as long as university policies are followed. The university has policies (see <a href="https://sal.stanford.edu/policies/event-planning">here</a> and <a href="https://web.stanford.edu/dept/Events/policies/events-requiring-security-extra-resources.pdf">here</a>) that govern the invitation of outside speakers, the funding of such events, security provisions, and the like.</p>
+       <p>We also firmly support the rights of all members of the university community to protest peacefully against opinions with which they disagree. If a controversial speaker comes to campus, as our colleague Chris Eisgruber, the president of Princeton University, has written, members of the campus community have several acceptable choices in how to respond: “They may attend the event and try to question the speaker; they may simply stay away from the event; they may criticize the decision to invite the speaker; or they may protest the speech without disrupting it. So long as the speaker is allowed to proceed and be heard, all of these options are consistent with the requirements of free speech: a peaceful protest is an exercise of free speech, not a renunciation of it.”</p>
+       <p>And if the speaker espouses views that are at odds with the fundamental values of the university, the university leadership will not hesitate to speak out against those ideas, even as we allow them to be voiced.</p>
+       <p>What is not acceptable is to disrupt speakers and not allow them to speak. This is inconsistent with our values and carries consequences as a violation of the university’s <a href="https://communitystandards.stanford.edu/student-conduct-process/honor-code-and-fundamental-standard#fundamental-standard">Fundamental Standard</a> and <a href="https://adminguide.stanford.edu/chapter-1/subchapter-1/policy-1-1-1">Code of Conduct</a>.</p>
+       <p><strong>* * *</strong></p>
+       <p><strong>We view this post as the beginning of a conversation.</strong></p>
+       <p>We have great confidence in the generous spirit of the Stanford community. Over and over, we have seen the care and respect that members of our community show for each other and our capacity to work through difficult issues in a thoughtful manner. At the same time, we also believe there is more we can do to create the culture we want at Stanford.</p>
+       <p>We welcome your suggestions for activities and events that can further our dual commitment to the free expression of ideas and an inclusive culture. Email them to us at <a href="mailto:president@stanford.edu">president@stanford.edu</a> and <a href="mailto:provost@stanford.edu">provost@stanford.edu</a>. We have no doubt that, working together, we can preserve and enhance Stanford as a home of intellectual freedom in which all members of our community have a place and a voice.</p>
+       <div class="clearfix"></div>
+       <div class="clearfix"></div> 
+       <nav class="navigation post-navigation" role="navigation">
+        <h2 class="screen-reader">Post navigation</h2>
+        <div class="nav-links row">
+         <div class="prev-post col-xs-6">
+          <a href="https://quadblog.stanford.edu/2017/11/01/our-work-in-student-affairs/" rel="prev"><i class="fa fa-chevron-circle-left"></i> Previous post<br><span class="post-title">Our work in Student Affairs</span></a>
+         </div>
+         <div class="next-post col-xs-6">
+          <a href="https://quadblog.stanford.edu/2017/11/09/on-the-robert-spencer-event/" rel="next">Next post<i class="fa fa-chevron-circle-right"></i><br><span class="post-title">On the Robert Spencer event</span></a>
+         </div>
+        </div><!-- .nav-links -->
+       </nav><!-- .navigation -->
+      </div><!-- Right sidebar -->
+      <div id="sidebar-second" class="col-md-3" role="complementary">
+       <h2 class="widgettitle">Subscribe for updates</h2>
+       <script>(function() {
+	window.mc4wp = window.mc4wp || {
+		listeners: [],
+		forms: {
+			on: function(evt, cb) {
+				window.mc4wp.listeners.push(
+					{
+						event   : evt,
+						callback: cb
+					}
+				);
+			}
+		}
+	}
+})();
+</script><!-- Mailchimp for WordPress v4.8.7 - https://wordpress.org/plugins/mailchimp-for-wp/ -->
+       <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-513" method="post" data-id="513" data-name="Subscribe for updates">
+        <div class="mc4wp-form-fields">
+         <style type="text/css">
+label {
+font-size: .8em;
+  }
+</style> 
+         <div class="form-group"> <label style="text-transform:uppercase;" for="MC-EMAIL">Email: </label>
+          <br> 
+          <input class="form-control" id="MC-EMAIL" type="email" name="EMAIL" placeholder="Your email address" required> 
+         </div> 
+         <div class="form-group"> <label style="text-transform:uppercase;" for="MC-FNAME">First Name:</label>
+          <br> 
+          <input class="form-control" type="text" name="FNAME" id="MC-FNAME"> 
+         </div> 
+         <div class="form-group"> <label style="text-transform:uppercase;" for="MC-LNAME">Last Name:</label>
+          <br> 
+          <input class="form-control" type="text" name="LNAME" id="MC-LNAME"> 
+         </div> 
+         <p> <input class="btn btn-primary" type="submit" value="Sign up"> </p>
+        </div><label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off"></label>
+        <input type="hidden" name="_mc4wp_timestamp" value="1655350452">
+        <input type="hidden" name="_mc4wp_form_id" value="513">
+        <input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1">
+        <div class="mc4wp-response"></div>
+       </form><!-- / Mailchimp for WordPress Plugin --> 
+      </div>
+     </div> <!-- row -->
+    </div><!-- #content--> 
+   </div><!-- #su-content --> 
+  </div><!-- #su-wrap --> <!-- BEGIN footer -->
+  <div id="footer" class="clearfix footer" role="contentinfo"><!-- Global footer snippet start -->
+   <div id="global-footer">
+    <div class="container">
+     <div class="row">
+      <div id="bottom-logo" class="col-sm-12 col-md-2"><a href="https://www.stanford.edu"> <img src="https://www-media.stanford.edu/su-identity/images/footer-stanford-logo@2x.png" alt="Stanford University" width="105" height="49"> </a>
+      </div><!-- #bottom-logo end -->
+      <div id="bottom-text">
+       <div class="col-xs-5 col-xs-offset-1 col-sm-12 col-sm-offset-0 col-md-10">
+        <ul id="primary-links">
+         <li class="home"><a href="https://www.stanford.edu">Stanford Home</a></li>
+         <li class="maps alt"><a href="https://visit.stanford.edu/plan/">Maps &amp; Directions</a></li>
+         <li class="search-stanford"><a href="https://www.stanford.edu/search/">Search Stanford</a></li>
+         <li class="emergency alt"><a href="https://emergency.stanford.edu">Emergency Info</a></li>
+        </ul>
+       </div>
+       <div class="col-xs-6 col-sm-12 col-md-10">
+        <ul id="policy-links">
+         <li><a href="https://www.stanford.edu/site/terms/" title="Terms of use for sites">Terms of Use</a></li>
+         <li><a href="https://www.stanford.edu/site/privacy/" title="Privacy and cookie policy">Privacy</a></li>
+         <li><a href="https://uit.stanford.edu/security/copyright-infringement" title="Report alleged copyright infringement">Copyright</a></li>
+         <li><a href="https://adminguide.stanford.edu/chapter-1/subchapter-5/policy-1-5-4" title="Ownership and use of Stanford trademarks and images">Trademarks</a></li>
+         <li><a href="http://exploredegrees.stanford.edu/nonacademicregulations/nondiscrimination/" title="Non-discrimination policy">Non-Discrimination</a></li>
+         <li><a href="https://www.stanford.edu/site/accessibility" title="Report web accessibility issues">Accessibility</a></li>
+        </ul>
+       </div>
+       <div class="col-xs-12 col-md-10 col-md-offset-2">
+        <p class="copyright vcard">© <span class="fn org">Stanford University</span>, <span class="adr"> <span class="locality">Stanford</span>, <span class="region">California</span> <span class="postal-code">94305</span></span>.</p>
+       </div>
+      </div> <!-- .bottom-text end -->
+     </div><!-- .row end -->
+    </div><!-- .container end -->
+   </div><!-- Global footer snippet end -->
+  </div><!-- END footer --> 
+  <script>(function() {function maybePrefixUrlField() {
+	if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+		this.value = "http://" + this.value;
+	}
+}
+
+var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+if (urlFields) {
+	for (var j=0; j < urlFields.length; j++) {
+		urlFields[j].addEventListener('blur', maybePrefixUrlField);
+	}
+}
+})();</script>
+  <script type="text/javascript" id="ppress-frontend-script-js-extra">
+/* <![CDATA[ */
+var pp_ajax_form = {"ajaxurl":"https:\/\/quadblog.stanford.edu\/wp-admin\/admin-ajax.php","confirm_delete":"Are you sure?","deleting_text":"Deleting...","deleting_error":"An error occurred. Please try again.","nonce":"75968de1a2","disable_ajax_form":"false"};
+/* ]]> */
+</script>
+  <script type="text/javascript" src="https://quadblog.stanford.edu/wp-content/plugins/wp-user-avatar/assets/js/frontend.min.js?ver=3.2.9" id="ppress-frontend-script-js"></script>
+  <script type="text/javascript" defer src="https://quadblog.stanford.edu/wp-content/plugins/mailchimp-for-wp/assets/js/forms.js?ver=4.8.7" id="mc4wp-forms-api-js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-f1fb6de858bcc62fc8a","applicationID":"1442879367","transactionName":"MlFQY0NRDUAHV0UKDQsbc1RFWQxdSV1fBwcd","queueTime":0,"applicationTime":456,"atts":"HhZTFQtLHk4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

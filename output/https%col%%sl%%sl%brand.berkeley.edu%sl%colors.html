@@ -1,0 +1,1174 @@
+<!doctype html>
+<html lang="en-US">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Color • Brand Guidelines</title>
+  <link rel="stylesheet" href="https://use.typekit.net/scr0aog.css">
+  <meta name="robots" content="max-image-preview:large">
+  <link rel="dns-prefetch" href="//s.w.org">
+  <link rel="dns-prefetch" href="//v0.wordpress.com">
+  <link rel="alternate" type="application/rss+xml" title="Brand Guidelines » Feed" href="https://brand.berkeley.edu/feed/">
+  <link rel="alternate" type="application/rss+xml" title="Brand Guidelines » Comments Feed" href="https://brand.berkeley.edu/comments/feed/"><!-- This site uses the Google Analytics by MonsterInsights plugin v8.4.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+  <script src="//www.googletagmanager.com/gtag/js?id=UA-1506086-24" data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '8.4.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-1506086-24',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						if ( document.cookie.indexOf( disableStrs[ index ] + '=true' ) > -1 ) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						document.cookie = disableStrs[ index ] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if ( mi_track_user ) {
+					function __gtagDataLayer() {
+						dataLayer.push( arguments );
+					}
+
+					function __gtagTracker( type, name, parameters ) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply( null, arguments );
+							return;
+						}
+
+						if ( type === 'event' ) {
+							
+															parameters.send_to = monsterinsights_frontend.ua;
+								__gtagDataLayer( type, name, parameters );
+													} else {
+							__gtagDataLayer.apply( null, arguments );
+						}
+					}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+											} );
+															__gtagTracker( 'config', 'UA-1506086-24', {"forceSSL":"true"} );
+										window.gtag = __gtagTracker;											(function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+																				if ( ! ( ! args.hasOwnProperty(arg) || ! gaMap.hasOwnProperty(arg) ) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						})();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script><!-- / Google Analytics by MonsterInsights -->
+  <script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/brand.berkeley.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.3"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+  <link rel="stylesheet" id="wp-block-library-css" href="https://brand.berkeley.edu/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3" type="text/css" media="all">
+  <style id="wp-block-library-inline-css" type="text/css">
+.has-text-align-justify{text-align:justify;}
+</style>
+  <link rel="stylesheet" id="mediaelement-css" href="https://brand.berkeley.edu/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.16" type="text/css" media="all">
+  <link rel="stylesheet" id="wp-mediaelement-css" href="https://brand.berkeley.edu/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=5.9.3" type="text/css" media="all">
+  <style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+  <link rel="stylesheet" id="dashicons-css" href="https://brand.berkeley.edu/wp-includes/css/dashicons.min.css?ver=5.9.3" type="text/css" media="all">
+  <link rel="stylesheet" id="pbsandwich-css" href="https://brand.berkeley.edu/wp-content/plugins/page-builder-sandwich/css/frontend.css?ver=3.3UCB" type="text/css" media="all">
+  <link rel="stylesheet" id="berkeley_brand-css" href="https://brand.berkeley.edu/wp-content/themes/berkeley_brand/style.css?ver=5.9.3" type="text/css" media="all">
+  <link rel="stylesheet" id="child-style-css" href="https://brand.berkeley.edu/wp-content/themes/bk_brand_child/style.css?ver=5.9.3" type="text/css" media="all">
+  <link rel="stylesheet" id="bootstrap-css" href="https://brand.berkeley.edu/wp-content/themes/berkeley_brand/css/bootstrap.min.css?ver=5.9.3" type="text/css" media="all">
+  <link rel="stylesheet" id="parent-style-css" href="https://brand.berkeley.edu/wp-content/themes/berkeley_brand/css/entypo.css?ver=5.9.3" type="text/css" media="all">
+  <link rel="stylesheet" id="bb-styles-css" href="https://brand.berkeley.edu/wp-content/themes/berkeley_brand/minified/styles.css?ver=all" type="text/css" media="all">
+  <link rel="stylesheet" id="popup-maker-site-css" href="//brand.berkeley.edu/wp-content/uploads/pum/pum-site-styles.css?generated=1646629716&amp;ver=1.16.4" type="text/css" media="all">
+  <link rel="stylesheet" id="fontawesome-css" href="https://brand.berkeley.edu/wp-content/plugins/media-grid/css/font-awesome/css/font-awesome.min.css?ver=4.7.0" type="text/css" media="all">
+  <link rel="stylesheet" id="mg-custom-css-css" href="https://brand.berkeley.edu/wp-content/plugins/media-grid/css/custom.css?ver=5.143" type="text/css" media="all">
+  <link rel="stylesheet" id="jetpack_css-css" href="https://brand.berkeley.edu/wp-content/plugins/jetpack/css/jetpack.css?ver=10.7" type="text/css" media="all">
+  <script type="text/javascript" id="monsterinsights-frontend-script-js-extra">
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"https:\/\/brand.berkeley.edu","hash_tracking":"false","ua":"UA-1506086-24","v4_id":""};
+/* ]]> */
+</script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.4.0" id="monsterinsights-frontend-script-js"></script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-content/plugins/page-builder-sandwich/js/min/frontend-min.js?ver=3.3UCB" id="pbsandwich-js"></script>
+  <link rel="https://api.w.org/" href="https://brand.berkeley.edu/wp-json/">
+  <link rel="alternate" type="application/json" href="https://brand.berkeley.edu/wp-json/wp/v2/pages/491">
+  <link rel="canonical" href="https://brand.berkeley.edu/colors/">
+  <link rel="alternate" type="application/json+oembed" href="https://brand.berkeley.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbrand.berkeley.edu%2Fcolors%2F">
+  <link rel="alternate" type="text/xml+oembed" href="https://brand.berkeley.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbrand.berkeley.edu%2Fcolors%2F&amp;format=xml">
+  <style type="text/css">/** Mega Menu CSS: disabled **/</style>
+ </head>
+ <body class="page-template page-template-templates page-template-page-hero-band-web-medalist page-template-templatespage-hero-band-web-medalist-php page page-id-491 mega-menu-main"><a class="sr-only sr-only-focusable skip-to-content" href="#content">Skip to main content</a>
+  <header id="site-header" class="light nav-right"><!-- Main menu -->
+   <div class="navbar navbar-default navbar-static-top yamm" role="navigation">
+    <div class="container"><a href="https://www.berkeley.edu" class="home-link">UC Berkeley</a>
+     <div class="navbar-header one-line">
+      <a href="/" rel="home"><span class="b-wordmark" aria-hidden="true"></span><span class="dept-title one-line">Brand Guidelines</span></a><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+     </div>
+     <div class="collapse navbar-collapse navbar-ex2-collapse" id="main-nav">
+      <div id="tools-nav">
+       <div class="container">
+       </div>
+      </div>
+      <nav id="primary-nav">
+       <div id="mega-menu-wrap-main" class="mega-menu-wrap">
+        <div class="mega-menu-toggle">
+         <div class="mega-toggle-blocks-left"></div>
+         <div class="mega-toggle-blocks-center"></div>
+         <div class="mega-toggle-blocks-right">
+          <div class="mega-toggle-block mega-menu-toggle-block mega-toggle-block-1" id="mega-toggle-block-1" tabindex="0">
+           <span class="mega-toggle-label" role="button" aria-expanded="false"><span class="mega-toggle-label-closed"></span><span class="mega-toggle-label-open"></span></span>
+          </div>
+         </div>
+        </div>
+        <ul id="mega-menu-main" class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-event="click" data-effect="slide" data-effect-speed="200" data-effect-mobile="disabled" data-effect-speed-mobile="0" data-mobile-force-width="false" data-second-click="close" data-document-click="collapse" data-vertical-behaviour="accordion" data-breakpoint="600" data-unbind="true" data-mobile-state="collapse_all" data-hover-intent-timeout="300" data-hover-intent-interval="100">
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-menu-item-449" id="mega-menu-item-449"><a class="dropdown-toggle mega-menu-link" href="https://brand.berkeley.edu/category/brand/" aria-haspopup="true" aria-expanded="false" tabindex="0" data-target="#" data-toggle="dropdown" aria-current="false">Brand<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-17" id="mega-menu-item-widget_sp_image-17"><h4 class="mega-block-title">nobel-parking</h4><img width="468" height="312" alt="nobel-parking" class="attachment-full" style="max-width: 100%;" src="https://brand.berkeley.edu/wp-content/uploads/2017/01/nobel_sign.gif"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-38" id="mega-menu-item-nav_menu-38">
+            <div class="menu-submenu1-brand-container">
+             <ul id="menu-submenu1-brand" class="menu">
+              <li id="menu-item-458" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-458"><a href="https://brand.berkeley.edu/brand/">Overview</a></li>
+              <li id="menu-item-811" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-811"><a href="https://brand.berkeley.edu/brand-platform/">Brand platform</a></li>
+              <li id="menu-item-561" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-561"><a href="https://brand.berkeley.edu/brand-manuals/">Brand manuals</a></li>
+              <li id="menu-item-1016" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1016"><a href="https://brand.berkeley.edu/brand-training/">Brand training</a></li>
+             </ul>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-39" id="mega-menu-item-nav_menu-39">
+            <div class="menu-submenu2-brand-container">
+             <ul id="menu-submenu2-brand" class="menu">
+              <li id="menu-item-474" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-474"><a href="https://brand.berkeley.edu/brand-videos/">Brand videos</a></li>
+              <li id="menu-item-1197" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1197"><a href="https://brand.berkeley.edu/brand-campaign/">Brand campaign</a></li>
+              <li id="menu-item-473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473"><a href="https://brand.berkeley.edu/creative-brief/">Creative brief</a></li>
+              <li id="menu-item-1046" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1046"><a href="https://brand.berkeley.edu/brand-protection/">Brand protection</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-menu-item-450" id="mega-menu-item-450"><a class="dropdown-toggle mega-menu-link" href="https://brand.berkeley.edu/category/identity/" aria-haspopup="true" aria-expanded="false" tabindex="0" data-target="#" data-toggle="dropdown" aria-current="false">Identity<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-18" id="mega-menu-item-widget_sp_image-18"><img width="800" height="450" class="attachment-full" style="max-width: 100%;" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/12/identity_megamenu_image.jpg 800w, https://brand.berkeley.edu/wp-content/uploads/2016/12/identity_megamenu_image-300x169.jpg 300w, https://brand.berkeley.edu/wp-content/uploads/2016/12/identity_megamenu_image-768x432.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" src="https://brand.berkeley.edu/wp-content/uploads/2016/12/identity_megamenu_image.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-40" id="mega-menu-item-nav_menu-40">
+            <div class="menu-submenu1-identity-container">
+             <ul id="menu-submenu1-identity" class="menu">
+              <li id="menu-item-486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-486"><a href="https://brand.berkeley.edu/identity/">Overview</a></li>
+              <li id="menu-item-485" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-485"><a href="https://brand.berkeley.edu/logo/">Logo</a></li>
+             </ul>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-41" id="mega-menu-item-nav_menu-41">
+            <div class="menu-submenu2-identity-container">
+             <ul id="menu-submenu2-identity" class="menu">
+              <li id="menu-item-1047" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1047"><a href="https://brand.berkeley.edu/seal/">Seal</a></li>
+              <li id="menu-item-489" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-489"><a href="https://brand.berkeley.edu/stationery/">Stationery</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-menu-item-454" id="mega-menu-item-454"><a class="dropdown-toggle mega-menu-link" href="https://brand.berkeley.edu/category/visual-design/" aria-haspopup="true" aria-expanded="false" tabindex="0" data-target="#" data-toggle="dropdown" aria-current="false">Visual design<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-19" id="mega-menu-item-widget_sp_image-19"><h4 class="mega-block-title">visual_megamenu</h4><img width="468" height="312" alt="visual_megamenu" class="attachment-full" style="max-width: 100%;" srcset="https://brand.berkeley.edu/wp-content/uploads/2017/01/visual_design_megamenu.jpg 468w, https://brand.berkeley.edu/wp-content/uploads/2017/01/visual_design_megamenu-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://brand.berkeley.edu/wp-content/uploads/2017/01/visual_design_megamenu.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-42" id="mega-menu-item-nav_menu-42">
+            <div class="menu-submenu1-visual-design-container">
+             <ul id="menu-submenu1-visual-design" class="menu">
+              <li id="menu-item-499" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-499"><a href="https://brand.berkeley.edu/visual-design/">Overview</a></li>
+              <li id="menu-item-497" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-491 current_page_item menu-item-497"><a href="https://brand.berkeley.edu/colors/" aria-current="page">Color</a></li>
+              <li id="menu-item-498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-498"><a href="https://brand.berkeley.edu/typography/">Typography</a></li>
+             </ul>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-43" id="mega-menu-item-nav_menu-43">
+            <div class="menu-submenu2-visual-design-container">
+             <ul id="menu-submenu2-visual-design" class="menu">
+              <li id="menu-item-1019" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1019"><a href="https://brand.berkeley.edu/photography/">Photography</a></li>
+              <li id="menu-item-502" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-502"><a href="https://brand.berkeley.edu/graphic-elements/">Graphic elements</a></li>
+              <li id="menu-item-500" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-500"><a href="https://brand.berkeley.edu/business-documents/">Business documents</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-menu-item-455" id="mega-menu-item-455"><a class="dropdown-toggle mega-menu-link" href="https://brand.berkeley.edu/category/web-design/" aria-haspopup="true" aria-expanded="false" tabindex="0" data-target="#" data-toggle="dropdown" aria-current="false">Web design<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-20" id="mega-menu-item-widget_sp_image-20"><h4 class="mega-block-title">openberkeley_upp_468x312</h4><img width="468" height="312" alt="openberkeley_upp_468x312" class="attachment-full" style="max-width: 100%;" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/11/openberkeley_upp_468x312.jpg 468w, https://brand.berkeley.edu/wp-content/uploads/2016/11/openberkeley_upp_468x312-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/openberkeley_upp_468x312.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-49" id="mega-menu-item-nav_menu-49">
+            <div class="menu-submenu1-web-design-container">
+             <ul id="menu-submenu1-web-design" class="menu">
+              <li id="menu-item-510" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-510"><a href="https://brand.berkeley.edu/web-design/">Overview</a></li>
+              <li id="menu-item-586" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-586"><a href="https://brand.berkeley.edu/web-design/dreamweaver/">Dreamweaver</a></li>
+              <li id="menu-item-1408" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1408"><a href="https://brand.berkeley.edu/web-design/wordpress/">WordPress</a></li>
+             </ul>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-50" id="mega-menu-item-nav_menu-50">
+            <div class="menu-submenu2-web-design-container">
+             <ul id="menu-submenu2-web-design" class="menu">
+              <li id="menu-item-593" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-593"><a href="https://brand.berkeley.edu/web-design/open-berkeley/">Open Berkeley (Drupal)</a></li>
+              <li id="menu-item-798" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-798"><a href="https://brand.berkeley.edu/web-design/e-newsletters/">E-newsletters</a></li>
+              <li id="menu-item-1292" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1292"><a href="https://brand.berkeley.edu/berkeley-events-calendar/">Berkeley events calendar</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-menu-item-451" id="mega-menu-item-451"><a class="dropdown-toggle mega-menu-link" href="https://brand.berkeley.edu/category/social/" aria-haspopup="true" aria-expanded="false" tabindex="0" data-target="#" data-toggle="dropdown" aria-current="false">Social media<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-21" id="mega-menu-item-widget_sp_image-21"><h4 class="mega-block-title">Berkeley Squirrels</h4><a href="https://www.facebook.com/BerkeleySquirrels" target="_self" class="widget_sp_image-image-link" title="Berkeley Squirrels"><img width="468" height="312" alt="Berkeley Squirrels" class="attachment-full" style="max-width: 100%;" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/12/squirrelgroup.jpg 468w, https://brand.berkeley.edu/wp-content/uploads/2016/12/squirrelgroup-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://brand.berkeley.edu/wp-content/uploads/2016/12/squirrelgroup.jpg"></a></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-46" id="mega-menu-item-nav_menu-46">
+            <div class="menu-submenu1-social-container">
+             <ul id="menu-submenu1-social" class="menu">
+              <li id="menu-item-523" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-523"><a href="https://brand.berkeley.edu/social-media/">Overview</a></li>
+              <li id="menu-item-522" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-522"><a href="https://brand.berkeley.edu/guidelines/">Guidelines</a></li>
+             </ul>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-47" id="mega-menu-item-nav_menu-47">
+            <div class="menu-submenu2-social-container">
+             <ul id="menu-submenu2-social" class="menu">
+              <li id="menu-item-1020" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1020"><a href="https://brand.berkeley.edu/platforms/">Platforms</a></li>
+              <li id="menu-item-526" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-526"><a href="https://brand.berkeley.edu/directory/">Directory</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-menu-item-532" id="mega-menu-item-532"><a class="dropdown-toggle mega-menu-link" href="https://brand.berkeley.edu/category/resources/" aria-haspopup="true" aria-expanded="false" tabindex="0" data-target="#" data-toggle="dropdown" aria-current="false">Resources<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-22" id="mega-menu-item-widget_sp_image-22"><img width="468" height="312" class="attachment-full" style="max-width: 100%;" srcset="https://brand.berkeley.edu/wp-content/uploads/2015/05/about-visit.jpg 468w, https://brand.berkeley.edu/wp-content/uploads/2015/05/about-visit-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://brand.berkeley.edu/wp-content/uploads/2015/05/about-visit.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-48" id="mega-menu-item-nav_menu-48">
+            <div class="menu-submenu1-resources-container">
+             <ul id="menu-submenu1-resources" class="menu">
+              <li id="menu-item-533" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-533"><a href="https://brand.berkeley.edu/downloads/">Downloads</a></li>
+              <li id="menu-item-1026" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1026"><a href="https://brand.berkeley.edu/faq/">FAQ</a></li>
+              <li id="menu-item-1166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1166"><a href="https://brand.berkeley.edu/community/">Community (BC2)</a></li>
+             </ul>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-51" id="mega-menu-item-nav_menu-51">
+            <div class="menu-submenu2-resources-container">
+             <ul id="menu-submenu2-resources" class="menu">
+              <li id="menu-item-1024" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1024"><a href="https://brand.berkeley.edu/tutorials/">Tutorials</a></li>
+              <li id="menu-item-1025" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1025"><a href="https://brand.berkeley.edu/showcase/">Showcase</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+        </ul>
+       </div> 
+      </nav><!-- #site-navigation -->
+     </div>
+    </div>
+   </div><!-- End Main menu -->
+  </header><!-- #masthead -->
+  <div id="content" class="site-content" role="main">
+   <section class="page-header web-medalist">
+    <div class="container">
+     <h1>Color</h1> 
+    </div>
+   </section>
+   <div class="container">
+    <div class="row">
+     <div class="container">
+      <article id="post-491" class="post-491 page type-page status-publish hentry">
+       <div class="entry-content">
+        <p class="lead">Beyond our logo, color is the most recognizable aspect of our brand identity. Our brand colors reflect our bold, diverse community. Using color appropriately is one of the easiest ways to make sure our materials reflect a cohesive Berkeley brand.</p> 
+        <div class="sandwich pbsandwich_column">
+         <div class="row">
+          <div class="col-sm-8">
+           <p>The Berkeley color palette has two layers:  primary and secondary palettes, each with its  own subgroupings of colors. </p>
+           <p>Our color palette has been&nbsp;modified for use online. Six of our original brand colors—Founder’s Rock, Medalist, Lap Lane, Soybean, Pacific and Bay Fog—have been altered subtly to&nbsp;insure web accessibility.</p> 
+           <p><em>When using color builds, always use the color values listed. They were adjusted for the best reproduction in print and on screen and do not match Pantone® Color Bridge breakdowns.</em></p> 
+           <p><a name="palettes"></a></p> 
+           <h3>Primary&nbsp;Palettes</h3> 
+           <div class="sandwich pbsandwich_column color-palettes">
+            <div class="row">
+             <div class="col-sm-3">
+              <div class="thumb-berkeley-blue"></div> 
+              <p><strong>Berkeley Blue</strong> <strong>Hex</strong>&nbsp;003262 <strong>CMYK&nbsp;</strong>100|71|10|47 <strong>Pantone</strong> 282 <a class="pop-up-berkeley-blue-text-options" href="#">Text color options</a></p>
+             </div>
+             <div class="col-sm-3">
+              <div class="thumb-founders-rock"></div> 
+              <p><strong>Founder’s Rock</strong> <strong>Hex</strong>&nbsp;3B7EA1 <strong>CMYK&nbsp;</strong>76|34|21|0 <strong>Pantone</strong>&nbsp;7697</p> 
+              <p><a class="pop-up-founders-rock-text-options" href="#">Text color options</a></p>
+             </div>
+             <div class="col-sm-3">
+              <div class="thumb-california-gold"></div> 
+              <p><strong>California Gold</strong> <strong>Hex</strong> FDB515 <strong>CMYK&nbsp;</strong>0|32|100|0 <strong>Pantone</strong> 123</p> 
+              <p><a class="pop-up-california-gold-text-options" href="#">Text color options</a></p>
+             </div>
+             <div class="col-sm-3">
+              <div class="thumb-medalist"></div> 
+              <p><strong>Medalist</strong> <strong>Hex</strong> C4820E <strong>CMYK&nbsp;</strong>0|34|98|12 <strong>Pantone</strong> 7550</p> 
+              <p><a class="pop-up-medalist-text-options" href="#">Text color options</a></p>
+             </div>
+            </div>
+           </div> 
+           <h3>Secondary Palettes</h3> 
+           <div class="sandwich pbsandwich_column color-palettes">
+            <div class="row">
+             <div class="col-sm-3">
+              <div class="thumb-wellman-tile"></div> 
+              <p><strong>Wellman Tile</strong> <strong>Hex</strong>&nbsp;D9661F <strong>CMYK</strong> 0|69|98|12 <strong>Panton</strong>e 7416</p> 
+              <p><a class="pop-up-wellman-tile-text-options" href="#">Text color options</a></p>
+             </div>
+             <div class="col-sm-3">
+              <div class="thumb-rose-garden"></div> 
+              <p><strong>Rose Garden</strong> <strong>Hex</strong>&nbsp;EE1F60 <strong>CMYK </strong>0|98|46|0 <strong>Pantone</strong> 1925</p> 
+              <p><a class="pop-up-rose-garden-text-options" href="#">Text color options</a></p>
+             </div>
+             <div class="col-sm-3">
+              <div class="thumb-golden-gate"></div> 
+              <p><strong>Golden Gate</strong> <strong>Hex</strong> ED4E33 <strong>CMYK</strong> 1|85|88|0 <strong>Pantone</strong> 7417</p> 
+              <p><a class="pop-up-golden-gate-text-options" href="#">Text color options</a></p>
+             </div>
+             <div class="col-sm-3">
+              <div class="thumb-south-hall"></div> 
+              <p><strong>South Hall</strong> Hex 6C3302 <strong>CMYK</strong> 11|68|95|62 <strong>Pantone</strong> 7602</p> 
+              <p><a class="pop-up-south-hall-text-options" href="#">Text color options</a></p>
+             </div>
+            </div>
+           </div> 
+           <div class="sandwich pbsandwich_column">
+            <div class="row">
+             <div class="col-sm-3">
+              <div class="thumb-bay-fog"></div> 
+              <p><strong>Bay Fog</strong> <strong>Hex</strong> DDD5C7 <strong>CMYK</strong> 5|11|8|12 <strong>Pantone</strong> 434</p> 
+              <p><a class="pop-up-bay-fog-text-options" href="#">Text color options</a></p>
+             </div>
+             <div class="col-sm-3">
+              <div class="thumb-lawrence"></div> 
+              <p><strong>Lawrence</strong> <strong>Hex</strong> 00B0DA <strong>CMYK</strong> 79|0|6|5 <strong>Pantone</strong> 306</p> 
+              <p><a class="pop-up-lawrence-text-options" href="#">Text color options</a></p>
+             </div>
+             <div class="col-sm-3">
+              <div class="thumb-lap-lane"></div> 
+              <p><strong>Lap Lane</strong> <strong>Hex</strong> 00A598 <strong>CMYK</strong> 81|0|39|0 <strong>Pantone</strong>&nbsp;326</p> 
+              <p><a class="pop-up-lap-lane-text-options" href="#">Text color options</a></p>
+             </div>
+             <div class="col-sm-3">
+              <div class="thumb-pacific"></div> 
+              <p><strong>Pacific</strong> <strong>Hex</strong>&nbsp;46535E <strong>CMYK</strong> 45|25|16|59 <strong>Pantone</strong> 431</p> 
+              <p><a class="pop-up-pacific-text-options" href="#">Text color options</a></p>
+             </div>
+            </div>
+           </div> 
+           <div class="sandwich pbsandwich_column">
+            <div class="row">
+             <div class="col-sm-3">
+              <div class="thumb-sather-gate"></div> 
+              <p><strong>Sather Gate</strong> <strong>Hex</strong> B9D3B6 <strong>CMYK</strong> 25|2|30|4 <strong>Pantone</strong> 558</p> 
+              <p><a class="pop-up-sather-gate-text-options" href="#">Text color options</a></p>
+             </div>
+             <div class="col-sm-3">
+              <div class="thumb-ion"></div> 
+              <p><strong>Ion</strong> <strong>Hex</strong> CFDD45 <strong>CMYK</strong> 23|0|89|0 <strong>Pantone</strong> 381</p> 
+              <p><a class="pop-up-ion-text-options" href="#">Text color options</a></p>
+             </div>
+             <div class="col-sm-3">
+              <div class="thumb-soy-bean"></div> 
+              <p><strong>Soybean</strong> <strong>Hex</strong> 859438 <strong>CMYK</strong> 17|0|88|39 <strong>Pantone</strong> 7746</p> 
+              <p><a class="pop-up-soybean-text-options" href="#">Text color options</a></p>
+             </div>
+             <div class="col-sm-3">
+              <div class="thumb-stone-pine"></div> 
+              <p><strong>Stone Pine</strong> <strong>Hex</strong> 584F29 <strong>CMYK</strong> 40|40|80|55 <strong>Pantone</strong> 450</p> 
+              <p><a class="pop-up-stone-pine-text-options" href="#">Text color options</a></p>
+             </div>
+            </div>
+           </div> 
+           <h3>New Web Colors</h3> 
+           <p>Two colors—Background Gray and Web Gray—have been added to our basic palette and integrated into our web templates and to IST’s web template&nbsp;<a href="https://open.berkeley.edu/">Open Berkeley</a>.</p> 
+           <div class="sandwich pbsandwich_column color-palettes">
+            <div class="row">
+             <div class="col-sm-3">
+              <div class="thumb-background-gray"></div> 
+              <p><strong>Grey</strong> <strong>Hex</strong> EEEEEE</p> 
+              <p><a class="pop-up-grey-text-options" href="#">Text color options</a></p>
+             </div>
+             <div class="col-sm-3">
+              <div class="thumb-web-gray"></div> 
+              <p><strong>Web Grey</strong> <strong style="background-color: transparent;">Hex</strong> 888888</p> 
+              <p><a class="pop-up-web-grey-text-options" href="#">Text color options</a></p>
+             </div>
+            </div>
+           </div> 
+           <h3>Black and white backgrounds</h3> 
+           <p>If using black or white as a background, refer to the text options popup.</p> 
+           <div class="sandwich pbsandwich_column color-palettes">
+            <div class="row">
+             <div class="col-sm-3">
+              <div class="thumb-black"></div> 
+              <p><strong>Black Hex</strong> 000000</p> 
+              <p><a class="pop-up-black-text-options" href="#">Text color options</a></p>
+             </div>
+             <div class="col-sm-3">
+              <div class="thumb-white"></div> 
+              <p><strong>White</strong> <strong>Hex</strong> FFFFFF</p> 
+              <p><a class="pop-up-white-text-options" href="#">Text color options</a></p>
+             </div>
+            </div>
+           </div> 
+           <p><a name="usingcolor"></a></p> 
+           <h2>Using Color</h2> 
+           <p>It is important to maintain a sense of hierarchy, balance and harmony when using the Berkeley color palette. Our color system is extremely flexible, but exercise restraint. Unique and exciting color palettes can be created from as few as three or four colors in addition to the primary Berkeley palette. <a class="pop-up-color-usage-guidelines" href="#">View color guidelines</a></p> 
+           <p><a name="swatch"></a></p> 
+           <h3>Adobe Swatch Exchange (ASE) files</h3> 
+           <p>InDesign, Illustrator and Photoshop all support the exchange of colors via&nbsp;<strong>ASE files</strong>. Load these color files to your program to easily access the Berkeley color palette.</p>
+          </div>
+          <div class="col-sm-4"> 
+           <div class="widget widget_link_list">
+            <div class="block list-block-bulleted">
+             <h3 class="block-header">Color</h3>
+             <ul class="list-group" aria-label="Related Quick Links">
+              <li class="list-group-item"><a href="#palettes">Palettes</a></li>
+              <li class="list-group-item"><a href="#usingcolor">Using color</a></li>
+              <li class="list-group-item"><a href="#swatch">Adobe Swatch Exchange</a></li>
+             </ul>
+            </div>
+           </div> 
+           <h3>Our Commitment to Web Accessibility</h3> 
+           <p>In accordance with the systemwide <a href="http://policy.ucop.edu/doc/7000611/IMT-1300" target="_blank" rel="noopener noreferrer">UC Information Technology Accessibility Policy</a>, and to help serve those with low vision, our web color palette is accessible online and in digital materials.</p>
+          </div>
+         </div>
+        </div> 
+        <p class=""><strong><a href="/wp-content/uploads/2017/01/Berkeley-AdobeSwatchExchange.zip"> Download ASE files.</a></strong></p> 
+        <p class=""><strong><a href="/wp-content/uploads/2017/01/Berkeley-AdobeColorfile.zip">Download ACO files.</a></strong></p> 
+        <p class=""><strong>Please use the following color guide:</strong></p> 
+        <p class=""><strong>HEX</strong> colors should be used when designing for screens or desktop printing.</p> 
+        <p class=""><strong>CMYK</strong> color should be used when designing for 4-color printing (C=cyan, M=magenta, Y=yellow, K=black).</p> 
+        <p class=""><strong>SPOT</strong> color is a single color created by Pantone and the most accurate representation of a color when printed.</p> 
+        <p class="">Adobe COlor&nbsp;<strong>(ACO)</strong> files. A file with the ACO file extension is an Adobe Color file, created in Adobe Photoshop, that stores a collection of colors in HEX, RGB and CMYK color spaces.</p> 
+        <p class=""><strong>Import instructions for Adobe Photoshop, Illustrator or InDesign:</strong></p> 
+        <ol class=""> 
+         <li>Find and download the ASE file.</li> 
+         <li>Open your swatches palette by clicking the menu &gt; Window &gt; Swatches</li> 
+         <li>Click the flyout menu and choose “Load swatches” or “Open Swatch Library/Other Library”</li> 
+         <li>Navigate to the ASE file</li> 
+         <li>Your swatches will open up in a new swatch palette</li> 
+        </ol> 
+       </div><!-- .entry-content -->
+      </article><!-- #post-491 -->
+     </div><!-- /container -->
+     <div id="hero-widgets-container" class="widget widget-area container" role="complementary">
+     </div>
+     <div id="secondary" class="col-sm-4">
+      <div id="sidebar" class="widget-area" role="complementary">
+      </div><!-- #sidebar -->
+     </div><!-- #secondary -->
+    </div><!-- #content -->
+   </div><!-- row -->
+  </div><!-- #content -->
+  <footer><!-- Footer widgets -->
+   <section id="universal-footer">
+    <div class="container">
+     <div class="row">
+      <div class="col-sm-4 col-md-3">
+       <div class="block logo"><a href="https://www.berkeley.edu" target="_blank"><img alt="University of California Berkeley" src="https://brand.berkeley.edu/wp-content/themes/berkeley_brand/img/logo-ucberkeley-white.png"></a>
+       </div>
+      </div>
+      <div class="col-sm-8 col-md-9">
+       <div class="copyright">
+        <p class="contact-link"><a href="https://brand.berkeley.edu/contact/">Contact us</a></p> Copyright © 2022 UC Regents; all rights reserved 
+        <ul class="footer-links">
+         <li><a href="https://dac.berkeley.edu/web-accessibility">Accessibility</a></li>
+         <li><a href="https://ophd.berkeley.edu/policies-and-procedures/nondiscrimination-policy-statement">Nondiscrimination</a></li>
+         <li><a href="https://www.berkeley.edu/privacy_policy">Privacy Policy</a></li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </footer>
+  <script type="text/javascript">
+    if(	navigator.appVersion.indexOf("MSIE 8.") != -1 || navigator.appVersion.indexOf("MSIE 9.") != -1 ) {
+		document.body.className += ' mg_old_loader';
+	} else {
+		document.body.className += ' mg_new_loader';
+	}
+	if(navigator.appVersion.indexOf("MSIE") != -1 || navigator.appVersion.indexOf("rv:11.") != -1) {
+		document.body.className += ' mg_side_ie_fix';
+	}
+	</script> 
+  <div id="pum-1368" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:1368,&quot;slug&quot;:&quot;black-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.pop-up-black-text-options&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_1368">
+   <div id="popmake-1368" class="pum-container popmake theme-857 pum-responsive pum-responsive-medium responsive size-medium">
+    <div id="pum_popup_title_1368" class="pum-title popmake-title">
+      Black 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #000000; font-size: 24px; padding: 15px; color: #ffffff;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #3b7ea1;">Founder’s Rock 3B7EA1</span>
+      <br><span style="color: #fdb515;">California Gold FDB515</span>
+      <br><span style="color: #c4820e;">Web Medalist C4820E</span>
+      <br><span style="color: #d9661f;">Wellman Tile D9661F</span>
+      <br><span style="color: #ee1f60;">Rose Garden EE1F60</span>
+      <br><span style="color: #ed4e33;">Golden Gate ED4E33</span>
+      <br><span style="color: #ddd5c7;">Web Bay Fog DDD5C7</span>
+      <br><span style="color: #00b0da;">Lawrence 00B0DA</span>
+      <br><span style="color: #00a598;">Web Lap Lane 00A598</span>
+      <br><span style="color: #b9d3b6;">Sather Gate B9D3B6</span>
+      <br><span style="color: #cfdd45;">Ion CFDD45</span>
+      <br><span style="color: #859438;">Web Soybean 859438</span>
+      <br><span style="color: #888888;">Web Grey 888888</span>
+      <br><span style="color: #eeeeee;">Grey EEEEEE</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #000000; font-size: 15px; padding: 15px;">
+      <span style="color: #ffffff; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #fdb515;">California Gold FDB515</span>
+      <br><span style="color: #c4820e;">Web Medalist C4820E</span>
+      <br><span style="color: #d9661f;">Wellman Tile D9661F</span>
+      <br><span style="color: #ee1f60;">Rose Garden EE1F60</span>
+      <br><span style="color: #ed4e33;">Golden Gate ED4E33</span>
+      <br><span style="color: #ddd5c7;">Web Bay Fog DDD5C7</span>
+      <br><span style="color: #00b0da;">Lawrence 00B0DA</span>
+      <br><span style="color: #00a598;">Web Lap Lane 00A598</span>
+      <br><span style="color: #b9d3b6;">Sather Gate B9D3B6</span>
+      <br><span style="color: #cfdd45;">Ion CFDD45</span>
+      <br><span style="color: #859438;">Web Soybean 859438</span>
+      <br><span style="color: #888888;">Web Grey 888888</span>
+      <br><span style="color: #eeeeee;">Grey EEEEEE</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-1369" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay click_open" data-popmake="{&quot;id&quot;:1369,&quot;slug&quot;:&quot;white-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.pop-up-white-text-options&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_1369">
+   <div id="popmake-1369" class="pum-container popmake theme-857 pum-responsive pum-responsive-medium responsive size-medium">
+    <div id="pum_popup_title_1369" class="pum-title popmake-title">
+      White 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div style="background-color: #ffffff; font-size: 24px; padding: 15px; color: #000000;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #003262;">Berkeley Blue 003262</span>
+      <br><span style="color: #3b7ea1;">Founder’s Rock 3B7EA1</span>
+      <br><span style="color: #c4820e;">Web Medalist C4820E</span>
+      <br><span style="color: #d9661f;">Wellman Tile D9661F</span>
+      <br><span style="color: #ee1f60;">Rose Garden EE1F60</span>
+      <br><span style="color: #ed4e33;">Golden Gate ED4E33</span>
+      <br><span style="color: #6c3302;">South Hall 6C3302</span>
+      <br><span style="color: #00a598;">Web Lap Lane 00A598</span>
+      <br><span style="color: #46535e;">Web Pacific 46535E</span>
+      <br><span style="color: #859438;">Web Soybean 859438</span>
+      <br><span style="color: #584f29;">Stone Pine 584F29</span>
+      <br><span style="color: #888888;">Web Grey 888888</span>
+     </div>
+     <div style="background-color: #ffffff; font-size: 15px; padding: 15px;">
+      <span style="color: #000000; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #003262;">Berkeley Blue 003262</span>
+      <br><span style="color: #6c3302;">South Hall 6C3302</span>
+      <br><span style="color: #46535e;">Web Pacific 46535E</span>
+      <br><span style="color: #584f29;">Stone Pine 584F29</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-950" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:950,&quot;slug&quot;:&quot;stone-pine-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.pop-up-stone-pine-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_950">
+   <div id="popmake-950" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_950" class="pum-title popmake-title">
+      Stone Pine 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #594A25
+; font-size: 24px; padding: 15px; color: #fff;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #fff;">White FFF</span>
+      <br><span style="color: #fdb515;">California Gold FDB515</span>
+      <br><span style="color: #b9d3b6;">Sather Gate B9D3B6</span>
+      <br><span style="color: #cfdd45;">Ion CFDD45</span>
+      <br><span style="color: #ddd5c7;">Bay Fog DDD5C7</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #594A25
+; font-size: 15px; padding: 15px;">
+      <span style="color: #fff; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #fdb515;">California Gold FDB515</span>
+      <br><span style="color: #ddd5c7;">Bay Fog DDD5C7</span>
+      <br><span style="color: #CFDD45;">Ion CFDD45</span>
+      <br><span style="color: #fff;">White FFF</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-947" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:947,&quot;slug&quot;:&quot;sather-gate-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.pop-up-sather-gate-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_947">
+   <div id="popmake-947" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_947" class="pum-title popmake-title">
+      Sather Gate 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #B9D3B6; font-size: 24px; padding: 15px; color: #000;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #003262;">Berkeley Blue 003262</span>
+      <br><span style="color: #594A25;">Stone Pine 594A25</span>
+      <br><span style="color: #7B4931;">South Hall 7B4931</span>
+      <br><span style="color: #46535E;">Pacific 46535E</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #B9D3B6; font-size: 15px; padding: 15px;">
+      <span style="color: #000; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #003262;">Berkeley Blue 003262</span>
+      <br><span style="color: #7B4931;">South Hall 7B4931</span>
+      <br><span style="color: #46535E;">Pacific 46535E</span>
+      <br><span style="color: #584F29;">Stone Pine 584F29</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-952" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:952,&quot;slug&quot;:&quot;web-grey-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.pop-up-web-grey-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_952">
+   <div id="popmake-952" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_952" class="pum-title popmake-title">
+      Web Grey 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #888888; font-size: 24px; padding: 15px; color: #fff;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #000;">Black 000</span>
+      <br><span style="color: #fff;">White FFF</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #888888; font-size: 15px; padding: 15px;">
+      <span style="color: #fff; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-951" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:951,&quot;slug&quot;:&quot;grey-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.pop-up-grey-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_951">
+   <div id="popmake-951" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_951" class="pum-title popmake-title">
+      Grey 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #EEEEEE; font-size: 24px; padding: 15px; color: #000;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #003262;">Berkeley Blue 003262</span>
+      <br><span style="color: #3B7EA1;">Founder’s Rock 3B7EA1</span>
+      <br><span style="color: #d9661f;">Wellman Tile D9661F</span>
+      <br><span style="color: #E0004D;">Rose Garden E0004D</span>
+      <br><span style="color: #E04E39;">Golden Gate E04E39</span>
+      <br><span style="color: #594A25;">Stone Pine 594A25</span>
+      <br><span style="color: #46535E;">Pacific 46535E</span>
+      <br><span style="color: #7B4931;">South Hall 7B4931</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #EEEEEE; font-size: 15px; padding: 15px;">
+      <span style="color: #000; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #003262;">Berkeley Blue 003262</span>
+      <br><span style="color: #594A25;">Stone Pine 594A25</span>
+      <br><span style="color: #46535E;">Pacific 46535E</span>
+      <br><span style="color: #7B4931;">South Hall 7B4931</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-863" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:863,&quot;slug&quot;:&quot;berkeley-blue-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.pop-up-berkeley-blue-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_863">
+   <div id="popmake-863" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_863" class="pum-title popmake-title">
+      Berkeley Blue 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #003262; font-size: 24px; padding: 15px; color: #fff;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #fdb515;">California Gold FDB515</span>
+      <br><span style="color: #c4820e;">Medalist C4820E</span>
+      <br><span style="color: #d9661f;">Wellman Tile D9661F</span>
+      <br><span style="color: #b9d3b6;">Sather Gate B9D3B6</span>
+      <br><span style="color: #cfdd45;">Ion CFDD45</span>
+      <br><span style="color: #ddd5c7;">Bay Fog DDD5C7</span>
+      <br><span style="color: #00b0da;">Lawrence 00B0DA</span>
+      <br><span style="color: #00a598;">Lap Lane 00A598</span>
+      <br><span style="color: #fff;">White FFF</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #003262; font-size: 15px; padding: 15px;">
+      <span style="color: #fff; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #fdb515;">California Gold FDB515</span>
+      <br><span style="color: #b9d3b6;">Sather Gate B9D3B6</span>
+      <br><span style="color: #cfdd45;">Ion CFDD45</span>
+      <br><span style="color: #ddd5c7;">Bay Fog DDD5C7</span>
+      <br><span style="color: #00b0da;">Lawrence 00B0DA</span>
+      <br><span style="color: #fff;">White FFF</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-934" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:934,&quot;slug&quot;:&quot;founders-rock-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.pop-up-founders-rock-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_934">
+   <div id="popmake-934" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_934" class="pum-title popmake-title">
+      Founder's Rock 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div style="background-color: #3b7ea1; font-size: 24px; padding: 15px; color: #000;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #ddd5c7;">Bay Fog DDD5C7</span>
+      <br><span style="color: #cfdd45;">Ion CFDD45</span>
+      <br><span style="color: #fff;">White FFF</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+     <div style="background-color: #3b7ea1; font-size: 15px; padding: 15px;">
+      <span style="color: #000; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-1109" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:1109,&quot;slug&quot;:&quot;color-usage-guidelines&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;.pop-up-color-usage-guidelines&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:false,&quot;responsive_max_width&quot;:false,&quot;position_bottom&quot;:false,&quot;position_right&quot;:false,&quot;position_left&quot;:false,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;medium&quot;,&quot;responsive_min_width_unit&quot;:&quot;px&quot;,&quot;responsive_max_width_unit&quot;:&quot;px&quot;,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:&quot;1999999998&quot;,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_1109">
+   <div id="popmake-1109" class="pum-container popmake theme-857 pum-responsive pum-responsive-medium responsive size-medium">
+    <div id="pum_popup_title_1109" class="pum-title popmake-title">
+      Color usage guidelines 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #ffffff;">
+      <img src="/wp-content/uploads/2016/09/colorgrid800.png">
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-935" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:935,&quot;slug&quot;:&quot;california-gold-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;.pop-up-california-gold-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:false,&quot;responsive_max_width&quot;:false,&quot;position_bottom&quot;:false,&quot;position_right&quot;:false,&quot;position_left&quot;:false,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:&quot;px&quot;,&quot;responsive_max_width_unit&quot;:&quot;px&quot;,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:&quot;1999999998&quot;,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_935">
+   <div id="popmake-935" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_935" class="pum-title popmake-title">
+      California Gold 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #FDB515; font-size: 24px; padding: 15px; color: #000;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #003262;">Berkeley Blue 003262</span>
+      <br><span style="color: #594A25;">Stone Pine 594A25</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #FDB515; font-size: 15px; padding: 15px;">
+      <span style="color: #000; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #003262;">Berkeley Blue 003262</span>
+      <br><span style="color: #594A25;">Stone Pine 594A25</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-937" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:937,&quot;slug&quot;:&quot;medalist-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;.pop-up-medalist-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:false,&quot;responsive_max_width&quot;:false,&quot;position_bottom&quot;:false,&quot;position_right&quot;:false,&quot;position_left&quot;:false,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:&quot;px&quot;,&quot;responsive_max_width_unit&quot;:&quot;px&quot;,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:&quot;1999999998&quot;,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_937">
+   <div id="popmake-937" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_937" class="pum-title popmake-title">
+      Medalist 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #C4820E; font-size: 24px; padding: 15px; color: #000;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #fff;">White FFF</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #C4820E; font-size: 15px; padding: 15px;">
+      <span style="color: #000; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-938" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:938,&quot;slug&quot;:&quot;wellman-tile-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;.pop-up-wellman-tile-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:false,&quot;responsive_max_width&quot;:false,&quot;position_bottom&quot;:false,&quot;position_right&quot;:false,&quot;position_left&quot;:false,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:&quot;px&quot;,&quot;responsive_max_width_unit&quot;:&quot;px&quot;,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:&quot;1999999998&quot;,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_938">
+   <div id="popmake-938" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_938" class="pum-title popmake-title">
+      Wellman Tile 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #D9661F; font-size: 24px; padding: 15px; color: #000;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #fff;">White FFF</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #D9661F; font-size: 15px; padding: 15px;">
+      <span style="color: #000; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-939" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:939,&quot;slug&quot;:&quot;rose-garden-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;.pop-up-rose-garden-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:false,&quot;responsive_max_width&quot;:false,&quot;position_bottom&quot;:false,&quot;position_right&quot;:false,&quot;position_left&quot;:false,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:&quot;px&quot;,&quot;responsive_max_width_unit&quot;:&quot;px&quot;,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:&quot;1999999998&quot;,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_939">
+   <div id="popmake-939" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_939" class="pum-title popmake-title">
+      Rose Garden 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #E0004D; font-size: 24px; padding: 15px; color: #fff;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #fff;">White FFF</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-940" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:940,&quot;slug&quot;:&quot;golden-gate-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;.pop-up-golden-gate-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:false,&quot;responsive_max_width&quot;:false,&quot;position_bottom&quot;:false,&quot;position_right&quot;:false,&quot;position_left&quot;:false,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:&quot;px&quot;,&quot;responsive_max_width_unit&quot;:&quot;px&quot;,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:&quot;1999999998&quot;,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_940">
+   <div id="popmake-940" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_940" class="pum-title popmake-title">
+      Golden Gate 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #E04E39; font-size: 24px; padding: 15px; color: #000;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #fff;">White FFF</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #E04E39; font-size: 15px; padding: 15px;">
+      <span style="color: #000; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-942" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:942,&quot;slug&quot;:&quot;south-hall-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;.pop-up-south-hall-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:false,&quot;responsive_max_width&quot;:false,&quot;position_bottom&quot;:false,&quot;position_right&quot;:false,&quot;position_left&quot;:false,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:&quot;px&quot;,&quot;responsive_max_width_unit&quot;:&quot;px&quot;,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:&quot;1999999998&quot;,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_942">
+   <div id="popmake-942" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_942" class="pum-title popmake-title">
+      South Hall 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #7B4931; font-size: 24px; padding: 15px; color: #FFF;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #fff;">White FFF</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #7B4931; font-size: 15px; padding: 15px;">
+      <span style="color: #FFF; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #fff;">White FFF</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-943" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:943,&quot;slug&quot;:&quot;bay-fog-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;.pop-up-bay-fog-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:false,&quot;responsive_max_width&quot;:false,&quot;position_bottom&quot;:false,&quot;position_right&quot;:false,&quot;position_left&quot;:false,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:&quot;px&quot;,&quot;responsive_max_width_unit&quot;:&quot;px&quot;,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:&quot;1999999998&quot;,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_943">
+   <div id="popmake-943" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_943" class="pum-title popmake-title">
+      Bay Fog 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #DDD5C7; font-size: 24px; padding: 15px; color: #000;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #003262;">Berkeley Blue 003262</span>
+      <br><span style="color: #594A25;">Stone Pine 594A25</span>
+      <br><span style="color: #7B4931;">South Hall 7B4931</span>
+      <br><span style="color: #46535E;">Pacific 46535E</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #DDD5C7; font-size: 15px; padding: 15px;">
+      <span style="color: #000; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #003262;">Berkeley Blue 003262</span>
+      <br><span style="color: #594A25;">Stone Pine 594A25</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+    </div>
+   </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+  </div>
+  <div id="pum-944" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:944,&quot;slug&quot;:&quot;lawrence-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;.pop-up-lawrence-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:false,&quot;responsive_max_width&quot;:false,&quot;position_bottom&quot;:false,&quot;position_right&quot;:false,&quot;position_left&quot;:false,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:&quot;px&quot;,&quot;responsive_max_width_unit&quot;:&quot;px&quot;,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:&quot;1999999998&quot;,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_944">
+   <div id="popmake-944" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_944" class="pum-title popmake-title">
+      Lawrence 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div style="background-color: #00b5e2; font-size: 24px; padding: 15px; color: #000;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #003262;">Berkeley Blue 003262</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+     <div style="background-color: #00b5e2; font-size: 15px; padding: 15px;">
+      <span style="color: #000; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #003262;">Berkeley Blue 003262</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-945" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:945,&quot;slug&quot;:&quot;lap-lane-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;.pop-up-lap-lane-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:false,&quot;responsive_max_width&quot;:false,&quot;position_bottom&quot;:false,&quot;position_right&quot;:false,&quot;position_left&quot;:false,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:&quot;px&quot;,&quot;responsive_max_width_unit&quot;:&quot;px&quot;,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:&quot;1999999998&quot;,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_945">
+   <div id="popmake-945" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_945" class="pum-title popmake-title">
+      Lap Lane 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #00B2A9; font-size: 24px; padding: 15px; color: #000;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #fff;">White FFF</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #00B2A9; font-size: 15px; padding: 15px;">
+      <span style="color: #000; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-946" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:946,&quot;slug&quot;:&quot;pacific-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;.pop-up-pacific-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:false,&quot;responsive_max_width&quot;:false,&quot;position_bottom&quot;:false,&quot;position_right&quot;:false,&quot;position_left&quot;:false,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:&quot;px&quot;,&quot;responsive_max_width_unit&quot;:&quot;px&quot;,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:&quot;1999999998&quot;,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_946">
+   <div id="popmake-946" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_946" class="pum-title popmake-title">
+      Pacific 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #46535E; font-size: 24px; padding: 15px; color: #fff;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #fff;">White FFF</span>
+      <br><span style="color: #cfdd45;">Ion CFDD45</span>
+      <br><span style="color: #b9d3b6;">Sather Gate B9D3B6</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #46535E; font-size: 15px; padding: 15px;">
+      <span style="color: #fff; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #ddd5c7;">Bay Fog DDD5C7</span>
+      <br><span style="color: #cfdd45;">Ion CFDD45</span>
+      <br><span style="color: #fff;">White FFF</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-948" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:948,&quot;slug&quot;:&quot;ion-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;.pop-up-ion-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:false,&quot;responsive_max_width&quot;:false,&quot;position_bottom&quot;:false,&quot;position_right&quot;:false,&quot;position_left&quot;:false,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:&quot;px&quot;,&quot;responsive_max_width_unit&quot;:&quot;px&quot;,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:&quot;1999999998&quot;,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_948">
+   <div id="popmake-948" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_948" class="pum-title popmake-title">
+      Ion 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #CFDD45; font-size: 24px; padding: 15px; color: #000;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #003262;">Berkeley Blue 003262</span>
+      <br><span style="color: #3B7EA1;">Founder’s Rock 3B7EA1</span>
+      <br><span style="color: #594A25;">Stone Pine 594A25</span>
+      <br><span style="color: #46535E;">Pacific 46535E</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #CFDD45; font-size: 15px; padding: 15px;">
+      <span style="color: #000; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #003262;">Berkeley Blue 003262</span>
+      <br><span style="color: #594A25;">Stone Pine 594A25</span>
+      <br><span style="color: #46535E;">Pacific 46535E</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <div id="pum-949" class="pum pum-overlay pum-theme-857 pum-theme-default-theme popmake-overlay pum-overlay-disabled click_open" data-popmake="{&quot;id&quot;:949,&quot;slug&quot;:&quot;soybean-accessible-text-options&quot;,&quot;theme_id&quot;:857,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;.pop-up-soybean-text-options&quot;,&quot;do_default&quot;:null,&quot;cookie&quot;:{&quot;name&quot;:null}}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;responsive_min_width&quot;:false,&quot;responsive_max_width&quot;:false,&quot;position_bottom&quot;:false,&quot;position_right&quot;:false,&quot;position_left&quot;:false,&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:&quot;1&quot;,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width_unit&quot;:&quot;px&quot;,&quot;responsive_max_width_unit&quot;:&quot;px&quot;,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:&quot;1999999998&quot;,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}" role="dialog" aria-hidden="true" aria-labelledby="pum_popup_title_949">
+   <div id="popmake-949" class="pum-container popmake theme-857 pum-responsive pum-responsive-small responsive size-small">
+    <div id="pum_popup_title_949" class="pum-title popmake-title">
+      Soybean 
+    </div>
+    <div class="pum-content popmake-content" tabindex="0">
+     <div class="ui-sortable-handle" style="background-color: #859438; font-size: 24px; padding: 15px; color: #000;">
+      <span style="font-weight: bold;">Large text</span> (<span style="font-weight: bold; font-size: 18px;">18px bold</span>/24px regular or greater)
+      <br><span style="color: #fff;">White FFF</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+     <div class="ui-sortable-handle" style="background-color: #859438; font-size: 15px; padding: 15px;">
+      <span style="color: #000; font-weight: bold;">Small text (under 18px)</span>
+      <br><span style="color: #000;">Black 000</span>
+     </div>
+    </div><button type="button" class="pum-close popmake-close" aria-label="Close"> CLOSE </button>
+   </div>
+  </div>
+  <link rel="stylesheet" id="pbsandwich-frontend-css" href="https://brand.berkeley.edu/wp-content/plugins/page-builder-sandwich/css/frontend.css?ver=5.9.3" type="text/css" media="all">
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-content/themes/berkeley_brand/js/bootstrap.min.js?ver=3.1.1" id="bootstrap.js-js"></script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-content/plugins/page-links-to/dist/new-tab.js?ver=3.3.6" id="page-links-to-js"></script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1" id="jquery-ui-core-js"></script>
+  <script type="text/javascript" id="popup-maker-site-js-extra">
+/* <![CDATA[ */
+var pum_vars = {"version":"1.16.4","pm_dir_url":"https:\/\/brand.berkeley.edu\/wp-content\/plugins\/popup-maker\/","ajaxurl":"https:\/\/brand.berkeley.edu\/wp-admin\/admin-ajax.php","restapi":"https:\/\/brand.berkeley.edu\/wp-json\/pum\/v1","rest_nonce":null,"default_theme":"857","debug_mode":"","disable_tracking":"","home_url":"\/","message_position":"top","core_sub_forms_enabled":"1","popups":[],"analytics_route":"analytics","analytics_api":"https:\/\/brand.berkeley.edu\/wp-json\/pum\/v1"};
+var pum_sub_vars = {"ajaxurl":"https:\/\/brand.berkeley.edu\/wp-admin\/admin-ajax.php","message_position":"top"};
+var pum_popups = {"pum-1368":{"triggers":[{"type":"click_open","settings":{"cookie_name":"","extra_selectors":".pop-up-black-text-options"}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":"857","size":"medium","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":"0","position_left":"0","position_right":"0","position_from_trigger":false,"position_fixed":false,"overlay_disabled":false,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":"0","close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"default-theme","id":1368,"slug":"black-accessible-text-options"},"pum-1369":{"triggers":[{"type":"click_open","settings":{"cookie_name":"","extra_selectors":".pop-up-white-text-options"}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":"857","size":"medium","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":"0","position_left":"0","position_right":"0","position_from_trigger":false,"position_fixed":false,"overlay_disabled":false,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":"0","close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"default-theme","id":1369,"slug":"white-accessible-text-options"},"pum-950":{"triggers":[{"type":"click_open","settings":{"cookie_name":"","extra_selectors":".pop-up-stone-pine-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":"857","size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":"0","position_left":"0","position_right":"0","position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"default-theme","id":950,"slug":"stone-pine-accessible-text-options"},"pum-947":{"triggers":[{"type":"click_open","settings":{"cookie_name":"","extra_selectors":".pop-up-sather-gate-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":"857","size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":"0","position_left":"0","position_right":"0","position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"default-theme","id":947,"slug":"sather-gate-accessible-text-options"},"pum-952":{"triggers":[{"type":"click_open","settings":{"cookie_name":"","extra_selectors":".pop-up-web-grey-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":"857","size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":"0","position_left":"0","position_right":"0","position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"default-theme","id":952,"slug":"web-grey-accessible-text-options"},"pum-951":{"triggers":[{"type":"click_open","settings":{"cookie_name":"","extra_selectors":".pop-up-grey-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":"857","size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":"0","position_left":"0","position_right":"0","position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"default-theme","id":951,"slug":"grey-accessible-text-options"},"pum-863":{"triggers":[{"type":"click_open","settings":{"cookie_name":"","extra_selectors":".pop-up-berkeley-blue-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":"857","size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":"0","position_left":"0","position_right":"0","position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"default-theme","id":863,"slug":"berkeley-blue-accessible-text-options"},"pum-934":{"triggers":[{"type":"click_open","settings":{"cookie_name":"","extra_selectors":".pop-up-founders-rock-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":"857","size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":"0","position_left":"0","position_right":"0","position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"default-theme","id":934,"slug":"founders-rock-accessible-text-options"},"pum-1109":{"triggers":[{"type":"click_open","settings":{"extra_selectors":".pop-up-color-usage-guidelines","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":857,"size":"medium","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":0,"position_left":0,"position_right":0,"position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"responsive_min_width_unit":"px","responsive_max_width_unit":"px","overlay_zindex":"1999999998","theme_slug":"default-theme","id":1109,"slug":"color-usage-guidelines"},"pum-935":{"triggers":[{"type":"click_open","settings":{"extra_selectors":".pop-up-california-gold-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":857,"size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":0,"position_left":0,"position_right":0,"position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"responsive_min_width_unit":"px","responsive_max_width_unit":"px","overlay_zindex":"1999999998","theme_slug":"default-theme","id":935,"slug":"california-gold-accessible-text-options"},"pum-937":{"triggers":[{"type":"click_open","settings":{"extra_selectors":".pop-up-medalist-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":857,"size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":0,"position_left":0,"position_right":0,"position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"responsive_min_width_unit":"px","responsive_max_width_unit":"px","overlay_zindex":"1999999998","theme_slug":"default-theme","id":937,"slug":"medalist-accessible-text-options"},"pum-938":{"triggers":[{"type":"click_open","settings":{"extra_selectors":".pop-up-wellman-tile-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":857,"size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":0,"position_left":0,"position_right":0,"position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"responsive_min_width_unit":"px","responsive_max_width_unit":"px","overlay_zindex":"1999999998","theme_slug":"default-theme","id":938,"slug":"wellman-tile-accessible-text-options"},"pum-939":{"triggers":[{"type":"click_open","settings":{"extra_selectors":".pop-up-rose-garden-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":857,"size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":0,"position_left":0,"position_right":0,"position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"responsive_min_width_unit":"px","responsive_max_width_unit":"px","overlay_zindex":"1999999998","theme_slug":"default-theme","id":939,"slug":"rose-garden-accessible-text-options"},"pum-940":{"triggers":[{"type":"click_open","settings":{"extra_selectors":".pop-up-golden-gate-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":857,"size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":0,"position_left":0,"position_right":0,"position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"responsive_min_width_unit":"px","responsive_max_width_unit":"px","overlay_zindex":"1999999998","theme_slug":"default-theme","id":940,"slug":"golden-gate-accessible-text-options"},"pum-942":{"triggers":[{"type":"click_open","settings":{"extra_selectors":".pop-up-south-hall-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":857,"size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":0,"position_left":0,"position_right":0,"position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"responsive_min_width_unit":"px","responsive_max_width_unit":"px","overlay_zindex":"1999999998","theme_slug":"default-theme","id":942,"slug":"south-hall-accessible-text-options"},"pum-943":{"triggers":[{"type":"click_open","settings":{"extra_selectors":".pop-up-bay-fog-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":857,"size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":0,"position_left":0,"position_right":0,"position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"responsive_min_width_unit":"px","responsive_max_width_unit":"px","overlay_zindex":"1999999998","theme_slug":"default-theme","id":943,"slug":"bay-fog-accessible-text-options"},"pum-944":{"triggers":[{"type":"click_open","settings":{"extra_selectors":".pop-up-lawrence-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":857,"size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":0,"position_left":0,"position_right":0,"position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"responsive_min_width_unit":"px","responsive_max_width_unit":"px","overlay_zindex":"1999999998","theme_slug":"default-theme","id":944,"slug":"lawrence-accessible-text-options"},"pum-945":{"triggers":[{"type":"click_open","settings":{"extra_selectors":".pop-up-lap-lane-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":857,"size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":0,"position_left":0,"position_right":0,"position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"responsive_min_width_unit":"px","responsive_max_width_unit":"px","overlay_zindex":"1999999998","theme_slug":"default-theme","id":945,"slug":"lap-lane-accessible-text-options"},"pum-946":{"triggers":[{"type":"click_open","settings":{"extra_selectors":".pop-up-pacific-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":857,"size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":0,"position_left":0,"position_right":0,"position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"responsive_min_width_unit":"px","responsive_max_width_unit":"px","overlay_zindex":"1999999998","theme_slug":"default-theme","id":946,"slug":"pacific-accessible-text-options"},"pum-948":{"triggers":[{"type":"click_open","settings":{"extra_selectors":".pop-up-ion-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":857,"size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":0,"position_left":0,"position_right":0,"position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"responsive_min_width_unit":"px","responsive_max_width_unit":"px","overlay_zindex":"1999999998","theme_slug":"default-theme","id":948,"slug":"ion-accessible-text-options"},"pum-949":{"triggers":[{"type":"click_open","settings":{"extra_selectors":".pop-up-soybean-text-options","do_default":null,"cookie":{"name":null}}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"atc_promotion":null,"explain":null,"type_section":null,"theme_id":857,"size":"small","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":0,"position_left":0,"position_right":0,"position_from_trigger":false,"position_fixed":false,"overlay_disabled":true,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"responsive_min_width_unit":"px","responsive_max_width_unit":"px","overlay_zindex":"1999999998","theme_slug":"default-theme","id":949,"slug":"soybean-accessible-text-options"}};
+/* ]]> */
+</script>
+  <script type="text/javascript" src="//brand.berkeley.edu/wp-content/uploads/pum/pum-site-scripts.js?defer&amp;generated=1646629716&amp;ver=1.16.4" id="popup-maker-site-js"></script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-content/plugins/media-grid/js/frontend.js?ver=5.143" id="mg-frontend-js-js"></script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-includes/js/hoverIntent.min.js?ver=1.10.2" id="hoverIntent-js"></script>
+  <script type="text/javascript" id="megamenu-js-extra">
+/* <![CDATA[ */
+var megamenu = {"timeout":"300","interval":"100"};
+/* ]]> */
+</script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=2.9.5" id="megamenu-js"></script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-content/themes/berkeley_brand/minified/scripts.js" id="bb-js-js"></script>
+  <script type="text/javascript">
+	// Media Grid global dynamic vars
+	mg_boxMargin = 5;
+	mg_boxBorder = 0;
+	mg_imgPadding = 3;
+	mg_delayed_fx = true;
+	mg_filters_behav = 'standard';
+	mg_lightbox_mode = "mg_classic_lb";
+	mg_lb_carousel = false;
+	mg_lb_touchswipe = false;
+	mg_audio_loop = false;
+	mg_rtl = true;
+	mg_mobile = 800; 
+	
+	mg_no_results_txt = "no results";
+	mg_deeplinked_elems = ['item','category','search','page'];
+	mg_full_deeplinking = false;
+
+	// Galleria global vars
+	mg_galleria_fx = 'fadeslide';
+	mg_galleria_fx_time = 400; 
+	mg_galleria_interval = 3000;
+	
+    // LC micro slider vars
+	mg_inl_slider_fx = 'fadeslide';
+	mg_inl_slider_fx_time = 400; 
+	mg_inl_slider_intval = 3000;
+	mg_inl_slider_touch = true;
+	mg_inl_slider_pause_on_h = false;
+	mg_kenburns_timing = 9000;
+    </script> 
+  <script type="text/javascript">
+	if(typeof(MediaElementPlayer) != 'function') {	
+		jQuery(document).ready(function(e) {
+            
+			var s = document.createElement("script");
+				
+			s.type = "text/javascript";
+			s.id = "mediaelement-js";
+			s.src = "https://brand.berkeley.edu/wp-content/plugins/media-grid/js/mediaelement/mediaelement-and-player.min.js";
+			
+			var head = document.getElementsByTagName('head');	
+			jQuery('head').append("<link rel='stylesheet' href='https://brand.berkeley.edu/wp-content/plugins/media-grid/js/mediaelement/mediaelementplayer.min.css' type='text/css' media='all' />");
+	
+			var body = document.getElementsByTagName('body');
+			jQuery('body').append(s);
+		});
+	}
+	
+		</script> 
+ </body>
+</html>

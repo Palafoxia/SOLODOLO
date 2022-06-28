@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"427707476"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-11119921-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});
+ga('puwdsTracker.set', 'anonymizeIp', true);ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <link rel="canonical" href="https://hr.princeton.edu/careers/search-opportunities">
+  <meta name="description" content="A career at Princeton provides the opportunity to make meaningful impact. We invite you to imagine the difference you can make being a part of our community.">
+  <meta name="thumbnail" content="https://hr.princeton.edu/sites/g/files/toruqf1976/files/styles/freeform_750w/public/2020-05/SabrinaKing1219_0055_web.jpg?itok=OHKIE6Jr">
+  <meta property="og:site_name" content="Human Resources">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://hr.princeton.edu/careers/search-opportunities">
+  <meta property="og:title" content="Search Opportunities">
+  <meta property="og:description" content="A career at Princeton provides the opportunity to make meaningful impact. We invite you to imagine the difference you can make being a part of our community.">
+  <meta property="og:image" content="https://hr.princeton.edu/sites/g/files/toruqf1976/files/styles/freeform_750w/public/2020-05/SabrinaKing1219_0055_web.jpg?itok=OHKIE6Jr">
+  <meta property="og:image:alt" content="Women's Volleyball Head Coach Sabrina King">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:widgets:csp" content="on">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/sites/g/files/toruqf1976/themes/site/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Search Opportunities | Human Resources</title>
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1976/files/css/css_6Sr-c0QKts6Rk1vEwH_5zeP76TBC8m3aAZten3D55ys.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1976/files/css/css_VKrldksNi9iTG4-vEkl41T7Vjg2OWZidbR67f3QmbK4.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1976/files/css/css_X9ly7AbIBujUr12jTrsso06J8X58lGphO_oIpdlZAfE.css">
+  <script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.11.7"></script>
+  <script src="/core/misc/modernizr-additional-tests.js?v=3.11.7"></script>
+ </head>
+ <body class="not-front section-careers page-node-1346 content-type-hr-landing-pages flavor2 menu4 layout-block-padding-none path-node hr-landing-pages">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="page page-container">
+    <div class="top_header">
+     <div class="container">
+      <div class="princeton-branding">
+       <div class="container"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"> <img src="/sites/g/files/toruqf1976/themes/site/images/pu-logo.svg" alt="Princeton University"> </a>
+       </div>
+      </div>
+      <div class="region region-top-header">
+       <nav role="navigation" aria-labelledby="block-universitylinks-menu" id="block-universitylinks" data-block-plugin-id="menu_block:university-links" class="block block-menu navigation menu--university-links">
+        <h2 class="visually-hidden" id="block-universitylinks-menu">University Links</h2>
+        <ul class="nav">
+         <li class="nav-item"><a href="https://outlook.com/princeton.edu">Webmail</a></li>
+         <li class="nav-item"><a href="https://www.princeton.edu/meet-princeton/visit-us">Plan a Visit</a></li>
+         <li class="nav-item"><a href="https://www.princeton.edu/meet-princeton/visit-us#campus-maps">Maps &amp; Shuttles</a></li>
+        </ul>
+       </nav>
+       <nav role="navigation" aria-labelledby="block-sociallinks-menu" id="block-sociallinks" data-block-plugin-id="menu_block:social-links" class="block block-menu navigation menu--social-links">
+        <h2 class="visually-hidden" id="block-sociallinks-menu">Social Links</h2>
+        <ul class="nav">
+         <li class="nav-item"><a href="https://www.instagram.com/workingatprinceton/" class="instagram">Instagram</a></li>
+         <li class="nav-item"><a href="https://www.youtube.com/channel/UCJWh_JEaTsorGLMRnAq0Xxw" class="youtube">YouTube</a></li>
+         <li class="nav-item"><a href="https://www.linkedin.com/company/157313" class="linkedin">LinkedIn</a></li>
+        </ul>
+       </nav>
+       <nav role="navigation" aria-labelledby="block-quicklinks-menu" id="block-quicklinks" data-block-plugin-id="menu_block:qu" class="block block-menu navigation menu--qu">
+        <h2 class="visually-hidden" id="block-quicklinks-menu">Quick Links</h2>
+        <ul class="nav">
+         <li class="nav-item"><a href="/caslogin" class="ps-login-logout-link" data-drupal-link-system-path="caslogin">Log in</a></li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+    </div>
+    <header role="banner" class="header" id="header">
+     <h1 class="sr-only">Human Resources</h1><a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen: </span>Skip to content</a><a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen: </span>Skip to search</a>
+     <div class="header-container container">
+      <div class="site-branding">
+       <div class="container">
+        <div class="row">
+         <div class="site-info">
+          <div class="site-name"><a href="/" title="Home" rel="home">Human Resources</a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <nav class="main-menu" aria-label="site menu">
+       <div class="container navbar-expand-lg">
+        <h2 class="sr-only">Site Menu</h2><button class="toggle-mobile-menu unbutton" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="menu-container" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-mobile-menu-icon"> <i class="fa fa-bars" aria-hidden="true"></i> <span class="toggle-mobile-menu-title">Menu</span> </span> </button>
+        <div class="collapse navbar-collapse" id="main-menu">
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item expanded active"><a href="/careers" data-drupal-link-system-path="node/1306">Careers</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item expanded"><a href="/careers/discover-princeton" data-drupal-link-system-path="node/1311">Discover Princeton</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/careers/discover-princeton#impact" data-drupal-link-system-path="node/1311">More Impact Than You Can Imagine</a></li>
+              <li class="submenu-item"><a href="/careers/discover-princeton#youtube" data-drupal-link-system-path="node/1311">Working at Princeton on YouTube</a></li>
+              <li class="submenu-item"><a href="/careers/discover-princeton#get-to-know-us" data-drupal-link-system-path="node/1311">Get to Know Us</a></li>
+              <li class="submenu-item"><a href="/careers/discover-princeton#princetagram" data-drupal-link-system-path="node/1311">#Princetagram</a></li>
+              <li class="submenu-item"><a href="/careers/discover-princeton#diversity-inclusion" data-drupal-link-system-path="node/1311">Diversity &amp; Inclusion</a></li>
+              <li class="submenu-item"><a href="/careers/discover-princeton#princeton" data-drupal-link-system-path="node/1311">The Princeton Area</a></li>
+             </ul></li>
+            <li class="submenu-item expanded active"><a href="/careers/search-opportunities" data-drupal-link-system-path="node/1346" class="is-active">Search Opportunities</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/careers/search-opportunities#findcareer" data-drupal-link-system-path="node/1346" class="is-active">Find Your Career</a></li>
+              <li class="submenu-item"><a href="/careers/search-opportunities#searchjobs" data-drupal-link-system-path="node/1346" class="is-active">Career Centers</a></li>
+              <li class="submenu-item"><a href="/careers/search-opportunities#featuredjobs" data-drupal-link-system-path="node/1346" class="is-active">Featured Jobs</a></li>
+              <li class="submenu-item"><a href="/careers/search-opportunities#hire" data-drupal-link-system-path="node/1346" class="is-active">How We Hire</a></li>
+              <li class="submenu-item"><a href="/careers/search-opportunities#recruitertips" data-drupal-link-system-path="node/1346" class="is-active">Recruiter Tips</a></li>
+             </ul></li>
+            <li class="submenu-item expanded"><a href="/careers/new-hires" data-drupal-link-system-path="node/1351">New Hires</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/careers/new-hires#welcome" data-drupal-link-system-path="node/1351">Welcome to Princeton University</a></li>
+              <li class="submenu-item"><a href="/careers/new-hires#workingatprinceton" data-drupal-link-system-path="node/1351">@WorkingAtPrinceton</a></li>
+              <li class="submenu-item"><a href="/careers/new-hires#gettingstarted" data-drupal-link-system-path="node/1351">Getting Started</a></li>
+              <li class="submenu-item"><a href="/careers/new-hires#newhire" data-drupal-link-system-path="node/1351">New Hire Orientation</a></li>
+              <li class="submenu-item"><a href="/careers/new-hires#housing-resources" data-drupal-link-system-path="node/1351">Housing Resources</a></li>
+             </ul></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/life" data-drupal-link-system-path="node/1411">Life</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item expanded"><a href="/life/community" data-drupal-link-system-path="node/1416">Community</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/life/community#life" data-drupal-link-system-path="node/1416">Life at Princeton</a></li>
+              <li class="submenu-item"><a href="/life/community#experience" data-drupal-link-system-path="node/1416">Experience Our Community</a></li>
+              <li class="submenu-item"><a href="/life/community#princetagram" data-drupal-link-system-path="node/1416">Princetagram</a></li>
+              <li class="submenu-item"><a href="/life/community#inclusive" data-drupal-link-system-path="node/1416">Inclusive Princeton</a></li>
+              <li class="submenu-item"><a href="/life/community#erg" data-drupal-link-system-path="node/1416">Employee Resource Groups</a></li>
+              <li class="submenu-item"><a href="/life/community#living" data-drupal-link-system-path="node/1416">Living in Princeton — New Jersey</a></li>
+              <li class="submenu-item"><a href="/life/community#resources" data-drupal-link-system-path="node/1416">Campus Resources</a></li>
+             </ul></li>
+            <li class="submenu-item expanded"><a href="/life/professional-development" data-drupal-link-system-path="node/1421">Professional Development</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/life/professional-development#opportunities" data-drupal-link-system-path="node/1421">Opportunities</a></li>
+              <li class="submenu-item"><a href="/life/professional-development#learning" data-drupal-link-system-path="node/1421">Learning Programs &amp; Certificates</a></li>
+              <li class="submenu-item"><a href="/life/professional-development#education" data-drupal-link-system-path="node/1421">Staff Educational Assistance Plan</a></li>
+              <li class="submenu-item"><a href="/life/professional-development#performance" data-drupal-link-system-path="node/1421">Performance Management &amp; MIP</a></li>
+              <li class="submenu-item"><a href="/life/professional-development#awards" data-drupal-link-system-path="node/1421">Recognition Programs &amp; Awards</a></li>
+              <li class="submenu-item"><a href="/life/professional-development#service" data-drupal-link-system-path="node/1421">Service Recognition Program</a></li>
+             </ul></li>
+            <li class="submenu-item expanded"><a href="/life/working-princeton" data-drupal-link-system-path="node/1426">Working at Princeton</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/life/working-princeton#life" data-drupal-link-system-path="node/1426">Life at Princeton</a></li>
+              <li class="submenu-item"><a href="/life/working-princeton#workandpay" data-drupal-link-system-path="node/1426">Work &amp; Pay Schedules</a></li>
+              <li class="submenu-item"><a href="/life/working-princeton#timeoff" data-drupal-link-system-path="node/1426">Flexibility &amp; Time Off</a></li>
+              <li class="submenu-item"><a href="/life/working-princeton#compensation" data-drupal-link-system-path="node/1426">Compensation</a></li>
+              <li class="submenu-item"><a href="/life/working-princeton#commuting" data-drupal-link-system-path="node/1426">Commuting &amp; Transportation</a></li>
+             </ul></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/thrive" data-drupal-link-system-path="node/1646">Thrive</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item expanded"><a href="/thrive/health" data-drupal-link-system-path="node/1656">Health</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/thrive/health#benefits" data-drupal-link-system-path="node/1656">Benefits at Princeton</a></li>
+              <li class="submenu-item"><a href="/thrive/health#healthcare" data-drupal-link-system-path="node/1656">Healthcare Plans</a></li>
+              <li class="submenu-item"><a href="/thrive/health#documents" data-drupal-link-system-path="node/1656">Benefits Plan Documents &amp; Provider Contacts</a></li>
+              <li class="submenu-item"><a href="/thrive/health#eligibility" data-drupal-link-system-path="node/1656">Eligibility &amp; Enrollment</a></li>
+              <li class="submenu-item"><a href="/thrive/health#fsa" data-drupal-link-system-path="node/1656">Flexible Spending Accounts</a></li>
+              <li class="submenu-item"><a href="/thrive/health#disability" data-drupal-link-system-path="node/1656">Disability &amp; Leave Benefits</a></li>
+             </ul></li>
+            <li class="submenu-item expanded"><a href="/thrive/wellness" data-drupal-link-system-path="node/1661">Wellness</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/thrive/wellness#overview" data-drupal-link-system-path="node/1661">Wellness Resources</a></li>
+              <li class="submenu-item"><a href="/thrive/wellness#physical" data-drupal-link-system-path="node/1661">Physical Wellness</a></li>
+              <li class="submenu-item"><a href="/thrive/wellness#mental" data-drupal-link-system-path="node/1661">Mental Wellness</a></li>
+              <li class="submenu-item"><a href="/thrive/wellness#financial" data-drupal-link-system-path="node/1661">Financial Wellness</a></li>
+              <li class="submenu-item"><a href="/thrive/well-being#work-life">Work Life</a></li>
+              <li class="submenu-item"><a href="/thrive/well-being#decisionsupport">Decision Support</a></li>
+              <li class="submenu-item"><a href="/thrive/well-being#eap">Employee Assistance Program</a></li>
+             </ul></li>
+            <li class="submenu-item expanded"><a href="/thrive/retirement-financial" data-drupal-link-system-path="node/1666">Retirement &amp; Financial</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/thrive/retirement-financial#overview" data-drupal-link-system-path="node/1666">Retirement &amp; Financial</a></li>
+              <li class="submenu-item"><a href="/thrive/retirement-financial#retirement" data-drupal-link-system-path="node/1666">Retirement Plans</a></li>
+              <li class="submenu-item"><a href="/thrive/retirement-financial#financialwellness" data-drupal-link-system-path="node/1666">Financial Wellness</a></li>
+              <li class="submenu-item"><a href="/thrive/retirement-financial#TuitionAssistance" data-drupal-link-system-path="node/1666">Tuition Assistance</a></li>
+              <li class="submenu-item"><a href="/thrive/retirement-financial#IncomeProtection" data-drupal-link-system-path="node/1666">Income Protection</a></li>
+              <li class="submenu-item"><a href="/thrive/retirement-financial#financialbenefits" data-drupal-link-system-path="node/1666">Financial Benefits</a></li>
+              <li class="submenu-item"><a href="/thrive/retirement-financial#fsa" data-drupal-link-system-path="node/1666">Flexible Spending Accounts</a></li>
+              <li class="submenu-item"><a href="/thrive/retirement-financial#discountprograms" data-drupal-link-system-path="node/1666">Discount &amp; Affiliate Programs</a></li>
+             </ul></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/myhr" title="Add a description here" data-drupal-link-system-path="node/1316">MyHR</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item expanded"><a href="/myhr/working" data-drupal-link-system-path="node/1321">Working</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/myhr/working#community" data-drupal-link-system-path="node/1321">Community &amp; Inclusion</a></li>
+              <li class="submenu-item"><a href="/myhr/working#health" data-drupal-link-system-path="node/1321">Health &amp; Wellness</a></li>
+              <li class="submenu-item"><a href="/myhr/working#Employment" data-drupal-link-system-path="node/1321">Employment</a></li>
+              <li class="submenu-item"><a href="/myhr/working#Professional_Development" data-drupal-link-system-path="node/1321">Professional Development</a></li>
+              <li class="submenu-item"><a href="/myhr/working#New_Hires" data-drupal-link-system-path="node/1321">New Hires</a></li>
+             </ul></li>
+            <li class="submenu-item expanded"><a href="/myhr/managing" data-drupal-link-system-path="node/1331">Managing</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/myhr/managing#Management_Supervision" data-drupal-link-system-path="node/1331">Management &amp; Supervision</a></li>
+              <li class="submenu-item"><a href="/myhr/managing#Organizational_Development" data-drupal-link-system-path="node/1331">Organizational Development</a></li>
+              <li class="submenu-item"><a href="/myhr/managing#Performance_Management" data-drupal-link-system-path="node/1331">Performance Management</a></li>
+              <li class="submenu-item"><a href="/myhr/managing#Professional_Development2" data-drupal-link-system-path="node/1331">Professional Development</a></li>
+              <li class="submenu-item"><a href="/myhr/managing#Onboarding" data-drupal-link-system-path="node/1331">Onboarding</a></li>
+             </ul></li>
+            <li class="submenu-item expanded"><a href="/myhr/recruiting" data-drupal-link-system-path="node/1326">Recruiting</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/myhr/recruiting#Launch_Search" data-drupal-link-system-path="node/1326"> Launch a Search</a></li>
+              <li class="submenu-item"><a href="/myhr/recruiting#Select_Candidates" data-drupal-link-system-path="node/1326">Select Candidates</a></li>
+              <li class="submenu-item"><a href="/myhr/recruiting#Make_Hire" data-drupal-link-system-path="node/1326">Make a Hire</a></li>
+             </ul></li>
+            <li class="submenu-item expanded"><a href="/myhr/directory" data-drupal-link-system-path="myhr/directory">HR Directory</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/myhr/directory?functional_area=2031&amp;team=All&amp;topic=All&amp;client=All&amp;search=" data-drupal-link-query="{&quot;client&quot;:&quot;All&quot;,&quot;functional_area&quot;:&quot;2031&quot;,&quot;search&quot;:&quot;&quot;,&quot;team&quot;:&quot;All&quot;,&quot;topic&quot;:&quot;All&quot;}" data-drupal-link-system-path="myhr/directory">Office of the Vice President</a></li>
+              <li class="submenu-item"><a href="/myhr/directory?functional_area=2036&amp;team=All&amp;topic=All&amp;client=All&amp;search=" data-drupal-link-query="{&quot;client&quot;:&quot;All&quot;,&quot;functional_area&quot;:&quot;2036&quot;,&quot;search&quot;:&quot;&quot;,&quot;team&quot;:&quot;All&quot;,&quot;topic&quot;:&quot;All&quot;}" data-drupal-link-system-path="myhr/directory">Senior Leadership Team</a></li>
+              <li class="submenu-item"><a href="/myhr/directory?functional_area=2016&amp;team=All&amp;topic=All&amp;client=All&amp;search=" data-drupal-link-query="{&quot;client&quot;:&quot;All&quot;,&quot;functional_area&quot;:&quot;2016&quot;,&quot;search&quot;:&quot;&quot;,&quot;team&quot;:&quot;All&quot;,&quot;topic&quot;:&quot;All&quot;}" data-drupal-link-system-path="myhr/directory">Benefits &amp; Compensation</a></li>
+              <li class="submenu-item"><a href="/myhr/directory?functional_area=2021&amp;team=All&amp;topic=All&amp;client=All&amp;search=" data-drupal-link-query="{&quot;client&quot;:&quot;All&quot;,&quot;functional_area&quot;:&quot;2021&quot;,&quot;search&quot;:&quot;&quot;,&quot;team&quot;:&quot;All&quot;,&quot;topic&quot;:&quot;All&quot;}" data-drupal-link-system-path="myhr/directory">Client Services</a></li>
+              <li class="submenu-item"><a href="/myhr/directory?functional_area=4826&amp;team=All&amp;topic=All&amp;client=All&amp;search=" data-drupal-link-query="{&quot;client&quot;:&quot;All&quot;,&quot;functional_area&quot;:&quot;4826&quot;,&quot;search&quot;:&quot;&quot;,&quot;team&quot;:&quot;All&quot;,&quot;topic&quot;:&quot;All&quot;}" data-drupal-link-system-path="myhr/directory">Communications</a></li>
+              <li class="submenu-item"><a href="/myhr/directory?functional_area=2026&amp;team=All&amp;topic=All&amp;client=All&amp;search=" data-drupal-link-query="{&quot;client&quot;:&quot;All&quot;,&quot;functional_area&quot;:&quot;2026&quot;,&quot;search&quot;:&quot;&quot;,&quot;team&quot;:&quot;All&quot;,&quot;topic&quot;:&quot;All&quot;}" data-drupal-link-system-path="myhr/directory">Human Resources Information Systems</a></li>
+              <li class="submenu-item"><a href="/myhr/directory?functional_area=2041&amp;team=All&amp;topic=All&amp;client=All&amp;search=" data-drupal-link-query="{&quot;client&quot;:&quot;All&quot;,&quot;functional_area&quot;:&quot;2041&quot;,&quot;search&quot;:&quot;&quot;,&quot;team&quot;:&quot;All&quot;,&quot;topic&quot;:&quot;All&quot;}" data-drupal-link-system-path="myhr/directory">Talent Acquisition</a></li>
+             </ul></li>
+            <li class="submenu-item expanded"><a href="/myhr/policies" data-drupal-link-system-path="node/601">Policies</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/myhr/policies#policytoc" data-drupal-link-system-path="node/601">HR Policy &amp; Procedures Manual</a></li>
+              <li class="submenu-item"><a href="/myhr/policies#covid_policies" data-drupal-link-system-path="node/601">COVID-19 Policies &amp; Procedures</a></li>
+              <li class="submenu-item"><a href="/myhr/policies#University_Policies" data-drupal-link-system-path="node/601">University Policies</a></li>
+              <li class="submenu-item"><a href="/myhr/policies#Workplace_Notices" data-drupal-link-system-path="node/601">Workplace Notices</a></li>
+              <li class="submenu-item"><a href="/myhr/policies#cba" data-drupal-link-system-path="node/601">Collective Bargaining Agreements</a></li>
+              <li class="submenu-item"><a href="/myhr/policies#Other_Policies" data-drupal-link-system-path="node/601">Other Policies</a></li>
+              <li class="submenu-item"><a href="/myhr/policies#news" data-drupal-link-system-path="node/601">Policy Updates</a></li>
+             </ul></li>
+           </ul></li>
+         </ul>
+         <div class="region region-utility-menu">
+          <ul class="nav navbar-nav utility-nav">
+           <li class="nav-item"><a href="/events" data-drupal-link-system-path="events">Events</a></li>
+           <li class="nav-item"><a href="/news" data-drupal-link-system-path="node/1401">News</a></li>
+           <li class="nav-item expanded"><span>Quick Links</span><button class="toggle-submenu unbutton" type="button" data-toggle="collapse-utility-menu" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> <span class="toggle-submenu-title sr-only">SubMenu</span> </span> </button>
+            <ul class="menu submenu collapse collapse-utility-menu">
+             <li class="submenu-item"><a href="https://princeton.icims.com/">CAPS Login</a></li>
+             <li class="submenu-item"><a href="https://putrain.learn.com/learncenter.asp?id=178409&amp;sessionid=3-B45813E3-CE2D-4BC4-A7ED-FDF2DFE92D4A">Employee Learning Center</a></li>
+             <li class="submenu-item"><a href="/thrive/wellness-resources/employment-income-verifications" data-drupal-link-system-path="node/2581">Employment &amp; Income Verifications</a></li>
+             <li class="submenu-item"><a href="/hr-forms">Forms</a></li>
+             <li class="submenu-item"><a href="/thrive/health#healthcare" data-drupal-link-system-path="node/1656">Healthcare Plans</a></li>
+             <li class="submenu-item"><a href="/myhr/directory" data-drupal-link-system-path="myhr/directory">HR Directory</a></li>
+             <li class="submenu-item"><a href="https://phubprod.princeton.edu/psp/phubprod/?cmd=start">HR Self Service</a></li>
+             <li class="submenu-item"><a href="/myhr/policies" data-drupal-link-system-path="node/601">Policies</a></li>
+             <li class="submenu-item"><a href="https://phubprod.princeton.edu/psp/phubprod/?cmd=start">Time &amp; Absence Management</a></li>
+             <li class="submenu-item"><a href="/myhr#toolkits" data-drupal-link-system-path="node/1316">Toolkits</a></li>
+             <li class="submenu-item"><a href="/quick-links/update-personal-information" data-drupal-link-system-path="node/8561">Update Personal Information</a></li>
+            </ul></li>
+          </ul>
+         </div>
+         <div class="region region-top-header-in-mobile">
+          <nav role="navigation" aria-labelledby="block-universitylinks-menu" id="block-universitylinks" data-block-plugin-id="menu_block:university-links" class="block block-menu navigation menu--university-links">
+           <h2 class="visually-hidden" id="block-universitylinks-menu">University Links</h2>
+           <ul class="nav">
+            <li class="nav-item"><a href="https://outlook.com/princeton.edu">Webmail</a></li>
+            <li class="nav-item"><a href="https://www.princeton.edu/meet-princeton/visit-us">Plan a Visit</a></li>
+            <li class="nav-item"><a href="https://www.princeton.edu/meet-princeton/visit-us#campus-maps">Maps &amp; Shuttles</a></li>
+           </ul>
+          </nav>
+          <nav role="navigation" aria-labelledby="block-sociallinks-menu" id="block-sociallinks" data-block-plugin-id="menu_block:social-links" class="block block-menu navigation menu--social-links">
+           <h2 class="visually-hidden" id="block-sociallinks-menu">Social Links</h2>
+           <ul class="nav">
+            <li class="nav-item"><a href="https://www.instagram.com/workingatprinceton/" class="instagram">Instagram</a></li>
+            <li class="nav-item"><a href="https://www.youtube.com/channel/UCJWh_JEaTsorGLMRnAq0Xxw" class="youtube">YouTube</a></li>
+            <li class="nav-item"><a href="https://www.linkedin.com/company/157313" class="linkedin">LinkedIn</a></li>
+           </ul>
+          </nav>
+          <nav role="navigation" aria-labelledby="block-quicklinks-menu" id="block-quicklinks" data-block-plugin-id="menu_block:qu" class="block block-menu navigation menu--qu">
+           <h2 class="visually-hidden" id="block-quicklinks-menu">Quick Links</h2>
+           <ul class="nav">
+            <li class="nav-item"><a href="/caslogin" class="ps-login-logout-link" data-drupal-link-system-path="caslogin">Log in</a></li>
+           </ul>
+          </nav>
+         </div>
+        </div>
+       </div>
+      </nav>
+      <div class="search-bar" id="search-bar">
+       <div class="container navbar-expand-lg" role="search">
+        <h2 class="sr-only">Search</h2><button class="toggle-searchbar unbutton" type="button" data-toggle="collapse" data-target="#search-bar-container" aria-controls="search-bar-container" aria-expanded="false" aria-label="Toggle search"> <span class="toggle-search-icon"> <i class="fas fa-search" aria-hidden="true"></i> </span> </button>
+        <div id="search-bar-container" class="collapse navbar-collapse">
+         <div class="search-block-form contextual-region block block-search container-inline" id="block-searchform">
+          <form action="/search" method="get" id="search-block-form" accept-charset="UTF-8">
+           <div id="search-toggled" class="form-group js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label"><label for="edit-search-keys" class="visually-hidden">Search</label>
+            <input placeholder="Search" type="search" id="edit-search-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control">
+           </div>
+           <div data-drupal-selector="edit-search-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-search-actions">
+            <input type="submit" id="edit-search-submit" value="Submit" class="button js-form-submit form-submit btn btn-primary">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="highlighted" id="highlighted">
+     <div class="container">
+      <figure class="media--type-image media--view-mode-ps-browser-width-8x3 figure">
+       <img srcset="/sites/g/files/toruqf1976/files/styles/8x3_750w_281h/public/2020-05/SabrinaKing1219_0055_web.jpg?h=8b5cadf0&amp;itok=TsdMZqeP 750w, /sites/g/files/toruqf1976/files/styles/8x3_1440w_540h/public/2020-05/SabrinaKing1219_0055_web.jpg?h=8b5cadf0&amp;itok=Om8UEO4l 1440w, /sites/g/files/toruqf1976/files/styles/8x3_2880w_1080h/public/2020-05/SabrinaKing1219_0055_web.jpg?h=8b5cadf0&amp;itok=kTbf1Yhh 2880w" sizes="100vw" src="/sites/g/files/toruqf1976/files/styles/8x3_1440w_540h/public/2020-05/SabrinaKing1219_0055_web.jpg?h=8b5cadf0&amp;itok=Om8UEO4l" alt="Women's Volleyball Head Coach Sabrina King" typeof="foaf:Image">
+       <figcaption class="figure-caption">
+        <p>More Impact Than You Can Imagine</p>
+        <p>Our mission provides every staff member the opportunity to make a meaningful impact.</p>
+       </figcaption>
+      </figure>
+     </div>
+    </div>
+    <div id="main" class="main"><a id="main-content" aria-label="Main content" class="sr-only skip-link"></a>
+     <div class="container main-container">
+      <div class="row">
+       <div class="landing-page-menu">
+        <div class="region region-featured-top">
+         <nav role="navigation" aria-labelledby="block-careers-menu" id="block-careers" data-block-plugin-id="menu_block:careers" class="block block-menu navigation menu--careers">
+          <h2 class="visually-hidden" id="block-careers-menu">careers</h2>
+          <ul class="nav">
+           <li class="nav-item"><a href="/careers/discover-princeton" data-drupal-link-system-path="node/1311">Discover Princeton</a></li>
+           <li class="nav-item active"><a href="/careers/search-opportunities" data-drupal-link-system-path="node/1346" class="is-active">Search Opportunities</a></li>
+           <li class="nav-item"><a href="/careers/new-hires" data-drupal-link-system-path="node/1351">New Hires</a></li>
+          </ul>
+         </nav>
+        </div>
+       </div>
+       <div class="share-icons"><a class="sharebox email" href="mailto:?subject=Human%20Resources:%20Search%20Opportunities&amp;body=Read%20more%20at%20https%3A%2F%2Fhr.princeton.edu%2Fcareers%2Fsearch-opportunities"><span class="icon-hide-text">Email</span></a><a class="sharebox print" href="javascript:window.print()"><span class="icon-hide-text">Print</span></a>
+       </div>
+       <div class="main-content col-md-12">
+        <div class="breadcrumb" id="breadcrumb">
+         <nav role="navigation" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+           <li class="breadcrumb-item"><a href="/">Home</a></li>
+           <li class="breadcrumb-item"><a href="/careers">Careers</a></li>
+          </ol>
+         </nav>
+        </div>
+        <div class="page-title-block ">
+         <h1><span class="field field--name-title field--type-string field--label-hidden">Search Opportunities</span></h1>
+        </div>
+        <div class="region region-content">
+         <div data-drupal-messages-fallback class="hidden"></div>
+         <article role="article" about="/careers/search-opportunities" class="node node--type-hr-landing-pages node--view-mode-full">
+          <div class="node__content">
+           <div class="constrained-bkg-constrained-content layout layout--onecol">
+            <div class="layout--col-container">
+             <div class="layout__region layout__region--content">
+              <div class="block-announcements-style block-ps-text block block-layout-builder block-inline-blockps-text" data-block-plugin-id="inline_block:ps_text">
+               <h2 class="block-heading">Announcement</h2>
+               <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                <p>In order to ensure a healthy and safe work environment, Princeton University is requiring all employees to be fully vaccinated, including subsequent boosters, and provide proof of their COVID-19 vaccine status before their start date. Employees who cannot receive the vaccine because of a disability/medical contraindication or sincerely-held religious belief may request an accommodation (e.g., an exemption) to this requirement. Learn more about the <a href="https://covid.princeton.edu/vaccinations/faculty-and-staff-requirement" target="_blank">COVID-19 vaccine requirement.</a></p>
+                <p>This requirement helps enable our employees to thrive in their careers at Princeton and make the greatest impact on all those we serve through the University.</p>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="constrained-bkg-constrained-content layout-60-40 layout layout--twocol-50-50">
+            <div class="layout--col-container">
+             <div class="layout__region layout__region--first">
+              <div class="block__primary-block block-ps-callout callout-theme- block callout block-layout-builder block-inline-blockps-callout" data-block-plugin-id="inline_block:ps_callout">
+               <div class="callout-text-link-container block-content-container">
+                <h2 class="callout-title"><span id="findcareer" class="jump-link-anchor"></span>Find Your Career</h2>
+                <div class="callout-text">
+                 <p>Every day is a new opportunity to find purpose in your work—from our beautiful grounds and remarkable buildings to our research labs and cultural facilities. Whether you’re already part of our community or just getting to know us for the first time, we invite you to imagine the meaningful difference you can make while working at Princeton.</p><a href="https://hub-princeton.icims.com/jobs/search?ss=1&amp;hashed=-435679187&amp;mobile=false&amp;width=1200&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-300&amp;jun1offset=-240" aria-hidden="true" class="callout-read-more">Search &amp; Apply</a>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="layout__region layout__region--second">
+              <div data-block-plugin-id="inline_block:ps_media" class="block-ps-media block block-layout-builder block-inline-blockps-media">
+               <div class="erd-list--ps-content-width-freeform field--type-entity-reference-media field field--name-field-ps-media field--type-entity-reference field--label-hidden field__item">
+                <figure class="media--type-video media--view-mode-ps-content-width-freeform figure">
+                 <div class="field field--name-field-media-video-embed-field field--type-video-embed-field field--label-hidden field__item">
+                  <div class="video-embed-field-provider-youtube video-embed-field-responsive-video">
+                   <iframe width="854" height="480" frameborder="0" allowfullscreen src="https://www.youtube.com/embed/TjM76hNi9do?autoplay=0&amp;start=0&amp;rel=0"></iframe>
+                  </div>
+                 </div>
+                </figure>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="layout layout--onecol">
+            <div class="layout--col-container">
+             <div class="layout__region layout__region--content">
+              <div data-block-plugin-id="inline_block:ps_image" class="block-ps-image block block-layout-builder block-inline-blockps-image">
+               <figure class="figure media--type-image media--view-mode-ps-content-width-freeform">
+                <img srcset="/sites/g/files/toruqf1976/files/styles/freeform_750w/public/2022-06/Employee_Summer22_LCDs_1920x1080_JobFair_June16.jpg?itok=JILO95fN 750w, /sites/g/files/toruqf1976/files/styles/freeform_1440w/public/2022-06/Employee_Summer22_LCDs_1920x1080_JobFair_June16.jpg?itok=5TrrSmke 1440w, /sites/g/files/toruqf1976/files/styles/freeform_2880w/public/2022-06/Employee_Summer22_LCDs_1920x1080_JobFair_June16.jpg?itok=m0mluOx7 1920w" sizes="(min-width: 1440px) 1440px, 100vw" src="/sites/g/files/toruqf1976/files/styles/freeform_1440w/public/2022-06/Employee_Summer22_LCDs_1920x1080_JobFair_June16.jpg?itok=5TrrSmke" alt="Campus Dining Job Fair on June 16, 2022 at 701 Carnegie Center, Princeton, NJ 08540 from 10:00 a.m. to 3:00 p.m. Job applications can be filled out on site." typeof="foaf:Image">
+               </figure>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="constrained-bkg-constrained-content layout layout--twocol-50-50">
+            <div class="layout--col-container">
+             <div class="layout__region layout__region--first">
+              <div class="img-orange-bg block-ps-media block block-layout-builder block-inline-blockps-media" data-block-plugin-id="inline_block:ps_media">
+               <div class="erd-list--ps-content-width-freeform field--type-entity-reference-media field field--name-field-ps-media field--type-entity-reference field--label-hidden field__item">
+                <figure class="media--type-image media--view-mode-ps-content-width-freeform figure">
+                 <img srcset="/sites/g/files/toruqf1976/files/styles/freeform_750w/public/2019-07/BRoseKelly_0045-portrait.jpg?itok=ktkdsTBE 750w, /sites/g/files/toruqf1976/files/styles/freeform_1440w/public/2019-07/BRoseKelly_0045-portrait.jpg?itok=obt2JtAP 1440w, /sites/g/files/toruqf1976/files/styles/freeform_2880w/public/2019-07/BRoseKelly_0045-portrait.jpg?itok=SHOmP0Yn 1744w" sizes="(min-width: 1440px) 1440px, 100vw" src="/sites/g/files/toruqf1976/files/styles/freeform_1440w/public/2019-07/BRoseKelly_0045-portrait.jpg?itok=obt2JtAP" alt="Staff member B. Rose Kelly sits outside of Robertson Hall while holding a notebook" typeof="foaf:Image">
+                </figure>
+               </div>
+              </div>
+             </div>
+             <div class="layout__region layout__region--second">
+              <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+               <h2 class="block-heading"><span id="searchjobs" class="jump-link-anchor"></span>Career Centers</h2>
+               <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                <p>We offer many different types of jobs. Visit any of our career centers to <a href="https://hub-princeton.icims.com/jobs/search" target="_blank">search and apply</a> for positions, join our <a href="https://main-princeton.icims.com/connect?mobile=false&amp;width=1200&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-300&amp;jun1offset=-240" target="_blank">Talent Network</a>, and log in through the Career Center to which you applied&nbsp;to check the status of an application.</p>
+                <p>For faculty and academic professionals, <a href="https://puwebp.princeton.edu/AcadHire/apply/index.xhtml">apply on our AHIRE&nbsp;site</a>.</p>
+                <ul class="list-inline-block">
+                 <li><a class="orange-border-btn" href="https://main-princeton.icims.com/connect">Join Our Talent Network</a></li>
+                </ul>
+               </div>
+              </div>
+              <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+               <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                <div class="field__item">
+                 <div role="group" aria-label="accordion">
+                  <dl id="ps_accordionfield_ps_accordion_block_content_2131" class="ps-accordion" role="presentation">
+                   <dt class="ps-accordion-item">
+                    <div role="heading" aria-level="3">
+                     <div id="acc-btn" role="button" aria-controls="acc-panel" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> All Staff Positions 
+                     </div>
+                    </div>
+                   </dt>
+                   <dd class="ps-accordion-content">
+                    <div id="acc-panel" role="region" aria-labelledby="acc-btn">
+                     <p>Staff positions on Main Campus and at Princeton Plasma Physics Laboratory</p>
+                     <p><a href="https://hub-princeton.icims.com/jobs/search" target="_blank">Search &amp; Apply</a></p>
+                    </div>
+                   </dd>
+                   <dt class="ps-accordion-item">
+                    <div role="heading" aria-level="3">
+                     <div id="acc-btn--2" role="button" aria-controls="acc-panel--2" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Administrative &amp; Professional 
+                     </div>
+                    </div>
+                   </dt>
+                   <dd class="ps-accordion-content">
+                    <div id="acc-panel--2" role="region" aria-labelledby="acc-btn--2">
+                     <p>Managerial, supervisory, coaching, technology, and office support positions</p>
+                     <p><a href="https://main-princeton.icims.com/jobs/search?ss=1&amp;hashed=-435679187" target="_blank">Search &amp; Apply</a></p>
+                     <p><a href="//main-princeton.icims.com/jobs/login?loginOnly=1&amp;redirect=search&amp;in_iframe=1&amp;hashed=-435679187" target="_blank">Returning Applicant Login</a></p>
+                    </div>
+                   </dd>
+                   <dt class="ps-accordion-item">
+                    <div role="heading" aria-level="3">
+                     <div id="acc-btn--3" role="button" aria-controls="acc-panel--3" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Service &amp; Maintenance 
+                     </div>
+                    </div>
+                   </dt>
+                   <dd class="ps-accordion-content">
+                    <div id="acc-panel--3" role="region" aria-labelledby="acc-btn--3">
+                     <p>Operating engineers, grounds, building services,&nbsp;trades, laboratory support, technical,&nbsp;and campus security</p>
+                     <p><a href="https://service-princeton.icims.com/jobs/search?ss=1&amp;hashed=-435679187&amp;mobile=false&amp;width=1200&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-300&amp;jun1offset=-240" target="_blank">Search &amp; Apply </a></p>
+                     <p><a href="https://service-princeton.icims.com/jobs/login?loginOnly=1&amp;redirect=search&amp;in_iframe=1&amp;hashed=-435679187" target="_blank">Returning Applicant Login</a></p>
+                    </div>
+                   </dd>
+                   <dt class="ps-accordion-item">
+                    <div role="heading" aria-level="3">
+                     <div id="acc-btn--4" role="button" aria-controls="acc-panel--4" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Predoctoral Research 
+                     </div>
+                    </div>
+                   </dt>
+                   <dd class="ps-accordion-content">
+                    <div id="acc-panel--4" role="region" aria-labelledby="acc-btn--4">
+                     <p>Research staff and support positions</p>
+                     <p><a href="https://research-princeton.icims.com/jobs/search?ss=1&amp;hashed=-435679187&amp;mobile=false&amp;width=1200&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-300&amp;jun1offset=-240" target="_blank">Search &amp; Apply</a></p>
+                     <p><a href="https://research-princeton.icims.com/jobs/login?loginOnly=1&amp;redirect=search&amp;in_iframe=1&amp;hashed=-435679187" target="_blank">Returning Applicant Login</a></p>
+                    </div>
+                   </dd>
+                   <dt class="ps-accordion-item">
+                    <div role="heading" aria-level="3">
+                     <div id="acc-btn--5" role="button" aria-controls="acc-panel--5" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Internal Staff 
+                     </div>
+                    </div>
+                   </dt>
+                   <dd class="ps-accordion-content">
+                    <div id="acc-panel--5" role="region" aria-labelledby="acc-btn--5">
+                     <p>All posted staff positions, including jobs available only to current benefits-eligible employees</p>
+                     <p><a href="https://princeton.icims.com/icims2/servlet/icims2?module=Root&amp;action=samlAuthnRequest&amp;RelayState=https%3A%2F%2Finternal-princeton.icims.com%2Fr.jsp" target="_blank">Internal Career Center Login</a></p>
+                    </div>
+                   </dd>
+                   <dt class="ps-accordion-item">
+                    <div role="heading" aria-level="3">
+                     <div id="acc-btn--6" role="button" aria-controls="acc-panel--6" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Princeton Plasma Physics Laboratory 
+                     </div>
+                    </div>
+                   </dt>
+                   <dd class="ps-accordion-content">
+                    <div id="acc-panel--6" role="region" aria-labelledby="acc-btn--6">
+                     <p>Staff positions at the Princeton&nbsp;<a href="https://www.pppl.gov/" target="_blank">Plasma Physics Laboratory</a></p>
+                     <p><a href="https://pppl-princeton.icims.com/jobs/search?ss=1&amp;hashed=-435679187&amp;mobile=false&amp;width=912&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-300&amp;jun1offset=-240" target="_blank">Search &amp; Apply </a></p>
+                     <p><a href="https://pppl-princeton.icims.com/jobs/login?loginOnly=1&amp;redirect=search&amp;in_iframe=1&amp;hashed=-435679187" target="_blank">Returning Applicant Login</a></p>
+                    </div>
+                   </dd>
+                  </dl>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div style="background: url(https://hr.princeton.edu/sites/g/files/toruqf1976/files/styles/16x9_1440w_810h/public/2019-04/header.jpg?itok=rDwzvh2a) center center / cover no-repeat" class="constrained-bkg-constrained-content section-flex-layout layout layout--onecol">
+            <div class="layout--col-container">
+             <div class="layout__region layout__region--content">
+              <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+               <h2 class="block-heading"><span id="featured-jobs" class="jump-link-anchor"></span>Featured Jobs</h2>
+              </div>
+              <div class="orange-top-border-white-bg block-ps-text block block-layout-builder block-inline-blockps-text" data-block-plugin-id="inline_block:ps_text">
+               <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                <h3>Campus Dining Positions</h3>
+                <p>Campuswide</p>
+                <p><a class="orange-border-btn" href="https://hub-princeton.icims.com/jobs/search?ss=1&amp;searchKeyword=&amp;searchRelation=keyword_all&amp;searchCategory=18001&amp;searchPostedDate=&amp;searchPositionType=&amp;searchZip=&amp;searchRadius=20" target="_blank">Apply</a></p>
+               </div>
+              </div>
+              <div class="orange-top-border-white-bg block-ps-text block block-layout-builder block-inline-blockps-text" data-block-plugin-id="inline_block:ps_text">
+               <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                <h3>Financial Services &amp; Grants Positions&nbsp;</h3>
+                <p>Campuswide</p>
+                <p><a class="orange-border-btn" href="https://hub-princeton.icims.com/jobs/search?ss=1&amp;searchRelation=keyword_all&amp;searchCategory=17994&amp;searchCategory=18005&amp;searchRadius=20&amp;mobile=false&amp;width=1200&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-300&amp;jun1offset=-240" target="_blank">Apply</a></p>
+               </div>
+              </div>
+              <div class="orange-top-border-white-bg block-ps-text block block-layout-builder block-inline-blockps-text" data-block-plugin-id="inline_block:ps_text"><span id="featuredjobs" class="jump-link-anchor"></span>
+               <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                <h3>Information Technology Positions</h3>
+                <p>Campuswide</p>
+                <p><a class="orange-border-btn" href="https://goo.gl/wMcfw7">Apply</a></p>
+               </div>
+              </div>
+              <div class="orange-top-border-white-bg block-ps-text block block-layout-builder block-inline-blockps-text" data-block-plugin-id="inline_block:ps_text">
+               <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                <h3>Health &amp; Safety Positions</h3>
+                <p>Campuswide</p>
+                <p><a class="orange-border-btn" href="https://hub-princeton.icims.com/jobs/search?ss=1&amp;searchRelation=keyword_all&amp;searchCategory=18010&amp;searchCategory=18057&amp;searchCategory=101906&amp;searchRadius=20&amp;mobile=false&amp;width=1200&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-300&amp;jun1offset=-240" target="_blank">Apply</a></p>
+               </div>
+              </div>
+              <div class="orange-top-border-white-bg block-ps-text block block-layout-builder block-inline-blockps-text" data-block-plugin-id="inline_block:ps_text">
+               <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                <h3>Staff Research &amp; CLIA Lab Positions</h3>
+                <p><span>Campuswide</span></p>
+                <p><a class="orange-border-btn" href="https://hub-princeton.icims.com/jobs/search?ss=1&amp;searchRelation=keyword_all&amp;searchCategory=18071&amp;searchRadius=20&amp;mobile=false&amp;width=1167&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-300&amp;jun1offset=-240" target="_blank">Apply</a></p>
+               </div>
+              </div>
+              <div class="orange-top-border-white-bg block-ps-text block block-layout-builder block-inline-blockps-text" data-block-plugin-id="inline_block:ps_text">
+               <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                <h3>Engineering Positions</h3>
+                <p>Campuswide</p>
+                <p><a class="orange-border-btn" href="https://hub-princeton.icims.com/jobs/search?ss=1&amp;searchRelation=keyword_all&amp;searchCategory=26218&amp;searchRadius=20&amp;mobile=false&amp;width=1050&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-300&amp;jun1offset=-240">Apply</a></p>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="constrained-bkg-constrained-content layout layout--twocol-50-50">
+            <div class="layout--col-container">
+             <div class="layout__region layout__region--first">
+              <div class="block--title-underline block-ps-callout callout-theme- block callout block-layout-builder block-inline-blockps-callout" data-block-plugin-id="inline_block:ps_callout">
+               <div class="callout-text-link-container block-content-container">
+                <h2 class="callout-title"><span id="hire" class="jump-link-anchor"></span>How We Hire</h2>
+                <div class="callout-text">
+                 <p>Employees—in every area—are one of Princeton University’s most valued resources.</p>
+                 <p>Hiring the very best and most talented people is key to sustaining our excellent work environment and enabling Princeton to maintain its status as one of the world’s most outstanding centers for higher education.</p>
+                 <p>Individuals with a disability who are unable or limited in ability to use or access the careers website can request a <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="02bc5b4b-1258-4289-a979-b042ed56a34e" href="/accommodation">reasonable accommodation</a> by contacting the University’s <a href="https://accessibility.princeton.edu/resources/accessibility-help">Office of Digital Accessibility</a>. To request a reasonable accommodation during the application or interview process, contact the <a href="mailto:careers@princeton.edu">Talent Acquisition Team</a>.</p>
+                 <p>Learn more about Princeton's hiring process by expanding these menus.</p>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="layout__region layout__region--second">
+              <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+               <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                <div class="field__item">
+                 <div role="group" aria-label="accordion">
+                  <dl id="ps_accordionfield_ps_accordion_block_content_1871" class="ps-accordion" role="presentation">
+                   <dt class="ps-accordion-item">
+                    <div role="heading" aria-level="3">
+                     <div id="acc-btn--7" role="button" aria-controls="acc-panel--7" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Connect |&nbsp;<em>Explore Princeton</em>
+                     </div>
+                    </div>
+                   </dt>
+                   <dd class="ps-accordion-content">
+                    <div id="acc-panel--7" role="region" aria-labelledby="acc-btn--7">
+                     <p>Visit our <a href="https://hub-princeton.icims.com/jobs/search">career center</a> to search all staff job postings or join our talent community to be matched with similar positions as they become available and be sure to follow us on <a href="https://www.instagram.com/workingatprinceton/">Instagram</a>, <a href="https://www.linkedin.com/school/princeton-university/life/">LinkedIn</a>, or <a href="https://www.youtube.com/channel/UCJWh_JEaTsorGLMRnAq0Xxw">YouTube</a>.</p>
+                     <p>At Princeton University, we encourage employee referrals as an effective way for recruiting top talent. Benefits-eligible staff members can refer an individual by using the <strong>Make a Referral</strong> button available on the job posting in the <a href="https://princeton.icims.com/icims2/servlet/icims2?module=Root&amp;action=samlAuthnRequest&amp;RelayState=https%3A%2F%2Finternal-princeton.icims.com%2Fr.jsp">Internal Staff Career Center</a>.</p>
+                    </div>
+                   </dd>
+                   <dt class="ps-accordion-item">
+                    <div role="heading" aria-level="3">
+                     <div id="acc-btn--8" role="button" aria-controls="acc-panel--8" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Apply |&nbsp;<em>Be Prepared</em>
+                     </div>
+                    </div>
+                   </dt>
+                   <dd class="ps-accordion-content">
+                    <div id="acc-panel--8" role="region" aria-labelledby="acc-btn--8">
+                     <p>Review the job posting carefully—candidates have greater success when their experience strongly matches our job requirements. Have a resume prepared and accessible for upload as well as any additional documents, e.g. a cover letter or writing sample, if required.</p>
+                     <p>The time it takes to complete a job search can vary, sometimes taking several months, and is unique to the position. Throughout the process, updates will be available in the candidate dashboard.</p>
+                     <p><strong>TIP:</strong>&nbsp;Cover letters are often requested and reviewed.</p>
+                    </div>
+                   </dd>
+                   <dt class="ps-accordion-item">
+                    <div role="heading" aria-level="3">
+                     <div id="acc-btn--9" role="button" aria-controls="acc-panel--9" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Assessment |&nbsp;<em>First Impressions</em>
+                     </div>
+                    </div>
+                   </dt>
+                   <dd class="ps-accordion-content">
+                    <div id="acc-panel--9" role="region" aria-labelledby="acc-btn--9">
+                     <p>Resumes are reviewed by a staff member for qualifications that match to the skills and requirements detailed in the job posting. It may take several weeks or more to complete a thorough review of all resumes received.</p>
+                     <p>Phone screens are typically a part of the review process. Some positions also require applicants to successfully complete an assessment in order to move forward in the hiring process.</p>
+                     <p><strong>TIP</strong>:&nbsp;The three key elements to a successful phone screen are to <em>be available</em> at the time agreed, <em>be prepared </em>to answer questions about information submitted with your application, and <em>be yourself</em>.</p>
+                    </div>
+                   </dd>
+                   <dt class="ps-accordion-item">
+                    <div role="heading" aria-level="3">
+                     <div id="acc-btn--10" role="button" aria-controls="acc-panel--10" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Interview |&nbsp;<em>Getting to Know Each Other</em>
+                     </div>
+                    </div>
+                   </dt>
+                   <dd class="ps-accordion-content">
+                    <div id="acc-panel--10" role="region" aria-labelledby="acc-btn--10">
+                     <p>Highly-qualified candidates will be invited to interview in person or by phone or video.</p>
+                     <p>Candidates typically meet with multiple interviewers during the interview process, often in small groups or with panels. Interviews often focus on <a href="https://www.themuse.com/advice/30-behavioral-interview-questions-you-should-be-ready-to-answer">behavioral-based interview questions</a> that help hiring manager&nbsp; learn more about candidate's skills, experiences, and competencies.</p>
+                     <p>Plan travel time accordingly for in-person interviews including an additional 10 to 15 minutes to get from visitor parking to the interview location. If traveling to Princeton from afar, instructions on how to book travel will be provided.</p>
+                     <p>Because there are often multiple rounds of interviews, it may take several weeks or more to receive an update on application status. Finalists will be notified as soon as a decision is made.</p>
+                     <p><strong>TIP</strong>:&nbsp;Have questions ready to ask us about the work, the team, and the culture; anything that will help determine if this is the right opportunity.</p>
+                    </div>
+                   </dd>
+                   <dt class="ps-accordion-item">
+                    <div role="heading" aria-level="3">
+                     <div id="acc-btn--11" role="button" aria-controls="acc-panel--11" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> References |&nbsp;<em>Seeking Feedback</em>
+                     </div>
+                    </div>
+                   </dt>
+                   <dd class="ps-accordion-content">
+                    <div id="acc-panel--11" role="region" aria-labelledby="acc-btn--11">
+                     <p>If selected as a finalist, reference checks will be initiated with at least 3-5 individuals through an online survey. The reference check process is normally completed prior to an offer of employment.</p>
+                     <p><strong>TIP</strong>:&nbsp;Inform references in advance that they will be contacted by Princeton to ensure a quick completion of the reference check process.</p>
+                    </div>
+                   </dd>
+                   <dt class="ps-accordion-item">
+                    <div role="heading" aria-level="3">
+                     <div id="acc-btn--12" role="button" aria-controls="acc-panel--12" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Offer |&nbsp;<em>Congratulations!</em>
+                     </div>
+                    </div>
+                   </dt>
+                   <dd class="ps-accordion-content">
+                    <div id="acc-panel--12" role="region" aria-labelledby="acc-btn--12">
+                     <p>Offers are made verbally and followed up with in writing. All offers of employment are contingent upon the successful outcome of references checks, background check, and a pre-employment screening process, as required for the position. Once an offer is accepted, the next step of the hiring process will begin.</p>
+                    </div>
+                   </dd>
+                   <dt class="ps-accordion-item">
+                    <div role="heading" aria-level="3">
+                     <div id="acc-btn--13" role="button" aria-controls="acc-panel--13" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Screens |&nbsp;<em>Getting Cleared to Start Work</em>
+                     </div>
+                    </div>
+                   </dt>
+                   <dd class="ps-accordion-content">
+                    <div id="acc-panel--13" role="region" aria-labelledby="acc-btn--13">
+                     <p>Prior to the start of employment all new hires are required to successfully complete a background check and additional verifications, as required for the position. Background checks review employment history and previous address information for the past 7 years may take up to 2 weeks to complete.</p>
+                     <p>Positions with physical requirements require successful completion of a post-offer pre-employment screening (POPES) exam prior to the first day of work. It is indicated in the job posting if a POPES exam is required.</p>
+                     <p>Confirmation of eligibility to start will be communicated after successfully completing all required checks and screenings.</p>
+                     <p><strong>TIP</strong>: Carefully read all emails and take action within the deadlines identified to avoid any delay to the start of employment.</p>
+                    </div>
+                   </dd>
+                   <dt class="ps-accordion-item">
+                    <div role="heading" aria-level="3">
+                     <div id="acc-btn--14" role="button" aria-controls="acc-panel--14" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Onboarding |&nbsp;<em>Welcome to Princeton!</em>
+                     </div>
+                    </div>
+                   </dt>
+                   <dd class="ps-accordion-content">
+                    <div id="acc-panel--14" role="region" aria-labelledby="acc-btn--14">
+                     <p>The onboarding process is designed to welcome new members of the University community and assist new hires in acclimating to their roles to become successful contributors.</p>
+                     <p>New staff receive an email with information to access a personalized onboarding center with important information and required tasks to assist in a smooth transition. Staff are also invited to attend a New Hire Orientation program, as outlined in the offer letter. Additionally, each department has their own onboarding process to assist in gaining a better understanding of the role and departmental structure.</p>
+                     <p><strong>TIP</strong>: All newly hired faculty, staff, and casual employees are required to verify their identity and employment authorization&nbsp;for employment in the United States within the first three days of their first day of employment. Be sure to review the <a href="https://www.i9complete.com/Content/tracker/pdf/ListOfAcceptableDocuments_EN.pdf" target="_blank">List of Acceptable Documents</a>&nbsp;to determine which documents to bring to HR&nbsp;to&nbsp;complete&nbsp;the <a href="https://www.uscis.gov/i-9" target="_blank">Form I-9</a>.</p>
+                    </div>
+                   </dd>
+                  </dl>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="constrained-bkg-constrained-content section-instagram-feed layout layout--twocol-25-75">
+            <div class="layout--col-container">
+             <div class="layout__region layout__region--first">
+              <div class="instagram-text-block block-ps-text block block-layout-builder block-inline-blockps-text" data-block-plugin-id="inline_block:ps_text">
+               <h2 class="block-heading"><span id="recruitertips" class="jump-link-anchor"></span>#PrincetonRecruiterTips</h2>
+               <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                <p>Tips from our recruiting team to help you succeed during your job search.</p>
+                <p><a class="instagram" href="https://www.instagram.com/workingatprinceton/">Connect with Us on Instagram</a> <a class="linkedin" href="https://www.linkedin.com/school/princeton-university/">Connect with Us on Linkedin</a></p>
+               </div>
+              </div>
+             </div>
+             <div class="layout__region layout__region--second">
+              <div data-block-plugin-id="ps_elfsight" class="block block-ps-social block-ps-elfsight">
+               <div class="elfsight-app-f7ac7045-c270-41d4-b830-f499654e90c7"></div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </article>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <footer role="contentinfo" class="footer" id="footer">
+    <div class="container">
+     <div class="constrained-bkg-constrained-content layout layout--fourcol-25-25-25-25">
+      <div class="layout--col-container">
+       <div class="layout__region layout__region--first">
+        <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+         <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+          <p>Office of Human Resources</p>
+         </div>
+        </div>
+        <div data-block-plugin-id="inline_block:ps_social_links" class="block-ps-social-links block block-layout-builder block-inline-blockps-social-links">
+         <ul class="ps-social-links--platforms platforms inline horizontal">
+          <li><a href="https://www.instagram.com/workingatprinceton/" title="Instagram"> <span class="fab fa-instagram fa-2x" aria-hidden="true"></span> <span class="social-link-label visually-hidden">Instagram</span> </a></li>
+          <li><a href="https://www.youtube.com/channel/UCJWh_JEaTsorGLMRnAq0Xxw" title="Youtube"> <span class="fab fa-youtube fa-2x" aria-hidden="true"></span> <span class="social-link-label visually-hidden">Youtube</span> </a></li>
+          <li><a href="https://www.linkedin.com/company/157313" title="LinkedIn"> <span class="fab fa-linkedin fa-2x" aria-hidden="true"></span> <span class="social-link-label visually-hidden">LinkedIn</span> </a></li>
+         </ul>
+        </div>
+       </div>
+       <div class="layout__region layout__region--second">
+        <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+         <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+          <h4>Main Office</h4>
+          <p>100 Overlook Center</p>
+          <p>Suite 400</p>
+          <p>Princeton, NJ 08540</p>
+         </div>
+        </div>
+       </div>
+       <div class="layout__region layout__region--third">
+        <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+         <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+          <p><span class="icon-phone">Phone:</span> (609) 258-3300</p>
+          <p><span class="icon-fax">Fax:</span> (609) 258-2420</p>
+          <p><span class="icon-email">Email:</span> <a href="/node/2506#contact-us-webform">Email Us</a></p>
+          <p><span class="icon-contact">Contact:&nbsp;</span><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="0148a333-937a-4ff9-b039-3ab325d416ec" href="/contact-us">Contact Us</a><br> &nbsp;</p>
+          <ul>
+           <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="432f5b0a-c215-4666-9cc7-47534670237b" href="/about-hr">About HR</a></li>
+           <li><a href="/website-feedback">Website Feedback</a></li>
+           <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="50736b3d-0851-40dc-bdde-c33bad92e327" href="/media-credits">Media Credits</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="layout__region layout__region--fourth">
+        <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+         <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+          <p><br> &nbsp;</p>
+          <ul>
+           <li><a href="https://publicsafety.princeton.edu/clery/annual-safety-fire-reports" target="_blank">Clery Act</a></li>
+           <li><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="7b1a0a0e-d659-4e28-957f-2379382cc192" href="/confidentiality-privacy-0">Confidentiality &amp; Privacy</a></li>
+           <li><a href="https://rrr.princeton.edu/node/61" target="_blank">Equal Opportunity Policy</a></li>
+           <li><a href="https://tigernav.princeton.edu/istart/controllers/public/PublicEngine.cfm?serviceid=LaborCertificationPostingNoticesProvider" target="_blank">Labor Certification Notices</a></li>
+           <li><a href="https://tigernav.princeton.edu/istart/controllers/public/PublicEngine.cfm?serviceid=NoticesOfIntentToHireH1BProvider&amp;index=PRINU" target="_blank">Notices for&nbsp;H-1B/E3 Employees</a></li>
+           <li><a href="https://www.princeton.edu/privacy-notice" target="_blank">Privacy Notice</a></li>
+           <li><a href="/node/601#Workplace_Notices">Workplace Notices</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="constrained-bkg-constrained-content layout layout--onecol">
+      <div class="layout--col-container">
+       <div></div>
+      </div>
+     </div>
+    </div>
+    <div class="subfooter">
+     <div class="container">
+      <div class="row">
+       <div class="col-sm">
+        <ul class="list-unstyled">
+         <li><a href="https://accessibility.princeton.edu/" target="_blank">Accessibility </a></li>
+        </ul>
+       </div>
+       <div class="col-sm text-sm-left text-md-center copyright">
+        <p> © 2022 The Trustees of Princeton University </p>
+       </div>
+       <div class="col-sm text-sm-left text-md-right"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"><img src="/sites/g/files/toruqf1976/themes/site/images/pu-logo-stacked-white.svg" alt="Princeton University"></a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div><span id="ps-current-username" data-username=""></span>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/1346","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ckeditorheight":{"offset":1,"line_height":1.5,"unit":"em","disable_autogrow":null},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":true},"all_documents_new_window":false,"select2_simple":{"selector":".node-form select:not(.disable-select2,[name$=\u0027[actions][bundle]\u0027],.ui-timepicker-select,[name*=\u0027field_ps_timeline_feature_items\u0027]),.select2-form select,#drupal-off-canvas select[multiple]"},"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"ps_accordion":{"#ps_accordionfield_ps_accordion_block_content_1871":[],"#ps_accordionfield_ps_accordion_block_content_2131":[]},"ajax":[],"user":{"uid":0,"permissionsHash":"4302b2eb903b70093dfcab105aaa716dd33465cd3bfcd533f550f7d702c0d402"}}</script>
+  <script src="/sites/g/files/toruqf1976/files/js/js_sQ9GBGEI6g8Aa7gEI251pdD1EKlVh_21ElGC8C8pGi0.js"></script>
+  <script src="//apps.elfsight.com/p/platform.js" defer></script>
+  <script src="/sites/g/files/toruqf1976/files/js/js_df9zAE42PQvvtGSxpiBomp3J0zHwSH0OfzMVdeVwn8w.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"427707476","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":1416,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html data-ng-app="qlTenantApp" lang="en">
+ <head>
+  <meta charset="UTF-8"> 
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"> 
+  <title></title>
+  <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500" rel="stylesheet" type="text/css">
+  <style type="text/css">
+		.blue-head{background-color:#0090eb;}
+		.outer-container h2{color:#0090eb; text-align:left;}
+		.outer-container .submit, .btn-xs{background: #ff940a; border-color: #ef8700; font-size: 16px; padding: 5px 20px; text-shadow: 1px 1px 1px #282828;}
+		.ql-logo{ padding:15px 15px 0 15px;}
+		.ql-logo img{width:auto;}
+		
+	</style>
+ </head>
+ <body class="tenant">
+  <script type="text/javascript" src="/resources/js/jquery-1.12.4.js"></script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript>
+  <script type="text/javascript" src="/resources/js/jquery-ui-1.10.3.min.js"></script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript>
+  <script type="text/javascript" src="/resources/js/jquery.blockUI.js"></script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript><!-- Bootstrap -->
+  <script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript><!-- Angular JS -->
+  <script type="text/javascript" src="/resources/js/angular.js"></script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript>
+  <script type="text/javascript" src="/resources/js/angular-route.js"></script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript>
+  <script type="text/javascript" src="/resources/js/angular-animate.min.js"></script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript>
+  <script type="text/javascript" src="/resources/js/angular-block-ui.min.js"></script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript>
+  <script type="text/javascript" src="/resources/js/angular-sanitize.js"></script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript>
+  <script type="text/javascript" src="/resources/js/ngDraggable.js"></script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript>
+  <script type="text/javascript" src="/resources/js/notify.min.js"></script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript>
+  <script type="text/javascript" src="/resources/js/ui-bootstrap-tpls-0.11.0.js"></script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript><!-- Session Inactivity Impl. -->
+  <script type="text/javascript" src="/resources/js/angular-idle.js"></script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript><!-- QL Thrid party JS -->
+  <script type="text/javascript" src="/resources/js/client.js?v=5.13"></script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript><!-- Google Feeds API -->
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript>
+  <script type="text/javascript">
+    google.load("feeds", "1");
+</script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript><!-- QL CSS -->
+  <link href="/resources/css/ql.css?v=5.13" rel="stylesheet" type="text/css">
+  <link href="/resources/css/angular-block-ui.min.css" rel="stylesheet" type="text/css">
+  <link href="/resources/css/ng-animation.css" rel="stylesheet" type="text/css"><!-- bootstrap 3.0.2 -->
+  <link href="/resources/css/bootstrap.css" rel="stylesheet" type="text/css"><!-- font Awesome -->
+  <link href="/resources/css/font-awesome.css" rel="stylesheet" type="text/css"><!-- Ionicons -->
+  <link href="/resources/css/ionicons.min.css" rel="stylesheet" type="text/css"><!-- Angular Templates -->
+  <style type="text/css">
+    .mrg-A0 {margin: 0;}
+    .mrg-B0 {margin-bottom: 0;}
+    .pad-T0,.ng-binding{padding-top: 0;}
+    .modal-header {border-top-left-radius:6px;border-top-right-radius:6px;}
+    .btn-blue{padding: 7px 22px; border-radius: 50px;text-transform: uppercase; font-size: 12px;}
+    .modal{margin-top: 5%;}
+</style><!-- Session inactivity: warning dialog message -->
+  <script type="text/ng-template" id="warning-dialog.html">
+    <div class="modal-new">
+        <div class="modal-header" ng-style="{'background-color':tenantPreference.headerColor, 'color': tenantPreference.logoutButtonTextColor}" ng-if="sessionTimeoutTitleMsg != null && sessionTimeoutTitleMsg != '' ">
+            <h4 class="mrg-A0">{{sessionTimeoutTitleMsg}}</h4>
+        </div>
+        <div class="modal-header" ng-style="{'background-color':tenantPreference.headerColor, 'color': tenantPreference.logoutButtonTextColor}" ng-if="sessionTimeoutTitleMsg === null || sessionTimeoutTitleMsg === '' ">
+            <h4 class="mrg-A0">Session Timeout Warning</h4>
+        </div>
+        <div idle-countdown="countdown" class="modal-body text-center" ng-if="SessionInactivityWarningMsg != null && SessionInactivityWarningMsg != '' ">
+            <p class="mrg-B0"><b>{{countdown | secondsToTime}}</b> seconds(s)<br>{{SessionInactivityWarningMsg}} </p>
+        </div>
+        <div idle-countdown="countdown" class="modal-body text-center" ng-if="SessionInactivityWarningMsg === null || SessionInactivityWarningMsg === '' ">
+            <p class="mrg-B0"><b>{{countdown | secondsToTime}}</b> seconds(s)<br> Your session will expire soon.</p>
+        </div>
+        
+    </div>
+</script>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript>
+  <div style="display: none;" data-ng-controller="selectTenant" data-ng-show="tenantNotFound">
+   <div class="page-header header-div blue-head">
+    <div class="ql-logo">
+     <img src="/resources/images/is-logo.png" alt="Sign on to QuickLaunch SSO">
+    </div>
+   </div>
+   <div class="container form">
+    <div class="row">
+     <div class="col col-md-6 qlform">
+      <div class="outer-container">
+       <h2>Sign on to QuickLaunch SSO</h2>
+       <p>Please enter your company name post which you will be redirected to your login page to access your configured applications.</p>
+       <p><strong>Your Company Name</strong></p>
+       <div class="alert alert-danger" role="alert" data-ng-show="showTenantNotFoundMessage">
+         Invalid Company Name. 
+       </div><label class="sr-only" for="Company-name">Company name</label>
+       <input type="text" data-ng-model="selectedTenant" id="Company-name" name="Company-name" placeholder="Company name" class="search"><label class="sr-only" for="tenantSelectedButton">Tenant Selected</label>
+       <input type="button" class="submit" id="tenantSelectedButton" data-ng-click="checkTenantAndRedirect()" value="Submit">
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div id="ql-loader" class="loader-wrapper">
+   <div class="loader-box">
+    <div class="loader"></div>
+   </div>
+  </div>
+  <noscript>
+   Your browser does not support JavaScript!
+  </noscript>
+  <style type="text/css">
+        .loader-wrapper{background: transparent;}
+    </style>
+ </body>
+</html>

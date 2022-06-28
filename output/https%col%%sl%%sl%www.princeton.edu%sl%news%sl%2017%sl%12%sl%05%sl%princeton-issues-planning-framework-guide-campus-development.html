@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"465817224"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","/sites/default/files/google_analytics/analytics.js?rdeuqk","ga");ga("create", "UA-1706522-1", {"cookieDomain":"auto"});ga("require", "linkid", "linkid.js");ga("set", "anonymizeIp", true);ga("set", "dimension2", "5");ga("set", "dimension3", "news");ga("set", "dimension4", "\u003Ca href=\u0022\/taxonomy\/term\/1896\u0022 hreflang=\u0022en\u0022\u003EUniversity News\u003C\/a\u003E");ga("send", "pageview");ga('require', 'maxScrollTracker', {
+  maxScrollMetricIndex: 1,
+});</script>
+  <link rel="canonical" href="https://www.princeton.edu/news/2017/12/05/princeton-issues-planning-framework-guide-campus-development">
+  <meta name="description" content="Princeton University has issued a planning framework to guide campus development over the next 10 years in the context of potential needs and developments over the next 30 years.">
+  <meta property="fb:app_id" content="238312316239555">
+  <meta property="og:site_name" content="Princeton University">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.princeton.edu/news/2017/12/05/princeton-issues-planning-framework-guide-campus-development">
+  <meta property="og:title" content="Princeton issues planning framework to guide campus development">
+  <meta property="og:description" content="Princeton University has issued a planning framework to guide campus development over the next 10 years in the context of potential needs and developments over the next 30 years.">
+  <meta property="og:image" content="https://www.princeton.edu/sites/default/files/styles/scale_1440/public/images/2017/12/2017-campus-plan_40_d.jpg?itok=yNrw9OFi">
+  <meta property="og:image:alt" content="Map of potential projects in campus plan">
+  <meta name="google-site-verification" content="B6i7aTvWeIZCk1-Ntnn_Lkyf37sREVxxkY6p3gdHucY">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Princeton">
+  <meta name="twitter:description" content="Princeton University has issued a planning framework to guide campus development over the next 10 years in the context of potential needs and developments over the next 30 years.">
+  <meta name="twitter:title" content="Princeton issues planning framework to guide campus development">
+  <meta name="twitter:image:alt" content="Map of potential projects in campus plan">
+  <meta name="twitter:image" content="https://www.princeton.edu/sites/default/files/styles/scale_1440/public/images/2017/12/2017-campus-plan_40_d.jpg?itok=yNrw9OFi,">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" href="/themes/custom/tony/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/themes/custom/tony/icons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/themes/custom/tony/icons/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="/themes/custom/tony/icons/manifest.json">
+  <link rel="mask-icon" href="/themes/custom/tony/icons/safari-pinned-tab.svg" color="#e77500">
+  <meta name="msapplication-config" content="/themes/custom/tony/icons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="/profiles/contrib/lightning/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Princeton issues planning framework to guide campus development</title>
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_4bJu3MZSeasFbMQbz46RpcgL8tWWy2IlSZqfs6S6bZQ.css">
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_-znt2TQwDYX5ozJW377y85zmm1pZ-MFpYBWRJ6P5ojY.css"><!--[if lte IE 8]>
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" />
+<![endif]-->
+  <script src="/sites/default/files/js/js_vjrewt9Ub_VdOnWG7fQvzLvZnbEPsJs5UlnSApFDVF0.js"></script>
+  <meta name="google-site-verification" content="HCFMWeXbGYFnJTWfcWQmuHWebYmZPzueLOKf8RM09I4">
+  <link rel="alternate" type="application/rss+xml" title="Princeton University News" href="/feed/">
+  <link rel="alternate" type="application/rss+xml" title="Princeton Research News" href="/feed/research/">
+  <link rel="alternate" type="application/rss+xml" title="Princeton Public Events" href="/feed/events/">
+ </head>
+ <body class="node-136756 path-node page-node-type-news nojs" data-scroll="body" data-resize="body"><a href="#main-content" id="skip-link" class="visually-hidden focusable button skip-link"> Skip to main content </a>
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div data-sticky-container class="header-sticky-container">
+    <header data-sticky data-options="marginTop:0;" data-sticky-on="small" class="clearfix page-header" style="width:100%" data-top-anchor="main:top" data-btm-anchor="main:bottom" role="banner">
+     <div class="contents">
+      <div class="block-tony-branding"><a href="/" title="Home" rel="home" class="site-logo"> <img src="/themes/custom/tony/logo.svg" alt="Princeton University"> </a>
+      </div><button aria-label="Toggle Menu" class="toggle-main-menu"> <!-- Screen readers will see "close" --> <span class="show-for-sr">Toggle subitems</span> <!-- Visual users will see the X, but not the "Close" text --> <span aria-hidden="true" class="menu-icon"></span> <span aria-hidden="true" class="close-icon"></span> </button>
+      <nav id="main-menu" class="menu-container" role="navigation">
+       <div>
+        <nav role="navigation" aria-labelledby="block-tony-main-menu-menu" id="block-tony-main-menu" data-block-plugin-id="system_menu_block:main" class="menu--main block--main-navigation">
+         <h2 class="visually-hidden" id="block-tony-main-menu-menu" aria-hidden="true">Main navigation</h2>
+         <ul class="menu main-menu vertical xmedium-horizontal" role="menubar">
+          <li class="menu-item level-0 menu-item--expanded" role="menuitem"><a href="/meet-princeton" role="menuitem" data-drupal-link-system-path="node/126">Meet Princeton</a><button class="toggleparent" type="button"> <!-- Screen readers will see "close" --> <span class="show-for-sr">Toggle sub-items</span> <!-- Visual users will see the X, but not the "Close" text --> <span aria-hidden="true" class="plusminus"></span> </button>
+           <ul class="menu vertical first-sub" role="menu">
+            <li class="menu-item level-1"><a href="/meet-princeton/service-humanity" role="menuitem" data-drupal-link-system-path="node/20346">In Service of Humanity</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/facts-figures" role="menuitem" data-drupal-link-system-path="node/54486">Facts &amp; Figures</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/history" role="menuitem" data-drupal-link-system-path="node/20176">History</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/honors-awards" role="menuitem" data-drupal-link-system-path="node/93986">Honors &amp; Awards</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/contact-us" role="menuitem" data-drupal-link-system-path="node/20181">Contact Us</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/visit-us" role="menuitem" data-drupal-link-system-path="node/20531">Visit Us</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/our-faculty" role="menuitem" data-drupal-link-system-path="node/20351">Our Faculty</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/our-students" role="menuitem" data-drupal-link-system-path="node/20356">Our Students</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/our-alumni" role="menuitem" data-drupal-link-system-path="node/20361">Our Alumni</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/our-staff" role="menuitem" data-drupal-link-system-path="node/20256">Our Staff</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/our-leadership" role="menuitem" data-drupal-link-system-path="node/172146">Our Leadership</a></li>
+            <li class="menu-item level-1"><a href="/meet-princeton/academic-freedom-and-free-expression" role="menuitem" data-drupal-link-system-path="node/252886">Academic Freedom and Free Expression</a></li>
+           </ul></li>
+          <li class="menu-item level-0 menu-item--expanded" role="menuitem"><a href="/academics" role="menuitem" data-drupal-link-system-path="node/46">Academics</a><button class="toggleparent" type="button"> <!-- Screen readers will see "close" --> <span class="show-for-sr">Toggle sub-items</span> <!-- Visual users will see the X, but not the "Close" text --> <span aria-hidden="true" class="plusminus"></span> </button>
+           <ul class="menu vertical first-sub" role="menu">
+            <li class="menu-item level-1"><a href="/academics/studying-princeton" role="menuitem" data-drupal-link-system-path="node/76">Studying at Princeton</a></li>
+            <li class="menu-item level-1"><a href="/academics/library" role="menuitem" data-drupal-link-system-path="node/20166">Library</a></li>
+            <li class="menu-item level-1"><a href="/academics/areas-of-study" role="menuitem" data-drupal-link-system-path="academics/areas-of-study">Areas of Study</a></li>
+            <li class="menu-item level-1"><a href="/academics/areas-of-study/humanities" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/humanities">Humanities</a></li>
+            <li class="menu-item level-1"><a href="/academics/areas-of-study/social-sciences" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/social-sciences">Social Sciences</a></li>
+            <li class="menu-item level-1"><a href="/academics/areas-of-study/engineering" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/engineering">Engineering</a></li>
+            <li class="menu-item level-1"><a href="/academics/areas-of-study/natural-sciences" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/natural-sciences">Natural Sciences</a></li>
+            <li class="menu-item level-1"><a href="/academics/advising" role="menuitem" data-drupal-link-system-path="node/20381">Advising</a></li>
+            <li class="menu-item level-1"><a href="https://registrar.princeton.edu/academic-calendar/" role="menuitem">Academic Calendar<span class="arrow"></span></a></li>
+            <li class="menu-item level-1"><a href="/academics/course-tools" role="menuitem" data-drupal-link-system-path="node/54066">Course Tools</a></li>
+            <li class="menu-item level-1"><a href="/academics/learning-abroad" role="menuitem" data-drupal-link-system-path="node/20161">Learning Abroad</a></li>
+            <li class="menu-item level-1"><a href="/academics/career-development" role="menuitem" data-drupal-link-system-path="node/20391">Career Development</a></li>
+            <li class="menu-item level-1"><a href="/academics/continuing-education" role="menuitem" data-drupal-link-system-path="node/20376">Continuing Education</a></li>
+            <li class="menu-item level-1"><a href="/academics/innovative-learning" role="menuitem" data-drupal-link-system-path="node/20366">Innovative Learning</a></li>
+           </ul></li>
+          <li class="menu-item level-0 menu-item--expanded" role="menuitem"><a href="/research" role="menuitem" data-drupal-link-system-path="node/51">Research</a><button class="toggleparent" type="button"> <!-- Screen readers will see "close" --> <span class="show-for-sr">Toggle sub-items</span> <!-- Visual users will see the X, but not the "Close" text --> <span aria-hidden="true" class="plusminus"></span> </button>
+           <ul class="menu vertical first-sub" role="menu">
+            <li class="menu-item level-1"><a href="/research/engineering-and-applied-science" role="menuitem" data-drupal-link-system-path="node/20396">Engineering &amp; Applied Science</a></li>
+            <li class="menu-item level-1"><a href="/research/humanities" role="menuitem" data-drupal-link-system-path="node/20401">Humanities</a></li>
+            <li class="menu-item level-1"><a href="/research/natural-sciences" role="menuitem" data-drupal-link-system-path="node/20406">Natural Sciences</a></li>
+            <li class="menu-item level-1"><a href="/research/social-sciences" role="menuitem" data-drupal-link-system-path="node/20411">Social Sciences</a></li>
+            <li class="menu-item level-1"><a href="/research/interdisciplinary-approach" role="menuitem" data-drupal-link-system-path="node/20421">Interdisciplinary Approach</a></li>
+            <li class="menu-item level-1"><a href="/research/office-dean-research" role="menuitem" data-drupal-link-system-path="node/94976">Dean for Research Office</a></li>
+            <li class="menu-item level-1"><a href="/research/external-partnerships" role="menuitem" data-drupal-link-system-path="node/20416">External Partnerships</a></li>
+            <li class="menu-item level-1"><a href="/research/facilities-labs" role="menuitem" data-drupal-link-system-path="node/21111">Facilities &amp; Labs</a></li>
+           </ul></li>
+          <li class="menu-item level-0 menu-item--expanded" role="menuitem"><a href="/one-community" role="menuitem" data-drupal-link-system-path="node/56">One Community</a><button class="toggleparent" type="button"> <!-- Screen readers will see "close" --> <span class="show-for-sr">Toggle sub-items</span> <!-- Visual users will see the X, but not the "Close" text --> <span aria-hidden="true" class="plusminus"></span> </button>
+           <ul class="menu vertical first-sub" role="menu">
+            <li class="menu-item level-1"><a href="/one-community/lifelong-connections" role="menuitem" data-drupal-link-system-path="node/20436">Lifelong Connections</a></li>
+            <li class="menu-item level-1"><a href="/one-community/student-life" role="menuitem" data-drupal-link-system-path="node/20441">Student Life</a></li>
+            <li class="menu-item level-1"><a href="/one-community/arts-culture" role="menuitem" data-drupal-link-system-path="node/20446">Arts &amp; Culture</a></li>
+            <li class="menu-item level-1"><a href="/one-community/athletics" role="menuitem" data-drupal-link-system-path="node/20451">Athletics</a></li>
+            <li class="menu-item level-1"><a href="/one-community/living-princeton-nj" role="menuitem" data-drupal-link-system-path="node/20456">Living in Princeton, N.J.</a></li>
+            <li class="menu-item level-1"><a href="/one-community/housing-dining" role="menuitem" data-drupal-link-system-path="node/20461">Housing &amp; Dining</a></li>
+            <li class="menu-item level-1"><a href="/one-community/activities-organizations" role="menuitem" data-drupal-link-system-path="node/20466">Activities &amp; Organizations</a></li>
+            <li class="menu-item level-1"><a href="/one-community/cultural-affinity-groups" role="menuitem" data-drupal-link-system-path="node/20471">Cultural &amp; Affinity Groups</a></li>
+            <li class="menu-item level-1"><a href="/one-community/health-wellness" role="menuitem" data-drupal-link-system-path="node/20476">Health &amp; Wellness</a></li>
+            <li class="menu-item level-1"><a href="/one-community/religious-life" role="menuitem" data-drupal-link-system-path="node/20481">Religious Life</a></li>
+            <li class="menu-item level-1"><a href="/one-community/serving-public-good" role="menuitem" data-drupal-link-system-path="node/20486">Serving the Public Good</a></li>
+            <li class="menu-item level-1"><a href="/one-community/families" role="menuitem" data-drupal-link-system-path="node/20491">Families</a></li>
+           </ul></li>
+          <li class="menu-item level-0 menu-item--expanded" role="menuitem"><a href="/admission-aid" role="menuitem" data-drupal-link-system-path="node/61">Admission &amp; Aid</a><button class="toggleparent" type="button"> <!-- Screen readers will see "close" --> <span class="show-for-sr">Toggle sub-items</span> <!-- Visual users will see the X, but not the "Close" text --> <span aria-hidden="true" class="plusminus"></span> </button>
+           <ul class="menu vertical first-sub" role="menu">
+            <li class="menu-item level-1"><a href="/admission-aid/affordable-all" role="menuitem" data-drupal-link-system-path="node/20496">Affordable for All</a></li>
+            <li class="menu-item level-1"><a href="https://admission.princeton.edu/cost-aid" role="menuitem">About Financial Aid<span class="arrow"></span></a></li>
+            <li class="menu-item level-1"><a href="https://finaid.princeton.edu" role="menuitem">Current Undergraduate Financial Aid<span class="arrow"></span></a></li>
+            <li class="menu-item level-1"><a href="https://admission.princeton.edu" role="menuitem">Undergraduate Admission<span class="arrow"></span></a></li>
+            <li class="menu-item level-1"><a href="/admission-aid/graduate-admission" role="menuitem" data-drupal-link-system-path="node/20501">Graduate Admission</a></li>
+            <li class="menu-item level-1"><a href="/admission-aid/international-students" role="menuitem" data-drupal-link-system-path="node/20506">For International Students</a></li>
+           </ul></li>
+         </ul>
+        </nav>
+        <nav role="navigation" aria-labelledby="block-utilitymenu-menu" id="block-utilitymenu" data-block-plugin-id="system_menu_block:menu-toolbar" class="menu--menu-toolbar">
+         <h2 class="visually-hidden" id="block-utilitymenu-menu">Utility menu</h2>
+         <ul class="menu utility-menu vertical xmedium-horizontal clearfix" role="menubar">
+          <li class="menu-item"><a href="/news" role="menuitem" data-drupal-link-system-path="news">News</a></li>
+          <li class="menu-item"><a href="/events" role="menuitem" data-drupal-link-system-path="node/20286">Events</a></li>
+          <li class="menu-item menu-item--expanded"><a href="/meet-princeton/work-princeton" role="menuitem" data-drupal-link-system-path="node/21131">Work at Princeton</a><span class="dropcarat" aria-hidden="true"></span>
+           <ul class="menu vertical is-dropdown-submenu" role="menu">
+            <li class="menu-item"><a href="/work/benefits-services" role="menuitem" data-drupal-link-system-path="node/20736">Services &amp; Resources</a></li>
+            <li class="menu-item"><a href="/work/work-life-balance" role="menuitem" data-drupal-link-system-path="node/20191">Work-Life Balance</a></li>
+           </ul></li>
+          <li class="menu-item menu-item--expanded"><a href="/links/students" role="menuitem" data-drupal-link-system-path="node/20266">Links for</a><span class="dropcarat" aria-hidden="true"></span>
+           <ul class="menu vertical is-dropdown-submenu" role="menu">
+            <li class="menu-item"><a href="/links/students" role="menuitem" data-drupal-link-system-path="node/20266">Students</a></li>
+            <li class="menu-item"><a href="/links/faculty-staff" role="menuitem" data-drupal-link-system-path="node/20186">Faculty &amp; Staff</a></li>
+           </ul></li>
+          <li class="menu-item"><a href="http://alumni.princeton.edu" role="menuitem">Alumni<span class="arrow"></span></a></li>
+          <li class="menu-item"><a href="https://alumni.princeton.edu/give" role="menuitem">Giving<span class="arrow"></span></a></li>
+         </ul>
+        </nav>
+       </div>
+      </nav>
+      <form action="/search" method="GET" id="pu-header-search" accept-charset="UTF-8">
+       <div class="js-form-item form-item js-form-type-search form-item-search js-form-item-search form-no-label">
+        <input data-drupal-selector="edit-search" autocomplete="off" aria-label="Search Sites &amp; People" type="search" id="header-search" name="search" value="" size="15" maxlength="128" class="form-search"><label for="header-search">Search Sites &amp; People</label><button class="close-button" aria-label="Close search" type="button"> <span aria-hidden="true">×</span> </button>
+       </div>
+       <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="header-edit-actions">
+        <input data-drupal-selector="header-edit-submit" type="submit" id="header-edit-submit" value="Submit search" class="button js-form-submit form-submit">
+       </div>
+      </form>
+     </div>
+    </header>
+   </div>
+   <main id="main" class="main node-princeton-issues-planning-framework-to-guide-campus-development" role="main"><a name="main-content" id="main-content"></a>
+    <section class="clearfix">
+     <div>
+      <div data-drupal-messages-fallback class="hidden"></div>
+      <div id="block-tony-content" data-block-plugin-id="system_main_block" class="block__wrapper">
+       <article role="article" about="/news/2017/12/05/princeton-issues-planning-framework-guide-campus-development" class="node node--type-news node--view-mode-full">
+        <div class="image-cover-container crop-middle">
+         <div class="field field--name-field-news-cover-image field--type-entity-reference field--label-hidden field__item">
+          <article class="view-mode-captionless-full-width media media-image">
+           <div class="field field--name-image field--type-image field--label-hidden field__item">
+            <img srcset="/sites/default/files/styles/third_1x/public/images/2017/12/2017-campus-plan_40_d.jpg?itok=F3ig1tQy 640w, /sites/default/files/styles/half_1x/public/images/2017/12/2017-campus-plan_40_d.jpg?itok=yrnIlrHF 960w, /sites/default/files/styles/scale_1440/public/images/2017/12/2017-campus-plan_40_d.jpg?itok=yNrw9OFi 1440w, /sites/default/files/styles/half_2x/public/images/2017/12/2017-campus-plan_40_d.jpg?itok=hvoQuq7C 1920w, /sites/default/files/styles/full_2x/public/images/2017/12/2017-campus-plan_40_d.jpg?itok=5WgZ4bka 2880w" sizes="100vw" src="/sites/default/files/styles/half_2x/public/images/2017/12/2017-campus-plan_40_d.jpg?itok=hvoQuq7C" alt="Map of potential projects in campus plan" typeof="foaf:Image">
+           </div>
+          </article>
+         </div>
+        </div>
+        <div class="row news-content content-container" id="news-content">
+         <div class="columns small-12 large-2 share-icons show-for-large" data-sticky-container>
+          <div class="sticky" data-sticky data-anchor="news-content" data-margin-top="5"><a class="sharebox facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.princeton.edu%2Fnews%2F2017%2F12%2F05%2Fprinceton-issues-planning-framework-guide-campus-development"><span class="show-for-sr">Share on Facebook</span></a><a class="sharebox twitter" href="https://www.twitter.com/share?url=https%3A%2F%2Fwww.princeton.edu%2Fnews%2F2017%2F12%2F05%2Fprinceton-issues-planning-framework-guide-campus-development"><span class="show-for-sr">Share on Twitter</span></a><a class="sharebox linkedin" href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fwww.princeton.edu%2Fnews%2F2017%2F12%2F05%2Fprinceton-issues-planning-framework-guide-campus-development"><span class="show-for-sr">Share on LinkedIn</span></a><a class="sharebox email" href="mailto:?subject=Princeton%20News:%20Princeton%20issues%20planning%20framework%20to%20guide%20campus%20development&amp;body=Read%20more%20at%20https%3A%2F%2Fwww.princeton.edu%2Fnews%2F2017%2F12%2F05%2Fprinceton-issues-planning-framework-guide-campus-development"><span class="show-for-sr">Email</span></a><a class="sharebox print" href="javascript:window.print()"><span class="show-for-sr">Print</span></a>
+          </div>
+         </div>
+         <div class="columns small-12 large-8">
+          <div class="news-top">
+           <h1><span>Princeton issues planning framework to guide campus development</span></h1>
+           <div class="field field--name-field-byline field--type-entity-reference field--label-hidden field__items">
+            <div class="field__item">
+             The Office of Communications
+            </div>
+           </div>
+           <div class="field field--name-field-news-published-date field--type-datetime field--label-hidden field__item">
+            Dec. 5, 2017, 10 a.m.
+           </div>
+          </div>
+          <div class="cover-caption">
+           <article class="view-mode-caption-and-credit media media-image">
+            <div class="image-caption">
+             <div class="field field--name-field-media-caption field--type-text-long field--label-hidden field__item">
+              <p>Princeton University has issued a planning framework to guide campus development through 2026 in the context of potential needs over three decades. &nbsp;This illustration shows the potential initiatives of the planning framework&nbsp;as well as&nbsp;longer-term opportunity sites.</p>
+             </div>
+             <div class="image-byline">
+              <div class="field field--name-field-byline-freeform field--type-string field--label-hidden field__item">
+               Princeton University illustration
+              </div>
+             </div>
+            </div>
+           </article>
+          </div>
+          <div class="node__content">
+           <div class="field field--name-field-news-body field--type-text-long field--label-hidden field__item">
+            <p>Princeton University has issued a <a href="https://campusplan.princeton.edu/current">planning framework</a> to guide campus development over the next 10 years in the context of potential needs and developments over the next 30 years.</p>
+            <p>The framework proposes locations for several priority projects that were identified in a <a href="https://www.princeton.edu/strategicplan/framework/">strategic planning framework</a> that the University adopted in January 2016. These include a new residential college or colleges to permit the University to expand its undergraduate student body by 10 percent, new and improved facilities to support teaching and research in engineering and environmental studies, and space to accommodate academic partnerships with the corporate, government and nonprofit sectors in an expanded innovation ecosystem.</p>
+            <article class="view-mode-right-third media media-image">
+             <div class="field field--name-image field--type-image field--label-hidden field__item">
+              <img srcset="/sites/default/files/styles/third_1x/public/images/2017/12/2017-campus-plan_33_d.jpg?itok=T5JIAfQm 640w, /sites/default/files/styles/scale_1440/public/images/2017/12/2017-campus-plan_33_d.jpg?itok=LDfgsJrO 757w" sizes="(min-width:1440px) 33em, (min-width:40em) 22vw, 100vw" src="/sites/default/files/styles/third_1x/public/images/2017/12/2017-campus-plan_33_d.jpg?itok=T5JIAfQm" alt="Map of University land acquisitions" typeof="foaf:Image">
+             </div>
+             <div class="image-caption">
+              <div class="field field--name-field-media-caption field--type-text-long field--label-hidden field__item">
+               <p>Twentieth century University land acquisitions south of Lake Carnegie.</p>
+              </div>
+              <div class="image-byline">
+               <div class="field field--name-field-byline-freeform field--type-string field--label-hidden field__item">
+                Princeton University illustration
+               </div>
+              </div>
+             </div>
+            </article>
+            <p>The framework identifies opportunities to improve the already developed portions of the University’s campus, with particular attention to its lands east of Washington Road where new facilities for engineering and environmental studies would be located and a number of new walkways and other improvements are proposed. The framework also proposes the development of a new Lake Campus on lands south of Lake Carnegie that the University purchased almost a century ago.</p>
+            <p>In an introductory essay, Princeton President Christopher L. Eisgruber notes that the framework provides “options that allow Princeton to achieve its strategic objectives over the next 10 years, while preserving its capacity to respond flexibly to changing needs over the next 30 years and beyond.” The campus plan, he says, “develops a mission-centered vision both for the campus’s more historic precincts and for areas whose identities are still being shaped — including the campus lands east of Washington Road and south of Lake Carnegie.”</p>
+            <p>He notes that the "ultimate value” of the plan “will reside in its capacity to promote the activities that define Princeton’s mission. The campus must not only house programs and people; it must also foster collaboration, invite serendipity, nurture inclusivity, cultivate argument, inspire creativity, generate community, and facilitate the rigorous, fearless and path-breaking pursuit of truth.”&nbsp;</p>
+            <p>These goals are incorporated in a set of five principles that the framework proposes to guide the evolution of the campus:</p>
+            <ul>
+             <li>Provide an integrated environment for teaching, living, learning and research</li>
+             <li>Enhance the campus’s distinctive sense of place</li>
+             <li>Foster a setting that is welcoming and supportive and encourages positive interaction and exchange</li>
+             <li>Create a climate that encourages thoughtful and creative approaches to sustainability</li>
+             <li>And serve communities that extend beyond the campus.</li>
+            </ul>
+            <article class="view-mode-full-width media media-image">
+             <div class="field field--name-image field--type-image field--label-hidden field__item">
+              <img srcset="/sites/default/files/styles/third_1x/public/images/2017/12/2017-campus-plan_11_d.jpg?itok=QfH7QBZb 640w, /sites/default/files/styles/half_1x/public/images/2017/12/2017-campus-plan_11_d.jpg?itok=Nv2blEF5 960w, /sites/default/files/styles/scale_1440/public/images/2017/12/2017-campus-plan_11_d.jpg?itok=CwRTI_9P 1440w, /sites/default/files/styles/half_2x/public/images/2017/12/2017-campus-plan_11_d.jpg?itok=R-xYqOCH 1920w, /sites/default/files/styles/full_2x/public/images/2017/12/2017-campus-plan_11_d.jpg?itok=-L4AIuYH 2880w" sizes="(min-width:1440px) 100em, (min-width:64.063em) 60vw, 100vw" src="/sites/default/files/styles/half_2x/public/images/2017/12/2017-campus-plan_11_d.jpg?itok=R-xYqOCH" alt="Map of campus plan study area" typeof="foaf:Image">
+             </div>
+             <div class="image-caption">
+              <div class="field field--name-field-media-caption field--type-text-long field--label-hidden field__item">
+               <p>The development of the&nbsp;planning framework looked at all of the University’s campus-related lands.</p>
+              </div>
+              <div class="image-byline">
+               <div class="field field--name-field-byline-freeform field--type-string field--label-hidden field__item">
+                Princeton University illustration
+               </div>
+              </div>
+             </div>
+            </article>
+            <p>The campus planning process began in July 2014. As Executive Vice President Treby Williams, who oversaw the plan’s development, has observed, “while the University has a long tradition of thoughtful campus planning, the 2026 framework represents the most ambitious and comprehensive planning process in its history.”</p>
+            <p>Unlike the University’s<a href="https://campusplan.princeton.edu/prior-campus-plan"> previous 10-year plan</a> that extended through 2016, this process looked at all of the University’s campus-related lands, including its lands south of Lake Carnegie in West Windsor. In addition to questions of land use and landscape, it addresses issues related to sustainability, movement patterns through and around the campus, and the University’s utility infrastructure. “The breadth and depth of this multi-dimensional approach to planning are exceptional and rare if not unique among institutions of higher education,” Williams said.</p>
+            <p>The principal consultant was the Toronto-based planning and design firm Urban Strategies Inc., while other consultants contributed expertise in areas ranging from architecture and landscape architecture to sustainability, athletic facilities, space utilization, historic preservation, transportation, parking, energy, information technology, storm water management, water reuse, civil engineering and real estate.</p>
+            <p>The planning team,&nbsp;led by University Architect Ron McCoy, met with students, faculty, staff, alumni, community members, and local, state, and regional officials; invited in the process engagement through a campus plan blog website; and held several open meetings on campus and in Princeton and West Windsor.</p>
+            <p>In an essay included in the framework, McCoy predicts that “the 2026 plan will be remembered for providing flexible options for stewardship of the central campus, renewal of the eastern campus, and, with the option to expand across Lake Carnegie, a vision for a fundamentally new era in the history of the campus.”&nbsp;</p>
+            <p>The proposed Lake Campus south of Lake Carnegie is envisioned as a dynamic, mixed-use community in a gently sloping landscape that could accommodate athletic facilities; administrative and academic partnership space; housing for up to 500 graduate students and potentially for postdoctoral researchers; convening, retail and amenity space; and a parking area and transit hub with shuttle, pedestrian and bicycle connections to other parts of the campus and the community.</p>
+            <article class="view-mode-full-width media media-image">
+             <div class="field field--name-image field--type-image field--label-hidden field__item">
+              <img srcset="/sites/default/files/styles/third_1x/public/images/2017/12/2017-campus-plan_76_d.jpg?itok=GGJqttS0 640w, /sites/default/files/styles/half_1x/public/images/2017/12/2017-campus-plan_76_d.jpg?itok=uTo3vykA 960w, /sites/default/files/styles/scale_1440/public/images/2017/12/2017-campus-plan_76_d.jpg?itok=HXB3Uvw3 1440w, /sites/default/files/styles/half_2x/public/images/2017/12/2017-campus-plan_76_d.jpg?itok=uPIe_fkU 1920w, /sites/default/files/styles/full_2x/public/images/2017/12/2017-campus-plan_76_d.jpg?itok=onCF-5-F 2880w" sizes="(min-width:1440px) 100em, (min-width:64.063em) 60vw, 100vw" src="/sites/default/files/styles/half_2x/public/images/2017/12/2017-campus-plan_76_d.jpg?itok=uPIe_fkU" alt="Map of lake campus initiatives and projects from campus plan" typeof="foaf:Image">
+             </div>
+             <div class="image-caption">
+              <div class="field field--name-field-media-caption field--type-text-long field--label-hidden field__item">
+               <p>The campus planning framework envisions a new Lake Campus as an integrated extension of the existing campus. This drawing shows a perspective looking north toward Lake Carnegie and&nbsp;the Delaware and Raritan Canal.</p>
+              </div>
+              <div class="image-byline">
+               <div class="field field--name-field-byline-freeform field--type-string field--label-hidden field__item">
+                Princeton University illustration
+               </div>
+              </div>
+             </div>
+            </article>
+            <p>The framework proposes walkways and bike paths to and through the Lake Campus, including a pedestrian bridge that would cross the lake and the Delaware and Raritan Canal at a location between Washington Road and Harrison Street. The bridge would be designed to preserve the historic canal’s character and the natural features of the area while providing members of the campus community, visitors to campus and the general public with a safe and scenic way to cross the lake without having to use existing heavily travelled vehicular roadways. The bridge would be integrated into the regional bicycle and sidewalk networks in Princeton, West Windsor and Plainsboro.&nbsp;</p>
+            <p>The proposed residential college location is south of Poe Field, east of Elm Drive, and near the existing Butler, Wilson and Whitman colleges. While only one new residential college is needed to accommodate the proposed increase of 125 students per class, the planning process sought to identify a site that also could&nbsp;accommodate a second college.</p>
+            <article class="view-mode-full-width media media-image">
+             <div class="field field--name-image field--type-image field--label-hidden field__item">
+              <img srcset="/sites/default/files/styles/third_1x/public/images/2017/12/2017-campus-plan_58_d.jpg?itok=k9tVH1kA 640w, /sites/default/files/styles/half_1x/public/images/2017/12/2017-campus-plan_58_d.jpg?itok=_c78u4Ew 960w, /sites/default/files/styles/scale_1440/public/images/2017/12/2017-campus-plan_58_d.jpg?itok=8DV2x8g- 1440w, /sites/default/files/styles/half_2x/public/images/2017/12/2017-campus-plan_58_d.jpg?itok=zjyEAyxT 1920w, /sites/default/files/styles/full_2x/public/images/2017/12/2017-campus-plan_58_d.jpg?itok=M8TOuO3Q 2880w" sizes="(min-width:1440px) 100em, (min-width:64.063em) 60vw, 100vw" src="/sites/default/files/styles/half_2x/public/images/2017/12/2017-campus-plan_58_d.jpg?itok=zjyEAyxT" alt="Map of residential colleges and Poe Field from campus plan" typeof="foaf:Image">
+             </div>
+             <div class="image-caption">
+              <div class="field field--name-field-media-caption field--type-text-long field--label-hidden field__item">
+               <p>The University’s strategic planning process identified expansion of the undergraduate student body as a priority. This expansion requires at least one new residential college, which has been proposed for a site south of Poe/Pardee Fields that also could accommodate a second college, either in the near or longer term.</p>
+              </div>
+              <div class="image-byline">
+               <div class="field field--name-field-byline-freeform field--type-string field--label-hidden field__item">
+                Princeton University illustration
+               </div>
+              </div>
+             </div>
+            </article>
+            <p>Development of the first residential college on this site would require the relocation of the Class of 1895 Softball Field and the Lenz Tennis Center. The framework proposes that new and improved facilities for softball and tennis be included on the Lake Campus, which already includes a rugby field and cross-country course. The new tennis site would include a racquet center for indoor tennis and squash, along with other outdoor courts for recreational use.</p>
+            <p>Over time it is anticipated that other sports might be located on the Lake Campus, including potentially a hockey arena with two sheets of ice to replace the aging Baker Rink. A proposed athletics hub would include locker rooms, coaches' offices, training facilities and other amenities, and the campus shuttle would be scheduled with careful attention to the needs of student athletes.</p>
+            <article class="view-mode-full-width media media-image">
+             <div class="field field--name-image field--type-image field--label-hidden field__item">
+              <img srcset="/sites/default/files/styles/third_1x/public/images/2017/12/2017-campus-plan_68_d.jpg?itok=QF3oGZi3 640w, /sites/default/files/styles/half_1x/public/images/2017/12/2017-campus-plan_68_d.jpg?itok=nnEdG7if 960w, /sites/default/files/styles/scale_1440/public/images/2017/12/2017-campus-plan_68_d.jpg?itok=bKxhPwBq 1440w, /sites/default/files/styles/half_2x/public/images/2017/12/2017-campus-plan_68_d.jpg?itok=k8DfGCN2 1920w, /sites/default/files/styles/full_2x/public/images/2017/12/2017-campus-plan_68_d.jpg?itok=1SQy0IQx 2880w" sizes="(min-width:1440px) 100em, (min-width:64.063em) 60vw, 100vw" src="/sites/default/files/styles/half_2x/public/images/2017/12/2017-campus-plan_68_d.jpg?itok=k8DfGCN2" alt="Map of east campus initiatives from campus plan" typeof="foaf:Image">
+             </div>
+             <div class="image-caption">
+              <div class="field field--name-field-media-caption field--type-text-long field--label-hidden field__item">
+               <p>Significant development on the East Campus and a transformation over time from its existing street and block pattern to a finer grained and variegated campus setting akin to the Central Campus is part of the campus plan framework.</p>
+              </div>
+              <div class="image-byline">
+               <div class="field field--name-field-byline-freeform field--type-string field--label-hidden field__item">
+                Princeton University illustration
+               </div>
+              </div>
+             </div>
+            </article>
+            <p>The proposed location for engineering and environmental studies along the north side of Ivy Lane and Western Way would facilitate regular interaction between these programs and with nearby natural science departments and the <a href="http://wws.princeton.edu/">Woodrow Wilson School of Public and International Affairs</a>. The location is near existing engineering spaces that will remain in place, and once new spaces become available, decisions will have to be made about whether to renovate, repurpose or replace some or all of the existing <a href="http://engineering.princeton.edu">Engineering</a> Quadrangle buildings. Decisions will also have to be made about best uses for the spaces in Guyot and Eno halls that would be vacated by the <a href="https://eeb.princeton.edu/">Department of Ecology and Evolutionary Biology</a>, the <a href="https://www.princeton.edu/geosciences/">Department of Geosciences</a> and the <a href="https://environment.princeton.edu/">Princeton Environmental Institute</a>.</p>
+            <p>To facilitate pedestrian and cycling movement throughout the campus, the framework proposes two enhanced “campus connectors” — an east-west connector from the Graduate College on the west of the Central Campus to a new activity node on the East Campus near the new engineering and environmental studies buildings, and a north-south connector on the East Campus from Nassau Street to the proposed pedestrian bridge and the Lake Campus.</p>
+            <article class="view-mode-full-width media media-image">
+             <div class="field field--name-image field--type-image field--label-hidden field__item">
+              <img srcset="/sites/default/files/styles/third_1x/public/images/2017/12/2017-campus-plan_31_d.jpg?itok=ownaiA49 640w, /sites/default/files/styles/half_1x/public/images/2017/12/2017-campus-plan_31_d.jpg?itok=w9ZES0Br 960w, /sites/default/files/styles/scale_1440/public/images/2017/12/2017-campus-plan_31_d.jpg?itok=XvStZNZW 1440w, /sites/default/files/styles/half_2x/public/images/2017/12/2017-campus-plan_31_d.jpg?itok=56Mu3ouz 1920w, /sites/default/files/styles/full_2x/public/images/2017/12/2017-campus-plan_31_d.jpg?itok=EqVIs0tj 2880w" sizes="(min-width:1440px) 100em, (min-width:64.063em) 60vw, 100vw" src="/sites/default/files/styles/half_2x/public/images/2017/12/2017-campus-plan_31_d.jpg?itok=56Mu3ouz" alt="Map of connections between central campus, east campus and lake campus from the campus plan" typeof="foaf:Image">
+             </div>
+             <div class="image-caption">
+              <div class="field field--name-field-media-caption field--type-text-long field--label-hidden field__item">
+               <p>The framework envisions a campus with three distinct yet cohesive areas: Central Campus, East Campus and Lake Campus. The campus could be connected through multiple internal walkways and pathways, but also by Washington Road, an east-west campus connector, a north-south campus connector and Lake Carnegie.</p>
+              </div>
+              <div class="image-byline">
+               <div class="field field--name-field-byline-freeform field--type-string field--label-hidden field__item">
+                Princeton University illustration
+               </div>
+              </div>
+             </div>
+            </article>
+            <p>The framework also proposes an enhanced “diagonal walk” from Mathey College in the northwest of the Central Campus to McCosh Health Center; options for expanding the capacity of <a href="https://uhs.princeton.edu/">University Health Services</a>; the development of an enhanced activity node in the area near Frist Campus Center, Guyot Hall and McCosh Health Center; and reconfiguration of the site where Wilson College is located.</p>
+            <p>The framework incorporates a number of sustainability objectives and identifies strategies to promote cycling, walking, mass transit and other alternatives to single-occupancy vehicles. To meet the University’s parking needs it proposes a parking structure on the current lot 21 on the East Campus and a new surface parking lot on the Lake Campus that would be connected to the rest of the campus and the community by pathways for walking and biking and by <a href="https://transportation.princeton.edu/options/tigertransit">TigerTransit</a> shuttles. The framework also identifies potential locations to reserve for future housing for faculty and staff as well as for graduate students and postdocs.</p>
+            <article class="view-mode-full-width media media-image">
+             <div class="field field--name-image field--type-image field--label-hidden field__item">
+              <img srcset="/sites/default/files/styles/third_1x/public/images/2017/12/2017-campus-plan_130_d.jpg?itok=Jh4WMKdH 640w, /sites/default/files/styles/half_1x/public/images/2017/12/2017-campus-plan_130_d.jpg?itok=23ZcarQa 960w, /sites/default/files/styles/scale_1440/public/images/2017/12/2017-campus-plan_130_d.jpg?itok=HS1NWJdl 1440w, /sites/default/files/styles/half_2x/public/images/2017/12/2017-campus-plan_130_d.jpg?itok=3pySuMo_ 1920w, /sites/default/files/styles/full_2x/public/images/2017/12/2017-campus-plan_130_d.jpg?itok=3Hn3S5FO 2880w" sizes="(min-width:1440px) 100em, (min-width:64.063em) 60vw, 100vw" src="/sites/default/files/styles/half_2x/public/images/2017/12/2017-campus-plan_130_d.jpg?itok=3pySuMo_" alt="Map of potential cycling network from campus plan" typeof="foaf:Image">
+             </div>
+             <div class="image-caption">
+              <div class="field field--name-field-media-caption field--type-text-long field--label-hidden field__item">
+               <p>To achieve its full potential, a&nbsp;cycling network would comprise&nbsp;an interconnected system of both on- and off-road paths as well as a range of bike amenities&nbsp;at appropriate campus locations.</p>
+              </div>
+              <div class="image-byline">
+               <div class="field field--name-field-byline-freeform field--type-string field--label-hidden field__item">
+                Princeton University illustration
+               </div>
+              </div>
+             </div>
+            </article>
+            <p>The planning process recommended preserving the Butler Tract for future use for University-related housing and preserving future flexibility for long-term use in support of the University’s educational mission for the lands currently leased to the Springdale Golf Club. The framework makes no recommendation regarding specific uses of the Springdale lands, although it notes that any future development would not occur for at least 10 years, and that any development would be “sensitive to potential impacts on the adjacent neighborhood; would enhance the stream corridor through these lands and recognize the historic attributes of the property; and would seek to improve public access to open space on the site, including via pedestrian and cycling pathways.”</p>
+            <p>While the planning framework suggests possible locations and options for campus development, it does not determine whether or when the University will proceed with the projects or what they will look like. The University is developing a capital plan to determine which structures it will aim to build and when, and it is engaged in a campaign planning process to determine how much it will be able to raise to help pay for the projects.</p>
+            <p>“In reading this framework,” it says, “it is important to remember that the purpose of campus planning is to provide guidance for where development might occur, but whether, when and how such development will occur depends on the outcomes of these other capital planning and campaign planning processes.”</p>
+            <p>In its final section, the framework notes that “just as the Princeton campus will continue to evolve as projects are approved and new opportunities and priorities emerge, so too is this planning framework intended to evolve over time and with experience…. [I]t leaves the door open to multiple possible directions for the future, while providing enough guidance to inform decision-making over the nearer term. By integrating planning for development with planning related to land use, sustainability, infrastructure, transportation and landscape, it allows the University to pursue multiple objectives in a comprehensive way.”</p>
+            <p>It concludes: “This framework envisions a campus with an expanded student body and one or more new residential colleges; substantially expanded and improved space for engineering and environmental studies; a thoroughly reimagined East Campus; a lively and attractive Lake Campus fully integrated into the rest of the University; a geography in which Lake Carnegie has moved from the periphery to the center of campus; enhanced achievements in multiple forms of sustainability; a significant shift from single-occupancy vehicles to other modes of transit, including walking, cycling, shuttling and mass transit; and new academic partnerships in an innovation ecosystem that supports the mission of the University and increases its capacity to have a positive impact on the world.</p>
+            <p>“The purpose of the planning framework is to help the University make wise and informed decisions as it pursues these goals and others that undoubtedly will emerge over time, while sustaining the distinctive sense of place that has long characterized the campus lands that have been entrusted to its care.” &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+           </div>
+          </div>
+         </div>
+         <div class="columns small-12 large-2"></div>
+        </div>
+       </article>
+       <div class="views-element-container">
+        <div class="collapse row related-news js-view-dom-id-1b1ba3a4589aa6a3f97660399bd516732b84a3dabb3ebcf995eec9c55c7ec4ee">
+         <header>
+          <h2>Related Stories</h2>
+         </header>
+         <div class="small-12 medium-6 large-4 columns views-row">
+          <article role="article" about="/news/2017/04/18/university-considers-potential-sites-residential-college-engineering-environmental" class="card news-teaser news-teaser-small content-tile-flashcard content-tile-set-item" data-equalizer-watch>
+           <div class="card-section"><a href="/news/2017/04/18/university-considers-potential-sites-residential-college-engineering-environmental"> <h3> <span>University considers potential sites for residential college, engineering, environmental studies</span> </h3> <p></p> 
+             <div class="readmore arrow" aria-hidden="true">
+              Read more
+             </div> </a>
+           </div>
+          </article>
+         </div>
+         <div class="small-12 medium-6 large-4 columns views-row">
+          <article role="article" about="/news/2018/05/02/architects-planners-selected-lake-campus-master-plan-project-princeton" class="card news-teaser news-teaser-small content-tile-flashcard content-tile-set-item" data-equalizer-watch>
+           <div class="card-section"><a href="/news/2018/05/02/architects-planners-selected-lake-campus-master-plan-project-princeton"> <h3> <span>Architects, planners selected for Lake Campus Master Plan project at Princeton</span> </h3> <p></p> 
+             <div class="readmore arrow" aria-hidden="true">
+              Read more
+             </div> </a>
+           </div>
+          </article>
+         </div>
+         <div class="small-12 medium-6 large-4 columns views-row">
+          <article role="article" about="/news/2016/09/20/university-gives-town-residents-officials-update-development-2026-campus-plan" class="legacy-layout card news-teaser news-teaser-small content-tile-flashcard content-tile-set-item" data-equalizer-watch>
+           <div class="card-section"><a href="/news/2016/09/20/university-gives-town-residents-officials-update-development-2026-campus-plan"> <h3> <span>University gives town residents, officials update on development of 2026 Campus Plan</span> </h3> <p></p> 
+             <div class="readmore arrow" aria-hidden="true">
+              Read more
+             </div> </a>
+           </div>
+          </article>
+         </div>
+         <div class="small-12 medium-6 large-4 columns views-row">
+          <article role="article" about="/news/2018/02/08/deborah-berke-partners-selected-residential-college-project-princeton" class="card news-teaser news-teaser-small content-tile-flashcard content-tile-set-item" data-equalizer-watch>
+           <div class="card-section"><a href="/news/2018/02/08/deborah-berke-partners-selected-residential-college-project-princeton"> <h3> <span>Deborah Berke Partners selected for residential college project at Princeton</span> </h3> <p></p> 
+             <div class="readmore arrow" aria-hidden="true">
+              Read more
+             </div> </a>
+           </div>
+          </article>
+         </div>
+         <div class="small-12 medium-6 large-4 columns views-row">
+          <article role="article" about="/news/2013/02/12/details-arts-and-transit-project-schedule-discussed-campus-meeting" class="legacy-layout card news-teaser news-teaser-small content-tile-flashcard content-tile-set-item" data-equalizer-watch>
+           <div class="card-section"><a href="/news/2013/02/12/details-arts-and-transit-project-schedule-discussed-campus-meeting"> <h3> <span>Details of Arts and Transit Project schedule discussed at campus meeting</span> </h3> <p></p> 
+             <div class="readmore arrow" aria-hidden="true">
+              Read more
+             </div> </a>
+           </div>
+          </article>
+         </div>
+         <div class="small-12 medium-6 large-4 columns views-row">
+          <article role="article" about="/news/2012/05/02/construction-begin-summer-new-graduate-student-housing-complex-hibben-magie-site" class="legacy-layout card news-teaser news-teaser-small content-tile-flashcard content-tile-set-item" data-equalizer-watch>
+           <div class="card-section"><a href="/news/2012/05/02/construction-begin-summer-new-graduate-student-housing-complex-hibben-magie-site"> <h3> <span>Construction to begin this summer on new graduate student housing complex at Hibben-Magie site</span> </h3> <p></p> 
+             <div class="readmore arrow" aria-hidden="true">
+              Read more
+             </div> </a>
+           </div>
+          </article>
+         </div>
+         <div class="small-12 medium-6 large-4 columns views-row">
+          <article role="article" about="/news/2008/01/17/brochure-provides-highlights-10-year-campus-plan" class="legacy-layout card news-teaser news-teaser-small content-tile-flashcard content-tile-set-item" data-equalizer-watch>
+           <div class="card-section"><a href="/news/2008/01/17/brochure-provides-highlights-10-year-campus-plan"> <h3> <span>Brochure provides highlights of 10-year Campus Plan</span> </h3> <p></p> 
+             <div class="readmore arrow" aria-hidden="true">
+              Read more
+             </div> </a>
+           </div>
+          </article>
+         </div>
+         <footer><a class="button" href="/news">View All News</a>
+         </footer>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="page-footer">
+    <div class="row">
+     <div class="small-6 xmedium-3 columns">
+      <div>
+       <nav role="navigation" aria-labelledby="block-footergroup1-menu" id="block-footergroup1" data-block-plugin-id="system_menu_block:footer" class="menu--footer block--contact-links">
+        <h2 class="visually-hidden" id="block-footergroup1-menu" aria-hidden="true">Contact links</h2>
+        <ul class="menu vertical" role="menu">
+         <li class="menu-item"><a href="/meet-princeton/contact-us" role="menuitem" data-drupal-link-system-path="node/20181">Contact Us</a></li>
+         <li class="menu-item"><a href="https://accessibility.princeton.edu/resources/accessibility-help" role="menuitem">Accessibility</a></li>
+         <li class="menu-item"><a href="/search/people-advanced" role="menuitem" data-drupal-link-system-path="search/people-advanced">Advanced People Search</a></li>
+         <li class="menu-item"><a href="/news/media-inquiries" role="menuitem" data-drupal-link-system-path="node/20526">Media Inquiries</a></li>
+         <li class="menu-item"><a href="/feedback" role="menuitem" data-drupal-link-system-path="contact/beta_feedback">Website Feedback</a></li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+     <div class="small-6 xmedium-3 columns">
+      <div>
+       <nav role="navigation" aria-labelledby="block-footergroup2-menu" id="block-footergroup2" data-block-plugin-id="system_menu_block:footer-2" class="menu--footer-2 block--visiting-links">
+        <h2 class="visually-hidden" id="block-footergroup2-menu" aria-hidden="true">Visiting links</h2>
+        <ul class="menu vertical" role="menu">
+         <li class="menu-item"><a href="/meet-princeton/visit-us" role="menuitem" data-drupal-link-system-path="node/20531">Plan a Visit</a></li>
+         <li class="menu-item"><a href="/meet-princeton/visit-us#campus-maps" role="menuitem" data-drupal-link-system-path="node/20531">Maps &amp; Shuttles</a></li>
+         <li class="menu-item"><a href="http://www.goprincetontigers.com" role="menuitem">Varsity Athletics</a></li>
+         <li class="menu-item"><a href="http://giving.princeton.edu" role="menuitem">Giving to Princeton</a></li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+     <div class="small-6 xmedium-3 columns">
+      <div>
+       <nav role="navigation" aria-labelledby="block-footergroup3-menu" id="block-footergroup3" data-block-plugin-id="system_menu_block:footer-3" class="menu--footer-3 block--academic-links">
+        <h2 class="visually-hidden" id="block-footergroup3-menu" aria-hidden="true">Academic links</h2>
+        <ul class="menu vertical" role="menu">
+         <li class="menu-item"><a href="http://library.princeton.edu" role="menuitem">Library</a></li>
+         <li class="menu-item"><a href="https://registrar.princeton.edu/academic-calendar/" role="menuitem">Academic Calendar</a></li>
+         <li class="menu-item"><a href="/links/students" role="menuitem" data-drupal-link-system-path="node/20266">Student Links</a></li>
+         <li class="menu-item"><a href="/links/faculty-staff" role="menuitem" data-drupal-link-system-path="node/20186">Faculty &amp; Staff Links</a></li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+     <div class="small-6 xmedium-3 columns">
+      <div>
+       <nav role="navigation" aria-labelledby="block-footersocialmedia-menu" id="block-footersocialmedia" data-block-plugin-id="system_menu_block:footer-sm" class="menu--footer-sm block--footer-social-media">
+        <h2 class="visually-hidden" id="block-footersocialmedia-menu" aria-hidden="true">Footer social media</h2>
+        <ul class="menu vertical" role="menu">
+         <li class="menu-item sprite-before facebook"><a href="https://www.facebook.com/princetonu" role="menuitem">Facebook</a></li>
+         <li class="menu-item sprite-before twitter"><a href="https://twitter.com/princeton" role="menuitem">Twitter</a></li>
+         <li class="menu-item sprite-before instagram"><a href="https://www.instagram.com/princeton/" role="menuitem">Instagram</a></li>
+         <li class="menu-item sprite-before snapchat"><a href="https://www.snapchat.com/add/princetonu" role="menuitem">Snapchat</a></li>
+         <li class="menu-item sprite-before linkedin"><a href="https://www.linkedin.com/school/157313/" role="menuitem">LinkedIn</a></li>
+         <li class="menu-item sprite-before youtube"><a href="https://www.youtube.com/princeton" role="menuitem">YouTube</a></li>
+         <li class="menu-item sprite-before social-media-directory"><a href="http://socialmedia.princeton.edu/accounts" role="menuitem">Social Media Directory</a></li>
+        </ul>
+       </nav>
+      </div>
+     </div>
+    </div>
+    <div class="midfooter row">
+     <div class="columns"><strong>Equal Opportunity and Nondiscrimination at Princeton University:</strong> Princeton University believes that commitment to principles of fairness and respect for all is favorable to the free and open exchange of ideas, and the University seeks to reach out as widely as possible in order to attract the ablest individuals as students, faculty, and staff. In applying this policy, the University is committed to nondiscrimination on the basis of personal beliefs or characteristics such as political views, religion, national or ethnic origin, race, color, sex, sexual orientation, gender identity or expression, pregnancy, age, marital or domestic partnership status, veteran status, disability, genetic information and/or other characteristics protected by applicable law in any phase of its education or employment programs or activities. In addition, pursuant to Title IX of the Education Amendments of 1972 and supporting regulations, Princeton does not discriminate on the basis of sex in the education programs or activities that it operates; this extends to admission and employment. Inquiries about the application of Title IX and its supporting regulations may be directed to the Assistant Secretary for Civil Rights, Office for Civil Rights, U.S. Department of Education or to the University's Sexual Misconduct/Title IX Coordinator. See Princeton’s full <a href="https://rrr.princeton.edu/eop">Equal Opportunity Policy and Nondiscrimination Statement</a>. 
+     </div>
+    </div>
+    <div class="subfooter row" typeof="schema: Organization">
+     <div class="subfooter-first small-6 medium-4 large-5 columns"><a href="http://www.princeton.edu"><img alt="" src="/themes/custom/tony/images/logo-white.svg"><span property="schema:name" class="show-for-sr">Princeton University</span></a>
+     </div>
+     <div class="subfooter-second small-6 medium-8 large-7 columns">
+      <div class="row">
+       <div class="small-12 medium-5 large-4 columns address">
+        <div property="schema: address" typeof="PostalAddress"><span property="addressLocality">Princeton, NJ</span><span property="schema: postalCode">08544</span>
+        </div>
+        <div>
+         Operator: <span property="telephone">(609) 258-3000</span>
+        </div>
+       </div>
+       <div class="small-12 medium-7 large-8 columns text-right">
+        <div class="copyright">
+          © 2022 The Trustees of Princeton&nbsp;University 
+        </div>
+        <div>
+         <nav role="navigation" aria-labelledby="block-subfooterlinks-menu" id="block-subfooterlinks" data-block-plugin-id="system_menu_block:subfooter-links" class="menu--subfooter-links block--subfooter-links">
+          <h2 class="visually-hidden" id="block-subfooterlinks-menu" aria-hidden="true">Subfooter links</h2>
+          <ul class="menu float-right" role="menu">
+           <li class="menu-item"><a href="/meet-princeton/copyright-infringement" role="menuitem" data-drupal-link-system-path="node/20201">Copyright Infringement</a></li>
+           <li class="menu-item"><a href="/privacy-notice" role="menuitem" data-drupal-link-system-path="node/174186">Privacy Notice</a></li>
+          </ul>
+         </nav>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </div><!-- DO NOT REMOVE this comment. The UltraDNS service tests for the following string to confirm that the site is available: ultradns-test-string -->
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/136756","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"ajax":[],"user":{"uid":0,"permissionsHash":"fdd3a7e2d99481993235bdcf7649ecbbb79b084fad1707ca75a8c53d95d3980e"}}</script>
+  <script src="/sites/default/files/js/js_zkbxNfB-Ofh3Q0hFiOXVD_OiFVaqXZr-C_nYyprdKW0.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"465817224","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTkRYVlE7UwVVUVQ=","queueTime":0,"applicationTime":52,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="en-US">
+ <head>
+  <meta charset="UTF-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"820859c140",applicationID:"93672174"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <title>Occupational Health Center – Stanford Environmental Health &amp; Safety</title>
+  <meta name="robots" content="max-image-preview:large">
+  <link rel="dns-prefetch" href="//ehs.stanford.edu">
+  <link rel="dns-prefetch" href="//static.addtoany.com">
+  <link rel="dns-prefetch" href="//ajax.googleapis.com">
+  <link rel="dns-prefetch" href="//unpkg.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//www.stanford.edu">
+  <link rel="dns-prefetch" href="//s.w.org">
+  <script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ehs.stanford.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.3"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+  <link rel="stylesheet" id="wp-block-library-css" href="https://ehs.stanford.edu/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3" type="text/css" media="all">
+  <link rel="stylesheet" id="wc-blocks-vendors-style-css" href="https://ehs.stanford.edu/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css?ver=6.7.3" type="text/css" media="all">
+  <link rel="stylesheet" id="wc-blocks-style-css" href="https://ehs.stanford.edu/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-style.css?ver=6.7.3" type="text/css" media="all">
+  <link rel="stylesheet" id="elasticpress-related-posts-block-css" href="https://ehs.stanford.edu/wp-content/plugins/elasticpress/dist/css/related-posts-block-styles.min.css?ver=3.6.6" type="text/css" media="all">
+  <link rel="stylesheet" id="awsm-ead-public-css" href="https://ehs.stanford.edu/wp-content/plugins/embed-any-document/css/embed-public.min.css?ver=2.7.1" type="text/css" media="all">
+  <style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+  <link rel="stylesheet" id="ehs_easter_egg_styles-css" href="https://ehs.stanford.edu/wp-content/plugins/ehs-easter-eggs-wp/assets/css/justifiedGallery.css?ver=5.9.3" type="text/css" media="all">
+  <link rel="stylesheet" id="suehs-style-css" href="https://ehs.stanford.edu/wp-content/themes/suehs/style.css?ver=5.9.3" type="text/css" media="all">
+  <link rel="stylesheet" id="font-awesome-css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css" media="all">
+  <link rel="stylesheet" id="google-fonts-css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic" type="text/css" media="all">
+  <link rel="stylesheet" id="su-identity-css" href="//www.stanford.edu/su-identity/css/su-identity.css" type="text/css" media="all">
+  <link rel="stylesheet" id="original-theme-0-css" href="https://ehs.stanford.edu/wp-content/themes/suehs/assets/css/original-theme-0.css" type="text/css" media="all">
+  <link rel="stylesheet" id="original-theme-1-css" href="https://ehs.stanford.edu/wp-content/themes/suehs/assets/css/original-theme-1.css" type="text/css" media="all">
+  <link rel="stylesheet" id="theme-style-overrides-css" href="https://ehs.stanford.edu/wp-content/themes/suehs/assets/css/theme-style-overrides.css?ver=33" type="text/css" media="all">
+  <link rel="stylesheet" id="add-to-calendar-css" href="https://ehs.stanford.edu/wp-content/themes/suehs/assets/css/atc-style.css" type="text/css" media="all">
+  <link rel="stylesheet" id="tippy-css-css" href="//unpkg.com/tippy.js@5/dist/backdrop.css" type="text/css" media="all">
+  <link rel="stylesheet" id="tippy-css-light-css" href="//unpkg.com/tippy.js@5/themes/light.css" type="text/css" media="all">
+  <link rel="stylesheet" id="gfonts-open-sans-css" href="//fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap" type="text/css" media="all">
+  <link rel="stylesheet" id="simple-banner-style-css" href="https://ehs.stanford.edu/wp-content/plugins/simple-banner/simple-banner.css?ver=2.11.0" type="text/css" media="all">
+  <link rel="stylesheet" id="tingle-style-css" href="https://ehs.stanford.edu/wp-content/plugins/suehs-preview-ninjaform/assets/css/tingle.css?ver=5.9.3" type="text/css" media="all">
+  <link rel="stylesheet" id="suehs-preview-form-style-css" href="https://ehs.stanford.edu/wp-content/plugins/suehs-preview-ninjaform/assets/css/preview-form.css?ver=5.9.3" type="text/css" media="all">
+  <link rel="stylesheet" id="woocommerce-layout-css" href="https://ehs.stanford.edu/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=6.2.1" type="text/css" media="all">
+  <link rel="stylesheet" id="woocommerce-smallscreen-css" href="https://ehs.stanford.edu/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=6.2.1" type="text/css" media="only screen and (max-width: 768px)">
+  <link rel="stylesheet" id="woocommerce-general-css" href="https://ehs.stanford.edu/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=6.2.1" type="text/css" media="all">
+  <style id="woocommerce-inline-inline-css" type="text/css">
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+  <link rel="stylesheet" id="simple-favorites-css" href="https://ehs.stanford.edu/wp-content/plugins/favorites/assets/css/favorites.css?ver=2.3.2" type="text/css" media="all">
+  <link rel="stylesheet" id="addtoany-css" href="https://ehs.stanford.edu/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.16" type="text/css" media="all">
+  <style id="addtoany-inline-css" type="text/css">
+.a2a_kit {vertical-align: middle;}
+</style>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" id="jquery-js"></script>
+  <script type="text/javascript" id="addtoany-core-js-before">
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+</script>
+  <script type="text/javascript" async src="https://static.addtoany.com/menu/page.js" id="addtoany-core-js"></script>
+  <script type="text/javascript" async src="https://ehs.stanford.edu/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1" id="addtoany-jquery-js"></script>
+  <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/js/script.js?ver=2" id="script-js"></script>
+  <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/js/compromise.min.js" id="compromise-js"></script>
+  <script type="text/javascript" src="//unpkg.com/popper.js@1" id="popper-js-js"></script>
+  <script type="text/javascript" src="//unpkg.com/tippy.js@5" id="tippy-js-js"></script>
+  <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/js/cleave.min.js" id="mask-input-js"></script>
+  <script type="text/javascript" id="simple-banner-script-js-extra">
+/* <![CDATA[ */
+var simpleBannerScriptParams = {"version":"2.11.0","hide_simple_banner":"","simple_banner_position":"","header_margin":"","header_padding":"","simple_banner_text":"For current information regarding COVID-19 (otherwise known as novel coronavirus), please visit the <a href=\"https:\/\/healthalerts.stanford.edu\" target=\"_blank\">healthalerts.stanford.edu<\/a> webpage.","pro_version_enabled":"","disabled_on_current_page":"","debug_mode":"","id":"2247","disabled_pages_array":[],"is_current_page_a_post":"","disabled_on_posts":"","simple_banner_font_size":"","simple_banner_color":"#ffffff","simple_banner_text_color":"#000000","simple_banner_link_color":"#831100","simple_banner_close_color":"","simple_banner_custom_css":"","simple_banner_scrolling_custom_css":"","simple_banner_text_custom_css":"","simple_banner_button_css":"","site_custom_css":"","keep_site_custom_css":"","site_custom_js":"","keep_site_custom_js":"","wp_body_open_enabled":"","wp_body_open":"1","close_button_enabled":"","close_button_expiration":"","close_button_cookie_set":""};
+/* ]]> */
+</script>
+  <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/plugins/simple-banner/simple-banner.js?ver=2.11.0" id="simple-banner-script-js"></script>
+  <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/plugins/zingtree/js/iframeResizerSmart.js?ver=5.9.3" id="zt-embed-js"></script>
+  <script type="text/javascript" id="favorites-js-extra">
+/* <![CDATA[ */
+var favorites_data = {"ajaxurl":"https:\/\/ehs.stanford.edu\/wp-admin\/admin-ajax.php","nonce":"044076f619","favorite":"<span class=\"flag-wrapper flag-save-to-my-ehs\"><a class=\"button button--small button--light save-page flag flag-action flag-link-toggle flag-processed\" href=\"#\" data-tooltip=\"Save to My EH&S\"><i class=\"fa fa-plus-circle\"><\/i> <span class=\"save-page__text\">My EH&S<\/span><\/a><\/span>","favorited":"<span class=\"flag-wrapper flag-save-to-my-ehs\"><a class=\"button button--small button--light save-page flag flag-action flag-link-toggle flag-processed\" href=\"#\" data-tooltip=\"Save to My EH&S\"><i class=\"fa fa-minus-circle\"><\/i> <span class=\"save-page__text\">My EH&S<\/span><\/a><\/span>","includecount":"","indicate_loading":"","loading_text":"Loading","loading_image":"","loading_image_active":"","loading_image_preload":"","cache_enabled":"1","button_options":{"button_type":"custom","custom_colors":false,"box_shadow":false,"include_count":false,"default":{"background_default":false,"border_default":false,"text_default":false,"icon_default":false,"count_default":false},"active":{"background_active":false,"border_active":false,"text_active":false,"icon_active":false,"count_active":false}},"authentication_modal_content":"<p>Please login to add favorites.<\/p>\n<p><a href=\"#\" data-favorites-modal-close=\"\">Dismiss this notice<\/a><\/p>\n","authentication_redirect":"","dev_mode":"","logged_in":"","user_id":"0","authentication_redirect_url":"https:\/\/ehs.stanford.edu\/wp-login.php"};
+/* ]]> */
+</script>
+  <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/plugins/favorites/assets/js/favorites.min.js?ver=2.3.2" id="favorites-js"></script>
+  <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/plugins/wp-image-zoooom/assets/js/jquery.image_zoom.min.js?ver=1.50" id="image_zoooom-js"></script>
+  <script type="text/javascript" id="image_zoooom-init-js-extra">
+/* <![CDATA[ */
+var IZ = {"with_woocommerce":"0","exchange_thumbnails":"1","woo_categories":"0","enable_mobile":"","options":{"lensShape":"square","lensSize":200,"lensBorderSize":1,"lensBorderColour":"#ffffff","borderRadius":10,"cursor":"default","zoomWindowWidth":600,"zoomWindowHeight":560,"zoomWindowOffsetx":10,"borderSize":4,"borderColour":"#888888","zoomWindowShadow":4,"lensFadeIn":1,"lensFadeOut":1,"zoomWindowFadeIn":0,"zoomWindowFadeOut":0,"easingAmount":12},"woo_slider":"1"};
+/* ]]> */
+</script>
+  <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/plugins/wp-image-zoooom/assets/js/image_zoom-init.js?ver=1.50" id="image_zoooom-init-js"></script>
+  <link rel="https://api.w.org/" href="https://ehs.stanford.edu/wp-json/">
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ehs.stanford.edu/xmlrpc.php?rsd">
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ehs.stanford.edu/wp-includes/wlwmanifest.xml"> 
+  <meta name="generator" content="WordPress 5.9.3">
+  <meta name="generator" content="WooCommerce 6.2.1">
+  <link rel="canonical" href="https://ehs.stanford.edu/about-us/occupational-health-center">
+  <link rel="shortlink" href="https://ehs.stanford.edu/?p=2247">
+  <link rel="alternate" type="application/json+oembed" href="https://ehs.stanford.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fehs.stanford.edu%2Fabout-us%2Foccupational-health-center">
+  <link rel="alternate" type="text/xml+oembed" href="https://ehs.stanford.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fehs.stanford.edu%2Fabout-us%2Foccupational-health-center&amp;format=xml">
+  <style type="text/css">.simple-banner{background:#ffffff;}</style>
+  <style type="text/css">.simple-banner .simple-banner-text{color:#000000;}</style>
+  <style type="text/css">.simple-banner .simple-banner-text a{color:#831100;}</style>
+  <style id="simple-banner-site-custom-css-dummy" type="text/css"></style>
+  <script id="simple-banner-site-custom-js-dummy" type="text/javascript"></script> 
+  <noscript>
+   <style>.woocommerce-product-gallery{ opacity: 1 !important; }</style>
+  </noscript>
+  <style type="text/css">img.zoooom,.zoooom img{padding:0!important;}</style>
+  <link rel="icon" href="https://ehs.stanford.edu/wp-content/uploads/stanford-favicon.png" sizes="32x32">
+  <link rel="icon" href="https://ehs.stanford.edu/wp-content/uploads/stanford-favicon.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="https://ehs.stanford.edu/wp-content/uploads/stanford-favicon.png">
+  <meta name="msapplication-TileImage" content="https://ehs.stanford.edu/wp-content/uploads/stanford-favicon.png">
+  <meta name="sip" value="false">
+  <meta name="eip" value="false">
+  <script type="text/javascript">
+  !function(a,b,c,d,e,f,g,h){a.RaygunObject=e,a[e]=a[e]||function(){
+  (a[e].o=a[e].o||[]).push(arguments)},f=b.createElement(c),g=b.getElementsByTagName(c)[0],
+  f.async=1,f.src=d,g.parentNode.insertBefore(f,g),h=a.onerror,a.onerror=function(b,c,d,f,g){
+  h&&h(b,c,d,f,g),g||(g=new Error(b)),a[e].q=a[e].q||[],a[e].q.push({
+  e:g})}}(window,document,"script","//cdn.raygun.io/raygun4js/raygun.min.js","rg4js");
+</script>
+  <script src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/js/moment.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93759838-4"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93759838-4',
+    {'custom_map': {'dimension2': 'sip', 'dimension3': 'eip'}});
+
+    // Sends an event that passes 'age' as a parameter.
+    gtag('event', 'sip_dimension', {'sip': document.getElementsByName("sip")[0].getAttribute("value")});
+    gtag('event', 'eip_dimension', {'eip': document.getElementsByName("eip")[0].getAttribute("value")});
+
+</script><!-- Hotjar Tracking Code -->
+  <script>
+	    (function(h,o,t,j,a,r){
+	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+	        h._hjSettings={hjid:555111,hjsv:6};
+	        a=o.getElementsByTagName('head')[0];
+	        r=o.createElement('script');r.async=1;
+	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+	        a.appendChild(r);
+	    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+	</script><!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+       })(window,document,'script','dataLayer','GTM-TMNHS3T');</script><!-- End Google Tag Manager -->
+ </head>
+ <body class="program-area-template-default single single-program-area postid-2247 theme-suehs woocommerce-no-js"><!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMNHS3T" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript><!-- End Google Tag Manager (noscript) -->
+  <p id="skip-link"><a href="#main-menu" class="element-invisible element-focusable">Jump to navigation</a></p>
+  <div id="brandbar">
+   <div class="container"><a href="http://www.stanford.edu"> <img src="https://www.stanford.edu/su-identity/images/brandbar-stanford-logo@2x.png" alt="Stanford University" width="152" height="23"> </a>
+   </div>
+  </div>
+  <div id="su-wrap">
+   <div id="su-content">
+    <section class="global-search">
+     <div class="container"><!--div class="l-1up">
+						<div class="search-wrap">
+							<form class="search-form" id="search-form" method="get" accept-charset="UTF-8" action="/">
+								<input title="Enter the terms you wish to search for." aria-required="true" aria-label="Enter search terms" placeholder="Search the EH&amp;S site..." type="text" class="form-text" value="" id="edit-keys-header" name="s" maxlength="255" />
+								<input type="hidden" name="category" value="site_search" />
+								<button class="button button--input-search"><span class="element-invisible">Search</span> <i class="fa fa-search"></i></button>
+								<input id="edit-submit" class="visually-hidden form-submit" type="submit" value="Search" />
+							</form>
+						</div>
+					</div-->
+     </div>
+    </section>
+    <header class="site-header" role="banner">
+     <div class="container">
+      <div class="l-1up">
+       <div class="header-left">
+        <h4 class="header-emergency"><small>For medical, fire or law enforcement assistance, call 911</small><br><small>For EH&amp;S emergencies, including after hours, call (650) 725-9999</small></h4>
+        <h2 class="site-logo"><a href="/" title="Home" rel="home" class="header__logo" id="logo"><img src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/images/logo--stanford.svg" alt="Stanford EH&amp;S" title="Home" class="header__logo-image"></a></h2>
+        <div class="mobile-toggle"><a class="mobile-toggle__menu button button--small" href="javascript:void(0);"><i class="fa fa-bars"></i> <span class="menu-label">Menu</span></a>
+        </div>
+       </div><!-- Search form used on mobile -->
+       <div class="search-wrap-mobile">
+        <form class="search-form no-print" id="search-form-mobile" method="get" accept-charset="UTF-8" action="/"><!--input title="Enter the terms you wish to search for." aria-required="true" aria-label="Enter search terms" placeholder="Search the EH&amp;S site..." type="text" class="form-text" value="" id="edit-keys-header" name="s" maxlength="255" /-->
+         <input title="Search is currently disabled to troubleshoot an issue; thanks for your patience" aria-required="true" aria-label="Enter search terms" placeholder="Search is currently disabled to troubleshoot an issue; thanks for your patience" type="text" class="form-text" value="" id="edit-keys-header" name="s" maxlength="255" disabled>
+         <input type="hidden" name="category" value="site_search">
+         <input type="hidden" name="cb" value="" class="cache-buster"><button class="button button--input-search"><span class="element-invisible">Search</span> <i class="fa fa-search"></i></button>
+         <input id="edit-submit" class="visually-hidden form-submit" type="submit" value="Search">
+        </form>
+       </div>
+       <div class="header-right">
+        <ul class="menu helper-nav">
+         <li class="menu__item is-leaf first leaf"><a class="menu__link menu__link button button--light button--small" href="/contact" id="menu-link-askus">Contact <span>Us</span></a></li>
+         <li class="menu__item is-leaf last leaf"><a class="menu__link button button--small" href="/report-safety-concern" id="menu-link-report">Report a Safety <span>Concern</span></a></li>
+        </ul>
+        <ul class="menu utility-nav">
+         <li class="menu__item is-leaf last leaf">
+          <form class="search-form" id="search-form" method="get" accept-charset="UTF-8" action="/">
+           <input title="Enter the terms you wish to search for." aria-required="true" aria-label="Enter search terms" placeholder="Search..." type="text" class="form-text" value="" id="mini-search-input" name="s" maxlength="255"><!--input title="Search is currently disabled to troubleshoot an issue; thanks for your patience" aria-required="true" aria-label="Enter search terms" placeholder="Search is currently disabled to troubleshoot an issue; thanks for your patience" type="text" class="form-text" value="" id="mini-search-input" name="s" maxlength="255" disabled /-->
+           <input type="hidden" name="category" value="site_search">
+           <input type="hidden" name="cb" value="" class="cache-buster"><button type="submit" class="mini-search-field-button"> <i class="fa fa-search"></i> </button>
+           <input id="edit-submit" class="visually-hidden form-submit" type="submit" value="Search">
+          </form></li><!-- User is NOT logged in -->
+         <li class="menu__item is-leaf first leaf" id="login_link"><a class="menu__link" href="/saml_login" id="menu-link-login">Log In</a></li>
+         <li class="menu__item is-leaf leaf"><a class="menu__link" href="/glossary" id="menu-link-glossary">Glossary</a></li>
+         <li class="menu__item is-leaf leaf"><a class="menu__link" href="/reference" id="menu-link-references">References</a></li><!--li class="menu__item is-leaf leaf"><a class="menu__link" href="/events" id="menu-link-calendar">events</a></li-->
+         <li class="menu__item is-leaf leaf"><a class="menu__link" href="/staff" id="menu-link-contact">Staff Directory</a></li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <div class="header-navs">
+      <ul class="menu helper-nav--mobile">
+       <li class="menu__item is-leaf first leaf"><a class="menu__link" href="/contact">Contact <span>Us</span></a></li>
+       <li class="menu__item is-leaf last leaf"><a class="menu__link" href="/report-safety-concern">Report a Safety <span>Concern</span></a></li>
+      </ul>
+      <nav class="main-nav">
+       <ul class="menu">
+        <li class="menu__item is-leaf first leaf"><a href="/role" id="menu-link-roles" class="menu__link">Roles</a></li>
+        <li class="menu__item is-leaf leaf"><a href="/topic" id="menu-link-topics" class="menu__link">Health &amp; Safety Topics</a></li>
+        <li class="menu__item is-leaf leaf"><a href="/services" id="menu-link-services" class="menu__link">Services</a></li>
+        <li class="menu__item is-leaf leaf"><a href="/training" id="menu-link-training" class="menu__link">Training</a></li>
+        <li class="menu__item is-leaf leaf"><a href="/manual" id="menu-link-manuals" class="menu__link">Guides &amp; Manuals</a></li>
+        <li class="menu__item is-leaf leaf"><a href="/standard-operating-procedure" id="menu-link-sops" class="menu__link">Standard Operating Procedures</a></li>
+        <li class="menu__item is-leaf leaf"><a href="/forms-tools" id="menu-link-tools" class="menu__link">Forms &amp; Tools</a></li>
+        <li class="menu__item is-leaf last leaf"><!--div class="ring-container">
+								<div class="ringring"></div>
+								<div class="circle"></div>
+								<span class="tooltiptext">Early Access for staff!</span>
+							</div--><a href="/learning-library" id="menu-link-learning-library" class="menu__link">Learning Library</a></li><!--li class="menu__item is-leaf last leaf"><a href="/news" id="menu-link-news" class="menu__link">EH&amp;S News</a></li-->
+       </ul>
+      </nav>
+      <ul class="menu utility-nav--mobile"><!-- User is NOT logged in -->
+       <li class="menu__item is-leaf first leaf" id="login_link"><a class="menu__link" href="/saml_login" id="menu-link-login">Log In</a></li>
+       <li class="menu__item is-leaf leaf"><a class="menu__link" href="/glossary" id="menu-link-glossary">Glossary</a></li>
+       <li class="menu__item is-leaf leaf"><a class="menu__link" href="/reference" id="menu-link-references">References</a></li>
+       <li class="menu__item is-leaf leaf"><a class="menu__link" href="/calendar" id="menu-link-calendar">Calendar</a></li>
+       <li class="menu__item is-leaf leaf"><a class="menu__link" href="/staff" id="menu-link-contact">Staff</a></li>
+      </ul>
+     </div>
+    </header>
+    <script>
+
+	// Update the cart item count at the top of the page
+	$(document).on("updated_cart_totals", function(event) {
+		// Reload the page so the cart total at the top will be accurate
+		var itemCount = 0;
+		
+		$('input[name$="[qty]"]').each(function() {
+			itemCount += parseInt($(this).val());
+		});
+
+		if (itemCount === 0) {
+			// No more items left in the cart, so hide the cart icon
+			$('#safety-store-cart').hide();
+			$('#safety-store-cart-mobile').hide();
+		} else {
+			// Update the item count in the cart
+			$('#safety-store-item-count').text(itemCount);
+		};
+	});
+
+	// Listen for items to be removed from the cart
+	$(document).ajaxComplete(function(event, xhr, ajaxOpts) {
+        // Check if the ajax call was to remove an item from the Woocommerce cart
+        /*if (ajaxOpts.url.indexOf("cart?remove_item") !== -1) {
+			if ($('input[name$="[qty]"]').length === 0) {
+				// All items have been removed from the cart
+				$('#safety-store-cart').hide();
+				$('#safety-store-cart-mobile').hide();
+			};
+		};*/
+		console.log(ajaxOpts.url); // @todo
+	});
+
+	/*$(document).on( 'updated_cart_totals', function(){
+		console.log('hiiiii'); // @todo
+	});*/
+	/*$(document.body).on('added_to_cart removed_from_cart', function() {
+		//console.log('added or removed from cart'); // @todo
+		alert('boo');
+	});
+
+	$( document.body ).on( 'added_to_cart', function( event, fragments, cart_hash, $button ){
+		alert('added to cart'); // @todo
+	});*/
+
+</script>
+    <script>if ($('.breadcrumbs').length == 0) {$('header:first').after('<div class="breadcrumbs"><div class="container"><div class="l-1up"><ul><li><a href="/">Home</a> <i class="fa fa-angle-right"></i></li><li><a href="/about-us">About Us</a> <i class="fa fa-angle-right"></i></li><li class="current">Occupational Health Center</li></ul></div></div></div>');}</script>
+    <section>
+     <div class="container">
+      <div class="l-1up">
+       <div class="page-title">
+        <div class="content-block"></div>
+        <h1 class="title">Occupational Health Center</h1>
+       </div>
+      </div> 
+      <main class="l-66-33--1">
+       <div class="meta-bar"><a href="javascript:window.print()" class="button button--small button-print"><i class="fa fa-print"></i> Print</a>
+        <div class="a2a_kit a2a_kit_size_20 addtoany_list" data-a2a-url="https://ehs.stanford.edu/about-us/occupational-health-center" data-a2a-title="Occupational Health Center">
+         <a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fehs.stanford.edu%2Fabout-us%2Foccupational-health-center&amp;linkname=Occupational%20Health%20Center" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fehs.stanford.edu%2Fabout-us%2Foccupational-health-center&amp;linkname=Occupational%20Health%20Center" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=https%3A%2F%2Fehs.stanford.edu%2Fabout-us%2Foccupational-health-center&amp;linkname=Occupational%20Health%20Center" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fehs.stanford.edu%2Fabout-us%2Foccupational-health-center&amp;linkname=Occupational%20Health%20Center" title="Email" rel="nofollow noopener" target="_blank"></a>
+        </div> 
+       </div>
+       <p>The Stanford University Occupational Health Center (SUOHC) was established in 2007 to care for the occupational health needs of Stanford University faculty and staff. The SUOHC is dedicated to providing outstanding clinical care to improve the health and safety of university employees. SUOHC is a campus-based medical clinic that offers evaluation and treatment for work-related injuries and illnesses, work-related preventive medical services, travel medicine, and OSHA and departmentally-mandated medical surveillance programs for university staff.</p>
+       <p>SUOHC is committed to compliance with all applicable federal and state laws and standards governing occupational health and safety of employees. The SUOHC works in collaboration with Industrial Hygiene, Biosafety, and Radiation Safety Officers, as well as Risk Management to ensure that these standards are met. Confidentiality of employee’s medical records and test results is protected by law. SUOHC complies with all applicable Federal and State regulations regarding privacy requirements.</p>
+       <h2>Hours and Location</h2>
+       <p><strong>Location of the Occupational Health Center:</strong><br> Environmental Safety Facility (ESF)<br> 484 Oak Road, 2nd Floor, Room 200<br> Stanford, CA 94305-8007<br> Phone: (650) 725-5308<br> Fax: (650) 725-9218<br><a href="mailto:stanfordohc@stanford.edu">stanfordohc@stanford.edu</a></p>
+       <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.3231511435583!2d-122.18653268402022!3d37.42947013972233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fa4d0c1d7a649%3A0x76df8e9a35c10524!2s484+Oak+Rd%2C+Stanford%2C+CA+94305!5e0!3m2!1sen!2sus!4v1553707345953" width="600" height="450" frameborder="0" allowfullscreen data-mce-fragment="1">&lt;span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start"&gt;﻿&lt;/span&gt;</iframe></p>
+       <p><strong>Hours</strong>:<br> Monday – Friday<br> 8:00 am – 4:00 pm</p>
+       <p><strong>Parking:<br> </strong>Patients may park in any of the three spots on Oak Road designated with the sign ‘Special Permit: Patient Parking’, or in any of the Visitor metered spots in the parking lot adjacent to the building.</p>
+       <p>There are ‘Service Vehicle’ spots in our parking lot, and there is C-permit parking available in both the Stock Farm and Searsville lots.</p>
+       <p><strong>Marguerite Bus:</strong><br> Take the “SLAC” Line to ESF bus stop.</p>
+       <h3>Medical Care in Emergencies and After Hours</h3>
+       <p>For immediate life-threatening emergencies, call 9-911 from a campus phone (or 286 in Medical Center) and/or go to:</p>
+       <p><a href="https://stanfordhealthcare.org/medical-clinics/emergency-department-1199-welch.html" target="_blank" rel="noopener">Marc and Laura Andreessen Adult Emergency Department</a><br> 1199 Welch Road<br> Palo Alto, CA 94304<br> (650) 723-5111</p>
+       <h2>On-Site Services Provided</h2>
+       <h3>Medical Surveillance &amp; Immunizations</h3>
+       <p>Medical surveillance is the process of evaluating workers’ health as it relates to their potential occupational exposures to hazardous agents.</p>
+       <p><strong>Medical surveillance:</strong></p>
+       <ul>
+        <li>Tuberculosis screening</li>
+        <li>Vision exams for laser users</li>
+        <li>Respirator use clearances</li>
+        <li>Hearing tests</li>
+        <li>Focused physical exams</li>
+        <li>Urinalysis</li>
+        <li>Blood tests</li>
+       </ul>
+       <h4>Immunizations:</h4>
+       <ul>
+        <li>Hepatitis A</li>
+        <li>Hepatitis B</li>
+        <li>Varivax (chicken pox)</li>
+        <li>MMR (Measles, Mumps, Rubella)</li>
+        <li>Tetanus boosters</li>
+        <li>Others as required by potential work exposures</li>
+       </ul>
+       <h3>Employee Work-related Injury &amp; Illness Care</h3>
+       <p>Initial and on-going care is provided.</p>
+       <h4>Services include:</h4>
+       <ul>
+        <li>First aid</li>
+        <li>Evaluation and management of work-related injuries/illnesses which may include: 
+         <ul>
+          <li>Medications</li>
+          <li>Exercise/stretching programs</li>
+          <li>Referral to physical therapy</li>
+          <li>Medical treatment (e.g., splints, crutches)</li>
+          <li>Work status reports</li>
+          <li>Diagnostic testing</li>
+         </ul></li>
+       </ul>
+       <h4>Examples of injuries and illnesses treated:</h4>
+       <ul>
+        <li>Cuts, abrasions</li>
+        <li>Sprains/strains (back, knee, wrist, etc.)</li>
+        <li>Repetitive stress injuries</li>
+        <li>Bloodborne pathogen exposures (e.g., needle sticks, blood splash)</li>
+        <li>Animal bites</li>
+        <li>Non-human primate exposures</li>
+        <li>Chemical exposures</li>
+        <li>Laser exposures</li>
+        <li>Radiation exposures</li>
+       </ul>
+       <h2>Reporting Work-related Accidents, Incidents &amp; Exposures of Employees</h2>
+       <ol>
+        <li>Inform supervisor.</li>
+        <li>Call Occupational Health Center for evaluation: (650) 725-5308 if event involves a work-related injury or illness.</li>
+        <li>Complete&nbsp;<a href="https://ehs.stanford.edu/forms-tools/su-17-incident-investigation-report-employees">an SU-17</a>.</li>
+       </ol>
+       <h2>HIPAA OHC Privacy Notice</h2>
+       <p><a href="/downloads/HIPAA-OHC-Privacy-Notice.pdf">Download privacy notice here</a></p>
+       <h2>Who Can Use SUOHC?</h2>
+       <p>Any employee of Stanford University, for work-related injuries/illnesses or surveillance.<br> All Stanford Hospital &amp; Clinics employees, please call your Occupational Health Services at (650)&nbsp;723-5922.</p>
+       <h2>Staff Directory</h2>
+       <p><strong>SUOHC Staff</strong></p>
+       <p>Main Line – (650) 725-5308</p>
+       <p><a href="mailto:stanfordohc@stanford.edu">stanfordohc@stanford.edu</a></p>
+       <p>Richard Wittman, MD, MPH<br> Medical Director<br> Phone: (650)&nbsp;725-5308<br> Email:&nbsp;<a href="mailto:rwittman@stanford.edu">rwittman@stanford.edu</a></p>
+       <br>
+       <h2 class="content-block__title">Occupational Health Center Staff</h2>
+       <div class="list-item" {liststyle}>
+        <div style="display:flex;margin-bottom:10px;">
+         <div>
+          <div class="icon-circle-med">
+           <picture>
+            <source srcset="/wp-content/uploads/profile_pics/rich-wittman.webp" type="image/webp">
+            <source srcset="/wp-content/uploads/profile_pics/rich-wittman.jpg" type="image/jpg"> 
+            <img class="image-style-med-square" src="/wp-content/uploads/profile_pics/rich-wittman.jpg">
+           </picture>
+          </div>
+         </div>
+         <div class="header--w-circle">
+          <h3 class="list-item__title" style="margin-top:1.2em;">Rich Wittman</h3>
+          <p class="list-item__sub-title" style="margin-top:-1em;"></p>
+          <div>
+           <p class="list-item__sub-title" style="margin: 0; font-weight: bold; font-style: italic;">Medical Director, Stanford University Occupational Health Center</p>
+          </div>
+          <p class="hidden" style="margin-bottom: 0;"><a href="{profileUrl}" target="_blank">{profileLabel} <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+          <p class="list-item__sub-email {emailClass}" style="margin: 0;"><a href="mailto:rwittman@stanford.edu"><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 0.4em;"></i>rwittman@stanford.edu</a></p>
+          <p class="contact-phone"><a href="tel:{rawPhone}">(650) 725-5308</a></p>
+         </div>
+        </div>
+        <div></div>
+       </div>
+       <div class="list-item" {liststyle}>
+        <div style="display:flex;margin-bottom:10px;">
+         <div>
+          <div class="icon-circle-med">
+           <picture>
+            <source srcset="/wp-content/uploads/profile_pics/kelsie-adesoye.webp" type="image/webp">
+            <source srcset="/wp-content/uploads/profile_pics/kelsie-adesoye.jpg" type="image/jpg"> 
+            <img class="image-style-med-square" src="/wp-content/uploads/profile_pics/kelsie-adesoye.jpg">
+           </picture>
+          </div>
+         </div>
+         <div class="header--w-circle">
+          <h3 class="list-item__title" style="margin-top:1.2em;">Kelsie Adesoye</h3>
+          <p class="list-item__sub-title" style="margin-top:-1em;"></p>
+          <div>
+           <p class="list-item__sub-title" style="margin: 0; font-weight: bold; font-style: italic;">Manager of Preventive Health and Communications</p>
+          </div>
+          <p class="hidden" style="margin-bottom: 0;"><a href="{profileUrl}" target="_blank">{profileLabel} <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+          <p class="list-item__sub-email {emailClass}" style="margin: 0;"><a href="mailto:kadesoye@stanford.edu"><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 0.4em;"></i>kadesoye@stanford.edu</a></p>
+          <p class="contact-phone"><a href="tel:{rawPhone}">(650) 725-5306</a></p>
+         </div>
+        </div>
+        <div></div>
+       </div>
+       <div class="list-item" {liststyle}>
+        <div style="display:flex;margin-bottom:10px;">
+         <div>
+          <div class="icon-circle-med">
+           <picture>
+            <source srcset="https://ehs.stanford.edu/wp-content/themes/suehs/assets/images/SU_New_BlockStree_2color.png" type="image/webp">
+            <source srcset="https://ehs.stanford.edu/wp-content/themes/suehs/assets/images/SU_New_BlockStree_2color.png" type="image/jpg"> 
+            <img class="image-style-med-square" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/images/SU_New_BlockStree_2color.png">
+           </picture>
+          </div>
+         </div>
+         <div class="header--w-circle">
+          <h3 class="list-item__title" style="margin-top:1.2em;">Syndey Aguilar</h3>
+          <p class="list-item__sub-title" style="margin-top:-1em;"></p>
+          <div>
+           <p class="list-item__sub-title" style="margin: 0; font-weight: bold; font-style: italic;">Medical Assistant</p>
+          </div>
+          <p class="hidden" style="margin-bottom: 0;"><a href="{profileUrl}" target="_blank">{profileLabel} <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+          <p class="list-item__sub-email {emailClass}" style="margin: 0;"><a href="mailto:saguilar@stanford.edu"><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 0.4em;"></i>saguilar@stanford.edu</a></p>
+          <p class="contact-phone"><a href="tel:{rawPhone}">(650) 926-4383</a></p>
+         </div>
+        </div>
+        <div></div>
+       </div>
+       <div class="list-item" {liststyle}>
+        <div style="display:flex;margin-bottom:10px;">
+         <div>
+          <div class="icon-circle-med">
+           <picture>
+            <source srcset="/wp-content/uploads/profile_pics/nora-iniguez.webp" type="image/webp">
+            <source srcset="/wp-content/uploads/profile_pics/nora-iniguez.jpg" type="image/jpg"> 
+            <img class="image-style-med-square" src="/wp-content/uploads/profile_pics/nora-iniguez.jpg">
+           </picture>
+          </div>
+         </div>
+         <div class="header--w-circle">
+          <h3 class="list-item__title" style="margin-top:1.2em;">Nora Iniguez</h3>
+          <p class="list-item__sub-title" style="margin-top:-1em;"></p>
+          <div>
+           <p class="list-item__sub-title" style="margin: 0; font-weight: bold; font-style: italic;">Medical Assistant</p>
+          </div>
+          <p class="hidden" style="margin-bottom: 0;"><a href="{profileUrl}" target="_blank">{profileLabel} <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+          <p class="list-item__sub-email {emailClass}" style="margin: 0;"><a href="mailto:cuxio629@stanford.edu"><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 0.4em;"></i>cuxio629@stanford.edu</a></p>
+          <p class="contact-phone"><a href="tel:{rawPhone}">(650) 497-6762</a></p>
+         </div>
+        </div>
+        <div></div>
+       </div>
+       <div class="list-item" {liststyle}>
+        <div style="display:flex;margin-bottom:10px;">
+         <div>
+          <div class="icon-circle-med">
+           <picture>
+            <source srcset="/wp-content/uploads/profile_pics/christine-delgado-labson.webp" type="image/webp">
+            <source srcset="/wp-content/uploads/profile_pics/christine-delgado-labson.jpg" type="image/jpg"> 
+            <img class="image-style-med-square" src="/wp-content/uploads/profile_pics/christine-delgado-labson.jpg">
+           </picture>
+          </div>
+         </div>
+         <div class="header--w-circle">
+          <h3 class="list-item__title" style="margin-top:1.2em;">Cristine Delgado Labson</h3>
+          <p class="list-item__sub-title" style="margin-top:-1em;"></p>
+          <div>
+           <p class="list-item__sub-title" style="margin: 0; font-weight: bold; font-style: italic;">Medical Assistant</p>
+          </div>
+          <p class="hidden" style="margin-bottom: 0;"><a href="{profileUrl}" target="_blank">{profileLabel} <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+          <p class="list-item__sub-email {emailClass}" style="margin: 0;"><a href="mailto:clabson@stanford.edu"><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 0.4em;"></i>clabson@stanford.edu</a></p>
+          <p class="contact-phone"><a href="tel:{rawPhone}"></a></p>
+         </div>
+        </div>
+        <div></div>
+       </div>
+       <div class="list-item" {liststyle}>
+        <div style="display:flex;margin-bottom:10px;">
+         <div>
+          <div class="icon-circle-med">
+           <picture>
+            <source srcset="/wp-content/uploads/profile_pics/maria-martinez.webp" type="image/webp">
+            <source srcset="/wp-content/uploads/profile_pics/maria-martinez.jpg" type="image/jpg"> 
+            <img class="image-style-med-square" src="/wp-content/uploads/profile_pics/maria-martinez.jpg">
+           </picture>
+          </div>
+         </div>
+         <div class="header--w-circle">
+          <h3 class="list-item__title" style="margin-top:1.2em;">Maria Martinez</h3>
+          <p class="list-item__sub-title" style="margin-top:-1em;"></p>
+          <div>
+           <p class="list-item__sub-title" style="margin: 0; font-weight: bold; font-style: italic;">Medical Assistant</p>
+          </div>
+          <p class="hidden" style="margin-bottom: 0;"><a href="{profileUrl}" target="_blank">{profileLabel} <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+          <p class="list-item__sub-email {emailClass}" style="margin: 0;"><a href="mailto:mariam4@stanford.edu"><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 0.4em;"></i>mariam4@stanford.edu</a></p>
+          <p class="contact-phone"><a href="tel:{rawPhone}"></a></p>
+         </div>
+        </div>
+        <div></div>
+       </div>
+       <div class="list-item" {liststyle}>
+        <div style="display:flex;margin-bottom:10px;">
+         <div>
+          <div class="icon-circle-med">
+           <picture>
+            <source srcset="/wp-content/uploads/profile_pics/clare-mcnamara.webp" type="image/webp">
+            <source srcset="/wp-content/uploads/profile_pics/clare-mcnamara.jpg" type="image/jpg"> 
+            <img class="image-style-med-square" src="/wp-content/uploads/profile_pics/clare-mcnamara.jpg">
+           </picture>
+          </div>
+         </div>
+         <div class="header--w-circle">
+          <h3 class="list-item__title" style="margin-top:1.2em;">Clare McNamara</h3>
+          <p class="list-item__sub-title" style="margin-top:-1em;"></p>
+          <div>
+           <p class="list-item__sub-title" style="margin: 0; font-weight: bold; font-style: italic;">Physician Assistant</p>
+          </div>
+          <p class="hidden" style="margin-bottom: 0;"><a href="{profileUrl}" target="_blank">{profileLabel} <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+          <p class="list-item__sub-email {emailClass}" style="margin: 0;"><a href="mailto:claremc@stanford.edu"><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 0.4em;"></i>claremc@stanford.edu</a></p>
+          <p class="contact-phone"><a href="tel:{rawPhone}">(650) 725-5308</a></p>
+         </div>
+        </div>
+        <div></div>
+       </div>
+       <div class="list-item" {liststyle}>
+        <div style="display:flex;margin-bottom:10px;">
+         <div>
+          <div class="icon-circle-med">
+           <picture>
+            <source srcset="/wp-content/uploads/profile_pics/minal-moharir.webp" type="image/webp">
+            <source srcset="/wp-content/uploads/profile_pics/minal-moharir.jpg" type="image/jpg"> 
+            <img class="image-style-med-square" src="/wp-content/uploads/profile_pics/minal-moharir.jpg">
+           </picture>
+          </div>
+         </div>
+         <div class="header--w-circle">
+          <h3 class="list-item__title" style="margin-top:1.2em;">Minal Moharir</h3>
+          <p class="list-item__sub-title" style="margin-top:-1em;"></p>
+          <div>
+           <p class="list-item__sub-title" style="margin: 0; font-weight: bold; font-style: italic;">Clinical Assistant Professor, Medicine</p>
+          </div>
+          <p class="{urlClass}" style="margin-bottom: 0;"><a href="" target="_blank">Stanford Profiles <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+          <p class="list-item__sub-email {emailClass}" style="margin: 0;"><a href="mailto:mmoharir@stanford.edu"><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 0.4em;"></i>mmoharir@stanford.edu</a></p>
+          <p class="contact-phone"><a href="tel:{rawPhone}"></a></p>
+         </div>
+        </div>
+        <div></div>
+       </div>
+       <div class="list-item" {liststyle}>
+        <div style="display:flex;margin-bottom:10px;">
+         <div>
+          <div class="icon-circle-med">
+           <picture>
+            <source srcset="/wp-content/uploads/profile_pics/nancy-molina-ortega.webp" type="image/webp">
+            <source srcset="/wp-content/uploads/profile_pics/nancy-molina-ortega.jpg" type="image/jpg"> 
+            <img class="image-style-med-square" src="/wp-content/uploads/profile_pics/nancy-molina-ortega.jpg">
+           </picture>
+          </div>
+         </div>
+         <div class="header--w-circle">
+          <h3 class="list-item__title" style="margin-top:1.2em;">Nancy Molina-Ortega</h3>
+          <p class="list-item__sub-title" style="margin-top:-1em;"></p>
+          <div>
+           <p class="list-item__sub-title" style="margin: 0; font-weight: bold; font-style: italic;">Medical Assistant</p>
+          </div>
+          <p class="hidden" style="margin-bottom: 0;"><a href="{profileUrl}" target="_blank">{profileLabel} <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+          <p class="list-item__sub-email {emailClass}" style="margin: 0;"><a href="mailto:nancym2@stanford.edu"><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 0.4em;"></i>nancym2@stanford.edu</a></p>
+          <p class="contact-phone"><a href="tel:{rawPhone}">(650) 723-6262</a></p>
+         </div>
+        </div>
+        <div></div>
+       </div>
+       <div class="list-item" {liststyle}>
+        <div style="display:flex;margin-bottom:10px;">
+         <div>
+          <div class="icon-circle-med">
+           <picture>
+            <source srcset="/wp-content/uploads/profile_pics/anna-nemesio.webp" type="image/webp">
+            <source srcset="/wp-content/uploads/profile_pics/anna-nemesio.jpg" type="image/jpg"> 
+            <img class="image-style-med-square" src="/wp-content/uploads/profile_pics/anna-nemesio.jpg">
+           </picture>
+          </div>
+         </div>
+         <div class="header--w-circle">
+          <h3 class="list-item__title" style="margin-top:1.2em;">Anna Nemesio</h3>
+          <p class="list-item__sub-title" style="margin-top:-1em;"></p>
+          <div>
+           <p class="list-item__sub-title" style="margin: 0; font-weight: bold; font-style: italic;">Billing Specialist</p>
+          </div>
+          <p class="hidden" style="margin-bottom: 0;"><a href="{profileUrl}" target="_blank">{profileLabel} <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+          <p class="list-item__sub-email {emailClass}" style="margin: 0;"><a href="mailto:anemesio@stanford.edu"><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 0.4em;"></i>anemesio@stanford.edu</a></p>
+          <p class="contact-phone"><a href="tel:{rawPhone}"></a></p>
+         </div>
+        </div>
+        <div></div>
+       </div>
+       <div class="list-item" {liststyle}>
+        <div style="display:flex;margin-bottom:10px;">
+         <div>
+          <div class="icon-circle-med">
+           <picture>
+            <source srcset="/wp-content/uploads/profile_pics/rajan-puri.webp" type="image/webp">
+            <source srcset="/wp-content/uploads/profile_pics/rajan-puri.jpg" type="image/jpg"> 
+            <img class="image-style-med-square" src="/wp-content/uploads/profile_pics/rajan-puri.jpg">
+           </picture>
+          </div>
+         </div>
+         <div class="header--w-circle">
+          <h3 class="list-item__title" style="margin-top:1.2em;">Rajan Puri</h3>
+          <p class="list-item__sub-title" style="margin-top:-1em;"></p>
+          <div>
+           <p class="list-item__sub-title" style="margin: 0; font-weight: bold; font-style: italic;">Clinical Assistant Professor</p>
+          </div>
+          <p class="hidden" style="margin-bottom: 0;"><a href="{profileUrl}" target="_blank">{profileLabel} <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+          <p class="list-item__sub-email {emailClass}" style="margin: 0;"><a href="mailto:purir@stanford.edu"><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 0.4em;"></i>purir@stanford.edu</a></p>
+          <p class="contact-phone"><a href="tel:{rawPhone}"></a></p>
+         </div>
+        </div>
+        <div></div>
+       </div>
+       <div class="list-item" {liststyle}>
+        <div style="display:flex;margin-bottom:10px;">
+         <div>
+          <div class="icon-circle-med">
+           <picture>
+            <source srcset="https://ehs.stanford.edu/wp-content/themes/suehs/assets/images/SU_New_BlockStree_2color.png" type="image/webp">
+            <source srcset="https://ehs.stanford.edu/wp-content/themes/suehs/assets/images/SU_New_BlockStree_2color.png" type="image/jpg"> 
+            <img class="image-style-med-square" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/images/SU_New_BlockStree_2color.png">
+           </picture>
+          </div>
+         </div>
+         <div class="header--w-circle">
+          <h3 class="list-item__title" style="margin-top:1.2em;">Mayra Rojas-Santoyo</h3>
+          <p class="list-item__sub-title" style="margin-top:-1em;"></p>
+          <div>
+           <p class="list-item__sub-title" style="margin: 0; font-weight: bold; font-style: italic;">Medical Assistant</p>
+          </div>
+          <p class="hidden" style="margin-bottom: 0;"><a href="{profileUrl}" target="_blank">{profileLabel} <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+          <p class="list-item__sub-email {emailClass}" style="margin: 0;"><a href="mailto:mrojass@stanford.edu"><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 0.4em;"></i>mrojass@stanford.edu</a></p>
+          <p class="contact-phone"><a href="tel:{rawPhone}"></a></p>
+         </div>
+        </div>
+        <div></div>
+       </div>
+       <div class="list-item" {liststyle}>
+        <div style="display:flex;margin-bottom:10px;">
+         <div>
+          <div class="icon-circle-med">
+           <picture>
+            <source srcset="/wp-content/uploads/profile_pics/tien-sara.webp" type="image/webp">
+            <source srcset="/wp-content/uploads/profile_pics/tien-sara.jpg" type="image/jpg"> 
+            <img class="image-style-med-square" src="/wp-content/uploads/profile_pics/tien-sara.jpg">
+           </picture>
+          </div>
+         </div>
+         <div class="header--w-circle">
+          <h3 class="list-item__title" style="margin-top:1.2em;">Sara Tien</h3>
+          <p class="list-item__sub-title" style="margin-top:-1em;"></p>
+          <div>
+           <p class="list-item__sub-title" style="margin: 0; font-weight: bold; font-style: italic;">Registered Nurse</p>
+          </div>
+          <p class="{urlClass}" style="margin-bottom: 0;"><a href="" target="_blank">Stanford Profiles <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+          <p class="list-item__sub-email {emailClass}" style="margin: 0;"><a href="mailto:stien@stanford.edu"><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 0.4em;"></i>stien@stanford.edu</a></p>
+          <p class="contact-phone"><a href="tel:{rawPhone}"></a></p>
+         </div>
+        </div>
+        <div></div>
+       </div>
+       <br>
+      </main>
+      <aside class="l-66-33--2"><!-- Sidebar/widget goes here -->
+       <div class="sidebar">
+        <div class="side-block">
+         <h4 class="side-block__title lede-header">Related to these Topics</h4><a class="list-item__topic" href="/topic/chemical-safety" data-tooltip="Chemical Safety">
+          <figure>
+           <img src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/images/icons/topics/chemical-safety.png" alt="Chemical Safety Icon" style="width:40px;height:40px;">
+          </figure></a><a class="list-item__topic" href="/topic/lab-safety" data-tooltip="Lab Safety">
+          <figure>
+           <img src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/images/icons/topics/lab-safety.png" alt="Lab Safety Icon" style="width:40px;height:40px;">
+          </figure></a><a class="list-item__topic" href="/topic/lab-setup-shutdown" data-tooltip="Lab Setup and Shutdown">
+          <figure>
+           <img src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/images/icons/topics/lab-setup-shutdown.png" alt="Lab Setup and Shutdown Icon" style="width:40px;height:40px;">
+          </figure></a><a class="list-item__topic" href="/topic/occupational-injury-illness" data-tooltip="Occupational Injury and Illness">
+          <figure>
+           <img src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/images/icons/topics/occupational-injury-illness.png" alt="Occupational Injury and Illness Icon" style="width:40px;height:40px;">
+          </figure></a><span id="all-topics" style="display:none;">Chemical Safety,Lab Safety,Lab Setup and Shutdown,Occupational Injury and Illness</span>
+        </div>
+        <div class="side-block">
+         <h4 class="side-block__title lede-header">Other Program Areas</h4>
+         <ul class="side-block__nav">
+          <li><a href="/about-us/biosafety-biosecurity">Biosafety &amp; Biosecurity</a><i class="fa fa-angle-right"></i></li>
+          <li><a href="/about-us/emergency-management">Emergency Management</a><i class="fa fa-angle-right"></i></li>
+          <li><a href="/about-us/environmental-protection">Environmental Protection</a><i class="fa fa-angle-right"></i></li>
+          <li><a href="/about-us/fire-safety">Fire Safety</a><i class="fa fa-angle-right"></i></li>
+          <li><a href="/about-us/health-physics">Health Physics</a><i class="fa fa-angle-right"></i></li>
+          <li><a href="/about-us/laboratory-safety">Laboratory Safety</a><i class="fa fa-angle-right"></i></li>
+          <li><a href="/about-us/occupational-health-center" class="active">Occupational Health Center</a><i class="fa fa-angle-right"></i></li>
+          <li><a href="/about-us/occupational-safety-health">Occupational Safety &amp; Health</a><i class="fa fa-angle-right"></i></li>
+          <li><a href="/about-us/training-communications">Training &amp; Communications</a><i class="fa fa-angle-right"></i></li>
+         </ul>
+        </div>
+       </div>
+      </aside>
+     </div>
+    </section>
+    <div class="simple-banner simple-banner-text" style="display:none !important"></div> 
+    <script type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/plugins/embed-any-document/js/pdfobject.min.js?ver=2.7.1" id="awsm-ead-pdf-object-js"></script>
+    <script type="text/javascript" id="awsm-ead-public-js-extra">
+/* <![CDATA[ */
+var eadPublic = [];
+/* ]]> */
+</script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/plugins/embed-any-document/js/embed-public.min.js?ver=2.7.1" id="awsm-ead-public-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/js/compromise.min.js" id="ehs_easter_eggs_nlp-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/plugins/ehs-easter-eggs-wp/assets/js/jquery.justifiedGallery.min.js" id="ehs_easter_eggs_justified-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/js/js_p2Pm92U0xNKrBps4v5uAeOIq9sGMPp8zPpZGieWq8eo.js" id="js_p2Pm92U0xNKrBps4v5uAeOIq9sGMPp8zPpZGieWq8eo-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/js/js_QYglOhI3S2SbNpGldeREGKgoLiaz6Fs9ZTgOyQnLz90.js" id="js_QYglOhI3S2SbNpGldeREGKgoLiaz6Fs9ZTgOyQnLz90-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/js/js_HAIV-hdRCWnBfxK6LiU0cNrBIzimyS9DjDLPNqBUTGs.js" id="js_HAIV-hdRCWnBfxK6LiU0cNrBIzimyS9DjDLPNqBUTGs-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/js/js_gkJ5k8KbPfBLcYFNYAK0XG9VinYr_9SM56FybHGHb-g.js" id="js_gkJ5k8KbPfBLcYFNYAK0XG9VinYr_9SM56FybHGHb-g-js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" id="modernizer-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/js/atc.min.js?ver=20151215" id="add-to-calendar-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/js/navigation.js?ver=20151215" id="suehs-navigation-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/js/slick.js" id="slick-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/js/body-script.js" id="body-script-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/js/skip-link-focus-fix.js?ver=20151215" id="suehs-skip-link-focus-fix-js"></script>
+    <script type="text/javascript" id="bridge-js-extra">
+/* <![CDATA[ */
+var ipAjaxVar = {"ajaxurl":"https:\/\/ehs.stanford.edu\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/js/bridge.js?ver=2" id="bridge-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.6.2.1" id="jquery-blockui-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.6.2.1" id="js-cookie-js"></script>
+    <script type="text/javascript" id="woocommerce-js-extra">
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=6.2.1" id="woocommerce-js"></script>
+    <script type="text/javascript" id="wc-cart-fragments-js-extra">
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_82bc9740df2ae0bef3c37f0d168bc6b7","fragment_name":"wc_fragments_82bc9740df2ae0bef3c37f0d168bc6b7","request_timeout":"5000"};
+/* ]]> */
+</script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=6.2.1" id="wc-cart-fragments-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/plugins/zingtree/js/zt-popup-modal.js?ver=5.9.3" id="zt-popup-modal-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/plugins/suehs-preview-ninjaform/assets/js/tingle.js" id="tingle-js"></script>
+    <script type="text/javascript" src="https://ehs.stanford.edu/wp-content/plugins/suehs-preview-ninjaform/assets/js/jQuery.print.min.js" id="print-js"></script><!-- WooCommerce JavaScript -->
+    <script type="text/javascript">
+jQuery(function($) { 
+
+					$( '.add_to_cart_button:not(.product_type_variable, .product_type_grouped)' ).on( 'click', function() {
+						ga( 'ec:addProduct', {'id': ($(this).data('product_sku')) ? ($(this).data('product_sku')) : ('#' + $(this).data('product_id')),'quantity': $(this).data('quantity')} );
+						ga( 'ec:setAction', 'add' );
+						ga( 'send', 'event', 'UX', 'click', 'add to cart' );
+					});
+				
+ });
+</script>
+    <footer class="site-footer" role="contentinfo">
+     <div class="footer-nav">
+      <div class="container">
+       <div class="l-1up">
+        <div class="footer-col footer-col--first">
+         <h4 class="footer-nav__title">Program Areas</h4>
+         <ul class="menu footer-nav__list"><!--li class="menu__item is-leaf leaf"><a class="menu__link" href="/about-us">About EH&amp;S</a></li>
+							<li class="menu__item is-leaf leaf"><a class="menu__link" href="/ehs-staff-resources">About EH&amp;S (for Staff)</a></li-->
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/about-us/biosafety-biosecurity">Biosafety &amp; Biosecurity</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/about-us/emergency-management">Emergency Management</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/about-us/environmental-protection">Environmental Protection</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/about-us/fire-safety">Fire Safety</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/about-us/health-physics">Health Physics</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/about-us/laboratory-safety">Laboratory Safety</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/about-us/occupational-health-center">Occupational Health Center</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/about-us/occupational-safety-health">Occupational Safety &amp; Health</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/about-us/training-communications">Training &amp; Communications</a></li>
+         </ul>
+        </div>
+        <div class="footer-col footer-col--second">
+         <h4 class="footer-nav__title">Roles</h4>
+         <ul class="menu footer-nav__list">
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/role/building-managers">Building Managers</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/role/construction-managers">Construction Managers</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/role/external-contractors">External Contractors</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/role/hr-managers">HR Managers</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/role/lab-managers">Lab Managers</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/role/lab-researchers">Lab Researchers</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/role/lab-safety-coordinators">Lab Safety Coordinators</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/role/office-workers">Office Workers</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/role/parents-families">Parents and Families</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/role/principal-investigators">Principal Investigators</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/role/shops-workers">Shops Workers</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/role/supervisorsmanagers">Supervisors/Managers</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/role/university-safety-partners">University Safety Partners</a></li>
+         </ul>
+        </div>
+        <div class="footer-col footer-col--third">
+         <h4 class="footer-nav__title">Topics</h4>
+         <div class="menu-block-wrapper menu-block-2 menu-name-menu-topics parent-mlid-0 menu-level-1">
+          <ul class="menu footer-nav__list">
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/animal-safety">Animal Research Occupational Health and Safety Program</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/biosafety-biosecurity">Biosafety &amp; Biosecurity</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/campus-safety">Campus Safety</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/chemical-safety">Chemical Safety</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/construction-maintenance">Construction and Maintenance</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/ecosustainable-practices">Eco/Sustainable Practices</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/emergency-preparedness">Emergency Preparedness</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/ergonomics">Ergonomics</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/field-research-safety">Field Research Safety</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/fire-safety">Fire Safety</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/general-workplace-safety">General Workplace Safety</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/hazardous-materials">Hazardous Materials</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/healthy-buildings">Healthy Buildings</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/lab-safety">Lab Safety</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/lab-setup-shutdown">Lab Setup and Shutdown</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/laser-safety">Laser Safety</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/occupational-injury-illness">Occupational Injury and Illness</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/radiation-safety">Radiation Safety</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/shop-makerspace-safety">Shop / Makerspace Safety</a></li>
+           <li class="menu__item is-leaf leaf"><a class="menu__link" href="/topic/waste-disposal">Waste Disposal</a></li>
+          </ul>
+         </div>
+        </div>
+        <div class="footer-col footer-col--fourth">
+         <h4 class="footer-nav__title">Quick Links</h4>
+         <ul class="menu footer-nav__list">
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/about-us" onclick="ga('send','event','Quick Links','About Us', this.href);">About Us</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="https://stanford.bioraft.com/" onclick="ga('send','event','Quick Links','BioRAFT', this.href);">BioRAFT</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="https://chemtracker.stanford.edu/v4" onclick="ga('send','event','Quick Links','Chemical Inventory System', this.href);">Chemical Inventory System</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/staff" onclick="ga('send','event','Quick Links','Find an EH&amp;S Specialist', this.href);">Find an EH&amp;S Specialist</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/reference?types=lesson%20learned" onclick="ga('send','event','Quick Links','Lessons Learned', this.href);">Lessons Learned</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/waste-streams" onclick="ga('send','event','Quick Links','Recycling and Disposal Guide', this.href);">Recycling and Disposal Guide</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/training" onclick="ga('send','event','Quick Links','Register for Training', this.href);">Register for Training</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/report-safety-concern" onclick="ga('send','event','Quick Links','Report a Safety Concern', this.href);">Report a Safety Concern</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/service" onclick="ga('send','event','Quick Links','Request Services', this.href);">Request Services</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="https://ofweb.stanford.edu/apex/f?p=206" onclick="ga('send','event','Quick Links','Submit Work Request', this.href);">Submit Work Request</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="https://wastetag.stanford.edu" onclick="ga('send','event','Quick Links','Waste Tag', this.href);">Waste Tag</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/services/weather-conditions" onclick="ga('send','event','Quick Links','Waste Tag', this.href);">Weather Conditions</a></li>
+          <li class="menu__item is-leaf leaf"><a class="menu__link" href="/safety-store">Safety Store</a></li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="footer-contact">
+      <div class="container">
+       <div class="l-1up">
+        <div class="footer-contact__left">
+         <img class="footer-contact__logo" src="https://ehs.stanford.edu/wp-content/themes/suehs/assets/images/logo--stanford.svg" alt="Stanford EH&amp;S" title="Home"><span class="footer-contact__address">484 Oak Road, Stanford, CA 94305-8007<br>Phone: <a href="tel:+16507230448">650-723-0448</a></span>
+        </div>
+        <div class="footer-contact__right">
+         <p><a class="button button--light" href="/directions">Directions</a> <a class="button button--light" href="/careers">Careers</a></p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <div id="global-footer">
+   <div class="container">
+    <div class="row">
+     <div id="bottom-logo" class="span2"><a href="https://www.stanford.edu"> <img src="https://www.stanford.edu/su-identity/images/footer-stanford-logo@2x.png" alt="Stanford University" width="105" height="49"> </a>
+     </div>
+     <div id="bottom-text" class="span10">
+      <ul class="menu">
+       <li class="menu__item is-leaf first leaf"><a href="https://www.stanford.edu" class="menu__link">SU Home</a></li>
+       <li class="menu__item is-leaf leaf"><a href="https://visit.stanford.edu/plan/" class="menu__link">Maps &amp; Directions</a></li>
+       <li class="menu__item is-leaf leaf"><a href="https://www.stanford.edu/search/" class="menu__link">Search Stanford</a></li>
+       <li class="menu__item is-leaf leaf"><a href="https://www.stanford.edu/site/terms/" class="menu__link">Terms of Use</a></li>
+       <li class="menu__item is-leaf last leaf"><a href="https://emergency.stanford.edu/" class="menu__link">Emergency Info</a></li>
+      </ul>
+     </div>
+     <div class="clear"></div>
+     <p class="copyright vcard" style="margin-top: -50px;">© <span class="fn org">Stanford University</span>, <span class="adr"> <span class="locality">Stanford</span>, <span class="region">California</span> <span class="postal-code">94305</span></span>.&nbsp;&nbsp; <span id="copyright-complaint"><a href="https://uit.stanford.edu/security/copyright-infringement" class="copyright-complaint">Copyright Complaints</a></span></p>
+    </div>
+   </div>
+  </div><a href="#" class="button cd-top"><i class="fa fa-chevron-up"></i> <span class="element-invisible">Back to Top</span></a>
+  <script type="text/javascript">
+		var host = window.location.hostname;
+
+		if (host.indexOf('ehs.stanford.edu') > -1) {
+			// Enable Raygun
+			rg4js('apiKey', 'DJvIHvRtr4L8lx2EPbpDw');
+			rg4js('enableCrashReporting', true);
+			rg4js('enablePulse', false);
+			rg4js('logContentsOfXhrCalls', true); // Include body contents of XHR requests/responses as Breadcrumb metadata
+		} else if (host.indexOf('ehs-dev.stanford.edu') > -1) {
+			// Enable Raygun
+			rg4js('apiKey', 'Cu4U9ooQ0arBMlfvxFUMQ');
+			rg4js('enableCrashReporting', true);
+			rg4js('enablePulse', false);
+			rg4js('logContentsOfXhrCalls', true); // Include body contents of XHR requests/responses as Breadcrumb metadata
+		};
+
+	</script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"820859c140","applicationID":"93672174","transactionName":"MQcDNUZRX0NTUkBfXAhNIAJAWV5eHUJdWFQKB0wRRl9WQlNcGVdBAwM=","queueTime":0,"applicationTime":2978,"atts":"HUAAQw5LTE0=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

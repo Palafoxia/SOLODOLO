@@ -1,0 +1,85 @@
+<!doctype html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]--> 
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Purdue Directory</title> 
+  <meta name="description" content=""> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> 
+  <link href="//fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet" type="text/css"> 
+  <link rel="stylesheet" href="/directory/css/normalize.css"> 
+  <link rel="stylesheet" href="/directory/css/main.css"> 
+  <script src="/directory/js/vendor/modernizr-2.6.2.min.js"></script> 
+  <script src="https://www.purdue.edu/purdue/js/pGA-test.js" type="text/javascript"></script> 
+  <script type="text/javascript">
+        // <![CDATA[
+        var mCode = '';
+        var sCodes = [];
+        sCodes.push('UA-64997833-1');
+
+        SetAnalytics(mCode, sCodes);
+        // ]]>
+    </script> 
+ </head> 
+ <body class="new"> <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WWGMN6Z" style="display:none;visibility:hidden" width="0"></iframe>
+  </noscript><!-- End Google Tag Manager (noscript) --> 
+  <script>
+	function sendGaSearch() {
+		ga('send', 'pageView', 'overview?searchText=' + $('#basicSearchInput'));
+		ga('centralPurdue.send', 'pageView', 'overview?searchText=' + $('#basicSearchInput'));
+	}
+</script>
+  <header class="basic new">
+   <div class="header-wrapper">
+    <nav>
+     <ul>
+      <li><a id="update" class="icon-vcard tipsy-ne" href="https://directory.purdue.edu/perl/nph-update.pl" target="_blank" title="Update my directory listing" tabindex="3">
+        <div class="accessibility-hidden">
+         Update my directory listing
+        </div></a></li>
+      <li><a id="update" class="icon-clock tipsy-ne" href="http://www.itap.purdue.edu/directory/old" target="_blank" title="Directory lookup previous version" tabindex="2">
+        <div class="accessibility-hidden">
+         Directory lookup previous version
+        </div></a></li>
+      <li><a id="about" class="icon-help tipsy-ne" href="https://www.purdue.edu/goldanswers/172119" target="_blank" title="About the Purdue Directory" tabindex="1">
+        <div class="accessibility-hidden">
+         About the Purdue Directory
+        </div></a></li>
+     </ul>
+    </nav>
+    <form action="/directory/" id="searchFormBasic" method="post"> 
+     <fieldset><label for="basicSearchInput" id="search-label"> Search the <b>Purdue</b> Directory <input autofocus id="basicSearchInput" maxlength="64" name="SearchString" tabindex="5" type="text" value=""> <a id="glass" class="icon-search" tabindex="6"></a> </label>
+      <fieldset id="basic-options" class="radio"><a href="/directory/Advanced" class="toggle-advanced" tabindex="7">Advanced Search</a>
+      </fieldset>
+     </fieldset><button id="search-btn" type="submit" tabindex="8" onclick="sendGaSearch();">Search</button>
+    </form> 
+   </div>
+  </header>
+  <div class="wrapper basic-pad">
+   <section class="maintenance-message"><span class="icon-bullhorn"></span>
+   </section>
+   <section id="results">
+    <p> </p>
+    <ul>
+    </ul><!-- 5/13/20115 adding do you mean function -->
+   </section>
+   <div class="push"></div>
+  </div>
+  <footer> 
+   <p> <a href="http://www.purdue.edu/purdue/disclaimer.html">© 2022</a> Purdue University (v1.0.7.0) </p> 
+   <p>Have trouble accessing this page? <a href="mailto:itap@purdue.edu">ITaP</a> can help.</p> 
+  </footer> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+  <script>window.jQuery || document.write('<script src="/directory/js/vendor/jquery-1.10.2.min.js"><\/script>')</script> 
+  <script src="/directory/js/plugins.js"></script> 
+  <script src="/directory/js/main.js"></script> 
+  <script>
+	$(function () {
+		var message = $('.maintenance-message').text().trim();
+		if (message)
+			$('.maintenance-message').show();
+	})
+</script>  
+ </body>
+</html>

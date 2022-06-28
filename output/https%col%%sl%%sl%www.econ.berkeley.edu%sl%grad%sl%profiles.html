@@ -1,0 +1,3413 @@
+<!doctype html><!--[if IEMobile 7]><html class="iem7"  lang="en" dir="ltr"><![endif]--><!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7"  lang="en" dir="ltr"><![endif]--><!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8"  lang="en" dir="ltr"><![endif]--><!--[if IE 8]><html class="lt-ie9"  lang="en" dir="ltr"><![endif]--><!--[if (gte IE 9)|(gt IEMobile 7)]><!-->
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile# video: http://ogp.me/ns/video# product: http://ogp.me/ns/product# content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+ <!--<![endif]-->
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"eb60764641",applicationID:"374286"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta about="/banner-overlays-inner-page/inner06d" typeof="skos:Concept" property="rdfs:label skos:prefLabel" content="INNER_06d">
+  <link rel="shortcut icon" href="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/favicon.ico" type="image/gif">
+  <meta name="generator" content="Drupal 7 (https://www.drupal.org)">
+  <link rel="canonical" href="https://www.econ.berkeley.edu/grad/profiles">
+  <link rel="shortlink" href="https://www.econ.berkeley.edu/grad/profiles">
+  <meta property="og:site_name" content="Department of Economics">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.econ.berkeley.edu/grad/profiles">
+  <meta property="og:title" content="Economics Graduate Student Profiles">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://www.econ.berkeley.edu/grad/profiles">
+  <meta name="twitter:title" content="Economics Graduate Student Profiles">
+  <title>Economics Graduate Student Profiles | Department of Economics</title>
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="cleartype" content="on">
+  <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="/sites/all/themes/econ_2015/favicon.ico?v=2">
+  <style>
+@import url("https://www.econ.berkeley.edu/modules/system/system.base.css?rcx8ns");
+</style>
+  <style>
+@import url("https://www.econ.berkeley.edu/modules/book/book.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/calendar/css/calendar_multiday.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/modules/comment/comment.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/date/date_api/date.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/date/date_popup/themes/datepicker.1.7.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/date/date_repeat_field/date_repeat_field.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/modules/field/theme/field.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/modules/node/node.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/office_hours/office_hours.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/modules/search/search.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/modules/user/user.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/extlink/extlink.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/views/css/views.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/media/modules/media_wysiwyg/css/media_wysiwyg.base.css?rcx8ns");
+</style>
+  <style>
+@import url("https://www.econ.berkeley.edu/sites/all/modules/ctools/css/ctools.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/ldap/ldap_servers/ldap_servers.admin.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/panels/css/panels.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/modules/biblio/biblio.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/modules/taxonomy/taxonomy.css?rcx8ns");
+</style>
+  <style>
+@import url("https://www.econ.berkeley.edu/sites/all/themes/econ_2015/css/styles.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/vendor/select2/select2.css?rcx8ns");
+@import url("https://www.econ.berkeley.edu/sites/all/themes/econ_2015/css/additional_styles.css?rcx8ns");
+</style>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/jquery_update/replace/jquery/1.8/jquery.min.js?v=1.8.3"></script>
+  <script src="https://www.econ.berkeley.edu/misc/jquery-extend-3.4.0.js?v=1.8.3"></script>
+  <script src="https://www.econ.berkeley.edu/misc/jquery-html-prefilter-3.5.0-backport.js?v=1.8.3"></script>
+  <script src="https://www.econ.berkeley.edu/misc/jquery.once.js?v=1.2"></script>
+  <script src="https://www.econ.berkeley.edu/misc/drupal.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/spamspan/spamspan.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/extlink/extlink.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/google_analytics/googleanalytics.js?rcx8ns"></script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-32626458-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+  <script src="https://www.econ.berkeley.edu/sites/all/modules/field_group/field_group.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/vendor/waypoints.min.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/vendor/jquery.touchSwipe.min.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/vendor/matchHeight/jquery.matchHeight-min.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/vendor/select2/select2.min.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/vendor/ScrollToFixed/jquery-scrolltofixed-min.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/vendor/jquery.expander.min.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/affix.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/alert.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/button.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/carousel.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/collapse.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/dropdown.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/modal.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/tooltip.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/popover.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/scrollspy.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/tab.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap/transition.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/bootstrap/javascripts/bootstrap.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/script.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/mobile-menu.js?rcx8ns"></script>
+  <script src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/js/views_slideshow_swipe.js?rcx8ns"></script>
+  <script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"econ_2015","theme_token":"HTPPj13rARZN-6MdkUNkdCRz2J2wBuLexJeRRYtMnXw","js":{"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.8\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/spamspan\/spamspan.js":1,"sites\/all\/modules\/extlink\/extlink.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/field_group\/field_group.js":1,"sites\/all\/themes\/econ_2015\/js\/vendor\/waypoints.min.js":1,"sites\/all\/themes\/econ_2015\/js\/vendor\/jquery.touchSwipe.min.js":1,"sites\/all\/themes\/econ_2015\/js\/vendor\/matchHeight\/jquery.matchHeight-min.js":1,"sites\/all\/themes\/econ_2015\/js\/vendor\/select2\/select2.min.js":1,"sites\/all\/themes\/econ_2015\/js\/vendor\/ScrollToFixed\/jquery-scrolltofixed-min.js":1,"sites\/all\/themes\/econ_2015\/js\/vendor\/jquery.expander.min.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/affix.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/alert.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/button.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/carousel.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/collapse.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/dropdown.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/modal.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/tooltip.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/popover.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/scrollspy.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/tab.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap\/transition.js":1,"sites\/all\/themes\/econ_2015\/bootstrap\/javascripts\/bootstrap.js":1,"sites\/all\/themes\/econ_2015\/js\/script.js":1,"sites\/all\/themes\/econ_2015\/js\/mobile-menu.js":1,"sites\/all\/themes\/econ_2015\/js\/views_slideshow_swipe.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/book\/book.css":1,"sites\/all\/modules\/calendar\/css\/calendar_multiday.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/office_hours\/office_hours.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/extlink\/extlink.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/media\/modules\/media_wysiwyg\/css\/media_wysiwyg.base.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/panels\/css\/panels.css":1,"sites\/all\/modules\/biblio\/biblio.css":1,"modules\/taxonomy\/taxonomy.css":1,"sites\/all\/themes\/econ_2015\/system.menus.css":1,"sites\/all\/themes\/econ_2015\/system.messages.css":1,"sites\/all\/themes\/econ_2015\/system.theme.css":1,"sites\/all\/themes\/econ_2015\/css\/styles.css":1,"sites\/all\/themes\/econ_2015\/css\/wysiwyg.css":1,"sites\/all\/themes\/econ_2015\/js\/vendor\/select2\/select2.css":1,"sites\/all\/themes\/econ_2015\/css\/additional_styles.css":1}},"extlink":{"extTarget":"_blank","extClass":"ext","extLabel":"(link is external)","extImgClass":0,"extSubdomains":1,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends e-mail)"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"field_group":{"div":"full"},"urlIsAjaxTrusted":{"\/grad\/profiles":true}});</script><!--[if lt IE 9]>
+    <script src="/sites/all/themes/zen/js/html5-respond.js"></script>
+    <![endif]-->
+ </head>
+ <body class="html not-front not-logged-in one-sidebar sidebar-second page-grad page-grad-profiles about-us-pages section-grad page-views">
+  <p id="skip-link"><a href="#main-menu" class="element-invisible element-focusable">Jump to navigation</a></p>
+  <div class="region region-top-notification">
+   <div id="block-block-140" class="block block-block first last odd">
+    <div class="block-content">
+     <div class="emergency-notification">
+      <p align="center" style="background-color:#C4820E; padding: 10px; width: 100% "><a style="color: #ffffff; font-size: 16px; " target="_BLANK" href="https://coronavirus.berkeley.edu/"><strong>⚠ &nbsp; </strong>Notice – Updates on UC Berkeley's COVID-19 resources and support</a></p>
+     </div> 
+    </div>
+   </div>
+  </div>
+  <div id="page-wrap" class="top-notification-active">
+   <header class="header" id="header" role="banner">
+    <div class="header-wrapper-bg container">
+     <div class="region region-before-header">
+      <div id="block-menu-menu-social-media-menu" class="block block-menu first odd" role="navigation">
+       <div class="block-content">
+        <ul class="menu">
+         <li class="menu__item is-leaf first leaf"><a href="https://www.facebook.com/Department-of-Economics-University-of-California-Berkeley-955970441116468" class="menu__link facebook" target="_blank">Facebook</a></li>
+         <li class="menu__item is-leaf leaf"><a href="https://twitter.com/berkeleyecon" class="menu__link twitter" target="_blank">Twtitter</a></li>
+         <li class="menu__item is-leaf leaf"><a href="https://www.instagram.com/cal_econadvising/" class="menu__link instagram" target="_blank">Instagram</a></li>
+         <li class="menu__item is-leaf last leaf"><a href="https://www.linkedin.com/groups/2043330/" class="menu__link linkedin" target="_blank">Linkedin</a></li>
+        </ul> 
+       </div>
+      </div>
+      <div id="block-search-form" class="block block-search last even" role="search">
+       <div class="block-content">
+        <form action="/grad/profiles" method="post" id="search-block-form" accept-charset="UTF-8">
+         <div>
+          <div class="container-inline">
+           <h2 class="element-invisible">Search form</h2>
+           <div class="form-item form-type-textfield form-item-search-block-form"><label class="element-invisible" for="edit-search-block-form--2">Search </label>
+            <input title="Enter the terms you wish to search for." placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+           </div>
+           <div class="form-actions form-wrapper" id="edit-actions">
+            <input type="submit" id="edit-submit" name="op" value="Search" class="form-submit">
+           </div>
+           <input type="hidden" name="form_build_id" value="form-i9qPyE2sEHS0eP0kk6y5qnnPrtvYZ-qUi4cgJMJZDgg">
+           <input type="hidden" name="form_id" value="search_block_form">
+          </div>
+         </div>
+        </form> 
+       </div>
+      </div>
+     </div>
+     <div class="header-wrapper-fixed"><a href="/" title="Home" rel="home" class="header--logo" id="logo"><img src="https://www.econ.berkeley.edu/sites/all/themes/econ_2015/logo.png" alt="Home" class="header--logo-image"></a>
+     </div>
+     <div class="header-wrapper-nav">
+      <div id="navigation">
+       <div class="header__region region region-header">
+        <div id="block-menu-block-2" class="block block-menu-block first last odd" role="navigation">
+         <div class="block-content">
+          <div class="menu-block-wrapper menu-block-2 menu-name-main-menu parent-mlid-0 menu-level-1">
+           <ul class="menu">
+            <li class="menu__item is-expanded first expanded menu-mlid-1225"><a href="/about-us" class="menu__link">About</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-1226"><a href="/about-us" title="" class="menu__link">About Us</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-9899"><a href="/women-history" class="menu__link">History of Women Faculty in Economics</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-1227"><a href="/about-us/chairs-and-managers" class="menu__link">Chairs &amp; Managers</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-1646"><a href="/about-us/staff" class="menu__link">Staff</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-1229"><a href="/about-us/research-centers" class="menu__link">Research Centers</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-5158"><a href="/newsletter-old" class="menu__link">E-newsletter Signup</a></li>
+              <li class="menu__item is-leaf is-parent last leaf has-children menu-mlid-1175"><a href="/resources" class="menu__link">Resources</a></li>
+             </ul></li>
+            <li class="menu__item is-expanded expanded menu-mlid-7793"><a href="/news" class="menu__link">News</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-7794"><a href="/events" class="menu__link">Events</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-7804"><a href="/stories-interviews" class="menu__link">Newsroom </a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-7795"><a href="/newsletter" class="menu__link">Newsletter</a></li>
+              <li class="menu__item is-leaf last leaf menu-mlid-5051"><a href="/publications" class="menu__link">Publications</a></li>
+             </ul></li>
+            <li class="menu__item is-expanded expanded menu-mlid-5052"><a href="/faculty" title="List of Faculty" class="menu__link">Faculty</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-3177"><a href="/faculty" title="" class="menu__link">Faculty Profiles</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-3221"><a href="/faculty/emeritus" title="List of Emeritus Faculty" class="menu__link">Emeritus</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-3061"><a href="/faculty/visiting-and-affiliates" title="Visiting Faculty &amp; Affiliates 2011-2012" class="menu__link">Affiliates</a></li>
+              <li class="menu__item is-leaf last leaf menu-mlid-9530"><a href="/faculty/in-memoriam" title="List of Faculty In Memoriam" class="menu__link">In Memoriam</a></li>
+             </ul></li>
+            <li class="menu__item is-expanded is-active-trail expanded active-trail menu-mlid-763"><a href="/grad" class="menu__link is-active-trail active-trail">Graduate</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-664"><a href="/grad" class="menu__link">Graduate Program</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-665"><a href="/grad/admissions" class="menu__link">Admissions</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-2322"><a href="/grad/current" title="Current Graduate Students" class="menu__link">Current Students</a></li>
+              <li class="menu__item is-leaf is-active-trail is-active leaf active-trail active menu-mlid-3580"><a href="/grad/profiles" title="Economics Graduate Student Profiles" class="menu__link is-active-trail active-trail active">Graduate Profiles</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-667"><a href="/grad/employment" class="menu__link">Employment</a></li>
+              <li class="menu__item is-leaf last leaf menu-mlid-7472"><a href="/grad/job-market-candidates" class="menu__link">2021-2022 Ph.D. Job Market Candidates</a></li>
+             </ul></li>
+            <li class="menu__item is-expanded expanded menu-mlid-1166"><a href="/undergrad" class="menu__link">Undergraduate</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-1167"><a href="/undergrad" class="menu__link">Undergraduate Program</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-9528"><a href="https://www.econ.berkeley.edu/undergrad/home/advising" class="menu__link">Advising</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-8769"><a href="https://www.econ.berkeley.edu/content/course-enrollment" class="menu__link">Course Enrollment</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-1169"><a href="/undergrad/prospective" class="menu__link">Prospective Majors</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-1168"><a href="/undergrad/current" class="menu__link">Current Majors</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-9898"><a href="https://www.econ.berkeley.edu/content/economics-undergraduate-student-organizations#" class="menu__link">Student Organizations</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-9529"><a href="https://www.econ.berkeley.edu/commencement" class="menu__link">Commencement</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-9527"><a href="https://www.econ.berkeley.edu/undergrad/home/tutoring" class="menu__link">Tutoring</a></li>
+              <li class="menu__item is-leaf last leaf menu-mlid-3062"><a href="/faq" class="menu__link">FAQ</a></li>
+             </ul></li>
+            <li class="menu__item is-expanded expanded menu-mlid-1170"><a href="/courses" class="menu__link">Courses</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-1171"><a href="/courses" title="" class="menu__link">Course List</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-1172"><a href="/events/seminars" class="menu__link">Seminars</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-1173"><a href="http://events.berkeley.edu/index.php/calendar/sn/econ/type/week.html" title="" class="menu__link">This Week's Seminars</a></li>
+              <li class="menu__item is-leaf last leaf menu-mlid-3405"><a href="/courses/seminars/next-week" title="Next Week's Seminars" class="menu__link">Next Week's Seminars</a></li>
+             </ul></li>
+            <li class="menu__item is-expanded expanded menu-mlid-7801"><a href="/give/why-give" class="menu__link">Give</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-7803"><a href="/give/charter-hill-society" class="menu__link">Charter Hill Society for Economics</a></li>
+              <li class="menu__item is-leaf last leaf menu-mlid-7831"><a href="/content/give-today" class="menu__link">Give today</a></li>
+             </ul></li>
+            <li class="menu__item is-leaf leaf menu-mlid-8914"><a href="/content/climate-equity-diversity-and-inclusion" class="menu__link">Climate</a></li>
+            <li class="menu__item is-expanded last expanded menu-mlid-7796"><a href="/alumni" class="menu__link">Alumni</a>
+             <ul class="menu">
+              <li class="menu__item is-leaf first leaf menu-mlid-7797"><a href="/alumni/network" class="menu__link">Network</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-3060"><a href="/alumni/home" class="menu__link">Submit a note</a></li>
+              <li class="menu__item is-leaf leaf menu-mlid-7798"><a href="/alumni/events" class="menu__link">Events</a></li>
+              <li class="menu__item is-leaf last leaf menu-mlid-7799"><a href="/alumni-notes" class="menu__link">Alumni Notes</a></li>
+             </ul></li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </header>
+   <div id="page">
+    <div id="contextualheader">
+     <div class="region region-contextualheader">
+      <div id="block-nodeblock-graduate" class="block block-nodeblock first last odd">
+       <div class="block-content">
+        <div id="node-8745" class="node node-section-banner node-promoted view-mode-full clearfix" about="/content/graduate-programs" typeof="sioc:Item foaf:Document"><span property="dc:title" content="Graduate Program" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+         <div class="content">
+          <div class="field field-name-field-banner-image field-type-image field-label-hidden">
+           <div class="field-items">
+            <div class="field-item even">
+             <img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/banners/GRADUATE.jpg" width="1600" height="230" alt="">
+            </div>
+           </div>
+          </div>
+          <div class="field field-name-field-tr-banner-overlay field-type-taxonomy-term-reference field-label-hidden">
+           <div class="field-items">
+            <div class="field-item even">
+             <div id="taxonomy-term-100" class="taxonomy-term vocabulary-banner-overlays-inner-page">
+              <div class="content">
+               <div class="field field-name-field-banner-overlay field-type-image field-label-hidden">
+                <div class="field-items">
+                 <div class="field-item even">
+                  <img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/INNER_06d.png" width="1600" height="230" alt="">
+                 </div>
+                </div>
+               </div> 
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="container">
+           <div class="field field-name-title-field field-type-text field-label-hidden">
+            <div class="field-items">
+             <div class="field-item even">
+              <h2>Graduate Program</h2>
+             </div>
+            </div>
+           </div>
+          </div> 
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="main">
+     <div id="main-wrapper">
+      <div id="content" class="column col-md-16" role="main"><a id="main-content"></a>
+       <div class="title-subtitle-wrapper">
+        <h1 class="page--title title" id="page-title">Economics Graduate Student Profiles</h1>
+       </div>
+       <div class="view view-graduate-students view-id-graduate_students view-display-id-page view-dom-id-46423391e4ec5292bf003285293e56ec">
+        <div class="view-content">
+         <div class="views-row views-row-1 views-row-odd views-row-first">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15334"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15334-1631908522.jpg?itok=BG_G1Zr4" alt="Charoo Anand's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15334" title="Anand, Charoo ">Anand, Charoo</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2020
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-2 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13719"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13719-1631824134.jpg?itok=5iR-Kh63" alt="Felipe Arteaga's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13719">Arteaga, Felipe</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Industrial Organization
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-3 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11241"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11241-1630531091.jpg?itok=9vk-DVuV" alt="Hadar Avivi's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11241">Avivi, Hadar</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Public Economics, Applied Econometrics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://avivihadar.github.io/">https://avivihadar.github.io/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-4 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15924"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15924-1631122169.jpg?itok=bxRF4Gdw" alt="Marco Antonio Badilla's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15924">Badilla, Marco Antonio</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Public Economics 
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://marcobadilla.github.io/">https://marcobadilla.github.io/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-5 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15336"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15336-1631662828.jpg?itok=2vyi_xLk" alt="Sarah Baker's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15336">Baker, Sarah</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Public Economics, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-6 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/9995"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-9995-1631824078.jpg?itok=r23sC55P" alt="Helen Banga's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/9995">Banga, Helen</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Industrial Organization, Household Finance, Public Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://helenbanga.github.io/">https://helenbanga.github.io/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2016
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-7 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/2597"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-2597-1631662882.jpg?itok=JM-VYgN7" alt="Kayleigh Barnes's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/2597">Barnes, Kayleigh</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Applied Microeconomics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://kayleighnb.github.io">https://kayleighnb.github.io</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-8 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/12723"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-12723-1631718998.jpg?itok=f0FpkGEE" alt="Valerie Boctor's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/12723">Boctor, Valerie</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, Household Finance
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-9 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/2501"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-2501-1632249770.png?itok=qCThPUlG" alt="Stephanie Bonds's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/2501">Bonds, Stephanie</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Development Economics, Labor Economics, Economics of Education
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://stephaniebonds.com/">https://stephaniebonds.com/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2016
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-10 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13125"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13125-1631662995.jpg?itok=iJyATDZ1" alt="Tomas Breach's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13125">Breach, Tomas</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, Financial Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-11 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11227"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11227-1631824351.png?itok=-d7f-ma1" alt="Jakob Brounstein's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11227">Brounstein, Jakob</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Public Economics, Labor Economics 
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://jakobbrounstein.github.io/">https://jakobbrounstein.github.io/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-12 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/8795"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-8795-1630531751.jpg?itok=VUrV6Kxf" alt="Uyanga Byambaa's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/8795">Byambaa, Uyanga</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Economic Development
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-13 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/14450"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-14450-1631139530.png?itok=L0J35X91" alt="Bernardo Candia Gonzalez's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/14450">Candia Gonzalez, Bernardo</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, International Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://www.bernardocandia.com/">https://www.bernardocandia.com/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-14 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/14352"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-14352-1631824401.png?itok=eVA2_hO_" alt="Martin Caruso Bloeck's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/14352">Caruso Bloeck, Martin</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, International Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-15 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11243"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11243-1631663053.jpg?itok=Ff7c0i_X" alt="Luisa Cefala's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11243">Cefala, Luisa</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Development, Behavioral Economics, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-16 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13129"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13129-1630531859.jpg?itok=F1jR2bXZ" alt="Andrea Cerrato's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13129">Cerrato, Andrea</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, Economic Geography, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-17 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13536"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13536-1631553334.png?itok=-ozbVKKV" alt="Bryan Chu's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13536">Chu, Bryan</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Health, IO, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-18 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/14852"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-14852-1630532036.jpg?itok=jOewPtpe" alt="Ross Chu's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/14852">Chu, Ross</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Public, Behavioral Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-19 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15926"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15926-1631139707.jpg?itok=-YTikMdT" alt="Sydney Tamara Costantini's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15926">Costantini, Sydney Tamara</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-20 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/5824"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-5824-1632250789.jpg?itok=Y2nHVaJ-" alt="Teresita Cruz Vital's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/5824">Cruz Vital, Teresita</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Public Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2020
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-21 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/9987"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-9987-1631824524.jpg?itok=crlqoQ1G" alt="Kaveh Danesh's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/9987">Danesh, Kaveh</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Public Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-22 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13128"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13128-1632249785.png?itok=jneKgIq0" alt="Kevin Dano's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13128" title="Dano, Kevin ">Dano, Kevin</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Econometrics, Networks, Microeconomic Theory
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-23 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/9988"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-9988-1631824559.jpg?itok=mXAkR8OA" alt="Priscila de Oliveira's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/9988">de Oliveira, Priscila</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Behavioral Economics, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2016
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-24 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15338"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15338-1631824608.jpg?itok=cb8aJb7_" alt="Victoria de Quadros's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15338" title="de Quadros, Victoria ">de Quadros, Victoria</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2020
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-25 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/12014"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-12014-1632250573.png?itok=EmaWGk_o" alt="Marina Dias's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/12014">Dias, Marina</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Development Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-26 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11224"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11224-1631663105.png?itok=FMiTYRGz" alt="Madeline Duhon's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11224">Duhon, Madeline</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Development Economics, Urban Economics, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-27 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15928"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15928-1631719050.jpg?itok=LIKCn54A" alt="Carmen Durrer's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15928">Durrer, Carmen</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Public Finance, International Macroeconomics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-28 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/9452"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-9452-1630532099.jpg?itok=m0FAO7zu" alt="Dennis Egger's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/9452">Egger, Dennis</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Development, Labor, Trade
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://www.dennisegger.net/">https://www.dennisegger.net/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2016
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-29 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/14862"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-14862-1630532314.jpg?itok=qOrvdXZa" alt="Javier Feinmann's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/14862">Feinmann, Javier</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Public and Labor Economics Minor Field: Behavioral Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-30 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11275"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11275-1631553482.jpg?itok=_ktcUrbv" alt="Niklas Flamang's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11275">Flamang, Niklas</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, Labor Economics, Behavioral Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://nickflamang.github.io/">https://nickflamang.github.io/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-31 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/14794"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-14794-1632249796.png?itok=7wst87SN" alt="Joaquin Fuenzalida's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/14794">Fuenzalida, Joaquin</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Psychology and Economics, Political Economy
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-32 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/6456"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-6456-1631663162.jpg?itok=DsynmVR7" alt="Nicole Gandre's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/6456">Gandre, Nicole</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Econometrics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-33 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/14733"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-14733-1632249808.png?itok=P77qkZMv" alt="Mengsi Gao's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/14733">Gao, Mengsi</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Econometrics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-34 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13131"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13131-1631139766.jpg?itok=uuaMhLSF" alt="Nick Gebbia's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13131">Gebbia, Nick</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Public Finance
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-35 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/9990"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-9990-1631824664.jpg?itok=dLTKuC9u" alt="Arlen Guarin Galeano's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/9990">Guarin Galeano, Arlen</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Public, Development, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/arlenguarin">https://sites.google.com/view/arlenguarin</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2016
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-36 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/14355"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-14355-1631663245.jpg?itok=Utmvqh4P" alt="Abhi Gupta's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/14355">Gupta, Abhi</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/abhi-gupta/">https://sites.google.com/view/abhi-gupta/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-37 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/8431"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-8431-1630532643.jpg?itok=Huztaso5" alt="Ingrid Haegele's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/8431">Haegele, Ingrid</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Personnel Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://www.ingridhaegele.com/">https://www.ingridhaegele.com/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2016
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-38 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13126"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13126-1632249822.png?itok=kfZkvw75" alt="Johannes Anton Heil's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13126">Heil, Johannes Anton</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-39 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15930"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15930-1631122213.png?itok=1Ky9NCeJ" alt="Kassandra Hernandez's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15930">Hernandez, Kassandra</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-40 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15932"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15932-1632249608.jpg?itok=MpncFgv_" alt="Isabel Hincapie Correa's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15932">Hincapie Correa, Isabel</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-41 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/7992"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-7992-1631553553.jpg?itok=hkVsgxP7" alt="Eric Hsu's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/7992">Hsu, Eric</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Development Political Economy Resource Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://eric-hsu.weebly.com/">https://eric-hsu.weebly.com/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2015
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-42 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15341"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15341-1631554369.jpg?itok=Hq1xpqUh" alt="Yuki Ito's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15341">Ito, Yuki</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Industrial Organization, Theory, Health Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-43 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/14146"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-14146-1631663378.png?itok=XVbvzOrN" alt="Yikun Allison Jiang's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/14146">Jiang, Yikun (Allison)</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Industrial Organization Psychology and Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-44 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15342"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15342-1631663436.jpg?itok=IvdVvEAn" alt="Richard Jin's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15342" title="Jin, Richard ">Jin, Richard</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Public Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2020
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-45 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13130"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13130-1631824746.jpg?itok=TceCF5-S" alt="Collin Jones's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13130">Jones, Collin</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, Finance
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-46 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15934"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15934-1631663808.jpg?itok=IPY_ogkl" alt="Margaret G. Kallus's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15934" title="Kallus, Margaret G. ">Kallus, Margaret G.</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-47 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11231"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11231-1631139903.jpg?itok=PAJqz5BD" alt="Sreeraahul Kancherla's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11231">Kancherla, Sreeraahul</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Public Economics, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sreekancherla.github.io/">https://sreekancherla.github.io/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-48 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/6367"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-6367-1632249845.png?itok=BrZ0DGvt" alt="Caitlin Kearns's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/6367">Kearns, Caitlin</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/ckearns">https://sites.google.com/view/ckearns</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2014
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-49 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11983"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11983-1631664665.jpg?itok=V7XEE_Tw" alt="Patrick Kennedy's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11983">Kennedy, Patrick</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor and Public Economics Spatial Economics and Trade 
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/patrick-kennedy/home">https://sites.google.com/view/patrick-kennedy/home</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-50 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15343"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15343-1631553603.jpg?itok=OI5yxeU_" alt="Grady Killeen's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15343">Killeen, Grady</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://gkilleen33.github.io/">https://gkilleen33.github.io/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2020
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-51 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/6465"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-6465-1632249856.png?itok=gZy7krMb" alt="Kristy Kim's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/6465">Kim, Kristy</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Psych, Public, IO
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="http://kristykim.github.io/">http://kristykim.github.io/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-52 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13654"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13654-1631140077.jpg?itok=mNindKuV" alt="Oliver Kim's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13654">Kim, Oliver</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Development, International Economics, Economic History
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="http://www.oliverwkim.com">http://www.oliverwkim.com</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-53 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/10760"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-10760-1631139986.jpg?itok=FXBnj2cG" alt="Woojin Kim's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/10760">Kim, Woojin</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Psychology and Economics, Political Economy
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://www.wjnkim.com/">https://www.wjnkim.com/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-54 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11229"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11229-1631140168.jpg?itok=ndGEIUj1" alt="Eric Koepcke's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11229">Koepcke, Eric</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Behavioral Economics, Labor Economics, Household Finance
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-55 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11223"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11223-1631298891.jpg?itok=U28-h06M" alt="Maximiliano Lauletta's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11223">Lauletta, Maximiliano</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Development, Public Finance, Psychology and Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/lauletta">https://sites.google.com/view/lauletta</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-56 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/6408"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-6408-1631824826.jpg?itok=g5tXourb" alt="Seung Joo Lee's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/6408">Lee, Seung Joo</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, Finance, Theory
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://app.scholarsite.io/seung-joo-lee">https://app.scholarsite.io/seung-joo-lee</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2014
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-57 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15344"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15344-1644345518.jpg?itok=78W1g-5e" alt="Wouter Leenders's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15344">Leenders, Wouter</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Public Economics, Economic History
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://wouterleenders.eu/">https://wouterleenders.eu/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2020
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-58 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13372"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13372-1631553655.jpg?itok=8d7q-C8o" alt="Runjiu Liu's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13372">Liu, Runjiu</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Development Economics, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-59 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13173"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13173-1630532739.png?itok=qkEmPkbO" alt="Felipe Lobel's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13173">Lobel, Felipe</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Public, Labor, Development
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/felipelobel/">https://sites.google.com/view/felipelobel/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-60 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/12035"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-12035-1630532839.jpg?itok=Z4g4E7K5" alt="Michael Love's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/12035">Love, Michael</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Public Finance, Law &amp; Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://www.michaelblove.com/">https://www.michaelblove.com/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-61 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15936"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15936-1630532951.jpg?itok=VyugKXEK" alt="Jun Ru Lyu's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15936">Lyu, Jun Ru</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Psychology and Economics (Behavioral Economics)
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-62 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/9992"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-9992-1635777525.jpg?itok=Q-_9Fn5I" alt="Eva Lyubich's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/9992">Lyubich, Eva</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Public Finance, Energy &amp; Environment Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://evalyubich.com/">https://evalyubich.com/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2016
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-63 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15345"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15345-1632249543.jpg?itok=PF8etrTX" alt="Ale Marchetti-Bowick's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15345">Marchetti-Bowick, Ale</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor, Public
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2020
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-64 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15938"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15938-1631140198.jpg?itok=rC9eS6TO" alt="Emily Martell's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15938">Martell, Emily</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-65 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/12016"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-12016-1632251605.jpg?itok=cf-odBjk" alt="Joan Martinez's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/12016">Martinez, Joan</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Applied Econometrics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-66 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15346"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15346-1631664028.jpg?itok=NG3pvmmz" alt="Ethan McClure's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15346" title="McClure, Ethan ">McClure, Ethan</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, Monetary Economics, Public Finance
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-67 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13138"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13138-1632249881.png?itok=AU4Tqb2z" alt="Carl McPherson's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13138">McPherson, Carl</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Public Economics, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://carlmcpherson.github.io/">https://carlmcpherson.github.io/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-68 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15347"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15347-1632252042.png?itok=eXmNz20X" alt="Alfredo Mendoza Fernandez's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15347">Mendoza Fernandez, Alfredo</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, International Economics 
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2020
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-69 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/6314"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-6314-1632249891.png?itok=STL-KGcZ" alt="Seongjoo Min's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/6314">Min, Seongjoo</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Econometrics, Industrial Organization
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sjmin711.github.io/">https://sjmin711.github.io/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2014
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-70 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15348"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15348-1654709771.jpg?itok=XAdJngyr" alt="Gwyneth Miner's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15348">Miner, Gwyneth</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Development, Labor Economics 
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://gwynethminer.github.io/">https://gwynethminer.github.io/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-71 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/12007"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-12007-1631664079.jpg?itok=U5Q7Hqlf" alt="William &amp;#039;Billy&amp;#039; Morrison's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/12007">Morrison, William 'Billy'</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Behavioral Economics, Public Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-72 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/8034"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-8034-1631298949.jpg?itok=_fM2hs1w" alt="Maximilian Mueller's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/8034">Mueller, Maximilian</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Psychology and Economics Education Economics Development Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://www.maximilianwmueller.com/">https://www.maximilianwmueller.com/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2015
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-73 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/8040"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-8040-1634572486.jpg?itok=18tZ0_5W" alt="Preston Mui's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/8040">Mui, Preston</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://prestonmui.github.io/">https://prestonmui.github.io/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2015
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-74 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/9993"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-9993-1632249971.png?itok=iRiDv-HN" alt="Jimmy Narang's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/9993">Narang, Jimmy</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Psychology and Economics, Development Economics, Social Networks, Beliefs and Norms
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2016
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-75 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/12015"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-12015-1631122261.jpg?itok=0vsS3Q69" alt="Sara Lynn Neff's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/12015">Neff, Sara Lynn</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Economic Theory, Experimental Economics, Psychology and Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-76 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15349"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15349-1631824984.jpg?itok=ipicDC6R" alt="Elena Ojeda's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15349">Ojeda, Elena</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, Economic History
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/berkeley.edu/elenaojeda">https://sites.google.com/berkeley.edu/elenaojeda</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-77 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15940"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15940-1631553763.jpg?itok=44U3KpRC" alt="Jonathan Old's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15940">Old, Jonathan</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Political Economy, Development Economics 
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://jonathanold.github.io/">https://jonathanold.github.io/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-78 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15942"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15942-1631825028.jpg?itok=oAxjIa6v" alt="Petra Oreskovic's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15942">Oreskovic, Petra</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Political Economy
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-79 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/10885"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-10885-1631122314.jpg?itok=77MH7oFh" alt="Cristobal Otero's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/10885">Otero, Cristóbal</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Public Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/cristobalotero">https://sites.google.com/view/cristobalotero</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-80 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15350"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15350-1630533170.jpg?itok=kc6TSsYg" alt="Bailey Palmer's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15350">Palmer, Bailey</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Development Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2020
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-81 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/9600"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-9600-1631140297.jpg?itok=5vJIUjQI" alt="Carlo Paramo's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/9600">Paramo, Carlos</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Industrial Organization Development Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-82 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15944"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15944-1631553810.jpg?itok=L2Lv4pt8" alt="Daniela Paz Cruzat's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15944">Paz Cruzat, Daniela</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-83 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/9093"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-9093-1631825083.jpg?itok=ap2Fgklw" alt="Pedro Pires's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/9093">Pires, Pedro</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Behavioral, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2016
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-84 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/6345"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-6345-1631299022.jpg?itok=3ET7tW5s" alt="Murilo Ramos's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/6345">Ramos, Murilo</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Development Economics, Labor Economics, Political Economy
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://www.muriloramos.com/">https://www.muriloramos.com/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2015
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-85 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15351"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15351-1631140376.jpg?itok=erlk5EHa" alt="Steve Ramos's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15351">Ramos, Steve</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Public Economics, Economics of Education, Household Finance 
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2020
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-86 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11295"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11295-1631664200.jpg?itok=MumlEWnt" alt="Tatiana Reyes Hinrichsen's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11295">Reyes Hinrichsen, Tatiana</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/tatiana-reyes/about-me">https://sites.google.com/view/tatiana-reyes/about-me</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-87 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13696"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13696-1631141223.jpg?itok=PrXS2xAH" alt="Roberto Hsu Rocha's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13696">Rocha, Roberto Hsu</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Development 
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/robertohsurocha/home">https://sites.google.com/view/robertohsurocha/home</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-88 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/6362"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-6362-1632249981.png?itok=UL7vpivS" alt="Joseph Root's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/6362">Root, Joseph</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Microeconomic Theory
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/josephroot/home">https://sites.google.com/view/josephroot/home</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2014
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-89 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11239"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11239-1631664247.jpg?itok=gP5nBv8h" alt="Alon Rubinstein's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11239">Rubinstein, Alon</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Industrial Organization Behavioral Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-90 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/8473"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-8473-1631553975.png?itok=VsS4gT3G" alt="Somara Sabharwal's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/8473">Sabharwal, Somara</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Development, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-91 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15352"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15352-1632249992.png?itok=jMW02tr3" alt="Matteo Saccarola's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15352">Saccarola, Matteo</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Industrial Organization, Applied Microeconomics, Psychology and Econ 
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2020
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-92 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13309"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13309-1631122441.jpg?itok=Q5nHlaBW" alt="Cesia Sanchez's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13309">Sanchez, Cesia</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Economic History
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-93 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/8941"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-8941-1632250465.png?itok=2_6eypgH" alt="Will Sandholtz's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/8941">Sandholtz, Will</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-94 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11253"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11253-1630533250.jpg?itok=YUxdLV8T" alt="Monica Saucedo Hernandez's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11253">Saucedo Hernandez, Monica</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Public Finance
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-95 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13653"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13653-1631825178.jpg?itok=-x5TxG4Z" alt="Yassine Sbai Sassi's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13653">Sbai Sassi, Yassine</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Econometrics, Microeconomic Theory, Industrial Organization
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-96 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15946"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15946-1631554013.jpg?itok=_MuOi2c6" alt="Alice Elizabeth Schmitz's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15946">Schmitz, Alice Elizabeth</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-97 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/9461"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-9461-1631554081.jpg?itok=5fCMbUyQ" alt="Benjamin Scuderi's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/9461">Scuderi, Benjamin</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Econometrics, IO
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/site/scuderib/">https://sites.google.com/site/scuderib/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2016
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-98 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13273"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13273-1631554109.jpg?itok=VdH10lhM" alt="Nachiket Shah's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13273">Shah, Nachiket</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-99 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15875"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15875-1632250494.png?itok=Z_nqJKOk" alt="Elaine Shen's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15875">Shen, Elaine</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-100 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11254"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11254-1631825278.jpg?itok=4-Ll6XWw" alt="Priyanka Shende's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11254">Shende, Priyanka</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Economic Theory, Industrial Organization
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/priyankashende/home">https://sites.google.com/view/priyankashende/home</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-101 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15948"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15948-1631664351.jpg?itok=d7d_Adgz" alt="Afras Yab Sial's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15948">Sial, Afras Yab</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-102 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/14620"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-14620-1630533348.jpg?itok=qpiwYQ84" alt="Bruno Smaniotto's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/14620">Smaniotto, Bruno</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, Psychology and Economics, Economic Theory
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-103 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13695"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13695-1631825323.jpg?itok=MOhi4HDJ" alt="Landin Smith's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13695">Smith, Landin</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Development, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-104 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15950"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15950-1645547788.jpg?itok=t7F3VnfQ" alt="Sharath Venkata Sonti's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15950">Sonti, Sharath Venkata</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, International Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-105 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11460"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11460-1631206177.png?itok=XjXVliel" alt="Nicholas Swanson's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11460">Swanson, Nicholas</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Development
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-106 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15952"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15952-1630533416.jpg?itok=fW2u3LDb" alt="Dustin Swonder's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15952">Swonder, Dustin</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://dustinswonder.github.io/">https://dustinswonder.github.io/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-107 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/9085"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-9085-1631299081.jpg?itok=dPmymo8b" alt="Nadav Tadelis's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/9085">Tadelis, Nadav</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Econometrics, Industrial Organization
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://github.com/nadavtadelis">https://github.com/nadavtadelis</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2020
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-108 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15866"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15866-1631122494.jpg?itok=anLd_f4V" alt="Karthik Tadepalli's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15866">Tadepalli, Karthik</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://karthiktadepalli.com/">https://karthiktadepalli.com/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-109 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/2944"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-2944-1631121082.jpg?itok=5YN0pAVY" alt="Andrew A Tai's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/2944">Tai, Andrew</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Microeconomic Theory
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/andrew-tai/home">https://sites.google.com/view/andrew-tai/home</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-110 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13656"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13656-1632250519.png?itok=OuH0VRMT" alt="Matthew Tauzer's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13656">Tauzer, Matthew</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-111 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/14734"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-14734-1631121235.jpg?itok=T6mRwdss" alt="Dan Tavrov's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/14734">Tavrov, Dan</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Political Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-112 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/6883"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-6883-1631121323.jpg?itok=pKc8f9JX" alt="Cristian Ugarte's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/6883">Ugarte, Cristian</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Microeconomic Theory
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://www.cristianugarte.com/">https://www.cristianugarte.com/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2016
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-113 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/14840"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-14840-1631554152.png?itok=_cu6JYrW" alt="Ini Umosen's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/14840">Umosen, Ini</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Public Finance, Economics of Education, Urban Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-114 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15319"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15319-1631121362.jpg?itok=iMc7wbu7" alt="Anna Vakarova's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15319" title="Vakarova, Anna ">Vakarova, Anna</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            International Macro, Theory
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2020
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-115 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11226"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11226-1631121433.jpg?itok=Mn00uK6k" alt="Damian Vergara's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11226">Vergara, Damian</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Public Economics, Labor Economics 
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/damianvergara">https://sites.google.com/view/damianvergara</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-116 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11878"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11878-1631121515.jpg?itok=0wjExtif" alt="Felipe Vial's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11878">Vial, Felipe</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Development
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/felipevial/home?authuser=0">https://sites.google.com/view/felipevial/home?authuser=0</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-117 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/9994"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-9994-1632250581.png?itok=VGdxYu-o" alt="Ao Wang's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/9994">Wang, Ao</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Psychology and Economics, Labor Economics, Development Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/ao-wang/home">https://sites.google.com/view/ao-wang/home</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2016
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-118 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11235"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11235-1631122582.jpg?itok=MYw1UIuF" alt="Jianlin Wang's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11235">Wang, Jianlin</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            International, Macroeconomics, Finance
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-119 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15357"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15357-1631554194.jpg?itok=X7-3gmvb" alt="Zicheng Sam Wang's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15357">Wang, Zicheng (Sam)</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Development, Trade, Labor Economics 
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2020
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-120 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15879"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15879-1631664394.jpg?itok=QGzpISxV" alt="Lucio Martin Wasserman's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15879">Wasserman, Lucio Martin</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-121 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/12022"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-12022-1631299133.jpg?itok=hqMVZToN" alt="Jacob Weber's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/12022">Weber, Jacob</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, International Economics, Economic History
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/jacob-weber/home">https://sites.google.com/view/jacob-weber/home</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-122 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11273"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11273-1631121569.jpg?itok=fo9YEprL" alt="Harrison Wheeler's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11273">Wheeler, Harrison</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Urban Economics, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/harrison-wheeler">https://sites.google.com/view/harrison-wheeler</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-123 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11883"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11883-1644607884.jpg?itok=apjZ0UfC" alt="John Wieselthier's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11883">Wieselthier, John</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Econometrics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-124 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/14507"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-14507-1632250606.png?itok=CkADiBWh" alt="Caleb Wroblewski's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/14507">Wroblewski, Caleb</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, Public Economics, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://ckwroblewski.github.io/">https://ckwroblewski.github.io/</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-125 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11242"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11242-1631825594.jpg?itok=vyZQO38K" alt="Qihang &amp;#039;David&amp;#039; Wu's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11242">Wu, Qihang 'David'</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Development Economics, Labor Economics, Psychology and Economics, Political Economy
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://sites.google.com/view/qihangwu">https://sites.google.com/view/qihangwu</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-126 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15954"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15954-1632250613.png?itok=r2BkWLMc" alt="Menglu Xu's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15954" title="Xu, Menglu ">Xu, Menglu</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2021
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-127 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/11232"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-11232-1631299190.jpg?itok=gR9Rsv1e" alt="Vitalia Yaremko's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/11232">Yaremko, Vitalia</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, Labor Economics, Economic History
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2017
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-128 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15353"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15353-1632348291.jpg?itok=8rExeRVC" alt="Anders Yding's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15353">Yding, Anders</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, Public Finance
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-homepage"> 
+           <div class="field-content">
+            <a href="https://andersyding.com">https://andersyding.com</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2020
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-129 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/15354"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-15354-1631122685.png?itok=U6pFOP0z" alt="Maren Young's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/15354" title="Young, Maren ">Young, Maren</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Psychology and Economics Development Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-130 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/9224"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-9224-1632250622.png?itok=FKoMAsVm" alt="Chaoran Yu's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/9224">Yu, Chaoran</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Macroeconomics, Labor Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2016
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-131 views-row-odd">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/13123"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-13123-1631664475.jpg?itok=EEDwUXik" alt="Kai Zen's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/13123">Zen, Kai</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            Labor Economics, Public Economics
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2018
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-132 views-row-even">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/9448"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-9448-1632250640.png?itok=RV-iQVta" alt="Yipei Zhang's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/9448">Zhang, Yipei</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-fields"> 
+           <div class="field-content">
+            International Trade
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2016
+           </div> 
+          </div> 
+         </div>
+         <div class="views-row views-row-133 views-row-odd views-row-last">
+          <div class="views-field views-field-picture"> 
+           <div class="field-content">
+            <a href="https://www.econ.berkeley.edu/grad/profiles/14741"><img typeof="foaf:Image" src="https://www.econ.berkeley.edu/sites/default/files/styles/large/public/pictures/picture-14741-1632250647.png?itok=eidqXpu_" alt="Mingduo Zhao's picture"></a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-name-last"> 
+           <div class="field-content">
+            <a href="/grad/profiles/14741">Zhao, Mingduo</a>
+           </div> 
+          </div> 
+          <div class="views-field views-field-field-starting-year"> 
+           <div class="field-content">
+            Entered program in 2019
+           </div> 
+          </div> 
+         </div>
+        </div>
+       </div> 
+      </div>
+      <aside class="sidebar">
+       <section class="region region-sidebar-second column sidebar col-md-7 col-md-push-1">
+        <div id="block-menu-block-6" class="block block-menu-block first last odd" role="navigation">
+         <h2 class="block__title block-title">Graduate</h2>
+         <div class="block-content">
+          <div class="menu-block-wrapper menu-block-6 menu-name-main-menu parent-mlid-763 menu-level-1">
+           <ul class="menu">
+            <li class="menu__item is-leaf first leaf menu-mlid-664"><a href="/grad" class="menu__link">Graduate Program</a></li>
+            <li class="menu__item is-leaf leaf menu-mlid-665"><a href="/grad/admissions" class="menu__link">Admissions</a></li>
+            <li class="menu__item is-leaf leaf menu-mlid-2322"><a href="/grad/current" title="Current Graduate Students" class="menu__link">Current Students</a></li>
+            <li class="menu__item is-leaf is-active-trail is-active leaf active-trail active menu-mlid-3580"><a href="/grad/profiles" title="Economics Graduate Student Profiles" class="menu__link is-active-trail active-trail active">Graduate Profiles</a></li>
+            <li class="menu__item is-leaf leaf menu-mlid-667"><a href="/grad/employment" class="menu__link">Employment</a></li>
+            <li class="menu__item is-leaf last leaf menu-mlid-7472"><a href="/grad/job-market-candidates" class="menu__link">2021-2022 Ph.D. Job Market Candidates</a></li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </section>
+      </aside>
+     </div>
+    </div>
+    <footer id="footer" class="region region-footer">
+     <div class="container">
+      <div id="block-block-132" class="block block-block first odd">
+       <div class="block-content">
+        <p>© Copyright 2015 UC Regents.<br> University of California, Berkeley | College of Letters &amp; Science</p>
+       </div>
+      </div>
+      <div id="block-block-1" class="block block-block last even">
+       <div class="block-content">
+        <div class="footer-info">
+         <div class="address">
+          530 Evans Hall #3880, Berkeley, California 94720-3880
+          <br>Tel: (510) 642-0822 / Fax: (510) 642-6615 / E-mail: <a href="mailto:econdept@berkeley.edu">econdept@berkeley.edu</a>
+         </div>
+         <div class="site-info">
+          UCB Privacy Statement | Disclaimer
+          <br>For website updates, please contact <a href="mailto:web@econ.berkeley.edu">web@econ.berkeley.edu</a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div> 
+    </footer>
+   </div>
+  </div>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"eb60764641","applicationID":"374286","transactionName":"Z1cGYkBVV0JRUkxaCV4dMURbGxZYXlVdS0hAWhQ=","queueTime":0,"applicationTime":7,"atts":"SxAFFAhPREw=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

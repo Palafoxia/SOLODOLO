@@ -1,0 +1,1305 @@
+<!doctype html>
+<html lang="en-US">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WordPress • Brand Guidelines</title>
+  <link rel="stylesheet" href="https://use.typekit.net/scr0aog.css">
+  <meta name="robots" content="max-image-preview:large">
+  <link rel="dns-prefetch" href="//s.w.org">
+  <link rel="dns-prefetch" href="//v0.wordpress.com">
+  <link rel="alternate" type="application/rss+xml" title="Brand Guidelines » Feed" href="https://brand.berkeley.edu/feed/">
+  <link rel="alternate" type="application/rss+xml" title="Brand Guidelines » Comments Feed" href="https://brand.berkeley.edu/comments/feed/"><!-- This site uses the Google Analytics by MonsterInsights plugin v8.4.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+  <script src="//www.googletagmanager.com/gtag/js?id=UA-1506086-24" data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '8.4.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-1506086-24',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						if ( document.cookie.indexOf( disableStrs[ index ] + '=true' ) > -1 ) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						document.cookie = disableStrs[ index ] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if ( mi_track_user ) {
+					function __gtagDataLayer() {
+						dataLayer.push( arguments );
+					}
+
+					function __gtagTracker( type, name, parameters ) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply( null, arguments );
+							return;
+						}
+
+						if ( type === 'event' ) {
+							
+															parameters.send_to = monsterinsights_frontend.ua;
+								__gtagDataLayer( type, name, parameters );
+													} else {
+							__gtagDataLayer.apply( null, arguments );
+						}
+					}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+											} );
+															__gtagTracker( 'config', 'UA-1506086-24', {"forceSSL":"true"} );
+										window.gtag = __gtagTracker;											(function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+																				if ( ! ( ! args.hasOwnProperty(arg) || ! gaMap.hasOwnProperty(arg) ) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						})();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script><!-- / Google Analytics by MonsterInsights -->
+  <script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/brand.berkeley.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.3"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+  <link rel="stylesheet" id="wp-block-library-css" href="https://brand.berkeley.edu/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3" type="text/css" media="all">
+  <style id="wp-block-library-inline-css" type="text/css">
+.has-text-align-justify{text-align:justify;}
+</style>
+  <link rel="stylesheet" id="mediaelement-css" href="https://brand.berkeley.edu/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.16" type="text/css" media="all">
+  <link rel="stylesheet" id="wp-mediaelement-css" href="https://brand.berkeley.edu/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=5.9.3" type="text/css" media="all">
+  <style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+  <link rel="stylesheet" id="dashicons-css" href="https://brand.berkeley.edu/wp-includes/css/dashicons.min.css?ver=5.9.3" type="text/css" media="all">
+  <link rel="stylesheet" id="pbsandwich-css" href="https://brand.berkeley.edu/wp-content/plugins/page-builder-sandwich/css/frontend.css?ver=3.3UCB" type="text/css" media="all">
+  <link rel="stylesheet" id="berkeley_brand-css" href="https://brand.berkeley.edu/wp-content/themes/berkeley_brand/style.css?ver=5.9.3" type="text/css" media="all">
+  <link rel="stylesheet" id="child-style-css" href="https://brand.berkeley.edu/wp-content/themes/bk_brand_child/style.css?ver=5.9.3" type="text/css" media="all">
+  <link rel="stylesheet" id="bootstrap-css" href="https://brand.berkeley.edu/wp-content/themes/berkeley_brand/css/bootstrap.min.css?ver=5.9.3" type="text/css" media="all">
+  <link rel="stylesheet" id="parent-style-css" href="https://brand.berkeley.edu/wp-content/themes/berkeley_brand/css/entypo.css?ver=5.9.3" type="text/css" media="all">
+  <link rel="stylesheet" id="bb-styles-css" href="https://brand.berkeley.edu/wp-content/themes/berkeley_brand/minified/styles.css?ver=all" type="text/css" media="all">
+  <link rel="stylesheet" id="fontawesome-css" href="https://brand.berkeley.edu/wp-content/plugins/media-grid/css/font-awesome/css/font-awesome.min.css?ver=4.7.0" type="text/css" media="all">
+  <link rel="stylesheet" id="mg-custom-css-css" href="https://brand.berkeley.edu/wp-content/plugins/media-grid/css/custom.css?ver=5.143" type="text/css" media="all">
+  <link rel="stylesheet" id="jetpack_css-css" href="https://brand.berkeley.edu/wp-content/plugins/jetpack/css/jetpack.css?ver=10.7" type="text/css" media="all">
+  <script type="text/javascript" id="monsterinsights-frontend-script-js-extra">
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"https:\/\/brand.berkeley.edu","hash_tracking":"false","ua":"UA-1506086-24","v4_id":""};
+/* ]]> */
+</script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.4.0" id="monsterinsights-frontend-script-js"></script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-content/plugins/page-builder-sandwich/js/min/frontend-min.js?ver=3.3UCB" id="pbsandwich-js"></script>
+  <link rel="https://api.w.org/" href="https://brand.berkeley.edu/wp-json/">
+  <link rel="alternate" type="application/json" href="https://brand.berkeley.edu/wp-json/wp/v2/pages/1383">
+  <link rel="canonical" href="https://brand.berkeley.edu/web-design/wordpress/">
+  <link rel="alternate" type="application/json+oembed" href="https://brand.berkeley.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbrand.berkeley.edu%2Fweb-design%2Fwordpress%2F">
+  <link rel="alternate" type="text/xml+oembed" href="https://brand.berkeley.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbrand.berkeley.edu%2Fweb-design%2Fwordpress%2F&amp;format=xml">
+  <style type="text/css">/** Mega Menu CSS: disabled **/</style>
+ </head>
+ <body class="page-template page-template-templates page-template-page-hero-band-web-soybean page-template-templatespage-hero-band-web-soybean-php page page-id-1383 page-parent page-child parent-pageid-504 mega-menu-main"><a class="sr-only sr-only-focusable skip-to-content" href="#content">Skip to main content</a>
+  <header id="site-header" class="light nav-right"><!-- Main menu -->
+   <div class="navbar navbar-default navbar-static-top yamm" role="navigation">
+    <div class="container"><a href="https://www.berkeley.edu" class="home-link">UC Berkeley</a>
+     <div class="navbar-header one-line">
+      <a href="/" rel="home"><span class="b-wordmark" aria-hidden="true"></span><span class="dept-title one-line">Brand Guidelines</span></a><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+     </div>
+     <div class="collapse navbar-collapse navbar-ex2-collapse" id="main-nav">
+      <div id="tools-nav">
+       <div class="container">
+       </div>
+      </div>
+      <nav id="primary-nav">
+       <div id="mega-menu-wrap-main" class="mega-menu-wrap">
+        <div class="mega-menu-toggle">
+         <div class="mega-toggle-blocks-left"></div>
+         <div class="mega-toggle-blocks-center"></div>
+         <div class="mega-toggle-blocks-right">
+          <div class="mega-toggle-block mega-menu-toggle-block mega-toggle-block-1" id="mega-toggle-block-1" tabindex="0">
+           <span class="mega-toggle-label" role="button" aria-expanded="false"><span class="mega-toggle-label-closed"></span><span class="mega-toggle-label-open"></span></span>
+          </div>
+         </div>
+        </div>
+        <ul id="mega-menu-main" class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-event="click" data-effect="slide" data-effect-speed="200" data-effect-mobile="disabled" data-effect-speed-mobile="0" data-mobile-force-width="false" data-second-click="close" data-document-click="collapse" data-vertical-behaviour="accordion" data-breakpoint="600" data-unbind="true" data-mobile-state="collapse_all" data-hover-intent-timeout="300" data-hover-intent-interval="100">
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-menu-item-449" id="mega-menu-item-449"><a class="dropdown-toggle mega-menu-link" href="https://brand.berkeley.edu/category/brand/" aria-haspopup="true" aria-expanded="false" tabindex="0" data-target="#" data-toggle="dropdown" aria-current="false">Brand<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-17" id="mega-menu-item-widget_sp_image-17"><h4 class="mega-block-title">nobel-parking</h4><img width="468" height="312" alt="nobel-parking" class="attachment-full" style="max-width: 100%;" src="https://brand.berkeley.edu/wp-content/uploads/2017/01/nobel_sign.gif"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-38" id="mega-menu-item-nav_menu-38">
+            <div class="menu-submenu1-brand-container">
+             <ul id="menu-submenu1-brand" class="menu">
+              <li id="menu-item-458" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-458"><a href="https://brand.berkeley.edu/brand/">Overview</a></li>
+              <li id="menu-item-811" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-811"><a href="https://brand.berkeley.edu/brand-platform/">Brand platform</a></li>
+              <li id="menu-item-561" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-561"><a href="https://brand.berkeley.edu/brand-manuals/">Brand manuals</a></li>
+              <li id="menu-item-1016" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1016"><a href="https://brand.berkeley.edu/brand-training/">Brand training</a></li>
+             </ul>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-39" id="mega-menu-item-nav_menu-39">
+            <div class="menu-submenu2-brand-container">
+             <ul id="menu-submenu2-brand" class="menu">
+              <li id="menu-item-474" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-474"><a href="https://brand.berkeley.edu/brand-videos/">Brand videos</a></li>
+              <li id="menu-item-1197" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1197"><a href="https://brand.berkeley.edu/brand-campaign/">Brand campaign</a></li>
+              <li id="menu-item-473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-473"><a href="https://brand.berkeley.edu/creative-brief/">Creative brief</a></li>
+              <li id="menu-item-1046" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1046"><a href="https://brand.berkeley.edu/brand-protection/">Brand protection</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-menu-item-450" id="mega-menu-item-450"><a class="dropdown-toggle mega-menu-link" href="https://brand.berkeley.edu/category/identity/" aria-haspopup="true" aria-expanded="false" tabindex="0" data-target="#" data-toggle="dropdown" aria-current="false">Identity<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-18" id="mega-menu-item-widget_sp_image-18"><img width="800" height="450" class="attachment-full" style="max-width: 100%;" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/12/identity_megamenu_image.jpg 800w, https://brand.berkeley.edu/wp-content/uploads/2016/12/identity_megamenu_image-300x169.jpg 300w, https://brand.berkeley.edu/wp-content/uploads/2016/12/identity_megamenu_image-768x432.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" src="https://brand.berkeley.edu/wp-content/uploads/2016/12/identity_megamenu_image.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-40" id="mega-menu-item-nav_menu-40">
+            <div class="menu-submenu1-identity-container">
+             <ul id="menu-submenu1-identity" class="menu">
+              <li id="menu-item-486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-486"><a href="https://brand.berkeley.edu/identity/">Overview</a></li>
+              <li id="menu-item-485" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-485"><a href="https://brand.berkeley.edu/logo/">Logo</a></li>
+             </ul>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-41" id="mega-menu-item-nav_menu-41">
+            <div class="menu-submenu2-identity-container">
+             <ul id="menu-submenu2-identity" class="menu">
+              <li id="menu-item-1047" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1047"><a href="https://brand.berkeley.edu/seal/">Seal</a></li>
+              <li id="menu-item-489" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-489"><a href="https://brand.berkeley.edu/stationery/">Stationery</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-menu-item-454" id="mega-menu-item-454"><a class="dropdown-toggle mega-menu-link" href="https://brand.berkeley.edu/category/visual-design/" aria-haspopup="true" aria-expanded="false" tabindex="0" data-target="#" data-toggle="dropdown" aria-current="false">Visual design<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-19" id="mega-menu-item-widget_sp_image-19"><h4 class="mega-block-title">visual_megamenu</h4><img width="468" height="312" alt="visual_megamenu" class="attachment-full" style="max-width: 100%;" srcset="https://brand.berkeley.edu/wp-content/uploads/2017/01/visual_design_megamenu.jpg 468w, https://brand.berkeley.edu/wp-content/uploads/2017/01/visual_design_megamenu-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://brand.berkeley.edu/wp-content/uploads/2017/01/visual_design_megamenu.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-42" id="mega-menu-item-nav_menu-42">
+            <div class="menu-submenu1-visual-design-container">
+             <ul id="menu-submenu1-visual-design" class="menu">
+              <li id="menu-item-499" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-499"><a href="https://brand.berkeley.edu/visual-design/">Overview</a></li>
+              <li id="menu-item-497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-497"><a href="https://brand.berkeley.edu/colors/">Color</a></li>
+              <li id="menu-item-498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-498"><a href="https://brand.berkeley.edu/typography/">Typography</a></li>
+             </ul>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-43" id="mega-menu-item-nav_menu-43">
+            <div class="menu-submenu2-visual-design-container">
+             <ul id="menu-submenu2-visual-design" class="menu">
+              <li id="menu-item-1019" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1019"><a href="https://brand.berkeley.edu/photography/">Photography</a></li>
+              <li id="menu-item-502" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-502"><a href="https://brand.berkeley.edu/graphic-elements/">Graphic elements</a></li>
+              <li id="menu-item-500" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-500"><a href="https://brand.berkeley.edu/business-documents/">Business documents</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-menu-item-455" id="mega-menu-item-455"><a class="dropdown-toggle mega-menu-link" href="https://brand.berkeley.edu/category/web-design/" aria-haspopup="true" aria-expanded="false" tabindex="0" data-target="#" data-toggle="dropdown" aria-current="false">Web design<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-20" id="mega-menu-item-widget_sp_image-20"><h4 class="mega-block-title">openberkeley_upp_468x312</h4><img width="468" height="312" alt="openberkeley_upp_468x312" class="attachment-full" style="max-width: 100%;" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/11/openberkeley_upp_468x312.jpg 468w, https://brand.berkeley.edu/wp-content/uploads/2016/11/openberkeley_upp_468x312-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/openberkeley_upp_468x312.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-49" id="mega-menu-item-nav_menu-49">
+            <div class="menu-submenu1-web-design-container">
+             <ul id="menu-submenu1-web-design" class="menu">
+              <li id="menu-item-510" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-page-parent menu-item-510"><a href="https://brand.berkeley.edu/web-design/">Overview</a></li>
+              <li id="menu-item-586" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-586"><a href="https://brand.berkeley.edu/web-design/dreamweaver/">Dreamweaver</a></li>
+              <li id="menu-item-1408" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1383 current_page_item menu-item-1408"><a href="https://brand.berkeley.edu/web-design/wordpress/" aria-current="page">WordPress</a></li>
+             </ul>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-50" id="mega-menu-item-nav_menu-50">
+            <div class="menu-submenu2-web-design-container">
+             <ul id="menu-submenu2-web-design" class="menu">
+              <li id="menu-item-593" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-593"><a href="https://brand.berkeley.edu/web-design/open-berkeley/">Open Berkeley (Drupal)</a></li>
+              <li id="menu-item-798" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-798"><a href="https://brand.berkeley.edu/web-design/e-newsletters/">E-newsletters</a></li>
+              <li id="menu-item-1292" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1292"><a href="https://brand.berkeley.edu/berkeley-events-calendar/">Berkeley events calendar</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-menu-item-451" id="mega-menu-item-451"><a class="dropdown-toggle mega-menu-link" href="https://brand.berkeley.edu/category/social/" aria-haspopup="true" aria-expanded="false" tabindex="0" data-target="#" data-toggle="dropdown" aria-current="false">Social media<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-21" id="mega-menu-item-widget_sp_image-21"><h4 class="mega-block-title">Berkeley Squirrels</h4><a href="https://www.facebook.com/BerkeleySquirrels" target="_self" class="widget_sp_image-image-link" title="Berkeley Squirrels"><img width="468" height="312" alt="Berkeley Squirrels" class="attachment-full" style="max-width: 100%;" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/12/squirrelgroup.jpg 468w, https://brand.berkeley.edu/wp-content/uploads/2016/12/squirrelgroup-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://brand.berkeley.edu/wp-content/uploads/2016/12/squirrelgroup.jpg"></a></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-46" id="mega-menu-item-nav_menu-46">
+            <div class="menu-submenu1-social-container">
+             <ul id="menu-submenu1-social" class="menu">
+              <li id="menu-item-523" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-523"><a href="https://brand.berkeley.edu/social-media/">Overview</a></li>
+              <li id="menu-item-522" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-522"><a href="https://brand.berkeley.edu/guidelines/">Guidelines</a></li>
+             </ul>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-47" id="mega-menu-item-nav_menu-47">
+            <div class="menu-submenu2-social-container">
+             <ul id="menu-submenu2-social" class="menu">
+              <li id="menu-item-1020" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1020"><a href="https://brand.berkeley.edu/platforms/">Platforms</a></li>
+              <li id="menu-item-526" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-526"><a href="https://brand.berkeley.edu/directory/">Directory</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+         <li class="mega-menu-item mega-menu-item-type-taxonomy mega-menu-item-object-category mega-menu-megamenu mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-menu-item-532" id="mega-menu-item-532"><a class="dropdown-toggle mega-menu-link" href="https://brand.berkeley.edu/category/resources/" aria-haspopup="true" aria-expanded="false" tabindex="0" data-target="#" data-toggle="dropdown" aria-current="false">Resources<span class="mega-indicator"></span></a>
+          <ul class="mega-sub-menu">
+           <li class="mega-menu-item mega-menu-item-type-widget widget_sp_image mega-menu-columns-2-of-6 mega-menu-item-widget_sp_image-22" id="mega-menu-item-widget_sp_image-22"><img width="468" height="312" class="attachment-full" style="max-width: 100%;" srcset="https://brand.berkeley.edu/wp-content/uploads/2015/05/about-visit.jpg 468w, https://brand.berkeley.edu/wp-content/uploads/2015/05/about-visit-300x200.jpg 300w" sizes="(max-width: 468px) 100vw, 468px" src="https://brand.berkeley.edu/wp-content/uploads/2015/05/about-visit.jpg"></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-48" id="mega-menu-item-nav_menu-48">
+            <div class="menu-submenu1-resources-container">
+             <ul id="menu-submenu1-resources" class="menu">
+              <li id="menu-item-533" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-533"><a href="https://brand.berkeley.edu/downloads/">Downloads</a></li>
+              <li id="menu-item-1026" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1026"><a href="https://brand.berkeley.edu/faq/">FAQ</a></li>
+              <li id="menu-item-1166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1166"><a href="https://brand.berkeley.edu/community/">Community (BC2)</a></li>
+             </ul>
+            </div></li>
+           <li class="mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-6 mega-menu-item-nav_menu-51" id="mega-menu-item-nav_menu-51">
+            <div class="menu-submenu2-resources-container">
+             <ul id="menu-submenu2-resources" class="menu">
+              <li id="menu-item-1024" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1024"><a href="https://brand.berkeley.edu/tutorials/">Tutorials</a></li>
+              <li id="menu-item-1025" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1025"><a href="https://brand.berkeley.edu/showcase/">Showcase</a></li>
+             </ul>
+            </div></li>
+          </ul></li>
+        </ul>
+       </div> 
+      </nav><!-- #site-navigation -->
+     </div>
+    </div>
+   </div><!-- End Main menu -->
+  </header><!-- #masthead -->
+  <div id="content" class="site-content" role="main">
+   <section class="page-header  web-soybean">
+    <div class="container">
+     <h1>Wordpress</h1> 
+    </div>
+   </section>
+   <div class="container">
+    <div class="row">
+     <div class="container">
+      <article id="post-1383" class="post-1383 page type-page status-publish hentry">
+       <div class="entry-content">
+        <div class="sandwich pbsandwich_column">
+         <div class="row">
+          <div class="col-xs-4"> 
+           <div class="widget widget_component_photo">
+            <div class="block block-thumbnail thumbnail">
+             <a href="https://www.thebearpantryatberkeley.org/"><img src="https://brand.berkeley.edu/wp-content/uploads/2018/02/bearpantry-150x150.png" srcset="https://brand.berkeley.edu/wp-content/uploads/2018/02/bearpantry.png 1432w, https://brand.berkeley.edu/wp-content/uploads/2018/02/bearpantry-300x168.png 300w, https://brand.berkeley.edu/wp-content/uploads/2018/02/bearpantry-768x431.png 768w, https://brand.berkeley.edu/wp-content/uploads/2018/02/bearpantry-1024x575.png 1024w" sizes="100vw" alt="a screenshot of the header of the bear pantry webpage">
+              <div class="caption">
+               <h3>The Bear Pantry</h3>
+              </div></a>
+            </div>
+           </div> 
+          </div>
+          <div class="col-xs-4"> 
+           <div class="widget widget_component_photo">
+            <div class="block block-thumbnail thumbnail">
+             <a href="https://recsports.berkeley.edu/"><img src="https://brand.berkeley.edu/wp-content/uploads/2018/02/recsports-150x150.png" srcset="https://brand.berkeley.edu/wp-content/uploads/2018/02/recsports.png 1440w, https://brand.berkeley.edu/wp-content/uploads/2018/02/recsports-300x166.png 300w, https://brand.berkeley.edu/wp-content/uploads/2018/02/recsports-768x426.png 768w, https://brand.berkeley.edu/wp-content/uploads/2018/02/recsports-1024x568.png 1024w" sizes="100vw" alt="a screenshot of the header of the recsports webpage">
+              <div class="caption">
+               <h3>Rec Sports</h3>
+              </div></a>
+            </div>
+           </div> 
+          </div>
+          <div class="col-xs-4"> 
+           <div class="widget widget_component_photo">
+            <div class="block block-thumbnail thumbnail">
+             <a href="https://scienceatcal.berkeley.edu/"><img src="https://brand.berkeley.edu/wp-content/uploads/2018/02/scienceatcal-150x150.png" srcset="https://brand.berkeley.edu/wp-content/uploads/2018/02/scienceatcal.png 1440w, https://brand.berkeley.edu/wp-content/uploads/2018/02/scienceatcal-300x167.png 300w, https://brand.berkeley.edu/wp-content/uploads/2018/02/scienceatcal-768x428.png 768w, https://brand.berkeley.edu/wp-content/uploads/2018/02/scienceatcal-1024x571.png 1024w" sizes="100vw" alt="a screenshot of the header of the science@cal webpage">
+              <div class="caption">
+               <h3>Science at Cal</h3>
+              </div></a>
+            </div>
+           </div> 
+          </div>
+         </div>
+        </div> 
+        <div class="sandwich pbsandwich_column">
+         <div class="row">
+          <div class="col-sm-12">
+           <p class="lead">The Berkeley Brand WordPress Theme is a stand-alone package comprised of a WordPress theme and plugins. The theme contains accessible, https-compatible, branded styling. The plugins provide functionality to create your site and to organize content.</p> 
+           <p class="lead">Don’t forget to go over the <a href="https://brand.berkeley.edu/web-design/wordpress-v3/wordpress-brand-theme-release-checklist/">site release checklist</a> before publishing your site.</p>
+          </div>
+         </div>
+        </div> 
+        <div class="sandwich pbsandwich_column">
+         <div class="row">
+          <div class="col-sm-4"> 
+           <div class="widget widget_ucbbrand_component_promo">
+            <div class="block promo no-image solid-background web-lap-lane ">
+             <div class="thumbnail">
+              <div class="caption"> 
+               <div class="caption-inner"> 
+                <h3>Setup and configuration</h3> 
+                <p></p> 
+               </div> 
+              </div> 
+             </div>
+            </div>
+           </div> 
+           <p>Instructions on how to install the theme and associated plugins. Includes descriptions and screenshots of theme settings.</p> 
+           <div class="widget widget_link_list">
+            <div class="block list-block-bulleted">
+             <h3 class="block-header"></h3>
+             <ul class="list-group" aria-label="Related Quick Links">
+              <li class="list-group-item"><a href="#installation">Installation</a></li>
+              <li class="list-group-item"><a href="#setup">Setup</a></li>
+              <li class="list-group-item"><a href="#mega_menu">Creating a Mega Menu</a></li>
+              <li class="list-group-item"><a href="#custom_css">Custom CSS &amp; Functionality</a></li>
+              <li class="list-group-item"><a href="#image_sizes">Image sizes</a></li>
+              <li class="list-group-item"><a href="/web-design/wordpress-v3/wordpress-brand-theme-release-checklist/">Site Release Checklist</a></li>
+              <li class="list-group-item"><a href="/web-design/wordpress/change-log/">Change log</a></li>
+             </ul>
+            </div>
+           </div> 
+          </div>
+          <div class="col-sm-4"> 
+           <div class="widget widget_ucbbrand_component_promo">
+            <div class="block promo no-image solid-background web-lap-lane ">
+             <div class="thumbnail">
+              <div class="caption"> 
+               <div class="caption-inner"> 
+                <h3>Creating content</h3> 
+                <p></p> 
+               </div> 
+              </div> 
+             </div>
+            </div>
+           </div> 
+           <p>Learn how to use branded components to structure your site and content.</p> 
+           <div class="widget widget_link_list">
+            <div class="block list-block-bulleted">
+             <h3 class="block-header"></h3>
+             <ul class="list-group" aria-label="Related Quick Links">
+              <li class="list-group-item"><a href="#templates">Page Templates</a></li>
+              <li class="list-group-item"><a href="#page">Building a page</a></li>
+              <li class="list-group-item"><a href="#homepage">Creating your site’s home page</a></li>
+              <li class="list-group-item"><a href="#post_types">Special Post Types</a></li>
+              <li class="list-group-item"><a href="#brand_components">Branded Components</a></li>
+              <li class="list-group-item"><a href="#widget">Components as Widgets</a></li>
+              <li class="list-group-item"><a href="#post_element">Components as Post Elements</a></li>
+              <li class="list-group-item"><a href="#post_shortcode">Components as Shortcodes</a></li>
+             </ul>
+            </div>
+           </div> 
+          </div>
+          <div class="col-sm-4"> 
+           <div class="widget widget_ucbbrand_component_promo">
+            <div class="block promo no-image solid-background web-lap-lane ">
+             <div class="thumbnail">
+              <div class="caption"> 
+               <div class="caption-inner"> 
+                <h3>Resources</h3> 
+                <p></p> 
+               </div> 
+              </div> 
+             </div>
+            </div>
+           </div> 
+           <p>Downloadable resources for use on your website.</p> 
+           <div class="widget widget_link_list">
+            <div class="block list-block-bulleted">
+             <h3 class="block-header"></h3>
+             <ul class="list-group" aria-label="Related Quick Links">
+              <li class="list-group-item"><a href="http://webtemplate.berkeley.edu/index-heros-campus.shtml">Hero images: campus</a></li>
+              <li class="list-group-item"><a href="http://webtemplate.berkeley.edu/index-heros-people.shtml">Hero images: people</a></li>
+              <li class="list-group-item"><a href="/wp-content/uploads/2016/11/hero.zip">Download all hero images: 22 mb ZIP</a></li>
+              <li class="list-group-item"><a href="/web-design/photoshop-templates">Photoshop templates</a></li>
+              <li class="list-group-item"><a href="https://brandwebtwo.wpengine.com/">Example Site</a></li>
+             </ul>
+            </div>
+           </div> 
+          </div>
+         </div>
+        </div> 
+        <div class="sandwich pbsandwich_column">
+         <div class="row">
+          <div class="col-sm-12">
+           <h2 id="installation">Installation</h2> 
+           <p>Updating from an earlier version? <a href="https://brand.berkeley.edu/web-design/wordpress/wordpress-theme-instructions-to-upgrade-from-a-previous-version/">Instructions for updating from an earlier version</a></p> 
+           <p>Terms of use located on the <a href="https://brand.berkeley.edu/web-design/">overview page</a>.</p> 
+           <h3>Install the theme</h3> 
+           <ol> 
+            <li>Install WordPress on your server</li> 
+            <li>Get the theme by <a href="https://forms.gle/dbEptVFdsicPwBFt9">filling out this form</a> to request permission to download the WordPress template from <a href="https://gallery.berkeley.edu/">gallery.berkeley.edu.</a></li> 
+            <li>Login to your WordPress admin panel</li> 
+            <li>Go to APPEARANCE &gt; THEMES</li> 
+            <li>Click on ADD NEW THEME</li> 
+            <li>In the ADD THEMES page click on UPLOAD THEME</li> 
+            <li>Choose the berkeley_brand.zip file</li> 
+            <li>Click on INSTALL NOW</li> 
+            <li>On the installation page, click to ACTIVATE the Berkeley Brand theme</li> 
+           </ol> 
+           <h3>Install required plugins</h3> 
+           <ol> 
+            <li>You will see a notification for required plugins. If you miss it, go to the PLUGINS section of the admin panel. Click on BEGIN INSTALLING PLUGINS.</li> 
+            <li>Install the required plugins: 
+             <ul> 
+              <li>Image Widget</li> 
+              <li>List category posts</li> 
+              <li>Post snippets</li> 
+              <li>Page Links To</li> 
+              <li>Page Builder Sandwich</li> 
+              <li>Bootstrap Shortcodes</li> 
+              <li>Classic Editor</li> 
+              <li>UCB Brand Component – Bulleted List Block</li> 
+              <li>UCB Brand Component – Events</li> 
+              <li>UCB Brand Component – Events RSS</li> 
+              <li>UCB Brand Component – Facebook Feed</li> 
+              <li>UCB Brand Component – Infographic</li> 
+              <li>UCB Brand Component – Promo</li> 
+              <li>UCB Brand Component – Photo</li> 
+              <li>UCB Brand Component – Quote</li> 
+              <li>UCB Brand Component – Thumb List</li> 
+              <li>UCB Brand Component – Twitter Feed</li> 
+              <li>UCB Brand Component – Video</li> 
+             </ul> </li> 
+            <li>Install and activate the recommended plugins: 
+             <ul> 
+              <li><a href="https://jetpack.com/">Jetpack</a>, by Automattic</li> 
+              <li><a href="https://wordpress.org/plugins/megamenu/">Max Mega Menu</a>, by Tom Hemsley 
+               <ul> 
+                <li>Assumes “free” version of Max Mega Menu, not “pro” version.</li> 
+                <li>In the brand theme we have some custom JS &amp; CSS that loads for the Max Mega Menu plugin which overrides some of the plugins default behavior to make it more accessible, per a collaboration with the Web Access team.</li>  
+               </ul> </li> 
+             </ul></li>
+           </ol> 
+           <h2 id="setup">Setup</h2> 
+           <h3>Plugin Setup</h3> 
+           <ol> 
+            <li>Configure Bootstrap Shortcodes 
+             <ul> 
+              <li>Go to SETTINGS &gt; BS SHORTCODES</li> 
+              <li>Make sure the first 2 checkboxes are unchecked</li> 
+              <li>Save changes <img class="alignnone size-medium wp-image-682" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/bs-shortcodes-300x268.png" alt="a screenshot of the Bootstrap Shortcut Options screen indicating that the Twitter Bootstrap CSS and Twitter Bootstrap JS boxes are unchecked" width="300" height="268" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/11/bs-shortcodes-300x268.png 300w, https://brand.berkeley.edu/wp-content/uploads/2016/11/bs-shortcodes-768x686.png 768w, https://brand.berkeley.edu/wp-content/uploads/2016/11/bs-shortcodes.png 932w" sizes="(max-width: 300px) 100vw, 300px"></li> 
+             </ul> </li> 
+            <li>Configure Jetpack 
+             <ul> 
+              <li>Need wordpress.com account (log in or create account)</li> 
+              <li>Note: Jetpack comes with many features that are beyond the scope of this documentation; for more detail, consult <a href="https://jetpack.com/support/">Jetpack’s documentation</a></li> 
+             </ul> </li> 
+            <li>Configure Max Mega Menu 
+             <ul> 
+              <li>Go to MEGA MENU &gt; MENU LOCATIONS, select <strong>main menu</strong>, which will open a panel with settings.</li> 
+              <li>Under GENERAL SETTINGS: 
+               <ul> 
+                <li>check ENABLED</li> 
+                <li>EVENT should be CLICK EVENT</li> 
+               </ul></li> 
+              <li> under ADVANCED: 
+               <ul> 
+                <li>CLICK EVENT BEHAVIOR should be FIRST CLICK WILL OPEN, SECOND WILL CLOSE </li> 
+                <li>Mobile Menu Behavior: Accordion – Open submenus automatically close when another one is opened</li> 
+                <li>uncheck MENU ITEM DESCRIPTIONS</li> 
+                <li>check UNBIND JAVASCRIPT EVENTS</li> 
+                <li>check PREFIX MENU ITEM CLASSES</li> 
+                <li>CONTAINER should be set to 
+                 <nav></nav></li> 
+                <li>Active menu instance should be 1</li> 
+               </ul> </li> 
+              <li>Save changes <a href="https://brand.berkeley.edu/wp-content/uploads/2021/11/Screen-Shot-2021-11-01-at-2.27.58-PM.png" aria-hidden="true"><img loading="lazy" class="alignnone wp-image-682 size-medium" src="https://brand.berkeley.edu/wp-content/uploads/2021/11/Screen-Shot-2021-11-01-at-2.27.58-PM.png" alt="a screenshot of the Mega Menu General Settings options showing options noted above" width="300" height="268"></a></li> 
+             </ul> </li> 
+           </ol> 
+           <h3>Theme Setup</h3> 
+           <p><strong>Google Custom Search</strong> (optional) The default search is the built-in WordPress site search. To switch to the <a href="https://developers.google.com/custom-search/">Google Custom Search Engine (CSE)</a>:</p> 
+           <p>Create a “Search” page in WordPress and paste your CSE JavaScript code (or the code below with your YOUR_ENGINE_ID) into the text view.</p> 
+           <pre>&lt;style scoped type=”text/css”&gt;   input.gsc-search-button {height: 35px;background-color: #fafafa;}   .cse input.gsc-input, input.gsc-input {background-image:none !important;}   &lt;/style&gt;   &lt;script type=”text/javascript”&gt;   (function() {   var cx = ‘<strong>YOUR_ENGINE_ID</strong>‘;   var gcse = document.createElement(‘script’);   gcse.type = ‘text/javascript’;   gcse.async = true;   gcse.src = (document.location.protocol == ‘https:’ ? ‘https:’ : ‘http:’) +   ‘//www.google.com/cse/cse.js?cx=’ + cx;   var s = document.getElementsByTagName(‘script’)[0];   s.parentNode.insertBefore(gcse, s);   })();   &lt;/script&gt;   &lt;gcse:search&gt;&lt;/gcse:search&gt;   &lt;noscript&gt;   &lt;?php   print ‘ &lt;p&gt;Use Google to &lt;a href=”http://www.google.com/cse?cx=<strong>YOUR_ENGINE_ID</strong>&amp;amp;nojs=1″&gt;search on &lt;strong&gt;<strong>YOUR-WEBSITE-NAME</strong>&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt; ‘;   ?&gt;   &lt;/noscript&gt;</pre> 
+           <p>With your choice of sftp client, connect to your server and go to wp-content/themes/berkeley_brand. Copy the contents of searchform-google.php (below) into searchform.php</p> 
+           <pre>&lt;form class=”navbar-form navbar-right” role=”search” id=”navbar-search” action=”/search” method=”get”&gt;     &lt;div class=”form-group”&gt;&lt;input type=”search” class=”form-control” name=”q” title=”search term” placeholder=”Search” aria-label=”search term”&gt;&lt;/div&gt;</pre> 
+           <p><strong>Configure Branded Site Title with Berkeley Logo</strong> (optional)</p> 
+           <ul> 
+            <li>Add a menu to your site. 
+             <ul> 
+              <li>Go to APPEARANCE &gt; MENUS</li> 
+              <li>Create a menu</li> 
+              <li>Save menu</li> 
+             </ul> </li> 
+            <li>In SETTINGS &gt; GENERAL enter your site title (e.g. Berkeley Brand Example Site)</li> 
+            <li>Adjust any other settings (e.g. timezone, URL, etc) and SAVE changes</li> 
+            <li>In APPEARANCE &gt; BRAND THEME OPTIONS select a ‘SITE NAME FORMAT’ : 
+             <ul> 
+              <li>One-line with logo: <img loading="lazy" class="alignnone size-full wp-image-688" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/logo-one-line.png" alt="screenshot showing Berkeley logo on the left with one line of text showing site name in the freight font in the color medalist on the right" width="524" height="66" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/11/logo-one-line.png 524w, https://brand.berkeley.edu/wp-content/uploads/2016/11/logo-one-line-300x38.png 300w" sizes="(max-width: 524px) 100vw, 524px"></li> 
+              <li>Two-line with logo: <img loading="lazy" class="alignnone size-full wp-image-686" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/logo-two-line.png" alt="screenshot showing Berkeley logo on the left with two lines of text showing longer site name in the freight font in the color medalist on the right, seperated by a thin vertical black line" width="460" height="85" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/11/logo-two-line.png 460w, https://brand.berkeley.edu/wp-content/uploads/2016/11/logo-two-line-300x55.png 300w" sizes="(max-width: 460px) 100vw, 460px"></li> 
+              <li>Two-line: <img loading="lazy" class="alignnone size-full wp-image-690" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/wordmark-two-line.png" alt="screenshot showing the two lines of the longer site name in the freight font in the color medalist, with no Berkeley logo" width="294" height="87"></li> 
+              <li>Custom with logo: <img loading="lazy" class="alignnone size-full wp-image-691" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/logo-custom.png" alt="screenshot showing Berkeley logo on the left with a longer custom set site title which takes up three lines on the right in the freight font in the color medalist, seperated by a thin vertical black line" width="502" height="109" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/11/logo-custom.png 502w, https://brand.berkeley.edu/wp-content/uploads/2016/11/logo-custom-300x65.png 300w" sizes="(max-width: 502px) 100vw, 502px"></li> 
+             </ul> </li> 
+           </ul> 
+           <ol> 
+            <li>Brand Theme Options. These theme specific options are found under APPEARANCE &gt; BRAND THEME OPTIONS. 
+             <ul> 
+              <li>Navigation Elements (tab) 
+               <ol> 
+                <li style="list-style-type: none;"> 
+                 <ol> 
+                  <li>Show Top Menu navigation bar 
+                   <ul> 
+                    <li>A white menu bar that appears at the very top of the window, above the brand blue bar</li> 
+                   </ul> </li> 
+                  <li>Show site name in Top Menu navigation bar 
+                   <ul> 
+                    <li>Displays site name in the white menu bar (if set in step 3.a.ii) above the brand blue bar</li> 
+                   </ul> </li> 
+                  <li>Show search bar in Top Menu navigation bar 
+                   <ul> 
+                    <li>Displays search box in the white menu bar (if set in step 3.a.ii) above the brand blue bar</li> 
+                   </ul> </li> 
+                  <li>Show breadcrumb navigation 
+                   <ul> 
+                    <li>Displays breadcrumbs between headers on posts and pages.</li> 
+                   </ul> </li> 
+                  <li>Show content navigation above posts 
+                   <ul> 
+                    <li>Displays a “previous” and “next” arrow above the title of posts</li> 
+                   </ul> </li> 
+                  <li>Show content navigation below posts 
+                   <ul> 
+                    <li>Displays a “previous” and “next” arrow below a post</li> 
+                   </ul> </li> 
+                 </ol> </li> 
+               </ol> <img loading="lazy" width="1848" height="1055" class="alignnone wp-image-1249 size-medium" src="https://brand.berkeley.edu/wp-content/uploads/2017/08/navigationelements.png" alt="" srcset="https://brand.berkeley.edu/wp-content/uploads/2017/08/navigationelements.png 1848w, https://brand.berkeley.edu/wp-content/uploads/2017/08/navigationelements-300x171.png 300w, https://brand.berkeley.edu/wp-content/uploads/2017/08/navigationelements-768x438.png 768w, https://brand.berkeley.edu/wp-content/uploads/2017/08/navigationelements-1024x585.png 1024w" sizes="(max-width: 1848px) 100vw, 1848px"></li> 
+             </ul> </li> 
+           </ol> 
+           <ul> 
+            <li>Post Meta Info Options (tab) 
+             <ol> 
+              <li>Show post author 
+               <ul> 
+                <li>Displays post author below post title. Default is show. Uncheck this box to hide the post author.</li> 
+               </ul> </li> 
+              <li>Show published date 
+               <ul> 
+                <li>Displays post publishing date below post title. Default is show. Uncheck this box to hide post published date.</li> 
+               </ul> </li> 
+              <li>Show post categories 
+               <ul> 
+                <li>Displays assigned post categories, if any, above post title. Remember that UNCATEGORIZED is a default category! Default is show. Uncheck this box to hide post categories.</li> 
+               </ul> </li> 
+              <li>Show post tags 
+               <ul> 
+                <li>Displays post tags, if any, below post title. Default is show. Uncheck this box to hide post tags.</li> 
+               </ul> </li> 
+              <li>Show link for number of comments 
+               <ul> 
+                <li>Displays number of comments with a link that takes user to the bottom of page where they can post a comment. Will display if enabled, comments are enabled on site under SETTINGS &gt; DISCUSSION, and a given post has comments. Default is to hide.</li> 
+               </ul> <img loading="lazy" class="alignnone size-full wp-image-1250" src="https://brand.berkeley.edu/wp-content/uploads/2017/08/postmeta.png" alt="" width="764" height="175" srcset="https://brand.berkeley.edu/wp-content/uploads/2017/08/postmeta.png 764w, https://brand.berkeley.edu/wp-content/uploads/2017/08/postmeta-300x69.png 300w" sizes="(max-width: 764px) 100vw, 764px"></li> 
+             </ol> </li> 
+           </ul> 
+           <ul> 
+            <li>Post &amp; Page Element Options (tab) 
+             <ol> 
+              <li>Toggle open first brand toggle component on a page</li> 
+             </ol> </li> 
+           </ul> 
+           <ul> 
+            <li style="list-style-type: none;"> 
+             <ul> 
+              <li>The toggle post element is by default closed. Checking this box will load the first toggle element on each page as opened instead of closed.</li> 
+             </ul> </li> 
+           </ul> 
+           <ul> 
+            <li>Featured Posts (tab) 
+             <ol> 
+              <li>By default your site’s homepage will be the post index. If you change your homepage to a static page (see <a href="#homepage">Creating your site’s home page</a>), then use the this link [your-site-url]?post_type=post to reach the post index.</li> 
+              <li>Choose to display the posts as a slider or a grid (which displays in two columns)</li> 
+              <li>Select the post tag you wish to display for posts 
+               <ul> 
+                <li>Create a tag to use as the “featured post” tag</li> 
+                <li>Tag the posts you wish to feature. Make sure that they have featured images with the same size</li> 
+               </ul> </li> 
+              <li>Select the number of posts to display in your featured posts section</li> 
+              <li>Choose whether or not to display post titles as captions</li> 
+              <li>If posts are displayed as a slider, choose to show or hide slider indicators</li> 
+              <li>Choose to display featured posts in the list of posts</li> 
+              <li>The recommended size for featured post featured images is 850×350. If you are using a different size of image please enter it here. 
+               <ul> 
+                <li>Full width is only displayed in the slider option or with a grid size of one featured post</li> 
+               </ul> </li> 
+             </ol> </li> 
+           </ul> 
+           <ul> 
+            <li>Footer Element Options (tab): Options for text that displays in the footer. 
+             <ol> 
+              <li>Show Departmental Footer?: Display a paler blue departmental footer that will show footer widgets above the Universal Footer. Default is enabled.</li> 
+              <li>Change Privacy Policy Link: the default links to /privacy-policy. You can change this to link to another URL.</li> 
+              <li>Add Contact Us Link: this link appears over the UC Regents Copyright notice in the footer. You can set it to either an email or a URL. Leaving it empty (the default) will result in the link not showing.</li> 
+             </ol> </li> 
+           </ul> 
+           <h3 id="mega_menu">Creating a Mega Menu</h3> 
+           <p>A Mega Menu is an expandable menu with a two-dimensional dropdown layout that can contain submenu items and widgets. It is a good option if your site has a large selection of pages with clearly defined categories and subcategories. This site uses a Mega Menu. An example of a Berkeley Branded WordPress site without a Mega Menu is <a href="https://blogs.berkeley.edu">https://blogs.berkeley.edu</a></p> 
+           <ul> 
+            <li>Create Mega Menu: 
+             <ol> 
+              <li>Go to APPEARANCE &gt; MENUS</li> 
+              <li>Create new menu, eg. “Main menu”</li> 
+             </ol> </li> 
+            <li>Create top level menu items 
+             <ul> 
+              <li>Add pages, posts, custom links, or categories to your Main Menu to create the top level menu items. <img loading="lazy" class="alignnone size-full wp-image-1254" src="https://brand.berkeley.edu/wp-content/uploads/2017/08/createtopitems.png" alt="" width="876" height="498" srcset="https://brand.berkeley.edu/wp-content/uploads/2017/08/createtopitems.png 876w, https://brand.berkeley.edu/wp-content/uploads/2017/08/createtopitems-300x171.png 300w, https://brand.berkeley.edu/wp-content/uploads/2017/08/createtopitems-768x437.png 768w" sizes="(max-width: 876px) 100vw, 876px"></li> 
+              <li>In the left column, under MAX MEGA MENU SETTINGS: 
+               <ul> 
+                <li>ENABLE</li> 
+                <li>Event: Click</li> 
+                <li>Effect: Slide, Medium</li> 
+                <li>Theme: Default</li> 
+                <li>Click SAVE <img loading="lazy" class="alignnone size-full wp-image-1253" src="https://brand.berkeley.edu/wp-content/uploads/2017/08/maxmegamenusettings.png" alt="" width="299" height="241"></li> 
+               </ul> </li> 
+             </ul> </li> 
+            <li>Create a new menu under APPEARANCE &gt; MENUS to serve as a submenu in your Mega Menu, eg. “Submenu 1 – campus tours”</li> 
+            <li>Edit your top level menu items. In this example we will add one image and two submenus to our top level item. 
+             <ol> 
+              <li>Hovering over the name of the item will reveal a blue MEGA MENU button. Click on this button. <img loading="lazy" class="alignnone size-full wp-image-1256" src="https://brand.berkeley.edu/wp-content/uploads/2017/08/megamenubluebutton.png" alt="" width="468" height="217" srcset="https://brand.berkeley.edu/wp-content/uploads/2017/08/megamenubluebutton.png 468w, https://brand.berkeley.edu/wp-content/uploads/2017/08/megamenubluebutton-300x139.png 300w" sizes="(max-width: 468px) 100vw, 468px"></li> 
+              <li>A modal window will open.</li> 
+              <li>Change the SUBMENU DISPLAY MODE to MEGA MENU</li> 
+              <li>Change the far left drop down to 3 COLUMNS</li> 
+              <li>Select the widgets that you wish to add to the Mega Menu 
+               <ol> 
+                <li>First add an IMAGE WIDGET, then two CUSTOM MENU widgets</li> 
+                <li>Change each widget with to 1/3</li> 
+                <li>Click on the wrench icon to add an image or custom menu, see below. Save the edits to the widget before closing.</li> 
+                <li>Close the modal window, and click to SAVE MENU <img loading="lazy" class="alignnone size-full wp-image-1257" src="https://brand.berkeley.edu/wp-content/uploads/2017/08/mmmone.png" alt="screenshot showing setup of mega menu with one image widget and two custom menu widgets, each at 1/3 size" width="1044" height="566" srcset="https://brand.berkeley.edu/wp-content/uploads/2017/08/mmmone.png 1044w, https://brand.berkeley.edu/wp-content/uploads/2017/08/mmmone-300x163.png 300w, https://brand.berkeley.edu/wp-content/uploads/2017/08/mmmone-768x416.png 768w, https://brand.berkeley.edu/wp-content/uploads/2017/08/mmmone-1024x555.png 1024w" sizes="(max-width: 1044px) 100vw, 1044px"> <img loading="lazy" class="alignnone size-full wp-image-1259" src="https://brand.berkeley.edu/wp-content/uploads/2017/08/mmmtwo.png" alt="" width="794" height="291" srcset="https://brand.berkeley.edu/wp-content/uploads/2017/08/mmmtwo.png 794w, https://brand.berkeley.edu/wp-content/uploads/2017/08/mmmtwo-300x110.png 300w, https://brand.berkeley.edu/wp-content/uploads/2017/08/mmmtwo-768x281.png 768w" sizes="(max-width: 794px) 100vw, 794px"> <img loading="lazy" class="alignnone size-full wp-image-1258" src="https://brand.berkeley.edu/wp-content/uploads/2017/08/mmmthree.png" alt="" width="1190" height="366" srcset="https://brand.berkeley.edu/wp-content/uploads/2017/08/mmmthree.png 1190w, https://brand.berkeley.edu/wp-content/uploads/2017/08/mmmthree-300x92.png 300w, https://brand.berkeley.edu/wp-content/uploads/2017/08/mmmthree-768x236.png 768w, https://brand.berkeley.edu/wp-content/uploads/2017/08/mmmthree-1024x315.png 1024w" sizes="(max-width: 1190px) 100vw, 1190px"></li> 
+               </ol> </li> 
+             </ol> </li> 
+            <li>To see more options offered by the Max Mega Menu plugin please visit <a href="https://wordpress.org/plugins/megamenu/">the Max Mega Menu plugin page</a>.</li> 
+           </ul> 
+           <h2 id="custom_css">Custom Functionality and Styling</h2> 
+           <p>Any style changes or functional changes must be made in a child theme; otherwise, they will be overwritten on updates. To make a child theme, consult the WordPress documentation on <a href="https://developer.wordpress.org/themes/advanced-topics/child-themes/">how to make a child theme</a>. <span id="image_sizes"></span></p> 
+           <h2>Image sizes</h2> 
+           <h3>Heroes</h3> 
+           <ul> 
+            <li>1-story: 1200 x 600px</li> 
+            <li>Text box: 800 x 450px</li> 
+            <li>Video split: 800 x 450px</li> 
+            <li>Landing page: 1200 x 450px</li> 
+           </ul> 
+           <h3>Thumbnails</h3> 
+           <ul> 
+            <li>468 x 312px</li> 
+           </ul>
+          </div>
+         </div>
+        </div> 
+        <div class="sandwich pbsandwich_column">
+         <div class="row">
+          <div class="col-sm-12">
+           <h2 id="templates">Page Templates</h2> 
+           <p>The branded “hero” component is a fundamental building block of the Berkeley Brand and it is strongly recommended for use in the site’s homepage. A hero template can also be used for any Page (as opposed to a Post), whether or not it is the homepage. Examples of the hero component are shown here: <a href="http://www.berkeley.edu/styleguide/components#heros">http://www.berkeley.edu/styleguide/components#heros</a>. WordPress templates corresponding to each type of hero component are available in the Page attributes template select dropdown.</p> 
+           <ol> 
+            <li>Pages &gt; Add New</li> 
+            <li>Enter title and edit permalink as necessary</li> 
+            <li>Page Attributes meta box &gt; select template from one of the following: 
+             <ul> 
+              <li><strong>Hero</strong>: image (1200px x 450px) takes full width of page, heading and subheading are overlayed on image</li> 
+              <li><strong>Hero</strong>-Band-Web-Founders-Rock: no image, heading in color band with tessellations</li> 
+              <li><strong>Hero-Band-Web-Medalist</strong>: no image, heading in color band with tessellations</li> 
+              <li><strong>Hero-Band-Web-Soybean</strong>: no image, heading in color band with tessellations</li> 
+              <li><strong>Hero-Band-Wellman-Tile</strong>: no image, heading in color band with tessellations</li> 
+              <li><strong>Hero-Text-Box</strong>: split image (800px x 450px) and text box on right</li> 
+              <li><strong>Hero-Video-Split</strong>: split video (YouTube) with poster image (800px x 450px) and text box on right</li> 
+              <li><strong>Full-Width</strong>: takes full width of page with no header image</li> 
+             </ul> </li> 
+            <li><strong>Hero</strong>, <strong>Hero-Text-Box</strong> and <strong>Hero-Video-Split</strong> templates: 
+             <ul> 
+              <li>In Featured Image meta box, select “Set featured image”</li> 
+              <li>Browse to and select image or upload a new one</li> 
+              <li>In attachment details box, enter Caption (required main heading) and Subheading (optional)</li> 
+              <li>Select Background color and enter Photo Credit, External URL, Video URL (Hero-Video-Split template only)</li> 
+              <li>For Hero-Video-Split template, video URL should be in the following format: http://www.youtube.com/watch?v=0889hqXGXEg</li> 
+             </ul> </li> 
+            <li><strong>Hero-Band-Web-Medalist, Hero-Band-Web-Soybean</strong> and <strong>Hero-Band-Wellman-Tile</strong>templates: 
+             <ul> 
+              <li>No featured image – page title appears in color band</li> 
+             </ul> </li> 
+            <li>Save page</li> 
+           </ol> 
+           <h3></h3> 
+           <h3 id="page">Building a page with the Classic Editor</h3> 
+           <p>To get the most out of the Berkeley Brand Theme’s built in structure, use the built-in grid system, which corresponds to the Bootstrap responsive framework.</p> 
+           <ol> 
+            <li>In the visual editor, click the “Columns” icon in the editor toolbar to create a grid. A <strong>grid</strong> is made up of rows of columns of equal or varying widths. Select one of the available options, eg. 2/3 + 1/3 columns, which can be thought of as a bootstrap 8-col/4-col row. <img loading="lazy" width="387" height="255" class="alignnone size-full wp-image-694" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/3-1.png" alt="screenshot showing location of the ADD POST ELEMENT button directly above the WYSIWYG and the CREATE GRID button which is the last button on the top row of the WYSIWG buttons" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/11/3-1.png 387w, https://brand.berkeley.edu/wp-content/uploads/2016/11/3-1-300x198.png 300w" sizes="(max-width: 387px) 100vw, 387px"></li> 
+            <li>A grid-like layout appears with default “Column text” inside each grid cell. Select text and start typing to enter content. Or, click on the <a href="#post_element">“Add Post Element”</a> button above the content editor box to enter a widget component. A popup window will appear with all available component options.</li> 
+            <li>Create more grid elements by cloning rows and/or columns, and entering/editing the content as above. (<em>helpful hint: make sure “Enable full-height editor and distraction-free functionality” is <strong>unchecked</strong> in Screen Options.</em>) <img loading="lazy" width="592" height="318" class="alignnone size-full wp-image-692" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/3-2.png" alt="" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/11/3-2.png 592w, https://brand.berkeley.edu/wp-content/uploads/2016/11/3-2-300x161.png 300w" sizes="(max-width: 592px) 100vw, 592px"></li> 
+            <li>Save the page and preview, tweak as necessary to get desired layout.</li> 
+           </ol> 
+           <h3 id="homepage">Creating your site’s home page</h3> 
+           <p>In WordPress, the default homepage for a new installation is a list of the most recent posts. To set your site’s home page as a static page with a branded “hero” component:</p> 
+           <ol> 
+            <li>Create a page with hero as detailed above</li> 
+            <li>o to Settings &gt; Reading</li> 
+            <li>Under “Your homepage displays”, select the “static page” option and select the page created in step 1</li> 
+            <li>Save changes</li> 
+           </ol> 
+           <h2 id="post_types">Special Post Types</h2> 
+           <p><img loading="lazy" class="alignleft size-full wp-image-1280" src="https://brand.berkeley.edu/wp-content/uploads/2019/07/posttypesV3.png" alt="" width="284" height="227"></p> 
+           <p>Post types are available on the right under “Format” when creating a new post or editing an existing post. By default, new posts are “Standard.” However, the Berkeley Brand theme also provides “Accordion” and “Link” formats. These differences are described below.</p> 
+           <ul> 
+            <li><strong>Accordion</strong> – a custom post type that can be used on a category or archive listing to show and hide large areas of content quickly on a single page without scrolling. Each post title is displayed in a collapsible gray box, and clicking the + toggles an excerpt of the post to open and close:<img loading="lazy" class="aligncenter size-full wp-image-1283" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/posttypes-21.png" alt="screenshot showing an example of multiple accordion post types displayed on a page as a column of collapsible items" width="748" height="396"> To change the default sort order, edit each post, scroll down to Custom Fields section, select the Custom Field “displayOrder” from the dropdown, assign a number, press “Add Custom Field,” then “Update.”</li> 
+            <li><strong>Link</strong> – a custom post type that can be used on a category or archive listing to link directly to an external URL. Enter the external URL into the main content area, followed by text content (optional) as shown below.The resulting category or archive listing containing this post will display the post title with an arrow, and links directly to the specified URL:<img loading="lazy" class="alignnone size-full wp-image-1297" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/link-type.png" alt="screenshot showing edit post for a link post type. first line of text in the WYSIWYG is a URL and the LINK post format is checked in the Format option box below the SAVE button" width="861" height="423"> <img loading="lazy" class="alignnone size-full wp-image-1298" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/link-category.png" alt="screenshot showing a link post type is displayed on your site's All Posts page as a list showing each post's title and summary" width="861" height="373"></li> 
+           </ul> 
+           <h3>Posts for Component Thumb List Layout</h3> 
+           <p>Component thumb list is a custom component widget that comes bundled with the Berkeley Brand theme. It is useful when displaying a list of links accompanied by thumbnail images and short blurbs, as in a landing or overview page for a given section of the website. See <a href="https://brand.berkeley.edu/web-design/photoshop-templates/">Photoshop templates</a> to transform a portrait image into a landscape image for use in this layout.</p> 
+           <p><img loading="lazy" class="aligncenter size-full wp-image-1285" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/posttypes-4.png" alt="" width="776" height="573"></p> 
+           <p>In order to make it available as a widget or page element, each item in the thumb list needs to exist as a post in a specific category. This is how to create such posts:</p> 
+           <ul> 
+            <li>Posts &gt; Create a category to uniquely identify the thumb list component (eg. ‘Homepage thumb list’ or ‘About landing thumb list’) <img loading="lazy" class="aligncenter size-full wp-image-1286" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/posttypes-5.png" alt="" width="751" height="389"></li> 
+            <li>For each thumb list item, add a post (Posts &gt; Add New) and select the new category created above. Required fields are <strong>Title</strong>, <strong>Excerpt</strong> and <strong>Featured Image</strong>. The Featured Image is the thumbnail image that is displayed in the thumb list, and dimensions should be 468px wide by 312px high.</li> 
+            <li>Customize: 
+             <ul> 
+              <li>In order to control the display order of posts created in step 2 assign each post a custom field with the name <strong>displayOrder</strong> with a value being an integer indicating the order of the post (1, 2, 3, etc)</li> 
+              <li>Default behavior is that each item in the thumb list will link to its single post view. If it should link to a specific URL, assign the post a custom field with the name <strong>externalURL</strong>with its value being the URL (e.g. http://news.berkeley.edu)<img loading="lazy" class="aligncenter size-full wp-image-1287" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/posttypes-6.png" alt="screenshot showing that Custom Fields for the Link Post Type shows below the Post Excerpt field" width="1145" height="714"></li> 
+             </ul> </li> 
+            <li>Create widget component as described in <a href="#thumb">Component Thumb List</a>.</li> 
+           </ul> 
+           <h2 id="brand_components">Branded Components</h2> 
+           <p>Components may be added to pages or posts, or used as native WordPress widgets (under Appearance &gt; Widgets).</p> 
+           <p><img loading="lazy" class="alignnone wp-image-1267" src="https://brand.berkeley.edu/wp-content/uploads/2017/08/Screenshot-2017-8-30-Visitor-Services-1.png" alt="a screenshot showing a Berkeley Branded webpage with page specific grid and components added using the Page Builder as well as widgets added to the page using WordPress native widgets" width="812" height="996"></p> 
+           <h3>Components Events RSS Widget</h3> 
+           <p>This component fetches a valid RSS feed from UC Berkeley Calendar, parses it and displays as a branded event listing block. The widget form accepts the following fields:</p> 
+           <ul> 
+            <li>Events block title</li> 
+            <li>UCB Event Calendar RSS Feed URL – this refers to the RSS feed generated automatically for all calendars in the UCB Calendar Network. Refer to the <a href="http://events.berkeley.edu/documentation/user/rss.html" target="_blank" rel="noopener noreferrer">documentation</a> for details. The URL format is <strong>http://events.berkeley.edu/index.php/rss/sn/SPH/type/future.html</strong> where <strong>SPH</strong> is the (case-sensitive) calendar name. For example, “<strong>coe</strong>” for College of Engineering, “<strong>lhs</strong>” for Lawrence Hall of Science, “<strong>CNR</strong>” for College of Natural Resources, etc.</li> 
+            <li>Include recurring events (checkbox)</li> 
+            <li>Number of items to display</li> 
+            <li>XML element containing date (typically ‘link’)</li> 
+            <li>Type of display (vertical or horizontal)</li> 
+           </ul> 
+           <div class="sandwich pbsandwich_column"> 
+            <div class="row" aria-hidden="true"> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignleft wp-image-1303 size-full" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/events-rss-admin.png" alt="" width="397" height="580"> 
+             </div> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignnone size-full wp-image-734" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/events-rss-frontend.png" alt="" width="240" height="259"> 
+             </div> 
+            </div> 
+           </div> 
+           <hr> 
+           <h3>Component Events List Widget</h3> 
+           <p>This component fetches <strong>Events</strong> (a special type of post) in WordPress (managed from main WP Menu). Each event must have a Title and Start Date; all other fields are optional.</p> 
+           <p><img loading="lazy" class="aligncenter size-full wp-image-1254" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/6-3.png" alt="screenshot of the WP admin panel with the EVENTS post type in the left side menu below POSTS" width="866" height="250"></p> 
+           <p>The widget pulls the next specified number of posts and displays them in a branded event listing block. Widget form accepts the following fields:</p> 
+           <ul> 
+            <li>Title</li> 
+            <li>Number of events (max 10)</li> 
+           </ul> 
+           <div class="sandwich pbsandwich_column"> 
+            <div class="row" aria-hidden="true"> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignleft wp-image-1255" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/6-4.png" alt="" width="320" height="235"> 
+             </div> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignright wp-image-1256" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/6-5.png" alt="" width="320" height="340"> 
+             </div> 
+            </div> 
+           </div> 
+           <hr> 
+           <h3>Component Infographic Widget</h3> 
+           <p>This component displays a branded widget single metric infographic. Data is entered manually in the widget form.</p> 
+           <p>Accepted fields are:</p> 
+           <ul> 
+            <li>Infographic Amount (required)</li> 
+            <li>Caption (optional)</li> 
+            <li>Shape (default is ribbon badge)</li> 
+            <li>Color (of infographic. Default is Berkeley blue.)</li> 
+           </ul> 
+           <div class="sandwich pbsandwich_column"> 
+            <div class="row" aria-hidden="true"> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignnone size-medium wp-image-1219" src="https://brand.berkeley.edu/wp-content/uploads/2016/10/Screen-Shot-2017-03-29-at-9.54.58-AM-300x252.png" alt="" width="300" height="252" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/10/Screen-Shot-2017-03-29-at-9.54.58-AM-300x252.png 300w, https://brand.berkeley.edu/wp-content/uploads/2016/10/Screen-Shot-2017-03-29-at-9.54.58-AM.png 390w" sizes="(max-width: 300px) 100vw, 300px"> 
+             </div> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignnone size-medium wp-image-1220" src="https://brand.berkeley.edu/wp-content/uploads/2016/10/Screen-Shot-2017-03-29-at-9.55.21-AM-286x300.png" alt="" width="286" height="300" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/10/Screen-Shot-2017-03-29-at-9.55.21-AM-286x300.png 286w, https://brand.berkeley.edu/wp-content/uploads/2016/10/Screen-Shot-2017-03-29-at-9.55.21-AM.png 339w" sizes="(max-width: 286px) 100vw, 286px"> 
+             </div> 
+            </div> 
+           </div> 
+           <hr> 
+           <h3>Component List Block</h3> 
+           <p>This component displays a branded bulleted list of links. All data is entered manually in the widget form, which accepts the following fields:</p> 
+           <ul> 
+            <li>Title</li> 
+            <li>Bulleted item text</li> 
+            <li>Bulleted item link (prepended with “http://” if external URL)</li> 
+            <li>Optionally open in new window (checkbox)</li> 
+            <li>Click “Add Item” to add new item</li> 
+            <li>Control display order by clicking and dragging items around, or check “Reverse output order”</li> 
+           </ul> 
+           <div class="sandwich pbsandwich_column"> 
+            <div class="row" aria-hidden="true"> 
+             <div class="col-sm-6"> 
+              <h3><img loading="lazy" class="alignleft size-full wp-image-1258" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/6-7.png" alt="" width="223" height="203"></h3> 
+             </div> 
+            </div> 
+           </div> 
+           <hr> 
+           <h3 id="thumb">Component Thumb List</h3> 
+           <p>This component is useful for creating a sub-navigation list on a landing or overview page, by aggregating all posts assigned to a specific category and displaying the title, featured image thumbnail, and excerpt in a branded thumb list.</p> 
+           <p>It uses the 3rd party plugin “List Category Posts” (<a href="https://wordpress.org/plugins/list-category-posts/other_notes/">https://wordpress.org/plugins/list-category-posts/other_notes/</a>).</p> 
+           <p>To create a thumb list:</p> 
+           <ol> 
+            <li>Create individual posts for each item in the thumb list as outlined in <a href="https://brand.berkeley.edu/web-design/wordpress/#post-types">Special Post Types.</a> <em>Optional: To link the post to an external site, install the plugin “Page Links To” (<a href="https://wordpress.org/plugins/page-links-to/">https://wordpress.org/plugins/page-links-to/</a>)</em></li> 
+            <li>In Appearance &gt; Widgets add the “Component Thumb List” widget to a sidebar</li> 
+            <li>Widget form fields are Title and Category (dropdown of all categories). Select the category created in step 1.</li> 
+           </ol> 
+           <p>Note: A thumb list can also be used in any post or page, by inserting the following short code in the main content editor:</p> 
+           <pre>[<code>catlist ID={categoryid} orderby=ID order=ASC excerpt=yes thumbnail=yes thumbnail_size=full thumbnail_class=navthumb template=brand</code>]</pre> 
+           <section class="thumb-list"></section> 
+           <p>where id is the category ID, found by going to Posts &gt; Categories in the WordPress dashboard and hovering over the category name.</p> 
+           <div class="sandwich pbsandwich_column"> 
+            <div class="row" aria-hidden="true"> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="size-full wp-image-1259 alignleft" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/6-8.png" alt="" width="277" height="205"> 
+             </div> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignright wp-image-1260" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/6-9.png" alt="" width="380" height="374"> 
+             </div> 
+            </div> 
+           </div> 
+           <h3></h3> 
+           <hr> 
+           <h3>Component Quote Widget</h3> 
+           <p>This component displays a branded quote block with quote and byline, with an option of Web Pacific or Founder’s Rock for the background color. All data is entered manually in the widget form. Accepted fields are:</p> 
+           <ul> 
+            <li>Quote text</li> 
+            <li>Quote source or attribution</li> 
+            <li>Quote byline</li> 
+            <li>Background color (select menu: web-pacific or founders-rock)</li> 
+           </ul> 
+           <div class="sandwich pbsandwich_column"> 
+            <div class="row" aria-hidden="true"> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignleft size-full wp-image-1261" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/6-10.png" alt="" width="283" height="354"> 
+             </div> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignright wp-image-1262 size-full" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/6-11.png" alt="" width="377" height="438"> 
+             </div> 
+            </div> 
+           </div> 
+           <hr> 
+           <h3>Component Twitter Feed</h3> 
+           <p>This component performs a search via Twitter Search API via Oauth Authentication. It allows queries against the indices of recent or popular Tweets and behaves similarly to, but not exactly like the Search feature available in Twitter mobile or web clients, such as <a href="http://twitter.com/">Twitter.com</a> search. All data fields are manually entered in the widget form, which accepts the following:</p> 
+           <ul> 
+            <li>Title</li> 
+            <li>API Consumer Key</li> 
+            <li>API Consumer Secret</li> 
+            <li>Search Query: Enter <em>from:&lt;twitterhandle&gt;</em> for recent tweets from a specific user, or <em>&lt;@ or #&gt;&lt;search string&gt;</em> to search on a specific handle or hashtag</li> 
+            <li>Number of Tweets to be displayed (max 5)</li> 
+           </ul> 
+           <p>The Consumer Key and Consumer Secret are obtained by creating an app in your Twitter account, which will generate an API key. Here are the steps:</p> 
+           <ol> 
+            <li>Go to <a href="https://dev.twitter.com/apps/new" rel="nofollow">https://dev.twitter.com/apps/new</a> and log in</li> 
+            <li>Supply the necessary required fields, accept the TOS, and solve the CAPTCHA.</li> 
+            <li>Ensure your application is configured correctly with the appropriate permission level (read-only, read-write, read-write-with-direct messages)</li> 
+            <li>Submit the form</li> 
+            <li>Copy the consumer key (API key) and consumer secret from the screen into your application</li> 
+           </ol> 
+           <div class="sandwich pbsandwich_column"> 
+            <div class="row" aria-hidden="true"> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignleft size-full wp-image-1263" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/6-12.png" alt="" width="262" height="351"> 
+             </div> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignright size-full wp-image-1264" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/6-13.png" alt="" width="376" height="293"> 
+             </div> 
+            </div> 
+           </div> 
+           <hr> 
+           <h3>Component Promo Widget</h3> 
+           <p>This component displays a branded promo block: a message with a linked URL, brand color background, and optional image. All data is entered manually in the widget form. Accepted fields are:</p> 
+           <ul> 
+            <li>Promo heading</li> 
+            <li>Image Crop: “square” or “circle”</li> 
+            <li>Promo Message (appears below heading)</li> 
+            <li>Promo link (prepend with http:// for external URL)</li> 
+            <li>Background color (select from allowed brand colors)</li> 
+           </ul> 
+           <div class="sandwich pbsandwich_column"> 
+            <div class="row" aria-hidden="true"> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignnone size-full wp-image-742" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/6-14.png" alt="" width="374" height="670" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/11/6-14.png 374w, https://brand.berkeley.edu/wp-content/uploads/2016/11/6-14-167x300.png 167w" sizes="(max-width: 374px) 100vw, 374px"> 
+             </div> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignright wp-image-1266" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/6-15.png" alt="" width="330" height="342"> 
+             </div> 
+            </div> 
+           </div> 
+           <hr> 
+           <h3>Component Photo Widget</h3> 
+           <p>This component displays a static image with caption, with or without modal “zoom” popup. All data is entered manually in the widget form, which uses Media Manager for selecting the image. Accepted fields are:</p> 
+           <ul> 
+            <li>Caption</li> 
+            <li>Image (select from Media Library or Upload New)</li> 
+            <li>Photo Credit (Optional)</li> 
+            <li>Link (prepend with http:// for external URL)</li> 
+            <li>Modal popup (checkbox)</li> 
+           </ul> 
+           <div class="sandwich pbsandwich_column"> 
+            <div class="row" aria-hidden="true"> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignleft wp-image-1267" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/6-16.png" alt="" width="330" height="530"> 
+             </div> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignright wp-image-1268" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/3-17.png" alt="" width="320" height="325"> 
+             </div> 
+            </div> 
+           </div> 
+           <hr> 
+           <h3>Component Video Widget</h3> 
+           <p>This component displays a thumbnail image and caption, which links to an embedded YouTube video in a Bootstrap modal popup. All data is entered manually in the widget form, which uses Media Manager to select the image. Accepted fields are:</p> 
+           <ul> 
+            <li>Caption</li> 
+            <li>Poster image (select existing from Media Manager or Upload new)</li> 
+            <li>YouTube Video URL (must be in format: <a href="https://youtu.be/prCKZg5ONGg">https://youtu.be/</a><em>videoid</em> where <em>videoid</em> is unique id from YouTube</li> 
+           </ul> 
+           <div class="sandwich pbsandwich_column"> 
+            <div class="row" aria-hidden="true"> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignleft wp-image-1269" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/3-18.png" alt="" width="325" height="417"> 
+             </div> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignright wp-image-1270" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/3-19.png" alt="" width="330" height="290"> 
+             </div> 
+            </div> 
+           </div> 
+           <hr> 
+           <h3>RSS Widget</h3> 
+           <p>This component is used for parsing entries from any RSS or Atom feed. For example, <a href="http://news.berkeley.edu/category/research/feed/">http://news.berkeley.edu/category/research/feed/</a> is the RSS feed for Research News. Styling is customized to match the branded bulleted list component. It uses the built-in WordPress “RSS” widget for the widget form. Accepted fields are:</p> 
+           <ul> 
+            <li>RSS Feed URL</li> 
+            <li>Title</li> 
+            <li>Number of items to display (max 10)</li> 
+            <li>Checkboxes to display item content, author, date</li> 
+           </ul> 
+           <div class="sandwich pbsandwich_column"> 
+            <div class="row" aria-hidden="true"> 
+             <div class="col-sm-6"> 
+              <img loading="lazy" class="alignleft wp-image-1271" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/3-20.png" alt="" width="330" height="296"> 
+             </div> 
+             <div class="col-sm-6">
+              <img loading="lazy" class="alignleft wp-image-1271" src="https://brand.berkeley.edu/wp-content/uploads/2019/06/Screen-Shot-2019-06-21-at-1.23.44-PM.png" alt="" width="330" height="296">
+             </div> 
+            </div> 
+           </div> 
+           <h2 id="widget">Components as widgets</h2> 
+           <p>WordPress widgets are pieces of content that are placed in “sidebars,” although sidebars do not have to be vertically oriented. Widget content in sidebars can be repeated on other posts or pages using the same template.</p> 
+           <p>For this theme, there are four widget sidebar areas:</p> 
+           <h3>1. Homepage Widgets</h3> 
+           <p>Homepage Widgets are intended for use only in “Home” pages that use the homepage hero templates. These sidebars are actually horizontal “rows” rather than sidebars, and 3 of these rows are available for widget content. The horizontal spacing of widgets placed in these rows are evenly distributed within the row.</p> 
+           <p><img loading="lazy" class="alignnone size-full wp-image-697" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/3-4.png" alt="screenshot showing the Widget panel of the WP admin, with three sections for Homepage Widgets located on the right side of the screen" width="745" height="440" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/11/3-4.png 745w, https://brand.berkeley.edu/wp-content/uploads/2016/11/3-4-300x177.png 300w" sizes="(max-width: 745px) 100vw, 745px"></p> 
+           <p><img loading="lazy" class="alignnone size-full wp-image-701" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/4-3.png" alt="screenshot showing that widgets in Homepage Widgets 1, 2, or 3 sections will display below the page content in order of Homepage Widgets 1 section, Homepage Widgets 2 section, etc" width="758" height="927" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/11/4-3.png 758w, https://brand.berkeley.edu/wp-content/uploads/2016/11/4-3-245x300.png 245w" sizes="(max-width: 758px) 100vw, 758px"></p> 
+           <h3>2. Primary Sidebar</h3> 
+           <p>The Primary Sidebar is for use primarily in posts and is intended to be more of a traditional vertical sidebar column. Visibility of widgets placed here can be controlled at a granular level using the “Visibility” settings which are part of the Jetpack plugin.</p> 
+           <p><img loading="lazy" class="alignnone size-full wp-image-698" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/4-2.png" alt="screenshot showing the Widget panel of the WP admin with the Primary Sidebar section on the right side of the screen. Widgets added to this section will not show on hte Homepage of your site." width="745" height="387" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/11/4-2.png 745w, https://brand.berkeley.edu/wp-content/uploads/2016/11/4-2-300x156.png 300w" sizes="(max-width: 745px) 100vw, 745px"></p> 
+           <p><img loading="lazy" class="alignnone size-full wp-image-699" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/4-4.png" alt="screenshot showing that widgets added to the Primary Sidebar section will show on pages and posts that are not the Homepage of the site" width="758" height="704" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/11/4-4.png 758w, https://brand.berkeley.edu/wp-content/uploads/2016/11/4-4-300x279.png 300w" sizes="(max-width: 758px) 100vw, 758px"></p> 
+           <h3>3. Footer</h3> 
+           <p>The Footer sidebar is used for creating up to 4 columns of content in the departmental footer area, above the main Berkeley footer. These sidebar areas are appropriately named Footer 1, Footer 2, Footer 3 and Footer 4.</p> 
+           <p><img loading="lazy" class="alignnone size-full wp-image-702" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/footer.png" alt="" width="861" height="302" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/11/footer.png 861w, https://brand.berkeley.edu/wp-content/uploads/2016/11/footer-300x105.png 300w, https://brand.berkeley.edu/wp-content/uploads/2016/11/footer-768x269.png 768w" sizes="(max-width: 861px) 100vw, 861px"></p> 
+           <h3>4. Mega Menu Widgets</h3> 
+           <p>The Mega Menu Widgets sidebar is limited to the Mega Menu dropdown area illustrated below. Note that the only widgets supported here are the Image Widget and Custom Menu.</p> 
+           <p><img loading="lazy" class="alignnone size-full wp-image-704" src="https://brand.berkeley.edu/wp-content/uploads/2016/11/megamenu-widgets.png" alt="screenshot showing that widgets added to the Mega Menu Widgets section in the WP Widgets admin panel will be available to use in you Max Mega Menu" width="1423" height="426" srcset="https://brand.berkeley.edu/wp-content/uploads/2016/11/megamenu-widgets.png 1423w, https://brand.berkeley.edu/wp-content/uploads/2016/11/megamenu-widgets-300x90.png 300w, https://brand.berkeley.edu/wp-content/uploads/2016/11/megamenu-widgets-768x230.png 768w, https://brand.berkeley.edu/wp-content/uploads/2016/11/megamenu-widgets-1024x307.png 1024w" sizes="(max-width: 1423px) 100vw, 1423px"></p> 
+           <h2 id="post_element">Components as Post Elements</h2> 
+           <p>Click on “Add Post Element” button above content editor box to enter a widget component with a <a href="#page">grid</a>.</p> 
+           <p><img loading="lazy" class="alignnone size-full wp-image-1269" src="https://brand.berkeley.edu/wp-content/uploads/2017/08/postelementbutton.png" alt="screen shot showing the Add Post Element button is located to the right of the ADD MEDIA button directly above the WYSIWYG" width="280" height="108"></p> 
+           <p>A popup window will appear with all available component options. Berkeley Brand components are labeled as such, other elements that appear are widgets (default WordPress and from installed plugins).</p> 
+           <p><img loading="lazy" class="alignnone size-full wp-image-1268" src="https://brand.berkeley.edu/wp-content/uploads/2017/08/componentpostelements.png" alt="" width="1552" height="933" srcset="https://brand.berkeley.edu/wp-content/uploads/2017/08/componentpostelements.png 1552w, https://brand.berkeley.edu/wp-content/uploads/2017/08/componentpostelements-300x180.png 300w, https://brand.berkeley.edu/wp-content/uploads/2017/08/componentpostelements-768x462.png 768w, https://brand.berkeley.edu/wp-content/uploads/2017/08/componentpostelements-1024x616.png 1024w" sizes="(max-width: 1552px) 100vw, 1552px"></p>
+          </div>
+         </div>
+        </div> 
+        <div class="sandwich pbsandwich_column">
+         <div class="row">
+          <div class="col-sm-12">
+           <h2 id="post_shortcode">Components as Shortcodes</h2> 
+           <p>Branded components can also be added to pages as shortcodes. Below is a list of the shortcodes and their options.</p> 
+           <ul> 
+            <li>Bullet List 
+             <ul> 
+              <li> <pre>[pbs_component_list title="test" item1="blah" item_link1="blah" /]</pre> </li> 
+             </ul> </li> 
+            <li>Events List 
+             <ul> 
+              <li> <pre>[pbs_component_events_list title="The title" number_events="3" /]</pre> </li> 
+             </ul> </li> 
+            <li>Events RSS 
+             <ul> 
+              <li> <pre>[pbs_component_events_rss title="Event Rss" feeds="SPH" recurring="true" max="5" datefield="link" list_format="1" /]</pre> </li> 
+             </ul> </li> 
+            <li>Photo 
+             <ul> 
+              <li> <pre>[pbs_component_photo title="A Caption" image_id="79" text="A Credit" link="https://berkeley.edu" is_modal="true" /]</pre> </li> 
+             </ul> </li> 
+            <li>Promo 
+             <ul> 
+              <li> <pre>[pbs_component_promo promo_heading="Promo Heading" promo_message="A Promo Message" image_id="76" promo_link="https://berkeley.edu" promo_background_color="web-soybean" /]</pre> </li> 
+              <li>For a circle image add: <i>promo_block_type=”promo-image-circle”</i></li> 
+              <li>Background color options are: web-medalist, wellman-tile, rose-farden, golden-gate, web-lap-lane, web-soybean, web-gray</li> 
+             </ul> </li> 
+            <li>Quote 
+             <ul> 
+              <li> <pre>[pbs_component_quote quote_text="This is a quote" quote_source="Me" quote_byline="a web developer" quote_background_color="web-founders-rock" /]</pre> </li> 
+              <li>Background color options are: web-founders-rock, web-pacific</li> 
+             </ul> </li> 
+            <li>Thumblist 
+             <ul> 
+              <li> <pre>[pbs_component_thumb_list title="A Thumblist" categoryid="5" /]</pre> </li> 
+             </ul> </li> 
+            <li>Twitter 
+             <ul> 
+              <li> <pre>[pbs_component_twitterfeed title="A Title" consumer_key="CONSUMER_KEY" consumer_secret="API_CONSUMER_SECRET" query="oskibear" number="3" /]</pre> </li> 
+             </ul> </li> 
+            <li>Video 
+             <ul> 
+              <li> <pre>[pbs_component_video title="A Caption" image_id="82" video_url=" https://www.youtube.com/watch?v=jQk7wKTNSwg" /]</pre> </li> 
+             </ul> </li> 
+            <li>Infographic 
+             <ul> 
+              <li> <pre>[pbs_component_infographic infographic_amount="32" infographic_caption="A Caption" infographic_shape="badge-ribbon" infographic_color="berkeley-blue" /]</pre> </li> 
+              <li>Infographic shape options are: badge-ribbon, bubble, burst-8, burst-12, circle, diamond, heart, hexagon</li> 
+              <li>Infographic color options are: Berkeley-blue, founders-rock, California-gold, medalist, wellman-tile, rose-farden, golden-gate, south-hall, bay-fog, Lawrence, lap-lane, pacigic, sather-gate, ion, soybean, stone-pine</li> 
+             </ul> </li> 
+           </ul>
+          </div>
+         </div>
+        </div> 
+       </div><!-- .entry-content -->
+      </article><!-- #post-1383 -->
+     </div><!-- /container -->
+     <div id="hero-widgets-container" class="widget widget-area container" role="complementary">
+     </div>
+     <div id="secondary" class="col-sm-4">
+      <div id="sidebar" class="widget-area" role="complementary">
+      </div><!-- #sidebar -->
+     </div><!-- #secondary -->
+    </div><!-- #content -->
+   </div><!-- row -->
+  </div><!-- #content -->
+  <footer><!-- Footer widgets -->
+   <section id="universal-footer">
+    <div class="container">
+     <div class="row">
+      <div class="col-sm-4 col-md-3">
+       <div class="block logo"><a href="https://www.berkeley.edu" target="_blank"><img alt="University of California Berkeley" src="https://brand.berkeley.edu/wp-content/themes/berkeley_brand/img/logo-ucberkeley-white.png"></a>
+       </div>
+      </div>
+      <div class="col-sm-8 col-md-9">
+       <div class="copyright">
+        <p class="contact-link"><a href="https://brand.berkeley.edu/contact/">Contact us</a></p> Copyright © 2022 UC Regents; all rights reserved 
+        <ul class="footer-links">
+         <li><a href="https://dac.berkeley.edu/web-accessibility">Accessibility</a></li>
+         <li><a href="https://ophd.berkeley.edu/policies-and-procedures/nondiscrimination-policy-statement">Nondiscrimination</a></li>
+         <li><a href="https://www.berkeley.edu/privacy_policy">Privacy Policy</a></li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </footer>
+  <script type="text/javascript">
+    if(	navigator.appVersion.indexOf("MSIE 8.") != -1 || navigator.appVersion.indexOf("MSIE 9.") != -1 ) {
+		document.body.className += ' mg_old_loader';
+	} else {
+		document.body.className += ' mg_new_loader';
+	}
+	if(navigator.appVersion.indexOf("MSIE") != -1 || navigator.appVersion.indexOf("rv:11.") != -1) {
+		document.body.className += ' mg_side_ie_fix';
+	}
+	</script> 
+  <link rel="stylesheet" id="pbsandwich-frontend-css" href="https://brand.berkeley.edu/wp-content/plugins/page-builder-sandwich/css/frontend.css?ver=5.9.3" type="text/css" media="all">
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-content/themes/berkeley_brand/js/bootstrap.min.js?ver=3.1.1" id="bootstrap.js-js"></script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-content/plugins/page-links-to/dist/new-tab.js?ver=3.3.6" id="page-links-to-js"></script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-content/plugins/media-grid/js/frontend.js?ver=5.143" id="mg-frontend-js-js"></script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-includes/js/hoverIntent.min.js?ver=1.10.2" id="hoverIntent-js"></script>
+  <script type="text/javascript" id="megamenu-js-extra">
+/* <![CDATA[ */
+var megamenu = {"timeout":"300","interval":"100"};
+/* ]]> */
+</script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=2.9.5" id="megamenu-js"></script>
+  <script type="text/javascript" src="https://brand.berkeley.edu/wp-content/themes/berkeley_brand/minified/scripts.js" id="bb-js-js"></script>
+  <script type="text/javascript">
+	// Media Grid global dynamic vars
+	mg_boxMargin = 5;
+	mg_boxBorder = 0;
+	mg_imgPadding = 3;
+	mg_delayed_fx = true;
+	mg_filters_behav = 'standard';
+	mg_lightbox_mode = "mg_classic_lb";
+	mg_lb_carousel = false;
+	mg_lb_touchswipe = false;
+	mg_audio_loop = false;
+	mg_rtl = true;
+	mg_mobile = 800; 
+	
+	mg_no_results_txt = "no results";
+	mg_deeplinked_elems = ['item','category','search','page'];
+	mg_full_deeplinking = false;
+
+	// Galleria global vars
+	mg_galleria_fx = 'fadeslide';
+	mg_galleria_fx_time = 400; 
+	mg_galleria_interval = 3000;
+	
+    // LC micro slider vars
+	mg_inl_slider_fx = 'fadeslide';
+	mg_inl_slider_fx_time = 400; 
+	mg_inl_slider_intval = 3000;
+	mg_inl_slider_touch = true;
+	mg_inl_slider_pause_on_h = false;
+	mg_kenburns_timing = 9000;
+    </script> 
+  <script type="text/javascript">
+	if(typeof(MediaElementPlayer) != 'function') {	
+		jQuery(document).ready(function(e) {
+            
+			var s = document.createElement("script");
+				
+			s.type = "text/javascript";
+			s.id = "mediaelement-js";
+			s.src = "https://brand.berkeley.edu/wp-content/plugins/media-grid/js/mediaelement/mediaelement-and-player.min.js";
+			
+			var head = document.getElementsByTagName('head');	
+			jQuery('head').append("<link rel='stylesheet' href='https://brand.berkeley.edu/wp-content/plugins/media-grid/js/mediaelement/mediaelementplayer.min.css' type='text/css' media='all' />");
+	
+			var body = document.getElementsByTagName('body');
+			jQuery('body').append(s);
+		});
+	}
+	
+		</script> 
+ </body>
+</html>

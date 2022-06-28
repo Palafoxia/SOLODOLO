@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"427707476"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-146344386-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});
+ga('puwdsTracker.set', 'anonymizeIp', true);ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <link rel="canonical" href="https://oip.princeton.edu/news">
+  <meta property="og:site_name" content="Office of International Programs">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://oip.princeton.edu/news">
+  <meta property="og:title" content="News">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:widgets:csp" content="on">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/sites/g/files/toruqf131/themes/site/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>News | Office of International Programs</title>
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf131/files/css/css_XJxyl1GJ7B3PpJ_eLWLFVsz_tJOQ04X_pCHGCvoWozQ.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf131/files/css/css_SG3i_WXmDdI3ei_XafA4k2u9ziqtHtj_2niuOL2XqnM.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/cdy2nbv.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/cer7rbs.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf131/files/css/css_bIfMTNPCHe7qhbN8EyeaibqTWjVtuszH8oYtHruBQWc.css">
+ </head>
+ <body class="not-front section-news page-node-81 content-type-ps-basic-page flavor1 full-width menu6 layout-block-padding-none path-node path-news">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="page page-container"> 
+    <header role="banner" class="header" id="header">
+     <h1 class="sr-only">Office of International Programs</h1><a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen: </span>Skip to content</a><a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen: </span>Skip to search</a>
+     <div class="header-container container">
+      <div class="princeton-branding">
+       <div class="container"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"> <img src="/profiles/ps/themes/ps_base/images/pu-logo.svg" alt="Princeton University"> </a>
+       </div>
+      </div>
+      <div class="site-branding">
+       <div class="container">
+        <div class="row"><a href="/" title="Home" rel="home" class="site-logo"> <img src="/sites/g/files/toruqf131/themes/site/logo.svg" alt="Home" typeof="foaf:Image"> </a>
+        </div>
+       </div>
+      </div>
+      <nav aria-label="site" class="main-menu">
+       <h2 class="sr-only">Main Menu</h2>
+       <div class="container navbar-expand-lg"><button class="toggle-mobile-menu unbutton" type="button" data-toggle="collapse" data-target="#menu-container" aria-controls="menu-container" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-mobile-menu-icon"> <span class="toggle-mobile-menu-title">Menu</span> <i class="fa fa-bars" aria-hidden="true"></i> </span> </button>
+        <div id="menu-container" class="collapse navbar-collapse">
+         <div class="nav-wrapper">
+          <ul class="nav navbar-nav main">
+           <li class="nav-item expanded"><a href="/who-we-are" data-drupal-link-system-path="node/36">Who We Are</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+            <ul class="submenu collapse">
+             <li class="submenu-item"><a href="/who-we-are/facts-and-figures" data-drupal-link-system-path="node/106">Facts and Figures</a></li>
+             <li class="submenu-item"><a href="/who-we-are/staff" data-drupal-link-system-path="node/111">Staff</a></li>
+            </ul></li>
+           <li class="nav-item expanded"><a href="/our-programs" data-drupal-link-system-path="node/46">Our Programs</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+            <ul class="submenu collapse">
+             <li class="submenu-item expanded"><a href="/our-programs/fellowship-advising" data-drupal-link-system-path="node/71">Fellowship Advising</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+              <ul class="submenu collapse">
+               <li class="submenu-item"><a href="/our-programs/fellowship-advising/search-fellowships" data-drupal-link-system-path="node/116">Search Fellowships</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/fellowship-advising/meet-your-advisers" data-drupal-link-system-path="node/121">Meet Your Advisers</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/meet-your-advisers/pre-advising-form" data-drupal-link-system-path="node/4621">Pre-advising Form</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/fellowship-advising/preparing-your-application" data-drupal-link-system-path="node/131">Preparing Your Application</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/preparing-your-application/general-advice" data-drupal-link-system-path="node/136">General Advice</a></li>
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/preparing-your-application/application-faqs" data-drupal-link-system-path="node/141">Application FAQs</a></li>
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/preparing-your-application/resources" data-drupal-link-system-path="node/146">Resources</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/fellowship-advising/connect" data-drupal-link-system-path="node/151">Connect</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/connect/past-fellowship-recipients" data-drupal-link-system-path="node/156">Past Fellowship Recipients</a></li>
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/connect/fellowships-mentoring-program" data-drupal-link-system-path="node/4591">Fellowships Mentoring Program</a></li>
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/connect/news" data-drupal-link-system-path="node/3321">In the News</a></li>
+                </ul></li>
+              </ul></li>
+             <li class="submenu-item expanded"><a href="/our-programs/international-internships" data-drupal-link-system-path="node/66">International Internships</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+              <ul class="submenu collapse">
+               <li class="submenu-item expanded"><a href="/our-programs/international-internships/about-iip" data-drupal-link-system-path="node/171">About IIP</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/international-internships/about-iip/iip-numbers" data-drupal-link-system-path="node/181">IIP by the Numbers</a></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/international-internships/search-internships" data-drupal-link-system-path="node/186">Search Internships</a></li>
+               <li class="submenu-item"><a href="/our-programs/international-internships/create-your-own" data-drupal-link-system-path="node/191">Create Your Own</a></li>
+               <li class="submenu-item"><a href="/our-programs/international-internships/meet-iip-team" data-drupal-link-system-path="node/206">Meet the IIP Team</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/international-internships/how-apply" data-drupal-link-system-path="node/211">How to Apply</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/international-internships/how-apply/iip-application-timeline" data-drupal-link-system-path="node/216">IIP Application Timeline</a></li>
+                 <li class="submenu-item"><a href="/our-programs/international-internships/how-apply/iip-terms-and-conditions" data-drupal-link-system-path="node/3866">IIP Terms and Conditions</a></li>
+                 <li class="submenu-item"><a href="/our-programs/international-internships/how-apply/application-faqs" data-drupal-link-system-path="node/221">Application FAQs</a></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/international-internships/financial-matters" data-drupal-link-system-path="node/226">Financial Matters</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/international-internships/student-stories" data-drupal-link-system-path="node/231">Student Stories</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/international-internships/student-stories/iip-2021-poster-winners" data-drupal-link-system-path="node/7496">IIP 2021 Poster Winners</a></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/international-internships/returning-home" data-drupal-link-system-path="node/236">Returning Home</a></li>
+              </ul></li>
+             <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year" data-drupal-link-system-path="node/41">Novogratz Bridge Year</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+              <ul class="submenu collapse">
+               <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year/about-bridge-year" data-drupal-link-system-path="node/241">About Bridge Year</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/about-bridge-year/mission-values-vision" data-drupal-link-system-path="node/7556">Mission, Values, Vision</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/about-bridge-year/why-bridge-year" data-drupal-link-system-path="node/251">Why Bridge Year?</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/about-bridge-year/faqs" data-drupal-link-system-path="node/256">FAQs</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/about-bridge-year/news" data-drupal-link-system-path="node/261">In the News</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/about-bridge-year/support-bridge-year" data-drupal-link-system-path="node/266">Support for Bridge Year</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year/explore-locations" data-drupal-link-system-path="node/271">Explore Locations</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/explore-locations/bolivia" data-drupal-link-system-path="node/276">Bolivia</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/explore-locations/china" data-drupal-link-system-path="node/281">China</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/explore-locations/india" data-drupal-link-system-path="node/286">India</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/explore-locations/indonesia" data-drupal-link-system-path="node/291">Indonesia</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/explore-locations/senegal" data-drupal-link-system-path="node/296">Senegal</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year/meet-our-volunteers" data-drupal-link-system-path="node/306">Meet Our Volunteers</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/meet-our-volunteers/returned-volunteers" data-drupal-link-system-path="node/311">Returned Volunteers</a></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/reflections-and-connections" data-drupal-link-system-path="node/316">Reflections and Connections</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year/voices" data-drupal-link-system-path="node/7516">Voices</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/voices/past-events" data-drupal-link-system-path="node/7591">Past Events</a></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/how-apply" data-drupal-link-system-path="node/301">How to Apply</a></li>
+               <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/information-families" data-drupal-link-system-path="node/531">Information for Families</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year/contact-us" data-drupal-link-system-path="node/331">Contact Us</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/contact-us/admission-ambassadors" data-drupal-link-system-path="node/6936">Admission Ambassadors</a></li>
+                </ul></li>
+              </ul></li>
+             <li class="submenu-item expanded"><a href="/our-programs/study-abroad" data-drupal-link-system-path="node/61">Study Abroad</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+              <ul class="submenu collapse">
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/getting-started" data-drupal-link-system-path="node/336">Getting Started</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/why-go-abroad" data-drupal-link-system-path="node/341">Why Go Abroad?</a></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/types-programs" data-drupal-link-system-path="node/346">Types of Programs</a></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/advice-department-and-certificate" data-drupal-link-system-path="node/351">Advice by Department and Certificate</a></li>
+                 <li class="submenu-item expanded"><a href="/our-programs/study-abroad/getting-started/study-abroad-requirements" data-drupal-link-system-path="node/356">Study Abroad Requirements</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                  <ul class="submenu collapse">
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/study-abroad-requirements/academic-year-policies" data-drupal-link-system-path="node/361">Academic Year Policies</a></li>
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/study-abroad-requirements/summer-policies" data-drupal-link-system-path="node/366">Summer Policies</a></li>
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/study-abroad-requirements/policies-faqs" data-drupal-link-system-path="node/371">Policies FAQs</a></li>
+                  </ul></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/study-abroad/meet-your-advisers" data-drupal-link-system-path="node/386">Meet Your Advisers</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/explore-programs" data-drupal-link-system-path="node/391">Explore Programs</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/explore-programs/explore-programs-faqs" data-drupal-link-system-path="node/396">Explore Programs FAQs</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/financial-matters" data-drupal-link-system-path="node/401">Financial Matters</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/financial-matters/academic-year" data-drupal-link-system-path="node/586">Academic Year</a></li>
+                 <li class="submenu-item expanded"><a href="/our-programs/study-abroad/financial-matters/summer" data-drupal-link-system-path="node/596">Summer</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                  <ul class="submenu collapse">
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/financial-matters/summer/deans-fund" data-drupal-link-system-path="node/601">Dean's Fund</a></li>
+                  </ul></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/how-apply" data-drupal-link-system-path="node/406">How to Apply</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item expanded"><a href="/our-programs/study-abroad/how-apply/academic-year" data-drupal-link-system-path="node/411">Academic Year</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                  <ul class="submenu collapse">
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/how-apply/academic-year/petition" data-drupal-link-system-path="node/426">Petition</a></li>
+                  </ul></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/how-apply/summer" data-drupal-link-system-path="node/416">Summer</a></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/how-apply/application-faqs" data-drupal-link-system-path="node/421">Application FAQs</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/returning-home" data-drupal-link-system-path="node/431">Returning Home</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/returning-home/re-entry" data-drupal-link-system-path="node/436">Re-entry</a></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/returning-home/practical-matters" data-drupal-link-system-path="node/441">Practical Matters</a></li>
+                 <li class="submenu-item expanded"><a href="/our-programs/study-abroad/returning-home/whats-next" data-drupal-link-system-path="node/446">What's Next?</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                  <ul class="submenu collapse">
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/returning-home/whats-next/become-global-ambassador" data-drupal-link-system-path="node/451">Become a Global Ambassador</a></li>
+                  </ul></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/connect" data-drupal-link-system-path="node/461">Connect</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/connect/contact-us" data-drupal-link-system-path="node/466">Contact Us</a></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/connect/events" data-drupal-link-system-path="node/476">Events</a></li>
+                </ul></li>
+              </ul></li>
+            </ul></li>
+           <li class="nav-item expanded"><a href="/our-students" data-drupal-link-system-path="node/51">Our Students</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+            <ul class="submenu collapse">
+             <li class="submenu-item expanded"><a href="/our-students/international-eye-photo-contest" data-drupal-link-system-path="node/496">International Eye Photo Contest</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+              <ul class="submenu collapse">
+               <li class="submenu-item"><a href="/our-students/international-eye-photo-contest/previous-winners" data-drupal-link-system-path="node/4616">Previous Winners</a></li>
+               <li class="submenu-item"><a href="/our-students/international-eye-photo-contest/years-winners" data-drupal-link-system-path="node/6186">This Year's Winners</a></li>
+              </ul></li>
+             <li class="submenu-item"><a href="/our-students/resources" data-drupal-link-system-path="node/501">Resources</a></li>
+            </ul></li>
+           <li class="nav-item"><a href="/contact-us" data-drupal-link-system-path="node/56">Contact Us</a></li>
+          </ul>
+         </div> 
+         <div class="utility-menu">
+          <ul class="nav navbar-nav utility-nav">
+           <li class="nav-item"><a href="/events" data-drupal-link-system-path="node/86">Events</a></li>
+           <li class="nav-item active"><a href="/news" data-drupal-link-system-path="node/81" class="is-active">News</a></li>
+           <li class="nav-item"><a href="https://gps.princeton.edu/">My GPS</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </nav>
+      <div class="search-bar" id="search-bar">
+       <div class="container navbar-expand-lg" role="search">
+        <h2 class="sr-only">Search</h2><button class="toggle-searchbar unbutton" type="button" data-toggle="collapse" data-target="#search-bar-container" aria-controls="search-bar-container" aria-expanded="false" aria-label="Toggle search"> <span class="toggle-search-icon"> <i class="fas fa-search" aria-hidden="true"></i> </span> </button>
+        <div id="search-bar-container" class="collapse navbar-collapse">
+         <div class="search-block-form contextual-region block block-search container-inline" id="block-searchform">
+          <form action="/search" method="get" id="search-block-form" accept-charset="UTF-8">
+           <div id="search-toggled" class="form-group js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label"><label for="edit-search-keys" class="visually-hidden">Search</label>
+            <input placeholder="Search" type="search" id="edit-search-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control">
+           </div>
+           <div data-drupal-selector="edit-search-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-search-actions">
+            <input type="submit" id="edit-search-submit" value="Submit" class="button js-form-submit form-submit btn btn-primary">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="breadcrumb" id="breadcrumb">
+     <div class="container">
+      <nav role="navigation" aria-label="breadcrumb">
+       <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> News </li>
+       </ol>
+      </nav>
+     </div>
+    </div>
+    <div class="highlighted" id="highlighted">
+     <div class="container">
+      <div class="region region-highlighted">
+       <div data-drupal-messages-fallback class="hidden"></div>
+      </div>
+     </div>
+    </div>
+    <div class="oip-standard">
+     <div class="oip-standard-container">
+      <div class="oip-cat-title-container oip-category-study-abroad">
+       <span>Study Abroad</span>
+      </div>
+      <div class="oip-cat-title-container oip-category-bridge-year">
+       <span>Bridge Year</span>
+      </div>
+      <div class="oip-cat-title-container oip-category-fellowships">
+       <span>Fellowships</span>
+      </div>
+      <div class="oip-cat-title-container oip-category-internships">
+       <span>International Internships</span>
+      </div>
+      <h1>News</h1>
+     </div>
+    </div>
+    <div id="main" class="main-container">
+     <div class="container">
+      <div class="row">
+       <main class="main main-content col-md-12"><a id="main-content" class="sr-only skip-link"></a>
+        <div class="region region-content">
+         <div id="block-oip-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+          <h1 class="page-title"> News </h1>
+         </div>
+         <div id="block-oip-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+          <article role="article" about="/news" class="node node--type-ps-basic-page node--view-mode-full">
+           <div class="node__content">
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-block-plugin-id="ps_core_taxonomy_terms_list" class="block block-ps-core block-ps-core-taxonomy-terms-list">
+                <div class="item-list">
+                 <ul>
+                  <li><a href="/news?ps_sitewide_category=27">Office of International Programs</a></li>
+                  <li><a href="/news?ps_sitewide_category=51">Bridge Year</a></li>
+                  <li><a href="/news?ps_sitewide_category=30">Fellowships</a></li>
+                  <li><a href="/news?ps_sitewide_category=29">IIP</a></li>
+                  <li><a href="/news?ps_sitewide_category=28">Study Abroad</a></li>
+                 </ul>
+                </div>
+               </div>
+               <div data-block-plugin-id="ps_node_view" class="block block-ps-core block-ps-node-view">
+               </div>
+               <div data-component-uuid="2e41fc77-6f01-410e-a980-8b67f84ea0d7" data-et="node" data-ei="81" data-evd="node.ps_basic_page.default" data-block-plugin-id="ps_news_list" class="block-content-list block block-ps-news block-ps-news-list">
+                <div data-ajax="on" class="exposed-filters-0 content-list content-list-grid grid-cols-5">
+                 <div class="content-list-items" role="list">
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2022/physics-graduate-students-herzog-arbeitman-%E2%80%9919-and-longenecker-awarded-hertz-fellowships" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2022-06/hertz_2022.png?itok=iM3hjdXd" width="750" height="500" alt="Jonah Herzog-Arbeitman '19 and&nbsp;Daniel Longenecker." loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2022/physics-graduate-students-herzog-arbeitman-%E2%80%9919-and-longenecker-awarded-hertz-fellowships" hreflang="en">Physics graduate students Herzog-Arbeitman ’19 and Longenecker awarded Hertz fellowships</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    June 15, 2022
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2022/fellowship-profile-cecilia-hsu-%E2%80%9920-fulbright-eta-spain" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2022-05/c_hsu_fulbright.jpg?itok=I1atiB-h" width="750" height="500" alt="Cecilia Hsu_Fulbright Photo outdoors" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2022/fellowship-profile-cecilia-hsu-%E2%80%9920-fulbright-eta-spain" hreflang="en">Fellowship Profile: Cecilia Hsu ’20, Fulbright ETA to Spain</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    May 18, 2022
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2022/taishi-nakase-21-named-knight-hennessy-scholar" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2022-05/nakase_taishi_06205298_sq497.jpeg?itok=sqvR69xE" width="497" height="331" alt="Taishi Nakase Knight-Hennessy scholar" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2022/taishi-nakase-21-named-knight-hennessy-scholar" hreflang="en">Taishi Nakase '21 named Knight-Hennessy Scholar</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    May 13, 2022
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2022/princeton-seniors-jacquelyn-d%C3%A1vila-and-shaffin-siddiqui-received-martin-dale-%E2%80%9953" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2022-05/jacquelyn_davila_and_shaffin_siddiqui.png?itok=rDDe6DJA" width="687" height="458" alt="Princeton seniors Jacquelyn Dávila and Shaffin Siddiqui" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2022/princeton-seniors-jacquelyn-d%C3%A1vila-and-shaffin-siddiqui-received-martin-dale-%E2%80%9953" hreflang="en">Princeton seniors Jacquelyn Dávila and Shaffin Siddiqui received Martin A. Dale ’53 Fellowship</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    May 12, 2022
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2022/hu-and-thakar-awarded-goldwater-scholarships" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2022-04/Duplex-banner-Hu-and-Thakar.jpeg?itok=YjwrXc6A" width="750" height="500" alt="Daniel Hu and Oliver Thakar photos for Goldwater Scholarships" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2022/hu-and-thakar-awarded-goldwater-scholarships" hreflang="en">Hu and Thakar awarded Goldwater Scholarships</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    April 18, 2022
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2022/five-seniors-awarded-labouisse-prize-international-civic-engagement-projects-2022" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2022-04/Labouisse--Five%20students-3000_0.jpeg?itok=2PInjPPM" width="750" height="500" alt="Five Princeton seniors have been awarded the Henry Richardson Labouisse ’26 Prize to pursue international civic engagement projects for one year following graduation." loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2022/five-seniors-awarded-labouisse-prize-international-civic-engagement-projects-2022" hreflang="en">Five seniors awarded Labouisse Prize for international civic engagement projects 2022</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    April 1, 2022
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2022/emily-s%C3%A1nchez-22-awarded-reachout-fellowship-public-service" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2022-03/Emily_Sanchez_original-SQUARE-2_0.jpg?itok=51tLkw0G" width="516" height="344" alt="Emily Sánchez" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2022/emily-s%C3%A1nchez-22-awarded-reachout-fellowship-public-service" hreflang="en">Emily Sánchez '22 awarded ReachOut Fellowship for public service</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    March 23, 2022
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2022/fellowship-profile-winston-lie-%E2%80%9920-fulbright-study-award-taiwan" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2022-03/IMG_0284.jpeg?itok=ucP5T4xZ" width="750" height="500" alt="Winston Lie outside in Taiwan" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2022/fellowship-profile-winston-lie-%E2%80%9920-fulbright-study-award-taiwan" hreflang="en">Fellowship Profile: Winston Lie ’20, Fulbright study award to Taiwan</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    March 15, 2022
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-news-category field--type-entity-reference field--label-hidden field__items">
+                    <div class="field__item">
+                     <a href="/news-category/fellowships" hreflang="en">fellowships</a>
+                    </div>
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2021/senior-julia-chaffers-awarded-marshall-scholarship-graduate-study-uk" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2021-12/Julia%20Chaffers%20headshot.png?itok=Me1RnzXR" width="750" height="500" alt="Julia Chaffers" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2021/senior-julia-chaffers-awarded-marshall-scholarship-graduate-study-uk" hreflang="en">Senior Julia Chaffers awarded Marshall Scholarship for graduate study in the UK</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    Dec. 13, 2021
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2021/three-princeton-seniors-two-alumni-awarded-schwarzman-scholarships" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2021-12/Schwarzman%20Winners%20Photo_0.png?itok=xJ6OEqpp" width="282" height="188" alt="Schwarzman Winners" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2021/three-princeton-seniors-two-alumni-awarded-schwarzman-scholarships" hreflang="en">Three Princeton seniors, two alumni awarded Schwarzman Scholarships</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    Dec. 10, 2021
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2021/princeton-graduate-naoum-fares-marayati-named-mitchell-scholar" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2021-11/Marayati%20-%20Mitchell%20Headshot.jpeg?itok=WV5Xd8cg" width="750" height="500" alt="Naoum Fares Marayati" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2021/princeton-graduate-naoum-fares-marayati-named-mitchell-scholar" hreflang="en">Princeton graduate Naoum Fares Marayati named Mitchell Scholar</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    Nov. 23, 2021
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2021/princeton-seniors-joshua-babu-and-wafa-zaka-win-rhodes-scholarships" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2021-11/Rhodes2021_banner.jpg?itok=g-E4ig9j" width="540" height="360" alt="Wafa Zaka and Joshua Babu" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2021/princeton-seniors-joshua-babu-and-wafa-zaka-win-rhodes-scholarships" hreflang="en">Princeton seniors Joshua Babu and Wafa Zaka win Rhodes Scholarships</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    Nov. 22, 2021
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2021/dale-awards-allow-students-pursue-independent-post-graduation-and-summer-projects" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2021-05/Murraydodge_Dale%20Awards.jpg?itok=HaTrzrev" width="750" height="500" alt="Murray Dodge building" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2021/dale-awards-allow-students-pursue-independent-post-graduation-and-summer-projects" hreflang="en">Dale Awards allow students to pursue independent post-graduation and summer projects</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    May 20, 2021
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/bridge-year" hreflang="en">Bridge Year</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2021/trevor-noah-travel-teaches-you-way-you-think-world-isnt" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2021-05/ClassDay2021_Quad_TrevorNoah.jpg?itok=uT9BtGiL" width="750" height="500" alt="Trevor Noah and Class co-chairs" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2021/trevor-noah-travel-teaches-you-way-you-think-world-isnt" hreflang="en">Trevor Noah: Travel teaches you that the way you think the world is, isn't</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    May 19, 2021
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2021/tellustigers-jordan-salama-19" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2021-05/Salama_TigersAbroad_Bolivia.jpg?itok=dKxbWxIC" width="750" height="500" alt="Jordan Salama in Bolivia" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2021/tellustigers-jordan-salama-19" hreflang="en">#TellUsTigers: Jordan Salama '19</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    May 11, 2021
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2021/two-princetonians-awarded-gaither-fellowship-work-carnegie-endowment" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2021-05/Gaither_2021_banner.jpg?itok=4A8TO6Hp" width="540" height="360" alt="Nikhita Salgame and Benjamin Press" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2021/two-princetonians-awarded-gaither-fellowship-work-carnegie-endowment" hreflang="en">Two Princetonians awarded Gaither Fellowship to work at Carnegie Endowment</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    May 3, 2021
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/bridge-year" hreflang="en">Bridge Year</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2021/himelhoch-lambert-and-wayner-awarded-truman-scholarship-public-service" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2021-04/Truman_Scholars_banner_0.jpg?itok=1qOJ-NZe" width="540" height="360" alt="Truman Scholars 2020-21" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2021/himelhoch-lambert-and-wayner-awarded-truman-scholarship-public-service" hreflang="en">Himelhoch, Lambert and Wayner awarded Truman Scholarship for public service</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    April 22, 2021
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/bridge-year" hreflang="en">Bridge Year</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2021/princeton-university-included-list-top-producers-fulbright-us-students" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2021-04/Fulbright_StudentProd2020-21.jpg?itok=OJMqHa9X" width="750" height="500" alt="Fulbright Program Top Producer badge" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2021/princeton-university-included-list-top-producers-fulbright-us-students" hreflang="en">Princeton University included in list of top producers of Fulbright U.S. Students</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    April 16, 2021
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2021/khan-mcenany-and-orlovsky-awarded-goldwater-scholarships" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2021-04/Goldwater_award_2021_0.jpg?itok=s0TCf8bQ" width="540" height="360" alt="Goldwater recipients" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2021/khan-mcenany-and-orlovsky-awarded-goldwater-scholarships" hreflang="en">Khan, McEnany and Orlovsky awarded Goldwater Scholarships</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    April 7, 2021
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-news-category field--type-entity-reference field--label-hidden field__items">
+                    <div class="field__item">
+                     <a href="/news-category/fellowships" hreflang="en">fellowships</a>
+                    </div>
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                  <div class="content-list-item feature-is-3x2" role="listitem">
+                   <div class="field--type-entity-reference-media field field--name-field-ps-featured-image field--type-entity-reference field--label-hidden field__item"> <a href="/news/2021/four-seniors-awarded-labouisse-prize-international-civic-engagement-projects" hreflang="en"><img src="/sites/g/files/toruqf131/files/styles/3x2_750w_500h/public/2021-03/Labouisse_2021_banner.jpg?itok=CNyB3bqu" width="540" height="360" alt="Labouisse 2021 recipients" loading="lazy" typeof="foaf:Image" class="image-style-_x2-750w-500h"> </a>
+                   </div><span class="field field--name-title field--type-string field--label-hidden"><a href="/news/2021/four-seniors-awarded-labouisse-prize-international-civic-engagement-projects" hreflang="en">Four seniors awarded Labouisse Prize for international civic engagement projects</a></span>
+                   <div class="field field--name-field-ps-news-publication-date field--type-datetime field--label-hidden field__item">
+                    March 2, 2021
+                   </div>
+                   <div class="field--type-entity-reference-taxonomy-term field field--name-field-ps-sitewide-category field--type-entity-reference field--label-hidden field__items"><span> <a href="/sitewide-category/office-international-programs" hreflang="en">Office of International Programs</a>, </span><span> <a href="/sitewide-category/bridge-year" hreflang="en">Bridge Year</a>, </span><span> <a href="/sitewide-category/fellowships" hreflang="en">Fellowships</a> </span>
+                   </div>
+                  </div>
+                 </div>
+                 <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
+                  <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
+                  <ul class="pager__items js-pager__items">
+                   <li class="pager__item is-active"><a href="?page=0" title="Current page"> <span class="visually-hidden"> Current page </span>1</a></li>
+                   <li class="pager__item"><a href="?page=1" title="Go to page 2"> <span class="visually-hidden"> Page </span>2</a></li>
+                   <li class="pager__item"><a href="?page=2" title="Go to page 3"> <span class="visually-hidden"> Page </span>3</a></li>
+                   <li class="pager__item"><a href="?page=3" title="Go to page 4"> <span class="visually-hidden"> Page </span>4</a></li>
+                   <li class="pager__item"><a href="?page=4" title="Go to page 5"> <span class="visually-hidden"> Page </span>5</a></li>
+                   <li class="pager__item"><a href="?page=5" title="Go to page 6"> <span class="visually-hidden"> Page </span>6</a></li>
+                   <li class="pager__item"><a href="?page=6" title="Go to page 7"> <span class="visually-hidden"> Page </span>7</a></li>
+                   <li class="pager__item"><a href="?page=7" title="Go to page 8"> <span class="visually-hidden"> Page </span>8</a></li>
+                   <li class="pager__item"><a href="?page=8" title="Go to page 9"> <span class="visually-hidden"> Page </span>9</a></li>
+                   <li class="pager__item pager__item--ellipsis" role="presentation">…</li>
+                   <li class="pager__item pager__item--next"><a href="?page=1" title="Go to next page" rel="next"> <span class="visually-hidden">Next page</span> <span aria-hidden="true">Next ›</span> </a></li>
+                   <li class="pager__item pager__item--last"><a href="?page=11" title="Go to last page"> <span class="visually-hidden">Last page</span> <span aria-hidden="true">Last »</span> </a></li>
+                  </ul>
+                 </nav>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </main>
+      </div>
+     </div>
+    </div>
+    <footer role="contentinfo" class="footer" id="footer">
+     <h2 class="sr-only">Footer</h2>
+     <div class="container">
+      <div class="region region-footer">
+       <div class="constrained-bkg-constrained-content layout layout--fourcol-25-25-25-25">
+        <div class="layout-inner-container">
+         <div class="layout__region layout__region--first layout__region--quarters layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+           <h2 class="block-heading">Office of International Programs</h2>
+           <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+            <p>Louis A. Simpson International Building<br> Phone: 609-258-5524<br> Fax: 609-258-1019<br><a href="mailto:oip@princeton.edu">oip@princeton.edu</a><br><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="1b481262-917a-4c03-b87e-25cb01c2005c" href="/who-we-are/staff">Make an Appointment</a></p>
+            <p>A unit of the <a href="https://odoc.princeton.edu/">Office of the Dean of the College</a></p>
+           </div>
+          </div>
+         </div>
+         <div class="layout__region layout__region--second layout__region--quarters layout__region--narrow">
+          <div class=" oip-text--right block-ps-text block block-layout-builder block-inline-blockps-text" data-block-plugin-id="inline_block:ps_text">
+           <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+            <a href="https://www.google.com/maps/place/Louis+A.+Simpson+International+Building/@40.3492662,-74.6571376,17z/data=!3m1!4b1!4m5!3m4!1s0x89c3e6c3abdf7765:0x499a19706e75ade!8m2!3d40.3492621!4d-74.6549436" target="_blank">
+             <figure class="align-right media--type-image media--view-mode-ps-small-freeform figure">
+              <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2019-08/oip-map.png?itok=co00jap0" width="220" height="161" alt="the Louis A Simpson building is on Washington Road in Princeton NJ" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+             </figure></a>
+            <p>&nbsp;</p>
+           </div>
+          </div>
+         </div>
+         <div class="layout__region layout__region--third layout__region--quarters layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+           <h2 class="block-heading">Visit Us</h2>
+           <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+            <p>Office Hours Monday-Friday:<br> Academic Year: 9 a.m. - 5 p.m.<br> Summer: 8:30 a.m.- 4:30 p.m.</p>
+           </div>
+          </div>
+         </div>
+         <div class="layout__region layout__region--fourth layout__region--quarters layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_social_links" class="block-ps-social-links block block-layout-builder block-inline-blockps-social-links">
+           <h2 class="block-heading">Follow Us</h2>
+           <ul class="ps-social-links--platforms platforms vertical">
+            <li><a href="https://www.facebook.com/princetonoip" title="PrincetonOIP"> <span class="fab fa-facebook fa-2x" aria-hidden="true"></span> <span class="social-link-label">PrincetonOIP</span> </a></li>
+            <li><a href="https://www.facebook.com/PrincetonBridgeYear/" title="PrincetonBridgeYear"> <span class="fab fa-facebook fa-2x" aria-hidden="true"></span> <span class="social-link-label">PrincetonBridgeYear</span> </a></li>
+            <li><a href="https://www.instagram.com/princetonoip" title="PrincetonOIP"> <span class="fab fa-instagram fa-2x" aria-hidden="true"></span> <span class="social-link-label">PrincetonOIP</span> </a></li>
+            <li><a href="https://www.instagram.com/novogratzbridgeyear" title="novogratzbridgeyear"> <span class="fab fa-instagram fa-2x" aria-hidden="true"></span> <span class="social-link-label">novogratzbridgeyear</span> </a></li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="constrained-bkg-constrained-content layout layout--threecol-33-34-33">
+        <div class="layout-inner-container">
+         <div class="layout__region layout__region--first layout__region--thirds layout__region--narrow">
+         </div>
+         <div class="layout__region layout__region--second layout__region--thirds layout__region--narrow">
+         </div>
+         <div class="layout__region layout__region--third layout__region--thirds layout__region--narrow">
+         </div>
+        </div>
+       </div>
+       <div class="constrained-bkg-constrained-content layout layout--onecol">
+        <div class="layout-container">
+         <div class="layout__region layout__region--content">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="subfooter">
+      <div class="container">
+       <div class="row">
+        <div class="subfooter-links">
+         <ul class="list-unstyled">
+          <li><a href="https://accessibility.princeton.edu/resources/accessibility-help" target="_blank">Accessibility</a></li>
+         </ul>
+        </div>
+        <div class="col-sm  copyright">
+         <p class="copyright-text"> © 2022 The Trustees of Princeton University </p>
+        </div>
+        <div class="col-sm text-sm-left text-md-right"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"> <img src="/sites/g/files/toruqf131/themes/site/images/pu-logo-stacked-white.svg" alt="Princeton University"></a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div> 
+  </div><span id="ps-current-username" data-username=""></span>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/81","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ckeditorheight":{"offset":1,"line_height":1.5,"unit":"em","disable_autogrow":null},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"all_documents_new_window":false,"select2_simple":{"selector":".node-form select:not(.disable-select2,[name$=\u0027[actions][bundle]\u0027],.ui-timepicker-select,[name*=\u0027field_ps_timeline_feature_items\u0027]),.select2-form select,#drupal-off-canvas select[multiple]"},"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"ajax":[],"user":{"uid":0,"permissionsHash":"0c65cb7d0b17e8592025a2efca2514eeec9f615686e6ff301c9d2e3f04e0c6bb"}}</script>
+  <script src="/sites/g/files/toruqf131/files/js/js_StnNMEBVvHIqNmZUGCyDXWt6ymTBtSiJ8dcryKc7IbE.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"427707476","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":1188,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

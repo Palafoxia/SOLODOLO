@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class="accessibility-mode">
+ <head>
+  <meta charset="utf-8">
+  <script type="00013dea487aa278275614ba-text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"7d81fa5a52",applicationID:"66534700"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="referrer" content="origin">
+  <meta name="google-site-verification" content="4CINxYzOgwdsfriSqY9j_PEzPDG7XB3gv44O5DV6n2k">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="icon" href="/themes/custom/juilliard/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="canonical" href="https://www.juilliard.edu/website-terms-use">
+  <link rel="shortlink" href="https://www.juilliard.edu/node/118241">
+  <script type="00013dea487aa278275614ba-text/javascript">(function(w,d,s,l,i){
+
+  w[l]=w[l]||[];
+  w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+  var f=d.getElementsByTagName(s)[0];
+  var j=d.createElement(s);
+  var dl=l!='dataLayer'?'&l='+l:'';
+  j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';
+  j.async=true;
+  f.parentNode.insertBefore(j,f);
+
+})(window,document,'script','dataLayer','GTM-WZKXFT');</script>
+  <script type="00013dea487aa278275614ba-text/javascript">window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_config.icon_color = "transparent, #787878";</script>
+  <title>Website Terms of Use | The Juilliard School</title>
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_A_lqfGbVOjuu8IXB5JQG8bVpgHzK1Sz2ErNjP28R4jY.css">
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_rBJp_V-2iiQnTXxnH9SykNdRR7OMdSFazlHK_eDGGaU.css">
+  <script src="/themes/custom/juilliard/js/modernizr.min.js?rd83ox" type="00013dea487aa278275614ba-text/javascript"></script>
+  <script src="https://webcomponents.spektrix.com/stable/webcomponents-loader.js" type="00013dea487aa278275614ba-text/javascript"></script>
+  <script src="https://webcomponents.spektrix.com/stable/spektrix-component-loader.js" async data-components="spektrix-login-status,spektrix-basket-summary,spektrix-memberships" type="00013dea487aa278275614ba-text/javascript"></script>
+ </head>
+ <body class="page-node-type-basic-page path-node nav-disable"><a href="#main-content" class="focusable skip-link"> Skip to main content </a>
+  <noscript aria-hidden="true">
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZKXFT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="layout-container">
+    <header>
+     <div id="branding"><button id="hamburger-mobile" aria-controls="block-mainnavigation" aria-expanded="false"> <span>Display</span> Main Site Navigation </button>
+      <div class="region region-branding">
+       <div id="block-sitebranding"><a class="logo-pride" href="/" title="Home" rel="home">The Juilliard School</a>
+       </div>
+       <div id="block-pagedivisiontitle">
+       </div><button class="nav-toggle" aria-expanded="false"><em>Display and skip to</em> <span></span> section navigation</button>
+      </div>
+     </div>
+     <div id="top-bar"><button id="hamburger-desktop" aria-controls="block-mainnavigation-level-1-menu" aria-expanded="false"> <span>Display</span> Main Site Navigation </button>
+      <div id="top-bar-left">
+       <div class="region region-header">
+        <nav role="navigation" aria-labelledby="block-mainnavigation-level-1-menu" id="block-mainnavigation-level-1">
+         <h2 class="visually-hidden" id="block-mainnavigation-level-1-menu" aria-hidden="true">Main navigation - Level 1</h2>
+         <ul class="menu menu--level-1">
+          <li class="menu-item menu-item--level-1 menu-item--collapsed"><a class="menu-link menu-link--level-1" href="/dance"> <span class="link-wrapper link-wrapper--1">Dance</span> </a></li>
+          <li class="menu-item menu-item--level-1 menu-item--collapsed"><a class="menu-link menu-link--level-1" href="/drama"> <span class="link-wrapper link-wrapper--1">Drama</span> </a></li>
+          <li class="menu-item menu-item--level-1 menu-item--collapsed"><a class="menu-link menu-link--level-1" href="/music"> <span class="link-wrapper link-wrapper--1">Music</span> </a></li>
+          <li class="menu-item menu-item--level-1 menu-item--collapsed"><a class="menu-link menu-link--level-1" href="/stage-beyond"> <span class="link-wrapper link-wrapper--1">On Stage &amp; Beyond</span> </a></li>
+         </ul>
+        </nav>
+       </div>
+      </div>
+      <div id="top-bar-right"><button id="secondary-menu-trigger" aria-expanded="false" aria-controls="block-secondarymenu" aria-label="Show secondary menu items"> <span class="secondary-menu-trigger-text">More</span> <span class="secondary-menu-trigger-icon"></span> </button>
+       <div class="region region-secondary-navigation">
+        <nav role="navigation" aria-labelledby="block-secondarymenu-menu" id="block-secondarymenu">
+         <h2 class="visually-hidden" id="block-secondarymenu-menu" aria-hidden="true">Secondary menu</h2>
+         <ul block="block-secondarymenu">
+          <li><a href="/admissions"> <span class="link-wrapper">Admissions</span> </a></li>
+          <li><a href="/campus-life"> <span class="link-wrapper">Campus Life</span> </a></li>
+          <li><a href="/school"> <span class="link-wrapper">The School</span> </a></li>
+          <li><a href="/support"> <span class="link-wrapper">Support</span> </a></li>
+         </ul>
+        </nav>
+       </div><a href="/stage-beyond/performance-calendar" id="calendar-trigger-mobile" class="calendar-trigger"><span class="date-icon"></span>Performance Calendar</a><button id="site-search-block">Search</button>
+      </div>
+      <div class="spektrix-region__wrapper--mobile">
+       <div class="region region-spektrix">
+        <div id="block-spektrixstatusblock"><spektrix-login-status client-name="juilliard" custom-domain="tickets.juilliard.edu" class="spek-account__link--wrapper"> 
+          <span data-logged-in-container style="display: none;" class="spek-account__link--details">
+           <div class="spek__account"><a href="/account" class="spek__account--link"> <span class="spek__account--icon"> 
+              <svg viewbox="-42 0 512 512.002" xmlns="http://www.w3.org/2000/svg">
+               <path d="m210.351562 246.632812c33.882813 0 63.222657-12.152343 87.195313-36.128906 23.972656-23.972656 36.125-53.304687 36.125-87.191406 0-33.875-12.152344-63.210938-36.128906-87.191406-23.976563-23.96875-53.3125-36.121094-87.191407-36.121094-33.886718 0-63.21875 12.152344-87.191406 36.125s-36.128906 53.308594-36.128906 87.1875c0 33.886719 12.15625 63.222656 36.132812 87.195312 23.976563 23.96875 53.3125 36.125 87.1875 36.125zm0 0" /><path d="m426.128906 393.703125c-.691406-9.976563-2.089844-20.859375-4.148437-32.351563-2.078125-11.578124-4.753907-22.523437-7.957031-32.527343-3.308594-10.339844-7.808594-20.550781-13.371094-30.335938-5.773438-10.15625-12.554688-19-20.164063-26.277343-7.957031-7.613282-17.699219-13.734376-28.964843-18.199219-11.226563-4.441407-23.667969-6.691407-36.976563-6.691407-5.226563 0-10.28125 2.144532-20.042969 8.5-6.007812 3.917969-13.035156 8.449219-20.878906 13.460938-6.707031 4.273438-15.792969 8.277344-27.015625 11.902344-10.949219 3.542968-22.066406 5.339844-33.039063 5.339844-10.972656 0-22.085937-1.796876-33.046874-5.339844-11.210938-3.621094-20.296876-7.625-26.996094-11.898438-7.769532-4.964844-14.800782-9.496094-20.898438-13.46875-9.75-6.355468-14.808594-8.5-20.035156-8.5-13.3125 0-25.75 2.253906-36.972656 6.699219-11.257813 4.457031-21.003906 10.578125-28.96875 18.199219-7.605469 7.28125-14.390625 16.121094-20.15625 26.273437-5.558594 9.785157-10.058594 19.992188-13.371094 30.339844-3.199219 10.003906-5.875 20.945313-7.953125 32.523437-2.058594 11.476563-3.457031 22.363282-4.148437 32.363282-.679688 9.796875-1.023438 19.964844-1.023438 30.234375 0 26.726562 8.496094 48.363281 25.25 64.320312 16.546875 15.746094 38.441406 23.734375 65.066406 23.734375h246.53125c26.625 0 48.511719-7.984375 65.0625-23.734375 16.757813-15.945312 25.253906-37.585937 25.253906-64.324219-.003906-10.316406-.351562-20.492187-1.035156-30.242187zm0 0" />
+              </svg> </span> <span data-logged-in-status-customer-first-name></span> <span data-logged-in-status-customer-last-name></span> </a><a href="/basket" class="spek__account--link"> <span class="spek__account--icon"> 
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 15.631 15.631" style="enable-background:new 0 0 15.631 15.631;" xml:space="preserve"><g> 
+                <path style="#ffffff" d="M14.371,3.547c-0.044,0.085-0.098,0.165-0.167,0.234c-0.478,0.478-1.393,0.338-2.043-0.312
+		c-0.65-0.65-0.79-1.565-0.312-2.043c0.069-0.069,0.148-0.124,0.233-0.167L10.822,0L8.964,1.859l0.465,0.465L9.14,2.613L8.675,2.148
+		l-8.674,8.675l1.226,1.227c0.479-0.479,1.393-0.34,2.043,0.311s0.79,1.564,0.312,2.043l1.226,1.227L15.63,4.807L14.371,3.547z
+		 M10.567,4.038L9.854,3.325l0.288-0.289l0.713,0.713L10.567,4.038z M11.993,5.464L11.28,4.751l0.288-0.288l0.714,0.713
+		L11.993,5.464z M13.42,6.891l-0.714-0.713l0.289-0.288l0.713,0.713L13.42,6.891z" /> 
+               </g><g> 
+               </g><g> 
+               </g><g> 
+               </g><g> 
+               </g><g> 
+               </g><g> 
+               </g><g> 
+               </g><g> 
+               </g><g> 
+               </g><g> 
+               </g><g> 
+               </g><g> 
+               </g><g> 
+               </g><g> 
+               </g><g> 
+               </g>
+              </svg> </span> 
+             <spektrix-basket-summary client-name="juilliard" custom-domain="tickets.juilliard.edu" class="basket-summary">
+              <span data-basket-item-count class="basket-item-count"></span> item(s) Total: 
+              <span data-basket-summary-currency class=""></span>
+              <span data-basket-summary-basket-total class="basket-total"></span>
+             </spektrix-basket-summary> </a>
+           </div></span> 
+         </spektrix-login-status>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div id="main-menu">
+      <div class="region region-navigation">
+       <nav role="navigation" aria-labelledby="block-mainnavigation-menu" id="block-mainnavigation" class="desktop-nav-hidden">
+        <h2 class="visually-hidden" id="block-mainnavigation-menu" aria-hidden="true">Main navigation</h2>
+        <ul class="menu menu--level-1">
+         <li class="menu-item menu-item--level-1 menu-item--expanded"><a class="menu-link menu-link--level-1 menu-link--narrow" href="/dance"> <span class="link-wrapper link-wrapper--1">Dance</span> </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-1" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+          <ul class="menu menu--level-2">
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/dance/dance-bachelor-fine-arts"> Bachelor of Fine Arts </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/dance/performance-opportunities"> Performance Opportunities </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/faculty/directory?f%5B0%5D=area_of_focus%3A2071"> Dance Faculty </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/stage-beyond/summer-programs/summer-dance-intensive"> Summer Dance Experience </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/news-search?field_article_type=1661"> Admissions Blog </a></li>
+          </ul></li>
+         <li class="menu-item menu-item--level-1 menu-item--expanded"><a class="menu-link menu-link--level-1 menu-link--narrow" href="/drama"> <span class="link-wrapper link-wrapper--1">Drama</span> </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-1" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+          <ul class="menu menu--level-2">
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/drama/acting"> Acting </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/drama/acting"> Overview </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/drama/acting/actor-experience"> The Actor Experience </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/drama/acting/drama-bachelor-fine-arts"> Bachelor of Fine Arts </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/drama/acting/drama-master-fine-arts"> Master of Fine Arts </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/drama/acting/acting-faq"> Acting FAQ </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/drama/performance-opportunities"> Performance Opportunities </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/drama/4yr"> Meet the 4th-Year Class </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/drama/playwriting"> Playwriting </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/drama/playwrights"> Meet the Playwrights </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/faculty/directory?f%5B0%5D=area_of_focus%3A2086"> Drama Faculty </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/news-search?field_article_type=1661"> Admissions Blog </a></li>
+          </ul></li>
+         <li class="menu-item menu-item--level-1 menu-item--expanded"><a class="menu-link menu-link--level-1 menu-link--narrow" href="/music"> <span class="link-wrapper link-wrapper--1">Music</span> </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-1" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+          <ul class="menu menu--level-2">
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/faculty/directory?division=1"> Music Faculty </a></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/music/instruments"> Instruments </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/music/instruments/brass"> Brass </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4 menu-item--expanded"><a class="menu-link menu-link--level-4 menu-link--narrow" href="/music/instruments/brass/horn"> Horn </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-4" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+                <ul class="menu menu--level-5">
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/horn/horn-bachelor-music"> Bachelor of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/horn/horn-undergraduate-diploma"> Undergraduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/horn/horn-master-music"> Master of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/horn/horn-graduate-diploma"> Graduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/horn/horn-artist-diploma"> Artist Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/horn/horn-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+                </ul></li>
+               <li class="menu-item menu-item--level-4 menu-item--expanded"><a class="menu-link menu-link--level-4 menu-link--narrow" href="/music/instruments/brass/trumpet"> Trumpet </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-4" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+                <ul class="menu menu--level-5">
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/trumpet/trumpet-bachelor-music"> Bachelor of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/trumpet/trumpet-undergraduate-diploma"> Undergraduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/trumpet/trumpet-master-music"> Master of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/trumpet/trumpet-graduate-diploma"> Graduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/trumpet/trumpet-artist-diploma"> Artist Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/trumpet/trumpet-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+                </ul></li>
+               <li class="menu-item menu-item--level-4 menu-item--expanded"><a class="menu-link menu-link--level-4 menu-link--narrow" href="/music/instruments/brass/tenor-trombone"> Tenor Trombone </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-4" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+                <ul class="menu menu--level-5">
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/tenor-trombone/tenor-trombone-bachelor-music"> Bachelor of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/tenor-trombone/tenor-trombone-undergraduate-diploma"> Undergraduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/tenor-trombone/tenor-trombone-master-music"> Master of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/tenor-trombone/tenor-trombone-graduate-diploma"> Graduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/tenor-trombone/tenor-trombone-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+                </ul></li>
+               <li class="menu-item menu-item--level-4 menu-item--expanded"><a class="menu-link menu-link--level-4 menu-link--narrow" href="/music/instruments/brass/bass-trombone"> Bass Trombone </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-4" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+                <ul class="menu menu--level-5">
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/bass-trombone/bass-trombone-bachelor-music"> Bachelor of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/bass-trombone/bass-trombone-undergraduate-diploma"> Undergraduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/bass-trombone/bass-trombone-master-music"> Master of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/bass-trombone/bass-trombone-graduate-diploma"> Graduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/bass-trombone/bass-trombone-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+                </ul></li>
+               <li class="menu-item menu-item--level-4 menu-item--expanded"><a class="menu-link menu-link--level-4 menu-link--narrow" href="/music/instruments/brass/tuba"> Tuba </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-4" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+                <ul class="menu menu--level-5">
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/tuba/tuba-bachelor-music"> Bachelor of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/tuba/tuba-undergraduate-diploma"> Undergraduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/tuba/tuba-master-music"> Master of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/tuba/tuba-graduate-diploma"> Graduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/tuba/tuba-artist-diploma"> Artist Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/brass/tuba/tuba-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+                </ul></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/music/instruments/collaborative-piano"> Collaborative Piano </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/collaborative-piano/collaborative-piano-instrumental-focus-master-music"> Instrumental, MM </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/collaborative-piano/collaborative-piano-vocal-focus-master-music"> Vocal, MM </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/collaborative-piano/collaborative-piano-instrumental-focus-graduate-diploma"> Instrumental Focus, GD </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/collaborative-piano/collaborative-piano-vocal-focus-graduate-diploma"> Vocal Focus, GD </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/collaborative-piano/collaborative-piano-artist-diploma"> Artist Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/collaborative-piano/collaborative-piano-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/music/instruments/guitar"> Guitar </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/guitar/guitar-bachelor-music"> Bachelor of Music </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/guitar/guitar-undergraduate-diploma"> Undergraduate Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/guitar/guitar-master-music"> Master of Music </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/guitar/guitar-graduate-diploma"> Graduate Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/guitar/guitar-artist-diploma"> Artist Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/guitar/guitar-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/music/instruments/harp"> Harp </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/harp/harp-bachelor-music"> Bachelor of Music </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/harp/harp-undergraduate-diploma"> Undergraduate Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/harp/harp-master-music"> Master of Music </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/harp/harp-graduate-diploma"> Graduate Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/harp/harp-artist-diploma"> Artist Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/harp/harp-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/music/instruments/organ"> Organ </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/organ/organ-bachelor-music"> Bachelor of Music </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/organ/organ-undergraduate-diploma"> Undergraduate Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/organ/organ-master-music"> Master of Music </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/organ/organ-graduate-diploma"> Graduate Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/organ/organ-artist-diploma"> Artist Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/organ/organ-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/music/instruments/percussion"> Percussion </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/percussion/percussion-bachelor-music"> Bachelor of Music </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/percussion/percussion-undergraduate-diploma"> Undergraduate Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/percussion/percussion-master-music"> Master of Music </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/percussion/percussion-graduate-diploma"> Graduate Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/percussion/percussion-artist-diploma"> Artist Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/percussion/percussion-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/music/instruments/piano"> Piano </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/piano/piano-bachelor-music"> Bachelor of Music </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/piano/piano-undergraduate-diploma"> Undergraduate Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/piano/piano-master-music"> Master of Music </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/piano/piano-graduate-diploma"> Graduate Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/piano/piano-artist-diploma"> Artist Diploma </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/piano/piano-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/music/instruments/strings"> Strings </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4 menu-item--expanded"><a class="menu-link menu-link--level-4 menu-link--narrow" href="/music/instruments/strings/violin"> Violin </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-4" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+                <ul class="menu menu--level-5">
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/violin/violin-bachelor-music"> Bachelor of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/violin/violin-undergraduate-diploma"> Undergraduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/violin/violin-master-music"> Master of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/violin/violin-graduate-diploma"> Graduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/violin/violin-artist-diploma"> Artist Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/violin/violin-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+                </ul></li>
+               <li class="menu-item menu-item--level-4 menu-item--expanded"><a class="menu-link menu-link--level-4 menu-link--narrow" href="/music/instruments/strings/viola"> Viola </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-4" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+                <ul class="menu menu--level-5">
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/viola/viola-bachelor-music"> Bachelor of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/viola/viola-undergraduate-diploma"> Undergraduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/viola/viola-master-music"> Master of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/viola/viola-graduate-diploma"> Graduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/viola/viola-artist-diploma"> Artist Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/viola/viola-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+                </ul></li>
+               <li class="menu-item menu-item--level-4 menu-item--expanded"><a class="menu-link menu-link--level-4 menu-link--narrow" href="/music/instruments/strings/cello"> Cello </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-4" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+                <ul class="menu menu--level-5">
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/cello/cello-bachelor-music"> Bachelor of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/cello/cello-undergraduate-diploma"> Undergraduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/cello/cello-master-music"> Master of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/cello/cello-graduate-diploma"> Graduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/cello/cello-artist-diploma"> Artist Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/cello/cello-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+                </ul></li>
+               <li class="menu-item menu-item--level-4 menu-item--expanded"><a class="menu-link menu-link--level-4 menu-link--narrow" href="/music/instruments/strings/double-bass"> Double Bass </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-4" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+                <ul class="menu menu--level-5">
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/double-bass/double-bass-bachelor-music"> Bachelor of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/double-bass/double-bass-undergraduate-diploma"> Undergraduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/double-bass/double-bass-master-music"> Master of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/double-bass/double-bass-graduate-diploma"> Graduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/double-bass/double-bass-artist-diploma"> Artist Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/strings/double-bass/double-bass-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+                </ul></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/instruments/strings/string-quartet"> String Quartet </a></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/music/instruments/woodwinds"> Woodwinds </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4 menu-item--expanded"><a class="menu-link menu-link--level-4 menu-link--narrow" href="/music/instruments/woodwinds/flute"> Flute </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-4" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+                <ul class="menu menu--level-5">
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/flute/flute-bachelor-music"> Bachelor of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/flute/flute-undergraduate-diploma"> Undergraduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/flute/flute-master-music"> Master of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/flute/flute-graduate-diploma"> Graduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/flute/flute-artist-diploma"> Artist Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/flute/flute-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+                </ul></li>
+               <li class="menu-item menu-item--level-4 menu-item--expanded"><a class="menu-link menu-link--level-4 menu-link--narrow" href="/music/instruments/woodwinds/oboe"> Oboe </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-4" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+                <ul class="menu menu--level-5">
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/oboe/oboe-bachelor-music"> Bachelor of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/oboe/oboe-undergraduate-diploma"> Undergraduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/oboe/oboe-master-music"> Master of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/oboe/oboe-graduate-diploma"> Graduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/oboe/oboe-artist-diploma"> Artist Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/oboe/oboe-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+                </ul></li>
+               <li class="menu-item menu-item--level-4 menu-item--expanded"><a class="menu-link menu-link--level-4 menu-link--narrow" href="/music/instruments/woodwinds/clarinet"> Clarinet </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-4" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+                <ul class="menu menu--level-5">
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/clarinet/clarinet-bachelor-music"> Bachelor of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/clarinet/clarinet-undergraduate-diploma"> Undergraduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/clarinet/clarinet-master-music"> Master of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/clarinet/clarinet-graduate-diploma"> Graduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/clarinet/clarinet-artist-diploma"> Artist Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/clarinet/clarinet-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+                </ul></li>
+               <li class="menu-item menu-item--level-4 menu-item--expanded"><a class="menu-link menu-link--level-4 menu-link--narrow" href="/music/instruments/woodwinds/bassoon"> Bassoon </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-4" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+                <ul class="menu menu--level-5">
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/bassoon/bassoon-bachelor-music"> Bachelor of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/bassoon/bassoon-undergraduate-diploma"> Undergraduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/bassoon/bassoon-master-music"> Master of Music </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/bassoon/bassoon-graduate-diploma"> Graduate Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/bassoon/bassoon-artist-diploma"> Artist Diploma </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/music/instruments/woodwinds/bassoon/bassoon-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+                </ul></li>
+              </ul></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/music/vocal-arts"> Vocal Arts </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/vocal-arts/performance-opportunities"> Performance Opportunities </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/vocal-arts/vocal-arts-bachelor-music"> Bachelor of Music </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/vocal-arts/vocal-arts-undergraduate-diploma"> Undergraduate Diploma </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/vocal-arts/vocal-arts-master-music"> Master of Music </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/vocal-arts/vocal-arts-graduate-diploma"> Graduate Diploma </a></li>
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/music/vocal-arts/opera-studies-artist-diploma"> Artist Diploma </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/music/vocal-arts/artist-diploma/about-artist-diploma-opera-studies"> About the Artist Diploma in Opera Studies </a></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/vocal-arts/vocal-arts-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/music/jazz-studies"> Jazz Studies </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/jazz-studies/performance-opportunities"> Performance Opportunities </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/jazz-studies/jazz-studies-bachelor-music"> Bachelor of Music </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/jazz-studies/jazz-studies-undergraduate-diploma"> Undergraduate Diploma </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/jazz-studies/jazz-studies-master-music"> Master of Music </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/jazz-studies/jazz-studies-graduate-diploma"> Graduate Diploma </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/jazz-studies/jazz-studies-artist-diploma"> Artist Diploma </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/music/historical-performance"> Historical Performance </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/historical-performance/performance-opportunities"> Performance Opportunities </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/historical-performance/historical-performance-master-music"> Master of Music </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/historical-performance/historical-performance-graduate-diploma"> Graduate Diploma </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/historical-performance/historical-performance-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/music/composition"> Composition </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/composition/composition-bachelor-music"> Bachelor of Music </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/composition/composition-undergraduate-diploma"> Undergraduate Diploma </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/composition/composition-master-music"> Master of Music </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/composition/composition-graduate-diploma"> Graduate Diploma </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/composition/composition-doctor-musical-arts"> Doctor of Musical Arts </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/music/orchestral-conducting"> Conducting </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/conducting/orchestral-conducting-master-music"> Master of Music </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/music/conducting/orchestral-conducting-graduate-diploma"> Graduate Diploma </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/music/classroom-departments"> Classroom Departments </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/music/performance-opportunities"> Performance Opportunities </a></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/school/preparatory-education"> Preparatory Division </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/preparatory-education/music-advancement-program"> Music Advancement Program </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/preparatory-education/juilliard-pre-college"> Pre-College Division </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/news-search?field_article_type=1661"> Admissions Blog </a></li>
+          </ul></li>
+         <li class="menu-item menu-item--level-1 menu-item--expanded"><a class="menu-link menu-link--level-1 menu-link--narrow" href="/stage-beyond"> <span class="link-wrapper link-wrapper--1">On Stage &amp; Beyond</span> </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-1" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+          <ul class="menu menu--level-2">
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/calendar"> Performances </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/performance/calendar"> Calendar </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/performance/venues"> Venues </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/performances/performance-tickets"> Tickets </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/stage-beyond/creative-enterprise"> Creative Enterprise </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/creative-enterprise/creative-associates"> Creative Associates </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/creative-enterprise/juilliart"> JuilliART </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/news/media-gallery?division=2446&amp;type=video"> Who's in the Lobby? </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/creative-enterprise/interdisciplinary-projects"> Interdisciplinary Projects </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/creative-enterprise/citizen-artistry"> Citizen Artistry </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/creative-enterprise/entrepreneurship"> Entrepreneurship </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/creative-enterprise/juilliard-and-beyond"> Juilliard and Beyond </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/creative-enterprise/creative-enterprise-archive"> Archive </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="https://www.carnegiehall.org/EnsembleConnect/"> Ensemble Connect </a></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/stage-beyond/juilliard-extension"> Juilliard Extension </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="https://catalog.juilliard.edu/index.php?catoid=53&amp;_ga=2.76437013.1292731546.1651503442-398962619.1631279499"> Catalog </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/juilliard-extension/for-students"> For Students </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/school/preparatory-education/music-advancement-program"> Music Advancement Program </a></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/stage-beyond/alumni"> Alumni </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/alumni/alumni-benefits"> Alumni Benefits </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/alumni/stay-connected"> Stay Connected </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/stage-beyond/office-community-engagement"> Community Engagement </a></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/stage-beyond/summer-programs"> Summer Programs </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/summer-programs/juilliard-summer-winds"> Juilliard Summer Winds </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/juilliard-extension/music-theory-and-ear-training-high-school-students"> Summer Music Theory and Ear Training </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/summer-programs/summer-dance-intensive"> Dance Online Intensive </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/summer-programs/summer-performing-arts-juilliard-nord-anglia-school"> Global Summer </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/summer-programs/summer-percussion-seminar"> Percussion Seminar </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/summer-programs/juilliard-string-quartet-seminar"> String Quartet </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/summer-programs/starling-delay-symposium"> Violin Symposium </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/stage-beyond/k-12-programs-and-initiatives"> K–12 Education </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/k-12-programs-and-initiatives"> K–12 Programs </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/nord-anglia-k-12-education"> Nord Anglia Education </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/k-12-education/winter-festival"> Winter Festival </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/summer-programs/summer-performing-arts-juilliard-nord-anglia-school"> Global Summer </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/stage-beyond/hire-juilliard-performers"> Hire Juilliard Performers </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/hire-juilliard-performers/instrument-groupings"> Instrument Groupings </a></li>
+            </ul></li>
+          </ul></li>
+        </ul>
+       </nav>
+       <nav role="navigation" aria-labelledby="block-secondarymenu-2-menu" id="block-secondarymenu-2" class="desktop-nav-secondary">
+        <h2 class="visually-hidden" id="block-secondarymenu-2-menu" aria-hidden="true">Secondary menu</h2>
+        <ul class="menu menu--level-1">
+         <li class="menu-item menu-item--level-1 menu-item--expanded"><a class="menu-link menu-link--level-1 menu-link--narrow" href="/admissions"> <span class="link-wrapper link-wrapper--1">Admissions</span> </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-1" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+          <ul class="menu menu--level-2">
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="http://apply.juilliard.edu/apply"> Apply </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="https://www.juilliard.edu/admissions/#arm"> Application Requirements </a></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/admissions/connect-us"> Connect With Us </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/admissions/connect-us/introduce-yourself-juilliard-admissions"> Introduce Yourself </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="https://apply.juilliard.edu/portal/virtualtour?_ga=2.126562573.1617274202.1595251724-1903020375.1584069539"> Virtual Campus Tours </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/admissions/connect-us/ask-admissions-officer"> Ask an Admissions Officer </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/admissions/connect-us/ask-student"> Ask a Student </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="https://apply.juilliard.edu/portal/dramatours"> Spotlight on Drama </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/admissions/connect-us/high-school-counselors"> Counselors </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/admissions/numbers"> By the Numbers </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/admissions/financing-your-education"> Financing Your Education </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/news-search?field_article_type=1661"> Admissions Blog </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/admissions/cross-registration-programs"> Cross-Registration Programs </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/admissions/audition-dates"> Audition Dates </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/admissions/additional-policies"> Additional Policies </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="https://www.tianjinjuilliard.edu.cn/"> Tianjin Juilliard </a></li>
+          </ul></li>
+         <li class="menu-item menu-item--level-1 menu-item--expanded"><a class="menu-link menu-link--level-1 menu-link--narrow" href="/campus-life"> <span class="link-wrapper link-wrapper--1">Campus Life</span> </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-1" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+          <ul class="menu menu--level-2">
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/campus-life/covid-19-fall-academic-plan/spring-2020-covid-19-response"> Spring 2020 COVID-19 Response </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/campus-life/academic-calendar"> Academic Calendar </a></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/campus-life/living-nyc"> Living in NYC </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/living-nyc/lincoln-center"> Lincoln Center </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/living-nyc/around-city"> Around NYC </a></li>
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/campus-life/living-nyc/office-housing-and-residence-life"> Residence Life </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/campus-life/living-nyc/residence-life/campus-suites"> Visitors and Guests </a></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/living-nyc/meredith-willson-residence-hall"> Willson Hall </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/living-nyc/cafe"> Dining Services </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/living-nyc/frederick-p-rose-fitness-center"> Fitness Center </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/living-nyc/campus-housing-resources"> Off-Campus Housing </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/campus-life/international-advisement"> International Students </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/international-students/maintaining-lawful-f-1-student-status"> Maintaining Status </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/international-students/international-student-employment"> Employment </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="https://my.juilliard.edu/webform/opt-updates-form"> OPT Reporting </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="https://my.juilliard.edu/webform/request-support-letter"> Requesting Letters </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/campus-life/financial-aid"> Tuition &amp; Financial Aid </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/tuition-financial-aid/tuition-fees-and-expenses"> Tuition, Fees and Expenses </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/tuition-financial-aid/student-accounts-office"> Student Accounts </a></li>
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/campus-life/tuition-financial-aid/scholarships-loans-and-grants"> Scholarships, Loans and Grants </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/campus-life/tuition-financial-aid/scholarships-loans-and-grants/juilliard-scholarships"> Scholarships </a></li>
+               <li class="menu-item menu-item--level-4 menu-item--expanded"><a class="menu-link menu-link--level-4 menu-link--narrow" href="/campus-life/tuition-financial-aid/scholarships-loans-and-grants/loans"> Loans </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-4" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+                <ul class="menu menu--level-5">
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/campus-life/tuition-financial-aid/scholarships-loans-and-grants/loans/loan-exit-counseling"> Exit Counseling </a></li>
+                 <li class="menu-item menu-item--level-5"><a class="menu-link menu-link--level-5" href="/campus-life/tuition-financial-aid/scholarships-loans-and-grants/loans/loan-repayment-information"> Repayment Information </a></li>
+                </ul></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/campus-life/tuition-financial-aid/scholarships-loans-and-grants/kovner-fellowship-program"> Kovner Fellowship Program </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/campus-life/tuition-financial-aid/scholarships-loans-and-grants/federal-state-and-private-grants"> Federal, State and Private Grants </a></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/tuition-financial-aid/satisfactory-academic-progress-guidelines"> Satisfactory Academic Progress </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/tuition-financial-aid/net-price-calculator"> Net Price Calculator </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/tuition-financial-aid/work-study"> Work-Study </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/campus-life/new-student-information"> Orientation &amp; Families </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/orientation-families/new-student-orientation"> New Student Orientation </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/orientation-families/family-orientation"> Family Orientation </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/orientation-families/family-resources"> Family Resources </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/student-services/commencement-21"> Commencement </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/campus-life/student-services"> Student Services </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/student-services/academic-support-and-disability-services"> Academic Support and Disability Services </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/student-services/commencement"> Commencement </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/student-services/student-diversity-initiatives"> Diversity Initiatives </a></li>
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/campus-life/student-services/student-affairs"> Student Affairs </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/campus-life/student-services/student-affairs/apply-be-student-leader"> Apply to Be a Student Leader </a></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/tuition-financial-aid/work-study-opportunities"> Student Employment </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/student-services/college-division-student-handbook"> Student Handbook </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/campus-life/public-safety"> Public Safety </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/campus-life/public-safety/about-department-public-safety"> About the Department </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/campus-life/public-safety/about-department-public-safety/staff"> Public Safety Staff </a></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/about/report-incident"> Report an Incident </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/public-safety/emergency-protocol"> Emergency Protocol </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/public-safety/contact-public-safety-and-law-enforcement"> Contact Us </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/campus-life/registrars-office"> Registrar </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="http://catalog.juilliard.edu"> College Catalog </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/registrar/transcripts-and-degree-verifications#transcripts"> Transcripts </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/registrar/transcripts-and-degree-verifications#enrollment-and-degree-verifications"> Degree Verifications </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/campus-life/juilliard-thrives"> Well-Being </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/well-being/assessment-care-team-act"> Assessment and Care Team </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/well-being/health-and-counseling-services"> Health and Counseling </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/juilliard-thrives"> Thrives </a></li>
+            </ul></li>
+          </ul></li>
+         <li class="menu-item menu-item--level-1 menu-item--expanded"><a class="menu-link menu-link--level-1 menu-link--narrow" href="/school"> <span class="link-wrapper link-wrapper--1">The School</span> </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-1" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+          <ul class="menu menu--level-2">
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/school/about-juilliard"> About </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/about/juilliards-mission"> Mission </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/brief-history"> History </a></li>
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/school/about/office-president"> Office of the President </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/school/about/office-president/2018-convocation-remarks"> Convocation Message | September 4, 2018 </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/school/about/office-president/first-day-message"> Message to the Community | July 1, 2018 </a></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/about/leaders-and-administration"> Leaders and Administration </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/about/strategic-plan-2020-2030"> Strategic Plan </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/about/policies-consumer-information"> Policies &amp; Consumer Information </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/school/academics"> Academics </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/campus-life/academic-calendar"> Academic Calendar </a></li>
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/school/academics/center-innovation-arts"> Center for Innovation in the Arts </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/school/academics/center-innovation-arts/center-innovation-arts-courses"> Center for Innovation in the Arts Courses </a></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="http://catalog.juilliard.edu"> College Catalog </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/academics/liberal-arts"> Liberal Arts </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/school/equity-diversity-inclusion-and-belonging"> Equity, Diversity, Inclusion &amp; Belonging </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="https://www.juilliard.edu/school/equity-diversity-inclusion-and-belonging/edib-taskforce"> EDIB Taskforce </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/equity-diversity-inclusion-belonging/2020-21-working-groups"> EDIB Working Groups </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/faculty/directory"> Faculty Directory </a></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/school/news"> News </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/news/newsroom"> The Newsroom </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/news/juilliard-journal"> The Juilliard Journal </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/news/media-gallery"> Media Gallery </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/school/library-and-archives"> Library and Archives </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/library-and-archives/visiting-library-and-archives"> Visiting </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/library-and-archives/archives"> Archives </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="http://library.juilliard.edu"> JUILCAT </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/library-and-archives/special-collections"> Special Collections </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/school/human-resources"> Working at Juilliard </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/human-resources"> Human Resources </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/working-juilliard/professional-apprentice-program"> Professional Apprentice Program </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/jobs"> Job Openings </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/school/preparatory-division"> Preparatory Division </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/school/preparatory-division/juilliard-pre-college"> Pre-College Division </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/school/preparatory-division/pre-college-division/pre-college-curriculum"> Curriculum </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/school/preparatory-division/pre-college-division/pre-college-tuition-and-financial-aid"> Tuition and Financial Aid </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/school/preparatory-division/pre-college-division/frequently-asked-questions-about-juilliard-pre"> Frequently Asked Questions About Juilliard Pre-College </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/faculty/directory?program=841"> Pre-College Faculty </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/school/preparatory-division/pre-college-division/students-and-parents"> For Students and Parents </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/school/preparatory-division/pre-college-division/connect-pre-college"> Contact the Pre-College Division </a></li>
+              </ul></li>
+             <li class="menu-item menu-item--level-3 menu-item--expanded"><a class="menu-link menu-link--level-3 menu-link--narrow" href="/school/preparatory-division/music-advancement-program"> Music Advancement Program </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-3" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+              <ul class="menu menu--level-4">
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/school/preparatory-division/music-advancement-program/map-curriculum"> Curriculum </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/school/preparatory-division/music-advancement-program/program-overview"> Mission and History </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/school/preparatory-division/music-advancement-program/map-tuition-and-financial-aid"> Tuition and Financial Aid </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/school/preparatory-division/music-advancement-program/frequently-asked-questions-about-map"> Frequently Asked Questions </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/faculty/directory?program=846"> Music Advancement Program Faculty </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/school/preparatory-division/music-advancement-program/students-and-parents"> For Students and Parents </a></li>
+               <li class="menu-item menu-item--level-4"><a class="menu-link menu-link--level-4" href="/school/preparatory-education/music-advancement-program/connect-map"> Contact MAP </a></li>
+              </ul></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2 menu-item--expanded"><a class="menu-link menu-link--level-2 menu-link--narrow" href="/school/alan-d-marks-center-career-services-and-entrepreneurship"> Career Services </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-2" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+            <ul class="menu menu--level-3">
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/career-services/whats-available-marks-center"> What We Provide </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/career-services/entrepreneurial-coursework"> Entrepreneurial Coursework </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/school/career-services/grants-awards-and-fellowships"> Grants, Awards, and Fellowships </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="/stage-beyond/hire-juilliard-performers"> Hire Juilliard Performers </a></li>
+             <li class="menu-item menu-item--level-3"><a class="menu-link menu-link--level-3" href="https://juilliard-csm.symplicity.com/"> Career Portal </a></li>
+            </ul></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="https://www.tianjinjuilliard.edu.cn/"> Tianjin Juilliard </a></li>
+          </ul></li>
+         <li class="menu-item menu-item--level-1 menu-item--expanded"><a class="menu-link menu-link--level-1 menu-link--narrow" href="/support"> <span class="link-wrapper link-wrapper--1">Support</span> </a><button class="menu-button-subnav-expand menu-button-subnav-expand--level-1" aria-expanded="false"><span>Display</span> <em></em> Submenu</button>
+          <ul class="menu menu--level-2">
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="https://giving.juilliard.edu/gift"> Make a Gift </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/support/membership-programs"> Membership Programs </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/support/scholarship-giving"> Scholarship Giving </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="http://plannedgiving.juilliard.edu/"> Planned Giving </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/support/foundation-corporate-support"> Foundation and Corporate Support </a></li>
+           <li class="menu-item menu-item--level-2"><a class="menu-link menu-link--level-2" href="/support/giving-faq"> Giving FAQ </a></li>
+          </ul></li>
+        </ul>
+       </nav>
+      </div>
+      <div class="nav-background"></div>
+      <div class="subnav-background"></div>
+     </div>
+     <div class="spektrix-region__wrapper--desktop">
+      <div class="region region-spektrix">
+       <div id="block-spektrixstatusblock"><spektrix-login-status client-name="juilliard" custom-domain="tickets.juilliard.edu" class="spek-account__link--wrapper"> 
+         <span data-logged-in-container style="display: none;" class="spek-account__link--details">
+          <div class="spek__account"><a href="/account" class="spek__account--link"> <span class="spek__account--icon"> 
+             <svg viewbox="-42 0 512 512.002" xmlns="http://www.w3.org/2000/svg">
+              <path d="m210.351562 246.632812c33.882813 0 63.222657-12.152343 87.195313-36.128906 23.972656-23.972656 36.125-53.304687 36.125-87.191406 0-33.875-12.152344-63.210938-36.128906-87.191406-23.976563-23.96875-53.3125-36.121094-87.191407-36.121094-33.886718 0-63.21875 12.152344-87.191406 36.125s-36.128906 53.308594-36.128906 87.1875c0 33.886719 12.15625 63.222656 36.132812 87.195312 23.976563 23.96875 53.3125 36.125 87.1875 36.125zm0 0" /><path d="m426.128906 393.703125c-.691406-9.976563-2.089844-20.859375-4.148437-32.351563-2.078125-11.578124-4.753907-22.523437-7.957031-32.527343-3.308594-10.339844-7.808594-20.550781-13.371094-30.335938-5.773438-10.15625-12.554688-19-20.164063-26.277343-7.957031-7.613282-17.699219-13.734376-28.964843-18.199219-11.226563-4.441407-23.667969-6.691407-36.976563-6.691407-5.226563 0-10.28125 2.144532-20.042969 8.5-6.007812 3.917969-13.035156 8.449219-20.878906 13.460938-6.707031 4.273438-15.792969 8.277344-27.015625 11.902344-10.949219 3.542968-22.066406 5.339844-33.039063 5.339844-10.972656 0-22.085937-1.796876-33.046874-5.339844-11.210938-3.621094-20.296876-7.625-26.996094-11.898438-7.769532-4.964844-14.800782-9.496094-20.898438-13.46875-9.75-6.355468-14.808594-8.5-20.035156-8.5-13.3125 0-25.75 2.253906-36.972656 6.699219-11.257813 4.457031-21.003906 10.578125-28.96875 18.199219-7.605469 7.28125-14.390625 16.121094-20.15625 26.273437-5.558594 9.785157-10.058594 19.992188-13.371094 30.339844-3.199219 10.003906-5.875 20.945313-7.953125 32.523437-2.058594 11.476563-3.457031 22.363282-4.148437 32.363282-.679688 9.796875-1.023438 19.964844-1.023438 30.234375 0 26.726562 8.496094 48.363281 25.25 64.320312 16.546875 15.746094 38.441406 23.734375 65.066406 23.734375h246.53125c26.625 0 48.511719-7.984375 65.0625-23.734375 16.757813-15.945312 25.253906-37.585937 25.253906-64.324219-.003906-10.316406-.351562-20.492187-1.035156-30.242187zm0 0" />
+             </svg> </span> <span data-logged-in-status-customer-first-name></span> <span data-logged-in-status-customer-last-name></span> </a><a href="/basket" class="spek__account--link"> <span class="spek__account--icon"> 
+             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 15.631 15.631" style="enable-background:new 0 0 15.631 15.631;" xml:space="preserve"><g> 
+               <path style="#ffffff" d="M14.371,3.547c-0.044,0.085-0.098,0.165-0.167,0.234c-0.478,0.478-1.393,0.338-2.043-0.312
+		c-0.65-0.65-0.79-1.565-0.312-2.043c0.069-0.069,0.148-0.124,0.233-0.167L10.822,0L8.964,1.859l0.465,0.465L9.14,2.613L8.675,2.148
+		l-8.674,8.675l1.226,1.227c0.479-0.479,1.393-0.34,2.043,0.311s0.79,1.564,0.312,2.043l1.226,1.227L15.63,4.807L14.371,3.547z
+		 M10.567,4.038L9.854,3.325l0.288-0.289l0.713,0.713L10.567,4.038z M11.993,5.464L11.28,4.751l0.288-0.288l0.714,0.713
+		L11.993,5.464z M13.42,6.891l-0.714-0.713l0.289-0.288l0.713,0.713L13.42,6.891z" /> 
+              </g><g> 
+              </g><g> 
+              </g><g> 
+              </g><g> 
+              </g><g> 
+              </g><g> 
+              </g><g> 
+              </g><g> 
+              </g><g> 
+              </g><g> 
+              </g><g> 
+              </g><g> 
+              </g><g> 
+              </g><g> 
+              </g><g> 
+              </g>
+             </svg> </span> 
+            <spektrix-basket-summary client-name="juilliard" custom-domain="tickets.juilliard.edu" class="basket-summary">
+             <span data-basket-item-count class="basket-item-count"></span> item(s) Total: 
+             <span data-basket-summary-currency class=""></span>
+             <span data-basket-summary-basket-total class="basket-total"></span>
+            </spektrix-basket-summary> </a>
+          </div></span> 
+        </spektrix-login-status>
+       </div>
+      </div>
+     </div><a href="/stage-beyond/performance-calendar" id="calendar-trigger-desktop" class="calendar-trigger"><span class="date-icon"></span>Performance Calendar</a>
+    </header>
+    <main role="main"><a id="main-content" tabindex="-1"></a>
+     <div class="layout-content">
+      <div class="region region-content">
+       <div data-drupal-messages-fallback class="hidden"></div>
+       <div class="views-exposed-form" data-drupal-selector="views-exposed-form-site-search-search-page" id="block-exposedformsite-searchsearch-page">
+        <form block="block-exposedformsite-searchsearch-page" action="/search" method="get" id="views-exposed-form-site-search-search-page" accept-charset="UTF-8">
+         <div id="site-search" class="content-listing-search-container">
+          <div class="js-form-item form-item js-form-type-textfield form-item-keyword js-form-item-keyword"><label for="edit-keyword">Enter Search Term</label>
+           <input data-drupal-selector="edit-keyword" placeholder="Enter search term" type="text" id="edit-keyword" name="keyword" value="" size="30" maxlength="128" class="form-text">
+          </div>
+          <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"> 
+           <input data-drupal-selector="edit-submit-site-search" type="submit" id="edit-submit-site-search" value="Search" class="button js-form-submit form-submit">
+          </div><button class="jump-to-results scroll-to-anchor" data-href="search-results"> Jump to Results </button>
+         </div>
+        </form>
+       </div>
+       <div id="block-juilliard-main-content">
+        <article role="article" about="/website-terms-use" class="full-basic-page">
+         <div class="article-inner">
+          <h1><span>Website Terms of Use</span></h1>
+          <div class="content-main">
+           <div class="field--name-field-body field__item">
+            <div class="paragraph paragraph--type--body-text paragraph--view-mode--default">
+             <div class="field--name-field-body-text">
+              <div class="body-text-inner">
+               <p>The following terms of use (the "Terms of Use") govern your use of all websites and mobile applications from which these Terms of Use are accessible.&nbsp; Each such website and mobile application shall be referred to herein individually as a “Website” and they shall be collectively referred to as the “Websites.”&nbsp; The Websites are made available to you by The Juilliard School (referred to herein as “Juilliard,” “we,” “our,” or “us”).</p>
+               <p>You represent that you are legally able to accept these Terms of Use, and affirm that you are of legal age to form a binding contract, or have obtained parental or guardian consent to do so. The Websites are not intended for use by anyone under the age of 13.</p>
+               <p>Please read these Terms of Use carefully before using this Website. By using this Website in any manner (whether in an automated fashion (including, without limitation, through a software tool, spider, bot, or agent) or otherwise), your actions constitute an act of acceptance of, and agreement to be bound by, these Terms of Use. Your access to and use of this Website are also governed by the Privacy Policy (the “Privacy Policy”) available <a href="https://www.juilliard.edu/juilliard-website-privacy-policy-your-privacy-rights">here</a>, which is hereby incorporated by reference.&nbsp;If you do not agree to these Terms of Use, you may not access or otherwise use this Website.</p>
+               <p>We may change the Terms of Use from time to time, at any time without notice to you, by posting such changes on the Websites.&nbsp; Your continued use of a Website after such a change has been made available through the Website constitutes an act of acceptance of such a change.</p>
+               <p>Please note that the Website, or certain features that may be available through the Website, are hosted and operated by third parties, including, but not limited to the Juilliard online application, Juilliard job openings, and the distribution of digital products offered by Juilliard Digital. Your use of such features is subject to terms and policies made available by that provider at the time you use that feature.&nbsp; Please review those terms carefully.&nbsp; Juilliard is not responsible for the acts or omissions of any third party.</p>
+               <p><strong>THE SECTIONS BELOW TITLED “BINDING ARBITRATION” AND “CLASS ACTION WAIVER”&nbsp;</strong><strong>CONTAIN A BINDING ARBITRATION AGREEMENT AND CLASS ACTION WAIVER.&nbsp; THEY</strong><strong>&nbsp;</strong><strong>AFFECT YOUR LEGAL RIGHTS.&nbsp; PLEASE READ THEM. YOU HAVE A RIGHT TO OPT OUT OF</strong><strong>&nbsp;</strong><strong>THE BINDING ARBITRATION AND CLASS ACTION WAIVER PROVISIONS AS FURTHER</strong><strong> DESCRIBED BELOW.</strong></p>
+               <h3><strong>Rules of Conduct</strong></h3>
+               <p>You agree that you will not, directly or indirectly: (i) "harvest" (or collect) information from this Website using an automated software tool or manually on a mass basis; (ii) use automated means to access this Website (except in the operation of a general purpose search engine accessible to the public without the payment of any fee); (iii) gain unauthorized access to this Website or to any account or computer system connected to this Website; (iv) download, store or transmit copies of streamed content from this Website; (v) attempt to obtain access to areas of this Website or our systems that are not intended for access by you; (vi) intentionally overburden, disrupt or harm this Website or its systems; (vii) circumvent the security of this Website or our systems; (viii) misrepresent or attempt to misrepresent your identity while using this Website, or (ix) restrict or inhibit others from lawfully using and enjoying this Website.</p>
+               <p>You agree that you will not post or otherwise make available any content or materials on or through this Website that: (i) infringes any third party intellectual property right; (ii) is false, misleading or defamatory; (iii) constitutes another person's or entity's confidential or private information or trade secret; (iv) is fraudulent, unlawful, threatening, harassing, abusive, hateful, intimidating, degrading, profane, obscene, indecent, or discriminatory; (v) encourages or constitutes criminal conduct; (vi) advertises or solicits business for products or services; or (vii) contains any virus, malware, spyware or other harmful or invasive content or code.</p>
+               <p>This Website may contain a Private Teacher Directory with profiles of Juilliard alumni, faculty, and students who offer private lessons. You agree that you will not contact individuals listed in the Private Teacher Directory except for the bona fide retention of such individuals for private lessons.&nbsp;</p>
+               <p>If you are a student at Juilliard, you hereby acknowledge that all student policies and regulations that are applicable to the use of the internet shall apply to your use of this Website, including those set forth in the Student Handbook, and you are bound by such rules and regulations at all times.&nbsp;</p>
+               <p>If you are an employee of Juilliard, you hereby acknowledge that all employee policies that are applicable to the use of computer resources and the internet shall apply to your use of MyJuilliard (the school's intranet), and you are bound by such policies at all times.</p>
+               <p>If you are a Juilliard alumni with access to the Alumni Online Directory, you hereby agree to comply with the terms of use set forth here when using the Alumni Online Directory, as well as with these Terms of Use. &nbsp;</p>
+               <p>You also agree to comply with all applicable laws when you use this Website.&nbsp;</p>
+               <h3><strong>Ownership of Website Content and Submissions</strong></h3>
+               <p>We or our students, licensors, developers or partners own the intellectual property rights in the content and materials, including, without limitation, all photographic and video content, displayed on, or available through, this Website. You may use this Website (including such content and materials) for your own personal, non-commercial use, but you may not use it for commercial purposes. You may not modify, copy, reproduce, republish, upload, post, transmit, translate, sell, create derivative works, exploit, or distribute in any manner or medium any content or material from this Website unless explicitly authorized in these Terms of Use or by an express permission included in the applicable portion of the Website on which such content or material is found. You may, however, download and/or print one copy of individual pages of the Website for your personal, non-commercial use, provided that you keep intact all copyright and other proprietary notices.</p>
+               <p>If you submit or post any content or materials to this Website, such content and material will be deemed to be non-confidential, and you grant us a royalty-free, perpetual, irrevocable, transferrable, assignable, sub-licensable, worldwide license to use such content and materials, including alterations thereof, for any purpose, in any form, in any media, and via any technology, whether it exists now or is created in the future. You hereby grant us the right to use your name and other information about you that you have provided in connection with such content and material. You represent that any materials and content posted or otherwise submitted by you to this Website are original to you and that you have the right to grant us these rights.&nbsp;</p>
+               <h3><strong>Trademark</strong></h3>
+               <p>The trademarks, logos, service marks and trade names (collectively, the "Trademarks") displayed on this Website or on content or materials available on or through this Website are the registered and unregistered Trademarks of Juilliard, its affiliates, or third parties and may not be used in connection with products and/or services that are not related to, associated with, or sponsored by their rights holders, or in a manner that is likely to cause customer confusion.&nbsp; All Trademarks not owned by us that appear on this Website or on or through any of this Website's services, if any, are the property of their respective owners. Nothing about this Website should be construed as granting, by implication, estoppel, or otherwise, any license or right to use any Trademark displayed on the Website without our written permission or the third party that may own the applicable Trademark.&nbsp; If you have questions about the legal use of the Trademarks owned by Juilliard, please contact us at <a href="/cdn-cgi/l/email-protection#205745424d4153544552604a55494c4c494152440e454455"><span class="__cf_email__" data-cfemail="780f1d1a15190b0c1d0a38120d11141411190a1c561d1c0d">[email&nbsp;protected]</span></a>.&nbsp;</p>
+               <h3><strong>Responsibility for Public Postings and Content</strong></h3>
+               <p>We do not control the content or material that you or others may post or otherwise make available on or through this Website, and you understand that we have no obligation to monitor any such content or material or to edit or delete it. However, we reserve the right do so. We are not a publisher of user posts, and we are not responsible for their accuracy or legality.</p>
+               <p>From time to time, our officers, faculty, trustees, employees, consultants, agents or representatives (collectively, “Representatives") may take certain actions with respect to content or materials available on or through this Website, or otherwise may implement enforcement measures with respect to potential violations of these Terms of Use.&nbsp; You expressly agree that neither we nor any of our Representatives shall be liable to you or anyone else for any action or inaction to regulate content or materials, or to implement enforcement measures with respect to potential violations of these Terms of Use. Except to the extent provided in writing by the General Counsel of Juilliard, you agree not to rely on the commitments, promises or representations of any Representatives with respect to any content or materials appearing on or through this Website, and you agree that any such commitment, promise or representation will not be understood to be a contractual or otherwise binding obligation of Juilliard.</p>
+               <h3><strong>Site Registration and Log In</strong></h3>
+               <p>To access certain features or areas that may be available on this Website, including areas reserved for Juilliard’s students, employees, alumni, applicants, customers, or users of Juilliard’s digital products, you may be required to provide personal and/or demographic information as part of registration or log-in process. You agree to provide true, accurate, current and complete information about yourself as prompted by the applicable registration or log-in form, and you are responsible for keeping such information up-to-date (this includes your contact information, so that we can reliably contact you). The information you submit must describe you (you may not impersonate another person or entity), and you may not sell, share or otherwise transfer your account information; provided, however, if you are an applicant under the age of 13, such application information may only be provided by your parent or legal guardian. You may provide application information via this Website on behalf of a minor, so long as you are such minor’s parent or legal guardian, and you agree that the application information you provide is true, accurate, current and complete.&nbsp;</p>
+               <p>You may need to establish different accounts to access different areas of the Juilliard Websites. You are responsible for all activity occurring when a Website is accessed through any of your accounts, whether authorized by you or not. Therefore, if you create an account, be sure to protect the confidentiality of your account password and log out of your account at the end of each session. We are not liable for any loss or damage arising from your failure to protect your password or account information.&nbsp;</p>
+               <h3><strong>Electronic Communications</strong></h3>
+               <p>Subject to any elections you make pursuant to our Privacy Policy you consent to receive communications from us in an electronic form, and you agree that all terms and conditions, agreements, notices, disclosures, and other communications that we provide to you electronically satisfy any legal requirement that such communications would satisfy if it were in writing.&nbsp;</p>
+               <h3><strong>Copyright Infringement Notices</strong></h3>
+               <p>If you are a copyright owner who believes in good faith that your copyrighted material has been reproduced, posted or distributed on this Website in a manner that constitutes copyright infringement, please inform our designated copyright agent by sending written notice by U.S. Mail to Mary Anne Richmond, The Juilliard School, 60 Lincoln Center Plaza New York, NY 10023, phone: (212)&nbsp;799-5000 ext. 357, fax: (646)&nbsp;505-4122 or by email to <a href="/cdn-cgi/l/email-protection#eb88849b9299828c839fab819e828787828a998fc58e8f9e"><span class="__cf_email__" data-cfemail="e0838f90999289878894a08a95898c8c89819284ce858495">[email&nbsp;protected]</span></a>. Please include the following information in your written notice:&nbsp;</p>
+               <p>(1) a detailed description of the copyrighted work that is allegedly infringed upon;</p>
+               <p>(2) a description of the location of the allegedly infringing material on this Website;&nbsp;</p>
+               <p>(3) your contact information, including your address, telephone number, and, if available, email address;&nbsp;</p>
+               <p>(4) a statement by you indicating that you have a good-faith belief that the allegedly infringing use is not authorized by the copyright owner, its agent, or the law;&nbsp;</p>
+               <p>(5) a statement by you, made under penalty of perjury, affirming that the information in your notice is accurate and that you are authorized to act on the copyright owner's behalf; and&nbsp;</p>
+               <p>(6) an electronic or physical signature of the copyright owner or someone authorized on the owner's behalf to assert infringement of copyright and to submit the statement.&nbsp;</p>
+               <p>Please note that the contact information provided in this paragraph is for suspected copyright infringement only. Contact information for other matters is provided elsewhere in these Terms of Use or on the Website. &nbsp;</p>
+               <p>We have a policy of terminating the Website usage privileges of users who are repeat infringers of intellectual property rights.</p>
+               <h3><strong>Changes to This Website; Support for Mobile Applications</strong></h3>
+               <p>We reserve the right to make changes to, or to suspend or discontinue (temporarily or permanently), this Website or any portion of this Website. You agree that we will not be liable to you or to any third party for any such modification, suspension or discontinuance.&nbsp; In addition, to the extent we rely on third parties to distribute any Websites which are mobile applications, we have no way of assuring that such third party will continue to distribute such mobile application, or allow Juilliard to continue to update, maintain and enhance such mobile application.</p>
+               <h3><strong>Suspension or Termination of Access</strong></h3>
+               <p>We have the right to deny access to, and to suspend or terminate your access to, this Website, or to any features or portions of the Website, and to remove and discard any content or materials you have submitted to any Websites, at any time and for any reason. In the event that we suspend or terminate your access to and/or use of any Website, you will continue to be bound by the Terms of Use that were in effect as of the date of your suspension or termination.</p>
+               <h3><strong>Linking Policies</strong></h3>
+               <p>This Website may contain links to other websites or to third party sellers of products and services. Such links are provided for your convenience only, and you access them at your own risk. We are not responsible for, and do not endorse, the content of any such websites, or the products and services sold on them, nor do we take responsibility for the accuracy of any such websites. When you visit a linked website you should read the terms of use and privacy policy that govern that particular linked website.&nbsp; If you purchase a product or service from a third party after following an ad or link on a Website, the terms of sale for your purchase are between you and the third party from whom you made the purchase and we are not responsible for such third party products or services.</p>
+               <p>You are permitted to link to this Website if: (i) this Website opens in a new browser window which displays the full version of a page of this Website (e.g., not merely one of its frames, and not an "in-line"&nbsp;link to a particular image or object on this Website), (ii) the link to this does not state or imply any sponsorship of your website or service by us or by this Website; (iii) this Website is not display framed within or obfuscated by other content; and (iv) the link is for a non-commercial purpose. Except as expressly set forth herein, you may not use on your website any Trademarks or copyrighted materials appearing on this Website, including but not limited to any logos, without our express written consent. We reserve the right to revoke your right to link to this Website upon notice. If you receive such a notice from us, you agree to discontinue your link to the Website.&nbsp;</p>
+               <h3><strong>Indemnification</strong></h3>
+               <p>You agree to indemnify, defend and hold us and our affiliates, and our respective Representatives, harmless from and against any claims, liabilities, losses, damages, costs and expenses, including reasonable attorneys' fees, arising from your use of this Website, your submissions to this Website, or any violation of these Terms of Use, or applicable law, by you or by someone accessing the Website via your account. We reserve the right, at our own expense, to assume the exclusive defense and control of any matter subject to indemnification by you, in which event you agree to cooperate with us in defending such claims. This indemnification, defense and hold harmless obligation will survive these Terms of Use and the termination of your use of this Website.</p>
+               <h3><strong>Jurisdictional Issues</strong></h3>
+               <p>We control and operate this Website from our facilities in the United States of America, and unless otherwise specified, the materials displayed on this Website are presented solely for the purpose of promoting products and services available in the United States, its territories, possessions, and protectorates. We do not represent that materials on this Website are appropriate or available for use in other locations. If you choose to access this Website from other locations, you are responsible for compliance with local laws, if and to the extent local laws are applicable.</p>
+               <h3><strong>Applicable Law; Jurisdiction; No Waiver; Severability</strong></h3>
+               <p>These Terms of Use, and the relationship between you and us, will be governed by the laws of the United States and the State of New York, without giving effect to any principles of conflicts of law. Our failure to exercise or enforce any right or provision of these Terms of Use will not constitute a waiver of such right or provision. If any provision of these Terms of Use is found by a court of competent jurisdiction to be invalid, you and we nevertheless agree that the court should endeavor to give effect to intentions as reflected in the provision, and the other provisions of these terms and conditions will remain in full force and effect.</p>
+               <p>Any litigation that arises under these Terms of Use will be litigated by you and us in the United States District Court for the Southern District of New York or, if such court would not have jurisdiction over the matter, then only in a New York State court sitting in the Borough of Manhattan, City of New York. Each party submits to the exclusive jurisdiction of these courts and agrees not to commence any legal action under or in connection with the subject matter of these Terms of Use in any other court or forum. Each party waives any objection to the laying of the venue of any legal action brought under or in connection with the subject matter of this Terms of Use in the federal or state courts sitting in the Borough of Manhattan, City of New York, and agrees not to plead or claim in such courts that any such action has been brought in an inconvenient forum.</p>
+               <h3><strong>Disclaimer of Warranties</strong></h3>
+               <p>THIS WEBSITE AND ITS CONTENT AND SERVICES ARE PROVIDED FOR ENTERTAINMENT, EDUCATIONAL AND PROMOTIONAL PURPOSES.&nbsp; WE PROVIDE THIS WEBSITE ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT WARRANTY OF ANY KIND WHETHER EXPRESS OR IMPLIED (INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR ANY PARTICULAR PURPOSE AND NON-INFRINGEMENT). THIS MEANS THAT WE MAKE NO PROMISES THAT:</p>
+               <ul>
+                <li>THE WEBSITE WILL BE AVAILABLE AT ANY PARTICULAR TIME,</li>
+                <li>THE WEBSITE WILL MEET ANY PARTICULAR REQUIREMENTS OR PROVIDE ANY PARTICULAR RESULTS,</li>
+                <li>THE INFORMATION ON THE WEBSITE WILL BE ACCURATE, COMPLETE,&nbsp;OR UP-TO-DATE,</li>
+                <li>THIRD PARTY DISTRIBUTORS OF ANY WEBSITE THAT IS A MOBILE APPLICATION WILL ALLOW US TO CONTINUE TO SUPPORT THE APPLICATION,</li>
+                <li>THE WEBSITE OR THE INFORMATION TRANSMITTED TO OR FROM IT OR STORED ON IT WILL BE SECURE FROM UNAUTHORIZED ACCESS,</li>
+                <li>INFORMATION AND MATERIALS THAT YOU STORE IN YOUR ACCOUNT OR ON THIS WEBSITE WILL REMAIN RETREIVABLE AND UNCORRUPTED, OR</li>
+                <li>THE WEBSITE WILL BE UNINTERRUPTED OR ERROR-FREE OR WILL BE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS, OR THAT DEFECTS WILL BE CORRECTED.</li>
+               </ul>
+               <p>WE LIKEWISE MAKE NO WARRANTIES OR REPRESENTATIONS REGARDING ANY PRODUCTS OR SERVICES ORDERED OR PROVIDED VIA THIS WEBSITE. ANY PRODUCTS AND SERVICES ORDERED OR PROVIDED VIA THIS WEBSITE ARE PROVIDED "AS IS", EXCEPT TO THE EXTENT, IF AT ALL, OTHERWISE SET FORTH IN A SEPARATE AGREEMENT ENTERED INTO BETWEEN YOU AND US OR BETWEEN YOU AND A THIRD PARTY.</p>
+               <p>You agree that use of this Website is at your own risk. We reserve the right to change or make corrections to any of the information at any time. We cannot, and do not, guarantee the correctness, timeliness, precision, thoroughness or completeness of any of the information available on this Website, nor will we be liable for any inaccuracy or omission concerning any of the information provided on this Website. No advice, results or information, whether oral or written, obtained by you from us or through the Website shall create any warranty not expressly made herein. We hereby disclaim, and you hereby waive, any and all warranties and representations made in product or services literature, frequently asked questions documents, support documentation, by our customer service and support agents, and otherwise on this Website or in correspondence with us or our agents. We are not responsible for any content or materials posted to this Website by users, or for disputes between users, or between users and third parties.&nbsp;</p>
+               <h3><strong>Limitations of Liability</strong></h3>
+               <p>IN NO EVENT WILL WE OR ANY OF OUR AFFILIATES, OR ANY OF OUR OR THEIR REPRESENTATIVES (AS DEFINED HEREIN), BE LIABLE FOR ANY DAMAGES (INCLUDING, WITHOUT LIMITATION, DIRECT, INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES) ARISING FROM, OR DIRECTLY OR INDIRECTLY RELATED TO, THE USE OF, OR THE INABILITY TO USE, THIS OR ANY OTHER WEBSITE (AS DEFINED HEREIN) (OR THE CONTENT, MATERIALS AND FUNCTIONS PROVIDED ON OR THROUGH SUCH WEBSITES), WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE, OR STRICT LIABILITY, EVEN IF WE KNEW, SHOULD HAVE KNOWN OR HAD BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. NOTWITHSTANDING AND WITHOUT LIMITING THE FOREGOING, YOU AGREE THAT OUR LIABILITY AND THE LIABILITY OF OUR AFFILIATES, AND OF ANY OF OUR OR THEIR REPRESENTATIVES (AS DEFINED HEREIN), ARISING OUT OF ANY KIND OF LEGAL CLAIM IN ANY WAY RELATING TO THE USE OF A WEBSITE, WILL NOT EXCEED ONE HUNDRED U.S. DOLLARS ($100). BECAUSE SOME STATES DO NOT ALLOW THE EXCLUSION OR LIMITATION OF CERTAIN CATEGORIES OF DAMAGES, THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU. IN SUCH STATES, OUR LIABILITY AND THE LIABILITY OF OUR AFFILIATES, AND OUR AND THEIR REPRESENTATIVES, IS LIMITED TO THE FULLEST EXTENT PERMITTED BY SUCH STATE LAW.&nbsp;</p>
+               <h3>Downloading from the App Store</h3>
+               <p>The following terms apply when you download the Website as a mobile application from Apple’s App Store (the “Apple Mobile Application”).&nbsp; These terms are in addition to all other terms contained in the Terms of Use. If you have any questions, complaints or claims with respect to the Apple Mobile Application, please contact us at <a href="/cdn-cgi/l/email-protection#582b2d2828372a2c18322d31343431392a3c37283d362b2c2d3c31372b763b3735"><span class="__cf_email__" data-cfemail="7f0c0a0f0f100d0b3f150a161313161e0d1b100f1a110c0b0a1b16100c511c1012">[email&nbsp;protected]</span></a>.&nbsp;</p>
+               <p>You acknowledge and agree that (i) the Terms of Use is concluded between you and Juilliard only, and not with Apple; and (ii) Juilliard, not Apple, is solely responsible for the Apple Mobile Application and content thereof.&nbsp; Your use of the Apple Mobile Application must comply with the App Store Terms of Service.</p>
+               <ul>
+                <li>You acknowledge that Apple has no obligation whatsoever to furnish any maintenance and support services with respect to the Apple Mobile Application.</li>
+                <li>In the event of any failure of the Apple Mobile Application to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price, if any, for the Apple Mobile Application to you and to the maximum extent permitted by applicable law, Apple will have no other warranty obligation whatsoever with respect to the Apple Mobile Application.&nbsp; As between Juilliard and Apple, any other claims, losses, liabilities, damages, costs, or expenses attributable to any failure to conform to any warranty will be the sole responsibility of Juilliard.</li>
+                <li>You acknowledge that, as between Juilliard and Apple, Apple is not responsible for addressing any claims you have or any claims of any third party relating to the Apple Mobile Application or your possession and use of the Apple Mobile Application, including, but not limited to: (i) product liability claims; (ii) any claim that the Apple Mobile Application fails to conform to any applicable legal or regulatory requirement; and (iii) claims arising under consumer protection or similar legislation.</li>
+                <li>You acknowledge that, in the event of any third-party claim that the Apple Mobile Application or your possession and use of Apple Mobile Application infringes that third party’s intellectual property rights, as between Juilliard and Apple, Juilliard, not Apple, will be solely responsible for the investigation, defense, settlement, and discharge of any such intellectual property infringement claim to the extent required by the Terms of Use.</li>
+                <li>You represent and warrant that: (i) you are not located in a country that is subject to a U.S. government embargo, or that has been designated by the U.S. government as a “terrorist supporting” country; and (ii) you are not listed on any U.S. government list of prohibited or restricted parties.</li>
+                <li>You acknowledge and agree that Apple, and Apple’s subsidiaries, are third-party beneficiaries of the Terms of Use as related to your license of the Apple Mobile Application, and that, upon your acceptance of the terms and conditions of the Terms of Use, Apple will have the right (and will be deemed to have accepted the right) to enforce the Terms of Use as related to your license of the Apple Mobile Application against you as a third-party beneficiary thereof.</li>
+                <li>Without limiting any other terms of this Terms of Use, you must comply with all applicable third-party terms of agreement when using the Apple Mobile Application.</li>
+               </ul>
+               <h3>Binding Arbitration</h3>
+               <p>In the event of a dispute arising under or relating to these Terms of Use, the Privacy Policy, or any other agreement between you and Juilliard in connection with this Website, or relating to our products, the Website or the related services, (each, a “Dispute”), either party may elect to finally and exclusively resolve the dispute by binding arbitration governed by the Federal Arbitration Act (“FAA”).&nbsp; Any election to arbitrate, at any time, shall be final and binding on the other party. IF EITHER PARTY CHOOSES ARBITRATION, NEITHER PARTY SHALL HAVE THE RIGHT TO LITIGATE SUCH CLAIM IN COURT OR TO HAVE A JURY TRIAL.&nbsp; DISCOVERY AND APPEAL RIGHTS MAY ALSO BE LIMITED IN ARBITRATION.&nbsp; All disputes will be resolved before a neutral arbitrator, whose decision will be final except for a limited right of appeal under the FAA.&nbsp; The United States District Court for the Southern District of New York or, if such court would not have jurisdiction over the matter, then only in a New York State court sitting in the Borough of Manhattan, City of New York may enforce the arbitrator’s award.&nbsp; The arbitration shall be administered by the Judicial Arbitration and Mediation Services (“JAMS”) pursuant to JAMS’ Streamlined Arbitration Rules and Procedures, if applicable, or otherwise pursuant to its Comprehensive Arbitration Rules and Procedures and in accordance with the Expedited Procedures in those Rules (the “JAMS Rules”).&nbsp; Such disputes will be resolved by the arbitrator as determined under the JAMS Rules.&nbsp; The arbitration may be conducted in person, through the submission of documents, by phone, or online.&nbsp; If conducted in person, the arbitration shall take place in the Borough of Manhattan, City of New York.&nbsp; The parties may litigate in court to compel arbitration, to stay proceeding pending arbitration, or to confirm, modify, vacate, or enter judgment on the award entered by the arbitrator.&nbsp; In addition, we may litigate in court to seek injunctive relief.</p>
+               <h3>Class Action Waiver</h3>
+               <p>You agree that any arbitration or proceeding shall be limited to the Dispute between us and you individually. To the full extent permitted by law, (i) no arbitration or proceeding shall be joined with any other; (ii) there is no right or authority for any Dispute to be arbitrated or resolved on a class action-basis or to utilize class action procedures; and (iii) there is no right or authority for any Dispute to be brought in a purported representative capacity on behalf of the general public or any other persons. YOU AGREE THAT YOU MAY BRING CLAIMS AGAINST US ONLY IN YOUR INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING.</p>
+               <p><strong>YOU HAVE THE RIGHT TO OPT OUT OF BINDING ARBITRATION AND CLASS ACTION WAIVER WITHIN 30</strong><strong> DAYS. IF YOU DO NOT WISH TO BE BOUND BY THE BINDING ARBITRATION AND CLASS</strong> <strong>ACTION WAIVER ABOVE, YOU MUST NOTIFY US IN WRITING WITHIN 30 DAYS OF THE</strong><strong> DATE THAT YOU ACCEPT THESE TERMS OF USE. YOUR WRITTEN NOTIFICATION MUST BE MAILED TO <a href="/cdn-cgi/l/email-protection#134456515e52404756415359465a5f5f5a5241573d565746"><span class="__cf_email__" data-cfemail="0a5d4f48474b595e4f584a405f434646434b584e244f4e5f">[email&nbsp;protected]</span></a>,&nbsp;AND MUST INCLUDE: (1) YOUR NAME, (2) YOUR ADDRESS, (3) YOUR ACCOUNT NUMBER, IF YOU HAVE ONE, AND (4) A CLEAR STATEMENT THAT YOU DO NOT WISH TO RESOLVE DISPUTES WITH US OR OUR AFFILIATES THROUGH ARBITRATION.</strong><br> &nbsp;</p>
+               <h3><strong>Products&nbsp;</strong></h3>
+               <p>We make certain products available through the Juilliard Store and other Juilliard Websites. If you order any such products from us, you agree to pay in full for any purchases you make online as well as all applicable taxes. If we do not receive payment from your credit or debit card issuer or its agents, you agree to pay all amounts due and owed to us.&nbsp;</p>
+               <h3><strong>Tickets</strong></h3>
+               <p>To the extent we have provided you with a discount code for tickets to a Juilliard event or you are a student or alumni and have access to a discount to tickets to a Juilliard event which may be redeemed on the Site, you agree that you will not give your discount code or student or alumni information to another party for the purpose of their receiving such discount.&nbsp;</p>
+               <h3><strong>Other</strong></h3>
+               <p>These Terms of Use, together with our Privacy Policy and any additional terms and conditions that may apply to specific areas of this Website, (or, if the Website is a mobile application, any terms that appear on the “download pages” for the application that are available for review before downloading the application) constitute the entire agreement between us and you with respect to this Website. This agreement is personal to you and you may not assign it to anyone.</p>
+               <p>If any provision of these Terms of Use is found to be unlawful, void, or for any reason unenforceable, then that provision will be deemed severable from these Terms of Use and will not affect the validity and enforceability of any remaining provisions. Other than Apple and Apple’s subsidiaries, these Terms of Use are not intended to benefit any third party, and do not create any third party beneficiaries. Accordingly, these Terms of Use may only be invoked or enforced by you or us, or solely with respect to the Apple Mobile Application, Apple or Apple's subsidiaries. &nbsp;</p>
+               <p>You agree that any claim or cause of action that you may have arising out of or related to use of a Website, or these Terms of Use, must be filed by you within one year after such claim or cause of action accrued or the claim will be permanently barred.</p>
+               <p>The following provisions will survive any expiration or termination of these Terms of Use: “Intellectual Property,” “Responsibility for Public Postings and Content,” “Electronic Communications,” “Indemnification,” “Applicable Law; Jurisdiction; No Waiver; Severability,” “Disclaimer of Warranties,” “Limitations of Liability,” “Binding Arbitration,” “Class Action Waiver,” and “Other.”</p>
+               <p><strong>Last Updated: August 10, 2017</strong></p>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="last-change">
+            Last Updated Tuesday, Mar. 30, 2021, 11:36AM 
+          </div>
+         </div>
+        </article>
+       </div>
+      </div>
+     </div>
+     <aside class="layout-sidebar-first" role="complementary">
+      <div class="region region-sidebar-first">
+      </div>
+     </aside>
+    </main>
+    <footer role="contentinfo">
+     <h2 class="visually-hidden">Site Footer</h2>
+     <div class="region region-footer">
+      <div id="block-contactandsocialnetworks">
+       <div class="field--name-field-address">
+        <h3 class="field__label visually-hidden">Contact Information</h3>
+        <address>The Juilliard School<br> 60 Lincoln Center Plaza<br> New York, NY 10023<br> 212-799-5000</address>
+       </div>
+       <div class="field--name-field-social-network">
+        <h3 class="field__label visually-hidden">Social Network</h3>
+        <ul class="field__items">
+         <li class="field__item"><a href="https://www.facebook.com/TheJuilliardSchool" class="facebook">Facebook</a></li>
+         <li class="field__item"><a href="https://twitter.com/juilliardschool" class="twitter">Twitter</a></li>
+         <li class="field__item"><a href="https://www.linkedin.com/school/19777" class="linkedin">LinkedIn</a></li>
+         <li class="field__item"><a href="http://www.youtube.com/juilliardschool" class="youtube">YouTube</a></li>
+         <li class="field__item"><a href="http://www.pinterest.com/juilliardschool" class="pinterest">Pinterest</a></li>
+         <li class="field__item"><a href="http://instagram.com/juilliardschool" class="instagram">Instagram</a></li>
+        </ul>
+       </div>
+      </div>
+      <nav role="navigation" aria-labelledby="block-footer-menu" id="block-footer">
+       <h3 class="visually-hidden" id="block-footer-menu">Footer Menu</h3>
+       <ul block="block-footer" class="menu">
+        <li class="menu-item"><a href="/dance" data-drupal-link-system-path="node/4745">Dance</a></li>
+        <li class="menu-item"><a href="/drama" data-drupal-link-system-path="node/5616">Drama</a></li>
+        <li class="menu-item"><a href="/music" data-drupal-link-system-path="node/303">Music</a></li>
+        <li class="menu-item"><a href="/stage-beyond" data-drupal-link-system-path="node/969">On Stage and Beyond</a></li>
+        <li class="menu-item"><a href="/admissions" data-drupal-link-system-path="node/119506">Admissions</a></li>
+        <li class="menu-item"><a href="/campus-life" data-drupal-link-system-path="node/6181">Campus Life</a></li>
+        <li class="menu-item"><a href="/school" data-drupal-link-system-path="node/118541">The School</a></li>
+        <li class="menu-item"><a href="/school/preparatory-division" data-drupal-link-system-path="node/119106">Preparatory Division</a></li>
+        <li class="menu-item"><a href="/stage-beyond/juilliard-extension" data-drupal-link-system-path="node/133086">Juilliard Extension</a></li>
+        <li class="menu-item"><a href="/school/library-and-archives" data-drupal-link-system-path="node/6140">Library and Archives</a></li>
+        <li class="menu-item"><a href="/stage-beyond/alumni" data-drupal-link-system-path="node/5601">Alumni</a></li>
+        <li class="menu-item"><a href="/school/news" data-drupal-link-system-path="node/131116">News</a></li>
+        <li class="menu-item"><a href="/get-updates" data-drupal-link-system-path="node/147606">Get Updates</a></li>
+        <li class="menu-item"><a href="/school/human-resources" data-drupal-link-system-path="node/122126">Human Resources</a></li>
+        <li class="menu-item"><a href="/jobs" data-drupal-link-system-path="node/117106">Job Opportunities</a></li>
+        <li class="menu-item"><a href="/support" data-drupal-link-system-path="node/6086">Support Juilliard</a></li>
+        <li class="menu-item"><a href="https://my.juilliard.edu">MyJuilliard</a></li>
+        <li class="menu-item"><a href="http://www.juilliardstore.com">The Juilliard Store</a></li>
+        <li class="menu-item"><a href="https://www.tianjinjuilliard.edu.cn/">Tianjin Juilliard</a></li>
+        <li class="menu-item"><a href="/school/about/policies-consumer-information" data-drupal-link-system-path="node/138056">Policies &amp; Consumer Information</a></li>
+       </ul>
+      </nav>
+      <nav role="navigation" aria-labelledby="block-tertiarymenu-menu" id="block-tertiarymenu">
+       <h3 class="visually-hidden" id="block-tertiarymenu-menu">Tertiary menu</h3>
+       <ul block="block-tertiarymenu" class="menu">
+        <li class="menu-item"><a href="/juilliard-website-privacy-policy-your-privacy-rights" data-drupal-link-system-path="node/118236">Privacy Policy</a></li>
+        <li class="menu-item menu-item--active-trail"><a href="/website-terms-use" data-drupal-link-system-path="node/118241" class="is-active">Terms of Use</a></li>
+        <li class="menu-item"><a href="/cdn-cgi/l/email-protection#6f061b070a031f0b0a1c042f051a060303060e1d0b410a0b1a">IT Help Desk</a></li>
+        <li class="menu-item"><a href="https://www.juilliard.edu/sites/default/files/juilliard_website_accessibility_policy_030118.pdf">Web Accessibility</a></li>
+       </ul>
+      </nav>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/118241","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"addtoany\/addtoany,extlink\/drupal.extlink,ju_blocks\/ju_blocks.addBodyClass,ju_spektrix\/ju_spektrix_component_loader,ju_spektrix\/ju_spektrix_webcomponents,juilliard\/accessibility_mode,juilliard\/admin_toolbar,juilliard\/current_day,juilliard\/focus_outlines,juilliard\/footer_layout,juilliard\/global-js,juilliard\/html5shiv,juilliard\/image_captions,juilliard\/main_nav_desktop,juilliard\/main_nav_mobile,juilliard\/modernizr,juilliard\/secondary_nav_desktop,juilliard\/styles,juilliard\/top_bar_desktop,juilliard\/top_search_autocomplete,juilliard\/webform_focus,juilliard\/webform_submit,paragraphs\/drupal.paragraphs.unpublished,system\/base","theme":"juilliard","theme_token":null},"ajaxTrustedUrl":{"\/search":true},"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":".field--name-field-event-purchase-url, .field--name-field-member-purchase-url, .field--name-field-hero-carousel .field--name-field-destination-link, .field--name-field-social-network","extCssExplicit":"","extAlert":false,"extAlertText":"","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":[]}},"user":{"uid":0,"permissionsHash":"19bb2edcfd8bf18aff4d3b1fecea929df5853b9da26c0c1d4e2d6213984fc203"}}</script>
+  <script src="/sites/default/files/js/js_qIATJaOTu47NG3eVa4Rk9Dlc-mD6ax7SGwQeeSAv75w.js" type="00013dea487aa278275614ba-text/javascript"></script>
+  <script src="https://static.addtoany.com/menu/page.js" async type="00013dea487aa278275614ba-text/javascript"></script>
+  <script src="/sites/default/files/js/js_WR5Eps1SPqageqUPyLQyPqJh2-GslTOky0fs0gJTG7c.js" type="00013dea487aa278275614ba-text/javascript"></script>
+  <script type="00013dea487aa278275614ba-text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"7d81fa5a52","applicationID":"66534700","transactionName":"NVdSbUBYW0NYVU1eCQwdcVpGUFpeFnJLQhYDXmxXXV1QbHpZV0MUDV5cXEBle19dU29eAxVxX1dGS1pcVVNLGlgUW1VO","queueTime":0,"applicationTime":364,"atts":"GRBRGwhCSE0=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+  <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="00013dea487aa278275614ba-|49" defer></script>
+ </body>
+</html>

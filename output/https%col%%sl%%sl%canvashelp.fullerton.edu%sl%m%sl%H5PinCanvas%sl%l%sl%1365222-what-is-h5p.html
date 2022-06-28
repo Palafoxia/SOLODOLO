@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>H5P in Canvas</title>
+  <meta content="What H5P is and how to use it within Canvas" name="description">
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="hNOYWzNnE9iF7PCR09heMi5QMyU2QQB35BVsxdTky7Pk2mHLb8+v+ry6nrpwiCdAlWbTpxXOoL0O9JBI4bl7lw==">
+  <link rel="stylesheet" media="screen" href="//assets.screensteps.com/assets/themes/fonts/droid-sans-364ed37cb1e97162731b415aa927f66498ed63a95cbeba694ddee60dd372c14f.css">
+  <link rel="stylesheet" media="screen" href="//assets.screensteps.com/assets/themes/fonts/helvetica-8681273d10a12b4f5502c278efb511b207828996eb6fb7d99fa7abb4cea05b50.css">
+  <link rel="stylesheet" href="//assets.screensteps.com/assets/fontawesome-9b64f06a98b9479593e125f4c10f2698fa8bb635ef3cf3616282a9e41d175c16.css">
+  <link rel="stylesheet" href="//assets.screensteps.com/assets/themes/beta-81e062362d5992fe4be88d9a87c19324121ab8af770754d04248da99e5a2d8a9.css">
+  <style type="text/css" media="all">
+  /* headings */
+  h1,
+  h1.toc-heading,
+  h2.toc-heading {
+    color: #;
+  }
+
+  h2.toc-subheading,
+  h3.toc-subheading,
+  h4.toc-subheading,
+  h5.toc-subheading,
+  h6.toc-subheading {
+    color: #070807;
+  }
+
+  .screensteps-training-site [data-count-bubble]::after {
+    background-color: #070807;
+  }
+
+  .screensteps-article-content h2 {
+    color: #;
+  }
+
+  .screensteps-article-content h3,
+  .screensteps-article-content h4,
+  .screensteps-article-content h5,
+  .screensteps-article-content h6 {
+    color: #;
+  }
+
+  .screensteps-sidebar h3 {
+    color: #1a191a;
+  }
+
+  .sidebar-subheading {
+    color: #4a4848;
+  }
+
+  .comments-heading {
+    color: #;
+  }
+
+  /* base/_buttons */
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"],
+  button,
+  .screensteps-bg-action-color,
+  .screensteps-courses .screensteps-progress-bar::before,
+  .screensteps-courses .screensteps-courses-menu a:hover,
+  .screensteps-courses .screensteps-courses-menu .step-active a::before,
+  .screensteps-training-site .asset-item__progress-bar {
+    background-color: #004071;
+  }
+
+  input[type="button"]:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover,
+  button:hover,
+  button.screensteps-bg-action-color:hover,
+  a.screensteps-bg-action-color:hover {
+    background-color: #004071;
+  }
+
+  /* base/_forms */
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="text"]:focus,
+  input[type="url"]:focus,
+  input[type="color"]:focus,
+  input[type="date"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="week"]:focus,
+  select[multiple=multiple]:focus,
+  textarea:focus {
+    border-color: #004071;
+  }
+
+
+  .screensteps-training-site .screensteps-main-search .search-field:not(:placeholder-shown) {
+    box-shadow: 0 0 0 2px #ffffff;
+  }
+
+  /* base/_typography */
+  body {
+    background-color: #ffffff;
+    color: #;
+  }
+
+  a {
+    color: #004071;
+  }
+
+
+
+  /* _screensteps-container */
+  .screensteps-container a:visited {
+    color: #004071;
+  }
+ .screensteps-container a:active,
+ .screensteps-container a:focus,
+ .screensteps-container a:hover {
+    color: #004071;
+  }
+
+  /* _screensteps-manual-contents */
+  .screensteps-manual-contents h2 a {
+    color: #004071;
+  }
+  /* _screensteps-foldable-sections */
+  .screensteps-main-content .embedded-chapter-article > * {
+    color: #004071;
+  }
+
+  /* screensteps-header */
+  .screensteps-branding h1,
+  .screensteps-header .screensteps-branding a,
+  .screensteps-training-site .screensteps-profile-subnav-toggle {
+    color: #004071;
+  }
+
+  .screensteps-header .screensteps-branding a:hover {
+    color: #004071;
+  }
+
+  /* meta data text */
+  .chapter-count,
+  .screensteps-comment-count,
+  .screensteps-lesson-details,
+  .nested-chapter-lessons .here a:after,
+  .screensteps-single-comment time {
+    color: #;
+  }
+
+  /* course tiles */
+  .screensteps-training-site .screensteps-group .asset-list--course a {
+    background-color: #;
+    color: #;
+  }
+
+  .screensteps-training-site .asset-item__progress-bar {
+    background-color: #;
+  }
+
+  .screensteps-training-site .screensteps-group .asset-list--course a:hover {
+    background-color: #;
+  }
+</style>
+  <link rel="icon">
+  <script src="//assets.screensteps.com/assets/application-10a945f50e929cc1e58184ca87f005bd032ee7fe9b1c7368b855e66a5234fab0.js"></script>
+  <script src="//assets.screensteps.com/assets/theme-cae9a1f80906ea92fdc68e13e7545d814402a7aeafd20bbca6accffffa49bbea.js"></script><!--[if lt IE 9]>
+<script src="//assets.screensteps.com/assets/vendor/html5shiv.min-6169624d10bc8403d59c9ace86ab0189063017bfb2139ee074a199cbbdc176b2.js"></script>
+<![endif]-->
+  <style media="">/* ScreenSupport Adjustments */
+.asset-list .divider h4 {
+  color: #4d4d4d;
+}
+
+.screensteps-modal .screensteps-modal__close,.screensteps-modal .screensteps-modal__close:visited {
+    color: #0e4d6f;
+  background-color:#ffffff;
+}
+/* 10.5.2018 trying to fix color contrast for View in Admin Portal link */
+.screensteps-admin-navigation {
+   background-color: #0B579D;
+}
+.screensteps-admin-navigation a:hover {
+   color: #fff;
+}
+
+
+/* trying to fix the color contrast */
+.screensteps-modal {
+color: #0e4d6f;
+background-color:#ffffff;
+}
+
+
+
+/* adjust the wrapper text color */ 
+.screensteps-article .screensteps-textblock.screensteps-wrapper--alert {
+  color: #8d0c0c;
+}
+.screensteps-article .screensteps-textblock.screensteps-wrapper--introduction {
+  color: #0e4d6f;
+}
+
+.screensteps-article .screensteps-textblock.screensteps-wrapper--tip {
+  color: #32531e;
+}
+
+.screensteps-article .screensteps-textblock.screensteps-wrapper--info {
+ color: #0e4d6f;
+}
+
+.screensteps-article .screensteps-textblock.screensteps-wrapper--warning {
+  color: #6a4300;
+}
+
+/* adjust the body text */
+.screensteps-article { color: #4d4d4d; }
+
+body { color: #4d4d4d; }
+
+/* link text color */
+.screensteps-article a {
+ color: #0e4d6f;
+
+}
+
+.screensteps-article a:visited {
+ color: #0e4d6f;
+}
+
+/* background and border */
+.screensteps-article .screensteps-steps .image {
+ background-color: transparent;
+ border: none;
+}
+
+/* attached file color */
+.screensteps-article .screensteps-wrapper--attachment a
+{ color:#0e4d6f;  
+}
+
+/* adjust color of h3 */
+.screensteps-description h3, .screensteps-steps h3
+{color:#4d4d4d;
+}
+
+/* adjust color of h2 */
+.screensteps-description h2, .screensteps-steps h2
+{color:#4d4d4d;
+}
+
+/* to adjust the color of the text in the search bar*/
+.screensteps-main-search .input-prompt {
+  color: #0057a8;
+}
+
+/* to adjust the color of the number of articles in each chapter */
+.chapter-count {
+   color: #004071;
+}
+
+/* to allow videos from our server to play in screensteps*/
+.video-responsive{ overflow:hidden; padding-bottom:56.25%; position:relative; height:0; } .video-responsive video { left:0; top:0; height: auto; width: 100%; position:absolute; }
+
+</style>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71326781-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <noscript>
+    Javascript should be enabled on this page in order to run Google Analytics. 
+  </noscript>
+  <script>
+//<![CDATA[
+    !function(name,path,ctx){
+      var latest,prev=name!=='Keen'&&window.Keen?window.Keen:false;ctx[name]=ctx[name]||{ready:function(fn){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onerror=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;latest=w.Keen;if(prev){w.Keen=prev}else{try{delete w.Keen}catch(e){w.Keen=void 0}}ctx[name]=latest;ctx[name].ready(fn)};s.async=1;s.src=path;h.parentNode.insertBefore(s,h)}}
+    }('KeenAsync','https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.1.3.min.js',this);
+
+    KeenAsync.ready(function(){
+      // Configure a client instance
+      var client = new KeenAsync({
+        projectId: '591daac30935ce40a59fb7ab',
+        writeKey: 'C89A9A1A8DB4C585F119F8F81ABB9621940DBBADDA5C72C2B87B1BD3464890D23FD250B0FFA4A1056DCB210616545B7B6C9DDF2054167B5219A3DD81E8DF90A321BE0C1B35BA19F2E3E85730FB96C1F93F8C66D8CD449FE6EFE43D98453632D1'
+      });
+
+      // Record an event
+      client.recordEvent('pageviews', {
+        title: document.title,
+        ip_address: "${keen.ip}",
+        user_agent: "${keen.user_agent}",
+        user_id: null,
+        user_public_id: null,
+        account_id: "7061f6cd01",
+        account_billing_type: "admin_users",
+        site_id: 22950,
+        manual_id: 98557,
+        article_id: 1365222,
+        article_type_id: 0,
+        course_id: null,
+        source_id: 1
+      });
+    });
+
+//]]>
+</script>
+ </head>
+ <body class="helvetica-body droid-sans-header site-article  no-focus-outline" data-base-path="/" data-content-template="2015" data-generating-pdf-text="Creating PDF...">
+  <header class="screensteps-header" role="banner"><a class="skip-navigation--link" href="#screensteps-main-content" id="skip-navigation"> Skip to main content </a>
+   <div class="screensteps-branding">
+    <div class="logo-wrapper"><span class="company-logo"> <a href="/" title="Canvas Resource Center"> <img alt="Cal State Fullerton" class="screensteps-site-logo" src="https://media.screensteps.com/logos/9409/OET_Logo-05.jpg"> </a> </span>
+     <h1 class="company-name">California State University Fullerton</h1>
+    </div>
+   </div>
+  </header>
+  <div class="screensteps-container-wrapper">
+   <main class="screensteps-container">
+    <div class="screensteps-site-title-wrapper">
+     <h1 class="screensteps-site-title toc-heading">Canvas Resource Center</h1>
+     <div class="screensteps-site-description">
+      <p>Welcome to the Canvas Resource Center where you may find self-help guides on a wide range of topics regarding teaching and learning using Canvas. Begin by typing in a keyword and clicking on Search.</p>
+     </div>
+    </div>
+    <div class="screensteps-main-search" role="search">
+     <form id="screensteps-search-form" action="/searches" accept-charset="UTF-8" method="get">
+      <div class="screensteps-search-form"><label for="text">Search term</label>
+       <input type="text" name="text" id="text" class="search-field" title="Enter a keyword or topic to search">
+       <input type="submit" name="commit" value="Search" class="search-submit" data-disable-with="Search">
+      </div>
+     </form>
+    </div>
+    <div class="screensteps-content-wrapper manual-lesson lesson left-sidebar">
+     <div class="screensteps-main-content" role="main">
+      <header class="screensteps-title">
+       <div id="screensteps-breadcrumb" aria-label="breadcrumb" aria-level="3">
+        <a href="/">Canvas Resource Center</a><span class="manual-group-breadcrumb"><a href="/#ADD-ONSForCanvas">ADD-ONS FOR CANVAS</a></span><a href="/m/H5PinCanvas">H5P in Canvas</a> <span class="chapter-breadcrumb"><a href="/m/H5PinCanvas/c/349792">Introduction to H5P</a></span>What is H5P?
+       </div>
+      </header>
+      <div id="screensteps-main-content">
+       <div class="screensteps-article" data-screensteps-article>
+        <div class="screensteps-article-content " data-article-id="1365222" data-workflow="false">
+         <h1 class="lesson">What is H5P?</h1>
+         <div class="screensteps-steps" data-role="steps-container">
+          <div class="step step-depth-1" data-step-uuid="04c05811-c43a-433b-9dc9-06fd44b8949a" id="">
+           <h2 id="using-h5p-in-canvas"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for Create Interactive Content in H5P within Canvas" href="#using-h5p-in-canvas">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> Create Interactive Content in H5P within Canvas </h2>
+           <div class="instructions screensteps-textblock screensteps-wrapper--tip screensteps-wrapper">
+            <p>This article contains several sections that can be quickly accessed by using the Table of Contents links to jump to the area of the article that might interest you the most.&nbsp;You can also collapse sections to make navigation much easier within the article.</p>
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="03e49fc6-4a9d-4a1c-ac43-e58ff5c312fa" id="">
+           <h2 id="table-of-contents"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for Table of Contents" href="#table-of-contents">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> Table of Contents </h2>
+           <div class="instructions screensteps-textblock ">
+            <p><a data-internal-link="article" href="#i-what-is-h5p" target="_self" data-internal-anchor="i-what-is-h5p">I. What is H5P?</a></p>
+            <p><a data-internal-link="article" href="#ii-the-h5p-external-tool-lti-plugin-in-canvas" target="_self" data-internal-anchor="ii-the-h5p-external-tool-lti-plugin-in-canvas">II. The H5P LTI Plugin in Canvas</a></p>
+            <p><a data-internal-link="article" href="#iii-creating-h5p-content-within-canvas" target="_self" data-internal-anchor="iii-creating-h5p-content-within-canvas">III. Creating H5P Content within Canvas</a></p>
+            <p style="margin-left:20px;"><a data-internal-link="article" href="#a-activate-and-connect-your-h5p-account-within-canvas" target="_self" data-internal-anchor="a-activate-and-connect-your-h5p-account-within-canvas">A. Activate and Connect your H5P Account within Canvas</a></p>
+            <p style="margin-left:20px;"><a data-internal-link="article" href="#b-graded-h5p-assignments-or-tasks" target="_self" data-internal-anchor="b-graded-h5p-assignments-or-tasks">B. Graded H5P Assignments or Tasks</a></p>
+            <p style="margin-left:20px;"><a data-internal-link="article" href="#c-ungraded-h5p-activities-for-engagement" target="_self" data-internal-anchor="c-ungraded-h5p-activities-for-engagement">C. Ungraded H5P Activities for Engagement</a></p>
+            <p><a data-internal-link="article" href="#iv-copying-existing-h5p-apps-into-canvas" target="_self" data-internal-anchor="iv-copying-existing-h5p-apps-into-canvas">IV. Copying Existing H5P Apps into Canvas</a></p>
+            <p><a data-internal-link="article" href="#v-grading-h5p-assignments" target="_self" data-internal-anchor="v-grading-h5p-assignments">V. Grading H5P Assignments</a></p>
+            <p><a data-internal-link="article" href="#vi-h5p-content-development-tutorials" target="_self" data-internal-anchor="vi-h5p-content-development-tutorials">VI. H5P Content Development Tutorials</a></p>
+            <p><a data-internal-link="article" href="#vii-conclusion" target="_self" data-internal-anchor="vii-conclusion">VII. Conclusion</a></p>
+           </div>
+           <div class="image clearfix">
+            <img alt="H5P logo" data-srcset="https://media.screensteps.com/image_assets/assets/004/117/159/original/86d4c274-284d-4543-9a6f-c3255ba7da09.png 560w" data-src="https://media.screensteps.com/image_assets/assets/004/117/159/original/86d4c274-284d-4543-9a6f-c3255ba7da09.png" class="lazyload lazypreload" style="max-width:560px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/117/159/original/86d4c274-284d-4543-9a6f-c3255ba7da09.png">
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="061275b5-ceb5-4832-ac70-45ec8e7a576a" id="">
+           <h2 id="i-what-is-h5p"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for I. What is H5P?" href="#i-what-is-h5p">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> I. What is H5P? </h2>
+           <div class="html-embed"><iframe title="video introduction to H5P" width="560" height="315" src="https://www.youtube-nocookie.com/embed/iQuxTnuQ200" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+           </div>
+           <div class="instructions screensteps-textblock ">
+            <p>With <a href="https://www.h5p.org/" target="_blank">H5P</a>, which is an abbreviation for <em>HTML 5 Package</em>, instructors and instructional designers gain access to a large toolkit of &nbsp;learning objects–called "apps"–to use in creating engaging, interactive instructional experiences within Canvas. In this article, "H5P" will be used as "short-hand" to generically describe the tool and its finished content types.</p>
+            <p>H5P is an open source content authoring system, developed by <a href="https://joubel.com/" target="_blank">Joubel</a>, which allows you to create multimedia-rich lessons, <em>interactive</em> videos that include quiz questions and navigation links, memory and learning games or quizzes for knowledge checking, or other content types, all of which can easily be embedded in a Canvas course. With H5P, you can create these interactive and <em>accessible</em> experiences without resorting to expensive, hard-to-learn e-learning authoring software applications. All you need is a bit of creativity, a web browser in which to edit the H5P apps, and your app's intended content at the ready, such as the images, video links and text that you will use. In Canvas you can build and use H5P apps as External Tool-based graded assignments and tasks, or non-graded, interest-provoking synergistic activities for increased learner engagement, embedded within course Pages, Discussions, or even within an Assignment prompt as stimulus material. Once created within your Canvas course, these apps can be <em><strong>cloned</strong></em> for reuse in your other Canvas courses, without any need to recreate them from scratch again.</p>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="51bd72c4-b314-4049-bbfa-647105231276" id="ii-the-h5p-external-tool-lti-plugin-in-canvas"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#ii-the-h5p-external-tool-lti-plugin-in-canvas">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#ii-the-h5p-external-tool-lti-plugin-in-canvas" class="embedded-chapter-article" id="screensteps-article-51bd72c4-b314-4049-bbfa-647105231276" data-lesson-id="51bd72c4-b314-4049-bbfa-647105231276"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> II. The H5P External Tool LTI Plugin in Canvas </a>
+            <div class="nested-article" data-lesson-id="51bd72c4-b314-4049-bbfa-647105231276">
+             <div class="instructions screensteps-textblock ">
+              <p>In Canvas, H5P is available through a plugin based on the <strong>Learning Tools Interoperability</strong> (<strong>LTI</strong>) standard. This is an education technology specification developed by the <em>IMS Global Learning Consortium.</em> LTI is a widely adopted standard that is reliable and able to enrich student learning experiences and is commonly used within Canvas to extend its core capabilities. There are hundreds of LTI plugins that are available for use in Canvas. These can be viewed in your course's Settings page. These LTI plugins can be collectively categorized as <strong>External Tools</strong>, and Canvas is able to leverage them to create Assignments or embed their capabilities in Canvas resources like Pages or Discussions. </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="c59985fb-316e-4723-ac76-82ee34f80444" id="iii-creating-h5p-content-within-canvas"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#iii-creating-h5p-content-within-canvas">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#iii-creating-h5p-content-within-canvas" class="embedded-chapter-article" id="screensteps-article-c59985fb-316e-4723-ac76-82ee34f80444" data-lesson-id="c59985fb-316e-4723-ac76-82ee34f80444"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> III. Creating H5P Content within Canvas </a>
+            <div class="nested-article" data-lesson-id="c59985fb-316e-4723-ac76-82ee34f80444">
+             <div class="html-embed"><iframe title="video on How to Insert H5P in Canvas" width="560" height="315" src="https://www.youtube-nocookie.com/embed/beKEdOLQWuk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+             </div>
+             <div class="instructions screensteps-textblock ">
+              <p>H5P apps can be created within a few minutes and they're often fun to make. However, like any software tool, authors may want to read helpful guidance about H5P before diving in to building apps right away. Here are helpful references that are useful to new H5P users (these guides and more also appear in Section VI of this article).</p>
+              <ul>
+               <li><a href="https://h5p.org/documentation/for-authors/tutorials" target="_blank">H5P Tutorials for Authors</a></li>
+              </ul>
+              <p>In addition, H5P authors should keep accessibility in mind as they create their interactive content. The pages and charts listed on the site--maintained by LibreTexts--linked below provide ratings of H5P content type accessibility statuses as well as suggested steps to provide workarounds for accessibility barriers. &nbsp;This is a very useful reference to keep in mind when authoring with H5P:</p>
+              <ul>
+               <li><a href="https://chem.libretexts.org/Courses/Remixer_University/Mastering_ADAPT%3A_A_User's_Guide/07%3A_Building_H5P_Assessments/7.02%3A_Accessibility_Reports_of_H5P_Assessment_Types" target="_blank">Accessibility Reports for H5P Activity Types</a></li>
+              </ul>
+              <p>Now, let's cover the basic steps to enable and use H5P in your Canvas course:</p>
+             </div>
+             <div class="child-wrapper">
+              <div class="step screensteps-section step-depth-2 foldable-step child-step" data-step-uuid="9af372d6-125e-4fb8-98fa-2c46212b01bc" id="a-activate-and-connect-your-h5p-account-within-canvas"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#a-activate-and-connect-your-h5p-account-within-canvas">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a><a href="#a-activate-and-connect-your-h5p-account-within-canvas" class="embedded-chapter-article" id="screensteps-article-9af372d6-125e-4fb8-98fa-2c46212b01bc" data-lesson-id="9af372d6-125e-4fb8-98fa-2c46212b01bc"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+                 <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+                </svg> A. Activate and Connect your H5P Account within Canvas </a>
+               <div class="nested-article" data-lesson-id="9af372d6-125e-4fb8-98fa-2c46212b01bc">
+                <div class="instructions screensteps-textblock ">
+                 <p>To activate your account, you must login to Canvas and create H5P content as an External Tool in a Module. This action will activate and link your H5P account to your Canvas course.</p>
+                 <p>🖊Note </p>
+                 <p>All steps listed below must be completed for H5P to be correctly synchronized in Canvas.</p>
+                 <p>We recommend that you use your Canvas <strong>Sandbox</strong> course to create and test new content, then copy this content to your current course when ready.</p>
+                </div>
+                <div class="instructions screensteps-textblock ">
+                 <p>Follow this guide to learn how to <a data-internal-link-id="1377734" data-internal-link="article" href="../../H5PinCanvas/l/1377734-how-do-i-create-an-h5p-in-my-course-using-external-tool" target="">create an H5P interaction using the External Tool</a> in your course in Canvas.</p>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="child-wrapper">
+              <div class="step screensteps-section step-depth-2 foldable-step child-step" data-step-uuid="7e0bcc17-0d17-4850-aa1a-c5a877222a1a" id="b-graded-h5p-assignments-or-tasks"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#b-graded-h5p-assignments-or-tasks">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a><a href="#b-graded-h5p-assignments-or-tasks" class="embedded-chapter-article" id="screensteps-article-7e0bcc17-0d17-4850-aa1a-c5a877222a1a" data-lesson-id="7e0bcc17-0d17-4850-aa1a-c5a877222a1a"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+                 <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+                </svg> B. Graded H5P Assignments or Tasks </a>
+               <div class="nested-article" data-lesson-id="7e0bcc17-0d17-4850-aa1a-c5a877222a1a">
+                <div class="instructions screensteps-textblock ">
+                 <p>Although most H5P activities have optional settings to control reporting to Canvas' gradebook, only those activities that are <em>set up as H5P Assignments will have grade data accepted by the gradebook</em>. <a data-internal-link-id="1377736" data-internal-link="article" href="../../H5PinCanvas/l/1377736-how-do-i-create-an-h5p-interaction-as-an-activity-in-a-page-or-discussion" target="">H5P activities embedded in Pages or Discussions</a> will not report grades to the gradebook, even if set to do so within the H5P editor's settings. Such embedded H5P content can still serve to engage students with your material, so they do still serve a valuable purpose. Note that only students, including Student Test accounts, will have their grades reported within the gradebook by the H5P plugin; therefore, instructors wishing to verify the functionality of their H5P creations can use their Test Student account.</p>
+                 <p>Follow this guide to learn how to <a data-internal-link-id="1377735" data-internal-link="article" href="../../H5PinCanvas/l/1377735-how-do-i-create-an-h5p-interaction-that-will-report-to-my-gradebook" target="">create an H5P interaction which will report student scores to the gradebook</a>.</p>
+                 <p>🅰️ Advice</p>
+                 <p>H5P activities, when set up as Canvas Assignments, will automatically record grades to the Canvas gradebook, and no manual grading work is needed on your part. However, there are some H5P content types that do not automatically report grades to the Canvas gradebook (e.g., H5P Documentation Tool, Audio Recorder, etc.). These exceptions need manual grading because their output, such as a text or audio file, cannot be quantitatively scored by H5P. Canvas can record their submission as a file upload, but not a score from H5P itself. Thus these content types require an instructor's review. Other than these few types, at this time, practically all H5P activities produce point-based scores that Canvas is able to tally in its gradebook.&nbsp;In the gradebook, graded activities can be set to display as complete/incomplete, points, or percentages, just like any other graded Canvas activity. &nbsp;</p>
+                 <p>H5P activities can be set to report first, last, or best scores to the gradebook. This option is found in the activity's "LTI Settings" tab of the H5P Editor.&nbsp;</p>
+                </div>
+                <div class="image clearfix">
+                 <img alt="LTI Settings for which attempt to record" data-srcset="https://media.screensteps.com/image_assets/assets/004/229/875/original/baca1cd6-b5d3-4a64-9a83-7d5e193165ee.png 531w" data-src="https://media.screensteps.com/image_assets/assets/004/229/875/original/baca1cd6-b5d3-4a64-9a83-7d5e193165ee.png" class="lazyload lazypreload" style="max-width:531px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/229/875/original/baca1cd6-b5d3-4a64-9a83-7d5e193165ee.png">
+                </div>
+                <div class="instructions screensteps-textblock ">
+                 <p>Another useful H5P feature is the "Reports" capability.&nbsp;Any graded activity that has been completed by a student will show up in the Reports area of the activity. A "Reports" tab, found next to the "Edit" tab along the top of the activity, opens the logged scores and attempts that students <em><strong>who have fully completed and submitted their responses</strong></em> have accrued. &nbsp;Multiple attempts are tracked, along with their respective scores. &nbsp;This feature can help instructors to verify their students' performance within an H5P activity, and cross-check them against Canvas' gradebook. &nbsp;</p>
+                </div>
+                <div class="image clearfix">
+                 <img alt="Reports tab" data-srcset="https://media.screensteps.com/image_assets/assets/004/229/877/original/f62f2f43-48db-4444-99de-75ebc8e24204.png 514w" data-src="https://media.screensteps.com/image_assets/assets/004/229/877/original/f62f2f43-48db-4444-99de-75ebc8e24204.png" class="lazyload lazypreload" style="max-width:514px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/229/877/original/f62f2f43-48db-4444-99de-75ebc8e24204.png">
+                </div>
+                <div class="instructions screensteps-textblock ">
+                 <p>It is best to test your H5P creations to be sure that they perform as expected before using them in a live course. It's also recommended that learners viewing an <a href="https://h5p.org/interactive-video" target="_blank">H5P Interactive Video (IV) learning activity</a>, submit any quiz results generated by the IV by deliberately clicking the <em>Submit your Answers</em> button that appears at the end of the an Interactive Video activity. Doing this ensures that the generated results get sent to the Canvas gradebook. </p>
+                 <p>Lastly, we recommend that H5P apps not be used for a course's most relevant assessments (e.g., mid-term exams or final exams). Therefore, we suggest that H5P authors continue to rely on Canvas's core assessment tools such as Quizzes or Assignments.</p>
+                 <p>💡 Tip</p>
+                 <p>If you do wish to create quiz-like H5P creations, certain H5P apps have the capability to display other H5P quizzing elements within them. These "container apps" include: the H5P <a href="https://h5p.org/presentation" target="_blank">Course Presentation</a> content type, the Interactive Video content type, and the <a href="https://h5p.org/column" target="_blank">Column</a> content type, as well as a couple of newer, container-like types such as the <a href="https://h5p.org/branching-scenario" target="_blank">Branching Scenario</a> and the <a href="https://h5p.org/content-types/interactive-book" target="_blank">Interactive Book</a>. </p>
+                 <p>A use case for these may include, for example, using the Column app in which several single questions of different types, or question sets, can be stacked within the Column's scrollable page. H5P will send the grades from all of the questions to the gradebook correctly. Simply create an External Tool-based Assignment using H5P as the Tool, then edit the quiz questions in the built-in H5P editor. <em>Additional Note:</em> Columns do not provide page-breaks (i.e., all content will display in one scrollable page). If pagination is desired or needed, the Course Presentation or the Interactive Book apps can contain different questions on each of its presentation slides or pages.</p>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="child-wrapper">
+              <div class="step screensteps-section step-depth-2 foldable-step child-step" data-step-uuid="57fa5a66-9e18-4762-8406-12cc515e31b9" id="c-ungraded-h5p-activities-for-engagement"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#c-ungraded-h5p-activities-for-engagement">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a><a href="#c-ungraded-h5p-activities-for-engagement" class="embedded-chapter-article" id="screensteps-article-57fa5a66-9e18-4762-8406-12cc515e31b9" data-lesson-id="57fa5a66-9e18-4762-8406-12cc515e31b9"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+                 <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+                </svg> C. Ungraded H5P Activities for Engagement </a>
+               <div class="nested-article" data-lesson-id="57fa5a66-9e18-4762-8406-12cc515e31b9">
+                <div class="instructions screensteps-textblock ">
+                 <p>H5P content may also be embedded in a course Page, a Discussion prompt, or an Assignment's descriptive text area, simply by using the LTI plug-in button available in these resources' rich text editor toolbars. However, please note that these embedded versions of an H5P app <em>will not report grades to the gradebook</em>. The embed button is best used to provide additional context or stimulus material for activities that will be assessed by other means. To learn how to create an ungraded H5P activity and use it within a Canvas resource, (e.g, Page, Discussion, or as part of a Module), read this useful guide: </p>
+                 <ul>
+                  <li><a data-internal-link-id="1377736" data-internal-link="article" href="../../H5PinCanvas/l/1377736-how-do-i-create-an-h5p-interaction-as-an-activity-in-a-page-or-discussion" target="">Add an H5P interaction to a Page or Discussion</a></li>
+                 </ul>
+                 <p>In the following section, we cover how to copy existing H5P activities from TITANium (Moodle) into Canvas.</p>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="09bfcde3-6c90-4d92-a26a-ed00c45aeea2" id="iv-copying-existing-h5p-apps-into-canvas"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#iv-copying-existing-h5p-apps-into-canvas">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#iv-copying-existing-h5p-apps-into-canvas" class="embedded-chapter-article" id="screensteps-article-09bfcde3-6c90-4d92-a26a-ed00c45aeea2" data-lesson-id="09bfcde3-6c90-4d92-a26a-ed00c45aeea2"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> IV. Copying Existing H5P Apps into Canvas </a>
+            <div class="nested-article" data-lesson-id="09bfcde3-6c90-4d92-a26a-ed00c45aeea2">
+             <div class="instructions screensteps-textblock ">
+              <p>H5P content transferred from a TITANium (Moodle) course must be uploaded into a Canvas course <a href="https://titaniumhelp.fullerton.edu/m/FAQ/l/1081088-how-do-i-download-an-h5p-package-from-my-course">by first downloading the H5P app's .h5p file within TITANium (Moodle)</a>, and then <a data-internal-link-id="1276295" data-internal-link="article" href="../../H5PinCanvas/l/1276295-how-do-i-move-an-h5p-file-from-titanium-to-canvas-and-make-it-a-practice-only-activity" target="">uploading the .h5p file to a Canvas course</a> when creating an H5P activity within Canvas. The .h5p file is important because it consists of a metadata file in <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> format, a number of library files providing features and design for the content and a content folder where textual content is stored in JSON format and multimedia is stored as files or links to files on external sites. All of that information is vital in order to recreate an H5P activity without effort.</p>
+              <p>Once it is recreated in Canvas, the H5P app will likely never again need to be uploaded to Canvas by way of its .h5p file. That is because it will exist in the H5P author's Canvas H5P assets collection, and those assets can be easily <em><strong>cloned</strong></em> and reused in any Canvas course in which the author can edit content. Any revision done to an H5P activity, once it is within Canvas, will flow through to all copies of that same H5P activity--but not its clones--that exists in other courses. <em><strong>Therefore it is best to clone the activity first, and make significant revisions in the cloned copy.</strong></em></p>
+              <p>🖊 Note</p>
+              <p>H5P apps cannot be added to Canvas courses by copying the content from a TITANium (Moodle) course by means of the TITANium (Moodle) Backup feature; <em>this method will fail to export any included H5P content</em>. Additionally, as of the date of this article, H5P <em>cannot import quiz question banks/files from other formats</em> (e.g., Blackboard, Moodle XML, Aiken, GIFT, etc.), because it does not have the capability to either import/unpack or re-interpret other question file formats. Quizzing elements in H5P <em>must</em> be created from scratch or reused from existing H5P activities that already contain the desired elements in their respective .h5p files.</p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="4c7a6443-03cf-49d1-82ad-26c2cffebf15" id="v-grading-h5p-assignments"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#v-grading-h5p-assignments">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#v-grading-h5p-assignments" class="embedded-chapter-article" id="screensteps-article-4c7a6443-03cf-49d1-82ad-26c2cffebf15" data-lesson-id="4c7a6443-03cf-49d1-82ad-26c2cffebf15"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> V. Grading H5P Assignments </a>
+            <div class="nested-article" data-lesson-id="4c7a6443-03cf-49d1-82ad-26c2cffebf15">
+             <div class="instructions screensteps-textblock ">
+              <p>As has been previously mentioned, as long as H5P activities are set up as Canvas Assignments, they will automatically record grades to the Canvas gradebook, and no manual grading work is needed on your part. This is because, at this time, practically all H5P activities produce point-based scores that Canvas is able to tally in its gradebook. In the gradebook, graded activities can be set to display as complete/incomplete, actual points, or percentages, just like any other graded Canvas activity. H5P activities can be set to report first, last or best scores to the gradebook. This option is found in the activity's "LTI Settings" tab of the H5P Editor.</p>
+             </div>
+             <div class="image clearfix">
+              <img alt="LTI Settings for which attempt to record" data-srcset="https://media.screensteps.com/image_assets/assets/004/233/530/original/dd50eea8-6058-42f7-9d02-ac0c9ec6c691.png 531w" data-src="https://media.screensteps.com/image_assets/assets/004/233/530/original/dd50eea8-6058-42f7-9d02-ac0c9ec6c691.png" class="lazyload lazypreload" style="max-width:531px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/233/530/original/dd50eea8-6058-42f7-9d02-ac0c9ec6c691.png">
+             </div>
+             <div class="instructions screensteps-textblock ">
+              <p>Another useful H5P feature, mentioned earlier in this article, is the "Reports" capability.&nbsp;Any graded activity that has been completed by a student will show up in the Reports area of the activity. A "Reports" tab, found next to the "Edit" tab along the top of the activity, opens the logged scores and attempts that <em><strong>students who have fully completed and submitted their response</strong></em>s have accrued. Multiple attempts are tracked, along with their respective scores.&nbsp;This feature can help instructors to verify their students' performance within an H5P activity, and cross-check them against the Canvas' gradebook. </p>
+              <p>&nbsp;</p>
+             </div>
+             <div class="image clearfix">
+              <img alt="Reports tab" data-srcset="https://media.screensteps.com/image_assets/assets/004/233/532/original/10b6c596-a63c-483e-80f8-4c6882dd0c19.png 514w" data-src="https://media.screensteps.com/image_assets/assets/004/233/532/original/10b6c596-a63c-483e-80f8-4c6882dd0c19.png" class="lazyload lazypreload" style="max-width:514px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/233/532/original/10b6c596-a63c-483e-80f8-4c6882dd0c19.png">
+             </div>
+             <div class="instructions screensteps-textblock ">
+              <p>🅰️ Advice</p>
+              <p>If you are unsure about whether an H5P content type that you wish to use will automatically report its grades to the Canvas gradebook, create it as a draft or testable Assignment first, switch to the Canvas Student View, and try it out--the draft/test Assignment must be published in order for it to be visible in Student View. Doing so will help you be sure that its grades get recorded. &nbsp;Do not try to verify whether the Assignment's scores are recorded while in your "Teacher" role.&nbsp;Only students' or Test Student accounts' activity attempts are tallied by the Canvas gradebook.</p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="2350c6bb-665e-4bea-96a5-4ec88e46529d" id="vi-h5p-content-development-tutorials"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#vi-h5p-content-development-tutorials">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#vi-h5p-content-development-tutorials" class="embedded-chapter-article" id="screensteps-article-2350c6bb-665e-4bea-96a5-4ec88e46529d" data-lesson-id="2350c6bb-665e-4bea-96a5-4ec88e46529d"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> VI. H5P Content Development Tutorials </a>
+            <div class="nested-article" data-lesson-id="2350c6bb-665e-4bea-96a5-4ec88e46529d">
+             <div class="instructions screensteps-textblock ">
+              <p>This section contains links to tutorials and guides, some of which are listed in Section III of this article.</p>
+              <p>Use these guides to learn how to set up H5P content in different areas of Canvas:</p>
+              <ul>
+               <li><a data-internal-link-id="1377735" data-internal-link="article" href="../../H5PinCanvas/l/1377735-how-do-i-create-an-h5p-interaction-that-will-report-to-my-gradebook" target="">Create an H5P assignment which reports to the gradebook</a></li>
+               <li><a data-internal-link-id="1377734" data-internal-link="article" href="../../H5PinCanvas/l/1377734-how-do-i-create-an-h5p-in-my-course-using-external-tool" target="">Create an H5P activity using the External Tool</a></li>
+               <li><a data-internal-link-id="1377736" data-internal-link="article" href="../../H5PinCanvas/l/1377736-how-do-i-create-an-h5p-interaction-as-an-activity-in-a-page-or-discussion" target="">Create an H5P activity in a Page or Discussion</a></li>
+              </ul>
+              <p>These tutorials and guides will assist you through creating content in H5P:</p>
+              <ul>
+               <li><a href="https://h5p.org/documentation/for-authors/tutorials" target="_blank">H5P Tutorials for Authors</a> - H5P tutorials regarding content Types</li>
+               <li><a href="https://h5p.org/tutorial-course-presentation" target="_blank">Course Presentation Tutorial</a> - Create a presentation with interactive slides</li>
+               <li><a href="https://h5p.org/tutorial-interactive-video" target="_blank">Interactive Video Tutorial</a> - Create videos enriched with interactions</li>
+               <li><a href="https://h5p.org/documentation/installation/content-type-accessibility" target="_blank">H5P Content Type Accessibility</a> - H5P content type accessibility chart</li>
+              </ul>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="58bdde6e-7fee-4465-abbf-5a3519ef1a2b" id="vii-conclusion"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#vii-conclusion">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#vii-conclusion" class="embedded-chapter-article" id="screensteps-article-58bdde6e-7fee-4465-abbf-5a3519ef1a2b" data-lesson-id="58bdde6e-7fee-4465-abbf-5a3519ef1a2b"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> VII. Conclusion </a>
+            <div class="nested-article" data-lesson-id="58bdde6e-7fee-4465-abbf-5a3519ef1a2b">
+             <div class="instructions screensteps-textblock ">
+              <p>H5P activities are not difficult to create and can be fun to build. But as with any new tool, there <em>is</em> a learning curve to attaining proficiency in creating activities with it. In the <em>More Information</em> section below, we have listed some of the tutorials mentioned in this article, so that you can strengthen your comfort level with H5P. Finally, if you need assistance or have questions about how to use H5P in Canvas, please <a href="mailto:oet@fullerton.edu">contact the Online Education and Training (OET) department</a>, and we will be glad to help.</p>
+              <ol>
+               <li><a href="https://en.wikipedia.org/wiki/H5P" target="_blank">Wikipedia description of the H5P format</a> </li>
+               <li><a href="https://en.wikipedia.org/wiki/LearningToolsInteroperability" target="_blank">Wikipedia description of the LTI standard</a></li>
+               <li><a href="https://en.wikipedia.org/wiki/H5P#cite_note-14" target="_blank">Wikipedia description of the .h5p file format</a></li>
+              </ol>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="screensteps-next-prev-navigation" data-role="next-previous-nav">
+         <ul>
+          <li class="next"><strong>Next:</strong><a href="/m/H5PinCanvas/l/1377735-how-do-i-create-an-h5p-interaction-that-will-report-to-my-gradebook">How do I create an H5P Interaction that will report to my gradebook?</a></li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div aria-label="sidebar" class="screensteps-sidebar" role="complementary">
+      <div class="screensteps-sidebar-widget" id="lesson-sidebar-info">
+       <h3>Last Updated</h3>
+       <p>Mar 11, 2022</p>
+       <ul class="icon-links">
+       </ul>
+      </div>
+      <div class="screensteps-sidebar-widget" id="other-assets">
+       <h3>Self-Help Guides</h3>
+       <ul class="asset-list with-divider">
+        <li class="divider"><h4 class="sidebar-subheading">BEGIN HERE</h4></li>
+        <li class="manual"><a href="/m/Making_the_Most_of_Canvas">Making the Most of Canvas</a></li>
+        <li class="manual"><a href="/m/CanvasStudio">Canvas Studio</a></li>
+        <li class="manual"><a href="/m/98630">FAQs for Using Canvas</a></li>
+        <li class="divider"><h4 class="sidebar-subheading">ADD-ONS FOR CANVAS</h4></li>
+        <li class="manual"><a href="/m/AllyinCanvas">Blackboard Ally in Canvas</a></li>
+        <li class="manual"><a href="/m/DropboxinCanvas">Dropbox in Canvas</a></li>
+        <li class="manual"><a href="/m/Flipgrid">Flipgrid in Canvas</a></li>
+        <li class="manual"><a href="/m/GoogleDocs">Google Docs in Canvas</a></li>
+        <li class="manual"><a href="/m/GoReact">GoReact in Canvas</a></li>
+        <li class="manual"><a href="/m/H5PinCanvas">H5P in Canvas</a></li>
+        <li class="manual"><a href="/m/iclickerInCanvas">iClicker in Canvas</a></li>
+        <li class="manual"><a href="/m/Labster">Labster in Canvas</a></li>
+        <li class="manual"><a href="/m/110675">LinkedIn Learning in Canvas</a></li>
+        <li class="manual"><a href="/m/107616">Mentimeter in Canvas</a></li>
+        <li class="manual"><a href="/m/PadletinCanvas">Padlet in Canvas</a></li>
+        <li class="manual"><a href="/m/111234">Portfolium in Canvas</a></li>
+        <li class="manual"><a href="/m/Proctorio">Proctorio in Canvas</a></li>
+        <li class="manual"><a href="/m/PublisherContentCanvas">Publisher Content in Canvas</a></li>
+        <li class="manual"><a href="/m/RespondusinCanvas">Respondus</a></li>
+        <li class="manual"><a href="/m/Scantron">Scantron and ParScore</a></li>
+        <li class="manual"><a href="/m/Screencast-o-matic">Screencast-o-matic in Canvas</a></li>
+        <li class="manual"><a href="/m/ShareStream_in_Canvas">ShareStream Video in Canvas</a></li>
+        <li class="manual"><a href="/m/SoftChalkinCanvas">SoftChalk in Canvas</a></li>
+        <li class="manual"><a href="/m/108841">Teams in Canvas</a></li>
+        <li class="manual"><a href="/m/Turnitin_in_Canvas">Turnitin in Canvas</a></li>
+        <li class="manual"><a href="/m/VoiceThread">VoiceThread for Canvas</a></li>
+        <li class="manual"><a href="/m/YouTube">YouTube in Canvas</a></li>
+        <li class="manual"><a href="/m/ZoomInCanvas">Zoom in Canvas</a></li>
+        <li class="divider"><h4 class="sidebar-subheading">STUDENT SELF-HELP GUIDES</h4></li>
+        <li class="manual"><a href="/m/Student">Student Self-Help Guides</a></li>
+        <li class="divider"><h4 class="sidebar-subheading">TITANium Resource Center</h4></li>
+        <li class="manual"><a href="/m/TRC">Accessing your content in TITANium</a></li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <script>
+//<![CDATA[
+  jQuery(document).ready(function(jQuery) {
+    var lesson_id = 1365222;
+    var current_article_sidebar_text = '(Current Article)';
+    var section_id = 349792;
+    var expansion = 'none';
+    switch(expansion) {
+      case 'none':
+        jQuery('ul.nested-chapter-lessons').hide();
+        break;
+      case 'all':
+        jQuery('ul.nested-chapter-lessons').show();
+        jQuery('li.chapter-list-item a.toggle-lessons').addClass('open');
+        break;
+      case 'one':
+        jQuery('ul.nested-chapter-lessons').hide();
+        jQuery('li.chapter-list-item[data-section-id="' + section_id + '"] ul.nested-chapter-lessons').show();
+        jQuery('li.chapter-list-item[data-section-id="' + section_id + '"] a.toggle-lessons').addClass('open');
+        break;
+    }
+    jQuery('li.chapter-list-item[data-section-id="' + section_id + '"]').addClass('here');
+    jQuery('li[data-lesson-id="' + lesson_id + '"]').addClass('here');
+    jQuery('li[data-lesson-id="' + lesson_id + '"] a').attr('data-current-article-text', current_article_sidebar_text);
+  });
+
+//]]>
+</script>
+    <noscript>
+     Enable javascript to expand/contract chapters
+    </noscript>
+   </main>
+  </div>
+  <div aria-labelledby="modal-label" class="screensteps-modal" id="screensteps-modal" role="dialog"><span id="modal-label"> Inline referenced article </span>
+   <div class="screensteps-modal__box"><a class="screensteps-modal__close" href="#"> × </a><span class="screensteps-loading-wrapper"> <span class="screensteps-loading"></span> </span>
+    <div class="screensteps-modal__content screensteps-article-content"></div>
+   </div>
+  </div>
+ </body>
+</html>

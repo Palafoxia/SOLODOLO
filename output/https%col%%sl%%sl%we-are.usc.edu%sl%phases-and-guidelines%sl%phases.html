@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+ <head>
+  <meta charset="UTF-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-6f137388fcf878e2d61",applicationID:"884951671"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="pingback" href="https://we-are.usc.edu/wp/xmlrpc.php">
+  <link rel="shortcut icon" href="https://we-are.usc.edu/wp-content/themes/usc-gateway-2018/assets/images/favicon.ico?ver=1.0.28">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><!-- This site is optimized with the Yoast SEO plugin v19.1 - https://yoast.com/wordpress/plugins/seo/ -->
+  <title>Phased Approach - 2022</title>
+  <link rel="canonical" href="https://we-are.usc.edu/phases-and-guidelines/phases/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Phased Approach - 2022">
+  <meta property="og:description" content="Phased Approach The university will continue to work closely with public health authorities to ensure our return to campus plans align with public health recommendations. Depending on public health guidance, we may need to pause or move back in the phases timeline based on actual conditions. Phase 1 Safer-at-Home Safer-at-home orders in place for city…">
+  <meta property="og:url" content="https://we-are.usc.edu/phases-and-guidelines/phases/">
+  <meta property="og:site_name" content="2022">
+  <meta property="article:modified_time" content="2021-07-19T23:08:18+00:00">
+  <meta property="og:image" content="https://we-are.usc.edu/wp-content/uploads/2020/08/facebook.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:type" content="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:label1" content="Est. reading time">
+  <meta name="twitter:data1" content="2 minutes">
+  <script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://live-usc-restart.pantheonsite.io/#website","url":"https://live-usc-restart.pantheonsite.io/","name":"We are SC","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://live-usc-restart.pantheonsite.io/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://we-are.usc.edu/phases-and-guidelines/phases/#webpage","url":"https://we-are.usc.edu/phases-and-guidelines/phases/","name":"Phased Approach - 2022","isPartOf":{"@id":"https://live-usc-restart.pantheonsite.io/#website"},"datePublished":"2020-06-24T02:03:24+00:00","dateModified":"2021-07-19T23:08:18+00:00","breadcrumb":{"@id":"https://we-are.usc.edu/phases-and-guidelines/phases/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://we-are.usc.edu/phases-and-guidelines/phases/"]}]},{"@type":"BreadcrumbList","@id":"https://we-are.usc.edu/phases-and-guidelines/phases/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://we-are.usc.edu/"},{"@type":"ListItem","position":2,"name":"Phases and Guidelines","item":"https://we-are.usc.edu/phases-and-guidelines/"},{"@type":"ListItem","position":3,"name":"Phased Approach"}]}]}</script><!-- / Yoast SEO plugin. -->
+  <link rel="dns-prefetch" href="//we-are.usc.edu">
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//s.w.org"><!-- This site uses the Google Analytics by MonsterInsights plugin v8.6.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+  <script src="//www.googletagmanager.com/gtag/js?id=UA-119757394-18" data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '8.6.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-119757394-18',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						if ( document.cookie.indexOf( disableStrs[ index ] + '=true' ) > -1 ) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						document.cookie = disableStrs[ index ] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if ( mi_track_user ) {
+					function __gtagDataLayer() {
+						dataLayer.push( arguments );
+					}
+
+					function __gtagTracker( type, name, parameters ) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply( null, arguments );
+							return;
+						}
+
+						if ( type === 'event' ) {
+							
+															parameters.send_to = monsterinsights_frontend.ua;
+								__gtagDataLayer( type, name, parameters );
+													} else {
+							__gtagDataLayer.apply( null, arguments );
+						}
+					}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+											} );
+															__gtagTracker( 'config', 'UA-119757394-18', {"forceSSL":"true","link_attribution":"true"} );
+										window.gtag = __gtagTracker;											(function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+																				if ( ! ( ! args.hasOwnProperty(arg) || ! gaMap.hasOwnProperty(arg) ) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						})();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script><!-- / Google Analytics by MonsterInsights -->
+  <link rel="stylesheet" id="wp-block-library-css" href="https://we-are.usc.edu/wp-content/plugins/gutenberg/build/block-library/style.css?ver=13.4.0" type="text/css" media="all">
+  <link rel="stylesheet" id="sp-ea-font-awesome-css" href="https://we-are.usc.edu/wp-content/plugins/easy-accordion-free/public/assets/css/font-awesome.min.css?ver=2.0.21" type="text/css" media="all">
+  <link rel="stylesheet" id="sp-ea-style-css" href="https://we-are.usc.edu/wp-content/plugins/easy-accordion-free/public/assets/css/ea-style.css?ver=2.0.21" type="text/css" media="all">
+  <style id="sp-ea-style-inline-css" type="text/css">
+#sp-ea-8966 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-8966.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-8966.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-8966.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-8966.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-8966.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-8966.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-8846 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-8846.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-8846.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-8846.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-8846.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-8846.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-8846.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-7735 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-7735.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-7735.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-7735.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-7735.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-7735.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-7735.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-5800 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5800.sp-easy-accordion>.sp-ea-single {border: 1px solid #870100; }#sp-ea-5800.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #ffffff;}#sp-ea-5800.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #870100; color: #ffffff;}#sp-ea-5800.sp-easy-accordion>.sp-ea-single {background: #870100;}#sp-ea-5800.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #ffffff;font-size: 16px;}#sp-ea-5799 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5799.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5799.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444444;}#sp-ea-5799.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #ffffff; color: #444444;}#sp-ea-5799.sp-easy-accordion>.sp-ea-single {background: ##eaeaea;}#sp-ea-5799.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #444444;font-size: 16px;}#sp-ea-5797 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5797.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5797.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444444;}#sp-ea-5797.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #ffffff; color: #444444;}#sp-ea-5797.sp-easy-accordion>.sp-ea-single {background: #eaeaea;}#sp-ea-5797.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #444444;font-size: 16px;}#sp-ea-5783 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5783.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5783.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444444;}#sp-ea-5783.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #ffffff; color: #444444;}#sp-ea-5783.sp-easy-accordion>.sp-ea-single {background: #eaeaea;}#sp-ea-5783.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #444444;font-size: 16px;}#sp-ea-5775 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5775.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5775.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-5775.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-5775.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-5775.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #444;font-size: 16px;}#sp-ea-5536 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5536.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5536.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-5536.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-5536.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-5536.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-5536.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-5513 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5513.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5513.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-5513.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-5513.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-5513.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-5513.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-5045 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5045.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5045.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-5045.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-5045.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-5045.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-5045.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-3195 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-3195.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-3195.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-3195.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-3195.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-3195.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #444;font-size: 16px;}#sp-ea-1754 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-1754.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-1754.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-1754.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-1754.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-1754.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-1754.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}
+</style>
+  <style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--usc-cardinal: #990000;--wp--preset--color--cardinal-60: #880000;--wp--preset--color--cardinal-70: #6b0200;--wp--preset--color--cardinal-80: #471f13;--wp--preset--color--usc-gold: #ffcc00;--wp--preset--color--gold-60: #c79200;--wp--preset--color--base-70: #1c1c19;--wp--preset--color--base-60: #2b2a23;--wp--preset--color--base-50: #44433c;--wp--preset--color--base-40: #5e5d56;--wp--preset--color--base-30: #77766f;--wp--preset--color--base-20: #c3c2bb;--wp--preset--color--off-white: #fafafa;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--black-to-transparent: linear-gradient(176deg, rgba(84,84,84,0) 41%, rgba(0,0,0,1) 98%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 16px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 32px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 20px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+  <link rel="stylesheet" id="usc-gateway-2018-style-css" href="https://we-are.usc.edu/wp-content/themes/usc-gateway-2018/assets/css/usc-gateway-2018.css?ver=1.0.28" type="text/css" media="screen,print">
+  <script type="text/javascript" src="https://we-are.usc.edu/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.6.0" id="monsterinsights-frontend-script-js"></script>
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id="monsterinsights-frontend-script-js-extra">/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/we-are.usc.edu","hash_tracking":"false","ua":"UA-119757394-18","v4_id":""};/* ]]> */
+</script>
+  <script type="text/javascript" src="https://we-are.usc.edu/wp/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+  <script type="text/javascript" src="https://we-are.usc.edu/wp/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script><!--[if lte IE 9]>
+<script type='text/javascript' src='https://we-are.usc.edu/wp-content/themes/usc-gateway-2018/assets/js/vendor/html5shiv.min.js?ver=1.0.28' id='html5-shiv-js'></script>
+<![endif]--><!-- Google Analytics snippet added by Site Kit -->
+  <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-119757394-18" id="google_gtagjs-js" async></script>
+  <script type="text/javascript" id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["we-are.usc.edu"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "UA-119757394-18", {"anonymize_ip":true});
+</script><!-- End Google Analytics snippet added by Site Kit -->
+  <link rel="https://api.w.org/" href="https://we-are.usc.edu/wp-json/">
+  <link rel="alternate" type="application/json" href="https://we-are.usc.edu/wp-json/wp/v2/pages/87">
+  <link rel="shortlink" href="https://we-are.usc.edu/?p=87">
+  <link rel="alternate" type="application/json+oembed" href="https://we-are.usc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwe-are.usc.edu%2Fphases-and-guidelines%2Fphases%2F">
+  <link rel="alternate" type="text/xml+oembed" href="https://we-are.usc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwe-are.usc.edu%2Fphases-and-guidelines%2Fphases%2F&amp;format=xml">
+  <meta name="generator" content="Site Kit by Google 1.75.0"> 
+  <style type="text/css" id="wp-custom-css">
+			/*Restart Roadmap Phases - Homepage*/
+.phase-icon-alignment {
+	text-align: center;
+}
+.phase-column-styling {
+	border-radius: 8px;
+}
+
+.phase-column-styling p {
+	margin-right: 0 !important;
+}
+
+.phase-column-styling h3 {
+	margin: 0 0 0.25rem !important;
+}
+
+.phase-column-styling.current-phase {
+box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+}
+.phase-column-styling.current-phase a {
+	color: #ffffff;
+}
+
+.phase-column-styling.current-phase a:hover {
+	color: #FFFFFF;
+}
+
+@media (max-width: 1024px) and (min-width: 880px) {
+	
+		.phases-container .wp-block-column:not(:first-child) {
+    margin-left: 16px;
+}
+	
+}
+
+
+@media (max-width: 880px) and (min-width: 600px) {
+	
+		.phases-container .wp-block-columns {
+			flex-wrap: wrap;
+	}
+	
+	.phases-container .wp-block-column {
+    flex-basis: 100% !important;
+    flex-grow: 0;
+		margin: 0 0 1rem !important;
+}
+	
+}
+
+/*Trojan Commitment*/
+.align-svg-commitment {
+	text-align: center;
+}
+/*END Trojan Commitment*/
+
+/*Notifcation*/
+.usc-notification-bar.has-notification-bar .notification-bar {
+		background: #E0E0E0 !important;
+}
+
+.usc-notification-bar.has-notification-bar .notification-bar .notification {
+	font-size: 16px !important;
+}
+/*END Notifcation*/
+
+/*Global Accordions Styling*/
+
+h3.ea-header {
+	font-weight: 400;
+}
+
+
+#sp-ea-5799 a, #sp-ea-5799 a:hover {
+	color: #FFFFFF;
+}
+/*END Accordions Styling*/
+
+/*Phases Accordions Styling*/
+/* #sp-ea-5775.sp-easy-accordion .sp-ea-single {
+	background: #FFFFFF !important;
+	border: 0 !important;
+}
+#sp-ea-5775.sp-easy-accordion .sp-ea-single .ea-header a {
+	padding: 0 !important;
+} */
+/* #sp-ea-5783.sp-easy-accordion .sp-ea-single {
+	color: #FFFFFF !important;
+	background: #880000 !important;
+	border: 0 !important;
+}
+#sp-ea-5783.sp-easy-accordion .sp-ea-single .ea-header a {
+	color: #FFFFFF !important;
+	padding: 0 !important;
+}
+#sp-ea-5783.sp-easy-accordion .sp-ea-single .ea-header a .ea-expand-icon.fa {
+	color: #FFFFFF !important;
+} */
+/* #sp-ea-5783.sp-easy-accordion .sp-ea-single .ea-body {
+	background: none !important;
+	color: white !important;
+} */
+/*END Phases Accordions Styling*/
+
+/*Community Messages Styling*/
+
+.wp-block-latest-posts li > a {
+    color: #1f1e18;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    text-decoration: none;
+}
+.wp-block-latest-posts li > a:hover {
+    text-decoration: underline;
+}
+/*END Community Messages Styling*/
+
+/* right-aligned paragraph margin fix */
+.wp-block-group.is-style-usc-group-content-width .wp-block-columns .wp-block-column p.has-text-align-right {
+	margin: 0 0 1rem 0;
+}
+
+/*WELCOME EXPERIENCE GALLERY STYLING*/
+.page-id-7179 .blocks-gallery-item img {
+border: 1px solid #272620;
+ 
+}
+
+.usc-gateway-2018-light .site-header {
+	/* changed this from 100000 because it was covering the wp-admin bar dropdowns :) -JE */
+	z-index: 99;
+}
+
+/*DO NOT REMOVE - FACULTY FEATURE PAGE*/
+.page-id-9591 .site-navigation-wrapper {
+	display: none;
+}
+
+.bar-short-phase-1 {
+  height: 80px;
+  width: 80px;
+  background-color: #fc0008;
+  border-radius: 50%;
+border-top: 0px;
+	border-bottom: 0px;
+}
+
+.bar-short-phase-22 {
+  height: 80px;
+  width: 80px;
+  background-color: #fd670a;
+  border-radius: 50%;
+border-top: 0px;
+	border-bottom: 0px;
+}
+
+.bar-short-phase-3 {
+  height: 80px;
+  width: 80px;
+    height: 80px;
+  width: 80px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+border-top: 0px;
+	border-bottom: 0px;
+  border-radius: 50%;
+border-top: 0px;
+	border-bottom: 0px;
+}
+
+.bar-short-phase-4 {
+    height: 80px;
+  width: 80px;
+ background-color: #14a0ed!important;
+  border-radius: 50%;
+border-top: 0px;
+	border-bottom: 0px;
+    
+}
+
+
+/* FIX FOR LONG PAGE/POST TITLES */
+.post-template-default .site-content .entry-title, .single .site-content .entry-title,
+.page-template-default .site-content .entry-title {
+	white-space: unset;
+}
+		</style>
+ </head>
+ <body class="page-template page-template-page-templates page-template-tpl-full-width page-template-page-templatestpl-full-width-php page page-id-87 page-child parent-pageid-81 usc-gateway-2018-light usc-display-new-badge usc-notification-bar has-notification-bar">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-dark-grayscale">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 0.49803921568627" />
+      <fefuncg type="table" tablevalues="0 0.49803921568627" />
+      <fefuncb type="table" tablevalues="0 0.49803921568627" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-grayscale">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 1" />
+      <fefuncg type="table" tablevalues="0 1" />
+      <fefuncb type="table" tablevalues="0 1" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-purple-yellow">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.54901960784314 0.98823529411765" />
+      <fefuncg type="table" tablevalues="0 1" />
+      <fefuncb type="table" tablevalues="0.71764705882353 0.25490196078431" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-blue-red">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 1" />
+      <fefuncg type="table" tablevalues="0 0.27843137254902" />
+      <fefuncb type="table" tablevalues="0.5921568627451 0.27843137254902" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-midnight">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 0" />
+      <fefuncg type="table" tablevalues="0 0.64705882352941" />
+      <fefuncb type="table" tablevalues="0 1" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-magenta-yellow">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.78039215686275 1" />
+      <fefuncg type="table" tablevalues="0 0.94901960784314" />
+      <fefuncb type="table" tablevalues="0.35294117647059 0.47058823529412" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-purple-green">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.65098039215686 0.40392156862745" />
+      <fefuncg type="table" tablevalues="0 1" />
+      <fefuncb type="table" tablevalues="0.44705882352941 0.4" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-blue-orange">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.098039215686275 1" />
+      <fefuncg type="table" tablevalues="0 0.66274509803922" />
+      <fefuncb type="table" tablevalues="0.84705882352941 0.41960784313725" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <div class="site"> <a class="skip-link screen-reader-text" aria-label="Skip to main content" href="#main">Skip to main content</a> 
+   <header id="masthead" class="site-header" role="banner">
+    <div class="site-header-wrapper">
+     <div class="site-branding-usc"><a class="site-branding-usc-logo" href="http://www.usc.edu">University of Southern California</a>
+     </div>
+     <div class="site-branding-unique">
+      <h1 class="site-branding-title"><a href="https://we-are.usc.edu/" rel="home">2022</a></h1>
+     </div>
+     <nav id="site-navigation" class="site-navigation" role="navigation">
+      <div class="site-navigation-wrapper">
+       <h2 class="site-navigation-title screen-reader-text">Primary Menu</h2>
+       <div class="menu-main-navigation-container">
+        <ul id="menu-main-navigation" class="site-navigation-menu">
+         <li id="menu-item-9704" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9704"><a href="https://change.usc.edu/transformation/addressing-sexual-assault/">Addressing Sexual Assault</a></li>
+         <li id="menu-item-9947" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9947"><a href="https://we-are.usc.edu/addressing-antisemitism-2/">Addressing Antisemitism</a>
+          <ul class="sub-menu">
+           <li id="menu-item-9933" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9933"><a href="https://we-are.usc.edu/messages/">Messages</a></li>
+           <li id="menu-item-9932" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9932"><a href="https://we-are.usc.edu/frequently-asked-questions/">Frequently Asked Questions</a></li>
+          </ul></li>
+         <li id="menu-item-520" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-520"><a href="#">On Campus</a>
+          <ul class="sub-menu">
+           <li id="menu-item-9484" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9484"><a href="https://we-are.usc.edu/general-restart-faq/">General Restart FAQs</a></li>
+           <li id="menu-item-9483" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9483"><a href="https://we-are.usc.edu/faqs/faq-events-and-activities/">Events &amp; Activities</a></li>
+           <li id="menu-item-93" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-93"><a href="https://we-are.usc.edu/phases-and-guidelines/">Phases and Guidelines</a></li>
+           <li id="menu-item-9680" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9680"><a href="https://we-are.usc.edu/travel-guidance/">Travel Guidance</a></li>
+           <li id="menu-item-6216" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6216"><a href="https://we-are.usc.edu/support-funds/">Support Funds</a></li>
+          </ul></li>
+         <li id="menu-item-6157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6157"><a href="https://we-are.usc.edu/university-messages/">University Messages</a></li>
+         <li id="menu-item-8136" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8136"><a href="https://we-are.usc.edu/quick-takes/">Quick Takes</a></li>
+         <li id="menu-item-9517" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9517"><a href="https://coronavirus.usc.edu/">COVID-19 Resource Center</a>
+          <ul class="sub-menu">
+           <li id="menu-item-9518" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9518"><a href="https://sites.google.com/usc.edu/covidnotifications-ay22/home">COVID-19 Daily Digest</a></li>
+          </ul></li>
+        </ul>
+       </div> 
+       <div class="site-menu-toggle-wrapper"><a href="javascript:void(0);" class="site-menu-toggle" aria-label="Navigation Menu" aria-expanded="false">
+         <svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+          <title id="icon_title">Menu</title><desc id="icon_desc">
+           An icon that consists of three parallel horizontal lines suggestive of a list.
+          </desc><path d="M0 0h24v24H0z" fill="none" /><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+         </svg></a>
+       </div>
+       <div class="site-search-toggle-wrapper"><a href="javascript:void(0);" class="site-search-toggle" aria-label="Search" aria-expanded="false">
+         <svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+          <title id="icon_title">Search</title><desc id="icon_desc">
+           An icon of a magnifying glass.
+          </desc><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" /><path d="M0 0h24v24H0z" fill="none" />
+         </svg></a>
+       </div>
+      </div>
+     </nav>
+    </div>
+    <div class="site-search-wrapper">
+     <div class="site-search">
+      <form role="search" method="get" class="search-form" action="https://we-are.usc.edu/"><label> <span class="screen-reader-text">Search for:</span> <input type="text" class="search-field" name="s" placeholder="Search..." title="search"> <input type="submit" class="visuallyhidden" value="Submit"> </label><a href="javascript:void(0);" class="search-icon-close">
+        <svg class="svg-icon" width="20" height="20" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+         <title id="icon_title">Close</title><desc id="icon_desc">
+          An icon of a letter X.
+         </desc><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" /><path d="M0 0h24v24H0z" fill="none" />
+        </svg><span class="screen-reader-text">Close Search</span></a>
+      </form>
+     </div>
+    </div>
+   </header><!-- #masthead -->
+   <div id="content" class="site-content">
+    <div id="primary" class="content-area">
+     <main id="main" class="site-main" role="main">
+      <article id="post-87" class="post-87 page type-page status-publish hentry">
+       <header class="entry-header">
+        <h1 class="entry-title screen-reader-text">Phased Approach</h1> 
+       </header>
+       <div class="entry-content">
+        <div style="height:48px" aria-hidden="true" class="wp-block-spacer"></div>
+        <h2 class="is-style-cardinal-bar">Phased Approach</h2>
+        <p class="is-style-lead-paragraph">The university will continue to work closely with public health authorities to ensure our return to campus plans align with public health recommendations. Depending on public health guidance, we may need to pause or move back in the phases timeline based on actual conditions. </p>
+        <div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+        <hr class="wp-block-separator">
+        <div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+        <div class="wp-container-2 wp-block-group alignfull" id="phase-1-heading">
+         <div class="wp-block-group__inner-container">
+          <div class="wp-container-1 wp-block-group is-style-usc-group-content-width">
+           <div class="wp-block-group__inner-container">
+            <svg height="48" width="52" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 51 48" style="margin-bottom: 1rem;">
+             <g id="noun_Home_50291" data-name="noun Home 50291">
+              <polygon id="Path" points="42.89 45.91 33.39 45.91 33.39 31.27 18.61 31.27 18.61 45.91 9.11 45.91 9.11 25 7 25 7 48 20.72 48 20.72 33.36 31.28 33.36 31.28 48 45 48 45 25 42.89 25 42.89 45.91"></polygon>
+              <polygon id="Path-2" data-name="Path" points="27.48 1.49 27.51 1.46 26.03 0 16.3 9.55 16.3 2.06 14.19 2.06 14.19 11.61 0 25.54 1.49 27 26 2.95 49.51 27 51 25.54 27.48 1.49"></polygon>
+             </g>
+            </svg>
+            <h2>Phase 1</h2>
+            <h5>Safer-at-Home</h5>
+            <p>Safer-at-home orders in place for city and county. All courses are online. Strict protocols around face coverings, physical distancing and increased cleaning are in place.</p>
+            <p>Access: students, faculty and staff are on campus by exception only.</p>
+            <div id="sp-ea-5775" class="sp-ea-one sp-easy-accordion" data-ex-icon="fa-minus" data-col-icon="fa-plus" data-ea-active="ea-click" data-ea-mode="vertical" data-preloader="">
+             <div class="ea-card  sp-ea-single">
+              <h3 class="ea-header"><a class="collapsed" data-sptoggle="spcollapse" data-sptarget="#collapse57750" href="javascript:void(0)" aria-expanded="false"><i class="ea-expand-icon fa fa-plus"></i> Phase 1 Details</a></h3>
+              <div class="sp-collapse spcollapse spcollapse" id="collapse57750" data-parent="#sp-ea-5775">
+               <div class="ea-body"> 
+                <p>All faculty, staff and students are expected to leave campus and perform their tasks remotely, whether teaching, learning or working. Exceptions include employees whose roles are deemed essential and that can only be performed on campus, and students with nowhere else to go who receive approval from the university to remain in student housing.</p>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="wp-container-4 wp-block-group alignfull has-white-background-color has-background" id="phase-2-heading">
+         <div class="wp-block-group__inner-container">
+          <div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
+          <div class="wp-container-3 wp-block-group is-style-usc-group-content-width">
+           <div class="wp-block-group__inner-container">
+            <svg height="48" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 40 47.5" style="margin-bottom:1rem;">
+             <defs>
+              <style>.cls-research{fill:#444}</style>
+             </defs><g id="noun_Research_925895" data-name="noun Research 925895">
+              <path id="Shape" class="cls-research" d="M18.88.31a2.13,2.13,0,0,0-.19,4.25V20.85l-11.57,17a6.32,6.32,0,0,0-.38,6.56,6.23,6.23,0,0,0,5.59,3.4H39.65a6.22,6.22,0,0,0,5.59-3.4,6.3,6.3,0,0,0-.34-6.56L33.25,20.51v-16A2.13,2.13,0,0,0,33.06.31Zm0,1.16H33.06a1,1,0,0,1,1,1,1,1,0,0,1-1,1H18.88a1,1,0,0,1-.95-1A1,1,0,0,1,18.88,1.47Zm1,3.13H32.1V20.74a.45.45,0,0,0,.12.31L43.9,38.54a5.19,5.19,0,0,1,.27,5.37,5.07,5.07,0,0,1-4.56,2.78H12.33a5,5,0,0,1-4.56-2.78,5.12,5.12,0,0,1,.31-5.37L19.73,21.36a.49.49,0,0,0,.11-.31V20h1.34a.58.58,0,1,0,0-1.15H19.84V16.18h1.34a.58.58,0,1,0,0-1.16H19.84v-2.7h1.34a.58.58,0,0,0,0-1.16H19.84V8.46h1.34a.58.58,0,0,0,0-1.16H19.84Zm14,20.66a34.13,34.13,0,0,0-12.73,2.66A44.49,44.49,0,0,1,15,30a.58.58,0,0,0-.43.69.59.59,0,0,0,.58.43h.15A41.42,41.42,0,0,0,21.6,29a34.46,34.46,0,0,1,12.27-2.58.58.58,0,0,0,0-1.16Z" transform="translate(-6 -0.31)" />
+             </g>
+            </svg>
+            <h2 class="has-base-70-color has-text-color">Phase 2</h2>
+            <h5 class="has-base-70-color has-text-color">First Steps</h5>
+            <p class="has-base-70-color has-text-color">Begin increased campus activities with strict physical distancing protocols in place. Most operations remain remote.</p>
+            <p class="has-base-70-color has-text-color">Returning functions: research, clinical education, essential Keck healthcare operations.</p>
+            <div id="sp-ea-5783" class="sp-ea-one sp-easy-accordion" data-ex-icon="fa-minus" data-col-icon="fa-plus" data-ea-active="ea-click" data-ea-mode="vertical" data-preloader="">
+             <div class="ea-card  sp-ea-single">
+              <h3 class="ea-header"><a class="collapsed" data-sptoggle="spcollapse" data-sptarget="#collapse57830" href="javascript:void(0)" aria-expanded="false"><i class="ea-expand-icon fa fa-plus"></i> Phase 2 Details</a></h3>
+              <div class="sp-collapse spcollapse spcollapse" id="collapse57830" data-parent="#sp-ea-5783">
+               <div class="ea-body"> 
+                <ul>
+                 <li>Working at home continues for most personnel. Employees working on campus must be approved by department administration, and locations and hours should be tracked. All employees must complete the TrojanLearn module (Health, Hygiene, and Safety) and use the campus check-in tool for daily access to campus. Work-related travel is limited to essential only.</li>
+                 <li>All individuals are required to wear a face covering/PPE while on campus or any USC indoor or outdoor public space (unless alone in an office), observe 6 ft. physical distancing and perform a daily online symptom check, as communicated in TrojanLearn. Events and gatherings of any size are prohibited.</li>
+                 <li>Remote instruction continues with limited exceptions when course objectives require in-person instruction. Selected on-campus research resumes gradually with 6 ft. physical distancing and other health and safety measures. Libraries are closed.</li>
+                 <li>Approved healthcare operations return. Clinical education resumes as needed for student advancement/graduation requirements.</li>
+                 <li>University housing remains with single occupancy and enhanced cleaning. Dining venues remain carry-out only. Bookstore open with capacity limits.</li>
+                 <li>USC Athletics practices resume after development and approval of physical distancing plan</li>
+                </ul>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div style="height:48px" aria-hidden="true" class="wp-block-spacer"></div>
+         </div>
+        </div>
+        <div class="wp-container-6 wp-block-group alignfull has-white-background-color has-background" id="phase-3-heading">
+         <div class="wp-block-group__inner-container">
+          <div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
+          <div class="wp-container-5 wp-block-group is-style-usc-group-content-width">
+           <div class="wp-block-group__inner-container">
+            <div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+            <svg width="51px" height="42px" viewbox="0 0 51 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+             <title>noun_socal distance_3365042</title><g id="GRID" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> 
+              <g id="lg-1440px-12-column" transform="translate(-689.000000, -279.000000)">
+               <g id="link-list-4-col" transform="translate(0.000000, 120.000000)">
+                <rect id="Background" fill="#EEEEEE" x="0" y="0" width="1440" height="447"></rect>
+                <rect id="Rectangle" fill="#FFFFFF" x="640" y="135" width="160" height="260" rx="8"></rect>
+                <g id="noun_socal-distance_3365042" transform="translate(689.000000, 159.000000)" fill="#000000" fill-rule="nonzero">
+                 <g id="Group" transform="translate(0.000000, 9.000000)">
+                  <path d="M8.4734375,8.94545455 C6.12480512,8.94545455 4.21952764,6.99318643 4.21466597,4.58176153 C4.20982287,2.17033664 6.10722741,0.210048822 8.45583955,0.199999191 C10.8044517,0.190026545 12.7176432,2.13407141 12.7323746,4.54545455 C12.7393653,5.70989208 12.2937905,6.82913161 11.4943325,7.6550851 C10.6948744,8.48103858 9.6075732,8.94545455 8.4734375,8.94545455 L8.4734375,8.94545455 Z M8.4734375,2.02727273 C7.46392601,2.02737775 6.55454314,2.65378086 6.17161245,3.61282092 C5.78868175,4.57186098 6.00811848,5.67341023 6.72704951,6.40105649 C7.44598053,7.12870274 8.52187924,7.3381916 9.45035854,6.93131355 C10.3788378,6.5244355 10.9758286,5.5818533 10.9614583,4.54545455 C10.9420935,3.1488393 9.83382039,2.02713121 8.4734375,2.02727273 L8.4734375,2.02727273 Z" id="Shape" />
+                  <path d="M16.0614583,23.6363636 L12.6880208,23.6363636 C12.1990187,23.6363636 11.8026042,23.2293498 11.8026042,22.7272727 C11.8026042,22.2251957 12.1990187,21.8181818 12.6880208,21.8181818 L15.1760417,21.8181818 L15.1760417,14.1 C15.1760417,12.6891635 14.0621168,11.5454545 12.6880208,11.5454545 L4.25885417,11.5454545 C2.8847582,11.5454545 1.77083333,12.6891635 1.77083333,14.1 L1.77083333,21.8181818 L4.25885417,21.8181818 C4.74785629,21.8181818 5.14427083,22.2251957 5.14427083,22.7272727 C5.14427083,23.2293498 4.74785629,23.6363636 4.25885417,23.6363636 L0.885416667,23.6363636 C0.396414544,23.6363636 0,23.2293498 0,22.7272727 L0,14.1 C0.00487064731,11.6870839 1.9087744,9.73227361 4.25885417,9.72727273 L12.6880208,9.72727273 C15.0381006,9.73227361 16.9420044,11.6870839 16.946875,14.1 L16.946875,22.7272727 C16.946875,23.2293498 16.5504605,23.6363636 16.0614583,23.6363636 Z" id="Path" />
+                  <path d="M12.6880208,31.4545455 L4.25885417,31.4545455 C3.76985204,31.4545455 3.3734375,31.0475316 3.3734375,30.5454545 L3.3734375,14.9636364 C3.3734375,14.4615593 3.76985204,14.0545455 4.25885417,14.0545455 C4.74785629,14.0545455 5.14427083,14.4615593 5.14427083,14.9636364 L5.14427083,29.6363636 L11.8026042,29.6363636 L11.8026042,14.9636364 C11.8026042,14.4615593 12.1990187,14.0545455 12.6880208,14.0545455 C13.177023,14.0545455 13.5734375,14.4615593 13.5734375,14.9636364 L13.5734375,30.5454545 C13.5734375,31.0475316 13.177023,31.4545455 12.6880208,31.4545455 Z" id="Path" />
+                  <path d="M8.4734375,31.4545455 C7.98443538,31.4545455 7.58802083,31.0475316 7.58802083,30.5454545 L7.58802083,20.1545455 C7.58802083,19.6524684 7.98443538,19.2454545 8.4734375,19.2454545 C8.96243962,19.2454545 9.35885417,19.6524684 9.35885417,20.1545455 L9.35885417,30.5454545 C9.35885417,31.0475316 8.96243962,31.4545455 8.4734375,31.4545455 Z" id="Path" />
+                 </g>
+                 <g id="Group" transform="translate(32.000000, 10.000000)">
+                  <path d="M9.49072266,8.82142857 C6.98009227,8.82142857 4.94482422,6.86267435 4.94482422,4.44642857 C4.94482422,2.03018279 6.98009227,0.0714285714 9.49072266,0.0714285714 C12.001353,0.0714285714 14.0366211,2.03018279 14.0366211,4.44642857 C14.0315173,6.86063683 11.9992359,8.81651664 9.49072266,8.82142857 Z M9.49072266,1.85714286 C8.00483937,1.85714286 6.80029297,3.01640556 6.80029297,4.44642857 C6.80029297,5.87645158 8.00483937,7.03571429 9.49072266,7.03571429 C10.9766059,7.03571429 12.1811523,5.87645158 12.1811523,4.44642857 C12.1811523,3.01640556 10.9766059,1.85714286 9.49072266,1.85714286 Z" id="Shape" />
+                  <path d="M17.6269531,23.6071429 L14.0087891,23.6071429 C13.4964155,23.6071429 13.0810547,23.2073971 13.0810547,22.7142857 C13.0810547,22.2211743 13.4964155,21.8214286 14.0087891,21.8214286 L16.6992188,21.8214286 L16.6992188,14.0178571 C16.6992188,12.5878341 15.4946723,11.4285714 14.0087891,11.4285714 L4.97265625,11.4285714 C3.48677296,11.4285714 2.28222656,12.5878341 2.28222656,14.0178571 L2.28222656,21.8214286 L4.97265625,21.8214286 C5.4850298,21.8214286 5.90039062,22.2211743 5.90039062,22.7142857 C5.90039062,23.2073971 5.4850298,23.6071429 4.97265625,23.6071429 L1.35449219,23.6071429 C0.84211864,23.6071429 0.426757812,23.2073971 0.426757812,22.7142857 L0.426757812,14.0178571 C0.431861619,11.6036489 2.46414298,9.64776908 4.97265625,9.64285714 L14.0087891,9.64285714 C16.5173023,9.64776908 18.5495837,11.6036489 18.5546875,14.0178571 L18.5546875,22.7142857 C18.5546875,23.2073971 18.1393267,23.6071429 17.6269531,23.6071429 Z" id="Path" />
+                  <path d="M14.0087891,31.4375 L4.97265625,31.4375 C4.4602827,31.4375 4.04492188,31.0377542 4.04492188,30.5446429 L4.04492188,14.8839286 C4.04492188,14.3908172 4.4602827,13.9910714 4.97265625,13.9910714 C5.4850298,13.9910714 5.90039062,14.3908172 5.90039062,14.8839286 L5.90039062,29.6517857 L13.0810547,29.6517857 L13.0810547,14.8839286 C13.0810547,14.3908172 13.4964155,13.9910714 14.0087891,13.9910714 C14.5211626,13.9910714 14.9365234,14.3908172 14.9365234,14.8839286 L14.9365234,30.5446429 C14.9365234,31.0377542 14.5211626,31.4375 14.0087891,31.4375 Z" id="Path" />
+                  <path d="M9.49072266,31.4375 C8.97834911,31.4375 8.56298828,31.0377542 8.56298828,30.5446429 L8.56298828,20.1071429 C8.56298828,19.6140315 8.97834911,19.2142857 9.49072266,19.2142857 C10.0030962,19.2142857 10.418457,19.6140315 10.418457,20.1071429 L10.418457,30.5446429 C10.418457,31.0377542 10.0030962,31.4375 9.49072266,31.4375 Z" id="Path" />
+                 </g>
+                 <g id="Group" transform="translate(7.000000, 0.000000)">
+                  <path d="M32.530303,4.33293269 L5.25378788,4.33293269 C4.7569408,4.33293269 4.35416667,3.95624919 4.35416667,3.49158654 C4.35416667,3.02692389 4.7569408,2.65024038 5.25378788,2.65024038 L32.530303,2.65024038 C33.0271501,2.65024038 33.4299242,3.02692389 33.4299242,3.49158654 C33.4299242,3.95624919 33.0271501,4.33293269 32.530303,4.33293269 Z" id="Path" />
+                  <polygon id="Path" points="6.3063447 6.84855769 0.0899621212 3.49158654 6.3063447 0.134615385"></polygon>
+                  <polygon id="Path" points="31.4777462 6.84855769 37.6941288 3.49158654 31.4777462 0.134615385"></polygon>
+                 </g>
+                </g>
+               </g>
+              </g> 
+             </g>
+            </svg>
+            <h2 class="has-black-color has-text-color">Phase 3</h2>
+            <h5 class="has-black-color has-text-color">Forward Together</h5>
+            <p class="has-black-color has-text-color">Expanded model of on-campus and online learning with moderate physical distancing protocols in place. Increased on-campus operations.</p>
+            <p class="has-black-color has-text-color">Returning functions: academics, housing, dining halls, athletics</p>
+            <div id="sp-ea-5797" class="sp-ea-one sp-easy-accordion" data-ex-icon="fa-minus" data-col-icon="fa-plus" data-ea-active="ea-click" data-ea-mode="vertical" data-preloader="">
+             <div class="ea-card  sp-ea-single">
+              <h3 class="ea-header"><a class="collapsed" data-sptoggle="spcollapse" data-sptarget="#collapse57970" href="javascript:void(0)" aria-expanded="false"><i class="ea-expand-icon fa fa-plus"></i> Phase 3 Details</a></h3>
+              <div class="sp-collapse spcollapse spcollapse" id="collapse57970" data-parent="#sp-ea-5797">
+               <div class="ea-body"> 
+                <ul>
+                 <li>Working at home continues for most personnel.</li>
+                 <li>All individuals are required to wear a face covering/PPE while on campus or any USC indoor or outdoor public space, unless alone in an office.</li>
+                 <li>Expanded model of on-campus and online classes, events and activities with 6 ft. physical distancing and indoor and outdoor capacity limits.</li>
+                 <li>Selected on-campus research resumes gradually with 6 ft. physical distancing and other health and safety measures.</li>
+                 <li>Approved libraries open with 6 ft. physical distancing.</li>
+                 <li>University housing and dining halls are open with capacity limits and enhanced safety provisions. Other dining venues and bookstore are open with capacity limits.</li>
+                 <li>Visitors to campus are limited to those essential for operation. Visitors will follow all public health guidance from the City and County of Los Angeles, abide by campus rules and signage and be pre-registered through the <a href="https://we-are.usc.edu/health-and-safety/trojan-check/">Trojan Check Web App</a> or by providing a complete, signed, and printed Coronavirus Screening Questionnaire.</li>
+                 <li>USC Athletics voluntary workouts and activities as approved resume with plans for physical distancing and enhanced cleaning</li>
+                </ul>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="wp-container-8 wp-block-group alignfull" id="phase-4-heading">
+         <div class="wp-block-group__inner-container">
+          <div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
+          <div class="wp-container-7 wp-block-group is-style-usc-group-content-width">
+           <div class="wp-block-group__inner-container">
+            <svg width="41px" height="55px" viewbox="0 0 41 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+             <title>noun_Sports_987061</title><g id="GRID" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> 
+              <g id="lg-1440px-12-column" transform="translate(-884.000000, -273.000000)">
+               <g id="link-list-4-col" transform="translate(0.000000, 120.000000)">
+                <rect id="Background" fill="#EEEEEE" x="0" y="0" width="1440" height="447"></rect>
+                <rect id="Rectangle" fill="#FFFFFF" x="832" y="135" width="160" height="260" rx="8"></rect>
+                <g id="noun_Sports_987061" transform="translate(885.000000, 154.000000)" stroke="#000000" stroke-width="1.65">
+                 <path d="M27.3060625,24.0794115 L25.8623019,27.2639463 L38.2156823,27.2947861 C38.8171877,27.2947861 39.1941515,26.6431463 38.8954577,26.1196965 L32.4878002,14.8905342 L26.1716263,12 L15.5377196,12 L10.3326612,19.3066682 C9.57919927,20.3643518 9.82378746,21.8341826 10.8789196,22.5893432 L10.8789219,22.5893477 C11.9337317,23.3442795 13.3992197,23.0991188 14.1524086,22.0417246 L17.9532666,16.7057344 L20.3373014,16.7057344 L14.8192434,28.8767676 C13.8254659,31.0685071 14.6642611,33.6072026 16.6669992,34.8264312 L12.5538087,42.2495092 L5.82584783,47.8552237 C4.83897811,48.6972895 4.7196506,50.1819363 5.55929964,51.171568 L5.55930305,51.1715724 C6.39925765,52.1615675 7.88073105,52.2812375 8.86794317,51.4388397 L16.243591,45.2802045 L20.9406151,36.8039083 L24.3760087,39.6737629 L20.5142392,48.5940266 C19.9344901,49.7563911 20.4043966,51.1698671 21.5637873,51.7510651 L21.5637918,51.7510651 C22.7231735,52.3322586 24.1329692,51.861082 24.7126197,50.6986815 L30.2361162,38.4444817 L23.387674,32.7222924 L27.3060625,24.0794115 Z M27.9817109,22.5890514 L29.2323121,19.8306362 C29.3414587,19.5896626 29.414223,19.3426576 29.4803985,19.095078 L31.473683,22.5890514 L27.9817109,22.5890514 Z" id="Shape" />
+                 <circle id="Oval" cx="30" cy="5" r="5"></circle>
+                 <ellipse id="Oval" transform="translate(7.097218, 24.065750) rotate(-51.945446) translate(-7.097218, -24.065750) " cx="7.09721828" cy="24.0657497" rx="3.56994602" ry="5.93715442"></ellipse>
+                </g>
+                <g id="noun_Sports_987061" transform="translate(885.000000, 154.000000)" stroke="#000000" stroke-width="1.65">
+                 <path d="M27.3060625,24.0794115 L25.8623019,27.2639463 L38.2156823,27.2947861 C38.8171877,27.2947861 39.1941515,26.6431463 38.8954577,26.1196965 L32.4878002,14.8905342 L26.1716263,12 L15.5377196,12 L10.3326612,19.3066682 C9.57919927,20.3643518 9.82378746,21.8341826 10.8789196,22.5893432 L10.8789219,22.5893477 C11.9337317,23.3442795 13.3992197,23.0991188 14.1524086,22.0417246 L17.9532666,16.7057344 L20.3373014,16.7057344 L14.8192434,28.8767676 C13.8254659,31.0685071 14.6642611,33.6072026 16.6669992,34.8264312 L12.5538087,42.2495092 L5.82584783,47.8552237 C4.83897811,48.6972895 4.7196506,50.1819363 5.55929964,51.171568 L5.55930305,51.1715724 C6.39925765,52.1615675 7.88073105,52.2812375 8.86794317,51.4388397 L16.243591,45.2802045 L20.9406151,36.8039083 L24.3760087,39.6737629 L20.5142392,48.5940266 C19.9344901,49.7563911 20.4043966,51.1698671 21.5637873,51.7510651 L21.5637918,51.7510651 C22.7231735,52.3322586 24.1329692,51.861082 24.7126197,50.6986815 L30.2361162,38.4444817 L23.387674,32.7222924 L27.3060625,24.0794115 Z M27.9817109,22.5890514 L29.2323121,19.8306362 C29.3414587,19.5896626 29.414223,19.3426576 29.4803985,19.095078 L31.473683,22.5890514 L27.9817109,22.5890514 Z" id="Shape" />
+                 <circle id="Oval" cx="30" cy="5" r="5"></circle>
+                 <ellipse id="Oval" transform="translate(7.097218, 24.065750) rotate(-51.945446) translate(-7.097218, -24.065750) " cx="7.09721828" cy="24.0657497" rx="3.56994602" ry="5.93715442"></ellipse>
+                </g>
+               </g>
+              </g> 
+             </g>
+            </svg>
+            <h2 class="has-black-color has-text-color">Phase 4</h2>
+            <h5 class="has-black-color has-text-color">Fight On</h5>
+            <p class="has-text-align-left has-black-color has-text-color">Most operations re-open with health guidelines in place.</p>
+            <p class="has-black-color has-text-color">Returning functions: academics, research, athletics</p>
+            <div id="sp-ea-5799" class="sp-ea-one sp-easy-accordion" data-ex-icon="fa-minus" data-col-icon="fa-plus" data-ea-active="ea-click" data-ea-mode="vertical" data-preloader="">
+             <div class="ea-card  sp-ea-single">
+              <h3 class="ea-header"><a class="collapsed" data-sptoggle="spcollapse" data-sptarget="#collapse57990" href="javascript:void(0)" aria-expanded="false"><i class="ea-expand-icon fa fa-plus"></i> Phase 4 Details</a></h3>
+              <div class="sp-collapse spcollapse spcollapse" id="collapse57990" data-parent="#sp-ea-5799">
+               <div class="ea-body"> 
+                <ul>
+                 <li>Working at home continues for most personnel.</li>
+                 <li>All individuals are required to wear a face covering/PPE while on campus, meet influenza and COVID-19 vaccination policy requirements, observe physical distancing requirements and complete daily symptom check as posted and communicated in TrojanLearn.</li>
+                 <li>Expanded model of on-campus and online classes, events and activities with physical distancing and indoor and outdoor capacity limits. In-person, indoor instruction at 50% capacity with distanced seating.</li>
+                 <li>Most on-campus research resumes, closely following the <a href="https://research.usc.edu/coronavirus/covid19-usc/">Research Ramp-Up process</a>, which includes school-approved PI/lab/group-level plans and University-approved school-level plans, as well as&nbsp;minimum 6ft.&nbsp;physical distancing, PPE, signage, and other health &amp; safety measures.</li>
+                 <li>Approved libraries are open with 6 ft. physical distancing at 75% capacity.</li>
+                 <li>University housing and dining halls are open with capacity limits and enhanced safety provisions. Other dining venues are open following the current County opening and occupancy guidelines. The bookstore is open at 75% capacity with physical distancing and facial coverings.</li>
+                 <li>Visitors to campus are permitted as part of approved and permitted activities. Visitors will follow all public health guidance from the City and County of Los Angeles, abide by campus rules and signage and be pre-registered through the&nbsp;<a href="https://we-are.usc.edu/health-and-safety/trojan-check/">Trojan Check Web App</a> or by providing a complete, signed, and printed Coronavirus Screening Questionnaire.</li>
+                 <li>USC Athletics activities as approved, resume with plans for physical distancing with an approved risk mitigation plan.</li>
+                </ul>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div style="height:48px" aria-hidden="true" class="wp-block-spacer"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="wp-container-10 wp-block-group alignfull has-usc-cardinal-background-color has-background" id="phase-5-heading">
+         <div class="wp-block-group__inner-container">
+          <div style="height:32px" aria-hidden="true" class="wp-block-spacer"></div>
+          <div class="wp-container-9 wp-block-group is-style-usc-group-content-width">
+           <div class="wp-block-group__inner-container">
+            <svg width="58px" height="49px" viewbox="0 0 58 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+             <title>noun_Cap_3377481</title><defs> 
+              <rect id="path-1" x="0" y="0" width="160" height="260" rx="8"></rect> 
+              <filter x="-6.6%" y="-2.9%" width="113.1%" height="108.1%" filterunits="objectBoundingBox" id="filter-3">
+               <feoffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feoffset>
+               <fegaussianblur stddeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></fegaussianblur>
+               <fecolormatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1" />
+              </filter> 
+             </defs><g id="GRID" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> 
+              <g id="lg-1440px-12-column" transform="translate(-738.000000, -769.000000)">
+               <g id="link-list-4-col" transform="translate(0.000000, 120.000000)">
+                <g id="Rectangle" transform="translate(689.000000, 530.000000)">
+                 <mask id="mask-2" fill="white">
+                  <use xlink:href="#path-1"></use>
+                 </mask>
+                 <g id="Mask">
+                  <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                  <use fill="#990000" fill-rule="evenodd" xlink:href="#path-1"></use>
+                 </g>
+                </g>
+                <g id="noun_Cap_3377481" transform="translate(738.000000, 649.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                 <path d="M29,28 C28.8668471,28 28.7353421,27.9708132 28.6148388,27.9146747 L0.520727466,14.8149944 C0.20289968,14.6669291 0,14.3502104 0,14.0021586 C0,13.6541067 0.20289968,13.337388 0.520727466,13.1893227 L28.6148388,0.0851516496 C28.8588353,-0.0283838832 29.1411647,-0.0283838832 29.3851612,0.0851516496 L57.4792725,13.1893227 C57.7971003,13.337388 58,13.6541067 58,14.0021586 C58,14.3502104 57.7971003,14.6669291 57.4792725,14.8149944 L29.3851612,27.9146747 C29.2646579,27.9708132 29.1331529,28 29,28 Z M3.03560356,14.0021586 L29,26.127334 L54.9643964,14.0021586 L29,1.89045555 L3.03560356,14.0021586 Z" id="Shape" />
+                 <path d="M11,30 C10.4477153,30 10,29.6060106 10,29.12 L10,19.88 C10,19.3939894 10.4477153,19 11,19 C11.5522847,19 12,19.3939894 12,19.88 L12,29.12 C12,29.6060106 11.5522847,30 11,30 Z" id="Path" />
+                 <path d="M47,30 C46.4477153,30 46,29.6060106 46,29.12 L46,19.88 C46,19.3939894 46.4477153,19 47,19 C47.5522847,19 48,19.3939894 48,19.88 L48,29.12 C48,29.6060106 47.5522847,30 47,30 Z" id="Path" />
+                 <path d="M29,39 C18.7671429,39 10,33.4439462 10,28.896861 C10,28.4015383 10.4050757,28 10.9047619,28 C11.4044481,28 11.8095238,28.4015383 11.8095238,28.896861 C11.8095238,31.7399103 19.047619,37.206278 29,37.206278 C38.952381,37.206278 46.1904762,31.7399103 46.1904762,28.896861 C46.1904762,28.4015383 46.5955519,28 47.0952381,28 C47.5949243,28 48,28.4015383 48,28.896861 C48,33.4439462 39.2328571,39 29,39 Z" id="Path" />
+                 <path d="M42.1190776,39 C41.6325577,39 41.2381553,38.59879 41.2381553,38.1038723 L41.2381553,21.1849822 L28.5132318,14.7104599 C28.22135,14.5740764 28.0255743,14.2868956 28.0023193,13.9610088 C27.9790642,13.635122 28.1320162,13.3221897 28.4014755,13.1443546 C28.6709349,12.9665194 29.0141861,12.9519724 29.2972527,13.1063914 L42.5110881,19.8273488 C42.8104509,19.9786734 42.9998226,20.2893277 43,20.629383 L43,38.1038723 C43,38.59879 42.6055976,39 42.1190776,39 Z" id="Path" />
+                 <path d="M42.5000365,43 C41.4888957,43 40.5773183,42.3909035 40.1903715,41.4567311 C39.8034246,40.5225588 40.0173109,39.44728 40.7322954,38.7322954 C41.44728,38.0173109 42.5225588,37.8034246 43.4567311,38.1903715 C44.3909035,38.5773183 45,39.4888957 45,40.5000365 C45,41.8807282 43.8807282,43 42.5000365,43 Z M42.5000365,39.6667154 C42.039806,39.6667154 41.6667154,40.039806 41.6667154,40.5000365 C41.6667154,40.9602671 42.039806,41.3333577 42.5000365,41.3333577 C42.9602671,41.3333577 43.3333577,40.9602671 43.3333577,40.5000365 C43.3333577,40.039806 42.9602671,39.6667154 42.5000365,39.6667154 Z" id="Shape" />
+                 <path d="M43.9978294,49 L41.0021706,49 C40.7219542,49.0008721 40.4542061,48.8991604 40.2642975,48.7196866 C40.0743888,48.5402127 39.9797973,48.2994943 40.0036177,48.0563028 L40.5028942,42.8377637 C40.5235749,42.3574104 40.9874073,41.9826098 41.5388928,42.0006231 C42.0903783,42.0186363 42.5206807,42.4226422 42.5,42.9029954 C42.4793193,42.4226422 42.9096216,42.0186363 43.4611072,42.000623 C44.0125927,41.9826098 44.4764251,42.3574104 44.4971058,42.8377637 L44.9963823,48.0563028 C45.0202027,48.2994943 44.9256112,48.5402127 44.7357025,48.7196866 C44.5457939,48.8991604 44.2780458,49.0008721 43.9978294,49 L43.9978294,49 Z M42.0856005,47.2604756 L42.9143995,47.2604756 L42.5,42.9856223 C42.4975304,42.9639316 42.4975304,42.9420813 42.5,42.9203906 C42.5024696,42.9420813 42.5024696,42.9639316 42.5,42.9856223 L42.0856005,47.2604756 Z" id="Shape" />
+                </g>
+               </g>
+              </g> 
+             </g>
+            </svg>
+            <h2 class="has-white-color has-text-color">Phase 5</h2>
+            <h5 class="has-white-color has-text-color">Welcome Back</h5>
+            <p class="has-normal-font-size"><span class="has-inline-color has-white-color">Fully operational with health and safety guidelines in place.</span></p>
+            <div id="sp-ea-5800" class="sp-ea-one sp-easy-accordion" data-ex-icon="fa-minus" data-col-icon="fa-plus" data-ea-active="ea-click" data-ea-mode="vertical" data-preloader="">
+             <div class="ea-card  sp-ea-single">
+              <h3 class="ea-header"><a class="collapsed" data-sptoggle="spcollapse" data-sptarget="#collapse58000" href="javascript:void(0)" aria-expanded="false"><i class="ea-expand-icon fa fa-plus"></i> Phase 5 Details</a></h3>
+              <div class="sp-collapse spcollapse spcollapse" id="collapse58000" data-parent="#sp-ea-5800">
+               <div class="ea-body"> 
+                <ul>
+                 <li>Faculty and staff support fully in-person operations. The actual split between remote and in-person work will be determined and communicated by unit leadership based on restart guiding principles.</li>
+                 <li>All faculty, staff, and students must be fully vaccinated or have an approved medical or religious exemption.</li>
+                 <li>Individuals on all campuses are required to wear a facial covering indoors.</li>
+                 <li>Students who are up-to-date on their vaccinations (fully vaccinated; and have received a booster if currently eligible) are no longer required to test weekly.</li>
+                 <li>Testing requirements for those who are unvaccinated because of an approved exemption (every 72 hours) and individuals not up to date on vaccinations (every 4 days) remain in effect.</li>
+                 <li>All faculty, staff, students, and guests stay home if they are sick. Faculty, staff, and students complete daily symptom check through Trojan Check.</li>
+                 <li>All faculty, staff, and students complete safety training before coming to campus through TrojanLearn.</li>
+                 <li>On campus, indoor instruction resumes at full capacity.</li>
+                 <li>University housing reopens with normal occupancy for fully vaccinated students with enhanced cleaning and public area closures.</li>
+                 <li>Approved libraries are open at full capacity.</li>
+                 <li>University dining venues are open at full capacity following the current County opening and occupancy guidelines. The bookstore is open at full capacity.</li>
+                 <li>Visitors to campus are permitted as part of approved and permitted activities. Visitors will follow all public health guidance from the City and County of Los Angeles, abide by campus rules and signage and be pre-registered through the Trojan Check Web App or by providing a complete, signed, and printed Coronavirus Screening Questionnaire.</li>
+                 <li>USC Athletics activities as approved, resume with approved risk mitigation plan. Athletic training facilities to support allowable USC Athletics workouts.</li>
+                 <li>Fitness centers reopen.</li>
+                 <li>COVID testing is available at no charge to faculty, staff, and students who are not fully vaccinated or who experience symptoms. Faculty, staff, and students who have been present on campus must report covid diagnoses through the covid hotline.</li>
+                 <li>USC retains flexibility to adapt its operations as conditions may require.</li>
+                 <li>See <a href="https://we-are.usc.edu/wp-content/uploads/2022/05/COVID-Events-Procedures-Phase-5-V11-pub-4.12.22.pdf"><span style="color: #ffffff;"><strong>Event Planning Guidelines for Phase 5</strong></span></a></li>
+                </ul>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div style="height:48px" aria-hidden="true" class="wp-block-spacer"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="wp-block-cover alignfull has-base-20-background-color has-background-dim is-position-center-center" style="min-height:200px">
+         <div class="wp-block-cover__inner-container">
+          <div class="wp-container-12 wp-block-group">
+           <div class="wp-block-group__inner-container">
+            <div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+            <h2 class="has-text-align-left is-style-cardinal-bar has-black-color has-text-color">Supporting Phase Information</h2>
+            <p class="is-style-lead-paragraph has-black-color has-text-color">For those faculty, staff, and students who are working on return to campus plans, the university’s most recent version of the phase guidelines and supporting documentation can be downloaded from the USC Project Restart Sharepoint site. <em>(USC Single Sign On required for access) </em></p>
+            <div class="wp-container-11 wp-block-buttons is-content-justification-left">
+             <div class="wp-block-button is-style-usc-button-link">
+              <a class="wp-block-button__link" href="https://uscedu.sharepoint.com/:f:/r/sites/USCProjectRestart/Shared%20Documents/General%20Guidelines/Restart%20Phase%205%20Guidelines?csf=1&amp;web=1&amp;e=9BaaNC" target="_blank" rel="noreferrer noopener">Learn More</a>
+             </div>
+            </div>
+            <div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div><!-- .entry-content -->
+       <footer class="entry-footer">
+       </footer><!-- .entry-footer -->
+      </article><!-- #post-## -->
+     </main><!-- #main -->
+    </div><!-- #primary -->
+   </div><!-- .site-content -->
+   <footer id="colophon" class="site-footer " role="contentinfo">
+    <div class="site-footer-wrapper">
+     <div class="site-footer-columns site-info columns-2">
+      <div class="footer-column">
+       <aside id="text-3" class="widget widget_text"> 
+        <div class="textwidget">
+         <p>USC is committed to supporting the health, safety and well-being of our community.</p>
+         <ul>
+          <li>COVID-19 hotline: <a href="tel:1-213-740-6291">213-740-6291</a></li>
+          <li>Email: <a href="mailto:covid19@usc.edu">covid19@usc.edu</a></li>
+          <li>COVID-19 Resource Center: <a href="https://coronavirus.usc.edu/">coronavirus.usc.edu</a></li>
+         </ul>
+        </div>
+       </aside>
+      </div>
+      <div class="footer-column-2">
+       <aside id="text-4" class="widget widget_text"> 
+        <div class="textwidget"></div>
+       </aside>
+      </div>
+     </div> 
+    </div>
+    <div class="site-footer-strip-wrapper">
+     <div class="site-footer-strip">
+      <div class="site-footer-strip-left">
+       <div class="site-footer-credits">
+        <span class="theme-credit">University of Southern California</span><span class="site-credit">Content managed by <a class="site-credit-link" href="mailto:ucomm@usc.edu">USC Communications</a></span>
+       </div>
+       <div class="site-footer-strip-left-widgets">
+        <aside id="nav_menu-4" class="widget widget_nav_menu">
+         <div class="menu-site-footer-strip-container">
+          <ul id="menu-site-footer-strip" class="menu">
+           <li id="menu-item-30" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-30"><a href="http://usc.edu/privacy-notice">Privacy Notice</a></li>
+           <li id="menu-item-6404" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6404"><a href="https://eeotix.usc.edu/notice-of-non-discrimination/">Notice of Non-Discrimination</a></li>
+          </ul>
+         </div>
+        </aside>
+       </div>
+      </div>
+      <div class="site-footer-strip-right"></div>
+     </div>
+    </div> 
+   </footer><!-- .site-footer --><a class="notification-bar" href="https://we-are.usc.edu/phases-and-guidelines/phases">
+    <div class="notification">
+     The university is currently in Phase Five of returning to campus, based on current public health guidelines. Click to learn more.
+    </div></a>
+   <style>.wp-container-1 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-1 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-1 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-2 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-2 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-2 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-3 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-3 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-3 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-4 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-4 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-4 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-5 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-5 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-5 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-6 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-6 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-6 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-7 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-7 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-7 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-8 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-8 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-8 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-9 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-9 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-9 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-10 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-10 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-10 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-11 {display: flex;gap: 0.5em;flex-wrap: wrap;align-items: center;}.wp-container-11 > * { margin: 0; }</style>
+   <style>.wp-container-12 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-12 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-12 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <link rel="stylesheet" id="usc-display-new-badge-style-css" href="https://we-are.usc.edu/wp-content/plugins/usc-display-new-badge/public/css/usc-display-new-badge.css?ver=1.0.0" type="text/css" media="all">
+   <link rel="stylesheet" id="usc-notification-bar-style-css" href="https://we-are.usc.edu/wp-content/plugins/usc-notification-bar/public/css/usc-notification-bar.css?ver=1.0" type="text/css" media="all">
+   <script type="text/javascript" src="https://we-are.usc.edu/wp-content/themes/usc-gateway-2018/assets/js/vendor/modernizr.js?ver=1.0.28" id="modernizr-js"></script>
+   <script type="text/javascript" src="https://we-are.usc.edu/wp-content/themes/usc-gateway-2018/assets/js/lib/usc-gateway-2018.min.js?ver=1.0.28" id="theme-scripts-js"></script>
+   <script type="text/javascript" src="https://we-are.usc.edu/wp-content/plugins/easy-accordion-free/public/assets/js/collapse.min.js?ver=2.0.21" id="sp-ea-accordion-js-js"></script>
+   <script type="text/javascript" src="https://we-are.usc.edu/wp-content/plugins/easy-accordion-free/public/assets/js/script.js?ver=2.0.21" id="sp-ea-accordion-config-js"></script>
+   <script async defer type="text/javascript" src="https://we-are.usc.edu/wp-content/plugins/usc-notification-bar/public/js/usc-notification-bar.js?ver=1.0" id="usc-notification-bar-scripts-js"></script>
+  </div><!-- .site -->
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-6f137388fcf878e2d61","applicationID":"884951671","transactionName":"ZwRSZxFTD0dVVhFeX15OcVAXWw5aG0EVWx1WFFxfTkUIUEBd","queueTime":0,"applicationTime":269,"atts":"S0NREVlJHEk=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

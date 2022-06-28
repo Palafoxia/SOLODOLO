@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"427707476"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-1706522-25", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});
+ga('puwdsTracker.set', 'anonymizeIp', true);ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <link rel="canonical" href="https://covid.princeton.edu/vaccinations/faculty-and-staff-requirement">
+  <meta property="og:site_name" content="Princeton COVID Resources">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://covid.princeton.edu/vaccinations/faculty-and-staff-requirement">
+  <meta property="og:title" content="Faculty and Staff Requirement">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/profiles/ps/themes/ps_tiger/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Faculty and Staff Requirement | Princeton COVID Resources</title>
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf461/files/css/css_KxP75PtI4lSj6psP8cVnCCN0fdQQEVlzyNdhiqlHXT4.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf461/files/css/css_1prhxtvxq6YtbaaqGTWaME8KYz_-Q8ljDzSry7LZZCQ.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/xxx7asp.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/bok5fgz.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf461/files/css/css_IzHimKNFw04V4wWaUV_f4riqsB8XbqziggWTlLm4pEQ.css">
+ </head>
+ <body class="not-front section-vaccinations page-node-566 content-type-ps-basic-page flavor1 fontset1 menu1 layout-block-padding-medium">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="page page-container"> 
+    <header role="banner" class="header region region-header" id="header">
+     <h1 class="sr-only sr-site-name">Princeton COVID Resources</h1>
+     <div class="skip-links"><a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to content</a><a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to search</a>
+     </div>
+     <div class="header-container container">
+      <div class="princeton-branding">
+       <div class="container"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"> <img src="/profiles/ps/themes/ps_base/images/pu-logo.svg" alt="Princeton University"> </a>
+       </div>
+      </div>
+      <div class="site-branding">
+       <div class="container">
+        <div class="row"><a href="/" title="Home" rel="home" class="site-logo" tabindex="-1" aria-hidden="true"> <img src="/profiles/ps/themes/ps_tiger/logo.svg" alt="Home" typeof="foaf:Image"> </a>
+         <div class="site-info">
+          <div class="site-name"><a href="/" title="Home" rel="home">Princeton COVID Resources</a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <nav aria-label="site" class="main-menu">
+       <h2 class="sr-only">Main Menu</h2>
+       <div class="container navbar-expand-lg"><button class="toggle-mobile-menu unbutton" type="button" data-toggle="collapse" data-target="#menu-container" aria-controls="menu-container" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-mobile-menu-icon"> <span class="toggle-mobile-menu-title">Menu</span> <i class="fa fa-bars" aria-hidden="true"></i> </span> </button>
+        <div id="menu-container" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item"><a href="/safe-practices" title="Keeping safe during the pandemic" data-drupal-link-system-path="node/371">Safe Practices</a></li>
+          <li class="nav-item"><a href="/health-well-being" title="Staying healthy: Physically, mentally, spiritually" data-drupal-link-system-path="node/391">Health &amp; Well-Being</a></li>
+          <li class="nav-item expanded"><a href="/testing" data-drupal-link-system-path="node/491">Testing</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/testing/eligibility-and-frequency" data-drupal-link-system-path="node/506">Eligibility and Frequency</a></li>
+            <li class="submenu-item"><a href="/testing/taking-test" data-drupal-link-system-path="node/496">Taking the Test</a></li>
+            <li class="submenu-item"><a href="/testing/clinic-info-and-test-kit-pick" data-drupal-link-system-path="node/501">Clinic Info and Test Kit Pick-up</a></li>
+            <li class="submenu-item"><a href="/testing/dropping-your-sample" title="Information on testing for students, faculty and staff" data-drupal-link-system-path="node/386">Dropping Off Your Sample</a></li>
+            <li class="submenu-item"><a href="/testing/receiving-results" data-drupal-link-system-path="node/486">Receiving Results</a></li>
+            <li class="submenu-item"><a href="/testing/report-testing-absence" data-drupal-link-system-path="node/531">Report a Testing Absence</a></li>
+           </ul></li>
+          <li class="nav-item expanded active"><a href="/vaccinations" data-drupal-link-system-path="node/511">Vaccinations</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item active"><a href="/vaccinations/faculty-and-staff-requirement" title="COVID-19 vaccination requirement for faculty and staff" data-drupal-link-system-path="node/566" class="is-active">Faculty and Staff Requirement</a></li>
+            <li class="submenu-item"><a href="/vaccinations/student-requirement" title="COVID-19 vaccination requirement for undergraduates and graduate students" data-drupal-link-system-path="node/571">Student Requirement</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/workplace" title="Guide to working on campus and remotely" data-drupal-link-system-path="node/376">Workplace</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/workplace/information-faculty-and-staff" data-drupal-link-system-path="node/591">Information for Faculty and Staff</a></li>
+            <li class="submenu-item"><a href="/workplace/information-managers" data-drupal-link-system-path="node/586">Information For Managers</a></li>
+            <li class="submenu-item"><a href="/workplace/faqs-faculty" data-drupal-link-system-path="node/606">FAQs for faculty</a></li>
+           </ul></li>
+          <li class="nav-item"><a href="/travel" title="Information on traveling to and from Princeton" data-drupal-link-system-path="node/401">Travel</a></li>
+          <li class="nav-item"><a href="/spring-2022-undergraduate-faqs" title="Spring 2022 Undergraduate FAQs" data-drupal-link-system-path="node/601">Undergraduate FAQs</a></li>
+          <li class="nav-item"><a href="/quarantine-isolation" data-drupal-link-system-path="node/411">Quarantine &amp; Isolation</a></li>
+          <li class="nav-item"><a href="/policies" title="Princeton policies on COVID-19" data-drupal-link-system-path="node/381">Policies</a></li>
+         </ul>
+         <div class="utility-menu">
+          <ul class="nav navbar-nav utility-nav">
+           <li class="nav-item"><a href="/dashboard" title="COVID-19 statistics dashboard" data-drupal-link-system-path="node/681">Dashboard</a></li>
+           <li class="nav-item"><a href="/caslogin" class="ps-login-logout-link" data-drupal-link-system-path="caslogin">Log in</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </nav>
+      <div class="search-bar" id="search-bar">
+       <div class="container navbar-expand-lg" role="search">
+        <h2 class="sr-only">Search</h2><button class="toggle-searchbar unbutton" type="button" data-toggle="collapse" data-target="#search-bar-container" aria-controls="search-bar-container" aria-expanded="false" aria-label="Toggle search"> <span class="toggle-search-icon"> <i class="fas fa-search" aria-hidden="true"></i> </span> </button>
+        <div id="search-bar-container" class="collapse navbar-collapse">
+         <div class="search-block-form contextual-region block block-search container-inline" id="block-searchform">
+          <form action="/search" method="get" id="search-block-form" accept-charset="UTF-8">
+           <div id="search-toggled" class="form-group js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label"><label for="edit-search-keys" class="visually-hidden">Search</label>
+            <input placeholder="Search" type="search" id="edit-search-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control">
+           </div>
+           <div data-drupal-selector="edit-search-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-search-actions">
+            <input type="submit" id="edit-search-submit" value="Submit" class="button js-form-submit form-submit btn btn-primary">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="breadcrumb region region-breadcrumb" id="breadcrumb">
+     <div class="container">
+      <nav role="navigation" aria-label="breadcrumb">
+       <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/vaccinations">Vaccinations</a></li>
+       </ol>
+      </nav>
+     </div>
+    </div>
+    <div class="highlighted" id="highlighted">
+     <div class="container">
+      <div class="region region-highlighted">
+       <div data-drupal-messages-fallback class="hidden"></div>
+      </div>
+     </div>
+    </div>
+    <div id="main" class="main-container">
+     <div class="container">
+      <div class="row">
+       <div class="sidebar-first section order-first col-sm-4 col-md-3 col-lg-2">
+        <nav class="main-sidebar-menu" aria-label="section">
+         <h2 class="sr-only">Section Menu</h2>
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item active"><a href="/vaccinations/faculty-and-staff-requirement" title="COVID-19 vaccination requirement for faculty and staff" data-drupal-link-system-path="node/566" class="is-active">Faculty and Staff Requirement</a></li>
+          <li class="nav-item"><a href="/vaccinations/student-requirement" title="COVID-19 vaccination requirement for undergraduates and graduate students" data-drupal-link-system-path="node/571">Student Requirement</a></li>
+         </ul>
+        </nav>
+       </div>
+       <main class="main main-content col-sm-12 col-lg-10 order-last"><a id="main-content" class="sr-only skip-link"></a>
+        <div class="region region-content">
+         <div id="block-ps-tiger-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+          <h1 class="page-title"> Faculty and Staff Requirement </h1>
+         </div>
+         <div id="block-ps-tiger-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+          <article role="article" about="/vaccinations/faculty-and-staff-requirement" class="node node--type-ps-basic-page node--view-mode-full">
+           <div class="node__content">
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-block-plugin-id="inline_block:ps_billboard" class="block-ps-billboard block block-layout-builder block-inline-blockps-billboard">
+                <div class="billboard-positioning-left billboard-dark billboard-freeform billboard">
+                 <div class="billboard-image">
+                  <img srcset="/sites/g/files/toruqf461/files/styles/freeform_750w/public/2021-06/20210506_COVID_Vaccine_Public__DJA_014_0.jpg?itok=j_lo3S7d 750w, /sites/g/files/toruqf461/files/styles/freeform_1440w/public/2021-06/20210506_COVID_Vaccine_Public__DJA_014_0.jpg?itok=9xZi9JIs 1440w, /sites/g/files/toruqf461/files/styles/freeform_2880w/public/2021-06/20210506_COVID_Vaccine_Public__DJA_014_0.jpg?itok=fNWvypSa 2880w" sizes="(min-width: 1440px) 1440px, 100vw" src="/sites/g/files/toruqf461/files/styles/freeform_1440w/public/2021-06/20210506_COVID_Vaccine_Public__DJA_014_0.jpg?itok=9xZi9JIs" alt="A vaccinator administers a shot to a man in Jadwin Gym at a COVID-19 vaccination clinic." typeof="foaf:Image">
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--threecol-16-68-16">
+             <div class="layout-inner-container">
+              <div class="layout__region layout__region--first layout__region--sixths layout__region--narrow">
+              </div>
+              <div class="layout__region layout__region--second layout__region--wide layout__region--67">
+              </div>
+              <div class="layout__region layout__region--third layout__region--sixths layout__region--narrow">
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--threecol-16-68-16">
+             <div class="layout-inner-container">
+              <div class="layout__region layout__region--first layout__region--sixths layout__region--narrow">
+              </div>
+              <div class="layout__region layout__region--second layout__region--wide layout__region--67">
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <h2 class="block-heading">Faculty and Staff Vaccination Requirement</h2>
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p>Princeton University requires that all faculty, staff, researchers, appointed visiting faculty and researchers, temporary employees, and independent contractors (i.e., individuals working alongside with or providing services to students and employees) receive and provide proof of being up to date on all COVID-19 vaccines and boosters authorized by the U.S. Food and Drug Administration (FDA) and/or World Health Organization. The requirement applies to&nbsp;all employees regardless of work location, including partial or full remote work domestically,&nbsp;and others routinely working on campus or in property occupied by the University.</p>
+                 <ul>
+                  <li><p><strong>As of March 15, 2022</strong>, individuals are eligible to receive COVID boosters 5 months after their initial COVID vaccines, and should do so within 30 days of that 5 month mark. This timeline is regardless of a recent COVID diagnosis, as a review of scientific evidence indicates there is no reason to delay receiving a booster despite a recent COVID infection.</p>
+                   <ul>
+                    <li><p><strong>Employees</strong>&nbsp;must upload proof of booster to&nbsp;<a href="https://princeton.service-now.com/service?id=sc_cat_item_guide&amp;sys_id=ec981c5d1be4701098d1217e6e4bcbc1" target="_blank">VacStatus</a>.</p></li>
+                   </ul></li>
+                 </ul>
+                 <p>&nbsp;</p>
+                 <p><a name="ReviewApp" id="ReviewApp">For those applying for an accommodation</a>, a small group led by University Health Services and including representatives from Human Resources, Office of the Dean of the Faculty, Disability Services, and Religious Life will review applications for accommodations.</p>
+                 <p>You can learn more about the Vaccine requirements and accommodations process in the Q&amp;As.&nbsp;</p>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <h2 class="block-heading">Faculty and Staff Vaccination Q&amp;A</h2>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <h3 class="block-heading">Vaccination and Booster Policy</h3>
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_581" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn" role="button" aria-controls="acc-panel" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Why does the University require employees (faculty, staff, etc.) to get vaccinated?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel" role="region" aria-labelledby="acc-btn">
+                      <p>COVID-19 vaccines have been demonstrated to be safe and effective, protecting people from getting sick or severely ill from COVID-19. There is also substantial evidence that people who are vaccinated are less likely to spread the virus. Having most of a population vaccinated protects the people who are vaccinated and those who cannot be vaccinated.</p>
+                      <p>Based on the best medical and scientific guidance, Princeton University determined that requiring our campus community – faculty, staff, and students – to be vaccinated will allow us to resume in-person teaching, research, extracurricular activities, dining, residential life, and the work of our campus while protecting our community, individually and collectively.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--2" role="button" aria-controls="acc-panel--2" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Why does the University require COVID-19 boosters for all faculty, staff, and students?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--2" role="region" aria-labelledby="acc-btn--2">
+                      <p>Information from CDC and other public health resources suggested evidence of waning immunity from the primary COVID-19 vaccines, and indicated that boosters would bolster protection against infection and severe disease. With this in mind, as an extension of the University’s existing COVID-19 vaccination requirement, the University decided to mandate boosters to support continued in-person teaching, research, and campus operations in the spring.</p>
+                      <p>Princeton University is required to follow all NJ Department of Health (NJ DOH) rules for COVID-19. The CDC and the NJ DOH have already created separate rules for individuals who are eligible for a booster and have not received one. Thus, any student or employee who has not received a booster dose (and is eligible for one) must quarantine for five days if they are identified as a close contact with a person who tested positive. In the fall 2021 semester, most students who tested positive identified multiple students as close contacts. A student could easily be identified as a close contact multiple times over the course of a semester, which could be disruptive to their own in-person learning experience.</p>
+                      <p>We anticipate that the CDC and NJ DOH will soon redefine the term “fully vaccinated” to incorporate boosters.&nbsp;</p>
+                      <p>While most of our students are not at great risk from infection with COVID-19, there are still vulnerable populations at risk at Princeton. The regional healthcare system is also still at risk of being overwhelmed. We cannot consider one subpopulation – healthy, vaccinated students – without taking into consideration other subpopulations. This is the unfortunate reality of a pandemic; no group is an island.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--3" role="button" aria-controls="acc-panel--3" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>How do faculty and staff comply with the vaccination policy?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--3" role="region" aria-labelledby="acc-btn--3">
+                      <p>All faculty, staff, researchers, appointed visiting faculty and researchers, temporary employees, and independent contractors routinely working on the Princeton campus or in property occupied by the University are required to do one of the following in <a href="https://princeton.service-now.com/service?id=sc_cat_item_guide&amp;sys_id=ec981c5d1be4701098d1217e6e4bcbc1">VacStatus</a>&nbsp;before starting work at Princeton or returning from a leave:</p>
+                      <ul>
+                       <li>Submit their COVID-19 vaccination proof;</li>
+                       <li>Report that they are not yet fully vaccinated, but intend to be by an upcoming date that is within 30 days. Individuals must submit their COVID-19 proof of vaccination within 30 days of submitting this option in VacStatus;</li>
+                       <li>Apply for a medical or religious accommodation; or,</li>
+                       <li>Report that they do not plan to be vaccinated, despite the University requirement.</li>
+                      </ul>
+                      <p>Individuals who are not granted an accommodation will have 30 days from the date they receive the notice of denial to be fully vaccinated and to enter their proof of vaccination into VacStatus.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--4" role="button" aria-controls="acc-panel--4" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Which vaccines meet the vaccination requirement?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--4" role="region" aria-labelledby="acc-btn--4">
+                      <p>The University is accepting those vaccines authorized for emergency use by the Food and Drug Administration (FDA), as well as those authorized by the World Health Organization Emergency Use Listed vaccines. The following COVID vaccines are being accepted:</p>
+                      <ul type="disc">
+                       <li>FDA-Approved or Authorized: Pfizer, Moderna, Johnson &amp; Johnson (Janssen)</li>
+                       <li>WHO EUL-Listed: AstraZeneca/Oxford (SK-BIO and Covashield), Sinopharm (BBIBP-CorV) and Sinovac (CoronaVac)&nbsp;</li>
+                      </ul>
+                      <p>You can find the <a href="https://uhs.princeton.edu/node/3281#Accepted%20COVID%20vaccines">latest updates on approved vaccines</a> on the UHS website.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--5" role="button" aria-controls="acc-panel--5" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Who must be vaccinated according to the vaccine policy?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--5" role="region" aria-labelledby="acc-btn--5">
+                      <p>Those who work on campus or other University property as follows:<br> The policy applies to all Princeton University faculty, staff, researchers, appointed visiting faculty and researchers, <a href="https://hr.princeton.edu/myhr/policies/temporary-employees">temporary employees</a>, and <a href="https://finance.princeton.edu/policies/independent-contractor-policy">independent contract employees</a> who work on campus or other property occupied by Princeton University, no matter the duration or frequency. Those who work partially or fully remotely as follows: This policy also applies to all faculty, staff, researchers, appointed visiting faculty and researchers and casuals who work partially or fully remotely within the United States.</p>
+                      <p>Subcontractors, such as those hired by the Office of Capital Projects to renovate a campus building would be a contractor that must abide by the&nbsp;<a href="https://ehs.princeton.edu/health-safety-the-campus-community/covid-19-information-and-resources/information-university-contractors" target="_blank"><strong>Requirements for Contractors and Vendors</strong></a>. An employee of the ROTC program would be considered an affiliate.</p>
+                      <p>Vaccination is not required for agency temps and independent contractors and subcontractors who work fully remotely.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--6" role="button" aria-controls="acc-panel--6" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>What is an independent contract employee covered under the vaccine policy?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--6" role="region" aria-labelledby="acc-btn--6">
+                      <p>This term refers to people who receive a paycheck from an entity other than Princeton University, but are supervised by a University employee. For example, an individual hired from a food services company to work with Campus Dining, event security staff hired from a private company to work with Public Safety, and a temp agency employee hired to provide administrative support to a University department are examples of independent contract employees.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--7" role="button" aria-controls="acc-panel--7" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Do faculty and staff who are on leave or otherwise not on campus for the fall semester need to be vaccinated or have a reasonable accommodation?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--7" role="region" aria-labelledby="acc-btn--7">
+                      <p>Employees who are on leave should be vaccinated prior to returning to work. Employees who are working remotely need to be vaccinated or have a reasonable accommodation.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--8" role="button" aria-controls="acc-panel--8" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>May I request to work remotely so that I don’t need to be vaccinated?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--8" role="region" aria-labelledby="acc-btn--8">
+                      <p>No, remote work is not an available alternative for employees who are not fully vaccinated. <strong>&nbsp;</strong></p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--9" role="button" aria-controls="acc-panel--9" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Do faculty and staff who mainly work remotely and only occasionally work in University buildings need to comply with this policy?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--9" role="region" aria-labelledby="acc-btn--9">
+                      <p>Yes.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--10" role="button" aria-controls="acc-panel--10" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Do University affiliates, such as ROTC, U-NOW, Princeton University Press, U Store, Center for Jewish Life, etc. require vaccination under this policy?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--10" role="region" aria-labelledby="acc-btn--10">
+                      <p>Affiliates that have direct access to campus buildings, interact in person with our campus community on a regular basis, and whose work on campus is directed by a University employee must have their records verified in VacStatus and participate in the University’s testing program. &nbsp;These requirements also include individuals who regularly use the libraries and/or Dillon Gym. Accommodations for affiliates must be handled through their employer and are not available to request through VacStatus.</p>
+                      <p>Affiliates that occasionally come to campus and interact with our campus community are treated the same as visitors and should attest to their vaccination status. They should not have direct access to campus buildings.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--11" role="button" aria-controls="acc-panel--11" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Do contractors and vendors working on campus need to comply with this policy?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--11" role="region" aria-labelledby="acc-btn--11">
+                      <p>At this time, the policy does not cover contractors (other than independent contract employees, as defined above) and vendors. Contractors and vendors are expected to follow the <a href="https://ehs.princeton.edu/health-safety-the-campus-community/covid-19-information-and-resources/information-university-contractors">Requirements for Contractors and Vendors</a>.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--12" role="button" aria-controls="acc-panel--12" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>When am I eligible for a booster?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--12" role="region" aria-labelledby="acc-btn--12">
+                      <ul>
+                       <li>Five months after the second dose of an mRNA vaccine, including Pfizer and Moderna</li>
+                       <li>Two months after the single dose of J&amp;J Janssen vaccine</li>
+                       <li>Individuals who received a WHO-approved vaccine that is not Pfizer, Moderna, or J&amp;J should follow the <a href="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/booster-shot.html">CDC guidelines for boosters.</a></li>
+                      </ul>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--13" role="button" aria-controls="acc-panel--13" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>What if I am not eligible for a booster by January 31, 2022?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--13" role="region" aria-labelledby="acc-btn--13">
+                      <p>If you are not eligible to get a booster before January 31, 2022, you will have 30 days from the date that you are eligible to enter the data into VacStatus or MyUHS.</p>
+                      <p>For example, a student who got the second dose of Moderna on August 15 would be eligible for a booster on February 15 and would need to get a booster and enter the data in MyUHS by March 17, 2022.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--14" role="button" aria-controls="acc-panel--14" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Should I get a booster if I recently tested positive for COVID-19?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--14" role="region" aria-labelledby="acc-btn--14">
+                      <p><strong>As of March 9, 2022</strong>, regardless of a recent COVID diagnosis, anyone who is more than 6 months past their last COVID dose and has not yet received a booster should get one immediately. Based on review of scientific evidence, there is no reason to delay receiving a booster, despite a recent diagnosis.</p>
+                      <p><strong>Employees</strong>&nbsp;must upload proof of booster to&nbsp;<a href="https://princeton.service-now.com/service?id=sc_cat_item_guide&amp;sys_id=ec981c5d1be4701098d1217e6e4bcbc1" target="_blank">VacStatus</a>.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--15" role="button" aria-controls="acc-panel--15" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>What booster vaccine should I get?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--15" role="region" aria-labelledby="acc-btn--15">
+                      <p>Anyone eligible for a booster may receive Moderna or Pfizer versions, regardless of their original COVID-19 vaccine.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--16" role="button" aria-controls="acc-panel--16" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Is the University planning J&amp;J booster clinics?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--16" role="region" aria-labelledby="acc-btn--16">
+                      <p>No. The University is holding clinics with Moderna and Pfizer, either of which is appropriate as a booster for someone who receiving a primary dose of J&amp;J.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--17" role="button" aria-controls="acc-panel--17" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>I received a third dose of Moderna or Pfizer between two and six months after my second dose. Does this count as a booster?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--17" role="region" aria-labelledby="acc-btn--17">
+                      <p>Yes. For the purpose of this policy, a third dose administered at least four weeks after the second dose counts as a booster vaccine.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--18" role="button" aria-controls="acc-panel--18" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Are boosters mandatory for temporary employees, contractors, or employees who work exclusively from home?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--18" role="region" aria-labelledby="acc-btn--18">
+                      <p>Boosters are mandatory for any employee covered in our <a href="https://ehs.princeton.edu/VaccinePolicy">vaccine policy</a>, which includes temporary employees, employees who are fully remote, and “independent contract employees” (contractors hired to perform University functions, reporting to a University employee, including temp agencies, event security, etc.).<br> &nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--19" role="button" aria-controls="acc-panel--19" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Am I required to get a booster if I previously tested positive for COVID-19?&nbsp;</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--19" role="region" aria-labelledby="acc-btn--19">
+                      <p>Yes. Prior COVID-19 infection is not an acceptable reason not to get a booster.</p>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <h3 class="block-heading">Vaccination Requirements and Accommodations</h3>
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_591" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--31" role="button" aria-controls="acc-panel--31" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Am I still required to be vaccinated if I already had COVID-19?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--31" role="region" aria-labelledby="acc-btn--31">
+                      <p>Yes. The CDC recommends that you should wait 30 days before getting a COVID-19 vaccine only if you were treated for COVID-19 with monoclonal antibodies or convalescent plasma.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--32" role="button" aria-controls="acc-panel--32" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>What are the vaccine requirements for new employees?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--32" role="region" aria-labelledby="acc-btn--32">
+                      <p>New employees are required to be vaccinated and to enter their vaccine information in&nbsp;<a href="https://princeton.service-now.com/service?id=sc_cat_item_guide&amp;sys_id=ec981c5d1be4701098d1217e6e4bcbc1" target="_blank"><strong>VacStatus</strong></a>&nbsp;prior to their first day of work on campus. They do not have to have completed their course of vaccination by the first day of work, but need to have begun vaccination.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--33" role="button" aria-controls="acc-panel--33" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>I am currently living in an area that does not have COVID-19 vaccines that meet the University requirements. What do I need to do?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--33" role="region" aria-labelledby="acc-btn--33">
+                      <p>In<a href="https://princeton.service-now.com/service?id=sc_cat_item&amp;sys_id=f10472aa45f02010fa9b98d6bca7b156" target="_blank"> </a><a href="https://princeton.service-now.com/service?id=sc_cat_item_guide&amp;sys_id=ec981c5d1be4701098d1217e6e4bcbc1">VacStatus</a>, indicate when you will be able to be vaccinated. If you are traveling to Princeton from a country that does not have acceptable COVID-19 vaccines, University Health Services will advise how to proceed with vaccination once you are in the U.S.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--34" role="button" aria-controls="acc-panel--34" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>May individual departments or offices impose additional public health requirements?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--34" role="region" aria-labelledby="acc-btn--34">
+                      <p>Yes. Some tasks may require vaccinated individuals to wear protective equipment or may require individuals who are not fully-vaccinated to use face shields or other equipment based on the risk associated with the task or workplace setting.&nbsp;Departments and offices should consult with Environmental Health and Safety before imposing additional requirements that restrict the activities of unvaccinated employees to ensure consistency across the University.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--35" role="button" aria-controls="acc-panel--35" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>How do I apply for a medical or religious accommodation?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--35" role="region" aria-labelledby="acc-btn--35">
+                      <p>In <a href="https://princeton.service-now.com/service?id=sc_cat_item_guide&amp;sys_id=ec981c5d1be4701098d1217e6e4bcbc1">VacStatus</a>, choose the option for applying for an accommodation. Complete the form associated with the type of accommodation you seek.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--36" role="button" aria-controls="acc-panel--36" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Who will review applications for accommodations?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--36" role="region" aria-labelledby="acc-btn--36">
+                      <p>A small group led by University Health Services and including representatives from Human Resources, Office of the Dean of the Faculty, Disability Services, and Religious Life will review applications for accommodations.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--37" role="button" aria-controls="acc-panel--37" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>What are some examples of a disability or medical condition that would be approved for accommodation?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--37" role="region" aria-labelledby="acc-btn--37">
+                      <p>Individuals who have severe or immediate allergic reactions to any of the components of the vaccines should not be vaccinated. Individuals who had a severe or immediate allergic reaction to the first dose of a vaccine should not get a second dose of the same vaccine.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--38" role="button" aria-controls="acc-panel--38" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>I am pregnant or breastfeeding. Do I need to be vaccinated? May I seek a medical accommodation?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--38" role="region" aria-labelledby="acc-btn--38">
+                      <p>The CDC notes that people who are pregnant are more likely to become severely ill with COVID-19 compared to people who are not pregnant. The CDC and FDA advise that you can get a COVID-19 vaccine while pregnant, and recommend that if you have questions, you should discuss them with your healthcare provider.</p>
+                      <p>See&nbsp;<a href="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/recommendations/pregnancy.html" target="_blank"><strong>CDC guidance on COVID-19 Vaccines While Pregnant or Breastfeeding</strong></a>&nbsp;for more information.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--39" role="button" aria-controls="acc-panel--39" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>What if I am not vaccinated and do not qualify for an accommodation?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--39" role="region" aria-labelledby="acc-btn--39">
+                      <p>Employees who are not vaccinated and do not qualify for a disability/medical or religious accommodation must consult with their manager and Human Resources or the Office of the Dean of the Faculty to discuss possible options. Working remotely is not an approved option for employees who elect not to be vaccinated and do not qualify for a religious or medical accommodation.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--40" role="button" aria-controls="acc-panel--40" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Will I be required to receive booster vaccines for COVID-19?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--40" role="region" aria-labelledby="acc-btn--40">
+                      <p>Yes. All faculty and staff are required to receive a booster by Jan. 31, 2022&nbsp;<strong>OR</strong>&nbsp;30 days after they become eligible. Booster shots must be uploaded to <a href="https://princeton.service-now.com/service?id=sc_cat_item_guide&amp;sys_id=ec981c5d1be4701098d1217e6e4bcbc1">VacStatus</a>.</p>
+                      <p>Booster vaccines are available at&nbsp;<a href="https://covid.princeton.edu/vaccinations#University-Vaccine-Supply">University vaccine clinics&nbsp;</a>and at several pharmacies and clinics in and around Princeton. See the state's&nbsp;<a href="https://covid19.nj.gov/pages/finder" target="_blank">Vaccine Appointment Finder</a>&nbsp;or&nbsp;<a href="http://vaccines.gov/" target="_blank">vaccines.gov</a>&nbsp;to find a clinic.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--41" role="button" aria-controls="acc-panel--41" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>I applied for a medical or religious exemption for the booster, but have not yet received an answer. What should I do?&nbsp;</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--41" role="region" aria-labelledby="acc-btn--41">
+                      <p>You may with until you have received an answer. If you are not granted an exemption or accommodation, you must get your booster within 14 days of the notice.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--42" role="button" aria-controls="acc-panel--42" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>I received a COVID-19 vaccine that is not authorized by the US FDA or the World Health Organization. What should I do?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--42" role="region" aria-labelledby="acc-btn--42">
+                      <p>Contact UHS at <a href="mailto:covidvaccines@Princeton.edu" target="_blank">covidvaccines@Princeton.edu</a>. You should be able to receive one of the authorized vaccines in addition to the vaccine you already received.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--43" role="button" aria-controls="acc-panel--43" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Am I required to get a booster if I previously tested positive for COVID-19?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--43" role="region" aria-labelledby="acc-btn--43">
+                      <p>Yes. Prior COVID-19 infection is not an acceptable reason not to get a booster.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--44" role="button" aria-controls="acc-panel--44" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>I received a medical or religious accommodation for the COVID-19 vaccine. Do I need to apply for an accommodation for the booster?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--44" role="region" aria-labelledby="acc-btn--44">
+                      <p>No. Your vaccine accommodation applies to your booster.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--45" role="button" aria-controls="acc-panel--45" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>I did not apply for a medical or religious accommodation for the COVID-19 vaccine and received my primary dose(s) of the vaccine. May I apply for a medical or religious accommodation for the booster?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--45" role="region" aria-labelledby="acc-btn--45">
+                      <p>Yes. Please be advised that it is unlikely that you will be granted an accommodation and will need to receive a booster dose.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--46" role="button" aria-controls="acc-panel--46" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>I previously applied for a medical or religious accommodation or exemption for the COVID-19 vaccine, but it was not approved and I was vaccinated. May I apply for a medical or religious accommodation or exemption for the booster?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--46" role="region" aria-labelledby="acc-btn--46">
+                      <p>Yes. Applications for exemptions and accommodations will be reviewed carefully and will be granted selectively to those that demonstrate a compelling reason.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--47" role="button" aria-controls="acc-panel--47" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Where should I upload proof of my booster vaccine?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--47" role="region" aria-labelledby="acc-btn--47">
+                      <p>Staff and faculty must enter their updated status to <a href="https://princeton.service-now.com/service?id=sc_cat_item_guide&amp;sys_id=ec981c5d1be4701098d1217e6e4bcbc1">VacStatus</a>.&nbsp;</p>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <h3 class="block-heading">VacStatus: Uploading and Checking Information</h3>
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_596" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--20" role="button" aria-controls="acc-panel--20" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Who will have access to the personal records in VacStatus?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--20" role="region" aria-labelledby="acc-btn--20">
+                      <p>Access&nbsp;to <a href="https://princeton.service-now.com/service?id=sc_cat_item_guide&amp;sys_id=ec981c5d1be4701098d1217e6e4bcbc1" target="_blank">VacStatus</a> is limited to&nbsp;a&nbsp;small group of&nbsp;authorized&nbsp;personnel&nbsp;in University Health Services, Environmental Health and Safety, and&nbsp;OIT&nbsp;system administrators&nbsp;responsible for maintaining&nbsp;VacStatus.&nbsp;&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--21" role="button" aria-controls="acc-panel--21" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>How will the University use information I submit regarding my proof of vaccination?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--21" role="region" aria-labelledby="acc-btn--21">
+                      <p>This information may be used to determine your COVID-19 vaccination status and your suitability for certain University activities in accordance with COVID-19 policies, and for reporting and operational planning purposes. The University will store this information in accordance with its information security policy and will limit access in accordance with operational needs and legal requirements. In addition, University Health Services and other authorized personnel may use relevant portions of your personally identifiable information when deemed necessary to ensure compliance with the Vaccination Policy and other COVID-19 policies Princeton University has put in place to protect the health and safety of the campus community.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--22" role="button" aria-controls="acc-panel--22" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>How secure is my information&nbsp;once&nbsp;uploaded to&nbsp;VacStatus?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--22" role="region" aria-labelledby="acc-btn--22">
+                      <p>The University takes&nbsp;responsibility for securing data very seriously.&nbsp;This information is stored in accordance with the University’s information security policy and&nbsp;the software used to collect&nbsp;<strong>and store</strong>&nbsp;this information&nbsp;has undergone a&nbsp;comprehensive security review.&nbsp;We have&nbsp;also implemented extra precautions (including encryption of specific data) to&nbsp;protect&nbsp;this&nbsp;information.&nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--23" role="button" aria-controls="acc-panel--23" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>How do I verify an&nbsp;existing vaccination record in VacStatus?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--23" role="region" aria-labelledby="acc-btn--23">
+                      <p>To verify if you have submitted a vaccine record in VacStatus:</p>
+                      <ol start="1" type="1">
+                       <li>Log into VacStatus via this web <a href="https://princeton.service-now.com/service?id=sc_cat_item_guide&amp;sys_id=ec981c5d1be4701098d1217e6e4bcbc1">link</a> or the TigerSafe app</li>
+                       <li>Select the option for “Provide Vaccination Record” and click the Next button.</li>
+                       <li>On the next screen, if you've&nbsp;submitted a record, you will be able to see your vaccination information. If you are listed as “Verified” then no further action is required. If no records are on that screen you will need to upload your vaccination card.</li>
+                      </ol>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--24" role="button" aria-controls="acc-panel--24" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>What should I do if I have lost my vaccination card?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--24" role="region" aria-labelledby="acc-btn--24">
+                      <p>Employees vaccinated in New Jersey can request a new copy of their immunization card by visiting the <a href="https://njiis.nj.gov/core/web/index.html#/home">New Jersey Immunization Information System</a> (NJIIS) website. Learn more about how to submit a request on the <a href="https://covid19.nj.gov/faqs/nj-information/slowing-the-spread/i-lost-my-covid-19-vaccination-card.-how-do-i-get-a-new-copy">NJ Covid Information Hub</a>. &nbsp;&nbsp;</p>
+                      <p>Those vaccinated outside of New Jersey can find their immunization record through your state’s IIS. An alphabetical list is <a href="https://www.cdc.gov/vaccines/programs/iis/contacts-locate-records.html#state">published on the CDC website</a>. &nbsp;</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--25" role="button" aria-controls="acc-panel--25" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>I am not able to upload my vaccination record in VacStatus because I am having trouble or do not have access to a computer or smartphone. What are my options?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--25" role="region" aria-labelledby="acc-btn--25">
+                      <p>For technical issues with <a href="https://princeton.service-now.com/service?id=sc_cat_item_guide&amp;sys_id=ec981c5d1be4701098d1217e6e4bcbc1">VacStatus</a>, contact OIT from 6 a.m. to midnight, seven days a week at 609-258-4357 (8-HELP), <a href="mailto:helpdesk@princeton.edu">helpdesk@princeton.edu</a>, or via online chat. For other questions, contact UHS at <a href="mailto:covidvaccines@princeton.edu">covidvaccines@princeton.edu</a>.<br><br> You can also get help in person by going to the asymptomatic testing clinic any time it is open. See <a href="https://covid.princeton.edu/testing/clinic-information">Clinic Information</a> for hours of operation.</p>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <h3 class="block-heading">Medical Records and Insurance</h3>
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_601" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--26" role="button" aria-controls="acc-panel--26" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Will we have a vaccine passport?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--26" role="region" aria-labelledby="acc-btn--26">
+                      <p>The University will not have an official vaccine passport, but your vaccine record in <a href="https://princeton.service-now.com/service?id=sc_cat_item_guide&amp;sys_id=ec981c5d1be4701098d1217e6e4bcbc1">VacStatus</a> will note that your vaccination information has been verified.&nbsp;The State of New Jersey offers the <a href="https://covid19.nj.gov/pages/vaxrecords">Docket</a> app for tracking vaccine status.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--27" role="button" aria-controls="acc-panel--27" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>What are the rules around asking for vaccine status?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--27" role="region" aria-labelledby="acc-btn--27">
+                      <p>Managers should consult with Office of the Dean Of the Faculty (DOF) and/or Human Resources to determine how best to engage with their staff on this topic. While the EEOC has clarified that information about an employee’s COVID-19 vaccination status is considered confidential medical information, the University is permitted to request or require confirmation of vaccination from employees so long as they keep such documentation separate from an employee’s personnel file.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--28" role="button" aria-controls="acc-panel--28" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>Do the University health insurance plans provide coverage if I suffer an adverse reaction to the vaccine?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--28" role="region" aria-labelledby="acc-btn--28">
+                      <p>Your health insurance will provide coverage if you suffer an adverse reaction to the vaccination that requires medical services. You will be responsible for your portion of the costs, such as copays, a deductible and/or coinsurance, depending upon the services required for treatment.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--29" role="button" aria-controls="acc-panel--29" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>What coverage is available in the event I am unable to come to work as a result of an adverse reaction or side effects from the vaccine?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--29" role="region" aria-labelledby="acc-btn--29">
+                      <p>Your COVID-19 days, sick or bundled time may be used. If you are out eight days or more, you may apply for short term disability.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--30" role="button" aria-controls="acc-panel--30" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span><strong>What responsibility does University have if I have an adverse reaction to the vaccine and/or can I apply for Worker’s Compensation?</strong>
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--30" role="region" aria-labelledby="acc-btn--30">
+                      <p>The University has instituted a Covid-19 vaccine requirement for all students and employees, though requests may be made for medical or religious accommodations. The requirements were put in place based on public health guidance and best practices for helping to reduce the spread of Covid-19 on our campus.&nbsp;While Worker’s Compensation benefits may not apply to adverse impacts from vaccination, should employees apply for Worker’s Compensation benefits in connection with an adverse reactions they incur as a result of being vaccinated, such applications will be reviewed on a case by case basis in accordance with our Worker’s Compensation policy. Otherwise, Covid-19 days and other accrued paid time off, as well as short term disability, are available in accordance with applicable University policy.</p>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_video" class="block-ps-video block block-layout-builder block-inline-blockps-video">
+                <h2 class="block-heading">Entering Information Into VacStatus</h2>
+                <div class="field--type-entity-reference-media field field--name-field-ps-video field--type-entity-reference field--label-hidden field__item">
+                 <figure class="media--type-video media--view-mode-ps-large-freeform figure">
+                  <div class="field field--name-field-media-video-embed-field field--type-video-embed-field field--label-hidden field__item">
+                   <div class="video-embed-field-provider-mediacentral video-embed-field-responsive-video">
+                    <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1449362/sp/144936200/embedIframeJs/uiconf_id/25624581/partner_id/1449362?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_u1cn48ip&amp;flashvars[leadWithHTML5]=true&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;wid=1_nr76ncmg" width="400" height="285" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Entering Information Into  VacStatus"></iframe>
+                   </div>
+                  </div>
+                 </figure>
+                </div>
+               </div>
+              </div>
+              <div class="layout__region layout__region--third layout__region--sixths layout__region--narrow">
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-block-plugin-id="ps_node_view" class="block block-ps-core block-ps-node-view">
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </main>
+      </div>
+     </div>
+    </div>
+    <footer role="contentinfo" class="footer region region-footer" id="footer">
+     <h2 class="sr-only">Footer</h2>
+     <div class="container">
+     </div>
+     <div class="subfooter">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-4">
+         <div class="subfooter-links">
+          <ul class="list-unstyled">
+           <li><a href="https://accessibility.princeton.edu/resources/accessibility-help" target="_blank">Accessibility</a></li>
+          </ul>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <p class="copyright-text"> © 2022 The Trustees of Princeton University </p>
+        </div>
+        <div class="col-md-4 text-sm-left text-md-right copyright"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"><img src="/profiles/ps/themes/ps_base/images/pu-logo-stacked.svg" alt="Princeton University"> </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div> 
+  </div><span id="ps-current-username" data-username=""></span>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/566","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ckeditorheight":{"offset":1,"line_height":1.5,"unit":"em","disable_autogrow":false},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"all_documents_new_window":false,"select2_simple":{"selector":".node-form select:not(.disable-select2,[name$=\u0027[actions][bundle]\u0027],.ui-timepicker-select,[name*=\u0027field_ps_timeline_feature_items\u0027]),.select2-form select,#drupal-off-canvas select[multiple]"},"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"ps_accordion":{"#ps_accordionfield_ps_accordion_block_content_601":[],"#ps_accordionfield_ps_accordion_block_content_596":[],"#ps_accordionfield_ps_accordion_block_content_591":[],"#ps_accordionfield_ps_accordion_block_content_581":[]},"ajax":[],"user":{"uid":0,"permissionsHash":"704dbbc489fdfb6cd4ab71d2052faa0f49dfabdb919a839d4e1d30f9e4b2711a"}}</script>
+  <script src="/sites/g/files/toruqf461/files/js/js_2wGSEw1_Jhqn4fz49vv3zkn5bG9-aLYEaSFrGsEfqBE.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"427707476","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":1431,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"427707476"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-146344386-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});
+ga('puwdsTracker.set', 'anonymizeIp', true);ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <link rel="canonical" href="https://oip.princeton.edu/our-programs/novogratz-bridge-year/reflections-and-connections">
+  <meta property="og:site_name" content="Office of International Programs">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://oip.princeton.edu/our-programs/novogratz-bridge-year/reflections-and-connections">
+  <meta property="og:title" content="Reflections and Connections">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:widgets:csp" content="on">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/sites/g/files/toruqf131/themes/site/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Reflections and Connections | Office of International Programs</title>
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf131/files/css/css_1un-FR3r1-mxrf8svHeWJ7Ts73gp0IsHhhLd8nMRUYQ.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf131/files/css/css_sGbRSqPSGQsEF5orB7raeEg5Js8rIJJKvN9FB-EBv38.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/cdy2nbv.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/cer7rbs.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf131/files/css/css_2U5jtEPhLETDY80eaqGdU6qvjdp5KWAAE0yqb0EvRnw.css">
+ </head>
+ <body class="not-front section-our-programs page-node-316 content-type-ps-basic-page flavor1 full-width menu6 layout-block-padding-none path-node path-our-programs-novogratz-bridge-year-reflections-and-connections">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="page page-container has-primary-menu-aux"> 
+    <header role="banner" class="header" id="header">
+     <h1 class="sr-only">Office of International Programs</h1><a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen: </span>Skip to content</a><a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen: </span>Skip to search</a>
+     <div class="header-container container">
+      <div class="princeton-branding">
+       <div class="container"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"> <img src="/profiles/ps/themes/ps_base/images/pu-logo.svg" alt="Princeton University"> </a>
+       </div>
+      </div>
+      <div class="site-branding">
+       <div class="container">
+        <div class="row"><a href="/" title="Home" rel="home" class="site-logo"> <img src="/sites/g/files/toruqf131/themes/site/logo.svg" alt="Home" typeof="foaf:Image"> </a>
+        </div>
+       </div>
+      </div>
+      <nav aria-label="site" class="main-menu">
+       <h2 class="sr-only">Main Menu</h2>
+       <div class="container navbar-expand-lg"><button class="toggle-mobile-menu unbutton" type="button" data-toggle="collapse" data-target="#menu-container" aria-controls="menu-container" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-mobile-menu-icon"> <span class="toggle-mobile-menu-title">Menu</span> <i class="fa fa-bars" aria-hidden="true"></i> </span> </button>
+        <div id="menu-container" class="collapse navbar-collapse">
+         <div class="nav-wrapper">
+          <ul class="nav navbar-nav main">
+           <li class="nav-item expanded"><a href="/who-we-are" data-drupal-link-system-path="node/36">Who We Are</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+            <ul class="submenu collapse">
+             <li class="submenu-item"><a href="/who-we-are/facts-and-figures" data-drupal-link-system-path="node/106">Facts and Figures</a></li>
+             <li class="submenu-item"><a href="/who-we-are/staff" data-drupal-link-system-path="node/111">Staff</a></li>
+            </ul></li>
+           <li class="nav-item expanded active"><a href="/our-programs" data-drupal-link-system-path="node/46">Our Programs</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+            <ul class="submenu collapse">
+             <li class="submenu-item expanded"><a href="/our-programs/fellowship-advising" data-drupal-link-system-path="node/71">Fellowship Advising</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+              <ul class="submenu collapse">
+               <li class="submenu-item"><a href="/our-programs/fellowship-advising/search-fellowships" data-drupal-link-system-path="node/116">Search Fellowships</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/fellowship-advising/meet-your-advisers" data-drupal-link-system-path="node/121">Meet Your Advisers</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/meet-your-advisers/pre-advising-form" data-drupal-link-system-path="node/4621">Pre-advising Form</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/fellowship-advising/preparing-your-application" data-drupal-link-system-path="node/131">Preparing Your Application</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/preparing-your-application/general-advice" data-drupal-link-system-path="node/136">General Advice</a></li>
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/preparing-your-application/application-faqs" data-drupal-link-system-path="node/141">Application FAQs</a></li>
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/preparing-your-application/resources" data-drupal-link-system-path="node/146">Resources</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/fellowship-advising/connect" data-drupal-link-system-path="node/151">Connect</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/connect/past-fellowship-recipients" data-drupal-link-system-path="node/156">Past Fellowship Recipients</a></li>
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/connect/fellowships-mentoring-program" data-drupal-link-system-path="node/4591">Fellowships Mentoring Program</a></li>
+                 <li class="submenu-item"><a href="/our-programs/fellowship-advising/connect/news" data-drupal-link-system-path="node/3321">In the News</a></li>
+                </ul></li>
+              </ul></li>
+             <li class="submenu-item expanded"><a href="/our-programs/international-internships" data-drupal-link-system-path="node/66">International Internships</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+              <ul class="submenu collapse">
+               <li class="submenu-item expanded"><a href="/our-programs/international-internships/about-iip" data-drupal-link-system-path="node/171">About IIP</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/international-internships/about-iip/iip-numbers" data-drupal-link-system-path="node/181">IIP by the Numbers</a></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/international-internships/search-internships" data-drupal-link-system-path="node/186">Search Internships</a></li>
+               <li class="submenu-item"><a href="/our-programs/international-internships/create-your-own" data-drupal-link-system-path="node/191">Create Your Own</a></li>
+               <li class="submenu-item"><a href="/our-programs/international-internships/meet-iip-team" data-drupal-link-system-path="node/206">Meet the IIP Team</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/international-internships/how-apply" data-drupal-link-system-path="node/211">How to Apply</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/international-internships/how-apply/iip-application-timeline" data-drupal-link-system-path="node/216">IIP Application Timeline</a></li>
+                 <li class="submenu-item"><a href="/our-programs/international-internships/how-apply/iip-terms-and-conditions" data-drupal-link-system-path="node/3866">IIP Terms and Conditions</a></li>
+                 <li class="submenu-item"><a href="/our-programs/international-internships/how-apply/application-faqs" data-drupal-link-system-path="node/221">Application FAQs</a></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/international-internships/financial-matters" data-drupal-link-system-path="node/226">Financial Matters</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/international-internships/student-stories" data-drupal-link-system-path="node/231">Student Stories</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/international-internships/student-stories/iip-2021-poster-winners" data-drupal-link-system-path="node/7496">IIP 2021 Poster Winners</a></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/international-internships/returning-home" data-drupal-link-system-path="node/236">Returning Home</a></li>
+              </ul></li>
+             <li class="submenu-item expanded active"><a href="/our-programs/novogratz-bridge-year" data-drupal-link-system-path="node/41">Novogratz Bridge Year</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+              <ul class="submenu collapse">
+               <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year/about-bridge-year" data-drupal-link-system-path="node/241">About Bridge Year</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/about-bridge-year/mission-values-vision" data-drupal-link-system-path="node/7556">Mission, Values, Vision</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/about-bridge-year/why-bridge-year" data-drupal-link-system-path="node/251">Why Bridge Year?</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/about-bridge-year/faqs" data-drupal-link-system-path="node/256">FAQs</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/about-bridge-year/news" data-drupal-link-system-path="node/261">In the News</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/about-bridge-year/support-bridge-year" data-drupal-link-system-path="node/266">Support for Bridge Year</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year/explore-locations" data-drupal-link-system-path="node/271">Explore Locations</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/explore-locations/bolivia" data-drupal-link-system-path="node/276">Bolivia</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/explore-locations/china" data-drupal-link-system-path="node/281">China</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/explore-locations/india" data-drupal-link-system-path="node/286">India</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/explore-locations/indonesia" data-drupal-link-system-path="node/291">Indonesia</a></li>
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/explore-locations/senegal" data-drupal-link-system-path="node/296">Senegal</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year/meet-our-volunteers" data-drupal-link-system-path="node/306">Meet Our Volunteers</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/meet-our-volunteers/returned-volunteers" data-drupal-link-system-path="node/311">Returned Volunteers</a></li>
+                </ul></li>
+               <li class="submenu-item active"><a href="/our-programs/novogratz-bridge-year/reflections-and-connections" data-drupal-link-system-path="node/316" class="is-active">Reflections and Connections</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year/voices" data-drupal-link-system-path="node/7516">Voices</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/voices/past-events" data-drupal-link-system-path="node/7591">Past Events</a></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/how-apply" data-drupal-link-system-path="node/301">How to Apply</a></li>
+               <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/information-families" data-drupal-link-system-path="node/531">Information for Families</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/novogratz-bridge-year/contact-us" data-drupal-link-system-path="node/331">Contact Us</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/novogratz-bridge-year/contact-us/admission-ambassadors" data-drupal-link-system-path="node/6936">Admission Ambassadors</a></li>
+                </ul></li>
+              </ul></li>
+             <li class="submenu-item expanded"><a href="/our-programs/study-abroad" data-drupal-link-system-path="node/61">Study Abroad</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+              <ul class="submenu collapse">
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/getting-started" data-drupal-link-system-path="node/336">Getting Started</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/why-go-abroad" data-drupal-link-system-path="node/341">Why Go Abroad?</a></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/types-programs" data-drupal-link-system-path="node/346">Types of Programs</a></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/advice-department-and-certificate" data-drupal-link-system-path="node/351">Advice by Department and Certificate</a></li>
+                 <li class="submenu-item expanded"><a href="/our-programs/study-abroad/getting-started/study-abroad-requirements" data-drupal-link-system-path="node/356">Study Abroad Requirements</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                  <ul class="submenu collapse">
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/study-abroad-requirements/academic-year-policies" data-drupal-link-system-path="node/361">Academic Year Policies</a></li>
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/study-abroad-requirements/summer-policies" data-drupal-link-system-path="node/366">Summer Policies</a></li>
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/getting-started/study-abroad-requirements/policies-faqs" data-drupal-link-system-path="node/371">Policies FAQs</a></li>
+                  </ul></li>
+                </ul></li>
+               <li class="submenu-item"><a href="/our-programs/study-abroad/meet-your-advisers" data-drupal-link-system-path="node/386">Meet Your Advisers</a></li>
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/explore-programs" data-drupal-link-system-path="node/391">Explore Programs</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/explore-programs/explore-programs-faqs" data-drupal-link-system-path="node/396">Explore Programs FAQs</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/financial-matters" data-drupal-link-system-path="node/401">Financial Matters</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/financial-matters/academic-year" data-drupal-link-system-path="node/586">Academic Year</a></li>
+                 <li class="submenu-item expanded"><a href="/our-programs/study-abroad/financial-matters/summer" data-drupal-link-system-path="node/596">Summer</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                  <ul class="submenu collapse">
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/financial-matters/summer/deans-fund" data-drupal-link-system-path="node/601">Dean's Fund</a></li>
+                  </ul></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/how-apply" data-drupal-link-system-path="node/406">How to Apply</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item expanded"><a href="/our-programs/study-abroad/how-apply/academic-year" data-drupal-link-system-path="node/411">Academic Year</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                  <ul class="submenu collapse">
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/how-apply/academic-year/petition" data-drupal-link-system-path="node/426">Petition</a></li>
+                  </ul></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/how-apply/summer" data-drupal-link-system-path="node/416">Summer</a></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/how-apply/application-faqs" data-drupal-link-system-path="node/421">Application FAQs</a></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/returning-home" data-drupal-link-system-path="node/431">Returning Home</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/returning-home/re-entry" data-drupal-link-system-path="node/436">Re-entry</a></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/returning-home/practical-matters" data-drupal-link-system-path="node/441">Practical Matters</a></li>
+                 <li class="submenu-item expanded"><a href="/our-programs/study-abroad/returning-home/whats-next" data-drupal-link-system-path="node/446">What's Next?</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                  <ul class="submenu collapse">
+                   <li class="submenu-item"><a href="/our-programs/study-abroad/returning-home/whats-next/become-global-ambassador" data-drupal-link-system-path="node/451">Become a Global Ambassador</a></li>
+                  </ul></li>
+                </ul></li>
+               <li class="submenu-item expanded"><a href="/our-programs/study-abroad/connect" data-drupal-link-system-path="node/461">Connect</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+                <ul class="submenu collapse">
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/connect/contact-us" data-drupal-link-system-path="node/466">Contact Us</a></li>
+                 <li class="submenu-item"><a href="/our-programs/study-abroad/connect/events" data-drupal-link-system-path="node/476">Events</a></li>
+                </ul></li>
+              </ul></li>
+            </ul></li>
+           <li class="nav-item expanded"><a href="/our-students" data-drupal-link-system-path="node/51">Our Students</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+            <ul class="submenu collapse">
+             <li class="submenu-item expanded"><a href="/our-students/international-eye-photo-contest" data-drupal-link-system-path="node/496">International Eye Photo Contest</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle Submenu"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> </button>
+              <ul class="submenu collapse">
+               <li class="submenu-item"><a href="/our-students/international-eye-photo-contest/previous-winners" data-drupal-link-system-path="node/4616">Previous Winners</a></li>
+               <li class="submenu-item"><a href="/our-students/international-eye-photo-contest/years-winners" data-drupal-link-system-path="node/6186">This Year's Winners</a></li>
+              </ul></li>
+             <li class="submenu-item"><a href="/our-students/resources" data-drupal-link-system-path="node/501">Resources</a></li>
+            </ul></li>
+           <li class="nav-item"><a href="/contact-us" data-drupal-link-system-path="node/56">Contact Us</a></li>
+          </ul>
+         </div> 
+         <div class="main-submenu">
+          <div class="nav-wrapper">
+           <ul class="nav navbar-nav main">
+            <li class="nav-item collapsed"><a href="/our-programs/fellowship-advising" data-drupal-link-system-path="node/71">Fellowship Advising</a></li>
+            <li class="nav-item collapsed"><a href="/our-programs/international-internships" data-drupal-link-system-path="node/66">International Internships</a></li>
+            <li class="nav-item collapsed active"><a href="/our-programs/novogratz-bridge-year" data-drupal-link-system-path="node/41">Novogratz Bridge Year</a></li>
+            <li class="nav-item collapsed"><a href="/our-programs/study-abroad" data-drupal-link-system-path="node/61">Study Abroad</a></li>
+           </ul>
+          </div> 
+         </div>
+         <div class="utility-menu">
+          <ul class="nav navbar-nav utility-nav">
+           <li class="nav-item"><a href="/events" data-drupal-link-system-path="node/86">Events</a></li>
+           <li class="nav-item"><a href="/news" data-drupal-link-system-path="node/81">News</a></li>
+           <li class="nav-item"><a href="https://gps.princeton.edu/">My GPS</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </nav>
+      <div class="search-bar" id="search-bar">
+       <div class="container navbar-expand-lg" role="search">
+        <h2 class="sr-only">Search</h2><button class="toggle-searchbar unbutton" type="button" data-toggle="collapse" data-target="#search-bar-container" aria-controls="search-bar-container" aria-expanded="false" aria-label="Toggle search"> <span class="toggle-search-icon"> <i class="fas fa-search" aria-hidden="true"></i> </span> </button>
+        <div id="search-bar-container" class="collapse navbar-collapse">
+         <div class="search-block-form contextual-region block block-search container-inline" id="block-searchform">
+          <form action="/search" method="get" id="search-block-form" accept-charset="UTF-8">
+           <div id="search-toggled" class="form-group js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label"><label for="edit-search-keys" class="visually-hidden">Search</label>
+            <input placeholder="Search" type="search" id="edit-search-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control">
+           </div>
+           <div data-drupal-selector="edit-search-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-search-actions">
+            <input type="submit" id="edit-search-submit" value="Submit" class="button js-form-submit form-submit btn btn-primary">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="breadcrumb" id="breadcrumb">
+     <div class="container">
+      <nav role="navigation" aria-label="breadcrumb">
+       <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/our-programs">Our Programs</a></li>
+        <li class="breadcrumb-item"><a href="/our-programs/novogratz-bridge-year">Novogratz Bridge Year Program</a></li>
+        <li class="breadcrumb-item active" aria-current="page"> Reflections and Connections </li>
+       </ol>
+      </nav>
+     </div>
+    </div>
+    <div class="highlighted" id="highlighted">
+     <div class="container">
+      <div class="region region-highlighted">
+       <div data-drupal-messages-fallback class="hidden"></div>
+      </div>
+     </div>
+    </div>
+    <div class="oip-standard">
+     <div class="oip-standard-container">
+      <div class="oip-cat-title-container oip-category-study-abroad">
+       <span>Study Abroad</span>
+      </div>
+      <div class="oip-cat-title-container oip-category-bridge-year">
+       <span>Bridge Year</span>
+      </div>
+      <div class="oip-cat-title-container oip-category-fellowships">
+       <span>Fellowships</span>
+      </div>
+      <div class="oip-cat-title-container oip-category-internships">
+       <span>International Internships</span>
+      </div>
+      <h1>Reflections and Connections</h1>
+     </div>
+    </div>
+    <div id="main" class="main-container">
+     <div class="container">
+      <div class="row">
+       <div class="sidebar-first section order-first col-sm-4 col-md-3 col-lg-2">
+        <nav class="main-sidebar-menu" aria-label="section">
+         <h2 class="sr-only">Section Menu</h2>
+         <div class="nav-wrapper">
+          <ul class="nav navbar-nav main">
+           <li class="nav-item collapsed"><a href="/our-programs/novogratz-bridge-year/about-bridge-year" data-drupal-link-system-path="node/241">About Bridge Year</a></li>
+           <li class="nav-item collapsed"><a href="/our-programs/novogratz-bridge-year/explore-locations" data-drupal-link-system-path="node/271">Explore Locations</a></li>
+           <li class="nav-item collapsed"><a href="/our-programs/novogratz-bridge-year/meet-our-volunteers" data-drupal-link-system-path="node/306">Meet Our Volunteers</a></li>
+           <li class="nav-item active"><a href="/our-programs/novogratz-bridge-year/reflections-and-connections" data-drupal-link-system-path="node/316" class="is-active">Reflections and Connections</a></li>
+           <li class="nav-item collapsed"><a href="/our-programs/novogratz-bridge-year/voices" data-drupal-link-system-path="node/7516">Voices</a></li>
+           <li class="nav-item"><a href="/our-programs/novogratz-bridge-year/how-apply" data-drupal-link-system-path="node/301">How to Apply</a></li>
+           <li class="nav-item"><a href="/our-programs/novogratz-bridge-year/information-families" data-drupal-link-system-path="node/531">Information for Families</a></li>
+           <li class="nav-item collapsed"><a href="/our-programs/novogratz-bridge-year/contact-us" data-drupal-link-system-path="node/331">Contact Us</a></li>
+          </ul>
+         </div> 
+        </nav><a id="main-content" class="sr-only skip-link"></a>
+        <div class="region region-sidebar-first">
+         <div id="block-informationforbridgeyear" data-block-plugin-id="block_content:87b54246-ae0f-4072-9b7b-7baac2a6144e" class="block-ps-text block block-block-content block-block-content87b54246-ae0f-4072-9b7b-7baac2a6144e">
+          <h2 class="block-heading">Information For</h2>
+          <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+           <p><a href="/our-programs/novogratz-bridge-year/families">Families</a></p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <main class="main main-content col-sm-12 col-lg-10 order-last">
+        <div class="region region-content">
+         <div id="block-oip-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+          <h1 class="page-title"> Reflections and Connections </h1>
+         </div>
+         <div id="block-oip-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+          <article role="article" about="/our-programs/novogratz-bridge-year/reflections-and-connections" class="node node--type-ps-basic-page node--view-mode-full">
+           <div class="node__content">
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-block-plugin-id="ps_node_view" class="block block-ps-core block-ps-node-view">
+               </div>
+               <div class="views-element-container block block-views block-views-blockoip-blog-view-blog-updates-from-the-field" data-block-plugin-id="views_block:oip_blog_view-blog_updates_from_the_field"><span id="updates-from-field" class="jump-link-anchor"></span>
+                <div>
+                 <div class="select2-form view view-oip-blog-view view-id-oip_blog_view view-display-id-blog_updates_from_the_field js-view-dom-id-fc4e2e9d8e403511f15e89db46dd89135bf016e996aef1efe5188a328d29676a">
+                  <div class="view-filters">
+                   <form class="views-exposed-form" data-drupal-selector="views-exposed-form-oip-blog-view-blog-updates-from-the-field" action="/our-programs/novogratz-bridge-year/reflections-and-connections" method="get" id="views-exposed-form-oip-blog-view-blog-updates-from-the-field" accept-charset="UTF-8">
+                    <div class="form--inline clearfix">
+                     <div class="form-group js-form-item form-item js-form-type-select form-type-select js-form-item-country form-item-country"><label for="edit-country">Country</label><select data-drupal-selector="edit-country" multiple name="country[]" id="edit-country" size="5" class="form-select form-control"><option value="581">Bolivia</option><option value="591">China</option><option value="566">India</option><option value="586">Indonesia</option><option value="596">Senegal</option></select>
+                     </div>
+                     <div class="form-group js-form-item form-item js-form-type-select form-type-select js-form-item-sort-by form-item-sort-by"><label for="edit-sort-by">Sort by</label><select data-drupal-selector="edit-sort-by" id="edit-sort-by" name="sort_by" class="form-select form-control"><option value="field_oip_blog_date_value" selected>Date</option></select>
+                     </div>
+                     <div class="form-group js-form-item form-item js-form-type-select form-type-select js-form-item-sort-order form-item-sort-order"><label for="edit-sort-order">Order</label><select data-drupal-selector="edit-sort-order" id="edit-sort-order" name="sort_order" class="form-select form-control"><option value="ASC">Ascending</option><option value="DESC" selected>Descending</option></select>
+                     </div>
+                     <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                      <input data-drupal-selector="edit-submit-oip-blog-view" type="submit" id="edit-submit-oip-blog-view" value="Search" class="button js-form-submit form-submit btn btn-primary">
+                     </div>
+                    </div>
+                   </form>
+                  </div>
+                  <div class="view-content">
+                   <div class="item-list">
+                    <ul>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2022-04/cover%20photo.jpg?itok=Q86vBo2s" width="750" height="563" alt="Kate Macakanja and a fellow Bridge Year participant in Senegal" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/admission-ambassador-stories-5" hreflang="en">Admission Ambassador Stories</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> April 18, 2022 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>Throughout the spring, our&nbsp;Novogratz Bridge Year Admission Ambassadors&nbsp;have been sharing their thoughts and insights on the Bridge Year student experience. In this installment, Kate Macakanja '23,&nbsp;Aneekah Uddin ’24,&nbsp;Svetlana Johnson ’24,&nbsp;Sydney Eck ’24,&nbsp;Isaac Wills ’23, and&nbsp;&nbsp;Nicole Williams ’23,&nbsp;reflect on a range of issues including cross-cultural challenges, language learning, relationship building, and identity during their time abroad.</p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2022-04/Agnes%207.JPG?itok=HIm7P3ux" width="750" height="563" alt="Photo of Agnes and ProPeru volunteers collaborating with a local women's group" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/where-are-they-now-agnes-cho-14" hreflang="en">Where Are They Now: Agnes Cho '14</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> April 7, 2022 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>In this series, the Novogratz Bridge Year office reconnects with program alums to see where life has taken them after Princeton.&nbsp;This installment features Agnes Cho ‘14.&nbsp; In 2009-10, Agnes traveled with the inaugural Bridge Year group to Urubamba, Peru, where she collaborated with ProPeru, an organization that focuses on community development concerns in the Sacred Valley region.</p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2022-03/Shikshantar.jpg?itok=WDaaJRbS" width="512" height="384" alt="Bridge Year participant Sydney Eck'24 with a group of unschoolers at Shikshantar" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                         <figcaption class="figure-caption">
+                          <p>Bridge Year participant Sydney Eck (center) with a group of Shikshantar unschoolers&nbsp;(<em>photo courtesy of Shikshantar Andolan</em>)</p>
+                         </figcaption>
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/community-partner-spotlight" hreflang="en">Community Partner Spotlight: Shikshantar</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> March 28, 2022 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> India 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>Sydney Eck ’24 (Bridge Year India 2019-20) recently sat down sat down with Manish Jain, Shikshantar’s founder and Sydney’s mentor while on the program, to have him share more about the goals and work of Shikshantar</p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2022-03/Yang%20Family_0.JPG?itok=FsLDGRrB" width="750" height="563" alt="Ryan, Jiejie, Gege, and Nuan Nuan on a trip to the Ailao Mountains." loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                         <figcaption class="figure-caption">
+                          <p>Ryan, Jiejie, Gege, and Nuan Nuan on a trip to the Ailao Mountains.</p>
+                         </figcaption>
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/host-family-spotlight-yang-family" hreflang="en">Host Family Spotlight: The Yang Family</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> March 16, 2022 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> China 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>Families that host Novogratz Bridge Year students open their homes and lives to participants year after year. In this series, past participants take an opportunity to reconnect with their homestay families and reflect on the mutual learning and growth that occurs through hosting.&nbsp;</p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2022-03/With%20most%20of%20her%20homestay%20family%20during%20the%20Bridge%20Year%20program.jpg?itok=Sq2lBQ7v" width="750" height="498" alt="A group of people posing for a photograph" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                         <figcaption class="figure-caption">
+                          <p>Abby with her homestay family during her Bridge Year</p>
+                         </figcaption>
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/where-are-they-now-abby-gellman-17" hreflang="en">Where Are They Now: Abby Gellman '17</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> March 9, 2022 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> Senegal 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>In this series, our assistant director, Matt Lynn, connects with Novogratz Bridge Year alumni to see where life has taken them after Princeton.&nbsp; In this installment, Matt speaks with Abigail Gellman, Class of 2017. In 2012-13, Abby traveled with Bridge Year to Dakar, Senegal, where she collaborated with <a href="https://tsxdakar.wordpress.com/">Taxawu Suñuy Xalés</a> (TSX), an organization that, until 2014, provided meals, basic first aid, and educational programming for Talibé in Yoff, Dakar.</p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2022-03/mmexport1577271469465%20-%20Svetlana%20Johnson.jpg?itok=CMnOrEB5" width="750" height="563" alt="Svetlana Johnson works with two children" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/admission-ambassador-stories-4" hreflang="en">Admission Ambassador Stories</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> March 2, 2022 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>Throughout the spring, our <a href="https://oip.princeton.edu/our-programs/novogratz-bridge-year/contact-us/admission-ambassadors">Novogratz Bridge Year Admission Ambassadors</a> will share thoughts and insights on the Bridge Year student experience. In this installment, <a href="https://oip.princeton.edu/people/aneekah-uddin-24">Aneekah Uddin ’24</a>, <a href="https://oip.princeton.edu/people/nicole-e-williams-23">Nicole Williams ’23</a>, <a href="https://oip.princeton.edu/people/sydney-eck-%E2%80%9924">Sydney Eck ’24</a>, <a href="https://oip.princeton.edu/people/svetlana-johnson-24">Svetlana Johnson ’24</a>, <a href="https://oip.princeton.edu/people/isaac-wills-23">Isaac Wills ’23</a>, and <a href="https://oip.princeton.edu/people/miguel-gracia-zhang-23">Miguel Gracia-Zhang ’23</a>…</p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2022-02/coley%20martin%20featured%20image_0.png?itok=ObJIttJE" width="750" height="503" alt="Coley Martin sitting on steps, smiling" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/spotlight-coley-martin-23-bridge" hreflang="en">Spotlight on Coley Martin '23, Bridge Year Bolivia</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> February 10, 2022 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> Bolivia 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>Prior to the start of her first year on campus, <a href="/people/coley-martin-23">Coley Martin</a> ‘23, now a third-year student in Civil and Environmental Engineering, traveled to Tiquipaya, Bolviia, as part of the Novogratz Bridge Year Program.&nbsp;</p>
+                         <p>As a <a href="https://oip.princeton.edu/our-programs/novogratz-bridge-year/contact-us/admission-ambassadors">Bridge Year Admission Ambassador</a>, Coley is eager to tell prospective students about her Bridge Year experience, so we asked her to share a bit more with us about her time on Bridge Year.</p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2022-02/nick1_0.png?itok=gFkl_PjI" width="750" height="526" alt="Two photos of the same person a few years later" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                         <figcaption class="figure-caption">
+                          <p>Nick Kim Sexton on his Bridge Year in India (L) and today (R)</p>
+                         </figcaption>
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/where-are-they-now-nick-kim-sexton" hreflang="en">Where Are They Now: Nick Kim Sexton '17</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> February 3, 2022 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> India 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>In this series, our assistant director, Matt Lynn, connects with Novogratz Bridge Year alums to see where life has taken them after Princeton.&nbsp; In this first installment, Matt speaks with Nick Kim Sexton ’17. In 2012-13, Nick traveled with Bridge Year to Varanasi, India, where he collaborated with <a href="https://www.nirman.info/" target="_blank">NIRMAN</a>, an organization that aims to provide inclusive and innovative learning experiences for people of all ages and backgrounds.&nbsp;</p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2021-05/Reflections%20and%20Connections%20Final%20-%20Cody%20Mui.jpeg?itok=yUh8n-xx" width="750" height="563" alt="Bridge Year Group in Bolivia" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/admission-ambassador-stories-3" hreflang="en">Admission Ambassador Stories</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> May 6, 2021 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>In our final installment of the series, <a href="https://oip.princeton.edu/people/anna-hiltner-23">Anna Hiltner ’23</a>, <a href="https://oip.princeton.edu/people/cody-mui-23">Cody Mui ’23</a>, <a href="/people/aneekah-uddin-24">Aneekah Uddin '24</a>, <a href="https://oip.princeton.edu/people/john-bullock-23">John Bullock ’23</a>, and <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="eb78c2da-0589-43a1-91ef-30d318ad058c" href="/people/sydney-eck-%E2%80%9924">Leopoldo Solis '21</a> discuss their main takeaways from the Novogratz Bridge Year Program and provide their best advice for prospective students. Don't forget, the deadline…</p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2021-05/Campus%20Life%20Banner.jpg?itok=gflzp0SO" width="640" height="360" alt="Campus Arch" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                         <figcaption class="figure-caption">
+                          <p>Photo by Denise Applewhite, University photographer</p>
+                         </figcaption>
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/admission-ambassador-stories-2" hreflang="en">Admission Ambassador Stories</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> April 30, 2021 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>This week, <a href="https://oip.princeton.edu/people/anna-hiltner-23">Anna Hiltner ’23</a>, <a href="https://oip.princeton.edu/people/cody-mui-23">Cody Mui ’23</a>, <a href="https://oip.princeton.edu/people/john-bullock-23">John Bullock ’23</a>, and <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="eb78c2da-0589-43a1-91ef-30d318ad058c" href="/people/sydney-eck-%E2%80%9924">Leopoldo Solis '21</a> reflect on the ways that Bridge Year prepared them for the Princeton academic experience. </p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2021-04/BYP%20boat%20-%20navigating.jpg?itok=QYlbQqMz" width="750" height="619" alt="Bridge Year students in boat" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/admission-ambassador-stories-1" hreflang="en">Admission Ambassador Stories</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> April 26, 2021 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>This week, <a href="https://oip.princeton.edu/people/anna-hiltner-23">Anna Hiltner ’23</a>, <a href="https://oip.princeton.edu/people/svetlana-johnson-24">Svetlana Johnson ’24</a>, <a href="https://oip.princeton.edu/people/cody-mui-23">Cody Mui ’23</a>, <a href="https://oip.princeton.edu/people/leopoldo-solis-'21">Leopoldo Solis ’21</a>, <a href="https://oip.princeton.edu/people/nicole-e-williams-23">and Nicole E. Williams ’23</a> discuss navigating personal challenges on Bridge Year and provide tips for future Bridge Year students as they prepare for the program. </p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2021-04/RC2%20-%20Aneekah.jpg?itok=uAMNMeVU" width="750" height="563" alt="Street art in Jogja, Indonesia" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/admission-ambassador-stories-0" hreflang="en">Admission Ambassador Stories</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> April 16, 2021 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>This week, <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="5528d98f-d4bf-4e78-b19a-926d60ce48ca" href="/people/aneekah-uddin-24">Aneekah Uddin ’24</a>, <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="362506a7-1ce9-40ca-ac61-8579bc6c6df5" href="/people/kate-macakanja-23">John Bullock ’23</a>, and <a href="https://oip.princeton.edu/people/kate-gross-whitaker-23">Kate Gross Whitaker ’23</a> reflect on the challenges, mishaps, and advantages of learning a new language and culture. </p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2021-04/KGW%20Bridge%20Year%20Service%20Prompt.JPG?itok=qynx7xHH" width="750" height="500" alt="Kate Gross Whitaker in China" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/admission-ambassador-stories" hreflang="en">Admission Ambassador Stories</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> April 8, 2021 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>This week, <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="1e90901d-b3ff-4c4f-8569-329a01468d6d" href="/people/ryan-sung-22">Kate Gross Whitaker ’23</a> and <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="f0aa0db7-e9e8-4230-8701-ac98641866ce" href="/people/svetlana-johnson-24">Svetlana Johnson ’24</a> reflect on the theme of community engagement and service learning. </p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2020-08/Lauren%20Aung%20-%20Update.jpg?itok=ldS9ZuLX" width="750" height="1000" alt="Photo of Lauren Aung filling dumplings" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/lauren-aung-24-ruminations-homeland" hreflang="en">Lauren Aung '24: Ruminations on a Homeland</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> July 28, 2020 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> China 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>When I biked home from work in China, I anticipated not my homestay family’s apartment building, a nondescript, five story complex on top of convenience stores and massage parlors, but the building across from it. At twenty stories high, it towered over mine, and two looming characters perched on either corner blazed in red: 天 and 地, or heaven and earth. My Christian roots compelled me to recall those first verses. “In the beginning God created the heavens and the earth. Now the earth was formless and empty, darkness was over the surface of the deep…”. Until I was eleven and had repudiated my faith in a fit of teenage angst, I dutifully attended church every Sunday and Jesus camp every June. China had the tendency to reveal my bare bones, and as I returned after a long day of stumbling…</p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2020-04/Bridge%20Year.png?itok=MDEZs1E0" width="750" height="500" alt="a photo of approx 45 people in 3 rows" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                         <figcaption class="figure-caption">
+                          <p>The Novogratz Bridge Year 2019-20 cohort at Princeton University in August 2019</p>
+                         </figcaption>
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/farewell-reflections-bridge-year" hreflang="en">Farewell reflections from Bridge Year 2019-20</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> April 3, 2020 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>On March 13, the Novogratz Bridge Year Program made the difficult decision to suspend operations in all five of our program sites for the remainder of the year, due to the COVID-19 global pandemic. We want to thank all of the communities across the globe that make this program possible, our program partner Where There Be Dragons,&nbsp;and the Bridge Year students for remaining engaged and committed to learning about the world around them even as they transition back to their home locations. Enjoy some farewell reflections from each of the Bridge Year cohorts.&nbsp;</p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2020-03/Alison%20and%20homestay%20brother.jpg?itok=Ei99dygs" width="512" height="512" alt="Two smiling people pointing at each other in a joking manner " loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/spotlight-onalison-parish-24-bridge" hreflang="en">Spotlight on...Alison Parish '24, Bridge Year Senegal</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> March 10, 2020 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> Senegal 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>I am creating meaningful relationships with those around me.&nbsp;As Bridge Year shortens to a few months, I am cherishing the time left with the Mbayen family. Although, I know that just as those who have come before me, I will always be a part of the family</p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2020-02/Senegal%20Update%201.png?itok=RaSYzQoO" width="750" height="562" alt="Photo of Dakar" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/group-update-senegal-17" hreflang="en">Group Update from Senegal</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> February 26, 2020 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> Senegal 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>Our lives have come to be defined by rhythm. In our second Update from the Field, we invite you to get a glimpse of how we became woven into the fabric of Dakar’s rhythm.</p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2020-02/BYP%20Indo%208.jpg?itok=3k9fXJnC" width="750" height="563" alt="Photo of Bridge Year Indonesia group" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/group-update-indonesia-3" hreflang="en">Group Update from Indonesia</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> February 6, 2020 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> Indonesia 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>Whether during travel periods or our daily routines in Yogyakarta, our Bridge Year lives seem to be constantly in transit. We decided to recollect our time in Indonesia by reflecting on our lives in transit, focusing both on the myriad forms of transportation we rely on, and on the other less tangible ways we mark our transitions here. Each group member chose a form of transportation, including everything from the public bus to the way daily shifts in time impact us. We have found that it’s in these moments of transit, these seemingly mundane shifts in place or time, are catalysts for reflection on our experience here.&nbsp;</p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2019-12/Update%20from%20the%20Field%20-%20Zoey%20Nell%201.jpg?itok=JHSBWRsu" width="750" height="563" alt="Photo of Zoey Nell, Bridge Year Senegal" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/spotlight-onzoey-nell-24-bridge-year" hreflang="en">Spotlight on...Zoey Nell '24, Bridge Year Senegal</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> December 12, 2019 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> Senegal 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>I’m working on living a more intentional life here in Senegal, and I’ve made some good first steps. Right now I am working on finding balance. Finding balance with what I eat, how I spend my time, and what my priorities are. I’m only at the beginning of this journey, and perhaps starting a little late, but starting, nonetheless. I’m living a more intentional life, one small step at a time.</p> 
+                        </div></span>
+                      </div></li>
+                     <li>
+                      <div class="views-field views-field-field-ps-featured-image">
+                       <div class="field-content">
+                        <figure class="media--type-image media--view-mode-ps-small-freeform figure">
+                         <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2019-12/pia%20UFF.jpg?itok=6DuCiito" width="750" height="563" alt="Group photo of Bridge Year India cohort" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                        </figure>
+                       </div>
+                      </div>
+                      <div class="views-field views-field-nothing oip-blog-wrapper">
+                       <span class="field-content">
+                        <div class="field--name-title">
+                         <a href="/our-programs/novogratz-bridge-year/reflections-and-connections/group-update-india-19" hreflang="en">Group Update from India</a>
+                        </div>
+                        <div class="oip-blog-date">
+                         <span class="views-label">Date:</span> December 6, 2019 
+                        </div>
+                        <div class="oip-blog-country">
+                         <span class="views-label">Country:</span> India 
+                        </div>
+                        <div class="oip-blog-summary">
+                         <p>Food provides insight into the climate, preferences, and organization of a society. It is also a prevalent connector, linking the farmer to the buyer, the buyer to the cook, and the cook to the consumer. Food impacts our daily lives in a myriad of ways which we are unable to capture in a mere 6,741 words. But perhaps this update can serve as a fragmented window into our shifting understanding and as an inspiration to further investigate food within a variety of contexts, from our high school lives, to Bridge Year, to our lives at Princeton.</p> 
+                        </div></span>
+                      </div></li>
+                    </ul>
+                   </div>
+                  </div>
+                  <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
+                   <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
+                   <ul class="pager__items js-pager__items">
+                    <li class="pager__item is-active"><a href="?page=0" title="Current page"> <span class="visually-hidden"> Current page </span>1</a></li>
+                    <li class="pager__item"><a href="?page=1" title="Go to page 2"> <span class="visually-hidden"> Page </span>2</a></li>
+                    <li class="pager__item pager__item--next"><a href="?page=1" title="Go to next page" rel="next"> <span class="visually-hidden">Next page</span> <span aria-hidden="true">Next ›</span> </a></li>
+                    <li class="pager__item pager__item--last"><a href="?page=1" title="Go to last page"> <span class="visually-hidden">Last page</span> <span aria-hidden="true">Last »</span> </a></li>
+                   </ul>
+                  </nav>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </main>
+      </div>
+     </div>
+    </div>
+    <footer role="contentinfo" class="footer" id="footer">
+     <h2 class="sr-only">Footer</h2>
+     <div class="container">
+      <div class="region region-footer">
+       <div class="constrained-bkg-constrained-content layout layout--fourcol-25-25-25-25">
+        <div class="layout-inner-container">
+         <div class="layout__region layout__region--first layout__region--quarters layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+           <h2 class="block-heading">Office of International Programs</h2>
+           <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+            <p>Louis A. Simpson International Building<br> Phone: 609-258-5524<br> Fax: 609-258-1019<br><a href="mailto:oip@princeton.edu">oip@princeton.edu</a><br><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="1b481262-917a-4c03-b87e-25cb01c2005c" href="/who-we-are/staff">Make an Appointment</a></p>
+            <p>A unit of the <a href="https://odoc.princeton.edu/">Office of the Dean of the College</a></p>
+           </div>
+          </div>
+         </div>
+         <div class="layout__region layout__region--second layout__region--quarters layout__region--narrow">
+          <div class=" oip-text--right block-ps-text block block-layout-builder block-inline-blockps-text" data-block-plugin-id="inline_block:ps_text">
+           <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+            <a href="https://www.google.com/maps/place/Louis+A.+Simpson+International+Building/@40.3492662,-74.6571376,17z/data=!3m1!4b1!4m5!3m4!1s0x89c3e6c3abdf7765:0x499a19706e75ade!8m2!3d40.3492621!4d-74.6549436" target="_blank">
+             <figure class="align-right media--type-image media--view-mode-ps-small-freeform figure">
+              <img src="/sites/g/files/toruqf131/files/styles/freeform_750w/public/2019-08/oip-map.png?itok=co00jap0" width="220" height="161" alt="the Louis A Simpson building is on Washington Road in Princeton NJ" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+             </figure></a>
+            <p>&nbsp;</p>
+           </div>
+          </div>
+         </div>
+         <div class="layout__region layout__region--third layout__region--quarters layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+           <h2 class="block-heading">Visit Us</h2>
+           <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+            <p>Office Hours Monday-Friday:<br> Academic Year: 9 a.m. - 5 p.m.<br> Summer: 8:30 a.m.- 4:30 p.m.</p>
+           </div>
+          </div>
+         </div>
+         <div class="layout__region layout__region--fourth layout__region--quarters layout__region--narrow">
+          <div data-block-plugin-id="inline_block:ps_social_links" class="block-ps-social-links block block-layout-builder block-inline-blockps-social-links">
+           <h2 class="block-heading">Follow Us</h2>
+           <ul class="ps-social-links--platforms platforms vertical">
+            <li><a href="https://www.facebook.com/princetonoip" title="PrincetonOIP"> <span class="fab fa-facebook fa-2x" aria-hidden="true"></span> <span class="social-link-label">PrincetonOIP</span> </a></li>
+            <li><a href="https://www.facebook.com/PrincetonBridgeYear/" title="PrincetonBridgeYear"> <span class="fab fa-facebook fa-2x" aria-hidden="true"></span> <span class="social-link-label">PrincetonBridgeYear</span> </a></li>
+            <li><a href="https://www.instagram.com/princetonoip" title="PrincetonOIP"> <span class="fab fa-instagram fa-2x" aria-hidden="true"></span> <span class="social-link-label">PrincetonOIP</span> </a></li>
+            <li><a href="https://www.instagram.com/novogratzbridgeyear" title="novogratzbridgeyear"> <span class="fab fa-instagram fa-2x" aria-hidden="true"></span> <span class="social-link-label">novogratzbridgeyear</span> </a></li>
+           </ul>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="constrained-bkg-constrained-content layout layout--threecol-33-34-33">
+        <div class="layout-inner-container">
+         <div class="layout__region layout__region--first layout__region--thirds layout__region--narrow">
+         </div>
+         <div class="layout__region layout__region--second layout__region--thirds layout__region--narrow">
+         </div>
+         <div class="layout__region layout__region--third layout__region--thirds layout__region--narrow">
+         </div>
+        </div>
+       </div>
+       <div class="constrained-bkg-constrained-content layout layout--onecol">
+        <div class="layout-container">
+         <div class="layout__region layout__region--content">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="subfooter">
+      <div class="container">
+       <div class="row">
+        <div class="subfooter-links">
+         <ul class="list-unstyled">
+          <li><a href="https://accessibility.princeton.edu/resources/accessibility-help" target="_blank">Accessibility</a></li>
+         </ul>
+        </div>
+        <div class="col-sm  copyright">
+         <p class="copyright-text"> © 2022 The Trustees of Princeton University </p>
+        </div>
+        <div class="col-sm text-sm-left text-md-right"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"> <img src="/sites/g/files/toruqf131/themes/site/images/pu-logo-stacked-white.svg" alt="Princeton University"></a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div> 
+  </div><span id="ps-current-username" data-username=""></span>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/316","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"asset_injector\/css\/alert_messages,asset_injector\/css\/bridge_year_family,asset_injector\/css\/john_s_code_to_integrate_into_theme,classy\/base,classy\/messages,classy\/node,core\/drupal.form,core\/normalize,core\/picturefill,entity_embed\/caption,extlink\/drupal.extlink,google_analytics\/google_analytics,layout_discovery\/onecol,oip\/global-styling,oip\/metaserifpro,oip\/proximanova,oip\/searchbar,ps_alerts\/alerts,ps_base\/global-styling,ps_base\/menu-enhancer,ps_ckeditor_callout\/ckeditor_callout,ps_core\/collapse_text_search_terms_revealer,ps_core\/columns,ps_core\/document_icons,ps_core\/enhanced_focus,ps_core\/focusable_hash_fixer,ps_core\/fourcol_25_25_25_25,ps_core\/link_behavior,ps_core\/logout_link_username,ps_core\/search_terms_highlighter,ps_core\/threecol_33_34_33,ps_social\/fontawesome,ps_social\/social_links,select2_simple\/select2_simple,system\/base,views\/views.ajax,views\/views.module,views_ajax_history\/history","theme":"oip","theme_token":null},"ajaxTrustedUrl":{"\/our-programs\/novogratz-bridge-year\/reflections-and-connections":true},"ckeditorheight":{"offset":1,"line_height":1.5,"unit":"em","disable_autogrow":null},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"all_documents_new_window":false,"select2_simple":{"selector":".node-form select:not(.disable-select2,[name$=\u0027[actions][bundle]\u0027],.ui-timepicker-select,[name*=\u0027field_ps_timeline_feature_items\u0027]),.select2-form select,#drupal-off-canvas select[multiple]"},"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"viewsAjaxHistory":{"renderPageItem":0},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:fc4e2e9d8e403511f15e89db46dd89135bf016e996aef1efe5188a328d29676a":{"view_name":"oip_blog_view","view_display_id":"blog_updates_from_the_field","view_args":"","view_path":"\/node\/316","view_base_path":null,"view_dom_id":"fc4e2e9d8e403511f15e89db46dd89135bf016e996aef1efe5188a328d29676a","pager_element":0}}},"ajax":[],"user":{"uid":0,"permissionsHash":"0c65cb7d0b17e8592025a2efca2514eeec9f615686e6ff301c9d2e3f04e0c6bb"}}</script>
+  <script src="/sites/g/files/toruqf131/files/js/js_TbY-ua5LOCfWtG_2r1G6wV9mSvuWzxfUCT2CVGetamg.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"427707476","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":2344,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"427707476"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-96588424-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga('create', 'UA-53634508-1', {'name': 'puwdsTracker'});ga("send", "pageview");ga('puwdsTracker.send', 'pageview');</script>
+  <link rel="canonical" href="https://accessibility.princeton.edu/assurance/web">
+  <meta name="description" content="Beyond its design and interaction, the accessibility of a website depends on the quality of its content.&nbsp; Princeton provides two tools for content quality assurance: The Editoria11y plugin, which is integrated into content editing tools to provide instant feedback for content editors The DubBot website monitoring service, described below, that a...">
+  <meta property="og:site_name" content="Digital Accessibility at Princeton">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://accessibility.princeton.edu/assurance/web">
+  <meta property="og:title" content="Website Quality Assurance Tools">
+  <meta property="og:description" content="Beyond its design and interaction, the accessibility of a website depends on the quality of its content.&nbsp; Princeton provides two tools for content quality assurance: The Editoria11y plugin, which is integrated into content editing tools to provide instant feedback for content editors The DubBot website monitoring service, described below, that a...">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:widgets:csp" content="on">
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/sites/g/files/toruqf1101/files/favicon.ico" type="image/vnd.microsoft.icon">
+  <title>Website Quality Assurance Tools | Digital Accessibility at Princeton</title>
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1101/files/css/css_S61WYzx-XaXDlvie6F2y1BCLytj9T915gSqvebf51dw.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1101/files/css/css_1prhxtvxq6YtbaaqGTWaME8KYz_-Q8ljDzSry7LZZCQ.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/xxx7asp.css">
+  <link rel="stylesheet" media="all" href="//use.typekit.net/bok5fgz.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1101/files/css/css_hVcwcTbJI6WYcbnmtCN8EScKtZYtLWbIS05Zm_KpJXI.css">
+  <link rel="stylesheet" media="all" href="/sites/g/files/toruqf1101/files/asset_injector/css/psbv2-11db2fec3f07cb84a764b1b58fa48b56.css?rc4j60">
+ </head>
+ <body class="not-front section-assurance page-node-237 content-type-ps-basic-page flavor1 fontset1 menu1 layout-block-padding-large">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="page page-container"> 
+    <header role="banner" class="header region region-header" id="header">
+     <h1 class="sr-only sr-site-name">Digital Accessibility at Princeton</h1>
+     <div class="skip-links"><a href="#main-content" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to content</a><a href="#edit-search-keys" class="sr-only sr-only-focusable"><span class="hide-on-focus">Off screen link: </span>Skip to search</a>
+     </div>
+     <div class="header-container container">
+      <div class="princeton-branding">
+       <div class="container"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"> <img src="/profiles/ps/themes/ps_base/images/pu-logo.svg" alt="Princeton University"> </a>
+       </div>
+      </div>
+      <div class="site-branding">
+       <div class="container">
+        <div class="row"><a href="/" title="Home" rel="home" class="site-logo"> <img src="/sites/g/files/toruqf1101/files/a11y_shield_color_rgb.png" alt="Home" typeof="foaf:Image"> </a>
+        </div>
+       </div>
+      </div>
+      <nav aria-label="site" class="main-menu">
+       <h2 class="sr-only">Main Menu</h2>
+       <div class="container navbar-expand-lg"><button class="toggle-mobile-menu unbutton" type="button" data-toggle="collapse" data-target="#menu-container" aria-controls="menu-container" aria-expanded="false" aria-label="Toggle navigation"> <span class="toggle-mobile-menu-icon"> <span class="toggle-mobile-menu-title">Menu</span> <i class="fa fa-bars" aria-hidden="true"></i> </span> </button>
+        <div id="menu-container" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item expanded"><a href="/about" data-drupal-link-system-path="node/160">About</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/about/people" data-drupal-link-system-path="node/229">People</a></li>
+            <li class="submenu-item"><a href="/about/initiatives" data-drupal-link-system-path="node/246">Initiatives</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/guidelines" data-drupal-link-system-path="node/191">Policies &amp; Guidelines</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/guidelines/web" data-drupal-link-system-path="node/213">Web</a></li>
+            <li class="submenu-item"><a href="/guidelines/video" data-drupal-link-system-path="node/215">Video and Audio</a></li>
+            <li class="submenu-item"><a href="/guidelines/social-media" data-drupal-link-system-path="node/212">Social Media</a></li>
+            <li class="submenu-item"><a href="/guidelines/events" data-drupal-link-system-path="node/234">Events</a></li>
+            <li class="submenu-item"><a href="/guidelines/procurement" data-drupal-link-system-path="node/214">IT Procurement</a></li>
+            <li class="submenu-item"><a href="/guidelines/email" data-drupal-link-system-path="node/235">Email</a></li>
+           </ul></li>
+          <li class="nav-item expanded active"><a href="/assurance" data-drupal-link-system-path="node/221">Quality Assurance</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/assurance/test" data-drupal-link-system-path="node/251">Testing &amp; Consultations</a></li>
+            <li class="submenu-item active"><a href="/assurance/web" data-drupal-link-system-path="node/237" class="is-active">Website Quality Assurance Tools</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/training" data-drupal-link-system-path="node/219">Training</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item"><a href="/training/classes" data-drupal-link-system-path="node/222">Classes</a></li>
+            <li class="submenu-item expanded"><a href="/training/certifications" data-drupal-link-system-path="node/223">Certifications</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/training/certifications/certificant-resources" data-drupal-link-system-path="node/210">Certificant Resources</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/training/meetups-channels" data-drupal-link-system-path="node/227">Meetups &amp; Channels</a></li>
+            <li class="submenu-item"><a href="/training/certificants" data-drupal-link-system-path="node/225">Certificants</a></li>
+           </ul></li>
+          <li class="nav-item expanded"><a href="/how" data-drupal-link-system-path="node/163">How To...</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+           <ul class="submenu collapse" role="list">
+            <li class="submenu-item expanded"><a href="/how/content" data-drupal-link-system-path="node/195">Create Accessible Content</a><button class="toggle-submenu unbutton" type="button" data-toggle="collapse" aria-expanded="false"> <span class="toggle-submenu-icon"> <i class="fas fa-plus" aria-hidden="true"></i> </span> <span class="sr-only">Submenu</span> </button>
+             <ul class="submenu collapse" role="list">
+              <li class="submenu-item"><a href="/how/content/images-text" data-drupal-link-system-path="node/203">Images of Text</a></li>
+              <li class="submenu-item"><a href="/how/content/alternative-text" data-drupal-link-system-path="node/196">Alternative Text</a></li>
+              <li class="submenu-item"><a href="/how/content/color-contrast" data-drupal-link-system-path="node/200">Color Contrast</a></li>
+              <li class="submenu-item"><a href="/how/content/headings" data-drupal-link-system-path="node/197">Headings</a></li>
+              <li class="submenu-item"><a href="/how/content/lists" data-drupal-link-system-path="node/198">Lists</a></li>
+              <li class="submenu-item"><a href="/how/content/tables" data-drupal-link-system-path="node/199">Tables</a></li>
+              <li class="submenu-item"><a href="/how/content/layout-tables" data-drupal-link-system-path="node/204">Layout Tables</a></li>
+              <li class="submenu-item"><a href="/how/content/links" data-drupal-link-system-path="node/201">Meaningful Links</a></li>
+              <li class="submenu-item"><a href="/how/content/identify-languages" data-drupal-link-system-path="node/202">Identify Languages</a></li>
+              <li class="submenu-item"><a href="/how/content/color-alone" data-drupal-link-system-path="node/206">Color Alone</a></li>
+              <li class="submenu-item"><a href="/how/content/sensory-characteristics" data-drupal-link-system-path="node/205">Sensory Characteristics</a></li>
+              <li class="submenu-item"><a href="/how/content/pdf" data-drupal-link-system-path="node/281">PDF Documents</a></li>
+             </ul></li>
+            <li class="submenu-item"><a href="/how/design" data-drupal-link-system-path="node/231">Design Accessibly</a></li>
+            <li class="submenu-item"><a href="/how/develop" data-drupal-link-system-path="node/232">Develop Accessibly</a></li>
+            <li class="submenu-item"><a href="/how/test" data-drupal-link-system-path="node/233">Test For Accessibility</a></li>
+           </ul></li>
+         </ul>
+         <div class="utility-menu">
+          <ul class="nav navbar-nav utility-nav">
+           <li class="nav-item"><a href="/news" data-drupal-link-system-path="node/217">News</a></li>
+           <li class="nav-item"><a href="/accommodations" data-drupal-link-system-path="node/256">Accommodations</a></li>
+           <li class="nav-item"><a href="/help" data-drupal-link-system-path="webform/webform_1276">Get Help</a></li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </nav>
+      <div class="search-bar" id="search-bar">
+       <div class="container navbar-expand-lg" role="search">
+        <h2 class="sr-only">Search</h2><button class="toggle-searchbar unbutton" type="button" data-toggle="collapse" data-target="#search-bar-container" aria-controls="search-bar-container" aria-expanded="false" aria-label="Toggle search"> <span class="toggle-search-icon"> <i class="fas fa-search" aria-hidden="true"></i> </span> </button>
+        <div id="search-bar-container" class="collapse navbar-collapse">
+         <div class="search-block-form contextual-region block block-search container-inline" id="block-searchform">
+          <form action="/search" method="get" id="search-block-form" accept-charset="UTF-8">
+           <div id="search-toggled" class="form-group js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label"><label for="edit-search-keys" class="visually-hidden">Search</label>
+            <input placeholder="Search" type="search" id="edit-search-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control">
+           </div>
+           <div data-drupal-selector="edit-search-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-search-actions">
+            <input type="submit" id="edit-search-submit" value="Submit" class="button js-form-submit form-submit btn btn-primary">
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="highlighted" id="highlighted">
+     <div class="container">
+      <div class="region region-highlighted">
+       <div data-drupal-messages-fallback class="hidden"></div>
+      </div>
+     </div>
+    </div>
+    <div id="main" class="main-container">
+     <div class="container">
+      <div class="row">
+       <div class="sidebar-first section order-first col-sm-4 col-md-3 col-lg-2">
+        <nav class="main-sidebar-menu" aria-label="section">
+         <h2 class="sr-only">Section Menu</h2>
+         <ul class="nav navbar-nav main" role="list">
+          <li class="nav-item"><a href="/assurance/test" data-drupal-link-system-path="node/251">Testing &amp; Consultations</a></li>
+          <li class="nav-item active"><a href="/assurance/web" data-drupal-link-system-path="node/237" class="is-active">Website Quality Assurance Tools</a></li>
+         </ul>
+        </nav>
+       </div>
+       <main class="main main-content col-sm-12 col-lg-10 order-last"><a id="main-content" class="sr-only skip-link"></a>
+        <div class="region region-content">
+         <div id="block-ps-oit-page-title" data-block-plugin-id="page_title_block" class="block block-core block-page-title-block">
+          <h1 class="page-title"> Website Quality Assurance Tools </h1>
+         </div>
+         <div id="block-ps-oit-content" data-block-plugin-id="system_main_block" class="block block-system block-system-main-block">
+          <article role="article" about="/assurance/web" class="node node--type-ps-basic-page node--view-mode-full">
+           <div class="node__content">
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-block-plugin-id="ps_node_view" class="block block-ps-core block-ps-node-view">
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p>Beyond its design and interaction, the accessibility of a website depends on the quality of its content.&nbsp;</p>
+                 <p>Princeton provides two tools for content quality assurance:</p>
+                 <ul>
+                  <li>The <a class="drupal-migration-processed" href="/node/150">Editoria11y plugin</a>, which is integrated into content editing tools to provide instant feedback for content editors</li>
+                  <li>The <a href="/about/initiatives">DubBot website monitoring service</a>, described below, that automatically checks sites for key issues related to accessibility, including image alt text, content structure, broken links and spelling errors</li>
+                 </ul>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout-block-padding-large layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div class="block-background-color-solid-light block-ps-text block block-layout-builder block-inline-blockps-text" data-block-plugin-id="inline_block:ps_text">
+                <h2 class="block-heading">Website Accessibility Monitoring</h2>
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <p>This service checks websites four times a year for common issues. Website owners receive a summary report after each check, and can log in at any time to a dashboard that shows each issue in context in the page, and <a href="https://help.dubbot.com/en/collections/2318018-using-dubbot">provides various tools</a> to help find, understand and fix these issues.</p>
+                 <p><a class="cke-button-secondary" href="https://princeton.dubbot.com">View your dashboard</a> <a class="cke-button-secondary" href="mailto:jjameson@princeton.edu?subject=&quot;DubBot%20Account%20Request&quot;">Request a login</a></p>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text">
+                <h3 class="block-heading"><span id="tour" class="jump-link-anchor"></span>Video Tour</h3>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--twocol-75-25">
+             <div class="layout-inner-container">
+              <div class="layout__region layout__region--first layout__region--wide layout__region--75">
+               <div data-block-plugin-id="inline_block:ps_video" class="block-ps-video block block-layout-builder block-inline-blockps-video">
+                <div class="field--type-entity-reference-media field field--name-field-ps-video field--type-entity-reference field--label-hidden field__item">
+                 <figure class="media--type-video media--view-mode-ps-content-width-freeform figure">
+                  <div class="field field--name-field-media-video-embed-field field--type-video-embed-field field--label-hidden field__item">
+                   <div class="video-embed-field-provider-mediacentral video-embed-field-responsive-video">
+                    <iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/1449362/sp/144936200/embedIframeJs/uiconf_id/25624581/partner_id/1449362?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_d2ohwjfu&amp;flashvars[leadWithHTML5]=true&amp;flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;wid=1_136zvvrs" width="400" height="285" allowfullscreen webkitallowfullscreen mozallowfullscreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="DubBot Interface Walkthrough"></iframe>
+                   </div>
+                  </div>
+                 </figure>
+                </div>
+               </div>
+              </div>
+              <div class="layout__region layout__region--second layout__region--quarters layout__region--narrow">
+               <div data-block-plugin-id="inline_block:ps_text" class="block-ps-text block block-layout-builder block-inline-blockps-text"><span id="tour-timestamps" class="jump-link-anchor"></span>
+                <div class="clearfix text-formatted field field--name-field-ps-body field--type-text-long field--label-hidden field__item">
+                 <h4>Screens &amp; Tasks</h4>
+                 <ul>
+                  <li>0:00 <strong>Dashboard</strong></li>
+                  <li>0:41 <strong>Lists of issues</strong></li>
+                  <li>0:58 <strong>See issue on page</strong></li>
+                  <li>1:39 <strong>A false positive</strong></li>
+                  <li>1:55 <strong>Fixing issues</strong></li>
+                  <li>3:57 <strong>Assigning tasks</strong></li>
+                  <li>5:11 <strong>Getting help</strong></li>
+                  <li>5:59 <strong>Switching sites</strong></li>
+                 </ul>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <h3 class="block-heading"><span id="interface" class="jump-link-anchor"></span>Introduction to the interface</h3>
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_126" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--5" role="button" aria-controls="acc-panel--5" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Screen 1: Dashboard 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--5" role="region" aria-labelledby="acc-btn--5">
+                      <figure class="align-right media--type-image media--view-mode-ps-medium-freeform figure">
+                       <img src="/sites/g/files/toruqf1101/files/styles/freeform_750w/public/2022-02/Screen%20Shot%202022-02-15%20at%204.32.26%20PM.png?itok=FAJpBoyq" width="586" height="336" alt="Spell check score tile showing 64 issues on 18 pages" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                      </figure>
+                      <p><a name="dashboard" id="dashboard"></a>Each tile at the top of the dashboard shows a summary of the issues found, and provides several shortcuts to the site's filterable list of issues and pages.</p>
+                      <ol>
+                       <li>Click on the <strong>number of issues</strong> to view a list of these issues broken out by type; e.g., to view all the misspellings on the site.</li>
+                       <li>Click on the <strong>number of pages</strong> to view a list of pages that have this type of issue; e.g, to get a list of pages with broken links on them.</li>
+                       <li>The "Overall Site Score" tile has buttons to <strong>view all pages</strong> and documents. Note: this may not be all pages that <em><strong>exist</strong></em>; our default is to crawl the first ~500 pages, and to exclude old news/events and things like author or category list pages.</li>
+                      </ol>
+                      <p>The "Quick Wins" panel shows you pages with the most issues, if you just want to tackle some pages immediately without reviewing the whole issue list:</p>
+                      <figure class="media--type-image media--view-mode-ps-medium-freeform figure">
+                       <img src="/sites/g/files/toruqf1101/files/styles/freeform_750w/public/2022-02/Screen%20Shot%202022-02-15%20at%204.40.23%20PM.png?itok=hD5K3H5g" width="750" height="517" alt="Quick wins tile with filter set to &quot;all pages with issues&quot;" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                      </figure>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--6" role="button" aria-controls="acc-panel--6" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Screen 2: Issue explorer 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--6" role="region" aria-labelledby="acc-btn--6">
+                      <figure class="media--type-image media--view-mode-ps-content-width-freeform figure">
+                       <img srcset="/sites/g/files/toruqf1101/files/styles/freeform_750w/public/2022-02/Screen%20Shot%202022-02-15%20at%204.47.00%20PM.png?itok=jNhsRfxE 750w, /sites/g/files/toruqf1101/files/styles/freeform_1440w/public/2022-02/Screen%20Shot%202022-02-15%20at%204.47.00%20PM.png?itok=5ztvEFSA 1440w, /sites/g/files/toruqf1101/files/styles/freeform_2880w/public/2022-02/Screen%20Shot%202022-02-15%20at%204.47.00%20PM.png?itok=G_Vn8gLe 1840w" sizes="(min-width: 1440px) 1440px, 100vw" src="/sites/g/files/toruqf1101/files/styles/freeform_1440w/public/2022-02/Screen%20Shot%202022-02-15%20at%204.47.00%20PM.png?itok=5ztvEFSA" alt="Issue explorer table showing pages with misspellings" typeof="foaf:Image">
+                      </figure>
+                      <p>This page is a large, filterable table of all the pages and issues in the site. Most links on the dashboard lead here and enable a filter.</p>
+                      <p>Some key things you can do here:</p>
+                      <ol>
+                       <li>Click on a page title to view the issues on that page</li>
+                       <li>Click on the filter buttons at the top to narrow the view. For example, you can switch from viewing broken links to spelling errors, or choose to see only pages that contain one <strong><em>particular</em></strong> spelling error.</li>
+                       <li>When you have the filter panel open, you have the option of taking site-wide (bulk) actions, such as adding words to the dictionary or marking broken links you have just corrected as fixed (resolved): 
+                        <figure class="media--type-image media--view-mode-ps-content-width-freeform figure">
+                         <img srcset="/sites/g/files/toruqf1101/files/styles/freeform_750w/public/media/screen_shot_2021-11-05_at_9.49.46_am.png?itok=-CsQY2da 750w, /sites/g/files/toruqf1101/files/styles/freeform_1440w/public/media/screen_shot_2021-11-05_at_9.49.46_am.png?itok=rGZZOItq 1440w, /sites/g/files/toruqf1101/files/styles/freeform_2880w/public/media/screen_shot_2021-11-05_at_9.49.46_am.png?itok=wrPfLIqn 1892w" sizes="(min-width: 1440px) 1440px, 100vw" src="/sites/g/files/toruqf1101/files/styles/freeform_1440w/public/media/screen_shot_2021-11-05_at_9.49.46_am.png?itok=rGZZOItq" alt="DubBot list filters, with option to ignore a word flagged by spellcheck" typeof="foaf:Image">
+                        </figure></li>
+                      </ol>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--7" role="button" aria-controls="acc-panel--7" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Screen 3: Page explorer 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--7" role="region" aria-labelledby="acc-btn--7">
+                      <p>This view shows you a snapshot of the page when it was last checked, and <a href="https://help.dubbot.com/en/articles/4211940-view-issues-on-your-webpage">highlights issues in context</a>.</p>
+                      <figure class="media--type-image media--view-mode-ps-content-width-freeform figure">
+                       <img srcset="/sites/g/files/toruqf1101/files/styles/freeform_750w/public/media/screen_shot_2021-11-05_at_10.03.12_am.png?itok=VSEVPYIt 750w, /sites/g/files/toruqf1101/files/styles/freeform_1440w/public/media/screen_shot_2021-11-05_at_10.03.12_am.png?itok=jr8hMWXD 1440w, /sites/g/files/toruqf1101/files/styles/freeform_2880w/public/media/screen_shot_2021-11-05_at_10.03.12_am.png?itok=geIDLxmU 1548w" sizes="(min-width: 1440px) 1440px, 100vw" src="/sites/g/files/toruqf1101/files/styles/freeform_1440w/public/media/screen_shot_2021-11-05_at_10.03.12_am.png?itok=jr8hMWXD" alt="issues highlighted in context" typeof="foaf:Image">
+                      </figure>
+                      <p>The icon-tabs along the left include:</p>
+                      <ol>
+                       <li><strong>Accessibility</strong>: issues that might block access to your content altogether; things like images missing a text alternative.</li>
+                       <li><strong>Best practices:</strong> issues likely to confuse or annoy readers: headings skipping levels, WRITING IN CAPS LOCK, etc.</li>
+                       <li><strong>Broken links</strong></li>
+                       <li><strong>Spelling</strong></li>
+                       <li><strong>Web governance: </strong>words, grammar and editorial style issues flagged for human review; e.g., terms which are perfectly appropriate in some contexts and not in others.</li>
+                       <li><strong>SEO</strong>, <strong>Readability</strong> and <strong>Network</strong>, which are informational only.</li>
+                       <li><strong>Tasks</strong>: to-do items you or a colleague created.</li>
+                       <li><strong>Share: </strong>creates a public link that lets you send this view to colleagues without a login to the system, if you would like their help on a task.</li>
+                      </ol>
+                      <p>At the top of the page are several action buttons:</p>
+                      <figure class="media--type-image media--view-mode-ps-content-width-freeform figure">
+                       <img srcset="/sites/g/files/toruqf1101/files/styles/freeform_750w/public/media/screen_shot_2021-11-05_at_10.21.43_am.png?itok=d8PFwpfS 680w" sizes="(min-width: 1440px) 1440px, 100vw" src="/sites/g/files/toruqf1101/files/styles/freeform_1440w/public/media/screen_shot_2021-11-05_at_10.21.43_am.png?itok=RSNKxHdD" alt="&quot;view in&quot; button showing a jump link to the WordPress page editor" typeof="foaf:Image">
+                      </figure>
+                      <ol>
+                       <li><strong>Crawl</strong> replaces the snapshot with a fresh copy of the page. This is useful if you are making corrections in another window and want to see your changes. It takes about one minute.</li>
+                       <li><strong>Analyze</strong> is only useful if you have just marked some issues as "ignored" or "resolved" and do not want to wait a few minutes for the list to update itself automatically. It refreshes the list of issues immediately. Generally: click "crawl" instead.</li>
+                       <li><strong>"View in..."</strong> is a shortcut to open your website's editor for this page, so you can get to work making some of the suggested changes.</li>
+                       <li><strong>"Disable CSS"</strong> and <strong>"View:"</strong> let you turn off some or all of your site's visual design in the preview pane. Since the screenshot of the page does not have working buttons, you cannot open accordion panels, advance slideshows, toggle tabs or the like to locate broken links or other issues that are only visible after clicking a button. Switching to "Text only" or "CSS disabled" views basically pushes all the buttons and reveals all the content.</li>
+                      </ol>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--8" role="button" aria-controls="acc-panel--8" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Issue actions: resolve, ignore, add to dictionary 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--8" role="region" aria-labelledby="acc-btn--8">
+                      <figure class="align-right media--type-image media--view-mode-ps-medium-freeform figure">
+                       <img src="/sites/g/files/toruqf1101/files/styles/freeform_750w/public/2022-02/Screen%20Shot%202022-02-23%20at%203.47.05%20PM.png?itok=RvXThJcF" width="441" height="184" alt="Ignore and resolve options on an issue" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                      </figure>
+                      <p>Once you understand an issue, you may want to do something about it!</p>
+                      <p>If you <em><strong>fix</strong></em> the issue (perhaps by opening your website editor in another tab), you have three options for telling DubBot to stop telling you the issue exists:</p>
+                      <ol>
+                       <li><strong>Do nothing </strong>and wait until the next time DubBot checks the page. This happens quarterly.</li>
+                       <li><strong>Press the "Crawl" button</strong> on the page explorer, so DubBot re-checks the page immediately and takes the issue off the list, assuming your fix <strong><em>worked</em></strong>. This is often the best choice, since it confirms the fix worked.</li>
+                       <li><strong>Mark the issue as Resolved.</strong> This marks it as fixed immediately; DubBot will delete the issue. Note that the issue will reappear on the next crawl if your fix did not work, or if the problem comes back (e.g., the link becomes broken again).</li>
+                      </ol>
+                      <p>If you <strong><em>cannot fix</em></strong> the issue or it is <strong><em>not actually an issue</em></strong> (e.g., a link that requires login but should require login), you can tell DubBot to <strong>ignore</strong><em> </em>the rule. For spellcheck, this takes the form of <strong>adding a word to a dictionary</strong>. Common times you may want to disable a rule on a page:</p>
+                      <ul>
+                       <li>"Ignore" a link to log in to an intranet; it will always throw an "authentication required" error, but this is OK.</li>
+                       <li>"Ignore" a flagged word that is always OK on this page or site.</li>
+                       <li>"Ignore" spelling on a page written in another language (once you <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="42ad66d5-40a7-4731-87b9-a8170e3b64b8" href="/how/content/identify-languages">confirm the language is tagged</a>).</li>
+                      </ul>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--9" role="button" aria-controls="acc-panel--9" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Tasks 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--9" role="region" aria-labelledby="acc-btn--9">
+                      <figure class="media--type-image media--view-mode-ps-content-width-freeform figure">
+                       <img srcset="/sites/g/files/toruqf1101/files/styles/freeform_750w/public/2022-02/Screen%20Shot%202022-02-16%20at%2010.56.57%20AM.png?itok=SS70UXfC 750w, /sites/g/files/toruqf1101/files/styles/freeform_1440w/public/2022-02/Screen%20Shot%202022-02-16%20at%2010.56.57%20AM.png?itok=1DBMVHal 1440w, /sites/g/files/toruqf1101/files/styles/freeform_2880w/public/2022-02/Screen%20Shot%202022-02-16%20at%2010.56.57%20AM.png?itok=LigLOjDg 1946w" sizes="(min-width: 1440px) 1440px, 100vw" src="/sites/g/files/toruqf1101/files/styles/freeform_1440w/public/2022-02/Screen%20Shot%202022-02-16%20at%2010.56.57%20AM.png?itok=1DBMVHal" alt="Tasks filtering table showing tasks assigned to the current user" typeof="foaf:Image">
+                      </figure>
+                      <p>The tasks screen can be reached from the toolbar at the top each page.</p>
+                      <p>Some groups will use this to manage their progress, assigning and completing tasks as they go.</p>
+                      <p>For others, this will serve as quick way to flag things for their own follow-up.</p>
+                      <p>Note that all users can assign tasks to John Jameson and Mary Albert; you are encouraged to do so to ask questions any time you are having trouble locating an issue in a page or understanding how to resolve it.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--10" role="button" aria-controls="acc-panel--10" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Types of broken links ("What is error 403?") 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--10" role="region" aria-labelledby="acc-btn--10">
+                      <p>DubBot flags a link any time it has trouble reaching the destination page. <strong>This may not be a broken link</strong>: it may be a link behind a login, or a server that was down for a while but is back up again.</p>
+                      <p>If the links work as intended, <strong>mark them as "ignored" </strong>to clear them from your issue list.</p>
+                      <p>Common error codes you will see:</p>
+                      <ul>
+                       <li><strong>404</strong>: Almost certainly a bad link ("page not found" errors and redirect issues)</li>
+                       <li><strong>403</strong>: Page asked for a login; often these links are fine, but you may want to warn your site users that login is required.</li>
+                       <li><strong>400, 500</strong>: Various types of server errors; these may be temporary or not actually prevent the page from loading in a "real" browser; if it seems fine when you check it, it is probably OK.</li>
+                      </ul>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--11" role="button" aria-controls="acc-panel--11" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Ellipsis and download buttons: Reports 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--11" role="region" aria-labelledby="acc-btn--11">
+                      <figure class="align-right media--type-image media--view-mode-ps-medium-freeform figure">
+                       <img src="/sites/g/files/toruqf1101/files/styles/freeform_750w/public/2022-02/Screen%20Shot%202022-02-16%20at%2010.46.30%20AM.png?itok=ftFan5Zs" width="670" height="414" alt="Open menu panel on tile showing trends and report download buttons" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                      </figure>
+                      <p>Some pages and tiles have a vertical-ellipsis menu that offers ways to <strong>export</strong> the data.</p>
+                      <p>Types of reports you may see offered:</p>
+                      <ol>
+                       <li><strong>Trends:</strong> a simple chart of your progress over time.</li>
+                       <li><strong>Issue Summary Report</strong>: a simple count of how many issues exist, without any specific details.</li>
+                       <li><strong>Issue Detail Report</strong>: every occurrence of an issue. This can be useful to create sharable spreadsheets of particular issues; e.g., to have a team member without a DubBot login help fix broken links.</li>
+                      </ol>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div data-block-plugin-id="inline_block:ps_accordion" class="block-ps-accordion block block-layout-builder block-inline-blockps-accordion">
+                <h3 class="block-heading"><span id="workflow" class="jump-link-anchor"></span>Suggested workflow</h3>
+                <div class="field field--name-field-ps-accordion field--type-ps-accordion field--label-hidden field__items">
+                 <div class="field__item">
+                  <div role="group" aria-label="accordion">
+                   <dl id="ps_accordionfield_ps_accordion_block_content_146" class="ps-accordion" role="presentation">
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn" role="button" aria-controls="acc-panel" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Triage the issue lists by type 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel" role="region" aria-labelledby="acc-btn">
+                      <figure class="align-right media--type-image media--view-mode-ps-medium-freeform figure">
+                       <img src="/sites/g/files/toruqf1101/files/styles/freeform_750w/public/media/screen_shot_2021-11-05_at_9.49.46_am.png?itok=-CsQY2da" width="750" height="205" alt="DubBot list filters, with option to ignore a word flagged by spellcheck" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                      </figure>
+                      <p>This task can be accomplished from either the "quick wins" panel on the homepage, or by clicking through any of the issue number tiles to view the main lists. Either way: click on the filter button ("Any Misspelling") to dive down to the lists of specific issues.</p>
+                      <p>Look especially for three things:</p>
+                      <ol>
+                       <li>False positives that can be quickly cleared: words that can be added to the dictionary, links that are valid but just happen to require login, flagged words that are fine in this context, etc.</li>
+                       <li>Issues that are both urgent and easy to fix; e.g., a broken link on your homepage.</li>
+                       <li>Issues that are urgent but difficult to fix; these can be flagged as you go by assigning yourself (or a team member) a task or copying them into your project management system.</li>
+                      </ol>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--2" role="button" aria-controls="acc-panel--2" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Ask for help if you do not understand why something is flagged 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--2" role="region" aria-labelledby="acc-btn--2">
+                      <p>Assigning a task on a page to John Jameson will send him an email with a link to the issue in context. He can usually get back to you within a business day.</p>
+                      <p>You can also <a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="de8dcb61-8ac4-413a-af0a-a4482b4b5fbf" href="/training/meetups-channels">send an email or Slack message</a> to the campus accessibility community if you want help immediately.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--3" role="button" aria-controls="acc-panel--3" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Prioritize and plan 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--3" role="region" aria-labelledby="acc-btn--3">
+                      <p>Some people prefer to work by page, from most issues to fewest. Others prefer to focus on a particular issue ("it's broken links day").</p>
+                      <p>Take your triaged list of issues or pages and figure out who and when should tackle them. For a small site, this might take one person less than an hour. For a large site, this might require many time blocks.</p>
+                      <p>Regardless: know that opening a page, making changes, saving the page and checking your work, and then optionally having DubBot immediately re-crawl the page is going to take at least several minutes per page. Estimate your time accordingly, and try to tackle the most severe and/or prominent issues first.</p>
+                     </div>
+                    </dd>
+                    <dt class="ps-accordion-item">
+                     <div role="heading" aria-level="3">
+                      <div id="acc-btn--4" role="button" aria-controls="acc-panel--4" aria-expanded="false" tabindex="0" class="ps-accordion-item-button"><span class="indicator" aria-hidden="true"><span class="indicator-target"></span></span> Track your progress using tasks and recrawls 
+                      </div>
+                     </div>
+                    </dt>
+                    <dd class="ps-accordion-content">
+                     <div id="acc-panel--4" role="region" aria-labelledby="acc-btn--4">
+                      <figure class="align-right media--type-image media--view-mode-ps-medium-freeform figure">
+                       <img src="/sites/g/files/toruqf1101/files/styles/freeform_750w/public/media/screen_shot_2021-11-05_at_10.12.04_am.png?itok=-aGTCL6H" width="750" height="424" alt="Open &quot;new task&quot; dialog assigned to John" loading="lazy" typeof="foaf:Image" class="image-style-freeform-750w">
+                      </figure>
+                      <p>Tasks are a great way to flag issues for follow-up. They can reference an issue or a page.</p>
+                      <p>Once you have fixed an issue, either mark it as "resolved" or click "crawl" on the page in DubBot.</p>
+                      <p>Clicking "crawl" sets the page to be rechecked in the background; after a minute or two you can refresh the screen to confirm your correction worked.</p>
+                     </div>
+                    </dd>
+                   </dl>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="constrained-bkg-constrained-content layout layout--onecol">
+             <div class="layout-container">
+              <div class="layout__region layout__region--content">
+              </div>
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </main>
+      </div>
+     </div>
+    </div>
+    <footer role="contentinfo" class="footer region region-footer" id="footer">
+     <h2 class="sr-only">Footer</h2>
+     <div class="container">
+     </div>
+     <div class="subfooter">
+      <div class="container">
+       <div class="row">
+        <div class="col-md-4">
+         <div class="subfooter-links">
+          <ul class="list-unstyled">
+           <li><a href="https://accessibility.princeton.edu/resources/accessibility-help" target="_blank">Accessibility</a></li>
+          </ul>
+         </div>
+        </div>
+        <div class="col-md-4">
+         <p class="copyright-text"> © 2022 The Trustees of Princeton University </p>
+        </div>
+        <div class="col-md-4 text-sm-left text-md-right copyright"><a href="http://www.princeton.edu" class="pu-logo" title="Princeton University"><img src="/profiles/ps/themes/ps_base/images/pu-logo-stacked.svg" alt="Princeton University"> </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div> 
+  </div><span id="ps-current-username" data-username=""></span>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/237","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ckeditorheight":{"offset":1,"line_height":1.5,"unit":"em","disable_autogrow":false},"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"all_documents_new_window":false,"select2_simple":{"selector":".node-form select:not(.disable-select2,[name$=\u0027[actions][bundle]\u0027],.ui-timepicker-select,[name*=\u0027field_ps_timeline_feature_items\u0027]),.select2-form select,#drupal-off-canvas select[multiple]"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":true,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":[]}},"ps_accordion":{"#ps_accordionfield_ps_accordion_block_content_146":[],"#ps_accordionfield_ps_accordion_block_content_126":[]},"ajax":[],"user":{"uid":0,"permissionsHash":"c173b285b3dfce445281527c42a852dcd6966b74a79ff524afc091c192d6eb46"}}</script>
+  <script src="/sites/g/files/toruqf1101/files/js/js_FTZ4zS98BWVFiaC0tdasmlfMwrRZH5y-3hUdY0ch1NE.js"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"427707476","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":2020,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

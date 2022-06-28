@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+ <head>
+  <meta charset="utf-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-0cfd3355c6be2ecda38",applicationID:"512959570"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-3837206-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+  <meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="canonical" href="https://news.cornell.edu/content/cornell-remembers">
+  <link rel="shortlink" href="https://news.cornell.edu/node/267149">
+  <link rel="revision" href="https://news.cornell.edu/content/cornell-remembers">
+  <script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};</script>
+  <title>In Memory | Cornell Chronicle</title><!-- Typekit - Cornell Fonts -->
+  <script src="https://use.typekit.net/kjk5sih.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script><!-- Emergency Banner removed Feb. 2021  --><!-- script src="//embanner.univcomm.cornell.edu/OWC-emergency-banner.js" type="text/javascript" async></script -->
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/ajax-progress.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/align.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/autocomplete-loading.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/fieldgroup.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/container-inline.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/clearfix.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/details.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/hidden.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/item-list.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/js.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/nowrap.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/position-container.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/progress.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/reset-appearance.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/resize.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/sticky-header.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-counter.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-counters.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-general-info.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tabledrag.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tablesort.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tree-child.module.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/modules/contrib/addtoany/css/addtoany.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" media="all" href="/themes/chronicle/vendor/gallery/css/blueimp-gallery.min.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/themes/chronicle/dest/style.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/themes/chronicle/css/cwd_support_hotfix.css?rd4zg5">
+  <link rel="stylesheet" media="all" href="/themes/chronicle/css/wa2021.css?rd4zg5">
+ </head>
+ <body class="node--page">
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+   <div class="layout-container">
+    <header role="banner"><a href="#main" class="visually-hidden focusable skip-link" aria-label="Skip to main content" tabindex="1"> Skip to main content </a><!-- Search box -->
+     <form action="/search" class="cu-search" method="get" role="search" aria-label="Site Search" tabindex="-1">
+      <div class="container">
+       <input autocomplete="off" id="search-query" name="search_api_fulltext" placeholder="Search the Chronicle" required type="search" aria-label="Search the Chronicle">
+       <input type="submit" value="Submit Search" style="display: none;">
+      </div>
+     </form><!-- // Search box -->
+     <div><!-- 45PX Banner -->
+      <nav class="navbar navbar-45px" aria-label="Supplementary Navigation">
+       <div class="container">
+        <div class="navbar-header"><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#subNav" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon icon-menu"></span> </button><span class="btn btn-primary btn-search" data-search-toggle="true" role="button" tabindex="0">Search</span><a class="navbar-brand" id="cu-brand" href="http://cornell.edu" target="_blank"><span class="sr-only">Cornell University</span></a>
+        </div>
+        <div class="collapse navbar-collapse pull-right" id="subNav">
+         <ul class="nav navbar-nav">
+          <li><a href="https://www.cornell.edu/">Cornell.edu</a></li>
+          <li><a href="/media-relations" target="" rel="" data-drupal-link-system-path="node/42">Media Relations</a></li>
+          <li class="search" data-search-toggle="true" id="button-search-toggle" tabindex="0" role="button"><span>Search</span></li>
+         </ul>
+        </div>
+       </div>
+      </nav><!-- // 45PX Banner -->
+      <div id="block-chronicle-branding">
+       <div class="brandBar">
+        <div class="container">
+         <div class="row">
+          <div class="col-sm-12">
+           <div class="cornell-lockup" data-click-action="logos"><a class="cornell-insignia" href="http://cornell.edu"> <span class="alt-text">Cornell University</span> </a><a class="site-brand " href="/"> <h1>Cornell Chronicle</h1> </a>
+           </div> 
+          </div>
+         </div>
+        </div>
+       </div>
+      </div><!-- Chronicle Navigation -->
+      <div class="navbar navbar-default yamm navbar-primary ">
+       <div class="navbar-header"><button type="button" data-toggle="collapse" data-target="#navbar-collapse-grid" class="navbar-toggle" aria-label="Hide/Show Mobile Menu"> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </button>
+       </div>
+       <div id="navbar-collapse-grid" class="navbar-collapse collapse" role="navigation" aria-label="Main Navigation">
+        <ul class="nav nav-pills nav-justified nav-container">
+         <li class="dropdown"><a href="" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false" role="button">Topics</a>
+          <ul class="dropdown-menu">
+           <li>
+            <div class="row"> 
+             <div class="col-sm-4">
+              <ul>
+               <li><a href="/categories/architecture-design" data-drupal-link-system-path="taxonomy/term/14242">Architecture &amp; Design</a></li>
+               <li><a href="/categories/arts-humanities" target="" rel="" data-drupal-link-system-path="taxonomy/term/14243">Arts &amp; Humanities</a></li>
+               <li><a href="/categories/business-economics-entrepreneurship" target="" rel="" data-drupal-link-system-path="taxonomy/term/14244">Business, Economics &amp; Entrepreneurship</a></li>
+               <li><a href="/categories/computing-information-sciences" target="" rel="">Computing &amp; Information Sciences</a></li>
+               <li><a href="/categories/energy-environment-sustainability" target="" rel="" data-drupal-link-system-path="taxonomy/term/15621">Energy, Environment &amp; Sustainability</a></li>
+              </ul>
+             </div><!-- close the column -->
+             <div class="col-sm-4">
+              <ul>
+               <li><a href="/categories/food-agriculture" target="" rel="" data-drupal-link-system-path="taxonomy/term/14247">Food &amp; Agriculture</a></li>
+               <li><a href="/categories/global-reach" target="" rel="" data-drupal-link-system-path="taxonomy/term/14249">Global Reach</a></li>
+               <li><a href="/categories/health-nutrition-medicine" target="" rel="" data-drupal-link-system-path="taxonomy/term/14248">Health, Nutrition &amp; Medicine</a></li>
+               <li><a href="/categories/law-government-public-policy" target="" rel="" data-drupal-link-system-path="taxonomy/term/14250">Law, Government &amp; Public Policy</a></li>
+               <li><a href="/categories/life-sciences-veterinary-medicine" target="" rel="" data-drupal-link-system-path="taxonomy/term/15056">Life Sciences &amp; Veterinary Medicine</a></li>
+              </ul>
+             </div><!-- close the column -->
+             <div class="col-sm-4">
+              <ul>
+               <li><a href="/categories/physical-sciences-engineering" target="" rel="" data-drupal-link-system-path="taxonomy/term/14252">Physical Sciences &amp; Engineering</a></li>
+               <li><a href="/categories/social-behavioral-sciences" target="" rel="" data-drupal-link-system-path="taxonomy/term/14253">Social &amp; Behavioral Sciences</a></li>
+               <li><a href="/categories/coronavirus" data-drupal-link-system-path="taxonomy/term/23427">Coronavirus</a></li>
+              </ul>
+             </div><!-- close row -->
+            </div></li>
+          </ul></li>
+         <li class="dropdown"><a href="" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false" role="button">Campus &amp; Community</a>
+          <ul class="dropdown-menu">
+           <li>
+            <div class="row"> 
+             <div class="col-sm-4">
+              <ul>
+               <li><a href="/categories/news-events" target="" rel="" data-drupal-link-system-path="taxonomy/term/81">News &amp; Events</a></li>
+               <li><a href="/categories/public-engagement" target="" rel="" data-drupal-link-system-path="taxonomy/term/82">Public Engagement</a></li>
+               <li><a href="/categories/new-york-city" target="" rel="" data-drupal-link-system-path="taxonomy/term/105">New York City</a></li>
+               <li><a href="/categories/staff-news" data-drupal-link-system-path="taxonomy/term/85">Staff News</a></li>
+              </ul>
+             </div><!-- close the column -->
+             <div class="col-sm-4">
+              <ul>
+               <li><a href="/photos-of-the-day" target="" rel="" data-drupal-link-system-path="photos-of-the-day">Photos of the Day</a></li>
+               <li><a href="http://www.cornellbigred.com" target="" rel="">Big Red Sports</a></li>
+               <li><a href="/categories/diversity" target="" rel="" data-drupal-link-system-path="taxonomy/term/89">Diversity</a></li>
+               <li><a href="/content/cornell-remembers" target="" rel="" data-drupal-link-system-path="node/267149" class="is-active">In Memory</a></li>
+              </ul>
+             </div><!-- close the column -->
+             <div class="col-sm-4">
+              <ul>
+               <li><a href="/categories/features" data-drupal-link-system-path="taxonomy/term/23708">Features</a></li>
+               <li><a href="/categories/nys-impact-0" target="" rel="" data-drupal-link-system-path="taxonomy/term/22456">NYS Impact</a></li>
+               <li><a href="/categories/student-life" data-drupal-link-system-path="taxonomy/term/23759">Student Life</a></li>
+               <li><a href="/around-cornell" data-drupal-link-system-path="taxonomy/term/23519">Around Cornell</a></li>
+              </ul>
+             </div><!-- close the column -->
+            </div><!-- close row --></li>
+          </ul></li>
+         <li><a href="/archive" target="" rel="" data-drupal-link-system-path="archive">All Stories</a></li>
+         <li class="secondary-item"><a href="/in-the-news" target="" rel="" class="secondary-item" data-drupal-link-system-path="in-the-news">In the News</a></li>
+         <li class="secondary-item"><a href="/media-relations/tip-sheets" class="secondary-item" data-drupal-link-system-path="media-relations/tip-sheets">Expert Quotes</a></li>
+         <li class="secondary-item"><a href="https://alumni.cornell.edu/cornellians/" class="secondary-item">Cornellians</a></li>
+        </ul>
+       </div>
+      </div><!-- // Chronicle Navigation -->
+     </div>
+    </header>
+    <main id="main">
+     <div class="layout-content">
+      <div>
+       <div data-drupal-messages-fallback class="hidden"></div>
+       <div id="block-chronicle-content">
+        <article class="container node node--type-page node--view-mode-full ds-1col clearfix" typeof="schema:WebPage">
+         <header class="expanded">
+          <h1 class="page-header"> In Memory </h1>
+         </header>
+         <div property="schema:text" class="field field--name-body field--type-text-with-summary field--label-hidden field__items">
+          <div property="schema:text" class="field__item">
+           <p><em>The Cornell community remembers current faculty, students and staff who have died this year.</em></p>
+           <h1>2022</h1>
+           <h3>April</h3>
+           <p><a href="https://statements.cornell.edu/2022/20220420-condolences.cfm">Daniela Lee, ’22</a>,&nbsp;a communication major in the College of Agriculture and Life Sciences&nbsp;from Pinetop, Arizona, died April 19.</p>
+           <h3>March</h3>
+           <p><a href="https://statements.cornell.edu/2022/20220314-condolences.cfm">Lisa Ngunda ’24</a>, a sophomore in the College of Human Ecology from Massachusetts passed away over the weekend.</p>
+           <h3>February</h3>
+           <p>
+            <meta charset="UTF-8"></p>
+           <p><a href="https://news.cornell.edu/stories/2022/02/remembering-frances-m-franny-shloss-barch-45-1923-2022">Frances M. "Franny" Shloss (B.Arch. '45</a>),&nbsp;beloved and respected benefactor and trailblazing architect, died in Beverly Hills, California on February 11. She was 98.&nbsp;</p>
+           <p><a href="https://news.cornell.edu/stories/2022/02/anne-r-kenney-former-university-librarian-dies-72">Anne R. Kenney</a>, university librarian emerita, who led Cornell University Library through a decade of transformation and growth,&nbsp;died in Ithaca on Feb. 5. She was 72.</p>
+           <p><a href="https://statements.cornell.edu/2022/20220208-condolences.cfm">John&nbsp;“Jack” Robinson ’22</a>,&nbsp;an economics and government major in the College of Arts and Sciences, died at home Feb. 2 after a long battle with cancer.</p>
+           <p><a href="https://statements.cornell.edu/2022/20220202-condolences.cfm">Benjamin Daus ’25,</a> a first-year student from Flemington, New Jersey, died from a hiking accident while on vacation during the winter break.</p>
+           <h3>January</h3>
+           <p>
+            <meta charset="UTF-8"><a href="https://news.cornell.edu/stories/2022/02/distinguished-veterinary-alumnus-richard-grambow-55-dvm-57-dies-88">Richard Grambow</a> ’55, D.V.M. ’57, an active leader in the veterinary medicine community and a staple of the Cornell University College of Veterinary Medicine (CVM), died Jan. 27 at his home in the Croasdaile Village Retirement Community in Durham, North Carolina. He was 88.</p>
+           <h1>2021</h1>
+           <h3>December</h3>
+           <p><a href="https://news.cornell.edu/stories/2021/12/robert-strichartz-math-analyst-dies-78">Robert Strichartz,</a> acclaimed analyst and professor of mathematics in the College of Arts and Sciences, died Dec. 19 after a long illness.&nbsp;He was 78.&nbsp;</p>
+           <p><a href="https://news.cornell.edu/stories/2021/12/pioneering-professor-trevor-pinch-dies-69">Trevor Pinch</a>, the Goldwin Smith Professor of Science &amp; Technology Studies, who helped found multiple areas of study related to science, technology and sound, died Dec. 16. He was 69.</p>
+           <p><a href="https://statements.cornell.edu/2021/20211206-condolences.cfm">Tara Atluri&nbsp;’24</a>, a sophomore in the College of Agriculture and Life Sciences, was found unresponsive in her apartment and pronounced dead at Cayuga Medical Center on Dec. 6.</p>
+           <h3>November</h3>
+           <p><a href="https://news.cornell.edu/stories/2022/01/michael-walter-environmental-engineer-dies-75">Michael Walter</a>, professor emeritus and former chair of the Department of Biological and Environmental Engineering, died Nov. 5 in Lansing, New York. He was 75.</p>
+           <h3>October</h3>
+           <p><a href="https://news.cornell.edu/stories/2021/11/jack-blakely-professor-emeritus-and-materials-scientist-dies-85">Jack Blakely</a>, a professor emeritus of materials science and engineering who made several important discoveries in the field of surface science, died at Cayuga Medical Center on Oct. 29. He was 85.</p>
+           <p><a href="https://news.cornell.edu/stories/2021/11/noted-alumnus-and-veterinary-leader-kahrs-dies-91">Robert Kahrs</a>, ’52, D.V.M. ’54, M.S. ’63, Ph.D. ’65 — college alumnus, associate dean, bovine vaccine scholar and leader across veterinary institutions — died Oct. 28 in Colfax, North Carolina. He was 91.</p>
+           <p><a href="https://news.cornell.edu/stories/2022/01/don-barton-former-director-cornell-agritech-dies-100">Donald Barton,</a> a professor emeritus of horticulture whose 22-year tenure as director of Cornell AgriTech is remembered as “the golden years” because of his thoughtful, collaborative leadership, died Oct. 7 in Canandaigua, New York. He was 100.</p>
+           <h3>September</h3>
+           <p><a href="https://news.cornell.edu/stories/2021/12/peter-harriott-49-chemical-engineering-pioneer-dies-94">Peter Harriott</a>, ’49, an emeritus professor of chemical engineering who taught for 48 years at Cornell and co-authored the defining textbook on unit operations, died Sept. 23 in Ithaca. He was 94.</p>
+           <h3>August</h3>
+           <p><a href="https://news.cornell.edu/stories/2021/08/legendary-veterinary-neurologist-de-lahunta-dies-88">Dr. Alexander de Lahunta</a>, D.V.M. ’58, Ph.D. ’63 emeritus James Law professor of anatomy, considered the founder of veterinary neurology, died Aug. 17 at his home in Rye, New Hampshire.</p>
+           <h3>July</h3>
+           <p><a href="https://news.cornell.edu/stories/2021/08/mathematician-james-h-bramble-dies-90">James H. Bramble</a>, professor emeritus of mathematics in the College of Arts and Sciences, died July 20 at his home in Austin, Texas. He was 90.</p>
+           <p><a href="https://news.cornell.edu/stories/2021/07/stan-bowman-1934-2021-artist-leading-creative-edge">Stan Bowman</a>, photographer, sculptor, painter, and professor emeritus immersed his teaching and creative practice in the digital revolution, bringing a spirit of experimentation and curiosity to his work, died on July 5 in Ithaca at age 87.</p>
+           <h3>June</h3>
+           <p><a href="https://news.cornell.edu/stories/2021/07/plant-pathologist-ken-horst-dies-85">Ken Horst</a>, professor emeritus of plant pathology who was best known for his research on diseases of ornamental crops, died June 9 in Ithaca.</p>
+           <p><a href="https://statements.cornell.edu/2021/20210527-condolences.cfm">Allen Hyunwoo Park</a>, ’23, a sophomore in the College of Arts and Sciences from Englewood Cliffs, New Jersey, died last evening as a result of injuries he sustained at his apartment complex.</p>
+           <h3>May</h3>
+           <p><a href="https://news.cornell.edu/stories/2021/05/celebrated-architect-art-gensler-58-dies-85">Arthur “Art” Gensler Jr.</a>, B.Arch. ’58, who was celebrated as a global architect, astute entrepreneur and founder of a small practice that became one of the largest and most successful firms in the industry, died May 10 at age 85.</p>
+           <p><a href="https://statements.cornell.edu/2021/20210509-zukowski.cfm">Phillip Zukowski</a> ’23, a sophomore in the College of Arts; Sciences, was found dead May 8 in the Ithaca Falls Natural Area.</p>
+           <h3>April</h3>
+           <p><a href="https://news.cornell.edu/stories/2021/06/rural-sociologist-frank-young-dies-92">Frank W. Young</a>, professor emeritus of rural sociology who explored issues of social differentiation and structure in rural communities, died April 26 at his home in Ithaca.</p>
+           <p><a href="https://news.cornell.edu/stories/2021/05/michael-l-thonney-sheep-management-expert-dies-71">Michael L. Thonney</a>, professor in the Department of Animal Science and director of graduate studies in the field of Animal Science, died April 23 in Ithaca. He was 71.</p>
+           <p><a href="https://news.cornell.edu/stories/2021/04/bob-buhrman-former-vice-provost-research-dies-75">Bob Buhrman</a>, M.S. ’69, Ph.D. ’73, Cornell’s second senior vice provost for research, died April 13 in Rochester. He was 75.</p>
+           <p><a href="https://statements.cornell.edu/2021/20210410-lombardi-offers-condolences.cfm">Shawn West</a>, ’24, was a first-year student in the College of Arts and Sciences from New York City, died unexpectedly in April.</p>
+           <p><a href="https://news.cornell.edu/stories/2021/04/lance-heidig-inspiring-librarian-and-curator-dies-64">Lance Heidig</a>, an outreach and instruction librarian at the Division of Rare and Manuscript Collections, died April 6 at his home in Ithaca. He was 64.</p>
+           <h3>March</h3>
+           <p><a href="https://news.cornell.edu/stories/2021/04/pioneering-animal-scientist-van-soest-dies-91">Peter Van Soest</a>, professor emeritus of animal science, one of the most influential animal scientists of his generation, died on March 21 in Ithaca.</p>
+           <p><a href="https://news.cornell.edu/stories/2021/03/neil-ashcroft-world-renowned-theoretical-physicist-dies-82">Neil W. Ashcroft</a>, the Horace White Professor of Physics Emeritus in the College of Arts and Sciences and a leading theorist in condensed matter physics, died March 15 in Ithaca. He was 82.</p>
+           <p><a href="https://news.cornell.edu/stories/2021/03/walter-lafeber-revered-history-professor-dies">Walter F. LaFeber</a>, professor of history, who won ovations from students for class lectures and whose mastery of U.S. foreign relations guided political scientists, died March 9. He was 87.</p>
+           <h3>February</h3>
+           <p><a href="https://news.cornell.edu/stories/2021/02/pioneering-philosopher-richard-boyd-dies-78">Richard Newell Boyd</a>, the Susan Linn Sage Professor of Philosophy and Humane Letters Emeritus, died in his sleep in Cleveland, Ohio on Feb. 20. He was 78.</p>
+           <p><a href="https://news.cornell.edu/stories/2021/02/harold-hal-bierman-jr-professor-emeritus-dies-96">Harold “Hal” Bierman Jr.</a>, the Nicholas H. Noyes Distinguished Professor Emeritus of Management and Finance, died Feb. 12 in Ocean Isle Beach, North Carolina. He was 96.</p>
+           <p><a href="https://statements.cornell.edu/2021/20210201-matthew-crovella.cfm">Matthew Crovella</a>, a major in Health Care Policy in the College of Human Ecology, died unexpectedly in February.</p>
+           <h3>January</h3>
+           <p><a href="https://news.cornell.edu/stories/2021/02/robert-seaney-forage-management-expert-dies-93">Robert Seaney</a>, Ph.D. ’55, professor emeritus of soil and crop sciences who’s best known for his research on identifying the best forages for New York state soils and climate, died Jan. 19 in Petersburg, Illinois. He was 93.</p>
+           <p><a href="https://news.cornell.edu/stories/2021/01/kavous-keshavarz-poultry-nutrition-expert-dies-82">Kavous Keshavarz</a>, professor emeritus in the Department of Animal Science and an expert in poultry nutrition, died Jan. 7 in Atlanta, Georgia. He was 82.</p>
+           <h1><strong><strong>2020</strong></strong></h1>
+           <h3>December</h3>
+           <p><a href="https://news.cornell.edu/stories/2021/01/k-bingham-cady-engineering-emeritus-professor-dies-84">K. Bingham Cady</a>, professor emeritus of nuclear engineering in the Sibley School of Mechanical and Aerospace Engineering, died Dec. 10 at Northwestern Memorial Hospital in Chicago. He was 84.</p>
+           <p><a href="https://statements.cornell.edu/2020/20201231-kar-robison.cfm">KAR Robison</a>, a junior majoring in Environment; Sustainability, died unexpectedly in late December</p>
+           <p><a href="https://statements.cornell.edu/2020/20201216-wai-hang-lee.cfm">Wai Hang (Will) Lee</a>, a doctoral student in Chemistry and Chemical Biology, died unexpectedly in mid-December.</p>
+           <p><a href="https://news.cornell.edu/stories/2020/12/pulitzer-winning-writer-and-professor-alison-lurie-dies-94">Alison Lurie</a>, professor emerita of English, the award-winning and critically acclaimed writer who set some of her fiction on a campus with a striking similarity to Cornell’s, died Dec. 3 in Ithaca. She was 94</p>
+           <h3>November</h3>
+           <p><a href="https://news.cornell.edu/stories/2020/12/american-history-scholar-richard-polenberg-dies-83">Richard “Dick” Polenberg</a>, the Marie Underhill Noll Professor of History Emeritus, died Nov. 26 in Ithaca. He was 83.</p>
+           <p><a href="https://news.cornell.edu/stories/2020/11/urban-planning-historian-john-w-reps-dies-age-98-0">John W. Reps</a>, MRP ’47, a historian of urban planning and an authority on American urban iconography, died Nov. 12 at age 98. His dedication to the Department of City and Regional Planning in the College of Architecture, Art and Planning (AAP) spanned more than 70 years.</p>
+           <p><a href="https://news.cornell.edu/stories/2020/11/micky-falkson-senior-lecturer-economics-dies-83">Micky Falkson</a>, a senior lecturer in the Department of Economics and one of its longest-serving faculty members, died at home in Ithaca Nov. 7. He was 83.</p>
+           <p><a href="https://news.cornell.edu/stories/2020/11/thomas-golden-yang-tan-institute-executive-director-dies">Thomas Golden</a>, executive director of the Yang-Tan Institute at the ILR School and a pioneer in promoting economic independence for people with disabilities, died Nov. 1 at his home in Waverly, New York. He was 57.</p>
+           <h3>October</h3>
+           <p><a href="https://news.cornell.edu/stories/2020/11/climatologist-warren-knapp-acid-rain-expert-dies-82">Warren Knapp</a>, professor emeritus of meteorology and climate in the Department of Earth and Atmospheric Sciences, and the second director of Cornell’s Northeast Regional Climate Center, died Oct. 3 in Ithaca. He was 82.</p>
+           <p><a href="https://news.cornell.edu/stories/2020/11/watt-webb-biological-imaging-techniques-pioneer-dies">Watt Webb</a>, applied physicist, the S.B. Eckert Professor of Engineering Emeritus and a pioneer in methods for imaging living biological systems, died Oct. 29 in New York City. He was 93.</p>
+           <p><a href="https://news.cornell.edu/stories/2020/10/michael-morley-emeritus-professor-math-dies-90">Michael Morley</a>, professor emeritus of mathematics in the College of Arts and Sciences, died Oct. 11 at Guthrie Robert Packer Hospital in Sayre, Pennsylvania. He was 90.</p>
+           <p><a href="https://news.cornell.edu/stories/2020/10/moore-51-olympian-and-athletic-director-dies-91">Charles H. Moore</a> ’51, an Olympic gold medalist who went on to set Cornell athletics on firm footing as athletic director in the 1990s, died Oct. 8 at his home in Pennsylvania. He was 91.</p>
+           <h3>September</h3>
+           <p><a href="https://news.cornell.edu/stories/2020/10/renowned-dissident-yuri-orlov-professor-emeritus-dies-96">Yuri Orlov</a>, Internationally renowned physicist, human rights champion and Soviet-era dissident Yuri Orlov, professor emeritus of physics in the College of Arts and Science, died Sept. 27 in Ithaca. He was 96.</p>
+           <p><a href="https://news.cornell.edu/stories/2020/10/nobel-winning-physicist-arthur-ashkin-phd-52-dies-98">Arthur Ashkin</a>, Ph.D. ’52, who won the Nobel Prize in physics in 2018 for pioneering “optical tweezers” that use laser light to capture and manipulate microscopic particles, died Sept. 21 at his home in Rumson, N.J. He was 98.</p>
+           <p><a href="https://news.cornell.edu/stories/2020/09/supreme-court-justice-ruth-bader-ginsburg-54-dies">Ruth Bader Ginsburg</a>, ’54, associate justice of the U.S. Supreme Court, died Sept. 18 in Washington, D.C. She was 87.</p>
+           <p><a href="https://news.cornell.edu/stories/2021/03/paul-steen-fluid-mechanics-expert-dies-68">Paul H. Steen</a>, the Maxwell M. Upson Professor in the Smith School of Chemical and Biomolecular Engineering, who was internationally recognized for his fluid mechanics research, died on Sept. 4, 2020, at the age of 68</p>
+           <h3>August</h3>
+           <p><a href="https://news.cornell.edu/stories/2020/08/philosopher-nicholas-sturgeon-dies-age-77">Nicholas Sturgeon,</a> Susan Linn Sage Professor Emeritus in the Sage School of Philosophy and an expert in the foundations of ethics, died Aug. 24 of complications from Parkinson’s disease. He was 77.</p>
+           <p><a href="https://news.cornell.edu/stories/2020/09/mcminn-former-aap-dean-and-cornell-rome-founder-dies">William G. McMinn,</a> who served as dean of the College of Architecture, Art and Planning from 1984 to ’96, died Aug. 21 in Asheville, North Carolina. He was 89.</p>
+           <p><a href="https://news.cornell.edu/stories/2020/08/roger-livesay-emeritus-professor-math-dies-95">G. Roger Livesay,</a> professor emeritus of math in the College of Arts and Sciences, died Aug. 1 in Ithaca after a long illness. He was 95.</p>
+           <p><a href="https://news.cornell.edu/stories/2020/08/harold-scheraga-protein-chemistry-pioneer-dies-98">Harold A. Scheraga</a>, Harold A. Scheraga, the George W. and Grace L. Todd Professor Emeritus of Chemistry in the College of Arts and Sciences, who had a profound impact shaping the understanding of protein structure, died Aug. 1 in Ithaca. He was 98.</p>
+           <h3>July</h3>
+           <p><a href="https://news.cornell.edu/stories/2020/08/leland-carmichael-canine-infectious-disease-expert-dies-90">Leland “Skip” Carmichael</a>, Ph.D. ’59, the John M. Olin Professor of Virology Emeritus and an expert on canine infectious diseases, died July 27 in Ithaca. He was 90.</p>
+           <h3>June</h3>
+           <p><a href="https://news.cornell.edu/stories/2020/06/diacritics-founder-david-grossvogel-dies-94">David Grossvogel</a>, the Goldwin Smith Professor of Comparative Literature and Romance Studies Emeritus and founder of the influential literary journal Diacritics, died June 14 in Chicago. He was 94.</p>
+           <p><a href="https://news.cornell.edu/stories/2020/06/antonie-blackler-pioneering-biologist-dies-88">Antonie Blackler</a>, professor emeritus of zoology, died June 3 in Ithaca. He was 88.</p>
+           <h3>May</h3>
+           <p><a href="https://news.cornell.edu/stories/2020/05/tom-ruttledge-retired-chemistry-lecturer-dies-55">Tom Ruttledge</a>, retired senior lecturer of chemistry, died May 19 in Ithaca. He was 55.</p>
+           <p><a href="https://news.cornell.edu/stories/2020/05/jerrie-gavalchin-autoimmune-disease-expert-dies-64">Jerrie Gavalchin</a>, associate professor in the Department of Animal Science in the College of Agriculture and Life Sciences, died May in Groton, New York. She was 64.</p>
+           <h3>April</h3>
+           <p><a href="https://statements.cornell.edu/2020/20200427-YBJs9-lorna-breen.cfm">Dr. Lorna Breen ’92, M.B.A./M.S. ’21</a>, died on April 26 while at home with her family</p>
+           <h3>February</h3>
+           <p><a href="http://news.cornell.edu/stories/2020/02/frank-rhodes-cornells-ninth-president-dies-93">Frank H.T. Rhodes</a>, Cornell University’s ninth president, died Feb. 3 in Bonita Springs, Florida. He was 93.</p>
+           <h3>January</h3>
+           <p><a href="https://news.cornell.edu/stories/2020/02/solid-modeling-pioneer-herb-voelcker-dies-90">Herb Voelcker</a>, professor emeritus of engineering, died Jan. 23 in Ithaca. He was 90.</p>
+           <p><strong><strong>2019</strong></strong></p>
+           <h3>December</h3>
+           <p><a href="https://statements.cornell.edu/2019/20191229-paul-benton-fisher-york.cfm">Paul Benton Fisher-York</a>, ’22, a computer science major in the College of Engineering, died Dec. 25 in Ithaca. He was 19.</p>
+           <p><a href="http://news.cornell.edu/stories/2020/01/emeritus-professor-art-stephen-poleskie-dies-81">Stephen Poleskie</a>, professor emeritus of art, died Dec. 21 in Ithaca. He was 81.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/12/eminent-historian-isaac-kramnick-dies-81">Isaac Kramnick,</a> the Richard J. Schwartz Professor of Government Emeritus, died Dec. 21 in New York City. He was 81.</p>
+           <p><a href="https://statements.cornell.edu/index.cfm">James Stewart</a>, a master’s student in entomology, died Dec. 16 in Ithaca. He was 24.</p>
+           <p><a href="http://news.cornell.edu/stories/2020/01/pimentel-professor-emeritus-and-environmental-scientist-dies-94">David Pimentel</a>, Ph.D. ‘51, professor emeritus of agricultural sciences, entomology and ecology, died Dec. 8 in Ithaca. He was 94.</p>
+           <h3>November</h3>
+           <p><a href="http://news.cornell.edu/stories/2019/12/historian-and-medievalist-brian-tierney-dies-97">Brian Tierney</a>, professor emeritus of medieval history, died Nov. 30 in Syracuse. He was 97.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/12/john-murray-elliot-animal-nutrition-expert-dies-92">John Murray Elliot</a>, Ph.D. ’58, professor emeritus of animal science, died Nov. 26 in Ithaca. He was 92.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/12/bill-macaulay-lab-ornithology-benefactor-dies-74">William E. “Bill” Macaulay</a>, longtime benefactor of the&nbsp;Cornell Lab of Ornithology, died Nov. 26. He was 74.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/12/yervant-terzian-who-explored-matter-between-stars-dies-80">Yervant Terzian</a>, professor emeritus of astronomy, died Nov. 25 in Ithaca. He was 80.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/11/animal-physiologist-david-robertshaw-dies-85">David Robertshaw</a>,&nbsp;professor emeritus&nbsp;of physiology,&nbsp;died Nov. 8 in Ithaca. He was 85.</p>
+           <h3>October</h3>
+           <p><a href="https://statements.cornell.edu/2019/20191026-antonio-tsialas.cfm">Antonio Tsialas ’23,</a> a first-year student in the College of Arts and Sciences, was found deceased Oct. 26 in Fall Creek Gorge. He was 18. The campus community is invited to attend a service of remembrance Oct. 29 from 4:30 to 5:30 p.m. in the chapel in Anabel Taylor Hall. A reception will follow in the Founders Room, 114 Anabel Taylor Hall.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/10/writer-emeritus-professor-james-mcconkey-dies-98">James McConkey</a>, professor emeritus of English literature, died Oct. 24 in Ithaca. He was 98.</p>
+           <h3>September</h3>
+           <p><a href="http://news.cornell.edu/stories/2019/10/dick-archer-man-behind-cornell-stage-productions-dies-71">Dick Archer</a>, associate professor of theater arts, died Sept. 14. He was 71.&nbsp;</p>
+           <p><a href="http://news.cornell.edu/stories/2019/09/lead-new-york-founder-james-preston-50-dies">James Preston</a> ’50, Ed.D. ’68,&nbsp;professor emeritus&nbsp;of rural sociology, died Sept. 2&nbsp;in Hector, New York. He was 92.</p>
+           <h3>August</h3>
+           <p><a href="http://news.cornell.edu/stories/2019/09/agronomist-thomas-w-scott-dies-89-0">Thomas W. Scott</a>, professor emeritus&nbsp;of agronomy, died Aug. 22 in Ithaca. He was 89.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/08/linguist-carol-rosen-dies-79">Carol Gilson Rosen</a>, professor emerita of linguistics, died Aug. 19 in Ithaca. She was 79.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/08/literary-icon-toni-morrison-ma-55-dies-88">Toni Morrison</a> ’55, Nobel Prize-winning author, who was also an A.D. White Professor-at-Large at Cornell from 1997 to 2003, died Aug. 5 in New York City. She was 88.</p>
+           <h3>June</h3>
+           <p><a href="http://news.cornell.edu/stories/2019/06/empire-apple-breeder-roger-way-dies-100">Roger Way</a>, Ph.D. ’53, professor emeritus of pomology, died June 2 in State College, Pennsylvania. He was 100 years old.</p>
+           <h3>May</h3>
+           <p><a href="http://news.cornell.edu/stories/2019/05/sam-fleming-62-trustee-emeritus-dies-78">Samuel Crozier Fleming</a> ’62, a trustee emeritus, life overseer of Weill Cornell Medicine and a presidential councillor, died May 2. He was 78.</p>
+           <h3>April</h3>
+           <p><a href="http://news.cornell.edu/stories/2019/05/thomas-sokol-cornells-choral-director-who-was-given-biebls-ave-maria-dies-89">Thomas A. Sokol</a>, professor emeritus of music,&nbsp;died April 28 in Ithaca, New York. He was 89.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/05/toxicology-expert-donald-lisk-dies-88">Donald J. Lisk</a>, M.S. ’54, Ph.D. ’56, professor emeritus of soil chemistry and toxicology, died April 27. He was 88.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/05/agronomist-madison-wright-dies-95">Madison J. Wright</a>, professor emeritus of agronomy, died April 27 in Ithaca, New York. He was 95.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/04/david-mankin-who-inspired-students-love-classics-dies-61">David Mankin</a>, associate professor emeritus of classics, died April 24.&nbsp;He was 61.</p>
+           <h3>March</h3>
+           <p><a href="http://news.cornell.edu/stories/2019/04/raymond-fox-47-emeritus-professor-floriculture-dies-96">Raymond T. Fox</a> ’47, M.S. ’52, Ph.D. ’56, professor emeritus of floriculture and ornamental horticulture, died March 31 in Ithaca, New York. He was 96.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/04/trailblazing-lymphoma-researcher-kristy-richards-90-dies">Dr. Kristy Richards</a> ’90, associate professor of biomedical sciences, died March 30 in New York City. She was 50.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/04/probability-expert-harry-kesten-phd-58-dies-87">Harry Kesten</a>, Ph.D. ’58, professor emeritus of mathematics,&nbsp;died March 29 in Ithaca, New York. He was 87.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/07/joy-wagner-longtime-assistant-rhodes-be-remembered-july-27">Marjorie Joy Wagner</a>, longtime assistant to President Emeritus Frank H.T. Rhodes, died March 28 in Ithaca. She was 86.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/03/robert-summers-pre-eminent-legal-scholar-dies-85">Robert S. Summers,</a> the William G. McRoberts Research Professor Emeritus in Administration of the Law, died March 1 in New Canaan, Connecticut. He was 85.</p>
+           <h3>February</h3>
+           <p><a href="http://news.cornell.edu/stories/2019/02/ed-intemann-lecturer-schwartz-center-lighting-designer-dies-60">E.D. (Ed) Intemann</a>, M.F.A. ’84, a senior lecturer&nbsp;in the&nbsp;Department of Performing and Media Arts,&nbsp;died Feb. 21 in Syracuse, New York. He was 60.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/03/economist-engineer-richard-schuler-dies-81">Richard Schuler</a>, professor emeritus of economics and civil and environmental engineering, died Feb. 13. He was 81.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/02/edgar-gasteiger-biologist-and-cornell-citizen-dies-99">Edgar Gasteiger</a>, professor emeritus of physical biology, died Feb. 9 in Ithaca, New York. He was 99.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/02/leonard-topoleski-vegetable-crop-expert-dies-83">Leonard D. Topoleski</a>, professor emeritus of vegetable crops and horticulture, died Feb. 8 in Sayre, Pennsylvania. He was 83.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/02/tom-cade-who-saved-peregrine-falcons-dies-91">Tom Cade</a>, professor&nbsp;emeritus of zoology, died Feb. 6 in Boise, Idaho. He was 91</p>
+           <p><a href="http://news.cornell.edu/stories/2019/02/rosario-provvidenti-authority-vegetable-diseases-dies-97">Rosario Provvidenti</a>, professor emeritus of plant pathology, died Feb. 1 in Geneva, New York. He was 97.</p>
+           <h1>2018</h1>
+           <h3>December</h3>
+           <p><a href="http://news.cornell.edu/stories/2019/01/leo-renaghan-hospitality-marketing-innovator-dies-75">Leo Renaghan</a>, professor emeritus in the School of Hotel Administration, died Dec. 31. He was 75.</p>
+           <p><a href="http://news.cornell.edu/stories/2019/01/professor-emeritus-david-henderson-dies-accident">David Wilson Henderson</a>, professor emeritus of mathematics, died Dec. 20 in Newark, Delaware. He was 79.</p>
+           <p><a href="http://news.cornell.edu/stories/2018/12/george-lowery-quick-witted-cornell-chronicle-managing-editor-dies-60">George Lowery</a><a href="http://news.cornell.edu/stories/2018/09/lois-gray-amazing-force-ilr-school-dies-94">,</a> managing editor of the Cornell Chronicle,&nbsp;died Dec. 10&nbsp;in Ithaca. He was 60.</p>
+           <h3>October</h3>
+           <p><a href="http://news.cornell.edu/stories/2018/10/acting-teacher-alison-van-dyke-dies-79">Alison Van Dyke</a><a href="http://news.cornell.edu/stories/2018/09/lois-gray-amazing-force-ilr-school-dies-94">,</a> retired senior lecturer of performing and media arts,&nbsp;died Oct. 5&nbsp;in London. She was 79.</p>
+           <p><a href="http://news.cornell.edu/stories/2018/10/dairy-food-safety-expert-james-white-dies-101">James C. White</a> ’39, Ph.D. ’44, professor emeritus in the School of Hotel Administration, died Oct. 2 at his home in Ithaca. He was 101.</p>
+           <h3>September</h3>
+           <p><a href="http://news.cornell.edu/stories/2018/10/wildlife-biologist-richard-mcneil-dies-85">Richard McNeil</a>, emeritus&nbsp;professor of wildlife management, died Sept. 25 in Ithaca. He was 85.</p>
+           <p><a href="http://news.cornell.edu/stories/2018/09/lois-gray-amazing-force-ilr-school-dies-94">Lois Spier Gray,</a> an iconic ILR School professor who committed her life to advancing social justice and workers’ rights, died Sept. 20 in New York City. She was 94.</p>
+           <h3>August</h3>
+           <p><a href="http://news.cornell.edu/stories/2018/08/vice-president-lombardi-offers-condolences-death-rachel-doran-19">Rachel Doran</a> ’19, a rising senior in the College of Human Ecology, died Aug. 17 in New York City. She was 21.</p>
+           <p><a href="http://news.cornell.edu/stories/2018/08/donald-holcomb-emeritus-physics-professor-dies-92">Donald F. Holcomb</a>, emeritus professor of physics and former chair of the Department of Physics and university trustee, died Aug. 9 at Kendal at Ithaca. He was 92.</p>
+           <p><a href="http://news.cornell.edu/stories/2018/08/joel-silbey-emeritus-professor-history-dies-84">Joel H. Silbey</a>, emeritus professor of history, died Aug. 7. He was 84.</p>
+           <p><a href="http://news.cornell.edu/stories/2018/08/former-cornell-provost-robert-plane-dies-90">Robert A. Plane</a>, a professor emeritus of chemisty who served as the university's eighth provost, died Aug. 6. at his home in Albuquerque, New Mexico. He was 90.</p>
+           <h3>July</h3>
+           <p><a href="http://news.cornell.edu/stories/2018/08/joseph-sieczka-potato-specialist-dies-79">Joseph Sieczka</a>, emeritus&nbsp;professor of horticulture, died July 29 at his home in Mattituck, New York. He was 79.</p>
+           <p><a href="http://news.cornell.edu/stories/2018/07/carol-warrior-assistant-professor-english-dies-56">Carol Edelman Warrior,</a> assistant professor of English in the College of Arts and Sciences, died July 4 in Montana. She was 56.</p>
+           <h3>June</h3>
+           <p><a href="http://news.cornell.edu/stories/2018/07/lilyan-affinito-leaves-legacy-women-leadership">Lilyan Affinito</a> ’53, trustee emerita and presidential councillor, died June 29. She was 86.&nbsp;</p>
+           <p><a href="http://news.cornell.edu/stories/2018/06/righteous-warrior-dorothy-cotton-civil-rights-pioneer-dies-88">Dorothy Cotton</a>, former director of student activities, died June 10 at Kendal at Ithaca. She was 88.</p>
+           <p><a href="http://news.cornell.edu/stories/2018/06/carl-gortzig-professor-floriculture-dies-87">Carl Gortzig</a> ’52, emeritus professor of floriculture, died June 2 in Ithaca. He was 87.</p>
+           <h3>May</h3>
+           <p><a href="http://news.cornell.edu/stories/2018/07/robert-h-wasserman-discoverer-calcium-binding-protein-dies-age-92">Robert H. Wasserman</a> ’49, Ph.D. ’53, professor emeritus of physiology, died May 23. He was 92.</p>
+           <p><a href="http://news.cornell.edu/stories/2018/08/adult-education-scholar-arthur-wilson-dies-67">Arthur L. “Butch” Wilson</a>, professor of education, died May 10 in Lexington, Virginia. He was 67.</p>
+           <h3>April</h3>
+           <p><a href="http://news.cornell.edu/stories/2018/04/jerrold-meinwald-2014-national-medal-science-winner-dies-91">Jerrold Meinwald</a>, emeritus professor of chemistry, died April 23 in Ithaca. He was 91.</p>
+           <p><a href="http://news.cornell.edu/stories/2018/06/former-veterinary-college-dean-edward-c-melby-jr-dies">Edward Carlos Melby Jr.</a>, DVM '54, dean emeritus of the College of Veterinary Medicine, died April 22 of Alzheimer's disease. He was 88.</p>
+           <p><a href="http://news.cornell.edu/stories/2018/04/corporate-business-law-scholar-lynn-stout-dies-60">Lynn Stout</a>, professor of&nbsp;law, died April 16. She was 60.</p>
+           <h3>March</h3>
+           <p><a href="http://news.cornell.edu/stories/2018/04/michael-dickson-breeder-orange-cauliflower-dies">Michael Hugh Dickson</a>, emeritus&nbsp;professor of&nbsp;horticulture, died March 28.&nbsp;He was 85.</p>
+           <p><a href="http://news.cornell.edu/stories/2018/03/architecture-professor-arthur-ovaska-dies-67">Arthur Ovaska</a>, B.Arch. ’74, professor of architecture,&nbsp;died March 26 at his home in Ithaca. He was 67.</p>
+           <p><a href="http://news.cornell.edu/stories/2018/03/professor-emeritus-musician-and-scholar-john-hsu-dies">John Hsu</a>, emeritus professor of music, died March 24 in Chapel Hill, North Carolina. He was 86.</p>
+           <p><a href="http://news.cornell.edu/stories/2018/03/cornell-benefactor-imogene-powers-johnson-dies-87">Imogene “Gene” Powers Johnson ’52,</a> a devoted alumna, benefactor and matriarch of a multigenerational philanthropic Cornellian family, died March 3 in Racine, Wisconsin. She was 87.</p>
+           <h3>January</h3>
+           <p><a href="http://news.cornell.edu/stories/2018/02/noted-cardiologist-isadore-rosenfeld-dies-91">Dr. Isadore Rosenfeld</a>, professor of clinical medicine, died Jan. 30&nbsp;in Greenwich, Connecticut. He was 91.</p>
+           <p><a href="http://news.cornell.edu/stories/2018/02/myron-rush-noted-kremlinologist-dies-age-96">Myron&nbsp;Rush</a>, emeritus&nbsp;professor of government,&nbsp;died Jan. 8 in Herndon, Virginia. He was 96.</p>
+           <p><a href="http://www.legacy.com/obituaries/theithacajournal/obituary.aspx?n=cynthia-tkachuck&amp;pid=187776142">Cynthia Tkachuck</a> ’93, former employee elected trustee, died Jan. 6 in Auburn, New York. She was 72.</p>
+           <h1>2017</h1>
+           <h3>December</h3>
+           <p><a href="http://news.cornell.edu/stories/2017/12/vp-lombardi-offers-condolences-death-student">Miaoxiu “Tina” Tian</a> '18, a student in the College of Engineering, was found dead in her apartment in Ithaca on Dec. 13. She was 21.</p>
+           <h3>November</h3>
+           <p><a href="http://news.cornell.edu/stories/2017/11/architectural-historian-bonnie-macdougall-dies">Bonnie Graham MacDougall</a>&nbsp;’62, M.A. ’65, Ph.D. ’73, professor emerita of architecture, died Nov. 26 in Virginia. She was 76.</p>
+           <p><a href="http://news.cornell.edu/stories/2017/11/cornell-entrepreneurship-founding-father-david-j-bendaniel-dies-86">David J. BenDaniel</a>, professor of entrepreneurship and management, died Nov. 22. He was 86.</p>
+           <p><a href="http://news.cornell.edu/stories/2017/11/olaf-larson-rural-sociology-research-pioneer-dies-107">Olaf F. Larson</a>, emeritus professor of rural sociology, died Nov. 14 in Mount Dora, Florida. He was 107.</p>
+           <h3>October</h3>
+           <p><a href="http://news.cornell.edu/stories/2017/10/chemical-evolution-expert-david-usher-dies-age-80">David A. Usher</a>, retired associate professor of chemistry and chemical biology, died Oct. 6 at his home in Dryden, New York. He was 80.</p>
+           <h3>September</h3>
+           <p><a href="http://news.cornell.edu/stories/2017/10/mathematician-roger-h-farrell-dies-age-88">Roger H. Farrell</a>, professor emeritus of mathematics, died Sept. 28 in Ithaca. He was 88.</p>
+           <p><a href="http://news.cornell.edu/stories/2017/09/board-chairman-emeritus-peter-meinig-dies-78">Peter C. Meinig</a> ’61, chairman emeritus of the Cornell University Board of Trustees, died Sept. 25 in Colorado. He was&nbsp;78.</p>
+           <h3>August</h3>
+           <p><a href="http://news.cornell.edu/stories/2017/08/klarman-physical-sciences-architect-fred-koetter-dies">Alfred (Fred) H. Koetter Jr.</a>, M.Arch. ’66, whose projects included two Cornell campus buildings, died Aug. 21 in Brookline, Massachusetts. He was 79.</p>
+           <p><a href="http://news.cornell.edu/stories/2017/08/gene-madsen-expert-environmental-microbiology-dies-64">Eugene L. Madsen</a>, M.S. ’81, Ph.D. ’85, professor of microbiology, died Aug. 9 in Freeville, New York. He was 64.</p>
+           <h3>July</h3>
+           <p>Matthew Miller, a postdoctoral researcher in the Weill Institute for Cell and Molecular Biology, died July 3 in a swimming accident in the Ausable River in the Adirondacks. He was 31.</p>
+           <h3>June</h3>
+           <p><a href="http://news.cornell.edu/stories/2017/08/herbert-schryver-horse-nutrition-expert-dies-89">Herbert Schryver</a>, DVM '54, emeritus professor in the College of Veterinary Medicine, died June 26 in Ithaca. He was&nbsp;89.&nbsp;</p>
+           <p><a href="http://news.cornell.edu/stories/2017/07/soil-microbiologist-martin-alexander-dies-87">Martin Alexander</a><span>, emeritus professor in Cornell’s School of Integrative Plant Science, Soil and Crop Sciences Section, died June 25 in Ithaca at age 87.</span></p>
+           <p><a href="http://news.cornell.edu/stories/2017/06/landscape-architect-marvin-adleman-dies-age-84">Marvin I. Adleman,</a> professor emeritus of landscape architecture, died June 21 at age 84 in Buffalo Grove, Illinois, of Parkinson’s disease.</p>
+           <p><a href="http://news.cornell.edu/stories/2017/06/clifford-earle-emeritus-professor-math-dies-81">Clifford J. Earle,</a> professor emeritus of mathematics, died June 12 at Hospicare in Ithaca. He was 81.</p>
+           <h3>May</h3>
+           <p><a href="http://news.cornell.edu/stories/2017/06/geomorphologist-arthur-bloom-dies-88">Arthur L. Bloom,</a> professor emeritus in the Department of Earth and Atmospheric Sciences, died May 31 at Cayuga Medical Center in Ithaca. He was 88.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/05/seymour-sy-smidt-expert-corporate-finance-dies-88">Seymour Smidt</a>, professor emeritus of economics and finance, died May 16 at Hospicare in Ithaca. He was 88.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/05/vp-ryan-lombardi-offers-condolences-death-student">Aalaap Narasipura</a> '18, student in the College of Engineering, died in Ithaca. He was 20.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/05/biochemist-peter-hinkle-dies-76">Peter C. Hinkle</a>, professor emeritus of biochemistry, cell and molecular biology, died May 12 in Ithaca. He was 76.</p>
+           <p><a href="http://news.cornell.edu/stories/2017/07/pomologist-chester-forshey-dies-92">Chester Forshey</a>, professor emeritus of pomology, died May 7. He was 92.</p>
+           <h3>April</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2017/05/renowned-biochemist-david-b-wilson-dies-77">David B. Wilson</a>, professor of molecular biology and genetics,&nbsp;died April 29. He was 77.</p>
+           <p><a href="http://www.legacy.com/obituaries/theithacajournal/obituary.aspx?pid=185261267">John M. "Jack" Bird</a>,&nbsp;professor emeritus in the Department of Earth and Atmospheric Sciences, died April 27. He was 85.</p>
+           <p><a href="http://news.cornell.edu/stories/2017/04/vp-lombardi-issues-condolences-death-student">Peiran “Joyce” Shi</a> ’19, student in the College of Arts and Sciences, died April 3 in New Jersey.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/04/robert-hughes-professor-emeritus-chemistry-dies-92">Robert E. Hughes</a>, Ph.D. ’52, professor emeritus of chemistry,&nbsp;died April 2 in&nbsp;Round Hill, Virginia. He was 92.</p>
+           <h3>March</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2017/04/natalie-uhl-renowned-palm-expert-dies-97">Natalie Uhl</a>, professor emerita of plant anatomy,&nbsp;died March 28 in Georgia. She was 97.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/03/andr-jagendorf-pioneering-plant-biologist-dies-90">André Tridon Jagendorf </a>’48, professor emeritus of plant biology, died March 13 in Ithaca, New York. He was 90.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/03/gregory-poe-expert-environmental-economics-dies-56">Gregory Poe</a>, professor in the Charles H. Dyson School of Applied Economics and Management, died March 11 at his home in Ithaca. He was 56.</p>
+           <p><a href="http://statements.cornell.edu/2017/20170306-angel-hierro.cfm">Angel Hierro</a> '17, student in the College of Agriculture and Life Sciences, was found dead March 5 at his residence in the Latino Living Center in Anna Comstock Hall.</p>
+           <h3>February</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2017/03/cornell-veterinary-scientist-alan-dobson-dies-88">Alan Dobson</a>, professor emeritus of biomedical sciences, died Feb. 21 in Ithaca, New York. He was 88.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/02/alain-seznec-former-dean-and-university-librarian-dies-86">Alain Seznec</a>, professor emeritus of Romance studies, former dean of the College of Arts and Sciences and former University Librarian, died Feb. 21 at his home in Ithaca. He was 86.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/02/ted-lowi-renowned-political-scientist-dies-85">Theodore Jay Lowi</a>,&nbsp;professor emeritus&nbsp;of government,&nbsp;died Feb. 17 in Ithaca, New York. He was 85.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/02/roger-cramton-former-cornell-law-dean-dies-87">Roger C. Cramton, </a>former dean of Cornell Law School and professor emeritus of law,&nbsp;died Feb. 3 in Ithaca. He was 87.</p>
+           <h3>January</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2017/01/walter-relihan-former-university-counsel-dies-86">The Hon. Walter J. Relihan Jr.</a>,&nbsp;’52, J.D. ’59, a former Cornell University Counsel, died Jan. 11. He was 86.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/05/nutritional-sciences-professor-mary-alice-morrison-dies-96">Mary Alice Morrison</a>, professor emerita in the of nutritional sciences died Jan. 10&nbsp;at her home in Kendal at Ithaca. She was 95.&nbsp;</p>
+           <h1>2016</h1>
+           <h3>December</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2016/12/dr-henry-heimlich-inventor-lifesaving-maneuver-dies-96">Dr. Henry Heimlich,</a>&nbsp;'41, M.D. '43,&nbsp;inventor of the Heimlich maneuver, died Dec. 17 in Cincinnati. He was 96.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2016/12/composer-and-conductor-karel-husa-dies-95">Karel Husa,</a>&nbsp;professor emeritus of music, died Dec. 14 at his home in Apex, North Carolina. He was 95.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2016/12/planning-chair-and-scholar-susan-christopherson-dies">Susan Christopherson,</a>&nbsp;professor of city and regional planning, died Dec. 13. She was 69.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/01/hotel-design-pioneer-richard-penner-dies-age-70">Richard Penner</a> ’69, M.Arch. ’72, professor emeritus of finance, accounting and real estate, died Dec. 11 in New Paltz, New York. He was 70.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2016/12/ann-johnson-engineering-historian-dies-rare-cancer">Ann Johnson,</a>&nbsp;professor of science and technology studies, died Dec. 11. She was 51.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/01/james-w-gair-linguistics-professor-emeritus-dies-88">James Wells Gair</a>, Ph.D. ’63, professor emeritus of linguistics, died Dec. 10 in Ithaca. He was 88.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2016/12/mark-turnquist-engineering-professor-emeritus-dies-67">Mark Turnquist,</a>&nbsp;professor emeritus of civil and environmental engineering, died Dec. 5 in Falmouth, Maine. He was 67.</p>
+           <h3>November</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2016/11/vp-lombardi-issues-condolences-death-mba-student">Jason Michael Thomas,</a> a first-year MBA student in the Samuel Curtis Johnson Graduate School of Management, died Nov. 30 in Caroline, New York. He was 34 years old.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2016/11/teacher-mentor-trustee-daniel-sisler-dies-87">Daniel G. Sisler</a>, Ph.D.&nbsp;'62, professor emeritus of agricultural economics and a Cornell trustee emeritus, died Nov. 23 in Ithaca. He was 87.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2016/12/professor-emeritus-edwin-oyer-dies-89">Edwin Oyer</a>, international professor emeritus in vegetable crops, died Nov. 15. He was 89.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/01/wolfgang-holdheim-law-and-literature-pioneer-dies-90">W. Wolfgang Holdheim</a>, professor emeritus&nbsp;of liberal studies, died Nov. 12, 2016, in Reston, Virginia. He was 90.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2016/11/janet-reno-60-first-female-us-attorney-general-dies-78">Janet Reno</a>&nbsp;'60, the first female U.S. attorney general, died Nov. 7. She was 78.</p>
+           <h3>October</h3>
+           <p>Ian Lenz, Ph.D. ’16, Department of Computer Science, died Oct. 31 in Austin, Texas. He was 28.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2016/11/donald-smith-veterinary-college-dean-emeritus-dies">Donald F. Smith</a>, dean emeritus of the College of Veterinary Medicine, died&nbsp;Oct. 29. He was 66.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/01/linguist-herbert-l-kufner-dies-88">Herbert L. Kufner</a>, Ph.D. ’56, professor of linguistics, died Oct. 20 in&nbsp;Unterhaching, Germany. He was 88.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/02/rural-sociologist-harold-capener-dies-97">Harold Rigby Capener</a>, Ph.D ’51,&nbsp;professor emeritus of rural sociology, died Oct. 13 in Utah. He was 97.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2017/03/milton-zaitlin-pioneer-plant-virology-dies-89">Milton Zaitlin</a>, professor emeritus of plant pathology, died Oct. 11 in Ithaca, New York. He was 89.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2016/10/anthropologist-robert-smith-japan-scholar-dies-age-89">Robert J. Smith</a>, Ph.D. ’55,&nbsp;professor emeritus of anthropology, died Oct. 11 at at Cayuga Medical Center in Ithaca. He was 89.</p>
+           <h3>August</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2016/08/renowned-mycologist-richard-korf-dies-91">Richard P. Korf</a> ’46, Ph.D. ’50, professor emeritus of mycology, died Aug. 20 at his Ithaca home. He was 91.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2016/08/plant-scientist-ralph-hardy-who-led-gmo-foods-debate-dies">Ralph W.F. Hardy</a>, former&nbsp;president of the Cornell-affiliated Boyce Thompson Institute, died&nbsp;Aug. 2 in Wilmington, Delaware. He was 82.</p>
+           <h3>July</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2016/07/gil-stoewsand-who-helped-save-ny-wine-trade-dies">Gilbert Stoewsand</a>, professor emeritus of toxicology, died July 4 in Geneva, New York. He was 83.</p>
+           <h3>June</h3>
+           <p><a href="http://www.legacy.com/obituaries/theithacajournal/obituary.aspx?pid=181058440">Paul R. Eberts</a>, professor emeritus of rural sociology, died June 23 at his home in Issaquah, Washington. He was 84.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2016/06/renaissance-scholar-carol-kaske-dies-83">Carol V. Kaske</a>, professor emerita of English, died June 15 in Ithaca, New York. She was 83.</p>
+           <h3>May</h3>
+           <p><a href="http://news.cornell.edu/stories/2016/05/emeritus-engineering-professor-tobias-de-boer-dies-85">Tobias de Boer</a>, professor emeritus of engineering died May at Kendal of Ithaca. He was 85.</p>
+           <h3>April</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2016/05/cornell-microbial-geneticist-stanley-zahler-dies-89">Stanley Zahler</a>, professor emeritus of microbial genetics, died April 26&nbsp;in California. He was 89.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2016/04/evolutionary-biologist-rick-harrison-dies-70">Richard Harrison</a>, Ph.D '77,&nbsp;professor of ecology and evolutionary biology, died&nbsp;April 12 in Lizard Island, Australia. He was 70.</p>
+           <h3>March</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2016/04/former-johnson-professor-david-ahlers-dies-78">David Ahlers</a>, a longtime instructor at the Johnson School, died&nbsp;March 28 in Ithaca, New York. He was 78.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2016/03/president-elizabeth-garrett-dies-colon-cancer-age-52">Elizabeth Garrett</a>, Cornell University president, died&nbsp;March 6 from colon cancer. She was 52.</p>
+           <h3>February</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2016/02/composer-emeritus-professor-steven-stucky-dies-66">Steven Stucky</a>,&nbsp;DMA '78, professor emeritus of music, died Feb. 14 at his home in Ithaca. He was 66.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2016/02/james-boodley-co-inventor-cornell-potting-mix-dies-88">James Boodley</a>, professor emeritus of floriculture and ornamental horticulture, died Feb. 12 in Kent, Ohio. He was 88.</p>
+           <h1>2015</h1>
+           <h3>December</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2016/01/emeritus-professor-sculptor-jack-squier-dies-88">Jack Squier</a>,&nbsp;MFA ’52, sculptor and professor emeritus of art, died Dec. 31 at his home in Florida. He was 88.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2016/01/emeritus-professor-and-alum-edgar-rosenberg-dies-90">Edgar Rosenberg</a> ’49, M.A. ’50, professor emeritus of English and comparative literature, died Dec. 19 in Cayuga Heights, New York, at the age of 90.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/12/benedict-anderson-who-wrote-imagined-communities-dies">Benedict Anderson</a>, a professor emeritus in government,&nbsp;died Dec. 13 in East Java, Indonesia. He was 79.</p>
+           <h3>November</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2015/12/vegetable-storage-expert-james-russell-hicks-dies">James Russell Hicks</a>, a professor of horticulture and an expert in vegetable storage, died Nov. 26. He was 78.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/12/soil-scientist-nyle-brady-dies-95">Nyle Brady</a>, a longtime professor of soil science and former assistant dean in the College of Agriculture and Life Sciences, died Nov. 24 in Colorado. He was 95.</p>
+           <p><a href="http://cornellcals.tumblr.com/post/133868685195/hiromi-hosono-a-talented-engaging-young">Hiromi Hosono</a>, a visiting associate professor in the College of Agriculture and Life Sciences, was killed in a vehicular accident in Chicago Nov. 21. An associate professor in the Graduate School of Agricultural and Life Sciences at the University of Tokyo, she was 42 years old.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/11/legendary-cornellian-austin-kiplinger-39-dies-age-97">Austin H. "Kip" Kiplinger</a> '39, chairman emeritus of the Cornell University Board of Trustees and a giant in the fields of publishing, journalism, philanthropy and university leadership, died Nov. 20 in Rockville, Maryland. He was 97.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/11/robin-bellinder-leader-weed-management-dies">Robin Bellinder,</a> professor of plant science and a national and international leader in weed management, died Nov. 13 in Ithaca, New York, at age 70.</p>
+           <p><a href="https://as.cornell.edu/news/anthropologist-terence-turner-dies-79">Terence Sheldon Turner</a>, visiting professor of anthropology, died Nov. 7 at Cayuga Medical Center of a brain hemorrhage. He was 79.</p>
+           <h3>October</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2015/10/mark-talbert-senior-lecturer-sha-dies-age-55">Mark P. Talbert</a>, a senior lecturer in information systems at the School of Hotel Administration (SHA), died Oct. 19 in Ithaca. He was 55.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/10/emeritus-professor-director-bands-marice-stith-dies">Marice Wilbur Stith</a>, professor emeritus of music,&nbsp;died Oct. 7 at Cayuga Medical Center after a long illness. He was 89.</p>
+           <h3>September</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2015/12/former-law-school-dean-gray-thoron-memorial-dec-19">Gray Thoron</a>,&nbsp;former law school dean, died Sept. 18 at his home at the&nbsp;Kendal of Ithaca. He was 99.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/10/noted-astronomer-james-houck-dies-74">James R. Houck</a>,&nbsp;retired professor of astronomy, died Sept. 18&nbsp;in Ithaca from complications of Alzheimer's Disease. He was 74.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/12/william-dilger-ornithologist-died-september">William C. Dilger</a> ‘46, M.S. ’51, Ph.D. ’55, professor of neurobiology and behavior, died at his home in Freeville, New York, on Sept. 17 at the age of 92.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/09/george-hess-biochemist-dies-92">George Paul Hess</a>, professor emeritus of biochemistry, died Sept. 9 at home in Ithaca. He was 92.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/09/george-poppensiek-veterinary-college-dean-emeritus-dies">George C. Poppensiek</a>, dean and professor emeritus in the College of Veterinary Medicine, died Sept. 8 in Ithaca. He was 97.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/09/william-provine-history-science-scholar-dies-73">William Provine</a>, professor emeritus of&nbsp;History and Ecology and Evolutionary Biology, died Sept. 1 due to complications from a brain tumor in Horseheads, New York. He was 73.</p>
+           <h3>August</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2015/09/julian-smith-chemical-engineering-leader-dies-96">Julian C. Smith Jr.</a>&nbsp;’41, M.Eng. ’42, professor emeritus of chemical and biomolecular engineering, died Aug. 30 at Kendal at Ithaca. He was 96.</p>
+           <p>A longtime staff member&nbsp;Laurie Johnson, graduate field assistant in the Department of Development Sociology, died Aug. 15 at Hospicare in Ithaca. She was 52.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/08/influential-theater-professor-stephen-cole-dies-82">Stephen Cole</a>, retired professor of theater, died Aug. 11 at Hospicare in Ithaca. He was 82.</p>
+           <p>A longtime staff member&nbsp;David Wakoff, business intelligence architect in Cornell Information Technologies, died Aug. 8 after an extended battle with cancer in Ithaca. He was 61.</p>
+           <h3>June</h3>
+           <p><a 07="" 2015="" href="a href=" http:="" physics-professor-chris-henley-dies-59="" stories="" www.news.cornell.edu="">Christopher L. Henely</a>, professor of physics in the College of Arts and Sciences, died June 29 after an illness. He was 59.</p>
+           <h3>May</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2015/06/turbulent-fluid-flow-expert-john-lumley-dies-84">John L. Lumley</a>, professor emeritus of mechanical and aerospace Engineering, died May 30 of brain cancer in Ithaca. He was 84.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/06/communication-lecturer-jane-hardy-dies-85">Jane Hardy</a>&nbsp;'53, a longtime senior lecturer in the Department of Communication, died May 21 in Ithaca after a brief illness. She was 85.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/05/film-scholar-therapist-don-fredericksen-dies-69">Donald L. Fredericksen</a>, a scholar of film theory and history and a Jungian psychotherapist in Ithaca, died May 15 in Ithaca of brain cancer. He was 69.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/05/engineering-professor-emeritus-fred-kulhawy-dies-71">Fred Kulhawy</a>, professor emeritus of civil and environmental engineering in the College of Engineering, died May 12. He was 71.</p>
+           <h3>April</h3>
+           <p><a href="http://aap.cornell.edu/news-events/jane-farver-art-curator-and-visiting-lecturer-aap-nyc-dies-while-working-venice">Jane Farver,</a>&nbsp;art curator and visiting lecturer at the College of Architecture, Art and Planning in New York City, died April 30 while working in Venice. She was 68.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/04/mh-abrams-beloved-professor-literary-scholar-dies-102">M.H. “Mike” Abrams</a>, literary critic and the&nbsp;Class of 1916 Professor Emeritus of English, died April 21 at Kendal of Ithaca. He was 102.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/04/services-are-april-18-verne-rockcastle-science-educator">Verne N. Rockcastle</a>, professor emeritus of education studies and teacher preparation, died April 5 in Ithaca. He was 95.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/05/vp-murphy-offers-condolences-deaths-students">Valerie Mae Paurus Ota</a>, a doctoral student in the graduate field of development sociology, died April 3 in Brooklyn, New York. She was 30. A memorial service will be held Monday, Aug. 10, from 4 to 6 p.m. at the <a href="http://www.cornellplantations.org/sites/default/files/BGmap.6.jpg">Guy Nearing Summer House</a> at Cornell Plantations.</p>
+           <h3>March</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2015/03/soprano-professor-music-judith-kellock-dies">Judith Kellock</a>, an internationally known soprano and professor of performance in the Department of Music, died March 27 in Ithaca. She was 64.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/03/iconic-veterinary-professor-francis-h-fox-dies-92">Francis H. Fox, DVM ’45</a>, professor emeritus of large animal medicine in the College of Veterinary Medicine, died March 13 in Ithaca at the age of 92.</p>
+           <h3>February</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2015/03/animal-scientist-patrick-concannon-dies-73">Patrick W. Concannon, Ph.D. ’71</a>, a visiting fellow and emeritus faculty member in Cornell’s College of Veterinary Medicine, died Feb. 23 in St. Petersburg, Florida, at age 73</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/02/physicist-ernest-sternglass-dies-91">Ernest Sternglass ’44, M.S. ’51, Ph.D. ’53</a>, whose&nbsp;physics research led to safer X-ray equipment using digital imaging,&nbsp;died of heart failure Feb. 12 in Ithaca at the age of 91.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/02/milton-j-esman-professor-emeritus-government-dies">Milton J. Esman ’39,</a> the John S. Knight Professor of International Studies Emeritus and a 20-year faculty member of Cornell’s Department of Government, died Feb. 7 at home in Ithaca after a short illness. He was 96.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/02/historian-science-l-pearce-williams-dies-87">L. Pearce Williams&nbsp; ’49, Ph.D. ‘52</a>, who taught the history of Western civilization and the history of science at Cornell for four decades, died Feb. 7 in Ithaca at the age of 87.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/02/former-engineering-dean-edmund-cranch-dies-91">Edmund Titus Cranch ’45, Ph.D. ’51,</a> who served as dean of the College of Engineering 1972-78, died Feb. 4 at age 91 in Florida.</p>
+           <h3>January</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2015/01/vp-sends-message-condolence-death-staff-member">Angela Stedwell,</a>&nbsp;a staff member in the College of Human Ecology, died Jan. 26 in Ithaca.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/01/vp-sends-message-condolence-death-senior">Oluchukwu Chinedu Onuora,</a> a 23-year-old senior in the College of Agriculture and Life Sciences’ Charles H. Dyson School of Applied Economics and Management, died Jan. 24 in Ithaca.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/01/councillor-benefactor-henry-hank-bartels-dies-age-92">Henry “Hank” Bartels ’48,</a> a presidential councillor and generous supporter of the university, died Jan. 16 at age 92.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/02/distinguished-geneticist-bruce-wallace-dies-94">Bruce Wallace,</a> professor emeritus of genetics, died Jan. 12 in Blacksburg, Virginia, at the age of 94 from a stroke-related illness.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/05/vp-murphy-offers-condolences-deaths-students">Lisa Cimbaluk</a>, a doctoral student in the graduate field of development sociology, died Jan. 8 in California. She was 35.&nbsp;</p>
+           <p><a href="http://www.news.cornell.edu/stories/2015/01/cornell-anthropologist-bernd-lambert-dies-82">Bernd Lambert,</a> professor of anthropology emeritus, died Jan. 3 at home in Ithaca. He was 82.&nbsp;</p>
+           <h1>2014</h1>
+           <h3>December</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2015/01/psychology-professor-robert-elliott-johnston-dies-72">Robert Elliott Johnston,</a> professor of psychology, died Dec. 20 at Cayuga Medical Center in Ithaca after extended treatments for lymphoma. He was 72.</p>
+           <p>Cathy Heidenreich, an extension support specialist in horticulture at the New York State Agricultural Experiment Station in Geneva, New York, died Dec. 16 in an automobile accident. A support meeting will be held Dec. 17 at 11 a.m. in A137 Barton Hall on the Geneva campus.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/12/journalist-editor-and-publisher-john-marcham-dies-87">John Marcham ’50,</a> a journalist and longtime editor of the Cornell Alumni News, died Dec. 4 at age 87.</p>
+           <h3>November</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2014/11/university-saddened-loss-student-over-thanksgiving">Shannon Jones,</a> a 23-year-old upperclassman in the College of Engineering, died Nov. 27 in Cayuga Heights. A community support meeting will be held Dec. 1 at 4:30 p.m. in the Upson Hall lounge.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/11/human-ecology-professor-carole-bisogni-dies-65">Carole A. Bisogni,</a> associate dean for academic affairs in the College of Human Ecology and professor of nutritional sciences, died Nov. 15 in Ithaca.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/11/mathematician-eugene-dynkin-dies-90">Eugene Dynkin,</a> the A.R. Bullis Professor of Mathematics emeritus, died Nov. 14 at Cayuga Medical Center. He was 90.</p>
+           <h3>October</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2014/10/university-mourns-death-senior-ilan-rasooly">Ilan Rasooly, </a>a 20-year-old senior in the School of Hotel Administration, died Oct. 21 in the hospital near his home.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/10/african-scholar-ali-mazrui-dies">Ali Mazrui,</a> an A.D. White Professor-at-Large Emeritus and a senior scholar in Africana studies at Cornell, died Oct. 13. He was 81.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/10/vp-murphy-issues-condolence-message-death-student">Taylan Cihan,</a> a 36-year-old doctoral student in music in the Graduate School, died Oct. 8 in Ithaca.</p>
+           <p><a href="https://www.legacy.com/obituaries/theithacajournal/obituary.aspx?n=maurice-j-tauber&amp;pid=172835843">Dr. Maurice J. Tauber,</a> professor emeritus of entomology and former chair of the Department of Entomology, died Oct. 6 in Davis, California. He was 82.</p>
+           <h3>September</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2014/10/emeritus-professor-h-david-thurston-dies-87">H. David Thurston, </a>Cornell professor emeritus of international agriculture and plant pathology, died Sept. 26 after a short illness.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/09/ad-white-professor-large-christopher-hogwood-dies">Christopher Hogwood, </a> musicologist, musician, early-music exponent and an A.D. White Professor-at-Large at Cornell, died Sept. 24 at 73.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/09/celebration-ephrahim-garcias-life-set-nov-7">Ephrahim Garcia,</a> professor of mechanical and aerospace engineering, died Sept. 10. A community support meeting is being held Sept. 11 at 4:30 p.m. in McManus Lounge on the first floor of Hollister Hall.</p>
+           <h3>August</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2014/08/poet-phyllis-janowitz-professor-emerita-english-dies">Phyllis Janowitz,</a> poet and professor emerita of English, died Aug. 17 in Montour Falls, New York. She was 84.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/08/artist-and-professor-robert-j-jack-lambert-dies-86">Robert J. “Jack” Lambert Jr. ’50,</a> professor emeritus of freehand drawing, died Aug. 8 at Kendal at Ithaca. He was 86.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/08/trustee-emeritus-dick-call-dies-age-84">Richard "Dick" C. Call ’52, </a>farmer, businessman and Cornell trustee emeritus, died Aug. 2 after a long illness. He was 84 years old.</p>
+           <h3>July</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2014/07/adviser-mentor-mother-friend-kathy-berggren-dies-46">Kathy Berggren,</a>&nbsp;a senior lecturer in the Charles H. Dyson School of Applied Economics and Management, died July 24 in Portland, Oregon, at age 46.</p>
+           <h3>June</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2014/07/arts-and-sciences-dean-emeritus-geoffrey-chester-dies">Geoffrey V. Chester,</a> professor emeritus of physics and dean emeritus of Cornell’s College of Arts and Sciences, died June 27 at age 86 in Ithaca.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/06/professor-emeritus-stuart-stein-dies-84">Stuart Stein,</a> professor emeritus of city and regional planning who taught at Cornell from 1962 to 1993 and assisted in the creation of the Ithaca Commons and the TCAT bus service, died June 24 at age 84.</p>
+           <h3>May</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2014/05/sandra-bem-feminist-scholar-and-psychologist-dies">Sandra L. Bem,</a> feminist scholar, psychologist and author of "Lenses of Gender," died May 20 in Ithaca.</p>
+           <h3>April</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2014/05/paleoanthropologist-kenneth-kennedy-dies-83">Kenneth A.R. Kennedy, </a>professor of physical anthropology at Cornell for 41 years – known for his field studies of early humans and their predecessors in South Asia – died April 23 in Ithaca at age 83.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/06/cornell-washington-instructor-jack-moran-dies">Jack Henry “Jack” Moran Jr., </a>an integral part of the Cornell in Washington program for more than 30 years, died unexpectedly April 3.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/04/professor-emeritus-werner-dannhauser-dies-84">Werner Dannhauser,</a> former professor of government, died April 26 in Frederick, Pa., at the age of 84.</p>
+           <h3>March</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2014/05/physicist-richard-l-liboff-dies-82">Richard L. Liboff,</a> Cornell professor emeritus of electrical and computer engineering, died March 9 in New York City at age 82.</p>
+           <h3>February</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2014/02/law-professor-ted-eisenberg-dies-66">Theodore “Ted” Eisenberg, </a>the Henry Allen Mark Professor of Law, died Feb. 23 at age 66.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/02/textile-expert-charlotte-jirousek-dies-75">Charlotte Jirousek,</a> associate professor of textiles and apparel in the College of Human Ecology at Cornell, died unexpectedly Feb. 12 in Ithaca at age 75.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/02/professor-roger-spanswick-dies-74">Roger Morgan Spanswick, </a>professor of biological and environmental engineering in the College of Agriculture and Life Sciences, died Feb. 12 in Ithaca at age 74.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/02/campus-mourns-death-sanya-hashmi-14">Sanya Hashmi,</a> a 21-year-old senior in the College of Arts and Sciences, and a member of the Class of 2014, died Feb. 3 in Ithaca.</p>
+           <h3>January</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2014/02/sheep-specialist-warren-brannon-dies-91">Warren Brannon, </a>Ph.D. ’53, professor emeritus of animal science, died Jan. 22 at age 91.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/02/animal-physiologist-ari-van-tienhoven-dies-91">Ari van Tienhoven,</a> emeritus professor of animal physiology in the College of Agriculture and Life Sciences, died Jan. 31. He was 91.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/02/robert-sweet-founder-weed-science-dies">Robert D. Sweet, </a>M.S. ’38, Ph.D. ’41, emeritus professor and founder of weed science, died Jan. 30 in Jacksonville, N.Y. He was 98.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2014/01/campus-mourns-death-milica-mandic-14">Milica Mandic, </a>a 21-year-old senior computer science student in the College of Engineering, died Jan. 13 in Serbia.</p>
+           <h1>2013</h1>
+           <h3>December</h3>
+           <p><a href="http://www.ece.cornell.edu/news/index.cfm?news_id=64522">Simpson (Sam) Linke,&nbsp;</a>professor emeritus of electrical and computer engineering, died in Ithaca Dec. 27 at age 96.</p>
+           <p>Miguel Ángel Balsa Marín, visiting assistant professor of comparative literature, died Dec. 25 in Miami at age 47.</p>
+           <h3>November</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2013/12/american-historian-michael-g-kammen-dies-77">Michael G. Kammen,</a> Pultizer Prize-winning historian and the Newton C. Farr Professor of American History and Culture Emeritus, died Nov. 29 in Ithaca at age 77.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2013/11/strout-professor-emeritus-english-dies">S. Cushing Strout, </a>professor emeritus in the Department of English, died Nov. 21 in Ithaca at age 90.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2013/11/cuce-nyc-director-donald-tobias-dies-68">Donald Tobias,</a> executive director of the Cornell University Cooperative Extension office in New York City, died Nov. 22 in New York City. He was 68.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2013/11/professor-emeritus-vrana-dies-age-93" style="font-size: 13px;">Norman M. Vrana,</a> MEE ’51, professor emeritus of electrical and computer engineering, died at his home Nov. 9; he was 93.</p>
+           <h3>October</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2014/02/hospitality-law-scholar-john-eh-sherry-dies">John E.H. Sherry, </a>professor emeritus of law in the School of Hotel Administration, died Oct. 30, 2013, in Staunton, Va., at age 81.</p>
+           <h3>September</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2013/09/campus-mourns-death-graduate-student">Turi Alcoser,</a> a 23-year-old Ph.D. student in the College of Engineering, died Sept. 23.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2013/09/economist-alan-k-mcadams-dies-83">Alan Kellog McAdams, </a>professor emeritus of managerial economics in Cornell’s Samuel Curtis Johnson Graduate School of Management, died Sept. 14 in Ithaca. He was 83.</p>
+           <p><a href="http://www.cornell.edu/statements/2013/20130909-murphy-condolence.cfm">Denis Lukashkov,</a> a junior in the College of Agriculture and Life Sciences, died Sept. 7 in Dobbs Ferry, N.Y. He was 20.</p>
+           <h3>August</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2013/08/emeritus-professor-lester-eastman-dies-85">Lester F. Eastman, </a>professor emeritus of electrical and computer engineering, died Aug. 9 at the age of 85.</p>
+           <p><a href="http://www.legacy.com/obituaries/hjnews/obituary.aspx?n=ann-wilde&amp;pid=166386178&amp;fhid=4507#fbLoggedOut">Ann Wilde,</a> a Ph.D. candidate in the graduate field of history, died Aug. 8 in Logan, Utah. She was 34.</p>
+           <h3>July</h3>
+           <p><a href="http://news.cornell.edu/stories/2013/07/communication-professor-emeritus-njoku-awa-dies">Njoku Ekpe Awa, </a>professor emeritus in the Department of Communication, died July 21 in Ithaca at the age of 74.</p>
+           <p><a href="http://news.cornell.edu/stories/2013/07/simon-bauer-professor-emeritus-chemistry-dies">Simon Bauer, </a>professor emeritus of chemistry and chemical biology, died July 14 in Davis, Calif., at the age of 101.</p>
+           <p><a href="http://news.cornell.edu/stories/2013/07/microbiologist-norman-dondero-dies-age-95">Norman C. Dondero,</a> Ph.D. ’52, Cornell professor emeritus of microbiology who taught and pursued research in the field of microbiology of water, water pollution and biological waste treatment, died July 10 at Kendal at Ithaca. He was 95.</p>
+           <h3>June</h3>
+           <p><a href="http://www.news.cornell.edu/stories/2013/06/professor-martin-bernal-black-athena-author-dies-76">Martin Gardiner Bernal,</a> professor emeritus of government and Near Eastern studies at Cornell and author of the widely read and debated "Black Athena” books on classical civilization, died June 9 in Cambridge, England.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2013/06/graduate-student-kyle-wecker-dies-age-30">Kyle Wecker, </a>a graduate student in the field of electrical and computer engineering,&nbsp;died June 1 in Ithaca.</p>
+           <h3>May</h3>
+           <p><a href="http://news.cornell.edu/stories/2013/05/university-mourns-loss-senior-christopher-dennis">Christopher Dennis,</a> a senior in the College of Agriculture and Life Sciences, was reported missing following a boating incident on Cayuga Lake May 22.</p>
+           <p><a href="http://www.news.cornell.edu/stories/2013/05/condolences-expressed-death-former-student">Zachary C. Wilson</a>, an undergraduate student on leave from Cornell, died Friday, May 3, in Ithaca.</p>
+           <h3>April</h3>
+           <p><a href="http://ezramagazine.cornell.edu/Update/April13/EU.Storandt.obit.html">Robert William Storandt</a> '40, director of undergraduate admissions emeritus, died April 27 in Ithaca.</p>
+           <h3>March</h3>
+           <p><a href="http://www.legacy.com/obituaries/theithacajournal/obituary.aspx?n=christian-f---otto&amp;pid=163900990#fbLoggedOut">Christian F. Otto</a><a href="http://www.news.cornell.edu/stories/Feb13/Quandt.html">,</a>&nbsp;professor of the history of architecture since 1970, died March 27 in Ithaca.</p>
+           <h3>February</h3>
+           <p><a href="http://www.news.cornell.edu/stories/Feb13/Quandt.html">Joseph Quandt,</a> a sophomore in the College of Architecture, Art and Planning, died Feb. 27 in Ithaca.</p>
+           <p><a href="http://www.news.cornell.edu/stories/Feb13/PrattObit.html">Kevin Pratt</a>, assistant professor of architecture since 2007, died Feb. 19 in Ithaca.</p>
+           <p><a href="http://www.news.cornell.edu/stories/Feb13/RichardsonObit.html">Robert C. Richardson,</a>&nbsp;Nobel laureate, Floyd R. Newman Professor of Physics, and Cornell’s first vice provost for research, died Feb. 19 in Ithaca.</p>
+           <p><a href="http://www.news.cornell.edu/stories/Feb13/SearleObit.html">Shayle Robert Searle,</a> Ph.D. '58, professor emeritus of biological statistics, died Feb. 18 in Ithaca.</p>
+           <p><a href="http://www.legacy.com/obituaries/theithacajournal/obituary.aspx?pid=163145286#fbLoggedOut">Christine Natsios</a>&nbsp;’85, director of alumni affairs at the School of Hotel Administration and secretary of the Cornell Hotel Society, died Feb. 16 in Ithaca.</p>
+           <p><a href="http://www.news.cornell.edu/stories/Feb13/MorrowObit.html">Robert Rising Morrow</a>, professor emeritus of natural resources in the College of Agriculture and Life Sciences, died Feb. 4 in Eden, Utah.</p>
+           <h3>January</h3>
+           <p><a href="http://www.news.cornell.edu/stories/Feb13/mcguireObit.html">William McGuire,</a> professor emeritus of civil and environmental engineering, died Jan. 31 in Ithaca.</p>
+           <p><a href="http://www.news.cornell.edu/stories/Jan13/HassObit.html">Jerome "Jerry" E. Hass</a>, professor of finance, died Jan. 22 in Ithaca.</p>
+           <p><a href="http://www.news.cornell.edu/stories/Jan13/MullerObit.html">Steven Muller,</a> Ph.D. '58, former Cornell professor of government and vice president for public affairs, and later president of Johns Hopkins University, died Jan. 19 in Washington, D.C</p>
+          </div>
+         </div>
+        </article>
+       </div>
+      </div>
+     </div>
+    </main>
+    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false" data-hide-page-scrollbars="false" data-toggle-slideshow-on-space="false" data-toggle-controls-on-return="false" data-enable-keyboard-navigation="false" tabindex="-1" role="dialog" aria-modal="true" aria-label="Gallery"><!-- The container for the modal slides -->
+     <div id="modal-start" class="slides" tabindex="-1"></div><!-- Controls for the borderless lightbox -->
+     <h3 class="title">Gallery Heading</h3><button class="prev" value="previous" aria-label="previous"><span class="icon icon-chevron-left"></span></button><button class="next" value="next" aria-label="next"><span class="icon icon-chevron-right"></span></button><button class="close" value="close" aria-label="close"><span class="icon icon-close"></span></button><button class="play-pause" value="play/pause" aria-label="play/pause"></button>
+     <ol class="indicator"></ol><!-- The modal dialog, which will be used to wrap the lightbox content -->
+     <div class="modal fade">
+      <div class="modal-dialog modal-lg">
+       <div class="modal-content">
+        <div class="modal-header"><button type="button" value="close" class="close" aria-hidden="true" aria-label="close">×</button>
+        </div>
+        <div class="modal-body next"></div>
+        <div class="modal-footer"><button type="button" value="previous" class="btn btn-default pull-left prev" aria-label="previous"> <span class="glyphicon glyphicon-chevron-left"></span> Previous </button><button type="button" value="next" class="btn btn-primary next" aria-label="next"> Next <span class="glyphicon glyphicon-chevron-right"></span> </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div><!-- Begin Footer -->
+    <footer>
+     <div class="container"><!-- Main Footer -->
+      <div class="row">
+       <div>
+        <div class="col-sm-4">
+         <h2>Links</h2>
+         <ul class="no-bullet">
+          <li><a href="/about" target="" rel="" data-drupal-link-system-path="node/267141">About the Chronicle</a></li>
+          <li><a href="/media-relations" data-drupal-link-system-path="node/42">Media Relations Office</a></li>
+          <li><a href="/about/copyright" target="" rel="" data-drupal-link-system-path="node/267143">Copyright</a></li>
+          <li><a href="http://news.cornell.edu/web-accessibility-assistance">Web Accessibility Assistance</a></li>
+         </ul>
+        </div>
+        <div class="col-sm-4">
+         <h2>Contact</h2>
+         <div class="field field--name-body field--type-text-with-summary field--label-hidden field__items">
+          <div class="field__item">
+           <address>Cornell Chronicle<br> 312 College Ave<br> Ithaca, NY 14850<br><a href="tel:+1607-255-4206">607-255-4206</a><br><span><a href="mailto:cunews@cornell.edu">cunews@cornell.edu</a></span></address>
+          </div>
+         </div>
+        </div>
+        <div class="col-sm-4">
+         <h2>SUBSCRIBE</h2>
+         <ul class="no-bullet">
+          <li><a href="/about/subscribe-newsletter" data-drupal-link-system-path="webform/weekly_newsletter"><i class="fa fa-envelope" aria-hidden="true"></i> <span class="link-text">Daily and weekly newsletters</span></a></li>
+          <li><a href="/rss-feeds" target="" rel="" data-drupal-link-system-path="node/267145"><i class="fa fa-rss" aria-hidden="true"></i> <span class="link-text">Feeds - RSS &amp; JSON</span></a></li>
+         </ul>
+        </div>
+       </div>
+      </div><!--  Main Footer -->
+      <div class="row superfooter">
+       <div>
+        <div class="col-sm-12 text-right"><a href="https://www.facebook.com/Cornell/" target="" rel="" class="btn btn-link btn-sm" aria-label="Facebook"> <span class="icon icon-hc-fw icon-facebook" role="presentation"></span> </a><a href="https://twitter.com/cornellnews" target="" rel="" class="btn btn-link btn-sm" aria-label="Twitter"> <span class="icon icon-hc-fw icon-twitter" role="presentation"></span> </a><a href="mailto:cunews@cornell.edu" target="" rel="" class="btn btn-link btn-sm" aria-label="Email"> <span class="icon icon-hc-fw icon-email" role="presentation"></span> </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer><!-- End Footer -->
+   </div>
+  </div>
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/267149","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"field_group":{"html_element":{"mode":"full","context":"view","settings":{"id":"","classes":"expanded","element":"header","show_label":false,"label_element":"h3","attributes":"","effect":"none","speed":"fast"}}},"user":{"uid":0,"permissionsHash":"923b7691ab9b03d1ca40b2e563c80a09302107737b422dc0b6aace0868e0d113"}}</script>
+  <script src="/core/assets/vendor/jquery/jquery.min.js?v=3.6.0"></script>
+  <script src="/core/misc/drupalSettingsLoader.js?v=9.2.20"></script>
+  <script src="/core/misc/drupal.js?v=9.2.20"></script>
+  <script src="/core/misc/drupal.init.js?v=9.2.20"></script>
+  <script src="https://static.addtoany.com/menu/page.js" async></script>
+  <script src="/modules/contrib/addtoany/js/addtoany.js?v=9.2.20"></script>
+  <script src="/modules/contrib/google_analytics/js/google_analytics.js?v=9.2.20"></script>
+  <script src="/themes/chronicle/vendor/bootstrap/assets/javascripts/bootstrap.min.js?rd4zg5"></script>
+  <script src="/themes/chronicle/vendor/timeago/jquery.timeago.js?rd4zg5"></script>
+  <script src="/themes/chronicle/vendor/gallery/js/jquery.blueimp-gallery.min.js?rd4zg5"></script>
+  <script src="/themes/chronicle/dest/script.js?rd4zg5"></script>
+  <script src="/themes/chronicle/js/wa2021.js?rd4zg5"></script>
+  <script src="/themes/chronicle/js/upnext.js?rd4zg5"></script>
+  <script src="/modules/custom/chronicle_general/js/jquery.scrolldepth.min.js?v=1"></script>
+  <script src="/modules/custom/chronicle_general/js/chronicle_ga.js?v=1"></script>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-0cfd3355c6be2ecda38","applicationID":"512959570","transactionName":"ZAYGMUdXDUFSUUJQWF1MJQZBXwxcHEJXXlJsAAUGXVM=","queueTime":0,"applicationTime":19,"atts":"SEEFRw9NHk8=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

@@ -1,0 +1,1415 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+ <head>
+  <meta charset="UTF-8">
+  <script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-6f137388fcf878e2d61",applicationID:"884951671"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="pingback" href="https://we-are.usc.edu/wp/xmlrpc.php">
+  <link rel="shortcut icon" href="https://we-are.usc.edu/wp-content/themes/usc-gateway-2018/assets/images/favicon.ico?ver=1.0.28">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><!-- This site is optimized with the Yoast SEO plugin v19.1 - https://yoast.com/wordpress/plugins/seo/ -->
+  <title>University Messages - 2022</title>
+  <meta name="description" content="We hope you are enjoying a restorative Winter Break. As we prepare for the new year and the 2022 Spring semester, we are sharing some specific details regarding health and safety campus protocols around COVID-19.">
+  <link rel="canonical" href="https://we-are.usc.edu/university-messages/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="University Messages - 2022">
+  <meta property="og:description" content="We hope you are enjoying a restorative Winter Break. As we prepare for the new year and the 2022 Spring semester, we are sharing some specific details regarding health and safety campus protocols around COVID-19.">
+  <meta property="og:url" content="https://we-are.usc.edu/university-messages/">
+  <meta property="og:site_name" content="2022">
+  <meta property="article:modified_time" content="2021-12-28T20:59:44+00:00">
+  <meta property="og:image" content="https://we-are.usc.edu/wp-content/uploads/2020/07/GR40017_University-Comm-scaled.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:label1" content="Est. reading time">
+  <meta name="twitter:data1" content="1 minute">
+  <script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://live-usc-restart.pantheonsite.io/#website","url":"https://live-usc-restart.pantheonsite.io/","name":"We are SC","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://live-usc-restart.pantheonsite.io/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://we-are.usc.edu/university-messages/#primaryimage","url":"https://we-are.usc.edu/wp-content/uploads/2020/07/GR40017_University-Comm-scaled.jpg","contentUrl":"https://we-are.usc.edu/wp-content/uploads/2020/07/GR40017_University-Comm-scaled.jpg","width":2560,"height":1706,"caption":"A deserted USC campus Thursday at noon, March 18, 2020 due to the COVID-19 outbreak. Day four of online classes after the CDC recommending a halt of all gatherings larger than 50 for the next eight weeks forcing the USC administration to order courses be held online for the rest of the semester. (USC Photo/Gus Ruelas)"},{"@type":"WebPage","@id":"https://we-are.usc.edu/university-messages/#webpage","url":"https://we-are.usc.edu/university-messages/","name":"University Messages - 2022","isPartOf":{"@id":"https://live-usc-restart.pantheonsite.io/#website"},"primaryImageOfPage":{"@id":"https://we-are.usc.edu/university-messages/#primaryimage"},"datePublished":"2020-06-28T19:15:39+00:00","dateModified":"2021-12-28T20:59:44+00:00","description":"We hope you are enjoying a restorative Winter Break. As we prepare for the new year and the 2022 Spring semester, we are sharing some specific details regarding health and safety campus protocols around COVID-19.","breadcrumb":{"@id":"https://we-are.usc.edu/university-messages/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://we-are.usc.edu/university-messages/"]}]},{"@type":"BreadcrumbList","@id":"https://we-are.usc.edu/university-messages/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://we-are.usc.edu/"},{"@type":"ListItem","position":2,"name":"University Messages"}]}]}</script><!-- / Yoast SEO plugin. -->
+  <link rel="dns-prefetch" href="//we-are.usc.edu">
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//s.w.org"><!-- This site uses the Google Analytics by MonsterInsights plugin v8.6.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+  <script src="//www.googletagmanager.com/gtag/js?id=UA-119757394-18" data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '8.6.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-119757394-18',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						if ( document.cookie.indexOf( disableStrs[ index ] + '=true' ) > -1 ) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						document.cookie = disableStrs[ index ] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if ( mi_track_user ) {
+					function __gtagDataLayer() {
+						dataLayer.push( arguments );
+					}
+
+					function __gtagTracker( type, name, parameters ) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply( null, arguments );
+							return;
+						}
+
+						if ( type === 'event' ) {
+							
+															parameters.send_to = monsterinsights_frontend.ua;
+								__gtagDataLayer( type, name, parameters );
+													} else {
+							__gtagDataLayer.apply( null, arguments );
+						}
+					}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+											} );
+															__gtagTracker( 'config', 'UA-119757394-18', {"forceSSL":"true","link_attribution":"true"} );
+										window.gtag = __gtagTracker;											(function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+																				if ( ! ( ! args.hasOwnProperty(arg) || ! gaMap.hasOwnProperty(arg) ) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						})();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script><!-- / Google Analytics by MonsterInsights -->
+  <link rel="stylesheet" id="wp-block-library-css" href="https://we-are.usc.edu/wp-content/plugins/gutenberg/build/block-library/style.css?ver=13.4.0" type="text/css" media="all">
+  <link rel="stylesheet" id="sp-ea-font-awesome-css" href="https://we-are.usc.edu/wp-content/plugins/easy-accordion-free/public/assets/css/font-awesome.min.css?ver=2.0.21" type="text/css" media="all">
+  <link rel="stylesheet" id="sp-ea-style-css" href="https://we-are.usc.edu/wp-content/plugins/easy-accordion-free/public/assets/css/ea-style.css?ver=2.0.21" type="text/css" media="all">
+  <style id="sp-ea-style-inline-css" type="text/css">
+#sp-ea-8966 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-8966.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-8966.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-8966.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-8966.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-8966.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-8966.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-8846 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-8846.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-8846.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-8846.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-8846.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-8846.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-8846.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-7735 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-7735.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-7735.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-7735.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-7735.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-7735.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-7735.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-5800 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5800.sp-easy-accordion>.sp-ea-single {border: 1px solid #870100; }#sp-ea-5800.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #ffffff;}#sp-ea-5800.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #870100; color: #ffffff;}#sp-ea-5800.sp-easy-accordion>.sp-ea-single {background: #870100;}#sp-ea-5800.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #ffffff;font-size: 16px;}#sp-ea-5799 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5799.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5799.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444444;}#sp-ea-5799.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #ffffff; color: #444444;}#sp-ea-5799.sp-easy-accordion>.sp-ea-single {background: ##eaeaea;}#sp-ea-5799.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #444444;font-size: 16px;}#sp-ea-5797 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5797.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5797.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444444;}#sp-ea-5797.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #ffffff; color: #444444;}#sp-ea-5797.sp-easy-accordion>.sp-ea-single {background: #eaeaea;}#sp-ea-5797.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #444444;font-size: 16px;}#sp-ea-5783 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5783.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5783.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444444;}#sp-ea-5783.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #ffffff; color: #444444;}#sp-ea-5783.sp-easy-accordion>.sp-ea-single {background: #eaeaea;}#sp-ea-5783.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #444444;font-size: 16px;}#sp-ea-5775 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 500ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5775.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5775.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-5775.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-5775.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-5775.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #444;font-size: 16px;}#sp-ea-5536 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5536.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5536.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-5536.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-5536.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-5536.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-5536.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-5513 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5513.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5513.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-5513.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-5513.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-5513.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-5513.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-5045 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-5045.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-5045.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-5045.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-5045.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-5045.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-5045.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}#sp-ea-3195 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-3195.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-3195.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-3195.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-3195.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-3195.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: left; color: #444;font-size: 16px;}#sp-ea-1754 .spcollapsing { height: 0; overflow: hidden; transition-property: height;transition-duration: 250ms;} .sp-easy-accordion iframe {width: 100%;}#sp-ea-1754.sp-easy-accordion>.sp-ea-single {border: 1px solid #e2e2e2; }#sp-ea-1754.sp-easy-accordion>.sp-ea-single>.ea-header a {color: #444;}#sp-ea-1754.sp-easy-accordion>.sp-ea-single>.sp-collapse>.ea-body {background: #fff; color: #444;}#sp-ea-1754.sp-easy-accordion>.sp-ea-single {background: #eee;}#sp-ea-1754.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa { float: right; color: #444;font-size: 16px;}#sp-ea-1754.sp-easy-accordion>.sp-ea-single>.ea-header a .ea-expand-icon.fa {margin-right: 0;}
+</style>
+  <style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--usc-cardinal: #990000;--wp--preset--color--cardinal-60: #880000;--wp--preset--color--cardinal-70: #6b0200;--wp--preset--color--cardinal-80: #471f13;--wp--preset--color--usc-gold: #ffcc00;--wp--preset--color--gold-60: #c79200;--wp--preset--color--base-70: #1c1c19;--wp--preset--color--base-60: #2b2a23;--wp--preset--color--base-50: #44433c;--wp--preset--color--base-40: #5e5d56;--wp--preset--color--base-30: #77766f;--wp--preset--color--base-20: #c3c2bb;--wp--preset--color--off-white: #fafafa;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--black-to-transparent: linear-gradient(176deg, rgba(84,84,84,0) 41%, rgba(0,0,0,1) 98%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 16px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 32px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 20px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+  <link rel="stylesheet" id="usc-gateway-2018-style-css" href="https://we-are.usc.edu/wp-content/themes/usc-gateway-2018/assets/css/usc-gateway-2018.css?ver=1.0.28" type="text/css" media="screen,print">
+  <script type="text/javascript" src="https://we-are.usc.edu/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.6.0" id="monsterinsights-frontend-script-js"></script>
+  <script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id="monsterinsights-frontend-script-js-extra">/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/we-are.usc.edu","hash_tracking":"false","ua":"UA-119757394-18","v4_id":""};/* ]]> */
+</script>
+  <script type="text/javascript" src="https://we-are.usc.edu/wp/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+  <script type="text/javascript" src="https://we-are.usc.edu/wp/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js"></script><!--[if lte IE 9]>
+<script type='text/javascript' src='https://we-are.usc.edu/wp-content/themes/usc-gateway-2018/assets/js/vendor/html5shiv.min.js?ver=1.0.28' id='html5-shiv-js'></script>
+<![endif]--><!-- Google Analytics snippet added by Site Kit -->
+  <script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-119757394-18" id="google_gtagjs-js" async></script>
+  <script type="text/javascript" id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["we-are.usc.edu"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "UA-119757394-18", {"anonymize_ip":true});
+</script><!-- End Google Analytics snippet added by Site Kit -->
+  <link rel="https://api.w.org/" href="https://we-are.usc.edu/wp-json/">
+  <link rel="alternate" type="application/json" href="https://we-are.usc.edu/wp-json/wp/v2/pages/4939">
+  <link rel="shortlink" href="https://we-are.usc.edu/?p=4939">
+  <link rel="alternate" type="application/json+oembed" href="https://we-are.usc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwe-are.usc.edu%2Funiversity-messages%2F">
+  <link rel="alternate" type="text/xml+oembed" href="https://we-are.usc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwe-are.usc.edu%2Funiversity-messages%2F&amp;format=xml">
+  <meta name="generator" content="Site Kit by Google 1.75.0"> 
+  <style type="text/css" id="wp-custom-css">
+			/*Restart Roadmap Phases - Homepage*/
+.phase-icon-alignment {
+	text-align: center;
+}
+.phase-column-styling {
+	border-radius: 8px;
+}
+
+.phase-column-styling p {
+	margin-right: 0 !important;
+}
+
+.phase-column-styling h3 {
+	margin: 0 0 0.25rem !important;
+}
+
+.phase-column-styling.current-phase {
+box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+}
+.phase-column-styling.current-phase a {
+	color: #ffffff;
+}
+
+.phase-column-styling.current-phase a:hover {
+	color: #FFFFFF;
+}
+
+@media (max-width: 1024px) and (min-width: 880px) {
+	
+		.phases-container .wp-block-column:not(:first-child) {
+    margin-left: 16px;
+}
+	
+}
+
+
+@media (max-width: 880px) and (min-width: 600px) {
+	
+		.phases-container .wp-block-columns {
+			flex-wrap: wrap;
+	}
+	
+	.phases-container .wp-block-column {
+    flex-basis: 100% !important;
+    flex-grow: 0;
+		margin: 0 0 1rem !important;
+}
+	
+}
+
+/*Trojan Commitment*/
+.align-svg-commitment {
+	text-align: center;
+}
+/*END Trojan Commitment*/
+
+/*Notifcation*/
+.usc-notification-bar.has-notification-bar .notification-bar {
+		background: #E0E0E0 !important;
+}
+
+.usc-notification-bar.has-notification-bar .notification-bar .notification {
+	font-size: 16px !important;
+}
+/*END Notifcation*/
+
+/*Global Accordions Styling*/
+
+h3.ea-header {
+	font-weight: 400;
+}
+
+
+#sp-ea-5799 a, #sp-ea-5799 a:hover {
+	color: #FFFFFF;
+}
+/*END Accordions Styling*/
+
+/*Phases Accordions Styling*/
+/* #sp-ea-5775.sp-easy-accordion .sp-ea-single {
+	background: #FFFFFF !important;
+	border: 0 !important;
+}
+#sp-ea-5775.sp-easy-accordion .sp-ea-single .ea-header a {
+	padding: 0 !important;
+} */
+/* #sp-ea-5783.sp-easy-accordion .sp-ea-single {
+	color: #FFFFFF !important;
+	background: #880000 !important;
+	border: 0 !important;
+}
+#sp-ea-5783.sp-easy-accordion .sp-ea-single .ea-header a {
+	color: #FFFFFF !important;
+	padding: 0 !important;
+}
+#sp-ea-5783.sp-easy-accordion .sp-ea-single .ea-header a .ea-expand-icon.fa {
+	color: #FFFFFF !important;
+} */
+/* #sp-ea-5783.sp-easy-accordion .sp-ea-single .ea-body {
+	background: none !important;
+	color: white !important;
+} */
+/*END Phases Accordions Styling*/
+
+/*Community Messages Styling*/
+
+.wp-block-latest-posts li > a {
+    color: #1f1e18;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    text-decoration: none;
+}
+.wp-block-latest-posts li > a:hover {
+    text-decoration: underline;
+}
+/*END Community Messages Styling*/
+
+/* right-aligned paragraph margin fix */
+.wp-block-group.is-style-usc-group-content-width .wp-block-columns .wp-block-column p.has-text-align-right {
+	margin: 0 0 1rem 0;
+}
+
+/*WELCOME EXPERIENCE GALLERY STYLING*/
+.page-id-7179 .blocks-gallery-item img {
+border: 1px solid #272620;
+ 
+}
+
+.usc-gateway-2018-light .site-header {
+	/* changed this from 100000 because it was covering the wp-admin bar dropdowns :) -JE */
+	z-index: 99;
+}
+
+/*DO NOT REMOVE - FACULTY FEATURE PAGE*/
+.page-id-9591 .site-navigation-wrapper {
+	display: none;
+}
+
+.bar-short-phase-1 {
+  height: 80px;
+  width: 80px;
+  background-color: #fc0008;
+  border-radius: 50%;
+border-top: 0px;
+	border-bottom: 0px;
+}
+
+.bar-short-phase-22 {
+  height: 80px;
+  width: 80px;
+  background-color: #fd670a;
+  border-radius: 50%;
+border-top: 0px;
+	border-bottom: 0px;
+}
+
+.bar-short-phase-3 {
+  height: 80px;
+  width: 80px;
+    height: 80px;
+  width: 80px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+border-top: 0px;
+	border-bottom: 0px;
+  border-radius: 50%;
+border-top: 0px;
+	border-bottom: 0px;
+}
+
+.bar-short-phase-4 {
+    height: 80px;
+  width: 80px;
+ background-color: #14a0ed!important;
+  border-radius: 50%;
+border-top: 0px;
+	border-bottom: 0px;
+    
+}
+
+
+/* FIX FOR LONG PAGE/POST TITLES */
+.post-template-default .site-content .entry-title, .single .site-content .entry-title,
+.page-template-default .site-content .entry-title {
+	white-space: unset;
+}
+		</style>
+ </head>
+ <body class="page-template page-template-page-templates page-template-tpl-full-width page-template-page-templatestpl-full-width-php page page-id-4939 usc-gateway-2018-light usc-display-new-badge usc-notification-bar has-notification-bar">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-dark-grayscale">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 0.49803921568627" />
+      <fefuncg type="table" tablevalues="0 0.49803921568627" />
+      <fefuncb type="table" tablevalues="0 0.49803921568627" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-grayscale">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 1" />
+      <fefuncg type="table" tablevalues="0 1" />
+      <fefuncb type="table" tablevalues="0 1" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-purple-yellow">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.54901960784314 0.98823529411765" />
+      <fefuncg type="table" tablevalues="0 1" />
+      <fefuncb type="table" tablevalues="0.71764705882353 0.25490196078431" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-blue-red">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 1" />
+      <fefuncg type="table" tablevalues="0 0.27843137254902" />
+      <fefuncb type="table" tablevalues="0.5921568627451 0.27843137254902" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-midnight">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0 0" />
+      <fefuncg type="table" tablevalues="0 0.64705882352941" />
+      <fefuncb type="table" tablevalues="0 1" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-magenta-yellow">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.78039215686275 1" />
+      <fefuncg type="table" tablevalues="0 0.94901960784314" />
+      <fefuncb type="table" tablevalues="0.35294117647059 0.47058823529412" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-purple-green">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.65098039215686 0.40392156862745" />
+      <fefuncg type="table" tablevalues="0 1" />
+      <fefuncb type="table" tablevalues="0.44705882352941 0.4" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+   <defs>
+    <filter id="wp-duotone-blue-orange">
+     <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+     <fecomponenttransfer color-interpolation-filters="sRGB">
+      <fefuncr type="table" tablevalues="0.098039215686275 1" />
+      <fefuncg type="table" tablevalues="0 0.66274509803922" />
+      <fefuncb type="table" tablevalues="0.84705882352941 0.41960784313725" />
+      <fefunca type="table" tablevalues="1 1" />
+     </fecomponenttransfer>
+     <fecomposite in2="SourceGraphic" operator="in" />
+    </filter>
+   </defs>
+  </svg>
+  <div class="site"> <a class="skip-link screen-reader-text" aria-label="Skip to main content" href="#main">Skip to main content</a> 
+   <header id="masthead" class="site-header" role="banner">
+    <div class="site-header-wrapper">
+     <div class="site-branding-usc"><a class="site-branding-usc-logo" href="http://www.usc.edu">University of Southern California</a>
+     </div>
+     <div class="site-branding-unique">
+      <h1 class="site-branding-title"><a href="https://we-are.usc.edu/" rel="home">2022</a></h1>
+     </div>
+     <nav id="site-navigation" class="site-navigation" role="navigation">
+      <div class="site-navigation-wrapper">
+       <h2 class="site-navigation-title screen-reader-text">Primary Menu</h2>
+       <div class="menu-main-navigation-container">
+        <ul id="menu-main-navigation" class="site-navigation-menu">
+         <li id="menu-item-9704" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9704"><a href="https://change.usc.edu/transformation/addressing-sexual-assault/">Addressing Sexual Assault</a></li>
+         <li id="menu-item-9947" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9947"><a href="https://we-are.usc.edu/addressing-antisemitism-2/">Addressing Antisemitism</a>
+          <ul class="sub-menu">
+           <li id="menu-item-9933" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9933"><a href="https://we-are.usc.edu/messages/">Messages</a></li>
+           <li id="menu-item-9932" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9932"><a href="https://we-are.usc.edu/frequently-asked-questions/">Frequently Asked Questions</a></li>
+          </ul></li>
+         <li id="menu-item-520" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-520"><a href="#">On Campus</a>
+          <ul class="sub-menu">
+           <li id="menu-item-9484" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9484"><a href="https://we-are.usc.edu/general-restart-faq/">General Restart FAQs</a></li>
+           <li id="menu-item-9483" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9483"><a href="https://we-are.usc.edu/faqs/faq-events-and-activities/">Events &amp; Activities</a></li>
+           <li id="menu-item-93" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93"><a href="https://we-are.usc.edu/phases-and-guidelines/">Phases and Guidelines</a></li>
+           <li id="menu-item-9680" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9680"><a href="https://we-are.usc.edu/travel-guidance/">Travel Guidance</a></li>
+           <li id="menu-item-6216" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6216"><a href="https://we-are.usc.edu/support-funds/">Support Funds</a></li>
+          </ul></li>
+         <li id="menu-item-6157" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-4939 current_page_item menu-item-6157"><a href="https://we-are.usc.edu/university-messages/" aria-current="page">University Messages</a></li>
+         <li id="menu-item-8136" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8136"><a href="https://we-are.usc.edu/quick-takes/">Quick Takes</a></li>
+         <li id="menu-item-9517" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9517"><a href="https://coronavirus.usc.edu/">COVID-19 Resource Center</a>
+          <ul class="sub-menu">
+           <li id="menu-item-9518" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9518"><a href="https://sites.google.com/usc.edu/covidnotifications-ay22/home">COVID-19 Daily Digest</a></li>
+          </ul></li>
+        </ul>
+       </div> 
+       <div class="site-menu-toggle-wrapper"><a href="javascript:void(0);" class="site-menu-toggle" aria-label="Navigation Menu" aria-expanded="false">
+         <svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+          <title id="icon_title">Menu</title><desc id="icon_desc">
+           An icon that consists of three parallel horizontal lines suggestive of a list.
+          </desc><path d="M0 0h24v24H0z" fill="none" /><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+         </svg></a>
+       </div>
+       <div class="site-search-toggle-wrapper"><a href="javascript:void(0);" class="site-search-toggle" aria-label="Search" aria-expanded="false">
+         <svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+          <title id="icon_title">Search</title><desc id="icon_desc">
+           An icon of a magnifying glass.
+          </desc><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" /><path d="M0 0h24v24H0z" fill="none" />
+         </svg></a>
+       </div>
+      </div>
+     </nav>
+    </div>
+    <div class="site-search-wrapper">
+     <div class="site-search">
+      <form role="search" method="get" class="search-form" action="https://we-are.usc.edu/"><label> <span class="screen-reader-text">Search for:</span> <input type="text" class="search-field" name="s" placeholder="Search..." title="search"> <input type="submit" class="visuallyhidden" value="Submit"> </label><a href="javascript:void(0);" class="search-icon-close">
+        <svg class="svg-icon" width="20" height="20" aria-hidden="true" role="img" aria-describedby="icon_desc" aria-labelledby="icon_title" viewbox="0 0 24 24">
+         <title id="icon_title">Close</title><desc id="icon_desc">
+          An icon of a letter X.
+         </desc><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" /><path d="M0 0h24v24H0z" fill="none" />
+        </svg><span class="screen-reader-text">Close Search</span></a>
+      </form>
+     </div>
+    </div>
+   </header><!-- #masthead -->
+   <div id="content" class="site-content">
+    <div id="primary" class="content-area">
+     <main id="main" class="site-main" role="main">
+      <article id="post-4939" class="post-4939 page type-page status-publish hentry">
+       <header class="entry-header">
+        <h1 class="entry-title screen-reader-text">University Messages</h1> 
+       </header>
+       <div class="entry-content">
+        <div class="wp-block-cover alignfull has-background-dim-70 has-background-dim has-background-gradient" style="min-height:240px">
+         <span aria-hidden="true" class="wp-block-cover__gradient-background has-black-to-transparent-gradient-background"></span>
+         <img width="2560" height="1706" class="wp-block-cover__image-background wp-image-7002" alt="" src="https://we-are.usc.edu/wp-content/uploads/2020/07/GR40017_University-Comm-scaled.jpg" style="object-position:48% 68%" data-object-fit="cover" data-object-position="48% 68%" srcset="https://we-are.usc.edu/wp-content/uploads/2020/07/GR40017_University-Comm-scaled.jpg 2560w, https://we-are.usc.edu/wp-content/uploads/2020/07/GR40017_University-Comm-300x200.jpg 300w, https://we-are.usc.edu/wp-content/uploads/2020/07/GR40017_University-Comm-1024x683.jpg 1024w, https://we-are.usc.edu/wp-content/uploads/2020/07/GR40017_University-Comm-768x512.jpg 768w, https://we-are.usc.edu/wp-content/uploads/2020/07/GR40017_University-Comm-1536x1024.jpg 1536w, https://we-are.usc.edu/wp-content/uploads/2020/07/GR40017_University-Comm-2048x1365.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px">
+         <div class="wp-block-cover__inner-container">
+          <div class="wp-container-1 wp-block-group is-style-usc-group-content-width">
+           <div class="wp-block-group__inner-container">
+            <h2 class="is-style-display-2"><br><br>University Messages</h2>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div style="height:48px" aria-hidden="true" class="wp-block-spacer"></div>
+        <div class="wp-container-3 wp-block-group is-style-usc-group-content-width">
+         <div class="wp-block-group__inner-container">
+          <h2 class="is-style-cardinal-bar">Latest Updates</h2>
+          <div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+          <ul class="wp-block-latest-posts__list wp-block-latest-posts">
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/06/15/6-15-adding-a-paid-personal-holiday/"><span class="has-badge has-badge-new">6/15 – Adding a Paid Personal Holiday</span></a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Colleagues, Greetings. I am writing to share some good news. The University is adding a paid personal holiday for your use by the end of&nbsp;each&nbsp;calendar year. We receive many requests for additional paid holidays to commemorate meaningful events such…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/06/06/6-6-introducing-julia-m-ritter-as-dean-of-the-usc-kaufman-school-of-dance/">6/6 – Introducing Julia M. Ritter as Dean of the USC Kaufman School of Dance</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             June 6, 2022 Dear USC Kaufman School Community, On behalf of President Folt, I am pleased to announce that we will welcome Dr. Julia M. Ritter as dean of the USC Kaufman School of Dance, effective July 1, 2022. Dr.…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/05/20/5-20-highlights-from-an-amazing-year/">5/20- Highlights from an Amazing Year</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Greetings Trojans everywhere, As we head into the summer, I wanted to share some&nbsp;highlights from a monumental year at USC. Have a wonderful summer and Fight On! Carol L. Folt President
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/05/03/5-3-update-on-covid-19-procedures/">5/3 – Update on COVID-19 Procedures</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             May 3, 2022 To:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USC Community Fr:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sarah Van Orman, Chief Health Officer, USC Student Health &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Division Chief for College Health, Keck School of Medicine of USC RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Update on COVID-19 Procedures The following information provides updated guidance on…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/05/03/5-3-usc-health-sciences-schools-update/">5/3 – USC Health Sciences Schools Update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear USC community, I am writing to share news about USC’s medical health system. As you all know, there is much to celebrate, and it was my pleasure to share this with you at&nbsp;my State of the University address at…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/keck/">Keck</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/04/19/4-19-campus-operations-for-festival-of-books/">4/19 – Campus Operations for Festival of Books</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             April 19, 2022&nbsp; Fellow Trojans,&nbsp; As most of you know, the Los Angeles Times Festival of Books will be presented this coming weekend, April 23 and 24, on the University Park Campus. The festival, the nation’s largest literary event, attracts…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/04/18/4-18-earth-week-2022/">4/18 – Earth Week 2022</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             April 18, 2022 Dear USC community, Welcome to Earth Week 2022, Trojans! This week offers a perfect lens through which to remind us that earth’s life support systems are what sustain us and allow us to thrive. We are part…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/04/06/4-6-usc-dps-chief-finalist-community-input-sessions/">4/6 – USC DPS Chief Finalist Community Input Sessions</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             April 6, 2022 Greetings! As many of you know, the university has embarked on a nationwide search for its next Department of Public Safety (DPS) Chief. In February, the search committee hosted a series of eight Community Input Sessions to…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/03/31/3-31-campus-access-and-covid-19-procedures/">3/31 – Campus access and COVID-19 procedures</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Fellow Trojans, With cases of COVID-19 remaining low across Los Angeles County, the university is making further changes to its pandemic mitigation strategies to align with changing guidelines from Los Angeles County and the City of Los Angeles. Beginning Monday,…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/03/30/3-29-investing-in-our-faculty-and-staff-3/">3/29 – Investing in our faculty and staff</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             March 29, 2022 Dear Trojan faculty and staff, Greetings. It is wonderful to see everyone back not only from spring break but from nearly two years of COVID restrictions. As we look ahead, there will be many opportunities to take…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/03/17/3-17-supporting-our-lgbtqia-communities/">3/17 – Supporting our LGBTQIA+ communities</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Trojan Community, With the rights of LGBTQIA+ – especially transgender and gender diverse – Americans under legislative attack in statehouses around the country, I want to express my unwavering support for and commitment to our LGBTQIA+ communities.&nbsp; More than…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/03/07/3-7-appointment-of-new-university-and-distinguished-professors/">3/7 – Appointment of New University and Distinguished Professors</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             March 7, 2022 Dear USC Community, Every year, we are pleased to honor members of our exceptional faculty with University and Distinguished professorships. These are USC’s highest academic honors, which we present to our colleagues who have brought great distinction…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/03/04/3-4-letter-on-ukraine/">3/4- Letter on Ukraine</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             March 4, 2022 Dear USC Community, On Tuesday evening, our Office of Religious and Spiritual Life hosted a vigil in support of Ukraine, and our community came together to express our solidarity and profound sorrow. We’re horrified by the violence…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/03/04/3-4-22-updated-covid-mitigation-policies/">3/4/22 – Updated COVID Mitigation Policies</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             March 4, 2022 Dear Trojan Community, As many of you know, Los Angeles County has issued a revised health order, removing the indoor masking requirement that has been in place since July 17, 2021. The amended regulations recognize how far…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/02/25/2-25-covid-19-masking-update-for-campuses/">2/25- COVID-19 Masking Update for Campuses</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             February 25, 2022 TO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USC Students, Faculty and University Staff FR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sarah Van Orman, MD, MMM, FACHA, Chief Health Officer, USC Student Health &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Division Chief for College Health, Keck School of Medicine of USC &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Deona Willes, MPH, CLS…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/02/18/2-18-covid-19-update-for-campuses/">2/18 – COVID-19 Update for Campuses</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             February 18, 2022 TO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USC Students, Faculty and University Staff FR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sarah Van Orman, Chief Health Officer, USC Student Health &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Division Chief for College Health, Keck School of Medicine of USC RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COVID-19 Update for Campuses The spring 2022…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/02/16/2-16-la-county-lifts-outdoor-masking-requirement/">2/16 – LA County Lifts Outdoor Masking Requirement</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             In alignment with the revised&nbsp;Public Health Officer&nbsp;order, masking is no longer required at outdoor events. University-sponsored outdoor events of all sizes no longer require masking for attendees. Masking continues to be required indoors, and in special environments including on USC…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/02/15/2-15-important-rams-parade-to-impact-upc-wednesday/">2/15 – IMPORTANT: Rams’ Parade to Impact UPC Wednesday</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Trojan Community, Following the Rams’ Super Bowl victory this past Sunday, a parade and rally will take place tomorrow, February 16, 2022 to celebrate the team’s championship. The parade begins at the Shrine Auditorium at 11:00 a.m., and participants…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/02/15/2-15-a-message-from-usc-president-carol-folt/">2/15- A Message from USC President Carol Folt</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Trojan Community, As you may have seen, Rick Caruso, Chair of the USC Board of Trustees, just announced that he will be entering the race for mayor of Los Angeles and will be stepping down as Board Chair. Chair…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/02/15/2-15-a-message-from-usc-board-of-trustees-chair-rick-j-caruso/">2/15- A Message from USC Board of Trustees Chair Rick J. Caruso</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Members of the USC Community, I want to share that this morning, I announced my plans to run for mayor of Los Angeles. I am running for mayor because I love Los Angeles and believe we must enact real,…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/02/04/2-4-dps-chief-search-community-input-sessions/">2/4 – DPS Chief Search Community Input Sessions</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Greetings! As many of you may remember, the university announced a&nbsp;nationwide search&nbsp;for its next Department of Public Safety (DPS) Chief following the retirement of Chief John Thomas last month. Over the past few weeks, we have assembled a diverse 22-person…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/01/27/1-27-reminder-of-covid-19-booster-deadline-january-30/">1/27- Reminder of COVID-19 Booster Deadline—January 30</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             &nbsp;January 27, 2022&nbsp; TO: USC Students, Faculty and University Staff&nbsp; RE: Reminder of COVID-19 Booster Deadline—January 30&nbsp; Please be reminded that the university deadline to receive COVID-19 boosters is Sunday, January 30.&nbsp; All students in on-campus programs, all faculty, and…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/01/26/1-25-update-on-student-conduct-process/">1/25 Update on Student Conduct Process</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             January 25, 2022 Dear students, I am so pleased to welcome you to campus this spring, and I am confident that this will be an exciting semester full of wonderful new opportunities. When students are admitted to the University, they…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/01/21/1-21-for-faculty-in-person-learning-and-continuity-of-education/">1/21 – For Faculty: In-Person Learning and Continuity of Education</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             January 21, 2022 Dear Colleagues, I wanted to take this opportunity to remind you of our policy of providing students with “continuity of education” as we continue to navigate the ongoing realities of COVID-19. On Monday, we return to campus…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/01/21/1-21-in-person-learning-and-continuity-of-education/">1/21 – For Students: In-Person Learning and Continuity of Education</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             January 21, 2022 Dear Students, On Monday, we return to campus for in-person instruction while continuing to navigate the ongoing realities of COVID-19. We have instituted a host of measures intended to protect our community, but we still anticipate feeling…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/01/21/1-21-in-person-learning-monday-january-24/">1/21- In-Person Learning- Monday, January 24</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Trojan Community, We are pleased to confirm that USC will resume in-person learning as planned on Monday, January 24. Between 70 to 80 percent of our students already have returned to their USC housing, both on and off campus.…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/01/19/1-19-updated-covid-19-testing-requirements-for-non-boosted-students/">1/19- Updated COVID-19 Testing Requirements for Non-boosted Students</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             DT:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;January 19, 2022 TO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;USC Students FR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Monique S. Allard, Ed.D.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interim Vice President, Student Affairs Sarah Van Orman, MD, MMM, FACHA, Chief Health Officer, USC Student Health&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Division Chief for College Health, Keck School of Medicine of USC RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Updated COVID-19 Testing Requirements for…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/01/19/1-19-updated-covid-19-testing-requirements-for-non-boosted-faculty-and-staff/">1/19- Updated COVID-19 Testing Requirements for (Non-boosted) Faculty and Staff</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             DT:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; January 19, 2022 TO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USC Faculty and University Staff FR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Felicia A. Washington &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Senior Vice President, Human Resources Sarah Van Orman, MD, MMM, FACHA, Chief Health Officer, USC Student Health &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Division Chief for College Health, Keck School…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/01/18/1-18-working-group-on-ifc-culture-prevention-and-accountability-update/">1/18- Working Group on IFC Culture, Prevention, and Accountability Update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear USC Community,&nbsp; I am writing to provide an update on actions needed to resume Interfraternity Council (IFC) social activities. In the Fall, the&nbsp;Working Group on IFC Culture, Prevention, and Accountability&nbsp;was established and charged with: Looking at long-term strategies for…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/01/18/1-18-important-title-ix-and-ocr-resolution-agreement-updates/">1/18- Important Title IX and OCR Resolution Agreement Updates</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear USC Community, I write to update you on several important matters related to Title IX and the University’s commitment to maintaining an environment free from discrimination and harassment. Below, please find updates in the following areas:&nbsp; Notice of Non-DiscriminationPolicy…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/01/12/1-12-interim-dps-organizational-leadership/">1/12 – Interim DPS Organizational Leadership</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             To:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USC Community From:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Erroll G. Southers Associate Senior Vice President, Safety and Risk Assurance Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; January 12, 2022 Subject: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Interim DPS Organizational Leadership As the spring semester begins, I am pleased to announce the following interim Department…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/01/11/1-11-spring-welcome-from-president-folt/">1/11 – Spring Welcome from President Folt</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             January 11, 2022 Dear USC Community, In all the commotion that comes with beginning a new year, I want to pause to welcome you back and say thank you. I am so grateful for you – our students, faculty, and…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/01/07/1-7-22-spring-semester-and-omicron/">1/7/22 – Spring Semester and Omicron</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             January 7, 2022 Dear USC Community,Spring semester brings new opportunities, new classes, and a return to the academic year with a fresh start. We look forward to seeing our students back on our campuses. Although this beginning of 2022 coincides…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/01/05/1-5-updated-masking-guidance-for-campus-environments/">1/5 – Updated Masking Guidance for Campus Environments</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             &nbsp;DT: January 5, 2022&nbsp; TO: USC Faculty and University Staff&nbsp; CC: USC Students&nbsp; FR: Deona Willes, MPH, CLS, Executive Director&nbsp; USC Environmental Health and Safety&nbsp; Sarah Van Orman, MD, MMM, FACHA, Chief Health Officer, USC Student Health&nbsp; Division Chief for…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/01/03/1-3-appointment-of-erroll-southers-as-associate-senior-vice-president-of-safety-risk-assurance/">1/3- Appointment of Erroll Southers as Associate Senior Vice President of Safety &amp; Risk Assurance</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             I am pleased to announce the appointment of&nbsp;Dr. Erroll Southers&nbsp;to the newly created position of Associate Senior Vice President of Safety &amp; Risk Assurance, effective January 3, 2022.&nbsp;Dr. Southers will report to me and be responsible for overseeing the Administration…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2022/01/02/1-2-reminders-testing-for-spring-2022/">1/2- Reminders—Testing for Spring 2022</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             As Winter Break comes to a close, we expect many individuals are preparing to return to campus for work and other scheduled activities on&nbsp;Monday, January 3. While USC Housing will open as scheduled,&nbsp;please remember that the first week of classes…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/12/28/12-28-spring-2022-covid-19-health-and-safety-protocols/">12/28 – Spring 2022 COVID-19 Health and Safety Protocols</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             We hope you are enjoying a restorative Winter Break. As we prepare for the new year and the 2022 Spring semester, we are sharing some specific details regarding health and safety campus protocols around COVID-19.
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/12/24/12-24-spring-semester-update/">12/24- Spring Semester Update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Trojan Community, We hope you are recharging and savoring time with family and friends during this winter recess. Given the current spread of the Omicron variant of COVID, many of you have questions about USC’s plans for return in…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/12/23/12-23-covid-19-surge-operations-update-2/">12/23- COVID-19 Surge Operations Update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Los Angeles County is experiencing a growing surge of COVID-19 cases, which we are also seeing in the USC population. Current USC test positivity rates are at 10%.&nbsp; To adjust to the expected volume of positive cases over the next…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/12/20/12-20-clarification-health-advisory-omicron-variant/">12/20- Clarification to 12/17 Health Advisory.</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             We are providing a clarification&nbsp;to&nbsp;Friday’s (12/17) health advisory on the Omicron variant. (https://we-are.usc.edu). We are closely monitoring changing conditions and preparing to adapt as needed.&nbsp;We have no plans to go online at this moment or having a remote Spring semester.&nbsp;We…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/12/17/12-17-health-advisory-omicron-variant/">12/17- Health Advisory: Omicron Variant</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             As we wrap up our Fall semester, we are sharing an update about the university’s plans for the Spring, in light of the increased spread of the Omicron variant of the COVID-19 virus.&nbsp;We are closely monitoring rising cases on campus…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/12/14/winter-break-schedule-for-covid-19-testing-sites-lab-resulting-timeframe/">12/14- Winter Break Schedule for COVID-19 Testing Sites; Lab Resulting Timeframe</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear USC Students, Faculty and Staff: Please be informed of the upcoming Winter Break schedule for Pop Testing. If you are a student staying locally during the break, please continue to test.&nbsp; WINTER BREAK TESTING SCHEDULE Winter Break schedule begins…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/12/07/12-7-dps-community-advisory-board-implementation-update/">12/7 – DPS Community Advisory Board Implementation Update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear USC Community, We are writing to provide an update on the USC Department of Public Safety (DPS) Community Advisory Board (CAB) and the status of the recommendations shared with our community last summer. We are pleased to report significant…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/12/07/12-7-health-advisory-and-the-close-of-the-fall-semester/">12/7- Health Advisory and the Close of the Fall Semester</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dec. 7, 2021 TO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;USC Students, Faculty and University Staff RE: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Health Advisory and the Close of the Fall Semester FR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sarah Van Orman, MD, MMM, FACHA, Chief Health Officer, USC Student Health Deona Willes, MPH, CLS, Executive Director, USC…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/12/06/12-6-covid-19-update/">12/6 – COVID-19 Update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dec 6, 2021—A recent Los Angeles County Department of Public Health announcement identified the Omicron variant in a college student returning from recent domestic air travel. USC can confirm the individual is a USC student who is currently isolating and…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a><a class="category-single" href="https://we-are.usc.edu/category/testing-data/">Testing Data</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/12/02/12-2-integrity-and-accountability-code/">12/2 – Integrity and Accountability Code</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Greetings Trojan Community, We are pleased to share with you USC’s new&nbsp;Integrity and Accountability Code&nbsp;which updates our Code of Ethics. The Code was developed with extensive input from our community and is guided by our six Unifying Values: integrity; excellence;…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/11/22/11-22-winter-recess-update/">11/22 – Winter Recess Update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             November 22, 2021&nbsp; Dear Trojans,&nbsp; As we prepare to enter the final month of 2021, we want to thank you for the hard work you put in to help us continue to move forward in accomplishing our mission through teaching,…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/11/18/11-18-health-advisory-for-pre-holiday-gatherings/">11/18: Staying COVID-safe over the Thanksgiving holiday</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             USC health leadership advises getting a COVID-19 booster shot in preparation for Thanksgiving gatherings. Other things to consider: Get tested before you travel and after you return. Do not travel if you have symptoms. Complete your flu vaccine. Read the…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/quick-takes/">Quick Takes</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/11/18/11-18-renaming-of-the-center-for-international-and-public-affairs/">11/18- Renaming of the Center for International and Public Affairs</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Trojan Community, The Center for International and Public Affairs is a hub of history, international studies, and scholarship. Sitting at the heart of our campus, it brings people together across many different cultures and communities. After the USC Board…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/11/17/11-17-transition-at-usc-student-affairs/">11/17 – Transition at USC Student Affairs</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             To: USC Community &nbsp;&nbsp;From: Charles F. Zukoski, Provost and Senior Vice President for Academic Affairs &nbsp;&nbsp;Date: November 17, 2021 &nbsp;&nbsp;&nbsp;Subject:&nbsp;&nbsp; Transition at USC Student Affairs Today we share that Winston B. Crisp is resigning from his position as Vice President…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/11/16/11-16-announcing-dr-carolyn-c-meltzer-as-dean-of-keck-school-of-medicine/">11/16 – Announcing Dr. Carolyn C. Meltzer as Dean of Keck School of Medicine</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             November 16, 2021 Dear KSOM Community, On behalf of President Folt, we are pleased to announce that Dr. Carolyn C. Meltzer has been named as the new dean of the Keck School of Medicine of USC and will hold the…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/keck/">Keck</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/11/11/11-11-information-to-support-faculty-and-staff-with-reporting-responsibilities/">11/11 – Information to Support Faculty and Staff with Reporting Responsibilities</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             To: USC Faculty and Staff From: Felicia A. Washington, Senior Vice President of Human Resources November 11, 2021 Many in our community are engaging in critically important dialogue about how to prevent and respond to sexual and gender-based harassment and…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/11/11/11-11-new-working-group-on-interfraternity-council-culture-prevention-and-accountability/">11/11 – New Working Group on Interfraternity Council Culture, Prevention, and Accountability</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             November 11, 2021 Content warning: This message mentions sexual assault. Dear USC Community, Recent allegations of sexual violence and misconduct have hit our campus hard. We are committed to ensuring the safety of our students and building a compassionate community.…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/11/08/11-8-21-message-from-president-folt/">11/8/21 – Message from President Folt</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             November 8, 2021&nbsp; Dear Trojan Community,&nbsp; When I came to USC two years ago, it was clear that the challenges we faced would require the collective efforts of a great university. This university has embraced change, committed to a new…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/11/03/11-3-updated-access-protocols/">11/3 – Updated Access Protocols</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             November 3, 2021 Fellow Trojans, I want to alert you to upcoming changes to COVID-19-related requirements for accessing USC’s campuses due to a new L.A. City Council&nbsp;ordinance. The ordinance, which covers entry requirements for a variety of indoor venues, including…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/10/29/10-29-letter-to-the-community-from-president-folt-regarding-recent-events/">10/29-Letter to the community from President Folt regarding recent events</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear USC community, Sexual assault is a serious problem at university campuses across the country, and it is a problem at USC. When it happens, the entire university is impacted. We share in the anger at this violence and compassion…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/10/29/10-29-letter-to-students-from-student-affairs-and-student-health/">10/29- Letter to Students from Student Affairs and Student Health</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             October 29, 2021 Dear Students, We know the first semester back on campus since the COVID-19 pandemic has presented challenges for many of you. Social issues and recent events related to reported sexual assaults in some of our fraternities, as…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/10/29/10-28-academic-support-during-stressful-times/">10/28- Academic Support During Stressful Times</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             October 28, 2021 Dear Students, As we have returned to in-person learning and living, you have done an incredible job of supporting each other and our community. We appreciate your cooperation and concern. The first semester back on campus has…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/10/22/10-22-an-important-message-from-usc/">10/22- An important message from USC</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear USC community, We are writing to provide additional information about Wednesday’s campus crime alert. That alert referenced two separate incidents: a police report of sexual assault at a fraternity last weekend, and confidential information that drugs may have been…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/10/05/10-5-game-day-update/">10/5- Game Day Update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Trojan Family, After a dominating victory over Colorado, our football team returns home for Trojan Family Weekend! We are excited to welcome thousands of USC parents and families to campus and the Coliseum this Saturday! Thank you to everyone…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a><a class="category-single" href="https://we-are.usc.edu/category/uncategorized/">Uncategorized</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/10/01/10-1-mandatory-harassment-prevention-training/">10/1 – Mandatory Harassment Prevention Training</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Colleagues, As part of USC’s ongoing commitments to fostering a positive environment and ensuring the university is in compliance with federal and state legal requirements, all faculty and staff – including in academic- and healthcare-specific roles – are required…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/09/29/9-28-vaccine-update-for-students-influenza-and-covid-19-boosters/">9/28 -Vaccine Update for Students— Influenza and COVID-19 Boosters</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             TO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;USC Students FR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sarah Van Orman, Chief Health Officer, USC Student Health &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Division Chief for College Health, Keck School of Medicine of USC RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vaccine Update for Campus— Influenza and COVID-19 Boosters As we enter the influenza season, the University has renewed…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/09/28/9-28-for-faculty-and-university-staff-vaccine-update-for-campus-influenza-and-covid-19-boosters/">9/28 For Faculty and University Staff: Vaccine Update for Campus— Influenza and COVID-19 Boosters</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Sept. 28, 2021 TO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USC Faculty and University Staff FR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sarah Van Orman, Chief Health Officer, USC Student Health &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Division Chief for College Health, Keck School of Medicine of USC RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vaccine Update for Campus— Influenza and COVID-19 Boosters…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/09/15/9-15-national-recovery-month-2021/">9/15 – National Recovery Month 2021</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             To: USC Students, Faculty and Staff As you may already be aware,&nbsp;September is National Recovery Month—a time to promote and support the emergence of a strong and proud recovery community, and the dedication of community members and service providers across…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/09/08/9-8-usc-v-stanford-game-day-update/">9/8 – USC v. Stanford Game Day Update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Trojan Family, Thank you to everyone who attended our football home opener against San Jose State! It was wonderful to see the Trojan Family in the Coliseum after so many months apart. Your energy plays a critical role in…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/09/03/9-3-faculty-staff-covid-19-health-safety-webinar/">9/3 – Faculty &amp; Staff COVID-19 Health &amp; Safety Webinar</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             To view a recording of the Faculty &amp; Staff COVID-19 Health &amp; Safety webinar, visit the COVID-19 resource page of the Employee Gateway or click on this link: Webinar Recording
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/30/8-30-trojans-together-again/">8/30 – Trojans Together Again</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Greetings Trojan&nbsp;Family, USC is once again bursting with life. Everywhere you look, students are brimming with excitement to be back living and learning on campus. I am filled with gratitude. Gratitude for the incredible medical, health care, student services, and…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/25/8-25-game-day-and-coliseum-update/">8/25- Game Day and Coliseum Update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Trojan Family, I hope this note finds you and your loved ones safe and healthy. We can’t wait to see you in the Coliseum for the home opener against San Jose State on September 4! It will be a…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/24/8-23-introducing-nasal-testing-and-other-covid-19-testing-updates/">8/23 – Introducing Nasal Testing, and other COVID-19 Testing Updates</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             August 23, 2021 To: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; All USC students; All Faculty; All University Staff Fr:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USC Student Health RE: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Introducing Nasal Testing, and other COVID-19 Testing Updates As of this week, USC Student Health is re-introducing nasal swab as a method…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a><a class="category-single" href="https://we-are.usc.edu/category/testing-data/">Testing Data</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/23/8-23-campus-emergency-procedures/">8/23- Campus Emergency Procedures</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             To:USC Faculty and Staff&nbsp;&nbsp;&nbsp;From:David WrightSenior Vice President, AdministrationDate:August 23, 2021&nbsp;&nbsp;&nbsp;&nbsp;Subject:&nbsp;&nbsp;&nbsp;Campus Emergency Procedures To: USC Faculty and Staff From: David Wright, Senior Vice President, Administration August 23, 2021 Fellow Trojans, With so many of us returning to our physical workspaces after…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/23/8-20-new-extension-period-friday-8-27-deadline-for-trojan-check-requirements/">8/20 – New Extension Period (Friday 8/27 deadline) for Trojan Check Requirements</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Students are advised of an extension period for&nbsp;your COVID-19 surveillance test; and for completing the&nbsp;“Hygiene Health and Safety”&nbsp;learning module in Trojan Learn (https://trojanlearn.usc.edu). If you are vaccinated and your Trojan Check is showing as “noncompliant” for either of these two…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/20/8-20-fall-2021-semester-update/">8/20- Fall 2021 semester update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             &nbsp;August 20, 2021&nbsp; Dear USC students,&nbsp; The start of the 2021 academic year is upon us, and our campuses are bustling. It’s been thrilling to see so many of you reconnecting with each other in person. Yesterday’s convocation ceremony, where…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/20/8-20-tech-tips-for-returning-to-campus/">8/20 – Tech Tips for Returning to Campus</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             August 20, 2021 Dear USC Community, We hope that you have had a wonderful and safe summer! Over the next weeks and months, many of you may be returning to campus for the first time since March 2020. When you…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/20/8-19-covid-19-testing-reminders/">8/19- COVID-19 Testing Reminders</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             August 19, 2021 To: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; All USC students Cc: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USC Faculty and Staff Fr:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USC Student Health RE: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COVID-19 Testing Reminders ahead of Start of Classes on August 23 As you are preparing for the first week of…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/19/8-19-usc-fall-2021-semester-update/">8/19- USC Fall 2021 Semester Update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             August 19, 2021 Dear Community Partners, We hope this letter finds you and your loved ones safe and well. After nearly a year and a half, USC begins in-person academic instruction on Monday, August 23 with most students, staff, and…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/18/8-17-provost-fall-2021-welcome/">8/17 – Provost Fall 2021 Welcome</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             August 17, 2021 Dear Colleagues, Welcome to Fall 2021. As we begin another semester – one that will pose some unique challenges as we return to in-person teaching and learning – I want to share some initial guidance and resources…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/13/8-13-usc-transportation-return-of-trojan-check/">8/13- USC Transportation: Return of Trojan Check</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             As detailed in the&nbsp;Welcome Back Guidance memo&nbsp;from the Provost, TrojanCheck verification will once again be required at perimeter access points, including vehicles entering the University Park Campus. Some access points (including vehicle exits from parking structures) may also be temporarily…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/13/8-12-usc-faculty-staff-webinar-covid-19-health-safety/">8/12- USC Faculty &amp; Staff Webinar: COVID-19 Health &amp; Safety</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             USC Faculty and Staff COVID-19 Health &amp; Safety webinar.
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/09/8-6-welcome-back-guidance-and-update/">8/9- Welcome back guidance and update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             August 9, 2021 Dear Colleagues, On August 14, our students will begin to arrive on campus, move into their housing, and prepare for the start of classes. We are welcoming them back knowing we have worked hard to provide a…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/05/8-5-fall-semester-update-from-president-folt/">8/5 – Fall semester update from President Folt</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Trojan Community, The University Park Campus looks amazing and is ready to welcome back more than 44,000 students and nearly 12,000 faculty and staff over the next few weeks. We are on track for a return to the full…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/05/8-5-game-day-experience-update/">8/5 – Game Day Experience Update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Trojan Family, I hope this note finds you and your loved ones safe and healthy. It’s been 621 days since the Trojan Family has been together in the Coliseum, and we are thrilled to welcome you back this season!&nbsp;…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/08/02/8-2-covid-19-safety-updates-for-in-person-activities/">8/2 – COVID-19 Safety Updates for In-Person Activities</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             DATE: August 2, 2021&nbsp; TO: USC Students, Faculty and University Staff&nbsp; FR: Sarah Van Orman, MD MMM FACHA, Chief Health Officer, USC Student Health,&nbsp; Keck Medicine of USC; Division Chief for College Health, Keck School of Medicine of USC&nbsp; RE:…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/07/29/7-29-appointment-of-michael-dalrymple-as-uscs-chief-sustainability-officer/">7/29- Appointment of&nbsp;Michael Dalrymple as USC’s chief sustainability officer</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Trojan Community, It is my pleasure to announce the appointment of Michael “Mick” Dalrymple as USC’s first chief sustainability officer for operations, effective August 23rd. Mick brings his extensive experience to focus and accelerate university-wide efforts in sustainability. He…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/07/27/7-27-message-to-non-compliant-students/">7/27 – Message to Non-Compliant Students</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             To: Non-Compliant Students From: Winston B. Crisp, Vice President for Student Affairs Date: July 27, 2021 Subject: Your COVID-19 Vaccine Compliance Status As of today, July 27, 2021, the University of Southern California has not received documentation of your COVID-19…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/07/23/7-22-health-alert-increase-in-covid-19-cases-in-la-county/">7/22- Health Alert: Increase in COVID-19 cases in LA County</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             TO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USC Students, Faculty and University Staff FR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sarah Van Orman, MD MMM FACHA, Chief Health Officer, USC Student Health, Keck Medicine of USC;&nbsp; Division Chief for College Health, Keck School of Medicine of USC LA County’s COVID-19 cases have…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/community/">Community</a><a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/07/15/7-15-health-alert-indoor-masking-required-effective-immediately/">7/15 – Health Alert: Indoor Masking Required, Effective Immediately</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             July 15, 2021 TO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USC Students, Faculty and University Staff FR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sarah Van Orman, MD MMM FACHA, Chief Health Officer, USC Student Health,&nbsp; Keck Medicine of USC; Division Chief for College Health, Keck School of Medicine of USC RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Health…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/07/02/7-2-phase-5-guidelines/">7/2 – Phase 5 Guidelines</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear Colleagues, Effective July 1, the university has formally transitioned to Phase 5 of its phased Restart framework.&nbsp;Last week we announced&nbsp;many of the key items outlined in the Phase 5 Guidelines, including the&nbsp;workforce planning process now underway&nbsp;and our updated vaccination…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/06/29/9236/">6/29 – Masking Policy Updates</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             June 29, 2021 We are writing to give you an update on our masking policy. On Wednesday, we will begin teaching some classes in person during our second summer session and are continuing to plan for a full return to…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/06/18/covid-19-vaccination-requirements-for-fall-2021/">6/18- COVID-19 Vaccination Requirements for Fall 2021</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear USC International Students, We are very much looking forward to your arrival on campus, and know you are busy making preparations for the return to campus. As you plan for your arrival at USC for the fall 2021 semester,…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/06/17/covid-19-vaccination-requirements-for-attending-usc-in-fall-2021/">6/17- COVID-19 vaccination requirements for attending USC in fall 2021.</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Dear USC Students: Please review the information below regarding COVID-19 vaccination requirements for attending USC in fall 2021. COVID-19 vaccination:&nbsp;USC&nbsp;&nbsp;policy&nbsp;requires all students to be vaccinated for COVID-19 or submit a personal declination. Students are required to&nbsp;complete&nbsp;uploading&nbsp;vaccination documentation by July 15&nbsp;.…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/06/16/6-16-restart-planning-update/">6/16 – Restart Planning Update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             June 16, 2021 Dear Colleagues, As the state continues to&nbsp;relax pandemic restrictions, many of you have asked if there is a specific date when USC will return to normal operations.&nbsp;While we are ramping up in-person activities throughout the summer and…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/06/02/6-2-reenergized-to-reunite-a-message-from-usc-president-carol-l-folt/">6/2 – Reenergized to Reunite – A Message from USC President Carol L. Folt</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             Greetings Trojan&nbsp;Family, We just completed our in-person and online commencement ceremonies for the classes of 2020 and 2021. Seeing the joy on the faces of our graduates and their families and friends is unforgettable. It was no small feat –…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/president/">President</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/05/26/3-26-reminder-to-faculty-and-staff-upcoming-vaccine-deadline-june-1/">5/26 – Reminder to Faculty and Staff – Upcoming Vaccine Deadline June 1</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             As we look forward to fall, having a clear picture of the level of vaccine protection in our community allows planning for safe, permitted activities. Please be advised of the deadline to complete the university’s vaccine requirement coming up next…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/05/25/5-25-letter-to-international-arrivals-re-vaccine-requirements-for-fall-2021/">5/25 – Letter to international arrivals re: vaccine requirements for Fall 2021</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             May 25, 2021 From: Sarah Van Orman, MD, MMM, FACHA, Chief Health Officer, USC Student Health; Division Chief for College Health, Keck School of Medicine of USC, and Winston B. Crisp, Vice President for Student Affairs Dear USC International Students,…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/05/14/5-13-fall-update-for-incoming-students/">5/13 – Fall Update for Incoming Students</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             May 13, 2021 Welcome New Trojans! Congratulations on your admission and enrollment at USC. We are excited that you have chosen to continue your education at USC and look forward to formally welcoming all of you into the Trojan Family…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/05/06/5-6-health-advisory-and-advancing-into-the-yellow-tier/">5/6 – Health Advisory and Advancing into the Yellow Tier</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             May 6, 2021 TO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USC Faculty and University Staff FR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sarah Van Orman, MD, MMM, Chief Health Officer, USC Student Health &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Division Chief of College Health, Keck School of Medicine of USC &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Deona Willes, MPH, CLS, Executive…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/keck/">Keck</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/05/03/5-3-important-dates-continuity-of-care-for-summer-2021/">5/3 – Important Dates — Continuity of Care for Summer 2021</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             May 3, 2021 TO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USC Students FR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USC Student Health RE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Important Dates — Continuity of Care for Summer 2021 As we are approaching the end of the spring semester, we remind all students that the&nbsp;Spring Student Health Fee coverage…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/04/30/4-29-updated-access-protocols-for-upc/">4/29 – Updated access protocols for UPC</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             April 29, 2021 Fellow Trojans, Beginning Monday, May 3, those of you accessing our University Park Campus will notice a number of changes. The perimeter access controls the university put in place at the outset of the pandemic are being…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/04/27/4-27-vaccination-and-testing-update/">4/27 – Vaccination and Testing Update</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             April 27, 2021 Dear Trojans, I’m proud that our community is leading the way in vaccination efforts in Los Angeles. As of this week, USC has directly administered more than 67,000 COVID-19 vaccination doses to our patients, faculty, staff, and…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/employees/">Employees</a><a class="category-single" href="https://we-are.usc.edu/category/health/">Health</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a>
+            </div></li>
+           <li><a class="wp-block-latest-posts__post-title" href="https://we-are.usc.edu/2021/04/26/4-26-introducing-emily-roxworthy-as-dean-of-the-usc-school-of-dramatic-arts/">4/26 – Introducing Emily Roxworthy as Dean of the USC School of Dramatic Arts</a>
+            <div class="wp-block-latest-posts__post-excerpt">
+             April 26, 2021 On behalf of President Folt, I am very pleased to announce that Dr. Emily Roxworthy will be joining our community as dean of the USC School of Dramatic Arts, effective July 1, 2021. Dr. Roxworthy comes to…
+            </div>
+            <div class="categories">
+             <a class="category-single" href="https://we-are.usc.edu/category/faculty/">Faculty</a><a class="category-single" href="https://we-are.usc.edu/category/latest/">Latest</a><a class="category-single" href="https://we-are.usc.edu/category/provost/">Provost</a><a class="category-single" href="https://we-are.usc.edu/category/students/">Students</a>
+            </div></li>
+          </ul>
+         </div>
+        </div>
+        <div style="height:48px" aria-hidden="true" class="wp-block-spacer"></div>
+       </div><!-- .entry-content -->
+       <footer class="entry-footer">
+       </footer><!-- .entry-footer -->
+      </article><!-- #post-## -->
+     </main><!-- #main -->
+    </div><!-- #primary -->
+   </div><!-- .site-content -->
+   <footer id="colophon" class="site-footer " role="contentinfo">
+    <div class="site-footer-wrapper">
+     <div class="site-footer-columns site-info columns-2">
+      <div class="footer-column">
+       <aside id="text-3" class="widget widget_text"> 
+        <div class="textwidget">
+         <p>USC is committed to supporting the health, safety and well-being of our community.</p>
+         <ul>
+          <li>COVID-19 hotline: <a href="tel:1-213-740-6291">213-740-6291</a></li>
+          <li>Email: <a href="mailto:covid19@usc.edu">covid19@usc.edu</a></li>
+          <li>COVID-19 Resource Center: <a href="https://coronavirus.usc.edu/">coronavirus.usc.edu</a></li>
+         </ul>
+        </div>
+       </aside>
+      </div>
+      <div class="footer-column-2">
+       <aside id="text-4" class="widget widget_text"> 
+        <div class="textwidget"></div>
+       </aside>
+      </div>
+     </div> 
+    </div>
+    <div class="site-footer-strip-wrapper">
+     <div class="site-footer-strip">
+      <div class="site-footer-strip-left">
+       <div class="site-footer-credits">
+        <span class="theme-credit">University of Southern California</span><span class="site-credit">Content managed by <a class="site-credit-link" href="mailto:ucomm@usc.edu">USC Communications</a></span>
+       </div>
+       <div class="site-footer-strip-left-widgets">
+        <aside id="nav_menu-4" class="widget widget_nav_menu">
+         <div class="menu-site-footer-strip-container">
+          <ul id="menu-site-footer-strip" class="menu">
+           <li id="menu-item-30" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-30"><a href="http://usc.edu/privacy-notice">Privacy Notice</a></li>
+           <li id="menu-item-6404" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6404"><a href="https://eeotix.usc.edu/notice-of-non-discrimination/">Notice of Non-Discrimination</a></li>
+          </ul>
+         </div>
+        </aside>
+       </div>
+      </div>
+      <div class="site-footer-strip-right"></div>
+     </div>
+    </div> 
+   </footer><!-- .site-footer --><a class="notification-bar" href="https://we-are.usc.edu/phases-and-guidelines/phases">
+    <div class="notification">
+     The university is currently in Phase Five of returning to campus, based on current public health guidelines. Click to learn more.
+    </div></a>
+   <style>.wp-container-1 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-1 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-1 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-2 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-2 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-2 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <style>.wp-container-3 > .alignleft { float: left; margin-inline-start: 0; margin-inline-end: 2em; }.wp-container-3 > .alignright { float: right; margin-inline-start: 2em; margin-inline-end: 0; }.wp-container-3 > .aligncenter { margin-left: auto !important; margin-right: auto !important; }</style>
+   <link rel="stylesheet" id="usc-display-new-badge-style-css" href="https://we-are.usc.edu/wp-content/plugins/usc-display-new-badge/public/css/usc-display-new-badge.css?ver=1.0.0" type="text/css" media="all">
+   <link rel="stylesheet" id="usc-notification-bar-style-css" href="https://we-are.usc.edu/wp-content/plugins/usc-notification-bar/public/css/usc-notification-bar.css?ver=1.0" type="text/css" media="all">
+   <script type="text/javascript" src="https://we-are.usc.edu/wp-content/themes/usc-gateway-2018/assets/js/vendor/modernizr.js?ver=1.0.28" id="modernizr-js"></script>
+   <script type="text/javascript" src="https://we-are.usc.edu/wp-content/themes/usc-gateway-2018/assets/js/lib/usc-gateway-2018.min.js?ver=1.0.28" id="theme-scripts-js"></script>
+   <script async defer type="text/javascript" src="https://we-are.usc.edu/wp-content/plugins/usc-notification-bar/public/js/usc-notification-bar.js?ver=1.0" id="usc-notification-bar-scripts-js"></script>
+  </div><!-- .site -->
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-6f137388fcf878e2d61","applicationID":"884951671","transactionName":"ZwRSZxFTD0dVVhFeX15OcVAXWw5aG0EVWx1WFFxfTkUIUEBd","queueTime":0,"applicationTime":558,"atts":"S0NREVlJHEk=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+ </body>
+</html>

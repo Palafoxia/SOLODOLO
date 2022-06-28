@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Connect GRL and Canvas course</title>
+  <meta content="Connect GRL and Canvas course" name="description">
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="v0RszE+uArKIRq7dMJ/WVA7g14fnyTShqO5G+g+MbNLbyMeV3zvUx4+u8fA8Bj+tzLd82ASiuWpwXAF6AOAhvg==">
+  <link rel="stylesheet" media="screen" href="//assets.screensteps.com/assets/themes/fonts/droid-sans-364ed37cb1e97162731b415aa927f66498ed63a95cbeba694ddee60dd372c14f.css">
+  <link rel="stylesheet" media="screen" href="//assets.screensteps.com/assets/themes/fonts/helvetica-8681273d10a12b4f5502c278efb511b207828996eb6fb7d99fa7abb4cea05b50.css">
+  <link rel="stylesheet" href="//assets.screensteps.com/assets/fontawesome-9b64f06a98b9479593e125f4c10f2698fa8bb635ef3cf3616282a9e41d175c16.css">
+  <link rel="stylesheet" href="//assets.screensteps.com/assets/themes/beta-81e062362d5992fe4be88d9a87c19324121ab8af770754d04248da99e5a2d8a9.css">
+  <style type="text/css" media="all">
+  /* headings */
+  h1,
+  h1.toc-heading,
+  h2.toc-heading {
+    color: #;
+  }
+
+  h2.toc-subheading,
+  h3.toc-subheading,
+  h4.toc-subheading,
+  h5.toc-subheading,
+  h6.toc-subheading {
+    color: #070807;
+  }
+
+  .screensteps-training-site [data-count-bubble]::after {
+    background-color: #070807;
+  }
+
+  .screensteps-article-content h2 {
+    color: #;
+  }
+
+  .screensteps-article-content h3,
+  .screensteps-article-content h4,
+  .screensteps-article-content h5,
+  .screensteps-article-content h6 {
+    color: #;
+  }
+
+  .screensteps-sidebar h3 {
+    color: #1a191a;
+  }
+
+  .sidebar-subheading {
+    color: #4a4848;
+  }
+
+  .comments-heading {
+    color: #;
+  }
+
+  /* base/_buttons */
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"],
+  button,
+  .screensteps-bg-action-color,
+  .screensteps-courses .screensteps-progress-bar::before,
+  .screensteps-courses .screensteps-courses-menu a:hover,
+  .screensteps-courses .screensteps-courses-menu .step-active a::before,
+  .screensteps-training-site .asset-item__progress-bar {
+    background-color: #004071;
+  }
+
+  input[type="button"]:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover,
+  button:hover,
+  button.screensteps-bg-action-color:hover,
+  a.screensteps-bg-action-color:hover {
+    background-color: #004071;
+  }
+
+  /* base/_forms */
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="text"]:focus,
+  input[type="url"]:focus,
+  input[type="color"]:focus,
+  input[type="date"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="week"]:focus,
+  select[multiple=multiple]:focus,
+  textarea:focus {
+    border-color: #004071;
+  }
+
+
+  .screensteps-training-site .screensteps-main-search .search-field:not(:placeholder-shown) {
+    box-shadow: 0 0 0 2px #ffffff;
+  }
+
+  /* base/_typography */
+  body {
+    background-color: #ffffff;
+    color: #;
+  }
+
+  a {
+    color: #004071;
+  }
+
+
+
+  /* _screensteps-container */
+  .screensteps-container a:visited {
+    color: #004071;
+  }
+ .screensteps-container a:active,
+ .screensteps-container a:focus,
+ .screensteps-container a:hover {
+    color: #004071;
+  }
+
+  /* _screensteps-manual-contents */
+  .screensteps-manual-contents h2 a {
+    color: #004071;
+  }
+  /* _screensteps-foldable-sections */
+  .screensteps-main-content .embedded-chapter-article > * {
+    color: #004071;
+  }
+
+  /* screensteps-header */
+  .screensteps-branding h1,
+  .screensteps-header .screensteps-branding a,
+  .screensteps-training-site .screensteps-profile-subnav-toggle {
+    color: #004071;
+  }
+
+  .screensteps-header .screensteps-branding a:hover {
+    color: #004071;
+  }
+
+  /* meta data text */
+  .chapter-count,
+  .screensteps-comment-count,
+  .screensteps-lesson-details,
+  .nested-chapter-lessons .here a:after,
+  .screensteps-single-comment time {
+    color: #;
+  }
+
+  /* course tiles */
+  .screensteps-training-site .screensteps-group .asset-list--course a {
+    background-color: #;
+    color: #;
+  }
+
+  .screensteps-training-site .asset-item__progress-bar {
+    background-color: #;
+  }
+
+  .screensteps-training-site .screensteps-group .asset-list--course a:hover {
+    background-color: #;
+  }
+</style>
+  <link rel="icon">
+  <script src="//assets.screensteps.com/assets/application-10a945f50e929cc1e58184ca87f005bd032ee7fe9b1c7368b855e66a5234fab0.js"></script>
+  <script src="//assets.screensteps.com/assets/theme-cae9a1f80906ea92fdc68e13e7545d814402a7aeafd20bbca6accffffa49bbea.js"></script><!--[if lt IE 9]>
+<script src="//assets.screensteps.com/assets/vendor/html5shiv.min-6169624d10bc8403d59c9ace86ab0189063017bfb2139ee074a199cbbdc176b2.js"></script>
+<![endif]-->
+  <style media="">/* ScreenSupport Adjustments */
+.asset-list .divider h4 {
+  color: #4d4d4d;
+}
+
+.screensteps-modal .screensteps-modal__close,.screensteps-modal .screensteps-modal__close:visited {
+    color: #0e4d6f;
+  background-color:#ffffff;
+}
+/* 10.5.2018 trying to fix color contrast for View in Admin Portal link */
+.screensteps-admin-navigation {
+   background-color: #0B579D;
+}
+.screensteps-admin-navigation a:hover {
+   color: #fff;
+}
+
+
+/* trying to fix the color contrast */
+.screensteps-modal {
+color: #0e4d6f;
+background-color:#ffffff;
+}
+
+
+
+/* adjust the wrapper text color */ 
+.screensteps-article .screensteps-textblock.screensteps-wrapper--alert {
+  color: #8d0c0c;
+}
+.screensteps-article .screensteps-textblock.screensteps-wrapper--introduction {
+  color: #0e4d6f;
+}
+
+.screensteps-article .screensteps-textblock.screensteps-wrapper--tip {
+  color: #32531e;
+}
+
+.screensteps-article .screensteps-textblock.screensteps-wrapper--info {
+ color: #0e4d6f;
+}
+
+.screensteps-article .screensteps-textblock.screensteps-wrapper--warning {
+  color: #6a4300;
+}
+
+/* adjust the body text */
+.screensteps-article { color: #4d4d4d; }
+
+body { color: #4d4d4d; }
+
+/* link text color */
+.screensteps-article a {
+ color: #0e4d6f;
+
+}
+
+.screensteps-article a:visited {
+ color: #0e4d6f;
+}
+
+/* background and border */
+.screensteps-article .screensteps-steps .image {
+ background-color: transparent;
+ border: none;
+}
+
+/* attached file color */
+.screensteps-article .screensteps-wrapper--attachment a
+{ color:#0e4d6f;  
+}
+
+/* adjust color of h3 */
+.screensteps-description h3, .screensteps-steps h3
+{color:#4d4d4d;
+}
+
+/* adjust color of h2 */
+.screensteps-description h2, .screensteps-steps h2
+{color:#4d4d4d;
+}
+
+/* to adjust the color of the text in the search bar*/
+.screensteps-main-search .input-prompt {
+  color: #0057a8;
+}
+
+/* to adjust the color of the number of articles in each chapter */
+.chapter-count {
+   color: #004071;
+}
+
+/* to allow videos from our server to play in screensteps*/
+.video-responsive{ overflow:hidden; padding-bottom:56.25%; position:relative; height:0; } .video-responsive video { left:0; top:0; height: auto; width: 100%; position:absolute; }
+
+</style>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71326781-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <noscript>
+    Javascript should be enabled on this page in order to run Google Analytics. 
+  </noscript>
+  <script>
+//<![CDATA[
+    !function(name,path,ctx){
+      var latest,prev=name!=='Keen'&&window.Keen?window.Keen:false;ctx[name]=ctx[name]||{ready:function(fn){var h=document.getElementsByTagName('head')[0],s=document.createElement('script'),w=window,loaded;s.onload=s.onerror=s.onreadystatechange=function(){if((s.readyState&&!(/^c|loade/.test(s.readyState)))||loaded){return}s.onload=s.onreadystatechange=null;loaded=1;latest=w.Keen;if(prev){w.Keen=prev}else{try{delete w.Keen}catch(e){w.Keen=void 0}}ctx[name]=latest;ctx[name].ready(fn)};s.async=1;s.src=path;h.parentNode.insertBefore(s,h)}}
+    }('KeenAsync','https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.1.3.min.js',this);
+
+    KeenAsync.ready(function(){
+      // Configure a client instance
+      var client = new KeenAsync({
+        projectId: '591daac30935ce40a59fb7ab',
+        writeKey: 'C89A9A1A8DB4C585F119F8F81ABB9621940DBBADDA5C72C2B87B1BD3464890D23FD250B0FFA4A1056DCB210616545B7B6C9DDF2054167B5219A3DD81E8DF90A321BE0C1B35BA19F2E3E85730FB96C1F93F8C66D8CD449FE6EFE43D98453632D1'
+      });
+
+      // Record an event
+      client.recordEvent('pageviews', {
+        title: document.title,
+        ip_address: "${keen.ip}",
+        user_agent: "${keen.user_agent}",
+        user_id: null,
+        user_public_id: null,
+        account_id: "7061f6cd01",
+        account_billing_type: "admin_users",
+        site_id: 22950,
+        manual_id: 106336,
+        article_id: 1449854,
+        article_type_id: 0,
+        course_id: null,
+        source_id: 1
+      });
+    });
+
+//]]>
+</script>
+ </head>
+ <body class="helvetica-body droid-sans-header site-article  no-focus-outline" data-base-path="/" data-content-template="2015" data-generating-pdf-text="Creating PDF...">
+  <header class="screensteps-header" role="banner"><a class="skip-navigation--link" href="#screensteps-main-content" id="skip-navigation"> Skip to main content </a>
+   <div class="screensteps-branding">
+    <div class="logo-wrapper"><span class="company-logo"> <a href="/" title="Canvas Resource Center"> <img alt="Cal State Fullerton" class="screensteps-site-logo" src="https://media.screensteps.com/logos/9409/OET_Logo-05.jpg"> </a> </span>
+     <h1 class="company-name">California State University Fullerton</h1>
+    </div>
+   </div>
+  </header>
+  <div class="screensteps-container-wrapper">
+   <main class="screensteps-container">
+    <div class="screensteps-site-title-wrapper">
+     <h1 class="screensteps-site-title toc-heading">Canvas Resource Center</h1>
+     <div class="screensteps-site-description">
+      <p>Welcome to the Canvas Resource Center where you may find self-help guides on a wide range of topics regarding teaching and learning using Canvas. Begin by typing in a keyword and clicking on Search.</p>
+     </div>
+    </div>
+    <div class="screensteps-main-search" role="search">
+     <form id="screensteps-search-form" action="/searches" accept-charset="UTF-8" method="get">
+      <div class="screensteps-search-form"><label for="text">Search term</label>
+       <input type="text" name="text" id="text" class="search-field" title="Enter a keyword or topic to search">
+       <input type="submit" name="commit" value="Search" class="search-submit" data-disable-with="Search">
+      </div>
+     </form>
+    </div>
+    <div class="screensteps-content-wrapper manual-lesson lesson left-sidebar">
+     <div class="screensteps-main-content" role="main">
+      <header class="screensteps-title">
+       <div id="screensteps-breadcrumb" aria-label="breadcrumb" aria-level="3">
+        <a href="/">Canvas Resource Center</a><span class="manual-group-breadcrumb"><a href="/#ADD-ONSForCanvas">ADD-ONS FOR CANVAS</a></span><a href="/m/PublisherContentCanvas">Publisher Content in Canvas</a> <span class="chapter-breadcrumb"><a href="/m/PublisherContentCanvas/c/366303">Great River Learning (GRL)</a></span>How do I connect GRL, so that it reports grades to my gradebook in Canvas?
+       </div>
+      </header>
+      <div id="screensteps-main-content">
+       <div class="screensteps-article" data-screensteps-article>
+        <div class="screensteps-article-content " data-article-id="1449854" data-workflow="false">
+         <h1 class="lesson">How do I connect GRL, so that it reports grades to my gradebook in Canvas?</h1>
+         <div class="screensteps-steps" data-role="steps-container">
+          <div class="instructions screensteps-textblock screensteps-wrapper--introduction screensteps-wrapper">
+           <p>You will learn how to connect your course Assignments with quizzes in Great River Learning (GRL).</p>
+           <p>The GRL content website allows you to have your students read and take quizzes. Those quizzes can then report back to your gradebook in Canvas.</p>
+          </div>
+          <div class="instructions screensteps-textblock screensteps-wrapper--tip screensteps-wrapper">
+           <p><strong>Follow these steps</strong> after you have communicated with the GRL representative, and the online book has been set up for your course in GRLcontent.com. The GRL representative must be the one to connect your Canvas course with the course in GRLcontent.</p>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="e63f9798-04f8-4529-8a75-49874e6651eb" id="create-a-new-assignment-in-your-course-in-canvas"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#create-a-new-assignment-in-your-course-in-canvas">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#create-a-new-assignment-in-your-course-in-canvas" class="embedded-chapter-article" id="screensteps-article-e63f9798-04f8-4529-8a75-49874e6651eb" data-lesson-id="e63f9798-04f8-4529-8a75-49874e6651eb"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> Create a new Assignment in your course in Canvas. </a>
+            <div class="nested-article" data-lesson-id="e63f9798-04f8-4529-8a75-49874e6651eb">
+             <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+              <p>Assignments allow you to connect to publisher online books (with quizzes, tests, etc.) and other External Tool activities like H5P, VoiceThread, SoftChalk, Flipgrid, GoReact, etc., where you can grade those activities and have the points transfer to your gradebook.</p>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="673fc7e7-2528-4757-9578-588aadfe87fe" id="">
+              <h3 id="click-on-sign-in-the-module-where-you-want-to-add-the-assignment"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 1. Click on + sign in the Module where you want to add the Assignment." href="#click-on-sign-in-the-module-where-you-want-to-add-the-assignment">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 1. Click on + sign in the Module where you want to add the Assignment. </h3>
+              <div class="image clearfix">
+               <img alt="+ sign to add content" data-srcset="https://media.screensteps.com/image_assets/assets/004/683/581/original/9c2f022e-0ebb-414c-bf32-66bea2fb8175.png 809w" data-src="https://media.screensteps.com/image_assets/assets/004/683/581/original/9c2f022e-0ebb-414c-bf32-66bea2fb8175.png" class="lazyload lazypreload" style="max-width:809px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/683/581/original/9c2f022e-0ebb-414c-bf32-66bea2fb8175.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="e9d7236f-ce93-45cc-8875-d1b7736ee635" id="">
+              <h3 id="select-assignment-from-the-dropdown-menu"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 2. Select Assignment from the dropdown menu." href="#select-assignment-from-the-dropdown-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 2. Select Assignment from the dropdown menu. </h3>
+              <div class="image clearfix">
+               <img alt="Assignment is selected" data-srcset="https://media.screensteps.com/image_assets/assets/004/683/583/original/f82920c1-9406-451e-abcf-cb7477fe0c68.png 729w" data-src="https://media.screensteps.com/image_assets/assets/004/683/583/original/f82920c1-9406-451e-abcf-cb7477fe0c68.png" class="lazyload lazypreload" style="max-width:729px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/683/583/original/f82920c1-9406-451e-abcf-cb7477fe0c68.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="7f8c12fe-881b-4b41-9224-e8a0e617bb90" id="">
+              <h3 id="click-on-create-assignment"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 3. Click on Create Assignment." href="#click-on-create-assignment">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 3. Click on Create Assignment. </h3>
+              <div class="image clearfix">
+               <img alt="Create Assignment" data-srcset="https://media.screensteps.com/image_assets/assets/004/683/585/original/dda62a24-6493-4c49-a6fb-2393a737e1f8.png 570w" data-src="https://media.screensteps.com/image_assets/assets/004/683/585/original/dda62a24-6493-4c49-a6fb-2393a737e1f8.png" class="lazyload lazypreload" style="max-width:570px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/683/585/original/dda62a24-6493-4c49-a6fb-2393a737e1f8.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="96b379bc-702e-467c-b3c4-f89878635144" id="">
+              <h3 id="type-a-name-for-the-assignment"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 4. Type a name for the assignment." href="#type-a-name-for-the-assignment">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 4. Type a name for the assignment. </h3>
+              <div class="image clearfix">
+               <img alt="Assigment Name field" data-srcset="https://media.screensteps.com/image_assets/assets/004/719/211/original/be84e870-28ff-46ef-90e3-5025db18a7a3.png 800w" data-src="https://media.screensteps.com/image_assets/assets/004/719/211/original/be84e870-28ff-46ef-90e3-5025db18a7a3.png" class="lazyload lazypreload" style="max-width:800px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/719/211/original/be84e870-28ff-46ef-90e3-5025db18a7a3.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="88215709-23ad-4c9c-8a1a-a238ce232767" id="">
+              <h3 id="click-on-add-item"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 5. Click on Add Item." href="#click-on-add-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 5. Click on Add Item. </h3>
+              <div class="image clearfix">
+               <img alt="Add Item button" data-srcset="https://media.screensteps.com/image_assets/assets/004/719/213/original/2fd3f6e7-fd56-419b-84f1-2896104ae2f1.png 800w" data-src="https://media.screensteps.com/image_assets/assets/004/719/213/original/2fd3f6e7-fd56-419b-84f1-2896104ae2f1.png" class="lazyload lazypreload" style="max-width:800px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/719/213/original/2fd3f6e7-fd56-419b-84f1-2896104ae2f1.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="02e1d07d-7752-44cc-af97-c1121aa2637f" id="">
+              <h3 id="click-on-the-link-to-the-assignment"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 6. Click on the link to the Assignment." href="#click-on-the-link-to-the-assignment">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 6. Click on the link to the Assignment. </h3>
+              <div class="image clearfix">
+               <img alt="Assignment link selected" data-srcset="https://media.screensteps.com/image_assets/assets/004/719/215/original/7b6aa061-e41b-431d-8fc5-70edfa19e702.png 423w" data-src="https://media.screensteps.com/image_assets/assets/004/719/215/original/7b6aa061-e41b-431d-8fc5-70edfa19e702.png" class="lazyload lazypreload" style="max-width:423px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/719/215/original/7b6aa061-e41b-431d-8fc5-70edfa19e702.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="27bcb2f2-55bd-4f4b-9182-db028d53865f" id="">
+              <h3 id="click-on-edit"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 7. Click on Edit." href="#click-on-edit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 7. Click on Edit. </h3>
+              <div class="image clearfix">
+               <img alt="Edit button" data-srcset="https://media.screensteps.com/image_assets/assets/004/719/217/original/83b99893-d96c-49d7-8c16-a5ded6202655.png 758w" data-src="https://media.screensteps.com/image_assets/assets/004/719/217/original/83b99893-d96c-49d7-8c16-a5ded6202655.png" class="lazyload lazypreload" style="max-width:758px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/719/217/original/83b99893-d96c-49d7-8c16-a5ded6202655.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="b8cbdb5b-ad47-4c38-8566-4646ccd46dac" id="">
+              <h3 id="type-in-any-desired-instructions"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 8. Type in any desired instructions." href="#type-in-any-desired-instructions">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 8. Type in any desired instructions. </h3>
+              <div class="image clearfix">
+               <img alt="Rich Content Editor" data-srcset="https://media.screensteps.com/image_assets/assets/004/683/833/original/74c65b7f-3df4-48f4-bbdd-76385bda0dcd.png 768w" data-src="https://media.screensteps.com/image_assets/assets/004/683/833/original/74c65b7f-3df4-48f4-bbdd-76385bda0dcd.png" class="lazyload lazypreload" style="max-width:768px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/683/833/original/74c65b7f-3df4-48f4-bbdd-76385bda0dcd.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="bed1836b-1ced-47d8-b801-d913e4787871" id="">
+              <h3 id="type-the-number-of-points-for-this-assignment"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 9. Type the number of Points for this Assignment." href="#type-the-number-of-points-for-this-assignment">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 9. Type the number of Points for this Assignment. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--tip screensteps-wrapper">
+               <p>Tip: The score sent over from GRL to the course gradebook will be adapted by Canvas to fit the number of points you put in this assignment.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Points field" data-srcset="https://media.screensteps.com/image_assets/assets/004/683/595/original/7bec5e1c-e0d5-4ae6-92c4-00644e121df0.png 593w" data-src="https://media.screensteps.com/image_assets/assets/004/683/595/original/7bec5e1c-e0d5-4ae6-92c4-00644e121df0.png" class="lazyload lazypreload" style="max-width:593px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/683/595/original/7bec5e1c-e0d5-4ae6-92c4-00644e121df0.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="8703b338-7689-41e4-b4d3-cf630764074e" id="">
+              <h3 id="select-the-appropriate-assignment-group"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 10. Select the appropriate Assignment Group." href="#select-the-appropriate-assignment-group">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 10. Select the appropriate Assignment Group. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--tip screensteps-wrapper">
+               <p>You may also create a new Assignment Group if desired.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Assignments selected" data-srcset="https://media.screensteps.com/image_assets/assets/004/683/597/original/a0865b60-caab-43b4-84e7-c7c2a967c832.png 572w" data-src="https://media.screensteps.com/image_assets/assets/004/683/597/original/a0865b60-caab-43b4-84e7-c7c2a967c832.png" class="lazyload lazypreload" style="max-width:572px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/683/597/original/a0865b60-caab-43b4-84e7-c7c2a967c832.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="a2fcad87-9735-4e61-852d-f0dd7bdc2b48" id="">
+              <h3 id="decide-how-you-want-to-display-the-grade-in-the-gradebook"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 11. Decide how you want to display the grade in the gradebook." href="#decide-how-you-want-to-display-the-grade-in-the-gradebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 11. Decide how you want to display the grade in the gradebook. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--warning screensteps-wrapper">
+               <p>If you select '<strong>Not Graded</strong>' then you will not have a SpeedGrader link nor a column in the gradebook for this Assignment.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Display Grade as dropdown menu" data-srcset="https://media.screensteps.com/image_assets/assets/004/683/835/original/bf1aed4e-a93b-47ee-92d8-a4ab67dcfc99.png 580w" data-src="https://media.screensteps.com/image_assets/assets/004/683/835/original/bf1aed4e-a93b-47ee-92d8-a4ab67dcfc99.png" class="lazyload lazypreload" style="max-width:580px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/683/835/original/bf1aed4e-a93b-47ee-92d8-a4ab67dcfc99.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="a5e7db7b-7f44-4631-a3e2-b3da1da4db10" id="">
+              <h3 id="decide-whether-this-assignment-should-be-included-in-the-course-total"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 12. Decide whether this Assignment should be included in the course total." href="#decide-whether-this-assignment-should-be-included-in-the-course-total">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 12. Decide whether this Assignment should be included in the course total. </h3>
+              <div class="image clearfix">
+               <img alt="tick box for counting toward final grade" data-srcset="https://media.screensteps.com/image_assets/assets/004/683/601/original/bb521ead-08e6-4b46-ad6a-b0f946d2a40d.png 569w" data-src="https://media.screensteps.com/image_assets/assets/004/683/601/original/bb521ead-08e6-4b46-ad6a-b0f946d2a40d.png" class="lazyload lazypreload" style="max-width:569px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/683/601/original/bb521ead-08e6-4b46-ad6a-b0f946d2a40d.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="9aeae38c-3692-4d56-bd62-7e77fce39b0d" id="">
+              <h3 id="external-tool"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 13. Select External Tool." href="#external-tool">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 13. Select External Tool. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+               <p>This submission type allows you to link to GRL. If you do not select External Tool, then GRL cannot send grades to your course.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="External Tool selected" data-srcset="https://media.screensteps.com/image_assets/assets/004/683/611/original/0f18ab1f-4448-425b-bfce-9492d0cabc59.png 558w" data-src="https://media.screensteps.com/image_assets/assets/004/683/611/original/0f18ab1f-4448-425b-bfce-9492d0cabc59.png" class="lazyload lazypreload" style="max-width:558px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/683/611/original/0f18ab1f-4448-425b-bfce-9492d0cabc59.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="950dee5f-f80e-4d4e-99e1-aaebc3f86336" id="">
+              <h3 id="click-on-find"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 14. Click on Find." href="#click-on-find">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 14. Click on Find. </h3>
+              <div class="image clearfix">
+               <img alt="Find button" data-srcset="https://media.screensteps.com/image_assets/assets/004/684/104/original/b8650bb0-2743-4628-9a60-f0bb91389de6.png 620w" data-src="https://media.screensteps.com/image_assets/assets/004/684/104/original/b8650bb0-2743-4628-9a60-f0bb91389de6.png" class="lazyload lazypreload" style="max-width:620px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/684/104/original/b8650bb0-2743-4628-9a60-f0bb91389de6.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="ca7820cd-e25d-4d1c-8e0e-bb16b349135b" id="">
+              <h3 id="scroll-down-to-grlcontent"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 15. Scroll down to GRLCONTENT." href="#scroll-down-to-grlcontent">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 15. Scroll down to GRLCONTENT. </h3>
+              <div class="image clearfix">
+               <img alt="GRLCONTENT selected" data-srcset="https://media.screensteps.com/image_assets/assets/004/684/106/original/724fd57e-f61f-474a-a88f-449b002a784f.png 434w" data-src="https://media.screensteps.com/image_assets/assets/004/684/106/original/724fd57e-f61f-474a-a88f-449b002a784f.png" class="lazyload lazypreload" style="max-width:434px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/684/106/original/724fd57e-f61f-474a-a88f-449b002a784f.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="a75883b3-5919-41a9-9256-7a70054e59bc" id="">
+              <h3 id="click-on-select"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 16. Click on Select." href="#click-on-select">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 16. Click on Select. </h3>
+              <div class="image clearfix">
+               <img alt="Select button" data-srcset="https://media.screensteps.com/image_assets/assets/004/684/108/original/26de7adb-312a-419e-9849-c0ccdae281ce.png 434w" data-src="https://media.screensteps.com/image_assets/assets/004/684/108/original/26de7adb-312a-419e-9849-c0ccdae281ce.png" class="lazyload lazypreload" style="max-width:434px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/684/108/original/26de7adb-312a-419e-9849-c0ccdae281ce.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="1fcb16bd-1f68-4d89-bda7-95788d3928c2" id="">
+              <h3 id="decide-which-settings-for-the-assign-to-section"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 17. Decide which settings for the Assign to section." href="#decide-which-settings-for-the-assign-to-section">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 17. Decide which settings for the Assign to section. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+               <p>It is recommended to use the due dates and time limits in GRL when deciding when students should take their quizzes and how much time they can have rather than setting due and availability dates in Canvas.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Assign to section" data-srcset="https://media.screensteps.com/image_assets/assets/004/683/617/original/9591b3d7-d2aa-46b0-95c4-d9540f6ee2de.png 546w" data-src="https://media.screensteps.com/image_assets/assets/004/683/617/original/9591b3d7-d2aa-46b0-95c4-d9540f6ee2de.png" class="lazyload lazypreload" style="max-width:546px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/683/617/original/9591b3d7-d2aa-46b0-95c4-d9540f6ee2de.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="802b07bc-113e-4b28-860b-4635465d0ca8" id="">
+              <h3 id="save-amp-publish"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 18. Save &amp;amp; Publish." href="#save-amp-publish">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 18. Save &amp; Publish. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--warning screensteps-wrapper">
+               <p>In order to properly connect and stay connected to the GRL quiz that we are going to use, you must <strong>Publish</strong> the Assignment.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Save &amp; Publish button" data-srcset="https://media.screensteps.com/image_assets/assets/004/683/619/original/5753d98f-6915-4454-842c-759c1018639b.png 366w" data-src="https://media.screensteps.com/image_assets/assets/004/683/619/original/5753d98f-6915-4454-842c-759c1018639b.png" class="lazyload lazypreload" style="max-width:366px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/683/619/original/5753d98f-6915-4454-842c-759c1018639b.png">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="child-wrapper">
+           <div class="step screensteps-section step-depth-1 foldable-step" data-step-uuid="fc29b361-a5a7-4438-bf61-54bb3a2abf0d" id="connect-your-assignment-to-a-quiz-in-grl"><a class="screensteps-anchor" aria-hidden="true" tabindex="-1" href="#connect-your-assignment-to-a-quiz-in-grl">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a><a href="#connect-your-assignment-to-a-quiz-in-grl" class="embedded-chapter-article" id="screensteps-article-fc29b361-a5a7-4438-bf61-54bb3a2abf0d" data-lesson-id="fc29b361-a5a7-4438-bf61-54bb3a2abf0d"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="10.001" height="6" viewbox="0 0 10.001 6" class="icon-down-chevron" role="img" aria-label="Expand or collapse content">
+              <path d="M9.852 1.537c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.465 1.582.143c-.2-.19-.52-.19-.717 0L.148.826c-.197.188-.197.494 0 .684l4.508 4.35c.2.188.52.188.717 0l4.48-4.323z" fill="currentColor"></path>
+             </svg> Connect your Assignment to a Quiz in GRL. </a>
+            <div class="nested-article" data-lesson-id="fc29b361-a5a7-4438-bf61-54bb3a2abf0d">
+             <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+              <p>Now, it is time to connect your Assignment with the GRL Chapter 1 quiz.</p>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="914f186f-7cb7-4541-bb9f-14870c617f6b" id="">
+              <h3 id="ww"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 1. GRL will open up within your Assignment." href="#ww">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 1. GRL will open up within your Assignment. </h3>
+              <div class="image clearfix">
+               <img alt="GRL displays within Assignment" data-srcset="https://media.screensteps.com/image_assets/assets/004/716/265/original/d845d623-b78c-486a-9bba-68d2b938d31c.png 809w" data-src="https://media.screensteps.com/image_assets/assets/004/716/265/original/d845d623-b78c-486a-9bba-68d2b938d31c.png" class="lazyload lazypreload" style="max-width:809px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/716/265/original/d845d623-b78c-486a-9bba-68d2b938d31c.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="8bc9ef7c-d4d0-4145-b4e3-4e781960f280" id="">
+              <h3 id="click-on-the-components-tab"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 2. Click on the Components tab." href="#click-on-the-components-tab">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 2. Click on the Components tab. </h3>
+              <div class="image clearfix">
+               <img alt="Components button" data-srcset="https://media.screensteps.com/image_assets/assets/004/716/267/original/6820fa49-005c-4c07-97c2-c5ae4076ff78.png 651w" data-src="https://media.screensteps.com/image_assets/assets/004/716/267/original/6820fa49-005c-4c07-97c2-c5ae4076ff78.png" class="lazyload lazypreload" style="max-width:651px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/716/267/original/6820fa49-005c-4c07-97c2-c5ae4076ff78.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="92317a41-98c6-4337-8648-4447777a5568" id="">
+              <h3 id="click-on-the-pencil-icon-of-the-gradebook-for-your-course"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 3. Click on the Pencil icon of the Gradebook for your course." href="#click-on-the-pencil-icon-of-the-gradebook-for-your-course">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 3. Click on the Pencil icon of the Gradebook for your course. </h3>
+              <div class="image clearfix">
+               <img alt="Pencil icon" data-srcset="https://media.screensteps.com/image_assets/assets/004/717/238/original/db1d7690-b724-4058-b187-17ca7b141d3e.png 694w" data-src="https://media.screensteps.com/image_assets/assets/004/717/238/original/db1d7690-b724-4058-b187-17ca7b141d3e.png" class="lazyload lazypreload" style="max-width:694px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/717/238/original/db1d7690-b724-4058-b187-17ca7b141d3e.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="ce985b05-a73a-4965-98f1-847c75f08bf7" id="">
+              <h3 id="click-on-pair-assignments"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 4. Click on Pair Assignments." href="#click-on-pair-assignments">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 4. Click on Pair Assignments. </h3>
+              <div class="image clearfix">
+               <img alt="Pair Assignments button" data-srcset="https://media.screensteps.com/image_assets/assets/004/717/240/original/30a2fc2c-cf64-4355-96a4-581f788c8bc8.png 531w" data-src="https://media.screensteps.com/image_assets/assets/004/717/240/original/30a2fc2c-cf64-4355-96a4-581f788c8bc8.png" class="lazyload lazypreload" style="max-width:531px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/717/240/original/30a2fc2c-cf64-4355-96a4-581f788c8bc8.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="f3b4f9ee-6efe-4690-8b8e-7299ce2acaf7" id="">
+              <h3 id="tick-the-boxes-for-the-assignments-you-want-to-link-to-your-course-in-canvas"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 5. Tick the boxes for the assignments you want to link to your course in Canvas." href="#tick-the-boxes-for-the-assignments-you-want-to-link-to-your-course-in-canvas">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 5. Tick the boxes for the assignments you want to link to your course in Canvas. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+               <p>In this sample course, we are only connecting Chapter quizzes 1 through 5 as shown below.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="Tick box for assignment" data-srcset="https://media.screensteps.com/image_assets/assets/004/717/242/original/2d272d02-79bb-4cfd-a448-110b2091b5e2.png 520w" data-src="https://media.screensteps.com/image_assets/assets/004/717/242/original/2d272d02-79bb-4cfd-a448-110b2091b5e2.png" class="lazyload lazypreload" style="max-width:520px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/717/242/original/2d272d02-79bb-4cfd-a448-110b2091b5e2.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="467742a6-3b48-452c-b4fb-c2ed46084cad" id="">
+              <h3 id="select-the-appropriate-assignment-named-in-canvas"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 6. Select the appropriate Assignment named in Canvas." href="#select-the-appropriate-assignment-named-in-canvas">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 6. Select the appropriate Assignment named in Canvas. </h3>
+              <div class="instructions screensteps-textblock screensteps-wrapper--info screensteps-wrapper">
+               <p>In this case, QUIZ 1 is the name of the Assignment in the course in Canvas.</p>
+              </div>
+              <div class="image clearfix">
+               <img alt="QUIZ 1 selected" data-srcset="https://media.screensteps.com/image_assets/assets/004/717/274/original/5173da46-3c83-42dd-ab13-b510d767af13.png 496w" data-src="https://media.screensteps.com/image_assets/assets/004/717/274/original/5173da46-3c83-42dd-ab13-b510d767af13.png" class="lazyload lazypreload" style="max-width:496px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/717/274/original/5173da46-3c83-42dd-ab13-b510d767af13.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="172317cd-ac42-4b3f-9219-2b07f02289b6" id="">
+              <h3 id="select-the-appropriate-assignment-name-for-the-remaining-chapter-quizzes"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 7. Select the appropriate Assignment name for the remaining chapter quizzes." href="#select-the-appropriate-assignment-name-for-the-remaining-chapter-quizzes">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 7. Select the appropriate Assignment name for the remaining chapter quizzes. </h3>
+              <div class="image clearfix">
+               <img alt="QUIZ 2 selected" data-srcset="https://media.screensteps.com/image_assets/assets/004/717/276/original/0492517e-3c85-4955-b1d2-2199027fe6df.png 498w" data-src="https://media.screensteps.com/image_assets/assets/004/717/276/original/0492517e-3c85-4955-b1d2-2199027fe6df.png" class="lazyload lazypreload" style="max-width:498px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/717/276/original/0492517e-3c85-4955-b1d2-2199027fe6df.png">
+              </div>
+             </div>
+             <div class="step step-depth-2 child-step" data-step-uuid="f61d19e4-9af3-4643-9ca8-ad910ffdccc1" id="">
+              <h3 id="click-on-submit"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for 8. Click on Submit." href="#click-on-submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+                 <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+                </svg> </a> 8. Click on Submit. </h3>
+              <div class="image clearfix">
+               <img alt="Submit button" data-srcset="https://media.screensteps.com/image_assets/assets/004/719/117/original/096ee135-8f7c-4d92-8657-6e9450851935.png 506w" data-src="https://media.screensteps.com/image_assets/assets/004/719/117/original/096ee135-8f7c-4d92-8657-6e9450851935.png" class="lazyload lazypreload" style="max-width:506px" data-sizes="auto" src="https://media.screensteps.com/image_assets/assets/004/719/117/original/096ee135-8f7c-4d92-8657-6e9450851935.png">
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="a626fe46-2912-44de-9d35-faee2603cd5c" id="">
+           <h2 id="related-guides"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for Related Guides" href="#related-guides">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> Related Guides </h2>
+           <div class="instructions screensteps-textblock ">
+            <p>Here is the Great River Learning company guide for instructors.</p>
+           </div>
+           <div class="screensteps-wrapper--attachment"><a class="fr-wrapper" href="https://media.screensteps.com/attachment_assets/assets/004/720/623/original/2-CANVAS_GRL_-_Instructor_Instructions_LTI_1..docx" target="_blank"> 
+             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="23" viewbox="0 0 16 20" role="img" aria-label="attachment"><path class="ico-file-bg" d="M11.6,0.9h-1.3H1.8C0.8,0.9,0,1.6,0,2.6v15.7c0,1,0.8,1.7,1.8,1.7h12.4c1,0,1.8-0.8,1.8-1.7V6.5V5.7
+  L11.6,0.9z M15.1,18.3c0,0.5-0.4,0.9-0.9,0.9H1.8c-0.5,0-0.9-0.4-0.9-0.9V2.6c0-0.5,0.4-0.9,0.9-0.9h8v4.3c0,0.5,0.4,0.9,0.9,0.9
+  h4.4V18.3z M10.7,6.1V1.7h0.4l4,4.3H10.7z"></path><rect class="ico-file-bg ico-file-ribbon" y="9.3" width="16" height="9"></rect><g class="ico-file ico-file-pdf"> 
+               <path d="M2.6,11.6c0.3-0.1,0.7-0.1,1.4-0.1c0.6,0,1.1,0.1,1.4,0.4c0.3,0.2,0.5,0.6,0.5,1c0,0.4-0.1,0.8-0.4,1.1
+    c-0.3,0.3-0.8,0.5-1.4,0.5c-0.1,0-0.3,0-0.3,0V16h-1V11.6z M3.6,13.6c0.1,0,0.2,0,0.3,0c0.5,0,0.9-0.3,0.9-0.7
+    c0-0.4-0.3-0.7-0.8-0.7c-0.2,0-0.3,0-0.4,0V13.6z"></path> 
+               <path d="M6.3,11.6c0.4-0.1,0.8-0.1,1.4-0.1c0.8,0,1.4,0.2,1.8,0.5c0.5,0.3,0.8,0.9,0.8,1.7c0,0.8-0.3,1.4-0.7,1.8
+    c-0.5,0.4-1.2,0.6-2,0.6c-0.5,0-0.9,0-1.1-0.1V11.6z M7.3,15.3c0.1,0,0.2,0,0.3,0c0.9,0,1.5-0.5,1.5-1.6c0-0.9-0.5-1.4-1.4-1.4
+    c-0.2,0-0.4,0-0.5,0V15.3z"></path> 
+               <path d="M10.7,11.6h2.7v0.8h-1.7v1h1.6v0.8h-1.6V16h-1V11.6z"></path> 
+              </g><g class="ico-file ico-file-doc"> 
+               <path d="M1.9,11.6c0.4-0.1,0.8-0.1,1.4-0.1c0.8,0,1.4,0.2,1.8,0.5c0.5,0.3,0.8,0.9,0.8,1.7c0,0.8-0.3,1.4-0.7,1.8
+    c-0.5,0.4-1.2,0.6-2,0.6c-0.5,0-0.9,0-1.1-0.1V11.6z M2.9,15.3c0.1,0,0.2,0,0.3,0c0.9,0,1.5-0.5,1.5-1.6c0-0.9-0.5-1.4-1.4-1.4
+    c-0.2,0-0.4,0-0.5,0V15.3z"></path> 
+               <path d="M10.3,13.8c0,1.5-0.9,2.3-2.2,2.3c-1.3,0-2.1-1-2.1-2.3c0-1.3,0.8-2.3,2.2-2.3C9.6,11.5,10.3,12.5,10.3,13.8z
+    M7.1,13.8c0,0.9,0.4,1.5,1.1,1.5c0.7,0,1.1-0.6,1.1-1.5c0-0.8-0.4-1.5-1.1-1.5C7.5,12.3,7.1,12.9,7.1,13.8z"></path> 
+               <path d="M14.1,15.9c-0.2,0.1-0.6,0.2-1.1,0.2c-1.5,0-2.3-1-2.3-2.2c0-1.5,1.1-2.4,2.4-2.4c0.5,0,0.9,0.1,1.1,0.2
+    l-0.2,0.8c-0.2-0.1-0.5-0.2-0.8-0.2c-0.8,0-1.4,0.5-1.4,1.5c0,0.9,0.5,1.4,1.4,1.4c0.3,0,0.6-0.1,0.8-0.1L14.1,15.9z"></path> 
+              </g><g class="ico-file ico-file-xls"> 
+               <path d="M5.8,16l-0.4-0.8c-0.2-0.3-0.3-0.5-0.4-0.8h0c-0.1,0.3-0.2,0.5-0.3,0.8L4.2,16H3.1l1.3-2.2l-1.2-2.2h1.2
+    l0.4,0.8c0.1,0.3,0.2,0.5,0.3,0.7h0c0.1-0.3,0.2-0.5,0.3-0.7l0.4-0.8h1.1l-1.3,2.2L6.9,16H5.8z"></path> 
+               <path d="M7.3,11.6h1v3.6H10V16H7.3V11.6z"></path> 
+               <path d="M10.5,15c0.3,0.1,0.7,0.3,1.1,0.3c0.5,0,0.7-0.2,0.7-0.5c0-0.3-0.2-0.4-0.7-0.6c-0.7-0.3-1.2-0.7-1.2-1.3
+    c0-0.8,0.6-1.3,1.7-1.3c0.5,0,0.9,0.1,1.1,0.2l-0.2,0.8c-0.2-0.1-0.5-0.2-0.9-0.2c-0.4,0-0.6,0.2-0.6,0.4c0,0.3,0.3,0.4,0.8,0.6
+    c0.8,0.3,1.2,0.7,1.2,1.3c0,0.7-0.6,1.4-1.8,1.4c-0.5,0-1-0.1-1.3-0.3L10.5,15z"></path> 
+              </g><g class="ico-file ico-file-ppt"> 
+               <path d="M2.8,11.7c0.3-0.1,0.7-0.1,1.4-0.1c0.6,0,1.1,0.1,1.4,0.4c0.3,0.2,0.5,0.6,0.5,1c0,0.4-0.1,0.8-0.4,1.1
+    c-0.3,0.3-0.8,0.5-1.4,0.5c-0.1,0-0.3,0-0.3,0V16h-1V11.7z M3.8,13.7c0.1,0,0.2,0,0.3,0C4.7,13.7,5,13.4,5,13
+    c0-0.4-0.3-0.7-0.8-0.7c-0.2,0-0.3,0-0.4,0V13.7z"></path> 
+               <path d="M6.5,11.7c0.3-0.1,0.7-0.1,1.4-0.1c0.6,0,1.1,0.1,1.4,0.4c0.3,0.2,0.5,0.6,0.5,1c0,0.4-0.1,0.8-0.4,1.1
+    c-0.3,0.3-0.8,0.5-1.4,0.5c-0.1,0-0.3,0-0.3,0V16h-1V11.7z M7.5,13.7c0.1,0,0.2,0,0.3,0c0.5,0,0.9-0.3,0.9-0.7
+    c0-0.4-0.3-0.7-0.8-0.7c-0.2,0-0.3,0-0.4,0V13.7z"></path> 
+               <path d="M10.9,12.4H9.8v-0.8h3.4v0.8H12V16h-1V12.4z"></path> 
+              </g><g class="ico-file ico-file-zip"> 
+               <path d="M3.6,15.5l2.1-3v0H3.8v-0.8H7v0.6l-2.1,3v0h2.1V16H3.6V15.5z"></path> 
+               <path d="M8.5,11.6V16h-1v-4.4H8.5z"></path> 
+               <path d="M9.2,11.7c0.3-0.1,0.7-0.1,1.4-0.1c0.6,0,1.1,0.1,1.4,0.4c0.3,0.2,0.5,0.6,0.5,1c0,0.4-0.1,0.8-0.4,1.1
+    c-0.3,0.3-0.8,0.5-1.4,0.5c-0.1,0-0.3,0-0.3,0V16h-1V11.7z M10.2,13.7c0.1,0,0.2,0,0.3,0c0.5,0,0.9-0.3,0.9-0.7
+    c0-0.4-0.3-0.7-0.8-0.7c-0.2,0-0.3,0-0.4,0V13.7z"></path> 
+              </g><g class="ico-file ico-file-jpg"> 
+               <path d="M3.9,11.6h1v2.8c0,1.3-0.6,1.7-1.6,1.7c-0.2,0-0.5,0-0.7-0.1l0.1-0.8c0.1,0,0.3,0.1,0.5,0.1
+    c0.4,0,0.7-0.2,0.7-0.9V11.6z"></path> 
+               <path d="M5.6,11.7c0.3-0.1,0.7-0.1,1.4-0.1c0.6,0,1.1,0.1,1.4,0.4c0.3,0.2,0.5,0.6,0.5,1c0,0.4-0.1,0.8-0.4,1.1
+    c-0.3,0.3-0.9,0.5-1.4,0.5c-0.1,0-0.3,0-0.3,0v1.6h-1V11.7z M6.6,13.7c0.1,0,0.2,0,0.3,0c0.5,0,0.9-0.3,0.9-0.7
+    c0-0.4-0.3-0.7-0.8-0.7c-0.2,0-0.3,0-0.4,0V13.7z"></path> 
+               <path d="M12.9,15.9c-0.3,0.1-0.9,0.3-1.5,0.3c-0.8,0-1.4-0.2-1.8-0.6c-0.4-0.4-0.6-1-0.6-1.6c0-1.5,1.1-2.3,2.5-2.3
+    c0.6,0,1,0.1,1.2,0.2l-0.2,0.8c-0.2-0.1-0.5-0.2-1-0.2c-0.8,0-1.5,0.5-1.5,1.4c0,0.9,0.6,1.5,1.4,1.5c0.2,0,0.4,0,0.5-0.1v-0.9
+    h-0.7v-0.8h1.7V15.9z"></path> 
+              </g><g class="ico-file ico-file-png"> 
+               <path d="M2.3,11.6c0.3-0.1,0.7-0.1,1.4-0.1c0.6,0,1.1,0.1,1.4,0.4c0.3,0.2,0.5,0.6,0.5,1c0,0.4-0.1,0.8-0.4,1.1
+    c-0.3,0.3-0.8,0.5-1.4,0.5c-0.1,0-0.3,0-0.3,0V16h-1V11.6z M3.3,13.6c0.1,0,0.2,0,0.3,0c0.5,0,0.9-0.3,0.9-0.7
+    c0-0.4-0.3-0.7-0.8-0.7c-0.2,0-0.3,0-0.4,0V13.6z"></path> 
+               <path d="M5.9,16v-4.4h1.2L8,13.2c0.3,0.5,0.5,1,0.7,1.5h0c-0.1-0.6-0.1-1.2-0.1-1.9v-1.3h0.9V16H8.5l-0.9-1.7
+    c-0.3-0.5-0.6-1-0.8-1.6l0,0c0,0.6,0,1.2,0,1.9V16H5.9z"></path> 
+               <path d="M14,15.8c-0.3,0.1-0.9,0.2-1.5,0.2c-0.8,0-1.4-0.2-1.8-0.6c-0.4-0.4-0.6-1-0.6-1.6c0-1.5,1.1-2.3,2.5-2.3
+    c0.6,0,1,0.1,1.2,0.2l-0.2,0.8c-0.2-0.1-0.5-0.2-1-0.2c-0.8,0-1.5,0.5-1.5,1.4c0,0.9,0.6,1.5,1.4,1.5c0.2,0,0.4,0,0.5-0.1v-0.9
+    h-0.7v-0.8H14V15.8z"></path> 
+              </g><g class="ico-file ico-file-gif"> 
+               <path d="M7.6,15.8c-0.3,0.1-0.9,0.3-1.5,0.3c-0.8,0-1.4-0.2-1.8-0.6c-0.4-0.4-0.6-1-0.6-1.6c0-1.5,1.1-2.3,2.5-2.3
+    c0.6,0,1,0.1,1.2,0.2l-0.2,0.8c-0.2-0.1-0.5-0.2-1-0.2c-0.8,0-1.5,0.5-1.5,1.4c0,0.9,0.6,1.5,1.4,1.5c0.2,0,0.4,0,0.5-0.1v-0.9H6
+    v-0.8h1.7V15.8z"></path> 
+               <path d="M9.2,11.6V16h-1v-4.4H9.2z"></path> 
+               <path d="M9.9,11.6h2.7v0.8h-1.7v1h1.6v0.8h-1.6V16h-1V11.6z"></path> 
+              </g><g class="ico-file ico-file-pages"> 
+               <path d="M2.1,12.4c0.2,0,0.5-0.1,0.9-0.1c0.4,0,0.7,0.1,0.9,0.2c0.2,0.2,0.3,0.4,0.3,0.7c0,0.3-0.1,0.5-0.3,0.7
+    c-0.2,0.2-0.6,0.3-1,0.3c-0.1,0-0.2,0-0.2,0v1.1H2.1V12.4z M2.7,13.7c0.1,0,0.1,0,0.2,0c0.4,0,0.6-0.2,0.6-0.5
+    c0-0.3-0.2-0.4-0.5-0.4c-0.1,0-0.2,0-0.3,0V13.7z"></path> 
+               <path d="M4.9,14.5l-0.2,0.8H4l0.9-3h0.9l0.9,3H6l-0.2-0.8H4.9z M5.7,14l-0.2-0.6c-0.1-0.2-0.1-0.4-0.1-0.6h0
+    c0,0.2-0.1,0.4-0.1,0.6L5,14H5.7z"></path> 
+               <path d="M9.4,15.2c-0.2,0.1-0.6,0.2-1,0.2c-0.5,0-0.9-0.1-1.2-0.4c-0.3-0.3-0.4-0.6-0.4-1.1c0-1,0.7-1.6,1.7-1.6
+    c0.4,0,0.7,0.1,0.8,0.1L9.1,13c-0.2-0.1-0.4-0.1-0.7-0.1c-0.6,0-1,0.3-1,1c0,0.6,0.4,1,0.9,1c0.2,0,0.3,0,0.3,0v-0.6H8.3v-0.5h1.1
+    V15.2z"></path> 
+               <path d="M11.5,14h-1.1v0.7h1.2v0.6H9.8v-3h1.8v0.6h-1.2v0.6h1.1V14z"></path> 
+               <path d="M12,14.6c0.2,0.1,0.5,0.2,0.7,0.2c0.3,0,0.5-0.1,0.5-0.3c0-0.2-0.1-0.3-0.5-0.4c-0.5-0.2-0.8-0.4-0.8-0.9
+    c0-0.5,0.4-0.9,1.1-0.9c0.3,0,0.6,0.1,0.8,0.1L13.7,13c-0.1-0.1-0.3-0.1-0.6-0.1s-0.4,0.1-0.4,0.3c0,0.2,0.2,0.3,0.6,0.4
+    c0.5,0.2,0.8,0.5,0.8,0.9c0,0.5-0.4,0.9-1.2,0.9c-0.3,0-0.7-0.1-0.8-0.2L12,14.6z"></path> 
+              </g><g class="ico-file ico-file-numbers"> 
+               <path d="M1.4,14.9v-2.1h0.6l0.4,0.8c0.1,0.2,0.3,0.5,0.3,0.7h0c0-0.3,0-0.6,0-0.9v-0.6h0.4v2.1H2.6L2.2,14
+    c-0.1-0.2-0.3-0.5-0.4-0.8l0,0c0,0.3,0,0.6,0,0.9v0.6H1.4z"></path> 
+               <path d="M3.9,12.7V14c0,0.4,0.1,0.6,0.4,0.6c0.3,0,0.4-0.2,0.4-0.6v-1.2h0.5v1.2c0,0.7-0.3,1-0.9,1
+    c-0.5,0-0.9-0.3-0.9-1v-1.2H3.9z"></path> 
+               <path d="M7.3,14c0-0.3,0-0.6,0-0.9h0C7.2,13.4,7.1,13.7,7,14l-0.3,0.8H6.4L6.2,14C6.1,13.8,6,13.5,6,13.2h0
+    c0,0.3,0,0.6,0,0.9l0,0.8H5.5l0.1-2.1h0.6l0.2,0.7c0.1,0.2,0.1,0.5,0.2,0.8h0c0.1-0.2,0.1-0.5,0.2-0.8l0.2-0.7h0.6l0.1,2.1H7.3
+    L7.3,14z"></path> 
+               <path d="M8.1,12.8c0.1,0,0.4,0,0.6,0c0.3,0,0.5,0,0.6,0.1c0.1,0.1,0.3,0.2,0.3,0.4c0,0.2-0.1,0.4-0.4,0.5v0
+    c0.2,0.1,0.4,0.2,0.4,0.5c0,0.2-0.1,0.3-0.2,0.5c-0.2,0.1-0.4,0.2-0.8,0.2c-0.2,0-0.4,0-0.5,0V12.8z M8.6,13.6h0.2
+    c0.3,0,0.4-0.1,0.4-0.3c0-0.2-0.1-0.2-0.3-0.2c-0.1,0-0.2,0-0.2,0V13.6z M8.6,14.5c0,0,0.1,0,0.2,0c0.2,0,0.4-0.1,0.4-0.3
+    c0-0.2-0.2-0.3-0.4-0.3H8.6V14.5z"></path> 
+               <path d="M11.2,14h-0.8v0.5h0.9v0.4H9.9v-2.1h1.3v0.4h-0.8v0.4h0.8V14z"></path> 
+               <path d="M11.5,12.8c0.2,0,0.4,0,0.6,0c0.3,0,0.5,0,0.7,0.2c0.1,0.1,0.2,0.2,0.2,0.4c0,0.3-0.2,0.5-0.4,0.5v0
+    c0.1,0.1,0.2,0.2,0.3,0.4c0.1,0.2,0.1,0.5,0.2,0.6h-0.5c0-0.1-0.1-0.2-0.1-0.5c-0.1-0.3-0.1-0.3-0.3-0.3H12v0.8h-0.5V12.8z
+    M12,13.7h0.2c0.2,0,0.4-0.1,0.4-0.3c0-0.2-0.1-0.3-0.4-0.3c-0.1,0-0.2,0-0.2,0V13.7z"></path> 
+               <path d="M13.3,14.4c0.1,0.1,0.3,0.1,0.5,0.1c0.2,0,0.3-0.1,0.3-0.2c0-0.1-0.1-0.2-0.4-0.3c-0.4-0.1-0.6-0.3-0.6-0.6
+    c0-0.4,0.3-0.6,0.8-0.6c0.2,0,0.4,0.1,0.5,0.1l-0.1,0.4c-0.1,0-0.2-0.1-0.4-0.1c-0.2,0-0.3,0.1-0.3,0.2c0,0.1,0.1,0.2,0.4,0.3
+    c0.4,0.1,0.6,0.3,0.6,0.6c0,0.4-0.3,0.7-0.9,0.7c-0.2,0-0.5-0.1-0.6-0.1L13.3,14.4z"></path> 
+              </g><g class="ico-file ico-file-keynote"> 
+               <path d="M1.8,12.7h0.5v0.9h0c0-0.1,0.1-0.2,0.1-0.2l0.5-0.7h0.6l-0.7,0.9l0.7,1.2H3l-0.5-0.9l-0.2,0.2v0.7H1.8V12.7z"></path> 
+               <path d="M4.9,14H4.2v0.5H5v0.4H3.7v-2.1H5v0.4H4.2v0.4h0.8V14z"></path> 
+               <path d="M5.8,14.9V14l-0.7-1.3h0.6l0.2,0.5C5.9,13.4,6,13.5,6,13.7h0c0-0.1,0.1-0.3,0.2-0.4l0.2-0.5h0.5L6.2,14v0.9
+    H5.8z"></path> 
+               <path d="M7,14.9v-2.1h0.6L8,13.5c0.1,0.2,0.3,0.5,0.3,0.7h0c0-0.3,0-0.6,0-0.9v-0.6h0.4v2.1H8.3L7.8,14
+    c-0.1-0.2-0.3-0.5-0.4-0.8l0,0c0,0.3,0,0.6,0,0.9v0.6H7z"></path> 
+               <path d="M11,13.8c0,0.7-0.4,1.1-1,1.1c-0.6,0-1-0.5-1-1.1c0-0.6,0.4-1.1,1-1.1C10.7,12.7,11,13.2,11,13.8z M9.5,13.8
+    c0,0.4,0.2,0.7,0.5,0.7c0.3,0,0.5-0.3,0.5-0.7c0-0.4-0.2-0.7-0.5-0.7C9.7,13.1,9.5,13.4,9.5,13.8z"></path> 
+               <path d="M11.6,13.1H11v-0.4h1.6v0.4h-0.6v1.7h-0.5V13.1z"></path> 
+               <path d="M14.1,14h-0.8v0.5h0.9v0.4h-1.4v-2.1h1.3v0.4h-0.8v0.4h0.8V14z"></path> 
+              </g><g class="ico-file-other"> 
+               <path d="M6.4,8.4C5.9,8.9,5.3,9.1,4.6,9.1c-0.7,0-1.4-0.3-1.8-0.8C2.2,7.9,1.9,7.2,1.9,6.5l0-4.6c0-0.5,0.2-1,0.6-1.4
+    S3.4,0,3.9,0c1.1,0,2,0.9,2,2v3.7c0,0.3-0.1,0.7-0.4,0.9C5.2,6.8,4.9,7,4.6,7C4.2,7,3.9,6.8,3.6,6.6S3.3,6,3.3,5.7V2.2h1.1v3.5
+    c0,0.1,0,0.1,0.1,0.2c0,0,0.1,0.1,0.2,0.1c0.1,0,0.1,0,0.2-0.1c0,0,0.1-0.1,0.1-0.2l0-3.7c0-0.2-0.1-0.5-0.3-0.6
+    C4.4,1.2,4.1,1.1,3.9,1.1S3.5,1.2,3.3,1.3C3.1,1.5,3,1.7,3,2v4.6C3,7.4,3.7,8,4.6,8C5,8,5.3,7.9,5.6,7.6c0.3-0.3,0.4-0.7,0.4-1.1
+    l0-4.3h1.1v4.3C7.2,7.2,6.9,7.9,6.4,8.4z"></path> 
+               <path d="M6.9,6.5c0,1.3-1.1,2.4-2.4,2.4S2.2,7.8,2.2,6.5V2c0-1,0.8-1.7,1.7-1.7S5.6,1,5.6,2v3.7c0,0.6-0.5,1.1-1.1,1.1
+    S3.5,6.3,3.5,5.7V2.4h0.7v3.3c0,0.2,0.2,0.4,0.4,0.4S5,5.9,5,5.7V2c0-0.6-0.5-1.1-1.1-1.1S2.8,1.4,2.8,2v4.6c0,1,0.8,1.7,1.7,1.7
+    s1.7-0.8,1.7-1.7V2.4h0.7V6.5z"></path> 
+              </g>
+             </svg> <span>2-CANVAS_GRL_-_Instructor_Instructions_LTI_1..docx</span> </a>
+           </div>
+          </div>
+          <div class="step step-depth-1" data-step-uuid="81f9b4b5-3a26-401c-88a5-ba5916f35f84" id="">
+           <h2 id="now-save-amp-publish-the-assignment"><a class="screensteps-anchor" tabindex="-1" aria-hidden="true" aria-label="Anchor for Article Summary" href="#now-save-amp-publish-the-assignment">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 20 20" enable-background="new 0 0 20 20" role="img" aria-label="Heading anchor">
+              <path d="M7.859 14.691l-.81.805c-.701.695-1.843.695-2.545 0-.336-.334-.521-.779-.521-1.252s.186-.916.521-1.252l2.98-2.955c.617-.613 1.779-1.515 2.626-.675.389.386 1.016.384 1.403-.005.385-.389.383-1.017-.006-1.402-1.438-1.428-3.566-1.164-5.419.675l-2.98 2.956c-.715.709-1.108 1.654-1.108 2.658 0 1.006.394 1.949 1.108 2.658.736.73 1.702 1.096 2.669 1.096.967 0 1.934-.365 2.669-1.096l.811-.805c.389-.385.391-1.012.005-1.4-.387-.388-1.014-.39-1.403-.006zm9.032-11.484c-1.547-1.534-3.709-1.617-5.139-.197l-1.009 1.002c-.389.386-.392 1.013-.006 1.401.386.389 1.013.391 1.402.005l1.01-1.001c.74-.736 1.711-.431 2.346.197.336.335.522.779.522 1.252s-.186.917-.522 1.251l-3.18 3.154c-1.454 1.441-2.136.766-2.427.477-.389-.386-1.016-.383-1.401.005-.386.389-.384 1.017.005 1.401.668.662 1.43.99 2.228.99.977 0 2.01-.492 2.993-1.467l3.18-3.153c.712-.71 1.107-1.654 1.107-2.658 0-1.005-.395-1.949-1.109-2.659z"></path>
+             </svg> </a> Article Summary </h2>
+           <div class="instructions screensteps-textblock ">
+            <p>You have now learned how to create an Assignment in your course which you can connect with GRL, so that it will receive the score from the quiz in GRL.</p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="screensteps-next-prev-navigation" data-role="next-previous-nav">
+         <ul>
+          <li class="next"><strong>Next:</strong><a href="/m/PublisherContentCanvas/l/1501629-how-do-i-enable-mcgraw-hill-connect-in-my-canvas-course">How do I enable McGraw-Hill Connect in my Canvas Course?</a></li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div aria-label="sidebar" class="screensteps-sidebar" role="complementary">
+      <div class="screensteps-sidebar-widget" id="lesson-sidebar-info">
+       <h3>Last Updated</h3>
+       <p>Oct 05, 2021</p>
+       <ul class="icon-links">
+       </ul>
+      </div>
+      <div class="screensteps-sidebar-widget" id="other-assets">
+       <h3>Self-Help Guides</h3>
+       <ul class="asset-list with-divider">
+        <li class="divider"><h4 class="sidebar-subheading">BEGIN HERE</h4></li>
+        <li class="manual"><a href="/m/Making_the_Most_of_Canvas">Making the Most of Canvas</a></li>
+        <li class="manual"><a href="/m/CanvasStudio">Canvas Studio</a></li>
+        <li class="manual"><a href="/m/98630">FAQs for Using Canvas</a></li>
+        <li class="divider"><h4 class="sidebar-subheading">ADD-ONS FOR CANVAS</h4></li>
+        <li class="manual"><a href="/m/AllyinCanvas">Blackboard Ally in Canvas</a></li>
+        <li class="manual"><a href="/m/DropboxinCanvas">Dropbox in Canvas</a></li>
+        <li class="manual"><a href="/m/Flipgrid">Flipgrid in Canvas</a></li>
+        <li class="manual"><a href="/m/GoogleDocs">Google Docs in Canvas</a></li>
+        <li class="manual"><a href="/m/GoReact">GoReact in Canvas</a></li>
+        <li class="manual"><a href="/m/H5PinCanvas">H5P in Canvas</a></li>
+        <li class="manual"><a href="/m/iclickerInCanvas">iClicker in Canvas</a></li>
+        <li class="manual"><a href="/m/Labster">Labster in Canvas</a></li>
+        <li class="manual"><a href="/m/110675">LinkedIn Learning in Canvas</a></li>
+        <li class="manual"><a href="/m/107616">Mentimeter in Canvas</a></li>
+        <li class="manual"><a href="/m/PadletinCanvas">Padlet in Canvas</a></li>
+        <li class="manual"><a href="/m/111234">Portfolium in Canvas</a></li>
+        <li class="manual"><a href="/m/Proctorio">Proctorio in Canvas</a></li>
+        <li class="manual"><a href="/m/PublisherContentCanvas">Publisher Content in Canvas</a></li>
+        <li class="manual"><a href="/m/RespondusinCanvas">Respondus</a></li>
+        <li class="manual"><a href="/m/Scantron">Scantron and ParScore</a></li>
+        <li class="manual"><a href="/m/Screencast-o-matic">Screencast-o-matic in Canvas</a></li>
+        <li class="manual"><a href="/m/ShareStream_in_Canvas">ShareStream Video in Canvas</a></li>
+        <li class="manual"><a href="/m/SoftChalkinCanvas">SoftChalk in Canvas</a></li>
+        <li class="manual"><a href="/m/108841">Teams in Canvas</a></li>
+        <li class="manual"><a href="/m/Turnitin_in_Canvas">Turnitin in Canvas</a></li>
+        <li class="manual"><a href="/m/VoiceThread">VoiceThread for Canvas</a></li>
+        <li class="manual"><a href="/m/YouTube">YouTube in Canvas</a></li>
+        <li class="manual"><a href="/m/ZoomInCanvas">Zoom in Canvas</a></li>
+        <li class="divider"><h4 class="sidebar-subheading">STUDENT SELF-HELP GUIDES</h4></li>
+        <li class="manual"><a href="/m/Student">Student Self-Help Guides</a></li>
+        <li class="divider"><h4 class="sidebar-subheading">TITANium Resource Center</h4></li>
+        <li class="manual"><a href="/m/TRC">Accessing your content in TITANium</a></li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <script>
+//<![CDATA[
+  jQuery(document).ready(function(jQuery) {
+    var lesson_id = 1449854;
+    var current_article_sidebar_text = '(Current Article)';
+    var section_id = 366303;
+    var expansion = 'none';
+    switch(expansion) {
+      case 'none':
+        jQuery('ul.nested-chapter-lessons').hide();
+        break;
+      case 'all':
+        jQuery('ul.nested-chapter-lessons').show();
+        jQuery('li.chapter-list-item a.toggle-lessons').addClass('open');
+        break;
+      case 'one':
+        jQuery('ul.nested-chapter-lessons').hide();
+        jQuery('li.chapter-list-item[data-section-id="' + section_id + '"] ul.nested-chapter-lessons').show();
+        jQuery('li.chapter-list-item[data-section-id="' + section_id + '"] a.toggle-lessons').addClass('open');
+        break;
+    }
+    jQuery('li.chapter-list-item[data-section-id="' + section_id + '"]').addClass('here');
+    jQuery('li[data-lesson-id="' + lesson_id + '"]').addClass('here');
+    jQuery('li[data-lesson-id="' + lesson_id + '"] a').attr('data-current-article-text', current_article_sidebar_text);
+  });
+
+//]]>
+</script>
+    <noscript>
+     Enable javascript to expand/contract chapters
+    </noscript>
+   </main>
+  </div>
+  <div aria-labelledby="modal-label" class="screensteps-modal" id="screensteps-modal" role="dialog"><span id="modal-label"> Inline referenced article </span>
+   <div class="screensteps-modal__box"><a class="screensteps-modal__close" href="#"> × </a><span class="screensteps-loading-wrapper"> <span class="screensteps-loading"></span> </span>
+    <div class="screensteps-modal__content screensteps-article-content"></div>
+   </div>
+  </div>
+ </body>
+</html>

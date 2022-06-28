@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Courses for Credit</title><!-- OLD Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5703434-2"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-5703434-2');
+</script><!-- NEW GA4 Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HQ739T75G0"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HQ739T75G0');
+</script>
+  <link rel="stylesheet" type="text/css" href="/lib/css/style.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/lib/css/addon.css" media="all">
+  <link rel="stylesheet" type="text/css" href="https://use.typekit.net/dix4rzx.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" async></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.9/svg4everybody.min.js"></script>
+  <script src="https://rawgit.com/protonet/jquery.inview/master/jquery.inview.min.js"></script>
+ </head>
+ <body>
+  <map id="logolinks" name="logolinks"><area shape="circle" coords="51,51,51" href="http://www.cornell.edu" alt="Cornell home page"><area shape="rect" coords="105,0,500,103" href="/courses" alt="SCE home page"></map>
+  <header class="main-header" id="main-header" role="banner"><!-- Google Tag Manager (noscript) -->
+   <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWJF9P6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+   </noscript><!-- End Google Tag Manager (noscript) --><a href="#main-content" role="button" class="button skip-nav">
+    <div class="button__content">
+     Skip to main content
+    </div></a>
+   <div class="branding-bar ">
+    <div class="branding-bar__container panel__container panel__container--left">
+     <div class="branding-bar__positioning">
+      <div class="logo-wrapper logo-wrapper--view-small-only"><a href="https://www.cornell.edu"><img src="/img/logos/CornellCrest-reduced-white.svg" alt="Cornell University"></a>
+      </div>
+      <div class="branding-menu-button"><button class="button dropdown-trigger branding-bar__menu-trigger" type="button" value="">
+        <div class="button__content">
+         <span style="font-weight: bold;">SCE</span> 
+         <svg class="icon" role="presentation" preserveaspectratio="xMaxYMin meet">
+          <use xlink:href="/img/sprites/standard_icons.svg#design--plus" />
+         </svg>
+        </div></button>
+      </div>
+     </div>
+     <nav id="sitenav-branding" class="sitenav-branding" style="display: none" aria-label="Site list">
+      <ul>
+       <li><a href="/">Cornell SCE</a></li>
+       <li><a href="/youth">Youth Programs</a></li>
+       <li><a href="/precollege">Precollege Studies</a></li>
+       <li><a href="/courses">Courses for Credit</a></li>
+       <li><a href="/professional">Professional Studies</a></li>
+       <li><a href="/travel">Education Vacations</a></li>
+       <li><a href="/sce/lifelong">Lifelong Learners</a></li>
+       <li><a href="/sce/employee">Cornell Faculty &amp; Staff</a></li>
+       <li><a href="/ciw">Cornell in Washington</a></li>
+      </ul>
+     </nav>
+    </div>
+   </div>
+   <div class="main-header__logo-row">
+    <div class="logo-row__container">
+     <div class="main-header__product-logo">
+      <div class="logo-wrapper logo-wrapper--view-small-only"><a href="/courses/" class="main-header__product-logo"> <img src="/img/logos/no-seal/CoursesforCredit.svg" alt="Cornell SCE Courses for Credit"> </a>
+      </div>
+      <div class="logo-wrapper logo-wrapper--view-medium">
+       <img src="/img/logos/CoursesforCredit.svg" alt="Cornell SCE Courses for Credit" usemap="#logolinks">
+      </div>
+     </div>
+     <div><button type="button" class="mobile-menu-toggle mobile-menu-toggle--view-medium-down" id="mobile-menu-toggle"> 
+       <div class="button__content">
+        <div class="hamburger-animated"><span></span><span></span><span></span><span></span>
+        </div>
+        <div>
+          Menu 
+        </div>
+       </div> </button>
+      <form method="GET" action="/courses/search">
+       <div class="search-bar search-bar--view-large">
+        <div class="search-bar__form">
+         <div class="input-group site-search">
+          <input name="q" class="input-group-field" type="text" placeholder="Search This Site" value="" aria-labelledby="searchbtn1">
+          <div class="input-group-button"><button id="searchbtn1" type="submit" class="button" value="Search">
+            <div class="button__content">
+             <svg class="icon" role="presentation" preserveaspectratio="xMaxYMin meet">
+              <use xlink:href="/img/sprites/standard_icons.svg#design--search" />
+             </svg><span class="show-for-sr">Search</span>
+            </div></button>
+          </div>
+         </div>
+        </div>
+       </div>
+      </form>
+     </div>
+    </div>
+   </div>
+   <div id="sitenav-main-wrapper" class="sitenav-main-wrapper">
+    <nav class="sitenav-main" id="sitenav-main" aria-label="Main Menu">
+     <div class="sitenav-main__container">
+      <ul>
+       <li><a href="/courses/programs">Courses &amp; Programs</a></li>
+       <li><a href="/courses/tuition">Tuition &amp; Aid</a></li>
+       <li><a href="/courses/dates">Dates &amp; Deadlines</a></li>
+       <li><a href="/courses/students">Student Services</a></li>
+       <li><a href="/courses/about">About</a></li>
+       <li><a href="/courses/register">Register</a></li>
+      </ul>
+     </div>
+    </nav>
+    <form method="GET" action="/courses/search">
+     <div class="search-bar search-bar--view-medium-down">
+      <div class="search-bar__form">
+       <div class="input-group site-search">
+        <input name="q" class="input-group-field" type="text" placeholder="Search This Site" aria-labelledby="searchbtn2">
+        <div class="input-group-button"><button id="searchbtn2" type="submit" class="button" value="Search">
+          <div class="button__content">
+           <svg class="icon" role="presentation" preserveaspectratio="xMaxYMin meet">
+            <use xlink:href="/img/sprites/standard_icons.svg#design--search" />
+           </svg><span class="show-for-sr">Search</span>
+          </div></button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </form>
+   </div>
+  </header>
+  <main id="main-content" class="main">
+   <div class="panel panel--gray panel--gap-small panel--alert panel--ribbon">
+    <div class="panel__container panel--ribbon__container">
+     <div class="alert__text">
+      <h2 class="headline-group "><span class="head">Enroll now in summer 2022 courses</span></h2>
+      <div class="formatted-text">
+       <p>Earn credits, catch up, or get ahead by enrolling in <a href="/courses/programs/summer">Summer Session</a> courses on campus, online, or abroad. <a href="/courses/register/credit">Register now.</a> <!--<p>Earn credits, catch up, or get ahead by enrolling in courses on campus or online.<p>
+<ul>
+<li><a href="/courses/roster/fall-spring">Spring enrollment</a> opens January 10. Classes begin January 24.</li>
+<li><a href="/courses/programs/summer">Summer enrollment</a> opens March 15.</li>
+</ul>
+<br>--> <!--<p>Cornell students: There's still time to enroll in an online course during <a href="/courses/programs/winter">Winter Session 2022</a>, which runs January 3–21. <a href="/courses/register/credit/cornell">Enroll now</a>.</p>
+--> <!--<p>Earn credit, enhance your resume, or strengthen your professional skills. Choose from hundreds of on-campus Cornell courses. Registration opens August 9. Classes begin August 26.</p>
+
+<p>Earn credit, enhance your resume, or strengthen your professional skills. Choose from hundreds of online Cornell courses. Enrollment opens January 11. Classes begin February 8.</p>--> </p>
+       <p>(High school students: See <a href="/precollege">precollege studies</a>.)</p>
+      </div>
+     </div>
+     <div class="button-group alert_button"><a href="/courses/roster?ses=Summer" role="button" class="button button--cta">
+       <div class="button__content">
+        View summer courses 
+        <svg class="icon" role="presentation" preserveaspectratio="xMaxYMin meet">
+         <use xlink:href="/img/sprites/standard_icons.svg#design--arrow-right-thick" />
+        </svg>
+       </div></a>
+     </div>
+    </div>
+   </div>
+   <div class="page-header hero-header">
+    <div class="hero-header__image">
+     <div class="image__container">
+      <div class="image-reservation " style="padding-bottom: 49.6875%; background-color: #CCC;">
+       <img src="/img/site/4-hero-1.jpg" alt="" class="">
+      </div>
+     </div>
+    </div>
+    <div class="hero-header__text">
+     <div class="text__container">
+      <h1 class="headline-group "><span class="head">Take almost any Cornell course. Earn credits. Study with university faculty.</span><span class="subhead">Choose from summer and winter sessions, fall/spring study, part-time and online options, internship programs, and English immersion</span></h1>
+      <div class="button-group button-group--center"><a href="/courses/programs" role="button" class="button button--cta button--medium">
+        <div class="button__content">
+         Courses &amp; Programs 
+         <svg class="icon" role="presentation" preserveaspectratio="xMaxYMin meet">
+          <use xlink:href="/img/sprites/standard_icons.svg#design--arrow-right" />
+         </svg>
+        </div></a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="panel ">
+    <div class="panel__container ">
+     <div class="grid-row three-columns  ">
+      <div class="three-columns__column three-columns__left">
+       <div class="card  card--program">
+        <div class="card__image"><!-- <a href='/courses/programs/summer' tabindex='-1'> -->
+         <div class="image-wrapper">
+          <div class="image-reservation " style="padding-bottom: 75%; background-color: #CCC;">
+           <img src="/img/content/4362-hero-small.jpg" alt="Summer Session" class="">
+          </div>
+         </div><!-- </a> -->
+        </div>
+        <div class="card__body">
+         <div class="card__superhead program__superhead"></div>
+         <div class="headline-group card__title program__title h3"> <a href="/courses/programs/summer" class="arrow head">Summer Session</a> 
+         </div>
+         <div class="card__editorial program__description">
+          Earn credits, catch up, or get ahead during 3-, 6- &amp; 8-week sessions
+         </div>
+         <div class="card__footer program__date"></div>
+        </div> <!-- end card__body -->
+       </div> <!-- end card--program -->
+      </div>
+      <div class="three-columns__column three-columns__center">
+       <div class="card  card--program">
+        <div class="card__image"><!-- <a href='/courses/programs/winter' tabindex='-1'> -->
+         <div class="image-wrapper">
+          <div class="image-reservation " style="padding-bottom: 75%; background-color: #CCC;">
+           <img src="/img/content/4363-hero-small.jpg" alt="Winter Session" class="">
+          </div>
+         </div><!-- </a> -->
+        </div>
+        <div class="card__body">
+         <div class="card__superhead program__superhead"></div>
+         <div class="headline-group card__title program__title h3"> <a href="/courses/programs/winter" class="arrow head">Winter Session</a> 
+         </div>
+         <div class="card__editorial program__description">
+          Earn up to four credits in just three weeks
+         </div>
+         <div class="card__footer program__date"></div>
+        </div> <!-- end card__body -->
+       </div> <!-- end card--program -->
+      </div>
+      <div class="three-columns__column three-columns__right">
+       <div class="card  card--program">
+        <div class="card__image"><!-- <a href='/courses/roster/fall-spring' tabindex='-1'> -->
+         <div class="image-wrapper">
+          <div class="image-reservation " style="padding-bottom: 75%; background-color: #CCC;">
+           <img src="/img/content/4364-hero-small.jpg" alt="Fall &amp; Spring Study" class="">
+          </div>
+         </div><!-- </a> -->
+        </div>
+        <div class="card__body">
+         <div class="card__superhead program__superhead"></div>
+         <div class="headline-group card__title program__title h3"> <a href="/courses/roster/fall-spring" class="arrow head">Fall &amp; Spring Study</a> 
+         </div>
+         <div class="card__editorial program__description">
+          Non-degree students: Take almost any Cornell course &amp; study with university faculty
+         </div>
+         <div class="card__footer program__date"></div>
+        </div> <!-- end card__body -->
+       </div> <!-- end card--program -->
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="panel panel--narrow">
+    <div class="panel__container ">
+     <div class="collection__header text-center">
+      <h2 class="headline-group panel__title collection__title"><span class="head">Student experiences</span></h2>
+     </div>
+     <div class="grid-row two-columns two-columns--gutter-wide ">
+      <div class="two-columns__column two-columns__left ">
+       <div class="card card--quote">
+        <div class="card__image">
+         <div class="image-wrapper">
+          <div class="image-reservation " style="padding-bottom: 66.739130434783%; background-color: #CCC;">
+           <img src="/img/site/4-quote-1.jpg" alt="" class="">
+          </div>
+         </div>
+        </div>
+        <div class="card__body">
+         <div class="card__editorial quote__quote">
+          "Taking classes as a part-time student gave me an invaluable opportunity to continue my studies and explore future career options." 
+         </div>
+         <div class="card__footer quote_source">
+          <div class="quote__name">
+           Danya Glabau
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="two-columns__column two-columns__right ">
+       <div class="card card--quote">
+        <div class="card__image">
+         <div class="image-wrapper">
+          <div class="image-reservation " style="padding-bottom: 66.739130434783%; background-color: #CCC;">
+           <img src="/img/site/4-quote-2.jpg" alt="" class="">
+          </div>
+         </div>
+        </div>
+        <div class="card__body">
+         <div class="card__editorial quote__quote">
+          "Cornell Summer Session was the best experience I've ever had. I would do it over one hundred times if I could. The courses are fascinating, and there are so many fun things to do!"
+         </div>
+         <div class="card__footer quote_source">
+          <div class="quote__name">
+           Hayley White
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="panel panel--light-blue">
+    <div class="panel__container ">
+     <div class="banner ">
+      <h2 class="headline-group headline-group--center banner__headline-group"><span class="head">Get updates about Courses for Credit</span></h2>
+      <div class="banner__description text-center">
+       <form method="post" action="/courses/elist">
+        <div class="fieldset fieldset--inline">
+         <div class="field-container"><label for="Email">Email address</label>
+          <input id="Email" name="Email" type="text">
+          <input id="itemID" type="hidden" name="itemID" value="139">
+          <input id="action" name="action" type="hidden" value="">
+         </div>
+         <input type="submit" value="Sign up" class="button ">
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="panel ">
+    <div class="panel__container ">
+     <div class="grid-row two-columns two-columns--asymmetrical social-media-promo ">
+      <div class="two-columns__column two-columns__left ">
+       <h2 class="headline-group "><span class="head">Follow us on social</span></h2>
+       <p>Tag your posts #cornellsce, #cornellsummer, or #cornellwinter to share your experiences.</p>
+       <div class="social-links"><a href="https://www.facebook.com/CornellSCE" class="social-links__link"> 
+         <svg class="icon" title="facebook" preserveaspectratio="xMaxYMin meet">
+          <use xlink:href="/img/sprites/standard_icons.svg#social--facebook" />
+         </svg> </a><a href="https://www.instagram.com/cornell.sce/" class="social-links__link"> 
+         <svg class="icon" title="instagram" preserveaspectratio="xMaxYMin meet">
+          <use xlink:href="/img/sprites/standard_icons.svg#social--instagram" />
+         </svg> </a><a href="https://twitter.com/CornellSCE" class="social-links__link"> 
+         <svg class="icon" title="twitter" preserveaspectratio="xMaxYMin meet">
+          <use xlink:href="/img/sprites/standard_icons.svg#social--twitter" />
+         </svg> </a><a href="https://www.linkedin.com/company/cornell-sce" class="social-links__link"> 
+         <svg class="icon" title="linkedin" preserveaspectratio="xMaxYMin meet">
+          <use xlink:href="/img/sprites/standard_icons.svg#social--linkedin" />
+         </svg> </a>
+       </div>
+      </div>
+      <div class="two-columns__column two-columns__right ">
+       <div class="grid-row three-columns  ">
+        <div class="three-columns__column three-columns__left">
+         <div class="image-reservation " style="padding-bottom: 100%; background-color: #CCC;">
+          <img src="/img/site/4-social-1.jpg" alt="" class="">
+         </div>
+        </div>
+        <div class="three-columns__column three-columns__center">
+         <div class="image-reservation " style="padding-bottom: 100%; background-color: #CCC;">
+          <img src="/img/site/4-social-2.jpg" alt="" class="">
+         </div>
+        </div>
+        <div class="three-columns__column three-columns__right">
+         <div class="image-reservation " style="padding-bottom: 100%; background-color: #CCC;">
+          <img src="/img/site/4-social-3.jpg" alt="" class="">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+  <footer class="site-footer">
+   <div class="footer-prefix">
+    <div class="footer-prefix__container">
+     Courses for Credit is part of the 
+    </div>
+   </div>
+   <div class="logo-row">
+    <div class="logo-row__container">
+     <div class="logo-wrapper">
+      <img src="/img/logos/SCEbyline.svg" alt="Cornell University School of Continuing Education and Summer Sessions">
+     </div>
+     <div class="logo-row__nav">
+      <a href="/sce/about" class="arrow">About SCE</a><a href="/sce/support" class="arrow">Give to SCE</a><a href="/courses/about/contact" class="arrow">Contact us</a>
+     </div>
+    </div>
+   </div>
+   <div class="site-footer__bar">
+    <div class="site-footer__bar__container">
+     <ul>
+      <li><a href="/sce/policy">SCE Policies</a></li>
+      <li><a href="https://privacy.cornell.edu/privacy-cornell/university-privacy-statement">Privacy Notice</a></li>
+      <li><a href="/sce/policy/copyright">Copyright</a></li>
+      <li><a href="/sce/policy/land">Land Acknowledgment</a></li>
+     </ul>
+     <ul>
+      <li>Web Accessibility Help: <a href="mailto:web-accessibility@cornell.edu">web-accessibility@cornell.edu</a></li>
+      <li><a href="/sce/about/web-contact">Website feedback</a></li>
+      <li><a href="#" class="back-to-top" id="back-to-top">Back to Top 
+        <svg class="icon" role="presentation" preserveaspectratio="xMaxYMin meet">
+         <use xlink:href="/img/sprites/standard_icons.svg#design--arrow-up-end" />
+        </svg></a></li>
+     </ul>
+    </div>
+   </div>
+  </footer>
+  <script src="/lib/js/main.js" defer></script>
+  <script src="/lib/js/addon.js" defer></script>
+ </body>
+</html>
