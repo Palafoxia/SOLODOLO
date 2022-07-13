@@ -142,7 +142,6 @@ public class BuildIndex {
         url = url.replaceAll("%que%", "?");
         url = url.replaceAll("%ast%", "*");
         url = url.replaceAll(".html", "");
-        //url = "http://" + url;
 
         return url;
     }
