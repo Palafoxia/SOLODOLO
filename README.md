@@ -9,8 +9,8 @@ The source code also includes an indexer under the `backend` package that indexe
 
 ## Running the application
 ### Crawling & Indexing
-If the `output/` or `index/` folders are empty, run `RunCrawler.java` then `BuildIndex.java` to crawl webpages and index them.
-Note that `RunCrawler.java` may take long to finish running, so you can terminate it once you have crawled a sufficient amount of pages. 
+If the `output/` or `index/` folders are empty, run `Run.java` then `BuildIndex.java` to crawl webpages and index them.
+Note that `Run.java` may take long to finish running, so you can terminate it once you have crawled a sufficient amount of pages. 
 You also have the option to change the `output/` folder to different name or location. 
 
 ### Main Application
@@ -36,8 +36,8 @@ Maven project and run `src/main/java/Application.java` from there.
 - `HomeView.java` in `src/main/java/UI` is the primary and only Vaadin view of the application
 - `BuildIndex.java` in `src/main/java/backend` builds the index from .html files using the Lucene library
 - `SearchIndex.java` in `src/main/java/backend` searches the index using the Lucene Library
-- `WebCrawler.java` in `src/main/webcrawler` crawls the web at different seeds using multiple threads
-- `RunCrawler.java` in `src/main/webcrawler` main() runs `WebCrawler.java` with user defined webpages for threads/seeds
+- `Crawler.java` in `src/main/webcrawler` crawls the web at different seeds using multiple threads
+- `Run.java` in `src/main/webcrawler` main() runs `Crawler.java` with user defined webpages for threads/seeds
 
 ### Other Folders
 - The `output/` folder contains crawled webpages as .html files
@@ -49,10 +49,10 @@ Maven project and run `src/main/java/Application.java` from there.
 - Multiple threads are defined by String[] args in the main() method in Main.java
   - Each element in args is a seed URL
 - For each element in args
-  - A new WebCrawler object with a seed and a threadNumber is created in WebCrawler.java
+  - A new WebCrawler object with a seed and a threadNumber is created in Crawler.java
   - A new thread object is created and started with thread.start() within the WebCrawler constructor
-- WebCrawler.java implements the Runnable class for multithreading functionality
-  - Each thread with a unique seed recursively calls the crawl() method in WebCrawler.java simultaneously until termination to collect many .html files in an output folder 
+- Crawler.java implements the Runnable class for multithreading functionality
+  - Each thread with a unique seed recursively calls the crawl() method in Crawler.java simultaneously until termination to collect many .html files in an output folder 
    
 ### Crawling Strategy
 - Crawling is done with a multithreaded recursive crawl() method
