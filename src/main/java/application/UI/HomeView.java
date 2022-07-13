@@ -55,7 +55,7 @@ public class HomeView extends VerticalLayout {
         // Title and Image
         setSpacing(false);
         H1 header = new H1("SOLODOLO");
-        Paragraph description = new Paragraph("Search for .edu pages 🤗");
+        Paragraph description = new Paragraph("Search for Aliens \uD83D\uDC7D");
         Image astronaut = new Image("images/Astronaut.png", "Astronaut");
         astronaut.setWidth("200px");
         add(header, astronaut, description);
@@ -190,7 +190,7 @@ public class HomeView extends VerticalLayout {
 
             String title = hitDocs.get(rank).get("title");
             String url = hitDocs.get(rank).get("url");
-            String contents = hitDocs.get(rank).get("contents");
+            //String contents = hitDocs.get(rank).get("contents");
             String score = hitDocs.get(rank).get("score");
             Text rankText = new Text((rank + 1) + ". (Score: " + score + ") ");
             Anchor hyperLink = new Anchor(url, title);

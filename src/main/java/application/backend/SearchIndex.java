@@ -20,7 +20,9 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
 import java.io.IOException;
+import java.math.RoundingMode;
 import java.nio.file.Path;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class SearchIndex {
@@ -36,6 +38,7 @@ public class SearchIndex {
         queryString = queryString.trim();
         if(queryString.length() == 0) { // If only whitespace
             System.out.println("Empty query");
+            analyzer.close();
             return null;
         }
 
@@ -57,9 +60,11 @@ public class SearchIndex {
         ArrayList<Document> hitDocs = new ArrayList<>();
 
         // Iterate through the results and add to hitDocs ArrayList
+        DecimalFormat df = new DecimalFormat("##.###");
+        df.setRoundingMode(RoundingMode.DOWN);
         for (ScoreDoc hit : hits) {
             Document hitDoc = indexSearcher.doc(hit.doc);
-            hitDoc.add(new StringField("score", String.valueOf(hit.score), Field.Store.YES));
+            hitDoc.add(new StringField("score", String.valueOf(df.format(hit.score)), Field.Store.YES));
             hitDocs.add(hitDoc);
         }
         return hitDocs;
