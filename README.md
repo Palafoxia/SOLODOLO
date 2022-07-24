@@ -7,7 +7,7 @@ The application can be used to search an index of webpages.
 The source code includes a multithreaded web crawler under the `webcrawler` package that adds all crawled pages (.html files) to the `output/` folder.
 The source code also includes an indexer under the `backend` package that indexes crawled pages into the `index/` folder so they may be found by the search engine.
 
-## Running the application
+## Running the Application
 ### Crawling & Indexing
 If the `output/` or `index/` folders are empty, run `Run.java` then `BuildIndex.java` to crawl webpages and index them.
 Note that `Run.java` may take long to finish running, so you can terminate it once you have crawled a sufficient amount of pages. 
@@ -24,7 +24,7 @@ However, you must manually close the application regardless of how you run it.
 You can also import the project to your IDE of choice as you would with any
 Maven project and run `src/main/java/Application.java` from there.
 
-## Project structure
+## Project Structure
 
 ### Packages
 - `UI` package in `src/main/java/application` contains the Vaadin server-side views of the application
